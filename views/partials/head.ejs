@@ -2,9 +2,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= title %></title>
-<meta name="description" content="Virtuoso Catering House is a boutique luxury caterer crafting bespoke menus for weddings, corporate events, and private dining.">
+<meta name="description" content="<%= description %>">
+<link rel="canonical" href="<%= canonicalUrl %>">
 
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Virtuoso Catering House">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= description %>">
+<meta property="og:url" content="<%= canonicalUrl %>">
+<meta property="og:image" content="<%= ogImage %>">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>">
+<meta name="twitter:image" content="<%= ogImage %>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,3 +36,26 @@
 <link rel="stylesheet" href="/css/footer.css">
 <link rel="stylesheet" href="/css/animations.css">
 <link rel="stylesheet" href="/css/pages.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "<%= business.name %>",
+  "image": "<%= ogImage %>",
+  "url": "<%= siteUrl %>",
+  "telephone": "<%= business.telephone %>",
+  "email": "<%= business.email %>",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<%= business.streetAddress %>",
+    "addressLocality": "<%= business.addressLocality %>",
+    "addressRegion": "<%= business.addressRegion %>",
+    "postalCode": "<%= business.postalCode %>",
+    "addressCountry": "<%= business.addressCountry %>"
+  },
+  "servesCuisine": "Catering",
+  "priceRange": "$$$",
+  "sameAs": <%- JSON.stringify(business.sameAs) %>
+}
+</script>
