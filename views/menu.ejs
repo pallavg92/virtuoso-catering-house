@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="https://picsum.photos/seed/mv-menu-hero/2400/1200" alt="A tasting menu plated for a private event" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">Menus &amp; Services</span>
+      <h1 class="page-intro__title reveal-up">Every Course,<br>Considered</h1>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-page section section--ivory">
+    <div class="container">
+      <div class="menu-page__header">
+        <div>
+          <span class="eyebrow reveal-up">Sample Offerings</span>
+          <h2 class="section-title reveal-up">A Working Menu</h2>
+          <p class="menu-page__intro reveal-up">Every engagement begins with a private tasting. The selections below represent a starting point — final menus are always written around your event, your guests, and the season.</p>
+        </div>
+        <a href="/downloads/virtuoso-catering-house-menu.pdf" class="btn btn--outline-dark" download data-cursor="hover">
+          <span>Download Full Menu (PDF)</span>
+        </a>
+      </div>
+
+      <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Menu categories">
+        <% menu.categories.forEach(function(cat, i) { %>
+        <button class="menu-tabs__btn <%= i === 0 ? 'is-active' : '' %>" role="tab" aria-selected="<%= i === 0 %>" data-category="<%= cat.slug %>" data-cursor="hover"><%= cat.label %></button>
+        <% }); %>
+      </div>
+
+      <div class="menu-panels" id="menu-panels">
+        <% menu.categories.forEach(function(cat, i) { %>
+        <div class="menu-panel <%= i === 0 ? 'is-active' : '' %>" data-category-panel="<%= cat.slug %>">
+          <div class="menu-list">
+            <% cat.items.forEach(function(item) { %>
+            <div class="menu-row">
+              <div class="menu-row__main">
+                <h3 class="menu-row__name"><%= item.name %></h3>
+                <p class="menu-row__desc"><%= item.desc %></p>
+              </div>
+              <% if (item.tags.length) { %>
+              <div class="menu-row__tags">
+                <% item.tags.forEach(function(tag) { %>
+                <span class="diet-tag" title="<%= tag === 'V' ? 'Vegetarian' : tag === 'GF' ? 'Gluten-Free' : tag === 'DF' ? 'Dairy-Free' : tag %>"><%= tag %></span>
+                <% }); %>
+              </div>
+              <% } %>
+            </div>
+            <% }); %>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Have a Menu<br>in Mind?</h2>
+      <a href="/contact" class="btn btn--gold-outline" data-magnetic data-cursor="hover"><span>Request a Tasting</span></a>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

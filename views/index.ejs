@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__media" data-parallax>
+      <img src="<%= heroImage %>" alt="An elegantly plated dish at a candlelit dinner event" loading="eager">
+    </div>
+    <div class="hero__scrim"></div>
+    <div class="hero__content">
+      <span class="eyebrow eyebrow--light reveal-up">Boutique Luxury Catering — Est. 2008</span>
+      <h1 class="hero__title">
+        <span class="reveal-line"><span>Culinary Artistry</span></span>
+        <span class="reveal-line"><span>for Unforgettable</span></span>
+        <span class="reveal-line"><span>Occasions</span></span>
+      </h1>
+      <p class="hero__subhead reveal-up">Virtuoso Catering House designs and executes bespoke menus for weddings, private clients, and the discerning corporate table — one plate, one story at a time.</p>
+      <div class="hero__actions reveal-up">
+        <a href="/contact" class="btn btn--wine" data-magnetic data-cursor="hover"><span>Inquire Now</span></a>
+        <a href="/menu" class="btn btn--ghost-light" data-magnetic data-cursor="hover"><span>View Menus</span></a>
+      </div>
+    </div>
+    <div class="hero__scroll-cue" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy section section--ivory">
+    <div class="container">
+      <span class="eyebrow reveal-up">Our Philosophy</span>
+      <p class="philosophy__quote reveal-up">
+        “We believe a meal is the only art form guests are invited to consume entirely.
+        <em>Every course we send out is a sentence in a story</em> — considered, seasonal,
+        and built to be remembered long after the table is cleared.”
+      </p>
+      <div class="philosophy__attribution reveal-up">
+        <span class="hairline hairline--gold"></span>
+        <span>Adrienne Laurent, Executive Chef &amp; Founder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light reveal-up">What We Do</span>
+        <h2 class="section-title reveal-up">Our Services</h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <div class="services__grid">
+        <% services.forEach(function(service, i) { %>
+        <a href="/menu" class="service-card reveal-up <%= i % 2 === 1 ? 'service-card--offset' : '' %>" data-cursor="hover">
+          <div class="service-card__image">
+            <img src="<%= service.image %>" alt="<%= service.title %> catering by Virtuoso Catering House" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__kicker"><%= service.kicker %></span>
+            <h3 class="service-card__title"><%= service.title %></h3>
+            <p class="service-card__copy"><%= service.copy %></p>
+            <span class="link-underline">Explore Menu</span>
+          </div>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE DISHES GALLERY -->
+  <section class="signature section section--ivory">
+    <div class="section-header container">
+      <span class="eyebrow reveal-up">Signature Dishes</span>
+      <h2 class="section-title reveal-up">From the Pass</h2>
+      <span class="section-header__line"></span>
+    </div>
+
+    <div class="signature__scroller" id="signature-scroller">
+      <div class="signature__track">
+        <% signatureDishes.forEach(function(dish) { %>
+        <figure class="signature__item">
+          <div class="signature__image" data-parallax-child>
+            <img src="<%= dish.image %>" alt="<%= dish.title %>" loading="lazy">
+          </div>
+          <figcaption><%= dish.title %></figcaption>
+        </figure>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats section section--charcoal">
+    <div class="container stats__grid">
+      <% stats.forEach(function(stat) { %>
+      <div class="stat reveal-up">
+        <span class="stat__number" data-count-to="<%= stat.value %>" data-suffix="<%= stat.suffix %>">0</span>
+        <span class="stat__label"><%= stat.label %></span>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section section--ivory">
+    <div class="container">
+      <span class="eyebrow reveal-up">Client Words</span>
+      <div class="testimonial-slider" id="testimonial-slider">
+        <div class="testimonial-slider__track">
+          <% testimonials.forEach(function(t, i) { %>
+          <div class="testimonial-slide <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>">
+            <p class="testimonial-slide__quote">&ldquo;<%= t.quote %>&rdquo;</p>
+            <div class="testimonial-slide__meta">
+              <span class="testimonial-slide__name"><%= t.name %></span>
+              <span class="testimonial-slide__role"><%= t.role %></span>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <div class="testimonial-slider__controls">
+          <button class="testimonial-slider__arrow" id="testimonial-prev" aria-label="Previous testimonial" data-cursor="hover">←</button>
+          <div class="testimonial-slider__dots" id="testimonial-dots">
+            <% testimonials.forEach(function(t, i) { %>
+            <button class="testimonial-slider__dot <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>" aria-label="Go to testimonial <%= i + 1 %>"></button>
+            <% }); %>
+          </div>
+          <button class="testimonial-slider__arrow" id="testimonial-next" aria-label="Next testimonial" data-cursor="hover">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Let’s Design Your<br>Next Occasion.</h2>
+      <a href="/contact" class="btn btn--gold-outline" data-magnetic data-cursor="hover"><span>Start an Inquiry</span></a>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<header class="site-nav" id="site-nav" data-theme="light">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__logo" data-cursor="hover" aria-label="Virtuoso Catering House — Home">
+      <span class="site-nav__logo-mark">VCH</span>
+      <span class="site-nav__logo-word">Virtuoso Catering House</span>
+    </a>
+
+    <nav class="site-nav__links" aria-label="Primary">
+      <a href="/about" class="site-nav__link <%= activePage === 'about' ? 'is-active' : '' %>" data-cursor="hover">About</a>
+      <a href="/menu" class="site-nav__link <%= activePage === 'menu' ? 'is-active' : '' %>" data-cursor="hover">Menus</a>
+      <a href="/gallery" class="site-nav__link <%= activePage === 'gallery' ? 'is-active' : '' %>" data-cursor="hover">Gallery</a>
+      <a href="/contact" class="site-nav__cta" data-cursor="hover">
+        <span>Inquire</span>
+      </a>
+    </nav>
+
+    <button class="site-nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-cursor="hover">
+      <span class="site-nav__toggle-line"></span>
+      <span class="site-nav__toggle-line"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav class="mobile-menu__links" aria-label="Mobile primary">
+    <a href="/" class="mobile-menu__link">Home</a>
+    <a href="/about" class="mobile-menu__link">About</a>
+    <a href="/menu" class="mobile-menu__link">Menus</a>
+    <a href="/gallery" class="mobile-menu__link">Gallery</a>
+    <a href="/contact" class="mobile-menu__link">Contact</a>
+  </nav>
+  <div class="mobile-menu__footer">
+    <span class="eyebrow eyebrow--gold">Est. 2008 — San Francisco</span>
+  </div>
+</div>

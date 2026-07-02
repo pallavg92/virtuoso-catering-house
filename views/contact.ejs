@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <section class="contact-page section section--ivory">
+    <div class="contact-page__grid">
+
+      <div class="contact-page__form-col">
+        <span class="eyebrow reveal-up">Start an Inquiry</span>
+        <h1 class="contact-page__title reveal-up">Tell Us About<br>Your Occasion</h1>
+        <p class="contact-page__intro reveal-up">Share a few details and our events team will follow up within two business days to arrange a tasting.</p>
+
+        <form class="inquiry-form reveal-up" id="inquiry-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+              <span class="form-field__error" data-error-for="name"></span>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="form-field__error" data-error-for="email"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone <span class="form-field__optional">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="eventDate">Event Date <span class="form-field__optional">(optional)</span></label>
+              <input type="date" id="eventDate" name="eventDate">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="eventType">Event Type</label>
+              <select id="eventType" name="eventType" required>
+                <option value="" disabled selected>Select an event type</option>
+                <% eventTypes.forEach(function(type) { %>
+                <option value="<%= type %>"><%= type %></option>
+                <% }); %>
+              </select>
+              <span class="form-field__error" data-error-for="eventType"></span>
+            </div>
+            <div class="form-field">
+              <label for="guestCount">Estimated Guest Count <span class="form-field__optional">(optional)</span></label>
+              <input type="number" id="guestCount" name="guestCount" min="1" placeholder="e.g. 120">
+              <span class="form-field__error" data-error-for="guestCount"></span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Tell Us About Your Event</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Venue, style, dietary considerations, anything that helps us understand your vision..."></textarea>
+            <span class="form-field__error" data-error-for="message"></span>
+          </div>
+
+          <button type="submit" class="btn btn--wine" id="inquiry-submit" data-cursor="hover">
+            <span class="btn__label">Send Inquiry</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+
+          <div class="inquiry-form__status" id="inquiry-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="contact-page__details-col">
+        <div class="contact-page__image">
+          <img src="<%= contactOfficeImage %>" alt="The Virtuoso Catering House atelier and tasting room" loading="lazy">
+        </div>
+        <div class="contact-details">
+          <div class="contact-details__group">
+            <span class="eyebrow eyebrow--gold">Atelier &amp; Tasting Room</span>
+            <p>412 Ferment Street<br>San Francisco, CA 94110</p>
+          </div>
+          <div class="contact-details__group">
+            <span class="eyebrow eyebrow--gold">Reach Us</span>
+            <p><a href="mailto:events@virtuosocateringhouse.com">events@virtuosocateringhouse.com</a><br>
+            <a href="tel:+14155550143">+1 (415) 555-0143</a></p>
+          </div>
+          <div class="contact-details__group">
+            <span class="eyebrow eyebrow--gold">Hours</span>
+            <p>Tastings by appointment<br>Tuesday — Saturday, 10am–6pm</p>
+          </div>
+          <div class="contact-map" role="img" aria-label="Map showing the Virtuoso Catering House atelier location in San Francisco">
+            <div class="contact-map__pin"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

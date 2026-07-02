@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= aboutHeroImage %>" alt="The Virtuoso Catering House culinary team preparing a private dinner" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">About Virtuoso Catering House</span>
+      <h1 class="page-intro__title reveal-up">Eighteen Years of<br>Quiet Obsession</h1>
+    </div>
+  </section>
+
+  <!-- FOUNDER STORY -->
+  <section class="founder-story section section--ivory">
+    <div class="container founder-story__grid">
+      <div class="founder-story__image reveal-up">
+        <img src="<%= founderImage %>" alt="Adrienne Laurent, Executive Chef and Founder of Virtuoso Catering House" loading="lazy">
+      </div>
+      <div class="founder-story__text">
+        <span class="eyebrow reveal-up">The Founder</span>
+        <h2 class="section-title reveal-up">Adrienne Laurent</h2>
+        <span class="section-header__line reveal-up"></span>
+        <p class="reveal-up">Adrienne Laurent began cooking for guests in a rented commercial kitchen in San Francisco’s Mission District in 2008, with three staff, one delivery van, and a conviction that catering could be held to the same standard as any tasting-menu restaurant.</p>
+        <p class="reveal-up">Trained in Lyon and later in the kitchens of two Michelin-starred houses, she brought a chef’s discipline to an industry that had, in her words, “forgotten that a thousand covers deserve the same care as ten.” That philosophy — precision at scale — remains the operating principle behind every menu Virtuoso Catering House sends out today.</p>
+        <p class="reveal-up">Now leading a team of forty across culinary, events, and bar service, Adrienne still tastes every dish before it leaves the kitchen. “If I wouldn’t serve it to my own table,” she says, “it doesn’t go to yours.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light reveal-up">Our Story</span>
+        <h2 class="section-title reveal-up">Milestones</h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <div class="timeline__list" id="timeline-list">
+        <div class="timeline__progress" id="timeline-progress"></div>
+        <% timeline.forEach(function(item, i) { %>
+        <div class="timeline__item reveal-up">
+          <span class="timeline__year"><%= item.year %></span>
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <h3><%= item.title %></h3>
+            <p><%= item.copy %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Meet The Team</span>
+        <h2 class="section-title reveal-up">The People Behind the Pass</h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <div class="team__grid">
+        <% team.forEach(function(person) { %>
+        <div class="team-card reveal-up" data-cursor="hover">
+          <div class="team-card__image">
+            <img src="<%= person.image %>" alt="<%= person.name %>, <%= person.role %>" loading="lazy">
+          </div>
+          <div class="team-card__overlay">
+            <span class="team-card__name"><%= person.name %></span>
+            <span class="team-card__role"><%= person.role %></span>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Ready to Meet<br>the Team?</h2>
+      <a href="/contact" class="btn btn--gold-outline" data-magnetic data-cursor="hover"><span>Start an Inquiry</span></a>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

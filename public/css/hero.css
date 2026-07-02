@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  will-change: transform;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23, 25, 15, 0.35) 0%, rgba(23, 25, 15, 0.35) 40%, rgba(23, 25, 15, 0.88) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 54rem;
+  padding: clamp(6.5rem, 5.5rem + 3vw, 8.5rem) var(--container-pad-x) var(--space-xl);
+}
+
+.hero__title {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  font-weight: 400;
+  margin: 0.25em 0 0.4em;
+}
+
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-line > span {
+  display: block;
+  transform: translateY(110%);
+}
+
+.hero__subhead {
+  font-size: clamp(1rem, 0.93rem + 0.3vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 32rem;
+  color: rgba(253, 248, 240, 0.82);
+  margin-bottom: var(--space-md);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--container-pad-x);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  color: rgba(253, 248, 240, 0.7);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 46px;
+  background: rgba(253, 248, 240, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-gold);
+  animation: scroll-cue 2.4s var(--ease-premium) infinite;
+}
+
+@keyframes scroll-cue {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}
+
+@media (max-width: 640px) {
+  .hero__scroll-cue { display: none; }
+}

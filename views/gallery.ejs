@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="https://picsum.photos/seed/mv-gallery-hero/2400/1200" alt="Guests seated at a candlelit Virtuoso Catering House event" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">Portfolio</span>
+      <h1 class="page-intro__title reveal-up">Moments,<br>Plated</h1>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-page section section--ivory">
+    <div class="container">
+      <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filter by event type">
+        <button class="gallery-filters__btn is-active" data-filter="all" data-cursor="hover">All</button>
+        <button class="gallery-filters__btn" data-filter="weddings" data-cursor="hover">Weddings</button>
+        <button class="gallery-filters__btn" data-filter="corporate" data-cursor="hover">Corporate</button>
+        <button class="gallery-filters__btn" data-filter="private-dining" data-cursor="hover">Private Dining</button>
+        <button class="gallery-filters__btn" data-filter="canapes" data-cursor="hover">Canapés</button>
+        <button class="gallery-filters__btn" data-filter="desserts" data-cursor="hover">Desserts</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <% gallery.forEach(function(item, i) { %>
+        <button class="gallery-item reveal-up" data-category="<%= item.category %>" data-index="<%= i %>" data-cursor="hover" aria-label="Open image: <%= item.caption %>">
+          <img src="<%= item.image %>" alt="<%= item.caption %>" loading="lazy">
+          <span class="gallery-item__caption"><%= item.caption %></span>
+        </button>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Close" data-cursor="hover">&times;</button>
+  <button class="lightbox__arrow lightbox__arrow--prev" id="lightbox-prev" aria-label="Previous image" data-cursor="hover">&larr;</button>
+  <div class="lightbox__stage">
+    <img src="" alt="" id="lightbox-image">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+  <button class="lightbox__arrow lightbox__arrow--next" id="lightbox-next" aria-label="Next image" data-cursor="hover">&rarr;</button>
+</div>
+
+<%- include('partials/scripts') %>
+</body>
+</html>
