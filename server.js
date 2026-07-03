@@ -4,6 +4,7 @@ const path = require('path');
 
 const pagesRouter = require('./routes/pages');
 const apiRouter = require('./routes/api');
+const { siteUrl, business, pages } = require('./utils/pageMeta');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,8 +22,13 @@ app.use('/api', apiRouter);
 // 404
 app.use((req, res) => {
   res.status(404).render('404', {
-    title: 'Page Not Found',
-    activePage: ''
+    title: 'Page Not Found — Virtuoso Catering House',
+    description: 'The page you are looking for does not exist.',
+    activePage: '',
+    canonicalUrl: siteUrl + req.originalUrl,
+    ogImage: pages.home.ogImage,
+    siteUrl,
+    business
   });
 });
 

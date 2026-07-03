@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 npm-debug.log*
 .claude/settings.local.json
+/dist
+.netlify

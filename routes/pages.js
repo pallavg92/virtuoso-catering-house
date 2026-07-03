@@ -1,50 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const content = require('../utils/content');
+const { siteUrl, business, pages } = require('../utils/pageMeta');
 
-router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Virtuoso Catering House — Culinary Artistry for Unforgettable Occasions',
-    activePage: 'home',
-    bodyClass: 'page-home',
-    ...content
+function render(res, page) {
+  res.render(page.view, {
+    ...content,
+    ...page,
+    canonicalUrl: siteUrl + (page.path === '/' ? '/' : page.path),
+    siteUrl,
+    business
   });
-});
+}
 
-router.get('/about', (req, res) => {
-  res.render('about', {
-    title: 'About — Virtuoso Catering House',
-    activePage: 'about',
-    bodyClass: 'page-about',
-    ...content
-  });
-});
-
-router.get('/menu', (req, res) => {
-  res.render('menu', {
-    title: 'Menus & Services — Virtuoso Catering House',
-    activePage: 'menu',
-    bodyClass: 'page-menu',
-    ...content
-  });
-});
-
-router.get('/gallery', (req, res) => {
-  res.render('gallery', {
-    title: 'Gallery — Virtuoso Catering House',
-    activePage: 'gallery',
-    bodyClass: 'page-gallery',
-    ...content
-  });
-});
-
-router.get('/contact', (req, res) => {
-  res.render('contact', {
-    title: 'Contact — Virtuoso Catering House',
-    activePage: 'contact',
-    bodyClass: 'page-contact',
-    ...content
-  });
-});
+router.get('/', (req, res) => render(res, pages.home));
+router.get('/about', (req, res) => render(res, pages.about));
+router.get('/menu', (req, res) => render(res, pages.menu));
+router.get('/gallery', (req, res) => render(res, pages.gallery));
+router.get('/contact', (req, res) => render(res, pages.contact));
 
 module.exports = router;
