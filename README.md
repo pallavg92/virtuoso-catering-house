@@ -69,8 +69,7 @@ cp .env.example .env
 
 ## SEO / AEO
 
-- `utils/pageMeta.js` centralizes each page's title, meta description, canonical URL, and Open Graph image — used by both the dev server and the static build so they never drift apart.
-- **`siteUrl` in `utils/pageMeta.js` is currently a placeholder** (`https://www.virtuosocateringhouse.com`). Update this one constant once a real domain is live — it feeds the canonical tags, Open Graph URLs, JSON-LD, and `sitemap.xml`.
+- `utils/pageMeta.js` centralizes each page's title, meta description, canonical URL, and Open Graph image — used by both the dev server and the static build so they never drift apart. `siteUrl` there is set to `https://www.virtuosocatering.com`.
 - Every page includes Open Graph + Twitter Card tags, a canonical `<link>`, and `FoodEstablishment` JSON-LD structured data (name, address, phone, social profiles) in `views/partials/head.ejs`, sourced from `utils/pageMeta.js`.
 - `public/robots.txt` points crawlers at `/sitemap.xml`, which is regenerated on every `npm run build`.
 

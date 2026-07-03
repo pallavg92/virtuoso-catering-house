@@ -1,17 +1,14 @@
 // Centralized per-page SEO/AEO metadata, shared by the Express dev server
 // (routes/pages.js) and the static build script (scripts/build.js) so
 // titles, descriptions, and canonical URLs never drift between the two.
-//
-// NOTE: siteUrl is a placeholder until a real domain is purchased/confirmed.
-// Update this one constant once the live domain is known.
 const content = require('./content');
 
-const siteUrl = 'https://www.virtuosocateringhouse.com';
+const siteUrl = 'https://www.virtuosocatering.com';
 
 const business = {
   name: 'Virtuoso Catering House',
   telephone: '+91-8700915463',
-  email: 'events@virtuosocateringhouse.com',
+  email: 'events@virtuosocatering.com',
   streetAddress: 'A-15, A-Block, Sector 61',
   addressLocality: 'Noida',
   addressRegion: 'Uttar Pradesh',
