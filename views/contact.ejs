@@ -18,64 +18,10 @@
       <div class="contact-page__form-col">
         <span class="eyebrow reveal-up">Start an Inquiry</span>
         <h1 class="contact-page__title reveal-up">Tell Us About<br>Your Occasion</h1>
-        <p class="contact-page__intro reveal-up">Share a few details and our events team will follow up within two business days to arrange a tasting.</p>
-
-        <form class="inquiry-form reveal-up" id="inquiry-form" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
-              <span class="form-field__error" data-error-for="name"></span>
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
-              <span class="form-field__error" data-error-for="email"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="phone">Phone <span class="form-field__optional">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
-            </div>
-            <div class="form-field">
-              <label for="eventDate">Event Date <span class="form-field__optional">(optional)</span></label>
-              <input type="date" id="eventDate" name="eventDate">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="eventType">Event Type</label>
-              <select id="eventType" name="eventType" required>
-                <option value="" disabled selected>Select an event type</option>
-                <% eventTypes.forEach(function(type) { %>
-                <option value="<%= type %>"><%= type %></option>
-                <% }); %>
-              </select>
-              <span class="form-field__error" data-error-for="eventType"></span>
-            </div>
-            <div class="form-field">
-              <label for="guestCount">Estimated Guest Count <span class="form-field__optional">(optional)</span></label>
-              <input type="number" id="guestCount" name="guestCount" min="1" placeholder="e.g. 120">
-              <span class="form-field__error" data-error-for="guestCount"></span>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="message">Tell Us About Your Event</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Venue, style, dietary considerations, anything that helps us understand your vision..."></textarea>
-            <span class="form-field__error" data-error-for="message"></span>
-          </div>
-
-          <button type="submit" class="btn btn--wine" id="inquiry-submit" data-cursor="hover">
-            <span class="btn__label">Send Inquiry</span>
-            <span class="btn__spinner" aria-hidden="true"></span>
-          </button>
-
-          <div class="inquiry-form__status" id="inquiry-status" role="status" aria-live="polite"></div>
-        </form>
+        <p class="contact-page__intro reveal-up">Share a few details about your event — the date, the guest count, the story you want told — and our team will follow up within two business days.</p>
+        <button type="button" class="btn btn--wine reveal-up" data-inquire-trigger data-cursor="hover">
+          <span>Open Inquiry Form</span>
+        </button>
       </div>
 
       <div class="contact-page__details-col">

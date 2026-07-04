@@ -15,8 +15,11 @@ function render(res, page) {
 
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
-router.get('/menu', (req, res) => render(res, pages.menu));
+router.get('/our-work', (req, res) => render(res, pages.ourWork));
 router.get('/gallery', (req, res) => render(res, pages.gallery));
+router.get('/blog', (req, res) => render(res, pages.blog));
+router.get('/services', (req, res) => render(res, pages.services));
+router.get('/menu', (req, res) => res.redirect(301, '/services'));
 router.get('/contact', (req, res) => render(res, pages.contact));
 
 module.exports = router;

@@ -59,5 +59,11 @@
     new ResizeObserver(onResize).observe(content);
   }
 
+  // Safety net: content height can shift for reasons a single ResizeObserver
+  // tick might race with (late-loading map iframes, inline form errors,
+  // the inquiry drawer opening/closing) — resync periodically so the page
+  // can never scroll into "dead" space below the real content.
+  setInterval(setBodyHeight, 600);
+
   window.__smoothScrollDisabled = false;
 })();

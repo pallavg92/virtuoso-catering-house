@@ -30,7 +30,7 @@ const pages = {
     activePage: 'home',
     bodyClass: 'page-home',
     title: 'Virtuoso Catering House — Culinary Artistry for Unforgettable Occasions',
-    description: 'Virtuoso Catering House is a boutique luxury caterer in Noida crafting bespoke menus for weddings, corporate events, and private dining.',
+    description: 'Virtuoso Catering House is a luxury experiential catering company based in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
     ogImage: content.heroImage
   },
   about: {
@@ -40,18 +40,18 @@ const pages = {
     activePage: 'about',
     bodyClass: 'page-about',
     title: 'About — Virtuoso Catering House',
-    description: 'Eighteen years of boutique luxury catering — meet the chefs and events team behind Virtuoso Catering House.',
+    description: 'Meet the founders of Virtuoso Catering House and how we take a project from first brief to final day of service.',
     ogImage: content.aboutHeroImage
   },
-  menu: {
-    slug: 'menu',
-    path: '/menu',
-    view: 'menu',
-    activePage: 'menu',
-    bodyClass: 'page-menu',
-    title: 'Menus & Services — Virtuoso Catering House',
-    description: 'Explore plated dinners, buffet, canapés, bar service, and dessert menus from Virtuoso Catering House, a boutique luxury caterer in Noida.',
-    ogImage: content.services[0].image
+  ourWork: {
+    slug: 'our-work',
+    path: '/our-work',
+    view: 'our-work',
+    activePage: 'our-work',
+    bodyClass: 'page-our-work',
+    title: 'Our Work — Virtuoso Catering House',
+    description: 'A selection of weddings, brand activations, and private events designed and executed by Virtuoso Catering House.',
+    ogImage: content.ourWork[0].image
   },
   gallery: {
     slug: 'gallery',
@@ -60,8 +60,28 @@ const pages = {
     activePage: 'gallery',
     bodyClass: 'page-gallery',
     title: 'Gallery — Virtuoso Catering House',
-    description: 'Browse past weddings, corporate events, and private dinners catered by Virtuoso Catering House.',
+    description: 'Browse past weddings, brand activations, and private dinners catered by Virtuoso Catering House.',
     ogImage: content.gallery[0].image
+  },
+  blog: {
+    slug: 'blog',
+    path: '/blog',
+    view: 'blog',
+    activePage: 'blog',
+    bodyClass: 'page-blog',
+    title: 'Journal — Virtuoso Catering House',
+    description: 'Notes on luxury catering, event design, and hospitality from the Virtuoso Catering House team.',
+    ogImage: content.blogPosts[0].image
+  },
+  services: {
+    slug: 'services',
+    path: '/services',
+    view: 'services',
+    activePage: 'services',
+    bodyClass: 'page-services',
+    title: 'Services & Menus — Virtuoso Catering House',
+    description: 'Weddings, brand activations, private dining, and bespoke menus from Virtuoso Catering House, a luxury experiential caterer in Noida.',
+    ogImage: content.services[0].image
   },
   contact: {
     slug: 'contact',
@@ -69,8 +89,8 @@ const pages = {
     view: 'contact',
     activePage: 'contact',
     bodyClass: 'page-contact',
-    title: 'Contact — Virtuoso Catering House',
-    description: 'Start an inquiry with Virtuoso Catering House. Based in Noida, Uttar Pradesh, serving weddings, corporate events, and private dining.',
+    title: 'Inquire — Virtuoso Catering House',
+    description: 'Start an inquiry with Virtuoso Catering House. Based in Noida, Delhi NCR, serving weddings, brand activations, and private events.',
     ogImage: content.contactOfficeImage
   }
 };

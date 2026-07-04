@@ -15,12 +15,37 @@
   <!-- INTRO -->
   <section class="page-intro page-intro--short">
     <div class="page-intro__media" data-parallax>
-      <img src="https://picsum.photos/seed/mv-menu-hero/2400/1200" alt="A tasting menu plated for a private event" loading="eager">
+      <img src="https://picsum.photos/seed/mv-services-hero/2400/1200" alt="A tasting menu plated for a private event" loading="eager">
     </div>
     <div class="page-intro__scrim"></div>
     <div class="page-intro__content container">
-      <span class="eyebrow eyebrow--light reveal-up">Menus &amp; Services</span>
-      <h1 class="page-intro__title reveal-up">Every Course,<br>Considered</h1>
+      <span class="eyebrow eyebrow--light reveal-up">Services</span>
+      <h1 class="page-intro__title reveal-up">Every Detail,<br>Considered</h1>
+    </div>
+  </section>
+
+  <!-- SERVICE POSTS -->
+  <section class="service-posts section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">What We Do</span>
+        <h2 class="section-title reveal-up">Our Services</h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <div class="service-posts__grid">
+        <% services.forEach(function(service) { %>
+        <article class="service-post-card reveal-up" data-cursor="hover">
+          <div class="service-post-card__image">
+            <img src="<%= service.image %>" alt="<%= service.title %> catering by Virtuoso Catering House" loading="lazy">
+          </div>
+          <span class="service-post-card__kicker"><%= service.kicker %></span>
+          <h3 class="service-post-card__title"><%= service.title %></h3>
+          <p class="service-post-card__copy"><%= service.copy %></p>
+          <a href="#menu-panels" class="link-underline">View Sample Menu</a>
+        </article>
+        <% }); %>
+      </div>
     </div>
   </section>
 
@@ -74,7 +99,7 @@
   <section class="cta-banner section section--wine">
     <div class="container cta-banner__inner">
       <h2 class="cta-banner__title reveal-up">Have a Menu<br>in Mind?</h2>
-      <a href="/contact" class="btn btn--gold-outline" data-magnetic data-cursor="hover"><span>Request a Tasting</span></a>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Request a Tasting</span></button>
     </div>
   </section>
 

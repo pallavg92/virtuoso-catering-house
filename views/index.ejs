@@ -19,16 +19,16 @@
     </div>
     <div class="hero__scrim"></div>
     <div class="hero__content">
-      <span class="eyebrow eyebrow--light reveal-up">Boutique Luxury Catering — Est. 2008</span>
+      <span class="eyebrow eyebrow--light reveal-up">Boutique Luxury Catering</span>
       <h1 class="hero__title">
         <span class="reveal-line"><span>Culinary Artistry</span></span>
         <span class="reveal-line"><span>for Unforgettable</span></span>
         <span class="reveal-line"><span>Occasions</span></span>
       </h1>
-      <p class="hero__subhead reveal-up">Virtuoso Catering House designs and executes bespoke menus for weddings, private clients, and the discerning corporate table — one plate, one story at a time.</p>
+      <p class="hero__subhead reveal-up">Virtuoso Catering House designs and executes bespoke menus for weddings, private clients, and the discerning exclusive brand event — one plate, one story at a time.</p>
       <div class="hero__actions reveal-up">
-        <a href="/contact" class="btn btn--wine" data-magnetic data-cursor="hover"><span>Inquire Now</span></a>
-        <a href="/menu" class="btn btn--ghost-light" data-magnetic data-cursor="hover"><span>View Menus</span></a>
+        <button type="button" class="btn btn--wine" data-magnetic data-inquire-trigger data-cursor="hover"><span>Inquire Now</span></button>
+        <a href="/services" class="btn btn--ghost-light" data-magnetic data-cursor="hover"><span>View Services</span></a>
       </div>
     </div>
     <div class="hero__scroll-cue" aria-hidden="true">
@@ -43,12 +43,12 @@
       <span class="eyebrow reveal-up">Our Philosophy</span>
       <p class="philosophy__quote reveal-up">
         “We believe a meal is the only art form guests are invited to consume entirely.
-        <em>Every course we send out is a sentence in a story</em> — considered, seasonal,
-        and built to be remembered long after the table is cleared.”
+        <em>Every course we send out is a sentence in a story</em> —
+        considered, beautiful and built to be remembered.”
       </p>
       <div class="philosophy__attribution reveal-up">
         <span class="hairline hairline--gold"></span>
-        <span>Adrienne Laurent, Executive Chef &amp; Founder</span>
+        <span>Aarti Sharma, Co-Founder</span>
       </div>
     </div>
   </section>
@@ -64,7 +64,7 @@
 
       <div class="services__grid">
         <% services.forEach(function(service, i) { %>
-        <a href="/menu" class="service-card reveal-up <%= i % 2 === 1 ? 'service-card--offset' : '' %>" data-cursor="hover">
+        <a href="/services" class="service-card reveal-up <%= i % 2 === 1 ? 'service-card--offset' : '' %>" data-cursor="hover">
           <div class="service-card__image">
             <img src="<%= service.image %>" alt="<%= service.title %> catering by Virtuoso Catering House" loading="lazy">
           </div>
@@ -72,7 +72,7 @@
             <span class="service-card__kicker"><%= service.kicker %></span>
             <h3 class="service-card__title"><%= service.title %></h3>
             <p class="service-card__copy"><%= service.copy %></p>
-            <span class="link-underline">Explore Menu</span>
+            <span class="link-underline">Learn More</span>
           </div>
         </a>
         <% }); %>
@@ -80,37 +80,36 @@
     </div>
   </section>
 
-  <!-- SIGNATURE DISHES GALLERY -->
-  <section class="signature section section--ivory">
-    <div class="section-header container">
-      <span class="eyebrow reveal-up">Signature Dishes</span>
-      <h2 class="section-title reveal-up">From the Pass</h2>
-      <span class="section-header__line"></span>
-    </div>
+  <!-- OUR WORK -->
+  <section class="our-work-home section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Our Work</span>
+        <h2 class="section-title reveal-up">Selected Occasions</h2>
+        <span class="section-header__line"></span>
+      </div>
 
-    <div class="signature__scroller" id="signature-scroller">
-      <div class="signature__track">
-        <% signatureDishes.forEach(function(dish) { %>
-        <figure class="signature__item">
-          <div class="signature__image" data-parallax-child>
-            <img src="<%= dish.image %>" alt="<%= dish.title %>" loading="lazy">
-          </div>
-          <figcaption><%= dish.title %></figcaption>
-        </figure>
+      <div class="our-work__grid">
+        <% ourWork.forEach(function(work) { %>
+        <a href="/our-work" class="our-work-card reveal-up" data-cursor="hover">
+          <img src="<%= work.image %>" alt="<%= work.title %>" loading="lazy">
+          <div class="our-work-card__scrim"></div>
+          <span class="our-work-card__title"><%= work.title %></span>
+        </a>
         <% }); %>
+      </div>
+
+      <div class="our-work-home__cta reveal-up">
+        <a href="/our-work" class="link-underline">View All Our Work</a>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats section section--charcoal">
-    <div class="container stats__grid">
-      <% stats.forEach(function(stat) { %>
-      <div class="stat reveal-up">
-        <span class="stat__number" data-count-to="<%= stat.value %>" data-suffix="<%= stat.suffix %>">0</span>
-        <span class="stat__label"><%= stat.label %></span>
-      </div>
-      <% }); %>
+  <!-- BRAND QUOTE -->
+  <section class="brand-quote section section--charcoal">
+    <div class="container brand-quote__inner">
+      <p class="brand-quote__text reveal-up">“<%= brandQuote %>”</p>
+      <span class="hairline hairline--gold"></span>
     </div>
   </section>
 
@@ -147,7 +146,7 @@
   <section class="cta-banner section section--wine">
     <div class="container cta-banner__inner">
       <h2 class="cta-banner__title reveal-up">Let’s Design Your<br>Next Occasion.</h2>
-      <a href="/contact" class="btn btn--gold-outline" data-magnetic data-cursor="hover"><span>Start an Inquiry</span></a>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
     </div>
   </section>
 
