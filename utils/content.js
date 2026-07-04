@@ -119,13 +119,13 @@ const founders = [
   {
     name: 'Aarti Sharma',
     role: 'Co-Founder',
-    bio: 'Aarti builds luxury catering experiences that sit at the intersection of experiential F&B, beverage innovation, and large-scale event production — from live experiential stations and mixology concepts to refined plated dining and immersive guest journeys. Her work spans premium weddings, brand launches, and high-profile corporate experiences for clients including Ferrari APAC, Lamborghini, Tesla India, and House of Masaba. Every detail — presentation, pacing, pour — is designed to feel seamless, memorable, and deeply intentional.',
+    bio: 'Aarti builds luxury catering experiences that sit at the intersection of experiential F&B, beverage innovation, and large-scale event production — from live experiential stations and mixology concepts to refined plated dining and immersive guest journeys. Her work spans premium weddings, brand launches, and high-profile corporate experiences. Every detail — presentation, pacing, pour — is designed to feel seamless, memorable, and deeply intentional.',
     image: img('mv-founder-aarti', 1300, 1600)
   },
   {
     name: 'Pallav Goel',
     role: 'Co-Founder',
-    bio: 'Pallav leads Virtuoso’s growth, strategy, and brand direction — deciding which clients the house takes on and what standard it holds itself to. His focus is building Virtuoso into the definitive name in luxury experiential catering across India, from automotive launches to fashion activations to premium private events. Recent work spans Ferrari APAC, Lamborghini, Tesla India, and House of Masaba, across Delhi NCR and beyond.',
+    bio: 'Pallav leads Virtuoso’s growth, strategy, and brand direction — deciding which clients the house takes on and what standard it holds itself to. His focus is building Virtuoso into the definitive name in luxury experiential catering across India, from automotive launches to fashion activations to premium private events across Delhi NCR and beyond.',
     image: img('mv-founder-pallav', 1300, 1600)
   }
 ];
