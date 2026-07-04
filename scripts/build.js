@@ -31,6 +31,7 @@ async function renderPage(page) {
 async function renderNotFound() {
   const viewPath = path.join(VIEWS_DIR, '404.ejs');
   const locals = {
+    ...content,
     title: 'Page Not Found — Virtuoso Catering House',
     description: 'The page you are looking for does not exist.',
     activePage: '',

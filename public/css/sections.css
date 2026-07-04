@@ -168,86 +168,32 @@
 }
 
 /* ==========================================================================
-   Signature dishes — horizontal scroller
+   Brand quote
    ========================================================================== */
-.signature__scroller {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  padding-bottom: var(--space-sm);
-}
-
-.signature__scroller::-webkit-scrollbar {
-  display: none;
-}
-
-.signature__track {
+.brand-quote__inner {
+  max-width: 50rem;
+  margin-inline: auto;
+  text-align: center;
   display: flex;
-  gap: var(--space-md);
-  padding-inline: var(--container-pad-x);
-  width: max-content;
+  flex-direction: column;
+  align-items: center;
 }
 
-.signature__item {
-  width: min(70vw, 360px);
-  flex-shrink: 0;
-  margin: 0;
-}
-
-.signature__image {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  margin-bottom: var(--space-sm);
-}
-
-.signature__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.15);
-}
-
-.signature__item figcaption {
+.brand-quote__text {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.05rem;
-  color: var(--color-charcoal);
+  font-size: clamp(1.6rem, 1.3rem + 2vw, 3rem);
+  line-height: 1.35;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-md);
 }
 
 /* ==========================================================================
-   Stats
+   Our Work (home page section)
    ========================================================================== */
-.stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-md);
+.our-work-home__cta {
+  margin-top: var(--space-lg);
   text-align: center;
-}
-
-@media (max-width: 800px) {
-  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg) var(--space-md); }
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-  border-left: 1px solid rgba(201, 167, 104, 0.25);
-  padding-left: var(--space-sm);
-}
-
-.stat__number {
-  font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 1.8rem + 2vw, 4rem);
-  color: var(--color-gold);
-  line-height: 1;
-}
-
-.stat__label {
-  font-size: var(--fs-small);
-  letter-spacing: var(--tracking-wide);
-  color: var(--text-muted-dark);
-  text-transform: uppercase;
 }
 
 /* ==========================================================================

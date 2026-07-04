@@ -112,22 +112,6 @@
       );
     });
 
-    document.querySelectorAll('[data-parallax-child] img').forEach((img) => {
-      gsap.fromTo(
-        img,
-        { yPercent: -6 },
-        {
-          yPercent: 6,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: img.closest('.signature__scroller') || img,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-          }
-        }
-      );
-    });
   }
 
   function start() {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= ourWork[0].image %>" alt="A recent Virtuoso Catering House event" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">Our Work</span>
+      <h1 class="page-intro__title reveal-up">Selected<br>Occasions</h1>
+    </div>
+  </section>
+
+  <!-- OUR WORK GRID -->
+  <section class="our-work-page section section--ivory">
+    <div class="container">
+      <p class="our-work-page__intro reveal-up">A selection of weddings, brand activations, and private events we have designed and executed. Full write-ups are being published as a journal, one project at a time.</p>
+
+      <div class="our-work__grid">
+        <% ourWork.forEach(function(work, i) { %>
+        <a href="/blog" class="our-work-card reveal-up" data-cursor="hover">
+          <img src="<%= work.image %>" alt="<%= work.title %>" loading="lazy">
+          <div class="our-work-card__scrim"></div>
+          <span class="our-work-card__title"><%= work.title %></span>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Have Something<br>in Mind?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

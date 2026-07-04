@@ -30,13 +30,10 @@ async function sendInquiry(fields) {
   const text = [
     `Name: ${fields.name}`,
     `Email: ${fields.email}`,
-    `Phone: ${fields.phone || '—'}`,
+    `Mobile: ${fields.phone || '—'}`,
     `Event Date: ${fields.eventDate || '—'}`,
     `Event Type: ${fields.eventType || '—'}`,
-    `Guest Count: ${fields.guestCount || '—'}`,
-    '',
-    'Message:',
-    fields.message || '—'
+    `Guest Count: ${fields.guestCount || '—'}`
   ].join('\n');
 
   if (!transporter) {

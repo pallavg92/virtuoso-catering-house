@@ -48,12 +48,15 @@
   overflow-wrap: break-word;
 }
 
-.site-footer__col a {
+.site-footer__col a,
+.site-footer__col button {
   color: rgba(253, 248, 240, 0.75);
+  text-align: left;
   transition: color var(--dur-fast) ease;
 }
 
-.site-footer__col a:hover {
+.site-footer__col a:hover,
+.site-footer__col button:hover {
   color: var(--color-gold);
 }
 

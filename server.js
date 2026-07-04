@@ -4,6 +4,7 @@ const path = require('path');
 
 const pagesRouter = require('./routes/pages');
 const apiRouter = require('./routes/api');
+const content = require('./utils/content');
 const { siteUrl, business, pages } = require('./utils/pageMeta');
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/api', apiRouter);
 // 404
 app.use((req, res) => {
   res.status(404).render('404', {
+    ...content,
     title: 'Page Not Found — Virtuoso Catering House',
     description: 'The page you are looking for does not exist.',
     activePage: '',

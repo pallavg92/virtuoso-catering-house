@@ -7,11 +7,13 @@
 
     <nav class="site-nav__links" aria-label="Primary">
       <a href="/about" class="site-nav__link <%= activePage === 'about' ? 'is-active' : '' %>" data-cursor="hover">About</a>
-      <a href="/menu" class="site-nav__link <%= activePage === 'menu' ? 'is-active' : '' %>" data-cursor="hover">Menus</a>
+      <a href="/our-work" class="site-nav__link <%= activePage === 'our-work' ? 'is-active' : '' %>" data-cursor="hover">Our Work</a>
       <a href="/gallery" class="site-nav__link <%= activePage === 'gallery' ? 'is-active' : '' %>" data-cursor="hover">Gallery</a>
-      <a href="/contact" class="site-nav__cta" data-cursor="hover">
+      <a href="/blog" class="site-nav__link <%= activePage === 'blog' ? 'is-active' : '' %>" data-cursor="hover">Blog</a>
+      <a href="/services" class="site-nav__link <%= activePage === 'services' ? 'is-active' : '' %>" data-cursor="hover">Services</a>
+      <button type="button" class="site-nav__cta" data-cursor="hover" data-inquire-trigger>
         <span>Inquire</span>
-      </a>
+      </button>
     </nav>
 
     <button class="site-nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-cursor="hover">
@@ -25,11 +27,73 @@
   <nav class="mobile-menu__links" aria-label="Mobile primary">
     <a href="/" class="mobile-menu__link">Home</a>
     <a href="/about" class="mobile-menu__link">About</a>
-    <a href="/menu" class="mobile-menu__link">Menus</a>
+    <a href="/our-work" class="mobile-menu__link">Our Work</a>
     <a href="/gallery" class="mobile-menu__link">Gallery</a>
-    <a href="/contact" class="mobile-menu__link">Contact</a>
+    <a href="/blog" class="mobile-menu__link">Blog</a>
+    <a href="/services" class="mobile-menu__link">Services</a>
+    <button type="button" class="mobile-menu__link mobile-menu__link--btn" data-inquire-trigger>Inquire</button>
   </nav>
   <div class="mobile-menu__footer">
-    <span class="eyebrow eyebrow--gold">Est. 2008 — Noida</span>
+    <span class="eyebrow eyebrow--gold">Luxury Experiential Catering — Noida</span>
   </div>
+</div>
+
+<div class="inquire-drawer" id="inquire-drawer" aria-hidden="true">
+  <div class="inquire-drawer__overlay" id="inquire-drawer-overlay"></div>
+  <aside class="inquire-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="inquire-drawer-title">
+    <button type="button" class="inquire-drawer__close" id="inquire-drawer-close" aria-label="Close inquiry form" data-cursor="hover">&times;</button>
+
+    <span class="eyebrow eyebrow--gold">Start an Inquiry</span>
+    <h2 id="inquire-drawer-title" class="inquire-drawer__title">Tell Us About<br>Your Occasion</h2>
+    <p class="inquire-drawer__intro">Share a few details and our team will follow up within two business days.</p>
+
+    <form class="inquiry-form" id="inquiry-form" novalidate>
+      <div class="form-field">
+        <label for="drawer-name">Full Name</label>
+        <input type="text" id="drawer-name" name="name" autocomplete="name" required>
+        <span class="form-field__error" data-error-for="name"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-email">Email</label>
+        <input type="email" id="drawer-email" name="email" autocomplete="email" required>
+        <span class="form-field__error" data-error-for="email"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-phone">Mobile No.</label>
+        <input type="tel" id="drawer-phone" name="phone" autocomplete="tel" required>
+        <span class="form-field__error" data-error-for="phone"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-eventDate">Event Date <span class="form-field__optional">(optional)</span></label>
+        <input type="date" id="drawer-eventDate" name="eventDate">
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-eventType">Event Type</label>
+        <select id="drawer-eventType" name="eventType" required>
+          <option value="" disabled selected>Select an event type</option>
+          <% eventTypes.forEach(function(type) { %>
+          <option value="<%= type %>"><%= type %></option>
+          <% }); %>
+        </select>
+        <span class="form-field__error" data-error-for="eventType"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-guestCount">Estimated Guest Count <span class="form-field__optional">(optional)</span></label>
+        <input type="number" id="drawer-guestCount" name="guestCount" min="1" placeholder="e.g. 120">
+        <span class="form-field__error" data-error-for="guestCount"></span>
+      </div>
+
+      <button type="submit" class="btn btn--wine" id="inquiry-submit" data-cursor="hover">
+        <span class="btn__label">Send Inquiry</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+
+      <div class="inquiry-form__status" id="inquiry-status" role="status" aria-live="polite"></div>
+    </form>
+  </aside>
 </div>

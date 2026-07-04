@@ -11,11 +11,11 @@ const services = [
     image: img('mv-wedding-table', 1400, 1800)
   },
   {
-    slug: 'corporate',
-    title: 'Corporate Events',
+    slug: 'brand-activations',
+    title: 'Brand Activations',
     kicker: '02',
-    copy: 'Boardroom breakfasts to gala dinners for five hundred — precision service that reflects the standard your brand keeps everywhere else.',
-    image: img('mv-corporate-gala', 1400, 1800)
+    copy: 'Product launches, brand experiences, and press previews — for names that never compromise on how a room feels. We design the food and beverage language around the story being told.',
+    image: img('mv-brand-activation', 1400, 1800)
   },
   {
     slug: 'private-dining',
@@ -48,61 +48,86 @@ const gallery = [
   { id: 12, category: 'desserts', caption: 'Petit fours, plated at the pass.', image: img('mv-gal-12', 1200, 1500) }
 ];
 
-const signatureDishes = [
-  { title: 'Charred Octopus, Nduja, Blood Orange', image: img('mv-dish-1', 1200, 1500) },
-  { title: 'Hand-Rolled Cacio e Pepe, Aged Reserve', image: img('mv-dish-2', 1200, 1500) },
-  { title: 'Dry-Aged Duck Breast, Cherry, Smoked Honey', image: img('mv-dish-3', 1200, 1500) },
-  { title: 'Burnt Basque Cheesecake, Fig Leaf Oil', image: img('mv-dish-4', 1200, 1500) },
-  { title: 'Heirloom Tomato, Stracciatella, Basil Oil', image: img('mv-dish-5', 1200, 1500) },
-  { title: 'Saffron Risotto, Langoustine, Sea Fennel', image: img('mv-dish-6', 1200, 1500) }
+// Placeholder case studies — replace with real work write-ups (blog-format) as they're published.
+const ourWork = [
+  { slug: 'ferrari-apac-launch', title: 'Ferrari APAC — Product Launch Experience', image: img('mv-work-1', 1200, 1500) },
+  { slug: 'aravalli-wedding', title: 'A Wedding in the Aravalli Hills', image: img('mv-work-2', 1200, 1500) },
+  { slug: 'lamborghini-activation', title: 'Lamborghini Delhi — Brand Activation Dinner', image: img('mv-work-3', 1200, 1500) },
+  { slug: 'masaba-afterparty', title: 'House of Masaba — Runway After-Party', image: img('mv-work-4', 1200, 1500) },
+  { slug: 'private-anniversary', title: 'A Private Anniversary, Six Guests, One Table', image: img('mv-work-5', 1200, 1500) }
 ];
 
-const stats = [
-  { value: 18, suffix: '+', label: 'Years in Service' },
-  { value: 1240, suffix: '', label: 'Events Catered' },
-  { value: 12, suffix: '', label: 'Culinary Awards' },
-  { value: 96, suffix: '%', label: 'Client Referral Rate' }
-];
-
-const testimonials = [
+// Placeholder blog posts — replace with real posts as they're written.
+const blogPosts = [
   {
-    quote: 'They did not just cater our wedding — they translated us into a menu. Guests are still talking about the burnt honey course.',
-    name: 'Elena & Marcus',
-    role: 'Private Wedding, Sonoma'
+    slug: 'wedding-menu-around-a-love-story',
+    title: 'Designing a Wedding Menu Around a Love Story',
+    excerpt: 'How we translate a couple’s history — where they met, what they cook together — into a tasting menu that feels personal rather than performed.',
+    date: '2026-05-14',
+    image: img('mv-blog-1', 1200, 800)
   },
   {
-    quote: 'Impeccable timing, impeccable plating, and a team that disappeared into the background exactly when they should have.',
-    name: 'Priya Raman',
-    role: 'Head of Events, Solstice Capital'
+    slug: 'what-a-launch-dinner-requires',
+    title: 'What a Product Launch Dinner Actually Requires',
+    excerpt: 'Notes from the field on pacing a room, briefing a brand team, and building a menu that supports the story on stage instead of competing with it.',
+    date: '2026-04-02',
+    image: img('mv-blog-2', 1200, 800)
   },
   {
-    quote: 'We have used four catering houses over the years. Virtuoso Catering House is the only one we have never had to give notes to.',
-    name: 'Julian Ferro',
-    role: 'Founder, Ferro & Related'
-  },
-  {
-    quote: 'A tasting menu that felt like it was written for exactly six people, because it was. That is the whole difference.',
-    name: 'Naomi Osei',
-    role: 'Private Client'
+    slug: 'plating-for-camera-vs-guest',
+    title: 'Plating for the Camera vs. Plating for the Guest',
+    excerpt: 'A dish built for a photograph and a dish built to be eaten are not always the same thing. Here is how we design for both.',
+    date: '2026-02-19',
+    image: img('mv-blog-3', 1200, 800)
   }
 ];
 
-const team = [
-  { name: 'Adrienne Laurent', role: 'Executive Chef & Founder', image: img('mv-team-1', 900, 1100) },
-  { name: 'Kofi Mensah', role: 'Culinary Director', image: img('mv-team-2', 900, 1100) },
-  { name: 'Simone Vasquez', role: 'Head of Events', image: img('mv-team-3', 900, 1100) },
-  { name: 'Theo Bianchi', role: 'Pastry Chef', image: img('mv-team-4', 900, 1100) },
-  { name: 'Margaux Ferreira', role: 'Sommelier & Bar Director', image: img('mv-team-5', 900, 1100) },
-  { name: 'Idris Whitfield', role: 'Operations Director', image: img('mv-team-6', 900, 1100) }
+const brandQuote = 'We believe true luxury lives in restraint — in every detail considered, every moment beautiful, and every experience built to be remembered.';
+
+const testimonials = [
+  {
+    quote: 'They did not just cater our wedding — they translated us into an experience. Guests are still talking about it months later.',
+    name: 'Ananya Kapoor',
+    role: 'Private Wedding, Udaipur'
+  },
+  {
+    quote: 'Impeccable timing, impeccable execution, and a team that disappeared into the background exactly when they should have.',
+    name: 'Rohan Mehta',
+    role: 'Brand Experience Lead'
+  },
+  {
+    quote: 'Working with Virtuoso on our launch felt less like hiring caterers and more like adding a creative partner to the room.',
+    name: 'Ishita Sen',
+    role: 'Founder, House of Sen'
+  },
+  {
+    quote: 'A dinner that felt like it was designed for exactly the six of us, because it was. That is the whole difference.',
+    name: 'Vikram Malhotra',
+    role: 'Private Client, Delhi NCR'
+  }
 ];
 
-const timeline = [
-  { year: '2008', title: 'A Kitchen of Three', copy: 'Adrienne Laurent begins cooking private dinners out of a rented commercial kitchen in the Mission.' },
-  { year: '2012', title: 'First Wedding Season', copy: 'Virtuoso Catering House caters its first full wedding season — eleven events, one small van, no days off.' },
-  { year: '2016', title: 'The Atelier Opens', copy: 'A dedicated culinary atelier and tasting room opens, built for menu development and private tastings.' },
-  { year: '2019', title: 'National Recognition', copy: 'Named among the country’s leading event caterers by a national culinary guild.' },
-  { year: '2022', title: 'Bespoke Division Launches', copy: 'A dedicated bespoke-menu division is formed to serve private clients and small-format dinners.' },
-  { year: '2026', title: 'Eighteen Years On', copy: 'Now a team of forty, still tasting every dish before it leaves the kitchen.' }
+// How Virtuoso works, from first brief to the final day of service.
+const process = [
+  { step: '01', title: 'The Brief', copy: 'Every project begins with a conversation — your event, your guests, the story you want told. We listen before we plan.' },
+  { step: '02', title: 'Concept & Tasting', copy: 'We design a menu and experience concept, then invite you to taste it — refining flavor, pacing, and presentation until it is exactly right.' },
+  { step: '03', title: 'Design & Rehearsal', copy: 'Service choreography, styling, and staffing are mapped in detail, so nothing on the day is left to chance.' },
+  { step: '04', title: 'The Final Day', copy: 'We execute — quietly, precisely, and completely present, so you experience the event as a guest, not a host.' }
+];
+
+const founders = [
+  {
+    name: 'Aarti Sharma',
+    role: 'Co-Founder',
+    bio: 'Aarti builds luxury catering experiences that sit at the intersection of experiential F&B, beverage innovation, and large-scale event production — from live experiential stations and mixology concepts to refined plated dining and immersive guest journeys. Her work spans premium weddings, brand launches, and high-profile corporate experiences for clients including Ferrari APAC, Lamborghini, Tesla India, and House of Masaba. Every detail — presentation, pacing, pour — is designed to feel seamless, memorable, and deeply intentional.',
+    image: img('mv-founder-aarti', 1300, 1600)
+  },
+  {
+    name: 'Pallav Goel',
+    role: 'Co-Founder',
+    bio: 'Pallav leads Virtuoso’s growth, strategy, and brand direction — deciding which clients the house takes on and what standard it holds itself to. His focus is building Virtuoso into the definitive name in luxury experiential catering across India, from automotive launches to fashion activations to premium private events. Recent work spans Ferrari APAC, Lamborghini, Tesla India, and House of Masaba, across Delhi NCR and beyond.',
+    image: img('mv-founder-pallav', 1300, 1600)
+  }
 ];
 
 const menu = {
@@ -165,25 +190,20 @@ const menu = {
   ]
 };
 
-const eventTypes = [
-  'Wedding',
-  'Corporate Event',
-  'Private Dining',
-  'Bespoke Menu / Other'
-];
+const eventTypes = ['Wedding', 'Private', 'Brand', 'Other'];
 
 module.exports = {
   services,
   gallery,
-  signatureDishes,
-  stats,
+  ourWork,
+  blogPosts,
+  brandQuote,
   testimonials,
-  team,
-  timeline,
+  process,
+  founders,
   menu,
   eventTypes,
   heroImage: img('mv-hero', 2400, 1500),
   aboutHeroImage: img('mv-about-hero', 2400, 1400),
-  founderImage: img('mv-founder', 1300, 1600),
   contactOfficeImage: img('mv-office', 1400, 1700)
 };

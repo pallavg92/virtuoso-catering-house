@@ -1,10 +1,41 @@
 /**
- * Contact page: submits the inquiry form via fetch to /api/inquiry,
- * rendering inline field errors or a success message without a reload.
+ * Global "Inquire" side drawer: opens from any [data-inquire-trigger]
+ * element (desktop nav CTA, mobile menu, contact page CTA), and submits
+ * the inquiry form via fetch to /api/inquiry — same backend as before.
  */
 (function () {
+  const drawer = document.getElementById('inquire-drawer');
+  const overlay = document.getElementById('inquire-drawer-overlay');
+  const closeBtn = document.getElementById('inquire-drawer-close');
+  const triggers = document.querySelectorAll('[data-inquire-trigger]');
   const form = document.getElementById('inquiry-form');
-  if (!form) return;
+  if (!drawer || !form) return;
+
+  let lastFocused = null;
+
+  function openDrawer(e) {
+    if (e) e.preventDefault();
+    lastFocused = document.activeElement;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    const firstField = form.querySelector('input, select, textarea');
+    if (firstField) firstField.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  triggers.forEach((trigger) => trigger.addEventListener('click', openDrawer));
+  overlay && overlay.addEventListener('click', closeDrawer);
+  closeBtn && closeBtn.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
 
   const statusEl = document.getElementById('inquiry-status');
   const submitBtn = document.getElementById('inquiry-submit');
