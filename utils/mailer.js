@@ -23,7 +23,7 @@ function buildTransporter() {
 
 async function sendInquiry(fields) {
   const transporter = buildTransporter();
-  const to = process.env.INQUIRY_TO_EMAIL || 'events@virtuosocatering.com';
+  const to = process.env.INQUIRY_TO_EMAIL || 'virtuosocatering@gmail.com';
   const from = process.env.INQUIRY_FROM_EMAIL || 'no-reply@virtuosocatering.com';
 
   const subject = `New Inquiry — ${fields.eventType || 'General'} — ${fields.name}`;
