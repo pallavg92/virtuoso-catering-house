@@ -113,6 +113,31 @@
     </div>
   </section>
 
+  <!-- PRESS & CLIENTS -->
+  <section class="press-strip section section--ivory">
+    <div class="container">
+      <div class="press-strip__row reveal-up">
+        <span class="press-strip__label">Trusted By</span>
+        <div class="press-strip__items">
+          <% pressAndClients.clients.forEach(function(name) { %>
+          <span class="press-strip__item"><%= name %></span>
+          <% }); %>
+        </div>
+      </div>
+      <div class="press-strip__row reveal-up">
+        <span class="press-strip__label">As Featured In</span>
+        <div class="press-strip__items">
+          <% pressAndClients.press.forEach(function(name) { %>
+          <span class="press-strip__item"><%= name %></span>
+          <% }); %>
+        </div>
+      </div>
+      <div class="press-strip__cta reveal-up">
+        <a href="/press" class="link-underline">Read Our Press Coverage</a>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="testimonials section section--ivory">
     <div class="container">

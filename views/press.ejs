@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= heroImage %>" alt="Virtuoso Catering House press coverage" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">Press</span>
+      <h1 class="page-intro__title reveal-up">In the<br>News</h1>
+    </div>
+  </section>
+
+  <!-- PRESS LIST -->
+  <section class="press-page section section--ivory">
+    <div class="container">
+      <p class="press-page__intro reveal-up">Coverage and mentions of Virtuoso Catering House across the press.</p>
+
+      <div class="press-list">
+        <% pressMentions.forEach(function(item) { %>
+        <a href="<%= item.url %>" class="press-card reveal-up" target="_blank" rel="noopener noreferrer" data-cursor="hover">
+          <div class="press-card__header">
+            <span class="press-card__outlet"><%= item.outlet %></span>
+            <span class="press-card__date"><%= new Date(item.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+          </div>
+          <h2 class="press-card__headline"><%= item.headline %></h2>
+          <p class="press-card__desc"><%= item.description %></p>
+          <span class="link-underline">Read the Article</span>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Ready to Start<br>the Conversation?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

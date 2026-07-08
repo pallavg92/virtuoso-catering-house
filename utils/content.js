@@ -79,8 +79,353 @@ const blogPosts = [
     excerpt: 'A dish built for a photograph and a dish built to be eaten are not always the same thing. Here is how we design for both.',
     date: '2026-02-19',
     image: img('mv-blog-3', 1200, 800)
+  },
+  {
+    slug: 'what-we-did-for-the-launch-of-the-lamborghini-temerario',
+    url: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
+    title: 'How We Designed an F&B Experience That Felt Like the Car',
+    excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario — a grazing table built for circulation, not congregation.',
+    date: '2026-05-22',
+    image: '/images/lamborghini-temerario-hero.jpg',
+    gallery: [
+      '/images/lamborghini-temerario-grazing-table.jpg',
+      '/images/lamborghini-temerario-canapes.jpg',
+      '/images/lamborghini-temerario-sushi.jpg'
+    ],
+    lead: [
+      'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario at Lamborghini Delhi, Sarita Vihar, on April 30, 2025. The event hosted 100 UHNI guests including automotive media and senior Lamborghini clientele. The brief was precise: the food and beverage experience should feel like the car. That brief took three weeks to translate into a concept.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'Lamborghini’s design language for the Temerario is built around movement, precision, and the absence of excess. Our brief was not to feed guests. It was to support a narrative. Every F&B decision we made was tested against one question: does this interrupt the car, or does it belong to it? The answer shaped everything from the table format to the service timing to the colour of the mocktail.'
+        ]
+      },
+      {
+        heading: 'The Concept',
+        paragraphs: [
+          'We anchored the experience around a single grazing table designed for circulation rather than congregation. The logic was spatial: a seated format would have broken the flow of 100 guests moving around the car across the Lamborghini Delhi showroom floor. A grazing table with clear sightlines to the Temerario let hospitality disappear into the background while remaining present.',
+          'The table featured imported cheeses, exotic cut fruits, mousse eggs, and refined Mediterranean nibblers. Nothing required instruction. Nothing required a plate. Guests could engage with the food and return to the car without interruption.',
+          'For beverages, we introduced a purple-themed sparkling mocktail aligned with the Temerario’s colour language. This was a deliberate visual decision. When a guest holds the drink, the colour reads as part of the room. That continuity is what makes hospitality feel designed rather than catered.'
+        ]
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'As UHNI guests and media arrived at Lamborghini Delhi on Mathura Road, they were welcomed immediately at the grazing table. We rotated sushi and delicate nibblers sparingly through the evening, timed to guest movement rather than a fixed kitchen schedule. The goal was that the food appeared when guests were ready for it.',
+          'Managing hospitality flow for 100 guests in a showroom environment requires a specific back-of-house rotation that most boutique caterers skip. The service team was briefed to move with the room, not against it. No hovering. No interruption. Presence without intrusion.',
+          'The evening concluded with guests leaving with quiet comfort rather than a sense of excess. That outcome requires restraint at every decision point: portion sizing, service timing, and how staff move through a luxury space.'
+        ]
+      },
+      {
+        heading: 'Why Brand Activation Catering Is Different',
+        paragraphs: [
+          'Luxury brand activation catering requires a fundamentally different approach from wedding catering. At a wedding, the food is part of the celebration. At a brand launch, the food must be invisible enough to support the product narrative while being distinctive enough to reflect the brand’s values. Most caterers default to wedding-format thinking for brand events. That is the gap Virtuoso Catering House was built to fill.',
+          'We work with luxury automotive, fashion, and retail brands across Delhi NCR to design F&B experiences where hospitality serves the brand story, not the other way around. Previous automotive work includes catering for La Esperienza Ferrari Delhi by Ferrari APAC and BMW dealer events across Delhi NCR.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What type of catering did Virtuoso Catering House provide for the Lamborghini Temerario launch?', a: 'Virtuoso Catering House designed and executed the complete F&B experience for the Lamborghini Temerario Delhi launch at Lamborghini Delhi, Sarita Vihar on April 30, 2025. This included a bespoke grazing concept, a branded purple mocktail aligned with the car’s colour language, and timed canapé rotation for 100 UHNI guests and automotive media.' },
+      { q: 'How does Virtuoso approach catering for luxury automotive brand events?', a: 'Every automotive brief starts with the brand’s design language, not a standard menu. We develop F&B concepts where the food, beverage format, and service choreography reflect the aesthetic of the car or brand being launched. For the Temerario, that meant movement, precision, and restraint across every element.' },
+      { q: 'What is the difference between brand activation catering and wedding catering?', a: 'At a wedding, the F&B is central to the celebration. At a brand activation, the F&B must support the product narrative without competing with it. The two require different spatial logic, service timing, and presentation philosophy. Virtuoso was built specifically to serve both formats at the luxury tier.' },
+      { q: 'Does Virtuoso Catering House work with other luxury automotive brands?', a: 'Yes. In addition to Lamborghini, Virtuoso has catered for Ferrari APAC and BMW dealer events across Delhi NCR. We work with luxury automotive clients where the F&B brief requires concept-level thinking, not standard catering packages.' },
+      { q: 'How far in advance should a luxury brand book Virtuoso for a vehicle launch event?', a: 'For brand launches and automotive activations, we recommend a minimum of six to eight weeks. This allows time to develop a concept genuinely aligned with the brand’s identity rather than adapting an existing format. The Lamborghini Temerario brief required three weeks of concept development before a single menu item was confirmed.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
+  },
+  {
+    slug: 'tesla-centre-gurugram-launch-catering',
+    url: '/blog/tesla-centre-gurugram-launch-catering',
+    title: 'Serving 150 Senior Journalists and HNI Guests at India’s First All-in-One Tesla Facility',
+    excerpt: 'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram — clean, aesthetic food built for a room where every guest is working.',
+    date: '2026-05-23',
+    image: img('mv-blog-tesla', 1200, 800),
+    lead: [
+      'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram at Orchid Business Park, Badshahpur Sohna Road, Gurugram in November 2025. The event hosted 150 guests including senior automotive journalists, PR professionals, and HNI clients. The brief was precise: clean, aesthetic food that works in a busy, high-energy environment where guests are moving, networking, and experiencing the space simultaneously.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'Tesla’s design language is built around minimalism, precision, and the absence of clutter. The guest profile made the brief more specific. Senior journalists and PR professionals at a high-profile launch are working while they eat. They are talking, photographing, networking, and forming opinions simultaneously.',
+          'The food needed to be easy to consume standing up, visually clean enough to not distract from the space, and distinctive enough to reflect the premium nature of the occasion. We do not use a standard menu for brand events. Every menu starts with the brief, not the other way around.'
+        ]
+      },
+      {
+        heading: 'The Concept',
+        paragraphs: [
+          'The Tesla space itself shaped the service format. It is a large open plan facility designed for movement and exploration. A conventional catering setup with fixed stations would have created congregation points that interrupted the guest flow around the cars. We decided against any fixed station format entirely and instead moved food through the room on a timed rotation. That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.',
+          'We developed a menu built around quick bites that photograph well and eat cleanly in a standing format. The selection included Thai curry, chipotle bowls, a curated assortment of canapés, and a mocktail program designed to complement the food without overwhelming it.',
+          'Every item on the menu went through a formal trial process before the event. The criteria for approval: it had to look aesthetic on a plate and taste good eaten quickly in a busy room. Several items that tasted excellent were adjusted for presentation before approval. That trial process is not optional for us. It is how we ensure the menu we design in a kitchen translates correctly to a live event environment.'
+        ]
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'Tesla Centre Gurugram is a large format space combining retail, service, and charging infrastructure. Managing F&B for 150 guests across that kind of environment requires a specific approach to placement and replenishment. No food stations were positioned, as the aim was to support guest flow rather than interrupt it, ensuring hospitality was present throughout the space without creating bottlenecks.',
+          'Service timing was calibrated to the event rhythm. As journalists moved through the facility and experienced the cars, food was prepared and rotated to ensure freshness throughout. Nothing sat. Nothing ran out at the wrong moment. The result was a hospitality experience that felt effortless because the planning behind it was not.'
+        ]
+      },
+      {
+        heading: 'Why This Format Works for High-Profile Brand Launches',
+        paragraphs: [
+          'High-profile launches with press and PR guests require a fundamentally different F&B approach from weddings or private dinners. The guests are there to work. They are forming impressions, taking photographs, and filing stories. The catering must support that environment without competing with it. Food that is difficult to eat standing up creates awkward moments at exactly the wrong time. Food that looks generic undermines the premium positioning of the brand being launched.',
+          'The brief at Tesla was to make the catering invisible in the best sense: present, excellent, and completely aligned with the space it was serving. Virtuoso Catering House has executed luxury brand activation catering for Ferrari APAC, Lamborghini, BMW, and Tesla India across Delhi NCR. Each brief is different. The standard is not.',
+          'The Tesla Centre Gurugram opening was covered by Times of India, Economic Times, and India Today among others.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What type of catering did Virtuoso provide for the Tesla Centre Gurugram launch?', a: 'Virtuoso Catering House designed and executed the complete F&B experience for the Tesla Centre Gurugram opening at Orchid Business Park, Badshahpur Sohna Road in November 2025. The event served 150 guests including senior automotive journalists, PR professionals, and HNI clients with Thai curry, chipotle bowls, curated canapés, and a mocktail program.' },
+      { q: 'Does Virtuoso conduct menu trials before events?', a: 'Yes. Every menu goes through a formal trial process before the event. Each dish is tasted and assessed against two criteria: aesthetic presentation and ease of consumption in a live event environment. Dishes that do not meet both criteria are adjusted or replaced before final approval.' },
+      { q: 'What is the guest capacity Virtuoso can serve at luxury brand activations?', a: 'We have served events ranging from intimate 50 guest brand previews to 150 plus guest flagship launches. For the Tesla Centre Gurugram opening we served 150 senior journalists and HNI guests across a large format multi-zone facility.' },
+      { q: 'Does Virtuoso Catering House work with other luxury automotive brands in Delhi NCR?', a: 'Yes. In addition to Tesla India, Virtuoso has catered for Ferrari APAC, Lamborghini, and BMW dealer events across Delhi NCR. We are one of the few catering companies in Delhi NCR with a dedicated track record in luxury automotive brand event hospitality.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
+
+// Real clients and press mentions, recovered from the retired WordPress
+// site and confirmed press coverage, for a social-proof strip on the site.
+const pressAndClients = {
+  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works', 'Forest Essentials'],
+  press: ['ANI News', 'News18', 'Times of India', 'Economic Times', 'India Today']
+};
+
+// Confirmed press mentions with a verifiable source article. Outlets in
+// pressAndClients.press without an entry here (e.g. Times of India,
+// Economic Times, India Today) were referenced in passing in other
+// coverage but don't yet have a confirmed article link.
+const pressMentions = [
+  {
+    outlet: 'News18',
+    headline: 'Virtuoso Catering House Curates Ferrari-Level Hospitality Experiences Across Delhi NCR',
+    description: 'A feature on Virtuoso’s concept-led approach to luxury automotive catering, centred on the F&B experience designed for La Esperienza Ferrari Delhi — a 300-guest Ferrari APAC event at the Buddh International Circuit built around an exclusively Italian sourcing brief.',
+    date: '2026-05-29',
+    url: 'https://m.dailyhunt.in/news/india/english/r+news+india-epaper-dhfacc36dfce9c4bb68db0e89d033c921b/virtuoso+catering+house+curates+ferrarilevel+hospitality+experiences+across+delhi+ncr-newsid-dhfacc36dfce9c4bb68db0e89d033c921b_473d30305b3611f1bac78f0ddb48c3b3'
+  },
+  {
+    outlet: 'ANI News',
+    headline: '5 Luxury Catering Companies Leading Delhi NCR - 2026',
+    description: 'Virtuoso Catering House was featured among five luxury caterers shaping Delhi NCR’s premium events scene, alongside The Kitchen Art Company, Orange Blossom, The Salt House Catering Services, and Rajbhog Caterers.',
+    date: '2026-03-10',
+    url: 'https://www.aninews.in/news/business/5-luxury-catering-companies-leading-delhi-ncr-202620260310161710/'
+  }
+];
+
+// Local-SEO landing pages migrated from the previous WordPress site.
+// Titles and meta descriptions are preserved verbatim from the archived
+// pages to protect their existing search rankings; body copy is kept
+// verbatim per instruction rather than rewritten in the new site's voice.
+const landingPages = {
+  'best-catering-services-in-noida': {
+    metaTitle: 'Best Catering Services in Noida You Must Try in 2026',
+    metaDescription: 'Make your celebrations memorable with Virtuoso Catering, the best catering services in Noida offering gourmet dishes and exceptional event experiences.',
+    eyebrow: 'Noida',
+    h1: 'Enjoy Delicious Food with Virtuoso Best Catering Services in Noida',
+    image: img('mv-landing-noida', 2400, 1200),
+    lead: {
+      heading: 'Catering Services in Noida for Weddings and Events',
+      paragraphs: [
+        'Seeking top-notch catering services in Noida? If so, then Virtuoso, best caterers in Noida is here to cater to your needs.',
+        'Our team combines professionalism with flavor and affordability, ensuring luxury catering in Noida.',
+        'We deliver tailored to your unique needs unforgettable experiences through great food and service.'
+      ]
+    },
+    featureList: {
+      heading: 'Top Features That Make Us Best Catering Services In Noida',
+      intro: 'The following tells why clients trust us the best catering services in Noida.',
+      items: [
+        'Tasting Sessions Available: for select packages. This allows before you book to try.',
+        'Eco-friendly Practices: Ensures sustainable catering. That comes with biodegradable cutlery and minimal food wastage.',
+        'Live Counters: Like Pasta Stations, Tandoor Setups, and Chaat Carts.',
+        'Themed Presentations: To match your theme. From royal Indian spreads to modern buffet setups.',
+        'Post-event Cleanups: Handle every aspect after party clean-up. No worries about anything.'
+      ]
+    },
+    specializations: {
+      heading: 'Events Virtuoso Caterers Covers',
+      intro: 'We offer for every occasion a catering solution.',
+      items: [
+        { title: 'Wedding Catering', points: ['Offer full-service wedding catering in Noida. This includes live food counters, chaat stations, and dessert bars.', 'Offer customizable menus to match your theme and tradition.'] },
+        { title: 'Corporate Catering', points: ['Ensure professional service. That encompass from business meetings and conferences to office parties and annual functions.', 'Offer different menu options. This includes breakfast, lunch, high tea, and dinner.'] },
+        { title: 'Birthday & Private Parties', points: ['Handle every aspect of your event. From birthday bash to anniversary celebration.', 'Offer luxury catering in Noida for private parties. This includes flavorful dishes and engaging food presentations.'] },
+        { title: 'Housewarming & Religious Functions', points: ['Offer for housewarming events, best catering services in Noida. This includes showers, pujas, and other religious gatherings.', 'Offer thoughtfully curated menus-traditional and sattvic for spiritual occasions.'] },
+        { title: 'Outdoor Catering', points: ['Offer efficient outdoor catering in Noida. Be it for a picnic or family get-together or community feast.', 'Manage all logistics from food counters to table setup and disposables.'] }
+      ]
+    },
+    whyUs: {
+      heading: 'Why Us For Your Catering Services In Noida?',
+      intro: 'We at Virtuoso Catering know every event is different with own flavor. Accordingly we offer customized menu options. We come with flexible catering packages for different event’s size, style, and budget.',
+      items: [
+        { title: 'Diverse Menu Selection', points: ['Specialize in multi-cuisine catering, Indian and international dishes.', 'Craft catering to every palate, menus. From North Indian and South Indian classics to Continental delights, Chinese favorites, and more.'] },
+        { title: 'Luxury Pricing', points: ['Offer cost-effective packages. This ensures within your budget high-quality food.', 'Collaborate with you to design the best catering experience. That matches your expectations with no compromise on quality or service.'] },
+        { title: 'Experienced Team', points: ['Comprise of skilled chefs, and event coordinators. We guarantee a flawless dining experience.', 'Ensure with meticulous attention to detail, seamless execution of your event.'] },
+        { title: 'Hygiene & Safety Standards', points: ['Maintain in food preparation, packaging, and service, strict hygiene protocols.', 'Maintain FSSAI certified kitchens. This ensures only fresh, quality ingredients are used.'] },
+        { title: 'On-time Delivery & Setup', points: ['Ensure on-time food delivery and buffet setup.', 'Ensure no worries. Either about delays or last-minute issues.'] }
+      ]
+    },
+    extraLists: [
+      {
+        heading: 'Luxury Catering In Noida',
+        intro: 'We at Virtuoso Catering believe in accessibility of great food for all. Our pricing plans are conceived to cater to different event needs. We also suit to all budgets. Be it 20 guests or 2000 guests. We offer scalable packages that include',
+        items: ['Menu design and customization.', 'Full meal setup. Buffet or Plated.', 'Serving staff and chefs.', 'Equipment and disposables.', 'Décor (optional).'],
+        outro: 'Connect for a free consultation with our team. Gets for luxury catering in Noida a customized quote that match your event needs.'
+      },
+      {
+        heading: 'Service Areas We Cover In Noida',
+        intro: 'We provide across all major sectors and neighboring regions, catering services in Noida. We include:',
+        items: ['Sector 18, 62, 63, 104, 137.', 'Noida Extension (Greater Noida West).', 'Ghaziabad.', 'Greater Noida.', 'Indirapuram.', 'Delhi NCR (on request).'],
+        outro: 'Our team ensures no matter where you’re located prompt and professional services at your venue.'
+      }
+    ],
+    closing: {
+      heading: 'Book The Best Catering Services In Noida',
+      paragraphs: [
+        'Great food makes celebrations memorable. Our expert team whether it’s a grand wedding or a corporate event, ensure your event delivers a memorable experience with lasting memories.',
+        'We translate your vision into a memorable reality. Let us together make your next event truly deliciously memorable. That leaves a lasting impression.'
+      ]
+    },
+    faq: [
+      { q: 'What is for catering the minimum number of guests?', a: 'We cater to events beginning from 20 guests. Additionally we also provide larger packages for 100 plus guests.' },
+      { q: 'Do you provide live counters and servers?', a: 'Yes, we do. We offer for service during the event, live food stations and professional staff.' },
+      { q: 'Are vegetarian or non-vegetarian catering offered?', a: 'We offer both options. Menus can be based on your dietary preferences, fully customized.' },
+      { q: 'When to book ideally?', a: 'Book at least 2-4 weeks in advance. This ensures availability. We especially help for wedding season or festivals.' },
+      { q: 'Do you provide before booking tastings?', a: 'Yes, we do. We offer them for select events and menu types. Contact our customer support team to schedule one.' }
+    ]
+  },
+  'catering-services-in-greater-noida': {
+    metaTitle: 'Caterers with Premium Catering Services in Greater Noida',
+    metaDescription: 'Virtuoso Catering provides premium catering services in Greater Noida. Book our expert caterers for weddings, parties, and events. Get an instant quote now!',
+    eyebrow: 'Greater Noida',
+    h1: 'Trusted Caterers in Greater Noida for Every Occasion',
+    image: img('mv-landing-greater-noida', 2400, 1200),
+    lead: {
+      heading: 'Best Caterers in Greater Noida',
+      paragraphs: [
+        'Looking for the best caterers in Greater Noida? Your search ends with us. We guarantee the taste that brings people together.',
+        'Our catering services in Greater Noida are tailored to deliver a memorable culinary experience. Be it for a wedding or a birthday party or a private gathering.',
+        'The catering team at Virtuoso Catering ensures for your special occasion, great taste and quality.'
+      ]
+    },
+    specializations: {
+      heading: 'Catering Specializations',
+      items: [
+        { title: 'Wedding Catering In Greater Noida', points: ['Wedding is an important milestone. Ensure the food served to guests is memorable. We as trusted wedding caterers provide full-service solutions that encompasses:', 'Pre-wedding tastings.', 'Diverse menus. From North Indian and South Indian to Mughlai, Chinese, Continental, and Fusion.', 'Multi-cuisine buffet. Or plated services.', 'Desserts and mocktail stations.', 'Trained staff and uniformed servers.'] },
+        { title: 'Corporate Catering Services', points: ['Be it a business event or an office party or a product launch, we cater to them all. Known for professionalism and quality, our corporate catering services in Greater Noida covers following services:', 'Custom Corporate Menus.', 'Packed Meal Options.', 'Buffet Setups.', 'On-site service staff.', 'Flexible packages for regular office lunch / dinner.'] },
+        { title: 'Birthday & Party Catering', points: ['Planning your or dear one’s birthday party? Or planning a family celebration? Whatever be it, our catering services in Greater Noida offer diverse menus. We are just perfect kids, teens, and adults alike. We encompass:', 'Custom Birthday Menus.', 'Themed Cakes and Desserts.', 'LIVE Chaat, Tandoor, and Pasta Counters.', 'Return Gift Packages (on request).'] },
+        { title: 'Outdoor & Private Event Catering', points: ['Covers private dinners and religious ceremonies. Also, anniversaries’, and festive events.', 'Mobile Kitchen Setups.', 'Tent & Décor Arrangements (Optional).', 'Eco-friendly disposable serving ware.', 'On-site supervision.'] }
+      ]
+    },
+    extraLists: [
+      {
+        heading: 'Multi-cuisine Catering In Greater Noida',
+        intro: 'We offer a diverse confluence of cuisines. We cater to varied palates and preferences. Each menu is crafted with attention to detail.',
+        items: ['North Indian.', 'South Indian.', 'Bengali & Eastern India Delicacies.', 'Gujarati & Marathi dishes.', 'Chinese.', 'Italian.', 'Continental.', 'Mediterranean & Lebanese.', 'Thai, Japanese, & Korean (on request).', 'Indo-Chinese.', 'Tandoori & Grilled LIVE Stations.', 'Pasta & Salad Bars.', 'Chaat Counters.', 'Mocktails & Beverage Stations.'],
+        outro: 'Every item at Virtuoso is made on-site freshly. We delivered hot food to your venue in temperature-controlled vehicles.'
+      },
+      {
+        heading: 'Food Safety First – Hygienic Catering',
+        intro: 'Food hygiene is in today’s health-conscious world no more optional. It is more important than ever. We as leading caterers in Greater Noida, strictly conform to:',
+        items: ['Sanitized Kitchen Practices.', 'FSSAI Compliance.', 'Use of fresh produce and filtered water.', 'Food-grade packaging materials.', 'Audit of all our kitchens.', 'Regular Staff Health Checks.']
+      },
+      {
+        heading: 'Areas We Serve In Greater Noida',
+        intro: 'We offer catering services in Greater Noida and surrounding areas including:',
+        items: ['Alpha, Beta, & Gamma Sectors.', 'Sector 150 & 151.', 'Knowledge Park I, II, III.', 'Pari Chowk.', 'Omega, Delta, Zeta Sectors.', 'Noida Extension / Greater Noida West.', 'Ecotech & Industrial Zones.', 'YEIDA & Jaypee Greens.'],
+        outro: 'We bring whether your event is in a farmhouse or office space or banquet hall or society clubhouse, within your reach our services.'
+      }
+    ],
+    whyUs: {
+      heading: 'Why Us For Catering Services In Greater Noida?',
+      intro: 'Here is why we stand apart from the rest.',
+      items: [
+        { title: 'Customized menu options.', points: [] },
+        { title: 'Competitive pricing sans hidden charges.', points: [] },
+        { title: 'Quality assurance in every dish served.', points: [] },
+        { title: 'Personalized attention.', points: [] },
+        { title: 'On-time delivery and setup.', points: [] },
+        { title: '24/7 support.', points: [] }
+      ]
+    },
+    closing: {
+      heading: 'Book The Best Caterers In Greater Noida Today',
+      paragraphs: [
+        'Want a tension-free event? If so, it should start with finding the right food partner for the event. That’s where we come in. Let us help make your event memorable with lasting deliciously memories. We’re best placed with our spotless track record and scores of happy customers, to serve up tasty experience that’s satisfying.'
+      ]
+    },
+    faq: [
+      { q: 'Are tasting sessions provided before booking?', a: 'Yes, we do offer them. This is upon request for bulk events or weddings.' },
+      { q: 'Should your services be booked in advances?', a: 'Yes, book at least 2-4 weeks in advance. This ensures availability.' },
+      { q: 'Do you offer and handle vegetarian-only or Jain menus?', a: 'Yes, we do. We also specialize in Vegetarian, Jain, and Vegan Menus with dedicated kitchen areas.' },
+      { q: 'Are wait staff and cutlery offered?', a: 'Yes. All our packages include servers, cutlery, and buffet setup. This is unless specified otherwise.' },
+      { q: 'Is your food FSSAI certified?', a: 'Yes. We operate strictly under FSSAI guidelines. We also maintain food safety standards.' }
+    ]
+  },
+  'corporate-catering-services-in-noida': {
+    metaTitle: 'Corporate Caterers Noida | Corporate Catering Services in Noida',
+    metaDescription: 'Make your events memorable with Virtuoso Catering. Book now for corporate catering services in Noida with professional corporate caterers you can trust.',
+    eyebrow: 'Corporate',
+    h1: 'Corporate Catering Services In Noida',
+    image: img('mv-landing-corporate', 2400, 1200),
+    lead: {
+      paragraphs: [
+        'Planning a large-scale corporate event?',
+        'If so, we can cater to your corporate catering services in Noida.',
+        'With us, you get refined taste that meets slick professionalism. Every dish is crafted to impress. We ensure your corporate event is well-served.'
+      ]
+    },
+    specializations: {
+      heading: 'Types Of Corporate Catering Services',
+      items: [
+        { title: 'Daily Office Meals', points: ['Offer deliciously nutritious meals. We are freshly prepared every day. Then, later delivered to your office hot and tasty.', 'Offer varied catering packages. This includes breakfast, lunch, and evening snacks.'] },
+        { title: 'Corporate Events & Conferences', points: ['Offer complete range of solutions. From elaborate buffet spreads to elegant cocktail snacks.', 'Handle your entire food and beverage needs with precision. Be it for hosting a seminar or workshop.'] },
+        { title: 'Boardroom & Executive Meetings', points: ['Offer gourmet-level catering. We emphasize presentation and quality.', 'Ensure everything from the cuisine to cutlery is catered to.'] },
+        { title: 'Festive Celebrations & Employee Engagements', points: ['Offer themed menus. We come with customized catering solutions.', 'Ensure the menu adds a creative touch to your festive and corporate celebrations.'] },
+        { title: 'Corporate Outdoor Catering', points: ['Cater to off-site venues across Noida and NCR.', 'Deliver quality catering solutions. Be it for a corporate picnic or outdoor launch.'] }
+      ]
+    },
+    whyUs: {
+      heading: 'Why Us As Your Corporate Catering Services In Noida?',
+      intro: 'There’s rising demand in Noida for professional corporate caterers. That’s where we come in to deliver great food that matches the essence of your corporate culture. Here’s what sets us apart:',
+      items: [
+        { title: 'Professionalism', points: ['Operate with precision and courtesy. From first enquiry to the final clean-up.', 'Is trained to handle corporate environments with decorum and discretion.'] },
+        { title: 'Customization', points: ['Offer fully customizable menus and theme-based setups.', 'Offer custom menus tailored to specific requirements.'] },
+        { title: 'Scalable Solutions', points: ['Ensure seamless scaling. Be it for 10 executives or 1000 employees.', 'Provide logistical capabilities. This ensures your food come fresh on-time and ready-to-serve.'] }
+      ]
+    },
+    extraLists: [
+      {
+        intro: 'In addition, we also provide',
+        items: ['Meals prepared in modern kitchens. They conform to quality and hygiene protocols.', 'LIVE Counters, Dessert Stations, and Custom Setups. They are provided on request.', 'Flexible Packages for all business sizes. On-time delivery and professional setup. Professional and well-trained staff.', '24/7 Customer Support. Also, event coordination on request.'],
+        outro: 'Our top-notch catering services and adaptable flexibility makes us among the leading corporate caterers in Noida.'
+      },
+      {
+        heading: 'Whom We Cater To?',
+        intro: 'We cater to a wide array of companies across different sectors. They include:',
+        items: ['IT Parks in Sector 62, 63, and 125.', 'BPO & Tech Firms in Noida Expressway.', 'Startups & Incubators in Sectors 18 & 1.', 'Government & PSUs across Noida.'],
+        outro: 'We are whether it’s a high-rise corporate tower or a co-working space, just a call away.'
+      }
+    ],
+    steps: {
+      heading: 'Book Our Corporate Catering Services In Noida',
+      items: [
+        { step: '01', title: 'Contact Us', copy: 'Call or Email us with requirements. This includes number of people, event type, preferred cuisine, date, and budget.' },
+        { step: '02', title: 'Get A Customized Quote', copy: 'Detailed proposal is sent based on your brief. This includes menu options, service plan, and cost breakdown.' },
+        { step: '03', title: 'Taste Before You Book', copy: 'Food Tastings offered for large events or long-term contracts. You can sample the quality. Then, make an informed decision.' },
+        { step: '04', title: 'Back And Relax', copy: 'Team at Virtuoso Catering once confirmed by you, takes over. They handle, from kitchen to service staff, every aspect.' }
+      ]
+    }
+  }
+};
 
 const brandQuote = 'We believe true luxury lives in restraint — in every detail considered, every moment beautiful, and every experience built to be remembered.';
 
@@ -197,6 +542,9 @@ module.exports = {
   gallery,
   ourWork,
   blogPosts,
+  landingPages,
+  pressAndClients,
+  pressMentions,
   brandQuote,
   testimonials,
   process,

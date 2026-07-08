@@ -189,6 +189,58 @@
 }
 
 /* ==========================================================================
+   Press & clients strip
+   ========================================================================== */
+.press-strip__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) 0;
+  border-bottom: var(--border-hairline);
+}
+
+.press-strip__row:last-child {
+  border-bottom: none;
+}
+
+.press-strip__label {
+  flex-shrink: 0;
+  width: 8rem;
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-wine);
+}
+
+.press-strip__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-lg);
+}
+
+.press-strip__item {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-muted-light);
+}
+
+.press-strip__cta {
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .press-strip__row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .press-strip__label {
+    width: auto;
+  }
+}
+
+/* ==========================================================================
    Our Work (home page section)
    ========================================================================== */
 .our-work-home__cta {
