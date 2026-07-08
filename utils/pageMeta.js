@@ -139,6 +139,15 @@ const pages = {
     description: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
     post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering')
+  },
+  press: {
+    path: '/press',
+    view: 'press',
+    activePage: 'press',
+    bodyClass: 'page-press',
+    title: 'Press — Virtuoso Catering House',
+    description: 'Press coverage and mentions of Virtuoso Catering House, a luxury experiential catering company based in Noida, Delhi NCR.',
+    ogImage: content.heroImage
   }
 };
 

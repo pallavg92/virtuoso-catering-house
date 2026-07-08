@@ -194,11 +194,32 @@ const blogPosts = [
 ];
 
 // Real clients and press mentions, recovered from the retired WordPress
-// site, for a social-proof strip on the site.
+// site and confirmed press coverage, for a social-proof strip on the site.
 const pressAndClients = {
-  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works'],
+  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works', 'Forest Essentials'],
   press: ['ANI News', 'News18', 'Times of India', 'Economic Times', 'India Today']
 };
+
+// Confirmed press mentions with a verifiable source article. Outlets in
+// pressAndClients.press without an entry here (e.g. Times of India,
+// Economic Times, India Today) were referenced in passing in other
+// coverage but don't yet have a confirmed article link.
+const pressMentions = [
+  {
+    outlet: 'News18',
+    headline: 'Virtuoso Catering House Curates Ferrari-Level Hospitality Experiences Across Delhi NCR',
+    description: 'A feature on Virtuoso’s concept-led approach to luxury automotive catering, centred on the F&B experience designed for La Esperienza Ferrari Delhi — a 300-guest Ferrari APAC event at the Buddh International Circuit built around an exclusively Italian sourcing brief.',
+    date: '2026-05-29',
+    url: 'https://m.dailyhunt.in/news/india/english/r+news+india-epaper-dhfacc36dfce9c4bb68db0e89d033c921b/virtuoso+catering+house+curates+ferrarilevel+hospitality+experiences+across+delhi+ncr-newsid-dhfacc36dfce9c4bb68db0e89d033c921b_473d30305b3611f1bac78f0ddb48c3b3'
+  },
+  {
+    outlet: 'ANI News',
+    headline: '5 Luxury Catering Companies Leading Delhi NCR - 2026',
+    description: 'Virtuoso Catering House was featured among five luxury caterers shaping Delhi NCR’s premium events scene, alongside The Kitchen Art Company, Orange Blossom, The Salt House Catering Services, and Rajbhog Caterers.',
+    date: '2026-03-10',
+    url: 'https://www.aninews.in/news/business/5-luxury-catering-companies-leading-delhi-ncr-202620260310161710/'
+  }
+];
 
 // Local-SEO landing pages migrated from the previous WordPress site.
 // Titles and meta descriptions are preserved verbatim from the archived
@@ -523,6 +544,7 @@ module.exports = {
   blogPosts,
   landingPages,
   pressAndClients,
+  pressMentions,
   brandQuote,
   testimonials,
   process,

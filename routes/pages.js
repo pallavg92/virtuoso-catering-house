@@ -26,6 +26,7 @@ router.get('/contact', (req, res) => render(res, pages.contact));
 router.get('/best-catering-services-in-noida', (req, res) => render(res, pages.landingBestNoida));
 router.get('/catering-services-in-greater-noida', (req, res) => render(res, pages.landingGreaterNoida));
 router.get('/corporate-catering-services-in-noida', (req, res) => render(res, pages.landingCorporate));
+router.get('/press', (req, res) => render(res, pages.press));
 
 // 301 redirects from the retired WordPress site's URLs to their closest
 // equivalent on the new site, so existing backlinks/bookmarks/search
