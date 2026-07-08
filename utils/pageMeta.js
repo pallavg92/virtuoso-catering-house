@@ -66,7 +66,7 @@ const pages = {
     bodyClass: 'page-blog',
     title: 'Journal — Virtuoso Catering House',
     description: 'Notes on luxury catering, event design, and hospitality from the Virtuoso Catering House team.',
-    ogImage: content.blogPosts[0].image
+    ogImage: content.blogPosts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0].image
   },
   services: {
     path: '/services',
@@ -119,16 +119,26 @@ const pages = {
     description: content.landingPages['corporate-catering-services-in-noida'].metaDescription,
     ogImage: content.landingPages['corporate-catering-services-in-noida'].image
   },
-  // Real case-study post recovered from the WordPress archive.
+  // Real case-study posts recovered from the WordPress database backup.
   blogLamborghiniTemerario: {
     path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'What We Did for the Launch of the Lamborghini Temerario - Virtuoso Catering House',
-    description: 'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model at their flagship showroom on Mathura Road, Delhi.',
+    title: 'Lamborghini Temerario Launch Catering, Delhi, 2025 - Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').image,
     post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario')
+  },
+  blogTeslaGurugram: {
+    path: '/blog/tesla-centre-gurugram-launch-catering',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Tesla Centre Gurugram Launch Catering, November 2025 - Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
+    post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering')
   }
 };
 

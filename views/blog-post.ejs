@@ -27,12 +27,70 @@
   <!-- ARTICLE -->
   <section class="blog-post section section--ivory">
     <div class="container blog-post__container">
+      <% if (post.lead) { %>
+      <% post.lead.forEach(function(paragraph) { %>
+      <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <% } %>
+
+      <% if (post.body) { %>
       <% post.body.forEach(function(paragraph) { %>
       <p class="blog-post__copy reveal-up"><%= paragraph %></p>
       <% }); %>
+      <% } %>
+
+      <% if (post.gallery && post.gallery.length) { %>
+      <div class="blog-post__gallery">
+        <% post.gallery.forEach(function(src) { %>
+        <div class="blog-post__gallery-item reveal-up">
+          <img src="<%= src %>" alt="<%= post.title %>" loading="lazy">
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <% (post.sections || []).forEach(function(section) { %>
+      <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+      <% section.paragraphs.forEach(function(paragraph) { %>
+      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <% }); %>
+
       <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
     </div>
   </section>
+
+  <% if (post.faq && post.faq.length) { %>
+  <!-- FAQ -->
+  <section class="landing-faq section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Questions</span>
+        <h2 class="section-title reveal-up">Frequently Asked Questions</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="landing-faq__list">
+        <% post.faq.forEach(function(item) { %>
+        <details class="landing-faq__item reveal-up">
+          <summary class="landing-faq__question"><%= item.q %></summary>
+          <p class="landing-faq__answer"><%= item.a %></p>
+        </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (post.author) { %>
+  <!-- AUTHOR -->
+  <section class="blog-post-author section section--ivory">
+    <div class="container blog-post__container">
+      <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
+      <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
+      <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>
+    </div>
+  </section>
+  <% } %>
 
   <!-- CTA BANNER -->
   <section class="cta-banner section section--wine">

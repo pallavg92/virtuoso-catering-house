@@ -83,23 +83,122 @@ const blogPosts = [
   {
     slug: 'what-we-did-for-the-launch-of-the-lamborghini-temerario',
     url: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
-    title: 'What We Did for the Launch of the Lamborghini Temerario',
-    excerpt: 'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model at their flagship showroom on Mathura Road, Delhi.',
-    date: '2026-01-23',
-    image: img('mv-blog-lambo', 1200, 800),
-    body: [
-      'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model, the Lamborghini Temerario, at their flagship showroom on Mathura Road, Delhi.',
-      'Being part of a moment for an iconic global brand introducing a new chapter in India came with a clear responsibility. At Virtuoso Catering House, the intent was never to create food that stood apart from the event, but to design a menu that aligned seamlessly with the prestige, design language, and pace of the brand itself.',
-      'Led by our Co-Founder, Aarti Sharma, the menu was developed with deliberate brand cues on the plate — ensuring that hospitality became an integrated layer of the experience rather than an added feature.',
-      'Movement and flow are intrinsic to the Lamborghini ethos. Reflecting this, the experience was anchored around a grazing table designed for circulation rather than congregation. Immaculately presented imported cheeses, exotic cut fruits, mousse eggs, and refined Mediterranean nibblers allowed guests to engage naturally without interruption or instruction.',
-      'For beverages, a purple-themed sparkling mocktail was introduced, subtly aligned with the colour language of the newly launched car. This visual continuity allowed the drink to echo the environment it belonged to.',
-      'As UHNI guests and senior members of the media entered the showroom, they were immediately welcomed with beverages at the grazing table. Conversations began organically, setting an effortless tone for the evening.',
-      'Sushi and other delicate nibblers were rotated sparingly as guests explored the details and presence of the car, ensuring that hospitality supported the narrative without competing for attention.',
-      'Everything flowed with intention. Nothing interrupted the experience.',
-      'The evening concluded with guests leaving not with a sense of excess, but with quiet comfort and gentle hospitality — exactly as it was meant to be.'
-    ]
+    title: 'How We Designed an F&B Experience That Felt Like the Car',
+    excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario — a grazing table built for circulation, not congregation.',
+    date: '2026-05-22',
+    image: '/images/lamborghini-temerario-hero.jpg',
+    gallery: [
+      '/images/lamborghini-temerario-grazing-table.jpg',
+      '/images/lamborghini-temerario-canapes.jpg',
+      '/images/lamborghini-temerario-sushi.jpg'
+    ],
+    lead: [
+      'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario at Lamborghini Delhi, Sarita Vihar, on April 30, 2025. The event hosted 100 UHNI guests including automotive media and senior Lamborghini clientele. The brief was precise: the food and beverage experience should feel like the car. That brief took three weeks to translate into a concept.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'Lamborghini’s design language for the Temerario is built around movement, precision, and the absence of excess. Our brief was not to feed guests. It was to support a narrative. Every F&B decision we made was tested against one question: does this interrupt the car, or does it belong to it? The answer shaped everything from the table format to the service timing to the colour of the mocktail.'
+        ]
+      },
+      {
+        heading: 'The Concept',
+        paragraphs: [
+          'We anchored the experience around a single grazing table designed for circulation rather than congregation. The logic was spatial: a seated format would have broken the flow of 100 guests moving around the car across the Lamborghini Delhi showroom floor. A grazing table with clear sightlines to the Temerario let hospitality disappear into the background while remaining present.',
+          'The table featured imported cheeses, exotic cut fruits, mousse eggs, and refined Mediterranean nibblers. Nothing required instruction. Nothing required a plate. Guests could engage with the food and return to the car without interruption.',
+          'For beverages, we introduced a purple-themed sparkling mocktail aligned with the Temerario’s colour language. This was a deliberate visual decision. When a guest holds the drink, the colour reads as part of the room. That continuity is what makes hospitality feel designed rather than catered.'
+        ]
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'As UHNI guests and media arrived at Lamborghini Delhi on Mathura Road, they were welcomed immediately at the grazing table. We rotated sushi and delicate nibblers sparingly through the evening, timed to guest movement rather than a fixed kitchen schedule. The goal was that the food appeared when guests were ready for it.',
+          'Managing hospitality flow for 100 guests in a showroom environment requires a specific back-of-house rotation that most boutique caterers skip. The service team was briefed to move with the room, not against it. No hovering. No interruption. Presence without intrusion.',
+          'The evening concluded with guests leaving with quiet comfort rather than a sense of excess. That outcome requires restraint at every decision point: portion sizing, service timing, and how staff move through a luxury space.'
+        ]
+      },
+      {
+        heading: 'Why Brand Activation Catering Is Different',
+        paragraphs: [
+          'Luxury brand activation catering requires a fundamentally different approach from wedding catering. At a wedding, the food is part of the celebration. At a brand launch, the food must be invisible enough to support the product narrative while being distinctive enough to reflect the brand’s values. Most caterers default to wedding-format thinking for brand events. That is the gap Virtuoso Catering House was built to fill.',
+          'We work with luxury automotive, fashion, and retail brands across Delhi NCR to design F&B experiences where hospitality serves the brand story, not the other way around. Previous automotive work includes catering for La Esperienza Ferrari Delhi by Ferrari APAC and BMW dealer events across Delhi NCR.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What type of catering did Virtuoso Catering House provide for the Lamborghini Temerario launch?', a: 'Virtuoso Catering House designed and executed the complete F&B experience for the Lamborghini Temerario Delhi launch at Lamborghini Delhi, Sarita Vihar on April 30, 2025. This included a bespoke grazing concept, a branded purple mocktail aligned with the car’s colour language, and timed canapé rotation for 100 UHNI guests and automotive media.' },
+      { q: 'How does Virtuoso approach catering for luxury automotive brand events?', a: 'Every automotive brief starts with the brand’s design language, not a standard menu. We develop F&B concepts where the food, beverage format, and service choreography reflect the aesthetic of the car or brand being launched. For the Temerario, that meant movement, precision, and restraint across every element.' },
+      { q: 'What is the difference between brand activation catering and wedding catering?', a: 'At a wedding, the F&B is central to the celebration. At a brand activation, the F&B must support the product narrative without competing with it. The two require different spatial logic, service timing, and presentation philosophy. Virtuoso was built specifically to serve both formats at the luxury tier.' },
+      { q: 'Does Virtuoso Catering House work with other luxury automotive brands?', a: 'Yes. In addition to Lamborghini, Virtuoso has catered for Ferrari APAC and BMW dealer events across Delhi NCR. We work with luxury automotive clients where the F&B brief requires concept-level thinking, not standard catering packages.' },
+      { q: 'How far in advance should a luxury brand book Virtuoso for a vehicle launch event?', a: 'For brand launches and automotive activations, we recommend a minimum of six to eight weeks. This allows time to develop a concept genuinely aligned with the brand’s identity rather than adapting an existing format. The Lamborghini Temerario brief required three weeks of concept development before a single menu item was confirmed.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
+  },
+  {
+    slug: 'tesla-centre-gurugram-launch-catering',
+    url: '/blog/tesla-centre-gurugram-launch-catering',
+    title: 'Serving 150 Senior Journalists and HNI Guests at India’s First All-in-One Tesla Facility',
+    excerpt: 'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram — clean, aesthetic food built for a room where every guest is working.',
+    date: '2026-05-23',
+    image: img('mv-blog-tesla', 1200, 800),
+    lead: [
+      'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram at Orchid Business Park, Badshahpur Sohna Road, Gurugram in November 2025. The event hosted 150 guests including senior automotive journalists, PR professionals, and HNI clients. The brief was precise: clean, aesthetic food that works in a busy, high-energy environment where guests are moving, networking, and experiencing the space simultaneously.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'Tesla’s design language is built around minimalism, precision, and the absence of clutter. The guest profile made the brief more specific. Senior journalists and PR professionals at a high-profile launch are working while they eat. They are talking, photographing, networking, and forming opinions simultaneously.',
+          'The food needed to be easy to consume standing up, visually clean enough to not distract from the space, and distinctive enough to reflect the premium nature of the occasion. We do not use a standard menu for brand events. Every menu starts with the brief, not the other way around.'
+        ]
+      },
+      {
+        heading: 'The Concept',
+        paragraphs: [
+          'The Tesla space itself shaped the service format. It is a large open plan facility designed for movement and exploration. A conventional catering setup with fixed stations would have created congregation points that interrupted the guest flow around the cars. We decided against any fixed station format entirely and instead moved food through the room on a timed rotation. That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.',
+          'We developed a menu built around quick bites that photograph well and eat cleanly in a standing format. The selection included Thai curry, chipotle bowls, a curated assortment of canapés, and a mocktail program designed to complement the food without overwhelming it.',
+          'Every item on the menu went through a formal trial process before the event. The criteria for approval: it had to look aesthetic on a plate and taste good eaten quickly in a busy room. Several items that tasted excellent were adjusted for presentation before approval. That trial process is not optional for us. It is how we ensure the menu we design in a kitchen translates correctly to a live event environment.'
+        ]
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'Tesla Centre Gurugram is a large format space combining retail, service, and charging infrastructure. Managing F&B for 150 guests across that kind of environment requires a specific approach to placement and replenishment. No food stations were positioned, as the aim was to support guest flow rather than interrupt it, ensuring hospitality was present throughout the space without creating bottlenecks.',
+          'Service timing was calibrated to the event rhythm. As journalists moved through the facility and experienced the cars, food was prepared and rotated to ensure freshness throughout. Nothing sat. Nothing ran out at the wrong moment. The result was a hospitality experience that felt effortless because the planning behind it was not.'
+        ]
+      },
+      {
+        heading: 'Why This Format Works for High-Profile Brand Launches',
+        paragraphs: [
+          'High-profile launches with press and PR guests require a fundamentally different F&B approach from weddings or private dinners. The guests are there to work. They are forming impressions, taking photographs, and filing stories. The catering must support that environment without competing with it. Food that is difficult to eat standing up creates awkward moments at exactly the wrong time. Food that looks generic undermines the premium positioning of the brand being launched.',
+          'The brief at Tesla was to make the catering invisible in the best sense: present, excellent, and completely aligned with the space it was serving. Virtuoso Catering House has executed luxury brand activation catering for Ferrari APAC, Lamborghini, BMW, and Tesla India across Delhi NCR. Each brief is different. The standard is not.',
+          'The Tesla Centre Gurugram opening was covered by Times of India, Economic Times, and India Today among others.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What type of catering did Virtuoso provide for the Tesla Centre Gurugram launch?', a: 'Virtuoso Catering House designed and executed the complete F&B experience for the Tesla Centre Gurugram opening at Orchid Business Park, Badshahpur Sohna Road in November 2025. The event served 150 guests including senior automotive journalists, PR professionals, and HNI clients with Thai curry, chipotle bowls, curated canapés, and a mocktail program.' },
+      { q: 'Does Virtuoso conduct menu trials before events?', a: 'Yes. Every menu goes through a formal trial process before the event. Each dish is tasted and assessed against two criteria: aesthetic presentation and ease of consumption in a live event environment. Dishes that do not meet both criteria are adjusted or replaced before final approval.' },
+      { q: 'What is the guest capacity Virtuoso can serve at luxury brand activations?', a: 'We have served events ranging from intimate 50 guest brand previews to 150 plus guest flagship launches. For the Tesla Centre Gurugram opening we served 150 senior journalists and HNI guests across a large format multi-zone facility.' },
+      { q: 'Does Virtuoso Catering House work with other luxury automotive brands in Delhi NCR?', a: 'Yes. In addition to Tesla India, Virtuoso has catered for Ferrari APAC, Lamborghini, and BMW dealer events across Delhi NCR. We are one of the few catering companies in Delhi NCR with a dedicated track record in luxury automotive brand event hospitality.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
+
+// Real clients and press mentions, recovered from the retired WordPress
+// site, for a social-proof strip on the site.
+const pressAndClients = {
+  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works'],
+  press: ['ANI News', 'News18', 'Times of India', 'Economic Times', 'India Today']
+};
 
 // Local-SEO landing pages migrated from the previous WordPress site.
 // Titles and meta descriptions are preserved verbatim from the archived
@@ -423,6 +522,7 @@ module.exports = {
   ourWork,
   blogPosts,
   landingPages,
+  pressAndClients,
   brandQuote,
   testimonials,
   process,

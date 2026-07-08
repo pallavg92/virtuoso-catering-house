@@ -938,3 +938,45 @@
   margin-bottom: var(--space-md);
   line-height: 1.75;
 }
+
+.blog-post__copy--lead {
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+}
+
+.blog-post__heading {
+  font-size: var(--fs-h3);
+  margin: var(--space-lg) 0 0.6em;
+}
+
+.blog-post__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+.blog-post__gallery-item {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.blog-post__gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-post-author {
+  border-top: var(--border-hairline);
+}
+
+.blog-post-author__name {
+  font-size: 1.3rem;
+  margin: 0.3em 0 0.5em;
+}
+
+.blog-post-author__bio {
+  color: var(--text-muted-light);
+  max-width: 42rem;
+}
