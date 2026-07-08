@@ -71,6 +71,25 @@
   gap: var(--space-sm);
 }
 
+.hero__credit {
+  position: absolute;
+  bottom: 6.5rem;
+  right: var(--container-pad-x);
+  z-index: 2;
+  max-width: 220px;
+  color: rgba(253, 248, 240, 0.55);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-align: right;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .hero__credit {
+    bottom: var(--space-md);
+  }
+}
+
 .hero__scroll-cue {
   position: absolute;
   bottom: var(--space-md);

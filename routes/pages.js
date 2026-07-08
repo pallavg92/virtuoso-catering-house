@@ -16,7 +16,8 @@ function render(res, page) {
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
 router.get('/our-work', (req, res) => render(res, pages.ourWork));
-router.get('/gallery', (req, res) => render(res, pages.gallery));
+router.get('/social', (req, res) => render(res, pages.social));
+router.get('/gallery', (req, res) => res.redirect(301, '/social'));
 router.get('/blog', (req, res) => render(res, pages.blog));
 router.get('/services', (req, res) => render(res, pages.services));
 router.get('/menu', (req, res) => res.redirect(301, '/services'));

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= heroImage %>" alt="Virtuoso Catering House on Instagram" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up">Social Media</span>
+      <h1 class="page-intro__title reveal-up">Follow<br>Along</h1>
+    </div>
+  </section>
+
+  <!-- SOCIAL ACCOUNTS -->
+  <section class="social-page section section--ivory">
+    <div class="container">
+      <p class="social-page__intro reveal-up">Events, menus, and behind-the-scenes moments from the Virtuoso team — across both of our Instagram accounts.</p>
+
+      <div class="social-accounts">
+        <% instagramAccounts.forEach(function(account) { %>
+        <div class="social-account reveal-up">
+          <div class="social-account__header">
+            <div>
+              <h3 class="social-account__name"><%= account.label %></h3>
+              <span class="social-account__handle"><%= account.handle %></span>
+            </div>
+            <a href="<%= account.url %>" class="btn btn--outline-dark" target="_blank" rel="noopener noreferrer" data-cursor="hover"><span>Follow</span></a>
+          </div>
+          <p class="social-account__desc"><%= account.description %></p>
+          <div class="social-embed" data-instagram-embed="<%= account.handle %>">
+            <span class="social-embed__mark">IG</span>
+            <p class="social-embed__text">Live feed embed coming soon</p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">See More of<br>Our World.</h2>
+      <a href="<%= instagramAccounts[0].url %>" class="btn btn--gold-outline" data-magnetic target="_blank" rel="noopener noreferrer" data-cursor="hover"><span>Visit Our Instagram</span></a>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

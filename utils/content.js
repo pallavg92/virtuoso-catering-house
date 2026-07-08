@@ -33,19 +33,20 @@ const services = [
   }
 ];
 
-const gallery = [
-  { id: 1, category: 'weddings', caption: 'A coastal reception, plated in the last light.', image: img('mv-gal-1', 1200, 1500) },
-  { id: 2, category: 'corporate', caption: 'Product launch dinner for a design house, 180 covers.', image: img('mv-gal-2', 1400, 1000) },
-  { id: 3, category: 'private-dining', caption: 'Seven courses, one table, a birthday for two.', image: img('mv-gal-3', 1200, 1600) },
-  { id: 4, category: 'weddings', caption: 'Late summer, olive groves, hand-torn burrata.', image: img('mv-gal-4', 1400, 1000) },
-  { id: 5, category: 'canapes', caption: 'Passed hors d’oeuvres for a rooftop opening.', image: img('mv-gal-5', 1200, 1500) },
-  { id: 6, category: 'corporate', caption: 'A quiet boardroom breakfast before the keynote.', image: img('mv-gal-6', 1400, 1000) },
-  { id: 7, category: 'weddings', caption: 'The cake cut just after midnight.', image: img('mv-gal-7', 1200, 1600) },
-  { id: 8, category: 'private-dining', caption: 'Wine pairing dinner, six guests, cellar table.', image: img('mv-gal-8', 1400, 1000) },
-  { id: 9, category: 'canapes', caption: 'Bite-sized courses for a gallery opening.', image: img('mv-gal-9', 1200, 1500) },
-  { id: 10, category: 'desserts', caption: 'A dessert course built like a still life.', image: img('mv-gal-10', 1200, 1600) },
-  { id: 11, category: 'corporate', caption: 'An anniversary dinner for four hundred employees.', image: img('mv-gal-11', 1400, 1000) },
-  { id: 12, category: 'desserts', caption: 'Petit fours, plated at the pass.', image: img('mv-gal-12', 1200, 1500) }
+// Replace [second-account-handle] once the second Instagram account is confirmed.
+const instagramAccounts = [
+  {
+    handle: '@virtuosocateringhouse',
+    url: 'https://www.instagram.com/virtuosocateringhouse/',
+    label: 'Virtuoso Catering House',
+    description: 'Events, menus, and behind-the-scenes from the Virtuoso team.'
+  },
+  {
+    handle: '[@second-account-handle]',
+    url: '#',
+    label: '[Second Account Name]',
+    description: '[Add a description once this account is confirmed.]'
+  }
 ];
 
 // Placeholder case studies — replace with real work write-ups (blog-format) as they're published.
@@ -194,7 +195,7 @@ const eventTypes = ['Wedding', 'Private', 'Brand', 'Other'];
 
 module.exports = {
   services,
-  gallery,
+  instagramAccounts,
   ourWork,
   blogPosts,
   brandQuote,
@@ -203,7 +204,7 @@ module.exports = {
   founders,
   menu,
   eventTypes,
-  heroImage: img('mv-hero', 2400, 1500),
+  heroImage: '/images/hero-candlelit-florals.jpg',
   aboutHeroImage: img('mv-about-hero', 2400, 1400),
   contactOfficeImage: img('mv-office', 1400, 1700)
 };

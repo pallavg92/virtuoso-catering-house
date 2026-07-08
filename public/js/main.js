@@ -16,8 +16,8 @@
     });
   }
 
-  // Re-bind magnetic cursor hover targets whenever menu tabs / gallery
-  // filters swap content in and out of the DOM's active state.
+  // Re-bind magnetic cursor hover targets whenever menu tabs swap
+  // content in and out of the DOM's active state.
   document.addEventListener('click', () => {
     if (typeof window.__cursorRebind === 'function') {
       window.__cursorRebind();
