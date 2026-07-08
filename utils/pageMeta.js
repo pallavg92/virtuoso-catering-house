@@ -8,7 +8,7 @@ const siteUrl = 'https://www.virtuosocatering.com';
 const business = {
   name: 'Virtuoso Catering House',
   telephone: '+91-8700915463',
-  email: 'events@virtuosocatering.com',
+  email: 'virtuosocatering@gmail.com',
   streetAddress: 'A-15, A-Block, Sector 61',
   addressLocality: 'Noida',
   addressRegion: 'Uttar Pradesh',
