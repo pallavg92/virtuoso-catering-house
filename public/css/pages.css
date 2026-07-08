@@ -409,6 +409,15 @@
   color: var(--text-muted-light);
 }
 
+.social-embed--live {
+  aspect-ratio: auto;
+  display: block;
+  height: auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 /* ==========================================================================
    Contact page
    ========================================================================== */

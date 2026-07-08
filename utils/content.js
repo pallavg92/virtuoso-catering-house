@@ -39,13 +39,15 @@ const instagramAccounts = [
     handle: '@virtuosocateringhouse',
     url: 'https://www.instagram.com/virtuosocateringhouse/',
     label: 'Virtuoso Catering House',
-    description: 'Events, menus, and behind-the-scenes from the Virtuoso team.'
+    description: 'Events, menus, and behind-the-scenes from the Virtuoso team.',
+    embedUrl: 'https://snapwidget.com/embed/1126703'
   },
   {
     handle: '[@second-account-handle]',
     url: '#',
     label: '[Second Account Name]',
-    description: '[Add a description once this account is confirmed.]'
+    description: '[Add a description once this account is confirmed.]',
+    embedUrl: null
   }
 ];
 

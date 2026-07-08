@@ -40,12 +40,22 @@
             <a href="<%= account.url %>" class="btn btn--outline-dark" target="_blank" rel="noopener noreferrer" data-cursor="hover"><span>Follow</span></a>
           </div>
           <p class="social-account__desc"><%= account.description %></p>
+          <% if (account.embedUrl) { %>
+          <div class="social-embed social-embed--live">
+            <iframe src="<%= account.embedUrl %>" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;" title="Instagram posts from <%= account.label %>"></iframe>
+          </div>
+          <% } else { %>
           <div class="social-embed" data-instagram-embed="<%= account.handle %>">
             <span class="social-embed__mark">IG</span>
             <p class="social-embed__text">Live feed embed coming soon</p>
           </div>
+          <% } %>
         </div>
         <% }); %>
+
+        <% if (instagramAccounts.some(function(a) { return a.embedUrl; })) { %>
+        <script src="https://snapwidget.com/js/snapwidget.js"></script>
+        <% } %>
       </div>
     </div>
   </section>
