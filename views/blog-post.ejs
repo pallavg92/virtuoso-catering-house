@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= post.image %>" alt="<%= post.title %>" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+      <h1 class="page-intro__title reveal-up"><%= post.title %></h1>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="blog-post section section--ivory">
+    <div class="container blog-post__container">
+      <% post.body.forEach(function(paragraph) { %>
+      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Planning a Launch<br>of Your Own?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

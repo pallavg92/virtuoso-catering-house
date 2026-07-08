@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+<% const data = landingPages[landingSlug]; %>
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= data.image %>" alt="<%= data.h1 %>" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up"><%= data.eyebrow %></span>
+      <h1 class="page-intro__title reveal-up"><%= data.h1 %></h1>
+    </div>
+  </section>
+
+  <!-- LEAD -->
+  <section class="landing-lead section section--ivory">
+    <div class="container">
+      <% if (data.lead.heading) { %>
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.lead.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <% } %>
+      <% data.lead.paragraphs.forEach(function(p) { %>
+      <p class="landing-lead__copy reveal-up"><%= p %></p>
+      <% }); %>
+    </div>
+  </section>
+
+  <% if (data.featureList) { %>
+  <!-- FEATURE LIST -->
+  <section class="landing-block section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.featureList.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <p class="landing-block__intro reveal-up"><%= data.featureList.intro %></p>
+      <ul class="landing-list">
+        <% data.featureList.items.forEach(function(item) { %>
+        <li class="landing-list__item reveal-up"><%= item %></li>
+        <% }); %>
+      </ul>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (data.specializations) { %>
+  <!-- SPECIALIZATIONS -->
+  <section class="landing-block section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.specializations.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <% if (data.specializations.intro) { %>
+      <p class="landing-block__intro landing-block__intro--light reveal-up"><%= data.specializations.intro %></p>
+      <% } %>
+      <div class="landing-cards">
+        <% data.specializations.items.forEach(function(item) { %>
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title"><%= item.title %></h3>
+          <% if (item.points.length) { %>
+          <ul class="landing-card__list">
+            <% item.points.forEach(function(point) { %>
+            <li><%= point %></li>
+            <% }); %>
+          </ul>
+          <% } %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (data.whyUs) { %>
+  <!-- WHY US -->
+  <section class="landing-block section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.whyUs.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <% if (data.whyUs.intro) { %>
+      <p class="landing-block__intro reveal-up"><%= data.whyUs.intro %></p>
+      <% } %>
+      <div class="landing-cards landing-cards--compact">
+        <% data.whyUs.items.forEach(function(item) { %>
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title landing-card__title--gold"><%= item.title %></h3>
+          <% if (item.points.length) { %>
+          <ul class="landing-card__list">
+            <% item.points.forEach(function(point) { %>
+            <li><%= point %></li>
+            <% }); %>
+          </ul>
+          <% } %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% (data.extraLists || []).forEach(function(block) { %>
+  <!-- EXTRA LIST -->
+  <section class="landing-block section section--ivory">
+    <div class="container">
+      <% if (block.heading) { %>
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= block.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <% } %>
+      <% if (block.intro) { %>
+      <p class="landing-block__intro reveal-up"><%= block.intro %></p>
+      <% } %>
+      <ul class="landing-list">
+        <% block.items.forEach(function(item) { %>
+        <li class="landing-list__item reveal-up"><%= item %></li>
+        <% }); %>
+      </ul>
+      <% if (block.outro) { %>
+      <p class="landing-block__outro reveal-up"><%= block.outro %></p>
+      <% } %>
+    </div>
+  </section>
+  <% }); %>
+
+  <% if (data.steps) { %>
+  <!-- STEPS -->
+  <section class="timeline section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.steps.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="timeline__list" id="timeline-list">
+        <div class="timeline__progress" id="timeline-progress"></div>
+        <% data.steps.items.forEach(function(item) { %>
+        <div class="timeline__item reveal-up">
+          <span class="timeline__year"><%= item.step %></span>
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <h3><%= item.title %></h3>
+            <p><%= item.copy %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (data.closing) { %>
+  <!-- CLOSING -->
+  <section class="landing-lead section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= data.closing.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <% data.closing.paragraphs.forEach(function(p) { %>
+      <p class="landing-lead__copy reveal-up"><%= p %></p>
+      <% }); %>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section section--ivory">
+    <div class="container">
+      <span class="eyebrow reveal-up">Client Words</span>
+      <div class="testimonial-slider" id="testimonial-slider">
+        <div class="testimonial-slider__track">
+          <% testimonials.forEach(function(t, i) { %>
+          <div class="testimonial-slide <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>">
+            <p class="testimonial-slide__quote">&ldquo;<%= t.quote %>&rdquo;</p>
+            <div class="testimonial-slide__meta">
+              <span class="testimonial-slide__name"><%= t.name %></span>
+              <span class="testimonial-slide__role"><%= t.role %></span>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <div class="testimonial-slider__controls">
+          <button class="testimonial-slider__arrow" id="testimonial-prev" aria-label="Previous testimonial" data-cursor="hover">←</button>
+          <div class="testimonial-slider__dots" id="testimonial-dots">
+            <% testimonials.forEach(function(t, i) { %>
+            <button class="testimonial-slider__dot <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>" aria-label="Go to testimonial <%= i + 1 %>"></button>
+            <% }); %>
+          </div>
+          <button class="testimonial-slider__arrow" id="testimonial-next" aria-label="Next testimonial" data-cursor="hover">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% if (data.faq && data.faq.length) { %>
+  <!-- FAQ -->
+  <section class="landing-faq section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Questions</span>
+        <h2 class="section-title reveal-up">Frequently Asked Questions</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="landing-faq__list">
+        <% data.faq.forEach(function(item) { %>
+        <details class="landing-faq__item reveal-up">
+          <summary class="landing-faq__question"><%= item.q %></summary>
+          <p class="landing-faq__answer"><%= item.a %></p>
+        </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Ready to Book<br>Your Event?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Enquire Now</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

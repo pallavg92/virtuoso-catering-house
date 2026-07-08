@@ -79,8 +79,233 @@ const blogPosts = [
     excerpt: 'A dish built for a photograph and a dish built to be eaten are not always the same thing. Here is how we design for both.',
     date: '2026-02-19',
     image: img('mv-blog-3', 1200, 800)
+  },
+  {
+    slug: 'what-we-did-for-the-launch-of-the-lamborghini-temerario',
+    url: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
+    title: 'What We Did for the Launch of the Lamborghini Temerario',
+    excerpt: 'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model at their flagship showroom on Mathura Road, Delhi.',
+    date: '2026-01-23',
+    image: img('mv-blog-lambo', 1200, 800),
+    body: [
+      'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model, the Lamborghini Temerario, at their flagship showroom on Mathura Road, Delhi.',
+      'Being part of a moment for an iconic global brand introducing a new chapter in India came with a clear responsibility. At Virtuoso Catering House, the intent was never to create food that stood apart from the event, but to design a menu that aligned seamlessly with the prestige, design language, and pace of the brand itself.',
+      'Led by our Co-Founder, Aarti Sharma, the menu was developed with deliberate brand cues on the plate — ensuring that hospitality became an integrated layer of the experience rather than an added feature.',
+      'Movement and flow are intrinsic to the Lamborghini ethos. Reflecting this, the experience was anchored around a grazing table designed for circulation rather than congregation. Immaculately presented imported cheeses, exotic cut fruits, mousse eggs, and refined Mediterranean nibblers allowed guests to engage naturally without interruption or instruction.',
+      'For beverages, a purple-themed sparkling mocktail was introduced, subtly aligned with the colour language of the newly launched car. This visual continuity allowed the drink to echo the environment it belonged to.',
+      'As UHNI guests and senior members of the media entered the showroom, they were immediately welcomed with beverages at the grazing table. Conversations began organically, setting an effortless tone for the evening.',
+      'Sushi and other delicate nibblers were rotated sparingly as guests explored the details and presence of the car, ensuring that hospitality supported the narrative without competing for attention.',
+      'Everything flowed with intention. Nothing interrupted the experience.',
+      'The evening concluded with guests leaving not with a sense of excess, but with quiet comfort and gentle hospitality — exactly as it was meant to be.'
+    ]
   }
 ];
+
+// Local-SEO landing pages migrated from the previous WordPress site.
+// Titles and meta descriptions are preserved verbatim from the archived
+// pages to protect their existing search rankings; body copy is kept
+// verbatim per instruction rather than rewritten in the new site's voice.
+const landingPages = {
+  'best-catering-services-in-noida': {
+    metaTitle: 'Best Catering Services in Noida You Must Try in 2026',
+    metaDescription: 'Make your celebrations memorable with Virtuoso Catering, the best catering services in Noida offering gourmet dishes and exceptional event experiences.',
+    eyebrow: 'Noida',
+    h1: 'Enjoy Delicious Food with Virtuoso Best Catering Services in Noida',
+    image: img('mv-landing-noida', 2400, 1200),
+    lead: {
+      heading: 'Catering Services in Noida for Weddings and Events',
+      paragraphs: [
+        'Seeking top-notch catering services in Noida? If so, then Virtuoso, best caterers in Noida is here to cater to your needs.',
+        'Our team combines professionalism with flavor and affordability, ensuring luxury catering in Noida.',
+        'We deliver tailored to your unique needs unforgettable experiences through great food and service.'
+      ]
+    },
+    featureList: {
+      heading: 'Top Features That Make Us Best Catering Services In Noida',
+      intro: 'The following tells why clients trust us the best catering services in Noida.',
+      items: [
+        'Tasting Sessions Available: for select packages. This allows before you book to try.',
+        'Eco-friendly Practices: Ensures sustainable catering. That comes with biodegradable cutlery and minimal food wastage.',
+        'Live Counters: Like Pasta Stations, Tandoor Setups, and Chaat Carts.',
+        'Themed Presentations: To match your theme. From royal Indian spreads to modern buffet setups.',
+        'Post-event Cleanups: Handle every aspect after party clean-up. No worries about anything.'
+      ]
+    },
+    specializations: {
+      heading: 'Events Virtuoso Caterers Covers',
+      intro: 'We offer for every occasion a catering solution.',
+      items: [
+        { title: 'Wedding Catering', points: ['Offer full-service wedding catering in Noida. This includes live food counters, chaat stations, and dessert bars.', 'Offer customizable menus to match your theme and tradition.'] },
+        { title: 'Corporate Catering', points: ['Ensure professional service. That encompass from business meetings and conferences to office parties and annual functions.', 'Offer different menu options. This includes breakfast, lunch, high tea, and dinner.'] },
+        { title: 'Birthday & Private Parties', points: ['Handle every aspect of your event. From birthday bash to anniversary celebration.', 'Offer luxury catering in Noida for private parties. This includes flavorful dishes and engaging food presentations.'] },
+        { title: 'Housewarming & Religious Functions', points: ['Offer for housewarming events, best catering services in Noida. This includes showers, pujas, and other religious gatherings.', 'Offer thoughtfully curated menus-traditional and sattvic for spiritual occasions.'] },
+        { title: 'Outdoor Catering', points: ['Offer efficient outdoor catering in Noida. Be it for a picnic or family get-together or community feast.', 'Manage all logistics from food counters to table setup and disposables.'] }
+      ]
+    },
+    whyUs: {
+      heading: 'Why Us For Your Catering Services In Noida?',
+      intro: 'We at Virtuoso Catering know every event is different with own flavor. Accordingly we offer customized menu options. We come with flexible catering packages for different event’s size, style, and budget.',
+      items: [
+        { title: 'Diverse Menu Selection', points: ['Specialize in multi-cuisine catering, Indian and international dishes.', 'Craft catering to every palate, menus. From North Indian and South Indian classics to Continental delights, Chinese favorites, and more.'] },
+        { title: 'Luxury Pricing', points: ['Offer cost-effective packages. This ensures within your budget high-quality food.', 'Collaborate with you to design the best catering experience. That matches your expectations with no compromise on quality or service.'] },
+        { title: 'Experienced Team', points: ['Comprise of skilled chefs, and event coordinators. We guarantee a flawless dining experience.', 'Ensure with meticulous attention to detail, seamless execution of your event.'] },
+        { title: 'Hygiene & Safety Standards', points: ['Maintain in food preparation, packaging, and service, strict hygiene protocols.', 'Maintain FSSAI certified kitchens. This ensures only fresh, quality ingredients are used.'] },
+        { title: 'On-time Delivery & Setup', points: ['Ensure on-time food delivery and buffet setup.', 'Ensure no worries. Either about delays or last-minute issues.'] }
+      ]
+    },
+    extraLists: [
+      {
+        heading: 'Luxury Catering In Noida',
+        intro: 'We at Virtuoso Catering believe in accessibility of great food for all. Our pricing plans are conceived to cater to different event needs. We also suit to all budgets. Be it 20 guests or 2000 guests. We offer scalable packages that include',
+        items: ['Menu design and customization.', 'Full meal setup. Buffet or Plated.', 'Serving staff and chefs.', 'Equipment and disposables.', 'Décor (optional).'],
+        outro: 'Connect for a free consultation with our team. Gets for luxury catering in Noida a customized quote that match your event needs.'
+      },
+      {
+        heading: 'Service Areas We Cover In Noida',
+        intro: 'We provide across all major sectors and neighboring regions, catering services in Noida. We include:',
+        items: ['Sector 18, 62, 63, 104, 137.', 'Noida Extension (Greater Noida West).', 'Ghaziabad.', 'Greater Noida.', 'Indirapuram.', 'Delhi NCR (on request).'],
+        outro: 'Our team ensures no matter where you’re located prompt and professional services at your venue.'
+      }
+    ],
+    closing: {
+      heading: 'Book The Best Catering Services In Noida',
+      paragraphs: [
+        'Great food makes celebrations memorable. Our expert team whether it’s a grand wedding or a corporate event, ensure your event delivers a memorable experience with lasting memories.',
+        'We translate your vision into a memorable reality. Let us together make your next event truly deliciously memorable. That leaves a lasting impression.'
+      ]
+    },
+    faq: [
+      { q: 'What is for catering the minimum number of guests?', a: 'We cater to events beginning from 20 guests. Additionally we also provide larger packages for 100 plus guests.' },
+      { q: 'Do you provide live counters and servers?', a: 'Yes, we do. We offer for service during the event, live food stations and professional staff.' },
+      { q: 'Are vegetarian or non-vegetarian catering offered?', a: 'We offer both options. Menus can be based on your dietary preferences, fully customized.' },
+      { q: 'When to book ideally?', a: 'Book at least 2-4 weeks in advance. This ensures availability. We especially help for wedding season or festivals.' },
+      { q: 'Do you provide before booking tastings?', a: 'Yes, we do. We offer them for select events and menu types. Contact our customer support team to schedule one.' }
+    ]
+  },
+  'catering-services-in-greater-noida': {
+    metaTitle: 'Caterers with Premium Catering Services in Greater Noida',
+    metaDescription: 'Virtuoso Catering provides premium catering services in Greater Noida. Book our expert caterers for weddings, parties, and events. Get an instant quote now!',
+    eyebrow: 'Greater Noida',
+    h1: 'Trusted Caterers in Greater Noida for Every Occasion',
+    image: img('mv-landing-greater-noida', 2400, 1200),
+    lead: {
+      heading: 'Best Caterers in Greater Noida',
+      paragraphs: [
+        'Looking for the best caterers in Greater Noida? Your search ends with us. We guarantee the taste that brings people together.',
+        'Our catering services in Greater Noida are tailored to deliver a memorable culinary experience. Be it for a wedding or a birthday party or a private gathering.',
+        'The catering team at Virtuoso Catering ensures for your special occasion, great taste and quality.'
+      ]
+    },
+    specializations: {
+      heading: 'Catering Specializations',
+      items: [
+        { title: 'Wedding Catering In Greater Noida', points: ['Wedding is an important milestone. Ensure the food served to guests is memorable. We as trusted wedding caterers provide full-service solutions that encompasses:', 'Pre-wedding tastings.', 'Diverse menus. From North Indian and South Indian to Mughlai, Chinese, Continental, and Fusion.', 'Multi-cuisine buffet. Or plated services.', 'Desserts and mocktail stations.', 'Trained staff and uniformed servers.'] },
+        { title: 'Corporate Catering Services', points: ['Be it a business event or an office party or a product launch, we cater to them all. Known for professionalism and quality, our corporate catering services in Greater Noida covers following services:', 'Custom Corporate Menus.', 'Packed Meal Options.', 'Buffet Setups.', 'On-site service staff.', 'Flexible packages for regular office lunch / dinner.'] },
+        { title: 'Birthday & Party Catering', points: ['Planning your or dear one’s birthday party? Or planning a family celebration? Whatever be it, our catering services in Greater Noida offer diverse menus. We are just perfect kids, teens, and adults alike. We encompass:', 'Custom Birthday Menus.', 'Themed Cakes and Desserts.', 'LIVE Chaat, Tandoor, and Pasta Counters.', 'Return Gift Packages (on request).'] },
+        { title: 'Outdoor & Private Event Catering', points: ['Covers private dinners and religious ceremonies. Also, anniversaries’, and festive events.', 'Mobile Kitchen Setups.', 'Tent & Décor Arrangements (Optional).', 'Eco-friendly disposable serving ware.', 'On-site supervision.'] }
+      ]
+    },
+    extraLists: [
+      {
+        heading: 'Multi-cuisine Catering In Greater Noida',
+        intro: 'We offer a diverse confluence of cuisines. We cater to varied palates and preferences. Each menu is crafted with attention to detail.',
+        items: ['North Indian.', 'South Indian.', 'Bengali & Eastern India Delicacies.', 'Gujarati & Marathi dishes.', 'Chinese.', 'Italian.', 'Continental.', 'Mediterranean & Lebanese.', 'Thai, Japanese, & Korean (on request).', 'Indo-Chinese.', 'Tandoori & Grilled LIVE Stations.', 'Pasta & Salad Bars.', 'Chaat Counters.', 'Mocktails & Beverage Stations.'],
+        outro: 'Every item at Virtuoso is made on-site freshly. We delivered hot food to your venue in temperature-controlled vehicles.'
+      },
+      {
+        heading: 'Food Safety First – Hygienic Catering',
+        intro: 'Food hygiene is in today’s health-conscious world no more optional. It is more important than ever. We as leading caterers in Greater Noida, strictly conform to:',
+        items: ['Sanitized Kitchen Practices.', 'FSSAI Compliance.', 'Use of fresh produce and filtered water.', 'Food-grade packaging materials.', 'Audit of all our kitchens.', 'Regular Staff Health Checks.']
+      },
+      {
+        heading: 'Areas We Serve In Greater Noida',
+        intro: 'We offer catering services in Greater Noida and surrounding areas including:',
+        items: ['Alpha, Beta, & Gamma Sectors.', 'Sector 150 & 151.', 'Knowledge Park I, II, III.', 'Pari Chowk.', 'Omega, Delta, Zeta Sectors.', 'Noida Extension / Greater Noida West.', 'Ecotech & Industrial Zones.', 'YEIDA & Jaypee Greens.'],
+        outro: 'We bring whether your event is in a farmhouse or office space or banquet hall or society clubhouse, within your reach our services.'
+      }
+    ],
+    whyUs: {
+      heading: 'Why Us For Catering Services In Greater Noida?',
+      intro: 'Here is why we stand apart from the rest.',
+      items: [
+        { title: 'Customized menu options.', points: [] },
+        { title: 'Competitive pricing sans hidden charges.', points: [] },
+        { title: 'Quality assurance in every dish served.', points: [] },
+        { title: 'Personalized attention.', points: [] },
+        { title: 'On-time delivery and setup.', points: [] },
+        { title: '24/7 support.', points: [] }
+      ]
+    },
+    closing: {
+      heading: 'Book The Best Caterers In Greater Noida Today',
+      paragraphs: [
+        'Want a tension-free event? If so, it should start with finding the right food partner for the event. That’s where we come in. Let us help make your event memorable with lasting deliciously memories. We’re best placed with our spotless track record and scores of happy customers, to serve up tasty experience that’s satisfying.'
+      ]
+    },
+    faq: [
+      { q: 'Are tasting sessions provided before booking?', a: 'Yes, we do offer them. This is upon request for bulk events or weddings.' },
+      { q: 'Should your services be booked in advances?', a: 'Yes, book at least 2-4 weeks in advance. This ensures availability.' },
+      { q: 'Do you offer and handle vegetarian-only or Jain menus?', a: 'Yes, we do. We also specialize in Vegetarian, Jain, and Vegan Menus with dedicated kitchen areas.' },
+      { q: 'Are wait staff and cutlery offered?', a: 'Yes. All our packages include servers, cutlery, and buffet setup. This is unless specified otherwise.' },
+      { q: 'Is your food FSSAI certified?', a: 'Yes. We operate strictly under FSSAI guidelines. We also maintain food safety standards.' }
+    ]
+  },
+  'corporate-catering-services-in-noida': {
+    metaTitle: 'Corporate Caterers Noida | Corporate Catering Services in Noida',
+    metaDescription: 'Make your events memorable with Virtuoso Catering. Book now for corporate catering services in Noida with professional corporate caterers you can trust.',
+    eyebrow: 'Corporate',
+    h1: 'Corporate Catering Services In Noida',
+    image: img('mv-landing-corporate', 2400, 1200),
+    lead: {
+      paragraphs: [
+        'Planning a large-scale corporate event?',
+        'If so, we can cater to your corporate catering services in Noida.',
+        'With us, you get refined taste that meets slick professionalism. Every dish is crafted to impress. We ensure your corporate event is well-served.'
+      ]
+    },
+    specializations: {
+      heading: 'Types Of Corporate Catering Services',
+      items: [
+        { title: 'Daily Office Meals', points: ['Offer deliciously nutritious meals. We are freshly prepared every day. Then, later delivered to your office hot and tasty.', 'Offer varied catering packages. This includes breakfast, lunch, and evening snacks.'] },
+        { title: 'Corporate Events & Conferences', points: ['Offer complete range of solutions. From elaborate buffet spreads to elegant cocktail snacks.', 'Handle your entire food and beverage needs with precision. Be it for hosting a seminar or workshop.'] },
+        { title: 'Boardroom & Executive Meetings', points: ['Offer gourmet-level catering. We emphasize presentation and quality.', 'Ensure everything from the cuisine to cutlery is catered to.'] },
+        { title: 'Festive Celebrations & Employee Engagements', points: ['Offer themed menus. We come with customized catering solutions.', 'Ensure the menu adds a creative touch to your festive and corporate celebrations.'] },
+        { title: 'Corporate Outdoor Catering', points: ['Cater to off-site venues across Noida and NCR.', 'Deliver quality catering solutions. Be it for a corporate picnic or outdoor launch.'] }
+      ]
+    },
+    whyUs: {
+      heading: 'Why Us As Your Corporate Catering Services In Noida?',
+      intro: 'There’s rising demand in Noida for professional corporate caterers. That’s where we come in to deliver great food that matches the essence of your corporate culture. Here’s what sets us apart:',
+      items: [
+        { title: 'Professionalism', points: ['Operate with precision and courtesy. From first enquiry to the final clean-up.', 'Is trained to handle corporate environments with decorum and discretion.'] },
+        { title: 'Customization', points: ['Offer fully customizable menus and theme-based setups.', 'Offer custom menus tailored to specific requirements.'] },
+        { title: 'Scalable Solutions', points: ['Ensure seamless scaling. Be it for 10 executives or 1000 employees.', 'Provide logistical capabilities. This ensures your food come fresh on-time and ready-to-serve.'] }
+      ]
+    },
+    extraLists: [
+      {
+        intro: 'In addition, we also provide',
+        items: ['Meals prepared in modern kitchens. They conform to quality and hygiene protocols.', 'LIVE Counters, Dessert Stations, and Custom Setups. They are provided on request.', 'Flexible Packages for all business sizes. On-time delivery and professional setup. Professional and well-trained staff.', '24/7 Customer Support. Also, event coordination on request.'],
+        outro: 'Our top-notch catering services and adaptable flexibility makes us among the leading corporate caterers in Noida.'
+      },
+      {
+        heading: 'Whom We Cater To?',
+        intro: 'We cater to a wide array of companies across different sectors. They include:',
+        items: ['IT Parks in Sector 62, 63, and 125.', 'BPO & Tech Firms in Noida Expressway.', 'Startups & Incubators in Sectors 18 & 1.', 'Government & PSUs across Noida.'],
+        outro: 'We are whether it’s a high-rise corporate tower or a co-working space, just a call away.'
+      }
+    ],
+    steps: {
+      heading: 'Book Our Corporate Catering Services In Noida',
+      items: [
+        { step: '01', title: 'Contact Us', copy: 'Call or Email us with requirements. This includes number of people, event type, preferred cuisine, date, and budget.' },
+        { step: '02', title: 'Get A Customized Quote', copy: 'Detailed proposal is sent based on your brief. This includes menu options, service plan, and cost breakdown.' },
+        { step: '03', title: 'Taste Before You Book', copy: 'Food Tastings offered for large events or long-term contracts. You can sample the quality. Then, make an informed decision.' },
+        { step: '04', title: 'Back And Relax', copy: 'Team at Virtuoso Catering once confirmed by you, takes over. They handle, from kitchen to service staff, every aspect.' }
+      ]
+    }
+  }
+};
 
 const brandQuote = 'We believe true luxury lives in restraint — in every detail considered, every moment beautiful, and every experience built to be remembered.';
 
@@ -197,6 +422,7 @@ module.exports = {
   gallery,
   ourWork,
   blogPosts,
+  landingPages,
   brandQuote,
   testimonials,
   process,

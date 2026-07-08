@@ -24,7 +24,6 @@ const business = {
 
 const pages = {
   home: {
-    slug: 'index',
     path: '/',
     view: 'index',
     activePage: 'home',
@@ -34,7 +33,6 @@ const pages = {
     ogImage: content.heroImage
   },
   about: {
-    slug: 'about',
     path: '/about',
     view: 'about',
     activePage: 'about',
@@ -44,7 +42,6 @@ const pages = {
     ogImage: content.aboutHeroImage
   },
   ourWork: {
-    slug: 'our-work',
     path: '/our-work',
     view: 'our-work',
     activePage: 'our-work',
@@ -54,7 +51,6 @@ const pages = {
     ogImage: content.ourWork[0].image
   },
   gallery: {
-    slug: 'gallery',
     path: '/gallery',
     view: 'gallery',
     activePage: 'gallery',
@@ -64,7 +60,6 @@ const pages = {
     ogImage: content.gallery[0].image
   },
   blog: {
-    slug: 'blog',
     path: '/blog',
     view: 'blog',
     activePage: 'blog',
@@ -74,7 +69,6 @@ const pages = {
     ogImage: content.blogPosts[0].image
   },
   services: {
-    slug: 'services',
     path: '/services',
     view: 'services',
     activePage: 'services',
@@ -84,7 +78,6 @@ const pages = {
     ogImage: content.services[0].image
   },
   contact: {
-    slug: 'contact',
     path: '/contact',
     view: 'contact',
     activePage: 'contact',
@@ -92,6 +85,50 @@ const pages = {
     title: 'Inquire — Virtuoso Catering House',
     description: 'Start an inquiry with Virtuoso Catering House. Based in Noida, Delhi NCR, serving weddings, brand activations, and private events.',
     ogImage: content.contactOfficeImage
+  },
+  // Local-SEO landing pages migrated from the previous WordPress site.
+  // Slugs, titles, and descriptions match the archived WordPress URLs
+  // exactly so existing search rankings aren't disrupted.
+  landingBestNoida: {
+    path: '/best-catering-services-in-noida',
+    view: 'landing',
+    landingSlug: 'best-catering-services-in-noida',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['best-catering-services-in-noida'].metaTitle,
+    description: content.landingPages['best-catering-services-in-noida'].metaDescription,
+    ogImage: content.landingPages['best-catering-services-in-noida'].image
+  },
+  landingGreaterNoida: {
+    path: '/catering-services-in-greater-noida',
+    view: 'landing',
+    landingSlug: 'catering-services-in-greater-noida',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['catering-services-in-greater-noida'].metaTitle,
+    description: content.landingPages['catering-services-in-greater-noida'].metaDescription,
+    ogImage: content.landingPages['catering-services-in-greater-noida'].image
+  },
+  landingCorporate: {
+    path: '/corporate-catering-services-in-noida',
+    view: 'landing',
+    landingSlug: 'corporate-catering-services-in-noida',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['corporate-catering-services-in-noida'].metaTitle,
+    description: content.landingPages['corporate-catering-services-in-noida'].metaDescription,
+    ogImage: content.landingPages['corporate-catering-services-in-noida'].image
+  },
+  // Real case-study post recovered from the WordPress archive.
+  blogLamborghiniTemerario: {
+    path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'What We Did for the Launch of the Lamborghini Temerario - Virtuoso Catering House',
+    description: 'In the summer of 2025, we were invited by Lamborghini to curate the catering experience for the launch of their newest model at their flagship showroom on Mathura Road, Delhi.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').image,
+    post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario')
   }
 };
 
