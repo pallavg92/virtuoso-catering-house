@@ -50,14 +50,14 @@ const pages = {
     description: 'A selection of weddings, brand activations, and private events designed and executed by Virtuoso Catering House.',
     ogImage: content.ourWork[0].image
   },
-  gallery: {
-    path: '/gallery',
-    view: 'gallery',
-    activePage: 'gallery',
-    bodyClass: 'page-gallery',
-    title: 'Gallery — Virtuoso Catering House',
-    description: 'Browse past weddings, brand activations, and private dinners catered by Virtuoso Catering House.',
-    ogImage: content.gallery[0].image
+  social: {
+    path: '/social',
+    view: 'social',
+    activePage: 'social',
+    bodyClass: 'page-social',
+    title: 'Social Media — Virtuoso Catering House',
+    description: 'Follow Virtuoso Catering House on Instagram for events, menus, and behind-the-scenes.',
+    ogImage: content.heroImage
   },
   blog: {
     path: '/blog',
