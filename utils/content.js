@@ -150,7 +150,7 @@ const blogPosts = [
     title: 'Serving 150 Senior Journalists and HNI Guests at India’s First All-in-One Tesla Facility',
     excerpt: 'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram — clean, aesthetic food built for a room where every guest is working.',
     date: '2026-05-23',
-    image: img('mv-blog-tesla', 1200, 800),
+    image: '/images/virtuoso-catering-house-tesla-centre-gurugram-exterior-2025.jpg',
     lead: [
       'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram at Orchid Business Park, Badshahpur Sohna Road, Gurugram in November 2025. The event hosted 150 guests including senior automotive journalists, PR professionals, and HNI clients. The brief was precise: clean, aesthetic food that works in a busy, high-energy environment where guests are moving, networking, and experiencing the space simultaneously.'
     ],
@@ -160,7 +160,11 @@ const blogPosts = [
         paragraphs: [
           'Tesla’s design language is built around minimalism, precision, and the absence of clutter. The guest profile made the brief more specific. Senior journalists and PR professionals at a high-profile launch are working while they eat. They are talking, photographing, networking, and forming opinions simultaneously.',
           'The food needed to be easy to consume standing up, visually clean enough to not distract from the space, and distinctive enough to reflect the premium nature of the occasion. We do not use a standard menu for brand events. Every menu starts with the brief, not the other way around.'
-        ]
+        ],
+        image: {
+          src: '/images/virtuoso-catering-house-tesla-india-showroom-gurugram-2025.jpg',
+          caption: 'The showroom floor guests moved through all evening, food rotating around them rather than the other way around.'
+        }
       },
       {
         heading: 'The Concept',
@@ -169,13 +173,21 @@ const blogPosts = [
           'We developed a menu built around quick bites that photograph well and eat cleanly in a standing format. The selection included Thai curry, chipotle bowls, a curated assortment of canapés, and a mocktail program designed to complement the food without overwhelming it.',
           'Every item on the menu went through a formal trial process before the event. The criteria for approval: it had to look aesthetic on a plate and taste good eaten quickly in a busy room. Several items that tasted excellent were adjusted for presentation before approval. That trial process is not optional for us. It is how we ensure the menu we design in a kitchen translates correctly to a live event environment.'
         ],
-        pullQuote: 'That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.'
+        pullQuote: 'That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.',
+        image: {
+          src: '/images/virtuoso-catering-house-live-cooking-station-tesla-centre-gurugram-2025-1.jpg',
+          caption: 'Chefs plating live at the counter, timed to the rhythm of the room, not a fixed kitchen schedule.'
+        }
       },
       {
         heading: 'The Execution',
         paragraphs: [
           'Tesla Centre Gurugram is a large format space combining retail, service, and charging infrastructure. Managing F&B for 150 guests across that kind of environment requires a specific approach to placement and replenishment. No food stations were positioned, as the aim was to support guest flow rather than interrupt it, ensuring hospitality was present throughout the space without creating bottlenecks.',
           'Service timing was calibrated to the event rhythm. As journalists moved through the facility and experienced the cars, food was prepared and rotated to ensure freshness throughout. Nothing sat. Nothing ran out at the wrong moment. The result was a hospitality experience that felt effortless because the planning behind it was not.'
+        ],
+        images: [
+          { src: '/images/virtuoso-catering-house-behind-the-scenes-tesla-centre-gurugram-2025.jpg', caption: 'The team before doors opened, skewers staged and ready for the first rotation.' },
+          { src: '/images/virtuoso-catering-house-canape-tesla-centre-gurugram-2025.jpg', caption: 'Built to be eaten in one bite, standing, without breaking a conversation.' }
         ]
       },
       {
