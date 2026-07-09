@@ -53,4 +53,18 @@ router.get('/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => 
 router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 router.get('/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 
+// WordPress used nested page hierarchy (parent/child permalinks), not flat
+// slugs, under the "Luxury Brand Event" parent — confirmed via real,
+// currently-indexed Search Console URLs that would otherwise 404.
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr/lamborghini-temerario-launch-catering-delhi-2025', (req, res) => res.redirect(301, '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
+
+// A WordPress-uploaded menu PDF still has real Search Console impression
+// volume (1,299 in the last 90 days) — redirect it to the current download
+// instead of letting it 404 now that /wp-content/ is no longer served.
+router.get('/wp-content/uploads/2025/04/Virtuoso-Menu-Chefs-Special-Most-Loved.pdf', (req, res) => res.redirect(301, '/downloads/virtuoso-catering-house-menu.pdf'));
+
 module.exports = router;
