@@ -195,9 +195,27 @@ const blogPosts = [
 
 // Real clients and press mentions, recovered from the retired WordPress
 // site and confirmed press coverage, for a social-proof strip on the site.
+// `logo` is null until a real logo file is supplied — the templates fall
+// back to a styled wordmark so the layout looks intentional either way.
 const pressAndClients = {
-  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works', 'Forest Essentials'],
-  press: ['ANI News', 'News18', 'Times of India', 'Economic Times', 'India Today']
+  clients: [
+    { name: 'Ferrari APAC', logo: null },
+    { name: 'Lamborghini', logo: null },
+    { name: 'Tesla India', logo: null },
+    { name: 'BMW', logo: null },
+    { name: 'House of Masaba', logo: null },
+    { name: 'Kalki Fashion', logo: null },
+    { name: 'Sunaina Khera', logo: null },
+    { name: 'Bath & Body Works', logo: null },
+    { name: 'Forest Essentials', logo: null }
+  ],
+  press: [
+    { name: 'ANI News', logo: null },
+    { name: 'News18', logo: null },
+    { name: 'Times of India', logo: null },
+    { name: 'Economic Times', logo: null },
+    { name: 'India Today', logo: null }
+  ]
 };
 
 // Confirmed press mentions with a verifiable source article. Outlets in
