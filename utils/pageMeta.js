@@ -135,7 +135,7 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Lamborghini Temerario Launch Catering, Delhi, 2025 - Virtuoso Catering House',
+    title: 'Lamborghini Temerario Launch Catering, Delhi, 2025 | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').image,
     post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario')
@@ -145,7 +145,7 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Tesla Centre Gurugram Launch Catering, November 2025 - Virtuoso Catering House',
+    title: 'Tesla Centre Gurugram Launch Catering, November 2025 | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
     post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering')
