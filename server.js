@@ -17,6 +17,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Canonicalize to the www host declared in utils/pageMeta.js (siteUrl).
+// Google was indexing virtuosocatering.com and www.virtuosocatering.com
+// as two separate pages, splitting ranking signal on the homepage.
+app.use((req, res, next) => {
+  if (req.hostname === 'virtuosocatering.com') {
+    return res.redirect(301, `https://www.virtuosocatering.com${req.originalUrl}`);
+  }
+  next();
+});
+
 app.use('/', pagesRouter);
 app.use('/api', apiRouter);
 

@@ -97,6 +97,16 @@
 
       setStatus(data.message || 'Thank you — your inquiry has been received.', 'success');
       form.reset();
+
+      // Analytics is best-effort — a tracking failure must never surface
+      // as a false error after the inquiry has already been received.
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_type: payload.eventType || 'General' });
+        }
+      } catch (trackingErr) {
+        // Swallow — the inquiry itself already succeeded.
+      }
     } catch (err) {
       setStatus('Something went wrong sending your inquiry. Please try again shortly.', 'error');
     } finally {
