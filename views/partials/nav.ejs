@@ -97,3 +97,47 @@
     </form>
   </aside>
 </div>
+
+<div class="inquire-drawer" id="menu-drawer" aria-hidden="true">
+  <div class="inquire-drawer__overlay" id="menu-drawer-overlay"></div>
+  <aside class="inquire-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+    <button type="button" class="inquire-drawer__close" id="menu-drawer-close" aria-label="Close menu download form" data-cursor="hover">&times;</button>
+
+    <span class="eyebrow eyebrow--gold">Download the Menu</span>
+    <h2 id="menu-drawer-title" class="inquire-drawer__title">A Few Details<br>First</h2>
+    <p class="inquire-drawer__intro">Share your occasion and we'll send the full menu straight to your download.</p>
+
+    <form class="inquiry-form" id="menu-download-form" novalidate>
+      <div class="form-field">
+        <label for="menu-drawer-name">Full Name</label>
+        <input type="text" id="menu-drawer-name" name="name" autocomplete="name" required>
+        <span class="form-field__error" data-error-for="name"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-eventDate">Day of Event</label>
+        <input type="date" id="menu-drawer-eventDate" name="eventDate" required>
+        <span class="form-field__error" data-error-for="eventDate"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-guestCount">Estimated Pax</label>
+        <input type="number" id="menu-drawer-guestCount" name="guestCount" min="1" placeholder="e.g. 120" required>
+        <span class="form-field__error" data-error-for="guestCount"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-contact">Contact Details</label>
+        <input type="text" id="menu-drawer-contact" name="contact" placeholder="Phone or email" autocomplete="tel email" required>
+        <span class="form-field__error" data-error-for="contact"></span>
+      </div>
+
+      <button type="submit" class="btn btn--wine" id="menu-download-submit" data-cursor="hover">
+        <span class="btn__label">Download Menu</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+
+      <div class="inquiry-form__status" id="menu-download-status" role="status" aria-live="polite"></div>
+    </form>
+  </aside>
+</div>

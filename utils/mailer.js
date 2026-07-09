@@ -54,4 +54,29 @@ async function sendInquiry(fields) {
   return { delivered: true, method: 'smtp' };
 }
 
-module.exports = { sendInquiry };
+async function sendMenuDownloadRequest(fields) {
+  const transporter = buildTransporter();
+  const to = process.env.INQUIRY_TO_EMAIL || 'virtuosocatering@gmail.com';
+  const from = process.env.INQUIRY_FROM_EMAIL || 'virtuosocatering@gmail.com';
+
+  const subject = `Menu Download — ${fields.name}`;
+  const text = [
+    `Name: ${fields.name}`,
+    `Contact: ${fields.contact}`,
+    `Event Date: ${fields.eventDate}`,
+    `Estimated Pax: ${fields.guestCount}`
+  ].join('\n');
+
+  if (!transporter) {
+    console.log('\n----- MENU DOWNLOAD REQUEST (SMTP not configured — logged instead) -----');
+    console.log(text);
+    console.log('---------------------------------------------------------------------------\n');
+    return { delivered: false, method: 'console' };
+  }
+
+  await transporter.sendMail({ from, to, subject, text });
+
+  return { delivered: true, method: 'smtp' };
+}
+
+module.exports = { sendInquiry, sendMenuDownloadRequest };
