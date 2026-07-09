@@ -195,9 +195,28 @@ const blogPosts = [
 
 // Real clients and press mentions, recovered from the retired WordPress
 // site and confirmed press coverage, for a social-proof strip on the site.
+// `logo` is null until a real logo file is supplied — the templates fall
+// back to a styled wordmark so the layout looks intentional either way.
 const pressAndClients = {
-  clients: ['Ferrari APAC', 'Lamborghini', 'Tesla India', 'BMW', 'House of Masaba', 'Kalki Fashion', 'Sunaina Khera', 'Bath & Body Works', 'Forest Essentials'],
-  press: ['ANI News', 'News18', 'Times of India', 'Economic Times', 'India Today']
+  clients: [
+    { name: 'Ferrari APAC', logo: '/images/logos/clients/ferrari-apac.png' },
+    { name: 'Lamborghini', logo: '/images/logos/clients/lamborghini.png' },
+    { name: 'Tesla India', logo: '/images/logos/clients/tesla-india.png' },
+    { name: 'BMW', logo: '/images/logos/clients/bmw.png' },
+    { name: 'House of Masaba', logo: '/images/logos/clients/house-of-masaba.png' },
+    { name: 'Kalki Fashion', logo: '/images/logos/clients/kalki-fashion.png' },
+    { name: 'Sunaina Khera', logo: '/images/logos/clients/sunaina-khera.png' },
+    { name: 'Bath & Body Works', logo: '/images/logos/clients/bath-body-works.png' },
+    { name: 'Forest Essentials', logo: '/images/logos/clients/forest-essentials.png' }
+  ],
+  press: [
+    { name: 'ANI News', logo: '/images/logos/press/ani-news.png' },
+    { name: 'News18', logo: null },
+    { name: 'Times of India', logo: '/images/logos/press/times-of-india.png' },
+    { name: 'Economic Times', logo: null },
+    { name: 'India Today', logo: null },
+    { name: 'Republic India', logo: '/images/logos/press/republic-india.png' }
+  ]
 };
 
 // Confirmed press mentions with a verifiable source article. Outlets in
