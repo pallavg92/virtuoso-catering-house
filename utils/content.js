@@ -504,58 +504,58 @@ const founders = [
 const menu = {
   categories: [
     {
-      slug: 'plated-dinners',
-      label: 'Plated Dinners',
+      slug: 'live-stations',
+      label: 'Live Stations',
       items: [
-        { name: 'Charred Octopus, Nduja, Blood Orange', desc: 'Applewood-charred octopus, whipped potato, blood orange gastrique.', tags: ['GF'] },
-        { name: 'Saffron Risotto, Langoustine, Sea Fennel', desc: 'Carnaroli rice, Spanish saffron, butter-poached langoustine.', tags: ['GF'] },
-        { name: 'Dry-Aged Duck Breast, Cherry, Smoked Honey', desc: 'Forty-day dry-aged duck, sour cherry jus, smoked wildflower honey.', tags: [] },
-        { name: 'Roasted Cauliflower Steak, Romesco, Almond', desc: 'Whole roasted cauliflower, smoked romesco, marcona almond.', tags: ['V', 'GF'] },
-        { name: 'Wagyu Striploin, Bone Marrow Jus, Charred Leek', desc: 'A5 striploin, roasted bone marrow, charred leek ash.', tags: ['GF'] }
+        { name: 'Virtuoso Artisan Pizzeria', desc: 'Hand-rolled thin crust & Napoletana, baked fresh in our live oven.', tags: ['V'] },
+        { name: 'The Kyoto Sushi Experience', desc: 'Hand-rolled vegetable sushi, wasabi, pickled ginger & soy.', tags: ['V'] },
+        { name: 'Risotto & Ravioli Studio', desc: 'Wild mushroom risotto, ricotta & spinach ravioli, finished to order.', tags: ['V'] },
+        { name: 'Teppanyaki', desc: 'Flame-seared vegetables and silken tofu on a sizzling grill.', tags: ['V'] },
+        { name: 'The Thai Table', desc: 'Live somtam papaya salad and a charcoal skewer grill.', tags: ['V'] }
       ]
     },
     {
       slug: 'buffet',
       label: 'Buffet',
       items: [
-        { name: 'Heirloom Tomato & Stracciatella Board', desc: 'Market heirlooms, fresh stracciatella, aged balsamic, basil oil.', tags: ['V', 'GF'] },
-        { name: 'Slow-Roasted Porchetta Station', desc: 'Herb-stuffed porchetta carved to order, salsa verde, soft rolls.', tags: [] },
-        { name: 'Charred Corn & Cotija Salad', desc: 'Fire-roasted corn, cotija, lime crema, chili threads.', tags: ['V', 'GF'] },
-        { name: 'Wild Mushroom & Farro Grain Bowl', desc: 'Toasted farro, roasted wild mushroom, pecorino, thyme.', tags: ['V'] },
-        { name: 'Whole Roasted Branzino Station', desc: 'Mediterranean branzino, citrus fennel salad, herb oil.', tags: ['GF', 'DF'] }
+        { name: 'Clove-Smoked Dal Makhani', desc: 'Slow-simmered black lentils, tempered and finished tableside.', tags: ['V'] },
+        { name: 'Gucchi Matar Makhani', desc: 'Morel mushroom and green pea makhani.', tags: ['V'] },
+        { name: 'Assorted Vegetable Dum Biryani', desc: 'Layered basmati, dum-sealed with saffron.', tags: ['V'] },
+        { name: 'Progressive Kulcha Bar', desc: 'Heritage breads with spiced butters and house-made chutneys.', tags: ['V'] },
+        { name: 'Indian Regional Mains', desc: 'Rajasthani, Kashmiri, Gujarati and Goan specialties, one table.', tags: ['V'] }
       ]
     },
     {
       slug: 'canapes',
       label: 'Canapés',
       items: [
-        { name: 'Smoked Trout, Rye, Crème Fraîche', desc: 'House-smoked trout, dark rye crisp, dill crème fraîche.', tags: [] },
-        { name: 'Wagyu Tartare, Quail Yolk, Brioche', desc: 'Hand-cut wagyu tartare, quail egg yolk, toasted brioche.', tags: [] },
-        { name: 'Heirloom Beet, Whipped Goat Cheese', desc: 'Roasted heirloom beet, whipped chèvre, candied pistachio.', tags: ['V', 'GF'] },
-        { name: 'Uni Toast, Yuzu Kosho, Chive', desc: 'Sea urchin, brown butter brioche, yuzu kosho.', tags: [] },
-        { name: 'Charred Shishito, Miso Aioli', desc: 'Blistered shishito peppers, sweet miso aioli.', tags: ['V', 'DF'] }
+        { name: 'Truffle-Scented Wild Mushroom Galouti', desc: 'Melt-in-mouth kebab, finished with truffle oil.', tags: ['V'] },
+        { name: 'Beet & Truffle Kebab', desc: 'Khari crisp, fig mousse.', tags: ['V'] },
+        { name: 'Lotus Stem Galawat Kebab', desc: 'Delhi-style kebab, hand-pounded spice.', tags: ['V'] },
+        { name: 'Wasabi Malai Paneer Tikka', desc: 'Gomae sauce, wasabi caviar.', tags: ['V'] },
+        { name: 'Rajma Galouti Cornetto', desc: 'Rice paper cone, truffle cream cheese.', tags: ['V'] }
       ]
     },
     {
-      slug: 'bar-service',
-      label: 'Bar Service',
+      slug: 'welcome-grazing',
+      label: 'Welcome & Grazing',
       items: [
-        { name: 'Full Bar Program', desc: 'Custom cocktail menu development, premium spirits, glassware included.', tags: [] },
-        { name: 'Champagne & Coupe Service', desc: 'Passed champagne service with vintage coupe glassware.', tags: [] },
-        { name: 'Signature Cocktail Pairing', desc: 'Two bespoke cocktails designed around your tasting menu.', tags: [] },
-        { name: 'Wine Pairing Program', desc: 'Sommelier-curated pairings by course, boutique and reserve selections.', tags: [] },
-        { name: 'Non-Alcoholic Pairing Menu', desc: 'House-made shrubs, botanical infusions, zero-proof pairings.', tags: ['DF'] }
+        { name: '360° Grazing Experience', desc: 'An immersive grazing table for arrival.', tags: ['V'] },
+        { name: 'Grill By The Bar — Live', desc: 'Paneer and vegetable skewers, four sauces, live off the grill.', tags: ['V'] },
+        { name: 'Fromage Atelier', desc: 'Curated cheese board with an exotic fresh fruit croquembouche.', tags: ['V'] },
+        { name: 'Dilli Chaat Station', desc: 'Street-style Delhi chaat, four ways.', tags: ['V'] },
+        { name: 'Rolling Snack Service', desc: 'Most-loved street snacks, circulated throughout the evening.', tags: ['V'] }
       ]
     },
     {
       slug: 'desserts',
       label: 'Desserts',
       items: [
-        { name: 'Burnt Basque Cheesecake, Fig Leaf Oil', desc: 'Caramelized crust, silken center, fig leaf oil.', tags: ['GF'] },
-        { name: 'Dark Chocolate Delice, Sea Salt', desc: 'Valrhona dark chocolate, olive oil, Maldon salt.', tags: ['GF'] },
-        { name: 'Citrus Olive Oil Cake, Mascarpone', desc: 'Blood orange, extra virgin olive oil, whipped mascarpone.', tags: [] },
-        { name: 'Petit Four Selection', desc: 'A rotating selection of five hand-finished petit fours.', tags: ['V'] },
-        { name: 'Stone Fruit Tart, Almond Frangipane', desc: 'Seasonal stone fruit, almond frangipane, shortcrust.', tags: ['V'] }
+        { name: 'Live Gelato Experience', desc: 'Scooped to order — strawberry sorbet, stracciatella, pista & mango.', tags: ['V'] },
+        { name: 'The Golden Griddle Co.', desc: 'Live waffles, pancakes & crêpes, with gourmet toppings.', tags: ['V'] },
+        { name: 'Live Jalebi With Rabri Fountain', desc: 'Hot jalebi, cascading rabri, prepared live.', tags: ['V'] },
+        { name: 'Dark Chocolate Mousse, Orange & Praline', desc: 'Mono-portion, chef-plated.', tags: ['V'] },
+        { name: 'Kesar Kulhad Firni', desc: 'Saffron rice pudding, clay-set.', tags: ['V'] }
       ]
     }
   ]
