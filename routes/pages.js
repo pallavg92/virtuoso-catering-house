@@ -21,6 +21,7 @@ router.get('/gallery', (req, res) => res.redirect(301, '/social'));
 router.get('/blog', (req, res) => render(res, pages.blog));
 router.get('/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario', (req, res) => render(res, pages.blogLamborghiniTemerario));
 router.get('/blog/tesla-centre-gurugram-launch-catering', (req, res) => render(res, pages.blogTeslaGurugram));
+router.get('/blog/ferrari-track-day-catering-buddh-international-circuit', (req, res) => render(res, pages.blogFerrariTrackDay));
 router.get('/services', (req, res) => render(res, pages.services));
 router.get('/menu', (req, res) => res.redirect(301, '/services'));
 router.get('/contact', (req, res) => render(res, pages.contact));
