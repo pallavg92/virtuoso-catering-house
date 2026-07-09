@@ -450,6 +450,53 @@ const landingPages = {
         { step: '04', title: 'Back And Relax', copy: 'Team at Virtuoso Catering once confirmed by you, takes over. They handle, from kitchen to service staff, every aspect.' }
       ]
     }
+  },
+  'luxury-brand-event-catering-delhi-ncr': {
+    metaTitle: 'Luxury Brand Event Catering, Delhi NCR — Virtuoso Catering House',
+    metaDescription: 'Virtuoso Catering House designs food and beverage experiences for luxury brand launches across Delhi NCR — automotive reveals, retail openings, activations for Lamborghini, Tesla, Ferrari APAC, and BMW.',
+    eyebrow: 'Brand Activations',
+    h1: 'Luxury Brand Event Catering, Delhi NCR',
+    image: '/images/lamborghini-temerario-hero.jpg',
+    lead: {
+      heading: 'What Brand Event Catering Actually Means',
+      paragraphs: [
+        'Virtuoso Catering House designs food and beverage experiences for luxury brand launches and activations across Delhi NCR — automotive reveals, retail openings, product launches. Every menu is built from the brand’s design language first, not a standard catering list. We have done this for Lamborghini, Tesla India, Ferrari APAC, and BMW: the food supports the story on stage, it doesn’t compete with it.',
+        'Most catering briefs start with a guest count and a cuisine preference. Brand activation briefs start differently — with a mood board, a colour story, sometimes a single word the marketing team keeps repeating on every call. Our job is translating that into something a guest can eat standing up in a showroom, without a plate, a fork, or an interruption to the room.',
+        'We don’t run one fixed format for these. A grazing table at the Lamborghini Temerario launch was correct because it let guests circulate without breaking sightlines to the car it was built around. Tesla Centre Gurugram needed the opposite instinct — no fixed stations at all, food moving through a large open floor on a timed rotation instead. The room decides the format. Not a template.'
+      ]
+    },
+    specializations: {
+      heading: 'Where We’ve Done This',
+      intro: 'Four briefs, four different rooms, one discipline: the food never gets in front of the brand it’s serving.',
+      items: [
+        { title: 'Lamborghini Temerario, Delhi', points: ['The Delhi launch at Lamborghini’s Sarita Vihar showroom, 100 UHNI guests and automotive media, April 2025.', 'A single circulation-first grazing table, timed sushi and canape rotation, a purple-themed mocktail matched to the Temerario’s colour language.'] },
+        { title: 'Tesla Centre Gurugram', points: ['The opening of Tesla Centre Gurugram at Orchid Business Park, 150 senior journalists, PR, and HNI clients, November 2025.', 'No fixed stations — food rotated through the space on a timed cycle so nothing interrupted guest flow around the cars.'] },
+        { title: 'Ferrari APAC & BMW', points: ['Luxury automotive brand activation catering executed for Ferrari APAC and BMW dealer events across Delhi NCR.', 'Each brief built from the brand’s design language, not a repeated format from the last launch.'] }
+      ]
+    },
+    whyUs: {
+      heading: 'Why Brand Teams Bring Us In',
+      intro: 'Not because the food is impressive on its own. Because it disappears into the room exactly when it should.',
+      items: [
+        { title: 'The Brief Comes First', points: ['We do not run a standard menu for brand events. Every menu starts with the brand’s design language, the space, and the guest profile — not the other way around.'] },
+        { title: 'Every Dish Is Trialled', points: ['Every item goes through a formal trial before the event, judged on two things: does it look right on a plate, and can it be eaten cleanly while standing and talking. Items that fail either test get adjusted or dropped.'] },
+        { title: 'Circulation Over Congregation', points: ['Fixed stations create bottlenecks in a room built for movement. We design service — grazing formats, rotation cycles, staffing — around how the guests actually move through the space.'] },
+        { title: 'Curated, Not Abundant', points: ['A handful of dishes done with intention beats a long menu no one remembers. Fewer items, each one built to be photographed, eaten quickly, and still taste like it mattered.'] }
+      ]
+    },
+    closing: {
+      heading: 'Every Brand Launch Starts With a Conversation',
+      paragraphs: [
+        'We do not send a standard proposal for brand events. We start with your space, your guest list, and whatever word your team keeps repeating on the calls — and build the food and beverage language from there. For automotive and retail launches across Delhi NCR, we recommend starting the conversation six to eight weeks out, so there’s time to build a concept genuinely aligned with the brand instead of adapting one we’ve already used.'
+      ]
+    },
+    faq: [
+      { q: 'How does Virtuoso approach catering for luxury brand and automotive events?', a: 'Every brief starts with the brand’s design language, not a standard menu. We develop food, beverage format, and service choreography that reflect the aesthetic of the brand or vehicle being launched — the Lamborghini Temerario brief took three weeks of concept development before a single menu item was confirmed.' },
+      { q: 'How far in advance should a luxury brand book Virtuoso for a launch event in Delhi NCR?', a: 'We recommend a minimum of six to eight weeks. That gives us time to build a concept aligned with the brand’s identity rather than adapting an existing format.' },
+      { q: 'Does Virtuoso conduct menu trials before brand launch events?', a: 'Yes, every menu goes through a formal trial process. Each dish is tasted and assessed against two criteria — aesthetic presentation and ease of consumption in a live, standing-room event environment. Dishes that don’t meet both are adjusted or replaced before final approval.' },
+      { q: 'Which luxury brands has Virtuoso catered for in Delhi NCR?', a: 'Virtuoso Catering House has executed luxury brand activation catering for Lamborghini, Tesla India, Ferrari APAC, and BMW across Delhi NCR, alongside weddings, private dining, and bespoke menu work.' },
+      { q: 'What guest capacity can Virtuoso handle for a brand activation?', a: 'We’ve served events from intimate 50-guest brand previews to 150-plus guest flagship launches — 150 senior journalists and HNI guests at the Tesla Centre Gurugram opening, and 100 UHNI guests and automotive media at the Lamborghini Temerario launch.' }
+    ]
   }
 };
 

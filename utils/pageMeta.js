@@ -119,6 +119,16 @@ const pages = {
     description: content.landingPages['corporate-catering-services-in-noida'].metaDescription,
     ogImage: content.landingPages['corporate-catering-services-in-noida'].image
   },
+  landingBrandEvent: {
+    path: '/luxury-brand-event-catering-delhi-ncr',
+    view: 'landing',
+    landingSlug: 'luxury-brand-event-catering-delhi-ncr',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['luxury-brand-event-catering-delhi-ncr'].metaTitle,
+    description: content.landingPages['luxury-brand-event-catering-delhi-ncr'].metaDescription,
+    ogImage: content.landingPages['luxury-brand-event-catering-delhi-ncr'].image
+  },
   // Real case-study posts recovered from the WordPress database backup.
   blogLamborghiniTemerario: {
     path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',

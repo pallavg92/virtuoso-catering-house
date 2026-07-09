@@ -27,6 +27,7 @@ router.get('/contact', (req, res) => render(res, pages.contact));
 router.get('/best-catering-services-in-noida', (req, res) => render(res, pages.landingBestNoida));
 router.get('/catering-services-in-greater-noida', (req, res) => render(res, pages.landingGreaterNoida));
 router.get('/corporate-catering-services-in-noida', (req, res) => render(res, pages.landingCorporate));
+router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, pages.landingBrandEvent));
 router.get('/press', (req, res) => render(res, pages.press));
 
 // 301 redirects from the retired WordPress site's URLs to their closest
@@ -46,9 +47,8 @@ router.get('/tesla-centre-gurugram-launch-catering-november-2025', (req, res) =>
 // The following pages were published on WordPress with a title and target
 // keyword reserved but no content ever written — redirect to the closest
 // live equivalent rather than 404.
-router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
 router.get('/luxury-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
-router.get('/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
+router.get('/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/luxury-brand-event-catering-delhi-ncr'));
 router.get('/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 router.get('/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
@@ -56,7 +56,7 @@ router.get('/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirec
 // WordPress used nested page hierarchy (parent/child permalinks), not flat
 // slugs, under the "Luxury Brand Event" parent — confirmed via real,
 // currently-indexed Search Console URLs that would otherwise 404.
-router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/luxury-brand-event-catering-delhi-ncr'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr/lamborghini-temerario-launch-catering-delhi-2025', (req, res) => res.redirect(301, '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
