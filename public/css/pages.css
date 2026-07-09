@@ -860,8 +860,9 @@
 /* ==========================================================================
    Blog post detail
    ========================================================================== */
-.blog-post__container {
+.blog-post__prose {
   max-width: 42rem;
+  margin-inline: auto;
 }
 
 .blog-post__copy {
@@ -875,27 +876,78 @@
   color: var(--color-charcoal);
 }
 
+.blog-post__copy--lead::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 3.6em;
+  line-height: 0.85;
+  font-style: italic;
+  color: var(--color-wine);
+  padding-right: 0.1em;
+  padding-top: 0.05em;
+}
+
 .blog-post__heading {
   font-size: var(--fs-h3);
   margin: var(--space-lg) 0 0.6em;
 }
 
-.blog-post__gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-sm);
+.blog-post__pull-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--color-wine);
+  border-left: 2px solid var(--color-gold);
+  padding-left: var(--space-md);
   margin: var(--space-lg) 0;
 }
 
-.blog-post__gallery-item {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
+.blog-post__image-break {
+  max-width: 68rem;
+  margin: var(--space-xl) auto;
 }
 
-.blog-post__gallery-item img {
+.blog-post__image-break img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
+}
+
+.blog-post__image-break figcaption {
+  margin-top: var(--space-xs);
+  font-size: 0.78rem;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted-light);
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.blog-post__duo {
+  max-width: 68rem;
+  margin: var(--space-xl) auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .blog-post__duo { grid-template-columns: 1fr; }
+}
+
+.blog-post__duo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-post__duo figcaption {
+  margin-top: var(--space-xs);
+  font-size: 0.78rem;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted-light);
 }
 
 .blog-post-author {
