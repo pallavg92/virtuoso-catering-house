@@ -26,37 +26,56 @@
 
   <!-- ARTICLE -->
   <section class="blog-post section section--ivory">
-    <div class="container blog-post__container">
+    <div class="container">
       <% if (post.lead) { %>
-      <% post.lead.forEach(function(paragraph) { %>
-      <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= paragraph %></p>
-      <% }); %>
+      <div class="blog-post__prose">
+        <% post.lead.forEach(function(paragraph) { %>
+        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= paragraph %></p>
+        <% }); %>
+      </div>
       <% } %>
 
       <% if (post.body) { %>
-      <% post.body.forEach(function(paragraph) { %>
-      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
-      <% }); %>
-      <% } %>
-
-      <% if (post.gallery && post.gallery.length) { %>
-      <div class="blog-post__gallery">
-        <% post.gallery.forEach(function(src) { %>
-        <div class="blog-post__gallery-item reveal-up">
-          <img src="<%= src %>" alt="<%= post.title %>" loading="lazy">
-        </div>
+      <div class="blog-post__prose">
+        <% post.body.forEach(function(paragraph) { %>
+        <p class="blog-post__copy reveal-up"><%= paragraph %></p>
         <% }); %>
       </div>
       <% } %>
 
       <% (post.sections || []).forEach(function(section) { %>
-      <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
-      <% section.paragraphs.forEach(function(paragraph) { %>
-      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
-      <% }); %>
+      <div class="blog-post__prose">
+        <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+        <% section.paragraphs.forEach(function(paragraph) { %>
+        <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+        <% }); %>
+        <% if (section.pullQuote) { %>
+        <blockquote class="blog-post__pull-quote reveal-up"><%= section.pullQuote %></blockquote>
+        <% } %>
+      </div>
+
+      <% if (section.image) { %>
+      <figure class="blog-post__image-break reveal-up">
+        <img src="<%= section.image.src %>" alt="<%= section.image.caption %>" loading="lazy">
+        <figcaption><%= section.image.caption %></figcaption>
+      </figure>
+      <% } %>
+
+      <% if (section.images && section.images.length) { %>
+      <div class="blog-post__duo reveal-up">
+        <% section.images.forEach(function(img) { %>
+        <figure>
+          <img src="<%= img.src %>" alt="<%= img.caption %>" loading="lazy">
+          <figcaption><%= img.caption %></figcaption>
+        </figure>
+        <% }); %>
+      </div>
+      <% } %>
       <% }); %>
 
-      <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
+      <div class="blog-post__prose">
+        <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
+      </div>
     </div>
   </section>
 
@@ -84,7 +103,7 @@
   <% if (post.author) { %>
   <!-- AUTHOR -->
   <section class="blog-post-author section section--ivory">
-    <div class="container blog-post__container">
+    <div class="container blog-post__prose">
       <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
       <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
       <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>

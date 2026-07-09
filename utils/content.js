@@ -89,11 +89,6 @@ const blogPosts = [
     excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario — a grazing table built for circulation, not congregation.',
     date: '2026-05-22',
     image: '/images/lamborghini-temerario-hero.jpg',
-    gallery: [
-      '/images/lamborghini-temerario-grazing-table.jpg',
-      '/images/lamborghini-temerario-canapes.jpg',
-      '/images/lamborghini-temerario-sushi.jpg'
-    ],
     lead: [
       'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario at Lamborghini Delhi, Sarita Vihar, on April 30, 2025. The event hosted 100 UHNI guests including automotive media and senior Lamborghini clientele. The brief was precise: the food and beverage experience should feel like the car. That brief took three weeks to translate into a concept.'
     ],
@@ -102,7 +97,8 @@ const blogPosts = [
         heading: 'The Brief',
         paragraphs: [
           'Lamborghini’s design language for the Temerario is built around movement, precision, and the absence of excess. Our brief was not to feed guests. It was to support a narrative. Every F&B decision we made was tested against one question: does this interrupt the car, or does it belong to it? The answer shaped everything from the table format to the service timing to the colour of the mocktail.'
-        ]
+        ],
+        pullQuote: 'Does this interrupt the car, or does it belong to it?'
       },
       {
         heading: 'The Concept',
@@ -110,7 +106,11 @@ const blogPosts = [
           'We anchored the experience around a single grazing table designed for circulation rather than congregation. The logic was spatial: a seated format would have broken the flow of 100 guests moving around the car across the Lamborghini Delhi showroom floor. A grazing table with clear sightlines to the Temerario let hospitality disappear into the background while remaining present.',
           'The table featured imported cheeses, exotic cut fruits, mousse eggs, and refined Mediterranean nibblers. Nothing required instruction. Nothing required a plate. Guests could engage with the food and return to the car without interruption.',
           'For beverages, we introduced a purple-themed sparkling mocktail aligned with the Temerario’s colour language. This was a deliberate visual decision. When a guest holds the drink, the colour reads as part of the room. That continuity is what makes hospitality feel designed rather than catered.'
-        ]
+        ],
+        image: {
+          src: '/images/lamborghini-temerario-grazing-table.jpg',
+          caption: 'The grazing table, staged beneath the Lamborghini crest — built for circulation, not congregation.'
+        }
       },
       {
         heading: 'The Execution',
@@ -118,6 +118,10 @@ const blogPosts = [
           'As UHNI guests and media arrived at Lamborghini Delhi on Mathura Road, they were welcomed immediately at the grazing table. We rotated sushi and delicate nibblers sparingly through the evening, timed to guest movement rather than a fixed kitchen schedule. The goal was that the food appeared when guests were ready for it.',
           'Managing hospitality flow for 100 guests in a showroom environment requires a specific back-of-house rotation that most boutique caterers skip. The service team was briefed to move with the room, not against it. No hovering. No interruption. Presence without intrusion.',
           'The evening concluded with guests leaving with quiet comfort rather than a sense of excess. That outcome requires restraint at every decision point: portion sizing, service timing, and how staff move through a luxury space.'
+        ],
+        images: [
+          { src: '/images/lamborghini-temerario-canapes.jpg', caption: 'Mousse eggs, finished in the Temerario’s purple.' },
+          { src: '/images/lamborghini-temerario-sushi.jpg', caption: 'Sushi, rotated sparingly through the evening.' }
         ]
       },
       {
@@ -164,7 +168,8 @@ const blogPosts = [
           'The Tesla space itself shaped the service format. It is a large open plan facility designed for movement and exploration. A conventional catering setup with fixed stations would have created congregation points that interrupted the guest flow around the cars. We decided against any fixed station format entirely and instead moved food through the room on a timed rotation. That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.',
           'We developed a menu built around quick bites that photograph well and eat cleanly in a standing format. The selection included Thai curry, chipotle bowls, a curated assortment of canapés, and a mocktail program designed to complement the food without overwhelming it.',
           'Every item on the menu went through a formal trial process before the event. The criteria for approval: it had to look aesthetic on a plate and taste good eaten quickly in a busy room. Several items that tasted excellent were adjusted for presentation before approval. That trial process is not optional for us. It is how we ensure the menu we design in a kitchen translates correctly to a live event environment.'
-        ]
+        ],
+        pullQuote: 'That decision sounds simple. It required twice the staffing and three times the logistics planning of a standard setup.'
       },
       {
         heading: 'The Execution',
