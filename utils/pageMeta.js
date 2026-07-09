@@ -150,6 +150,16 @@ const pages = {
     ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
     post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering')
   },
+  blogFerrariTrackDay: {
+    path: '/blog/ferrari-track-day-catering-buddh-international-circuit',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Ferrari Track Day Catering, Buddh International Circuit, April 2026 | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').image,
+    post: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit')
+  },
   press: {
     path: '/press',
     view: 'press',

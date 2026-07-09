@@ -211,6 +211,60 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'ferrari-track-day-catering-buddh-international-circuit',
+    url: '/blog/ferrari-track-day-catering-buddh-international-circuit',
+    title: 'Serving 300 Ferraristas, Media, and Celebrities an Exclusively Italian Menu at Buddh International Circuit',
+    excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for La Esperienza Ferrari Delhi, a four day Ferrari APAC track day at Buddh International Circuit, built around an exclusively Italian menu.',
+    date: '2026-05-02',
+    image: img('mv-blog-ferrari-track-day', 1200, 800),
+    lead: [
+      'Virtuoso Catering House designed and executed the complete hospitality experience for La Esperienza Ferrari Delhi, a four day track day hosted by Ferrari APAC at the Buddh International Circuit from 9 to 12 April 2026. The event brought together 300 guests across Ferraristas, media, and celebrities. The brief was exact: an exclusively Italian menu, sourced down to the water, held to one standard through every stage of planning. Only the best for the best.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'Ferrari APAC’s brief for La Esperienza Ferrari Delhi left no room for interpretation. Every element of the menu needed to be exclusively Italian, from the imported water down to the core ingredients. Only the best for the best was not a tagline for this brief. It was the standard every dish was measured against before it reached a guest.',
+          'Three hundred guests meant three distinct audiences in one room across four days. Ferraristas who know Italian food intimately. International media covering the event professionally. Celebrities who expect precision without needing to ask for it. The menu had to hold up to all three at once.'
+        ]
+      },
+      {
+        heading: 'The Concept',
+        paragraphs: [
+          'We built the experience around a rotation service and a live, premium Italian buffet, kept moving across the four days rather than fixed in one place. The format let guests engage with the food between track sessions without pulling them away from the cars for long.',
+          'Buddh International Circuit is not a single venue. It is a segregated site spread across paddock, hospitality, and track areas, which meant nothing could be arranged on the fly. Every rotation, every replenishment, and every ingredient delivery had to be planned before the first guest arrived, not adjusted in the moment.'
+        ],
+        pullQuote: 'Buddh International Circuit is a segregated site. Nothing could be arranged on the fly.'
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'Authentic Italian cooking at a mobile site is a real challenge, not a logistical footnote. Hard cooking methods including frying and sizzling were not permitted in the paddock, which meant the entire live component of the menu had to be reworked around what could be finished and plated without an open flame, while still tasting and looking like it came straight out of an Italian kitchen.',
+          'The clearest measure of whether that worked came from the guests themselves. Over the four days, Italian drivers walked up to Aarti Sharma, our co founder, to say the food was excellent. One driver put it plainly: the food is excellent, and trust me, I am saying this as an Italian.'
+        ]
+      },
+      {
+        heading: 'Why Track Day Hospitality Is a Different Discipline',
+        paragraphs: [
+          'Track day hospitality moves at a different rhythm from a single evening launch. Guests circulate between track sessions, hospitality areas, and the paddock across four full days, which means the food has to sustain interest and energy far longer than a three hour dinner service.',
+          'The Ferrari brief also removed any room for substitution. An exclusively Italian menu is a specific, verifiable standard, not a stylistic choice, and every ingredient decision was made against that standard first.',
+          'La Esperienza Ferrari Delhi was covered by HT Auto and Bollywood Hungama.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What catering did Virtuoso provide for Ferrari’s track day event at Buddh International Circuit?', a: 'Virtuoso Catering House designed and executed the complete hospitality experience for La Esperienza Ferrari Delhi, a four day Ferrari APAC track day at Buddh International Circuit from 9 to 12 April 2026, serving 300 guests across Ferraristas, media, and celebrities with an exclusively Italian menu.' },
+      { q: 'Does Virtuoso Catering House cater exclusively Italian menus?', a: 'Yes. For La Esperienza Ferrari Delhi, every element of the menu was sourced to an exclusively Italian standard, including the drinking water, built around a live rotation buffet with no hard cooking methods permitted in the paddock area.' },
+      { q: 'What challenges come with catering at a racetrack like Buddh International Circuit?', a: 'Buddh International Circuit is a segregated site across paddock, hospitality, and track areas, which means logistics have to be planned in advance rather than adjusted on the fly. For this event, paddock restrictions on hard cooking methods also required the live menu to be reworked around what could be finished without an open flame.' },
+      { q: 'Which luxury automotive brands has Virtuoso catered for in Delhi NCR?', a: 'Virtuoso Catering House has executed luxury brand activation catering for Ferrari APAC, Lamborghini, Tesla India, and BMW across Delhi NCR, alongside weddings, private dining, and bespoke menu work.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 
