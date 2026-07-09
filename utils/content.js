@@ -281,6 +281,69 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'how-to-plan-wedding-catering-delhi-ncr',
+    title: 'How to Plan Wedding Catering in Delhi NCR: A Practical Guide',
+    excerpt: 'A practical guide to planning wedding catering in Delhi NCR, from matching the menu to each function’s mood to knowing when a specialized caterer actually outperforms a banquet kitchen.',
+    date: '2026-07-08',
+    image: img('mv-blog-wedding-guide', 1200, 800),
+    lead: [
+      'Most couples do not need a fixed price list. They need to know how to think about the decision. The right wedding catering setup depends less on a formula and more on how initiated the family is into food, and on matching every function, from the mehendi to the wedding day itself, to its own mood rather than repeating the same menu four times.'
+    ],
+    sections: [
+      {
+        heading: 'Match the Menu to the Day, Not Just the Guest List',
+        paragraphs: [
+          'A wedding is not one event. It is a sequence of them, and each one carries its own energy. The mehendi is usually followed by the engagement or cocktail, which tends to be the most exciting day of the entire celebration. That changes what should be served. Regional cuisines do well at the mehendi, and meals are generally kept lighter, because guests are pacing themselves for what comes next.',
+          'The engagement is where people actually indulge. Guests are in full celebration mode, and this is usually the day families are most willing to explore favourite dishes and more ambitious formats. Planning the same heavy, elaborate menu across every function misses this rhythm entirely.'
+        ]
+      },
+      {
+        heading: 'How Much F&B Knowledge Does the Family Bring In?',
+        paragraphs: [
+          'The single biggest factor in how a wedding menu comes together is not the budget. It is how initiated the decision makers are into food. Some families want a small number of true favourites, done well, with a setup that matches the vibe and theme of the party. Others arrive already fluent in what is possible.',
+          'Families further along that curve ask for speciality Indian catering, restaurant pop up concepts inside the wedding, and sometimes a celebrity chef for a single section of the event. Celebrity chefs typically bring their own team and take ownership of the planning and menu for that one section only, while everything else runs alongside it. A sushi bar is one of the cleanest examples. Done well, it looks sophisticated and restrained in a way a standard live counter does not.'
+        ]
+      },
+      {
+        heading: 'Why a Specialized Caterer Outperforms a Banquet Kitchen',
+        paragraphs: [
+          'A banquet’s food passes through one team among many the venue is running at once. A specialized caterer’s exclusive focus is the food itself, which is why the difference shows up in three specific places: the food, the presentation, and the crockery and cutlery. Those three pillars are what separate a caterer from a banquet on any given day, not the size of the menu.'
+        ],
+        pullQuote: 'The food, the presentation, and the crockery and cutlery. Those three pillars are what separate a caterer from a banquet.'
+      },
+      {
+        heading: 'When to Book',
+        paragraphs: [
+          'Book as soon as the venue is finalised, and ideally before. Rates can move once a date is set, though how much depends entirely on the caterer being considered. Waiting until closer to the date narrows both the menu options and the team available to execute them properly.'
+        ]
+      },
+      {
+        heading: 'What the Tasting Process Actually Looks Like',
+        paragraphs: [
+          'Every engagement starts with a private tasting. For Virtuoso, that means inviting clients to our experience centre in Noida, Sector 61, where the menu can be tasted and refined before anything is finalised. It is easier to adjust a dish on a plate in front of you than to describe it over a call.'
+        ]
+      },
+      {
+        heading: 'Every Wedding Starts With a Conversation, Not a Package',
+        paragraphs: [
+          'We do not sell fixed packages. Every wedding menu is built around the two families involved, the mood of each function, and how far into the world of food they want to go. Start with your venue and your date, and the rest can be built from there.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'How far in advance should I book a wedding caterer in Delhi NCR?', a: 'As soon as your venue is finalised, and ideally even before. Rates and availability can shift once a date is confirmed, though this depends on the specific caterer you are working with.' },
+      { q: 'What is the difference between a wedding caterer and banquet catering?', a: 'A banquet’s food is handled by one team among several the venue runs simultaneously. A specialized caterer’s exclusive focus is the food, which shows up in three places specifically: the food itself, the presentation, and the crockery and cutlery.' },
+      { q: 'Should the menu be the same across all wedding functions?', a: 'No. Each function has its own mood. The mehendi is typically followed by the engagement or cocktail, the most exciting day of the celebration, so mehendi menus tend to favour lighter, regional dishes while engagement menus can be more indulgent and ambitious.' },
+      { q: 'Do you offer celebrity chef or specialty catering concepts for weddings?', a: 'Yes. For families further along in their food knowledge, we offer speciality Indian catering, restaurant pop up concepts, and celebrity chef sections, where a chef brings their own team and owns the menu for one specific part of the event, such as a live sushi bar.' },
+      { q: 'Where does the tasting process happen?', a: 'At our experience centre in Noida, Sector 61, where clients taste and refine the menu in person before anything is finalised.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 
