@@ -263,25 +263,37 @@
 .press-marquee__item {
   flex-shrink: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 12rem;
-  padding: var(--space-md) var(--space-lg);
+  gap: 0.6em;
+  width: 11rem;
+  height: 6.5rem;
+  margin: 0 var(--space-sm);
+  padding: var(--space-sm);
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 167, 104, 0.3);
+  box-shadow: 0 14px 26px -16px rgba(0, 0, 0, 0.35);
 }
 
 .press-marquee__item img {
-  max-height: 2.2rem;
+  max-height: 2.4rem;
+  max-width: 100%;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
+  object-fit: contain;
 }
 
 .press-marquee__name {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
-  color: rgba(253, 248, 240, 0.75);
+  font-size: 0.85rem;
+  color: var(--text-muted-light);
   white-space: nowrap;
+}
+
+.press-marquee__item:not(:has(img)) .press-marquee__name {
+  font-size: 1.15rem;
+  color: var(--color-charcoal);
 }
 
 @keyframes press-marquee-scroll {

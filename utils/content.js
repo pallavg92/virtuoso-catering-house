@@ -199,22 +199,23 @@ const blogPosts = [
 // back to a styled wordmark so the layout looks intentional either way.
 const pressAndClients = {
   clients: [
-    { name: 'Ferrari APAC', logo: null },
-    { name: 'Lamborghini', logo: null },
-    { name: 'Tesla India', logo: null },
-    { name: 'BMW', logo: null },
-    { name: 'House of Masaba', logo: null },
-    { name: 'Kalki Fashion', logo: null },
-    { name: 'Sunaina Khera', logo: null },
-    { name: 'Bath & Body Works', logo: null },
-    { name: 'Forest Essentials', logo: null }
+    { name: 'Ferrari APAC', logo: '/images/logos/clients/ferrari-apac.png' },
+    { name: 'Lamborghini', logo: '/images/logos/clients/lamborghini.png' },
+    { name: 'Tesla India', logo: '/images/logos/clients/tesla-india.png' },
+    { name: 'BMW', logo: '/images/logos/clients/bmw.png' },
+    { name: 'House of Masaba', logo: '/images/logos/clients/house-of-masaba.png' },
+    { name: 'Kalki Fashion', logo: '/images/logos/clients/kalki-fashion.png' },
+    { name: 'Sunaina Khera', logo: '/images/logos/clients/sunaina-khera.png' },
+    { name: 'Bath & Body Works', logo: '/images/logos/clients/bath-body-works.png' },
+    { name: 'Forest Essentials', logo: '/images/logos/clients/forest-essentials.png' }
   ],
   press: [
-    { name: 'ANI News', logo: null },
+    { name: 'ANI News', logo: '/images/logos/press/ani-news.png' },
     { name: 'News18', logo: null },
-    { name: 'Times of India', logo: null },
+    { name: 'Times of India', logo: '/images/logos/press/times-of-india.png' },
     { name: 'Economic Times', logo: null },
-    { name: 'India Today', logo: null }
+    { name: 'India Today', logo: null },
+    { name: 'Republic India', logo: '/images/logos/press/republic-india.png' }
   ]
 };
 
