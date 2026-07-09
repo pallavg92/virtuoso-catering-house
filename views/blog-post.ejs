@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= post.image %>" alt="<%= post.title %>" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <span class="eyebrow eyebrow--light reveal-up"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+      <h1 class="page-intro__title reveal-up"><%= post.title %></h1>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="blog-post section section--ivory">
+    <div class="container blog-post__container">
+      <% if (post.lead) { %>
+      <% post.lead.forEach(function(paragraph) { %>
+      <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <% } %>
+
+      <% if (post.body) { %>
+      <% post.body.forEach(function(paragraph) { %>
+      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <% } %>
+
+      <% if (post.gallery && post.gallery.length) { %>
+      <div class="blog-post__gallery">
+        <% post.gallery.forEach(function(src) { %>
+        <div class="blog-post__gallery-item reveal-up">
+          <img src="<%= src %>" alt="<%= post.title %>" loading="lazy">
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <% (post.sections || []).forEach(function(section) { %>
+      <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+      <% section.paragraphs.forEach(function(paragraph) { %>
+      <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+      <% }); %>
+      <% }); %>
+
+      <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
+    </div>
+  </section>
+
+  <% if (post.faq && post.faq.length) { %>
+  <!-- FAQ -->
+  <section class="landing-faq section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Questions</span>
+        <h2 class="section-title reveal-up">Frequently Asked Questions</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="landing-faq__list">
+        <% post.faq.forEach(function(item) { %>
+        <details class="landing-faq__item reveal-up">
+          <summary class="landing-faq__question"><%= item.q %></summary>
+          <p class="landing-faq__answer"><%= item.a %></p>
+        </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (post.author) { %>
+  <!-- AUTHOR -->
+  <section class="blog-post-author section section--ivory">
+    <div class="container blog-post__container">
+      <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
+      <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
+      <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Planning a Launch<br>of Your Own?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

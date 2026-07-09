@@ -23,9 +23,11 @@ async function renderPage(page) {
     business
   };
   const html = await ejs.renderFile(viewPath, locals);
-  const outFile = path.join(DIST_DIR, page.slug === 'index' ? 'index.html' : `${page.slug}.html`);
+  const relPath = page.path === '/' ? 'index.html' : `${page.path.replace(/^\//, '')}.html`;
+  const outFile = path.join(DIST_DIR, relPath);
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, html);
-  console.log(`  built ${page.path} -> dist/${path.basename(outFile)}`);
+  console.log(`  built ${page.path} -> dist/${relPath}`);
 }
 
 async function renderNotFound() {

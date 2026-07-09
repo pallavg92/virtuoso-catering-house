@@ -114,6 +114,56 @@
     </div>
   </section>
 
+  <!-- TRUSTED BY -->
+  <section class="client-tiles-section section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Trusted By</span>
+        <h2 class="section-title reveal-up">Brands We’ve Worked With</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="client-tiles">
+        <% pressAndClients.clients.forEach(function(client) { %>
+        <div class="client-tile reveal-up">
+          <% if (client.logo) { %>
+          <img src="<%= client.logo %>" alt="<%= client.name %>" loading="lazy">
+          <% } else { %>
+          <span class="client-tile__name"><%= client.name %></span>
+          <% } %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- AS FEATURED IN -->
+  <section class="press-marquee-section section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light reveal-up">As Featured In</span>
+        <h2 class="section-title reveal-up">In the Press</h2>
+        <span class="section-header__line"></span>
+      </div>
+    </div>
+    <div class="press-marquee">
+      <div class="press-marquee__track">
+        <% [...pressAndClients.press, ...pressAndClients.press].forEach(function(outlet) { %>
+        <div class="press-marquee__item">
+          <% if (outlet.logo) { %>
+          <img src="<%= outlet.logo %>" alt="<%= outlet.name %>" loading="lazy">
+          <% } %>
+          <span class="press-marquee__name"><%= outlet.name %></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <div class="container">
+      <div class="press-marquee-section__cta reveal-up">
+        <a href="/press" class="link-underline">Read Our Press Coverage</a>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="testimonials section section--ivory">
     <div class="container">
