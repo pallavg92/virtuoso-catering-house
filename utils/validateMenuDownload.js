@@ -7,16 +7,16 @@ function validateMenuDownload(body) {
   const name = (body.name || '').trim();
   const eventDate = (body.eventDate || '').trim();
   const guestCount = (body.guestCount || '').trim();
-  const contact = (body.contact || '').trim();
+  const email = (body.email || '').trim();
+  const phone = (body.phone || '').trim();
 
   if (!name || name.length < 2) errors.name = 'Please enter your full name.';
   if (!eventDate) errors.eventDate = 'Please share the day of your event.';
   if (!guestCount || isNaN(Number(guestCount)) || Number(guestCount) < 1) {
     errors.guestCount = 'Please enter an estimated guest count.';
   }
-  if (!contact || !(EMAIL_RE.test(contact) || PHONE_RE.test(contact))) {
-    errors.contact = 'Please enter a valid phone number or email address.';
-  }
+  if (!email || !EMAIL_RE.test(email)) errors.email = 'Please enter a valid email address.';
+  if (!phone || !PHONE_RE.test(phone)) errors.phone = 'Please enter a valid mobile number.';
 
   return errors;
 }
@@ -26,7 +26,8 @@ function extractFields(body) {
     name: (body.name || '').trim(),
     eventDate: (body.eventDate || '').trim(),
     guestCount: (body.guestCount || '').trim(),
-    contact: (body.contact || '').trim()
+    email: (body.email || '').trim(),
+    phone: (body.phone || '').trim()
   };
 }
 
