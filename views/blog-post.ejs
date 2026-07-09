@@ -107,6 +107,9 @@
       <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
       <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
       <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>
+      <% if (post.author.linkedin) { %>
+      <a href="<%= post.author.linkedin %>" target="_blank" rel="noopener" class="link-underline reveal-up">Connect on LinkedIn</a>
+      <% } %>
     </div>
   </section>
   <% } %>

@@ -141,6 +141,7 @@ const blogPosts = [
     ],
     author: {
       name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
   },
@@ -195,6 +196,7 @@ const blogPosts = [
     ],
     author: {
       name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
   }
