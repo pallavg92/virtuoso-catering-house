@@ -5,3 +5,4 @@ npm-debug.log*
 .claude/settings.local.json
 /dist
 .netlify
+/incoming-images
