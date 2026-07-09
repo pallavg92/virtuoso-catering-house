@@ -720,6 +720,15 @@
   margin-bottom: 0;
 }
 
+.landing-lead__signature {
+  max-width: 42rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-charcoal);
+  margin-top: var(--space-md);
+}
+
 .landing-block__intro {
   max-width: 42rem;
   color: var(--text-muted-light);

@@ -42,7 +42,11 @@
           <span class="service-post-card__kicker"><%= service.kicker %></span>
           <h3 class="service-post-card__title"><%= service.title %></h3>
           <p class="service-post-card__copy"><%= service.copy %></p>
+          <% if (service.slug === 'brand-activations') { %>
+          <a href="/luxury-brand-event-catering-delhi-ncr" class="link-underline">Read More</a>
+          <% } else { %>
           <a href="#menu-panels" class="link-underline">View Sample Menu</a>
+          <% } %>
         </article>
         <% }); %>
       </div>
