@@ -33,7 +33,6 @@ const services = [
   }
 ];
 
-// Replace [second-account-handle] once the second Instagram account is confirmed.
 const instagramAccounts = [
   {
     handle: '@virtuosocateringhouse',
@@ -43,11 +42,11 @@ const instagramAccounts = [
     embedUrl: 'https://snapwidget.com/embed/1126703'
   },
   {
-    handle: '[@second-account-handle]',
-    url: '#',
-    label: '[Second Account Name]',
-    description: '[Add a description once this account is confirmed.]',
-    embedUrl: null
+    handle: '@thefirstpourbyvirtuoso',
+    url: 'https://www.instagram.com/thefirstpourbyvirtuoso/',
+    label: 'The First Pōur By Virtuoso',
+    description: 'Cocktail programs, bar service, and beverage craft from the Virtuoso bar team.',
+    embedUrl: 'https://snapwidget.com/embed/1126761'
   }
 ];
 
