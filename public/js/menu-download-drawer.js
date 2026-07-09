@@ -108,6 +108,16 @@
       setStatus(data.message || 'Thank you — your download will begin shortly.', 'success');
       form.reset();
       if (data.downloadUrl) triggerDownload(data.downloadUrl);
+
+      // Analytics is best-effort — a tracking failure must never surface
+      // as a false error after the download has already been triggered.
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_type: 'Menu Download' });
+        }
+      } catch (trackingErr) {
+        // Swallow — the download itself already succeeded.
+      }
     } catch (err) {
       setStatus('Something went wrong. Please try again shortly.', 'error');
     } finally {
