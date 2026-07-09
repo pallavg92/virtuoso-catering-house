@@ -62,7 +62,8 @@ async function sendMenuDownloadRequest(fields) {
   const subject = `Menu Download — ${fields.name}`;
   const text = [
     `Name: ${fields.name}`,
-    `Contact: ${fields.contact}`,
+    `Email: ${fields.email}`,
+    `Mobile: ${fields.phone}`,
     `Event Date: ${fields.eventDate}`,
     `Estimated Pax: ${fields.guestCount}`
   ].join('\n');
@@ -74,7 +75,7 @@ async function sendMenuDownloadRequest(fields) {
     return { delivered: false, method: 'console' };
   }
 
-  await transporter.sendMail({ from, to, subject, text });
+  await transporter.sendMail({ from, to, replyTo: fields.email, subject, text });
 
   return { delivered: true, method: 'smtp' };
 }
