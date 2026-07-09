@@ -10,6 +10,12 @@
   force = true
 
 [[redirects]]
+  from = "/api/menu-download"
+  to = "/.netlify/functions/menu-download"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

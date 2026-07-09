@@ -33,4 +33,4 @@ function extractFields(body) {
   };
 }
 
-module.exports = { validateInquiry, extractFields };
+module.exports = { validateInquiry, extractFields, EMAIL_RE, PHONE_RE };
