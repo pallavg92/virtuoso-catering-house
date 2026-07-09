@@ -488,7 +488,12 @@ const landingPages = {
       heading: 'Every Brand Launch Starts With a Conversation',
       paragraphs: [
         'We do not send a standard proposal for brand events. We start with your space, your guest list, and whatever word your team keeps repeating on the calls — and build the food and beverage language from there. For automotive and retail launches across Delhi NCR, we recommend starting the conversation six to eight weeks out, so there’s time to build a concept genuinely aligned with the brand instead of adapting one we’ve already used.'
-      ]
+      ],
+      signature: {
+        name: 'Pallav Goel',
+        role: 'Co-Founder, Virtuoso Catering House',
+        linkedin: 'https://www.linkedin.com/in/pallavg16'
+      }
     },
     faq: [
       { q: 'How does Virtuoso approach catering for luxury brand and automotive events?', a: 'Every brief starts with the brand’s design language, not a standard menu. We develop food, beverage format, and service choreography that reflect the aesthetic of the brand or vehicle being launched — the Lamborghini Temerario brief took three weeks of concept development before a single menu item was confirmed.' },
@@ -496,7 +501,12 @@ const landingPages = {
       { q: 'Does Virtuoso conduct menu trials before brand launch events?', a: 'Yes, every menu goes through a formal trial process. Each dish is tasted and assessed against two criteria — aesthetic presentation and ease of consumption in a live, standing-room event environment. Dishes that don’t meet both are adjusted or replaced before final approval.' },
       { q: 'Which luxury brands has Virtuoso catered for in Delhi NCR?', a: 'Virtuoso Catering House has executed luxury brand activation catering for Lamborghini, Tesla India, Ferrari APAC, and BMW across Delhi NCR, alongside weddings, private dining, and bespoke menu work.' },
       { q: 'What guest capacity can Virtuoso handle for a brand activation?', a: 'We’ve served events from intimate 50-guest brand previews to 150-plus guest flagship launches — 150 senior journalists and HNI guests at the Tesla Centre Gurugram opening, and 100 UHNI guests and automotive media at the Lamborghini Temerario launch.' }
-    ]
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the brand’s growth and strategy in the luxury experiential catering space, deciding which clients the house takes on and what standard it holds itself to — including its automotive and brand activation work across Delhi NCR, from the Lamborghini Temerario launch to the Tesla Centre Gurugram opening.'
+    }
   }
 };
 

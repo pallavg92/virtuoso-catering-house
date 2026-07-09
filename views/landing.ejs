@@ -177,6 +177,23 @@
       <% data.closing.paragraphs.forEach(function(p) { %>
       <p class="landing-lead__copy reveal-up"><%= p %></p>
       <% }); %>
+      <% if (data.closing.signature) { %>
+      <p class="landing-lead__signature reveal-up">
+        — <a href="<%= data.closing.signature.linkedin %>" target="_blank" rel="noopener" class="link-underline"><%= data.closing.signature.name %></a>, <%= data.closing.signature.role %>
+      </p>
+      <% } %>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (data.author) { %>
+  <!-- AUTHOR -->
+  <section class="blog-post-author section section--ivory">
+    <div class="container blog-post__prose">
+      <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
+      <h3 class="blog-post-author__name reveal-up"><%= data.author.name %></h3>
+      <p class="blog-post-author__bio reveal-up"><%= data.author.bio %></p>
+      <a href="<%= data.author.linkedin %>" target="_blank" rel="noopener" class="link-underline reveal-up">Connect on LinkedIn</a>
     </div>
   </section>
   <% } %>
