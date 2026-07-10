@@ -66,7 +66,7 @@ const pages = {
     bodyClass: 'page-blog',
     title: 'Journal — Virtuoso Catering House',
     description: 'Notes on luxury catering, event design, and hospitality from the Virtuoso Catering House team.',
-    ogImage: content.blogPosts.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0].image
+    ogImage: content.heroImage
   },
   services: {
     path: '/services',
