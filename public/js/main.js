@@ -23,4 +23,20 @@
       window.__cursorRebind();
     }
   });
+
+  // Generic GA4 click tracking: any element carrying [data-track-event]
+  // fires that event name on click. Best-effort only — a tracking
+  // failure must never block the element's own default action (link
+  // navigation, drawer open, etc.).
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-track-event]');
+    if (!target) return;
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', target.dataset.trackEvent);
+      }
+    } catch (trackingErr) {
+      // Swallow — never block the element's own action.
+    }
+  });
 })();
