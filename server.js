@@ -6,9 +6,14 @@ const pagesRouter = require('./routes/pages');
 const apiRouter = require('./routes/api');
 const content = require('./utils/content');
 const { siteUrl, business, pages } = require('./utils/pageMeta');
+const bundleCss = require('./scripts/bundle-css');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Regenerate the combined stylesheet on every boot so it can never go
+// stale relative to the individual source files in public/css/.
+bundleCss();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
