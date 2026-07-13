@@ -12,6 +12,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
+const bundleCss = require('./bundle-css');
 
 async function renderPage(page) {
   const viewPath = path.join(VIEWS_DIR, `${page.view}.ejs`);
@@ -71,6 +72,7 @@ async function build() {
   fs.rmSync(DIST_DIR, { recursive: true, force: true });
   fs.mkdirSync(DIST_DIR, { recursive: true });
 
+  bundleCss();
   copyPublicAssets();
 
   for (const page of Object.values(pages)) {

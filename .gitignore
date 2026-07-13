@@ -6,3 +6,4 @@ npm-debug.log*
 /dist
 .netlify
 /incoming-images
+/public/css/bundle.css
