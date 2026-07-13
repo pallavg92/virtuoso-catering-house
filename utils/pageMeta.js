@@ -14,6 +14,9 @@ const business = {
   addressRegion: 'Uttar Pradesh',
   postalCode: '201301',
   addressCountry: 'IN',
+  // Resolved from the business's actual Google Maps listing (maps.app.goo.gl/VztH6YKQfN13Yogu7).
+  latitude: 28.5964201,
+  longitude: 77.3641803,
   sameAs: [
     'https://www.instagram.com/virtuosocateringhouse/',
     'https://pin.it/3EwnJeOiZ',
