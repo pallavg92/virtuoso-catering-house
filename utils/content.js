@@ -783,5 +783,6 @@ module.exports = {
   eventTypes,
   heroImage: '/images/hero-candlelit-florals.jpg',
   aboutHeroImage: img('mv-about-hero', 2400, 1400),
-  contactOfficeImage: img('mv-office', 1400, 1700)
+  contactOfficeImage: img('mv-office', 1400, 1700),
+  blogHeroImage: '/images/virtuoso-catering-house-journal-hero.svg'
 };
