@@ -8,28 +8,28 @@ const services = [
     title: 'Weddings',
     kicker: '01',
     copy: 'From the first toast to the last dance, every course is choreographed to the rhythm of your day — plated with restraint, seasoned with sentiment.',
-    image: img('mv-wedding-table', 1400, 1800)
+    image: '/images/virtuoso-catering-house-weddings-service.jpg'
   },
   {
     slug: 'brand-activations',
     title: 'Brand Activations',
     kicker: '02',
     copy: 'Product launches, brand experiences, and press previews — for names that never compromise on how a room feels. We design the food and beverage language around the story being told.',
-    image: img('mv-brand-activation', 1400, 1800)
+    image: '/images/virtuoso-catering-house-brand-activations-service.jpg'
   },
   {
     slug: 'mixology',
     title: 'Mixology',
     kicker: '03',
     copy: 'Live mixology stations and batch-crafted cocktail programs, built to move at the pace of the room — from a signature welcome pour to a full bar designed around your menu.',
-    image: img('mv-mixology', 1400, 1800)
+    image: '/images/virtuoso-catering-house-mixology-service.jpg'
   },
   {
     slug: 'bespoke',
     title: 'Bespoke Menus',
     kicker: '04',
     copy: 'Every menu begins as a conversation. We build tasting notes around memory, provenance, and the story you want your guests to leave with.',
-    image: img('mv-bespoke-menu', 1400, 1800)
+    image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg'
   }
 ];
 
@@ -784,7 +784,7 @@ module.exports = {
   menu,
   eventTypes,
   heroImage: '/images/hero-candlelit-florals.jpg',
-  aboutHeroImage: img('mv-about-hero', 2400, 1400),
+  aboutHeroImage: '/images/virtuoso-catering-house-about-hero.jpg',
   contactOfficeImage: img('mv-office', 1400, 1700),
   blogHeroImage: '/images/virtuoso-catering-house-journal-hero.svg'
 };
