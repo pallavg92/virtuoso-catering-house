@@ -160,6 +160,16 @@ const pages = {
     ogImage: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').image,
     post: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit')
   },
+  blogWeddingCateringGuide: {
+    path: '/blog/how-to-plan-wedding-catering-delhi-ncr',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'How to Plan Wedding Catering in Delhi NCR | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').image,
+    post: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr')
+  },
   press: {
     path: '/press',
     view: 'press',
