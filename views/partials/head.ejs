@@ -49,8 +49,9 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FoodEstablishment",
+  "@type": "LocalBusiness",
   "name": "<%= business.name %>",
+  "description": "<%= business.description %>",
   "image": "<%= ogImage %>",
   "url": "<%= siteUrl %>",
   "telephone": "<%= business.telephone %>",
@@ -63,8 +64,34 @@
     "postalCode": "<%= business.postalCode %>",
     "addressCountry": "<%= business.addressCountry %>"
   },
-  "servesCuisine": "Catering",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": <%= business.latitude %>,
+    "longitude": <%= business.longitude %>
+  },
+  "servesCuisine": <%- JSON.stringify(business.cuisines) %>,
   "priceRange": "$$$",
+  "sameAs": <%- JSON.stringify(business.sameAs) %>
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "<%= business.name %>",
+  "url": "<%= siteUrl %>",
+  "logo": "<%= business.logo %>",
+  "telephone": "<%= business.telephone %>",
+  "email": "<%= business.email %>",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<%= business.streetAddress %>",
+    "addressLocality": "<%= business.addressLocality %>",
+    "addressRegion": "<%= business.addressRegion %>",
+    "postalCode": "<%= business.postalCode %>",
+    "addressCountry": "<%= business.addressCountry %>"
+  },
   "sameAs": <%- JSON.stringify(business.sameAs) %>
 }
 </script>
