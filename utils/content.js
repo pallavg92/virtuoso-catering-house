@@ -786,5 +786,6 @@ module.exports = {
   heroImage: '/images/hero-candlelit-florals.jpg',
   aboutHeroImage: '/images/virtuoso-catering-house-about-hero.jpg',
   contactOfficeImage: img('mv-office', 1400, 1700),
-  blogHeroImage: '/images/virtuoso-catering-house-journal-hero.svg'
+  blogHeroImage: '/images/virtuoso-catering-house-journal-hero.svg',
+  servicesHeroImage: '/images/virtuoso-catering-house-services-hero.svg'
 };
