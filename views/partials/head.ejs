@@ -95,3 +95,20 @@
   "sameAs": <%- JSON.stringify(business.sameAs) %>
 }
 </script>
+
+<% if (typeof breadcrumbs !== 'undefined' && breadcrumbs && breadcrumbs.length > 1) { %>
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map(function(crumb, i) {
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": crumb.name,
+      "item": siteUrl + (crumb.path === '/' ? '/' : crumb.path)
+    };
+  })
+}) %>
+</script>
+<% } %>
