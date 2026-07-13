@@ -13,6 +13,18 @@ function render(res, page) {
   });
 }
 
+router.get('/sitemap.xml', (req, res) => {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = Object.values(pages)
+    .map((page) => {
+      const loc = siteUrl + (page.path === '/' ? '/' : page.path);
+      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;
+    })
+    .join('\n');
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  res.type('application/xml').send(xml);
+});
+
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
 router.get('/our-work', (req, res) => render(res, pages.ourWork));

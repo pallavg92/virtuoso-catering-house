@@ -41,7 +41,8 @@ const pages = {
     bodyClass: 'page-home',
     title: 'Virtuoso Catering House — Culinary Artistry for Unforgettable Occasions',
     description: 'Virtuoso Catering House is a luxury experiential catering company based in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
-    ogImage: content.heroImage
+    ogImage: content.heroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }]
   },
   about: {
     path: '/about',
@@ -50,7 +51,8 @@ const pages = {
     bodyClass: 'page-about',
     title: 'About — Virtuoso Catering House',
     description: 'Meet the founders of Virtuoso Catering House and how we take a project from first brief to final day of service.',
-    ogImage: content.aboutHeroImage
+    ogImage: content.aboutHeroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
   },
   ourWork: {
     path: '/our-work',
@@ -59,7 +61,8 @@ const pages = {
     bodyClass: 'page-our-work',
     title: 'Our Work — Virtuoso Catering House',
     description: 'A selection of weddings, brand activations, and private events designed and executed by Virtuoso Catering House.',
-    ogImage: content.ourWork[0].image
+    ogImage: content.ourWork[0].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Our Work', path: '/our-work' }]
   },
   social: {
     path: '/social',
@@ -68,7 +71,8 @@ const pages = {
     bodyClass: 'page-social',
     title: 'Social Media — Virtuoso Catering House',
     description: 'Follow Virtuoso Catering House on Instagram for events, menus, and behind-the-scenes.',
-    ogImage: content.heroImage
+    ogImage: content.heroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Social Media', path: '/social' }]
   },
   blog: {
     path: '/blog',
@@ -77,7 +81,8 @@ const pages = {
     bodyClass: 'page-blog',
     title: 'Journal — Virtuoso Catering House',
     description: 'Notes on luxury catering, event design, and hospitality from the Virtuoso Catering House team.',
-    ogImage: content.heroImage
+    ogImage: content.heroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }]
   },
   services: {
     path: '/services',
@@ -86,7 +91,8 @@ const pages = {
     bodyClass: 'page-services',
     title: 'Services & Menus — Virtuoso Catering House',
     description: 'Weddings, brand activations, private dining, and bespoke menus from Virtuoso Catering House, a luxury experiential caterer in Noida.',
-    ogImage: content.services[0].image
+    ogImage: content.services[0].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Services & Menus', path: '/services' }]
   },
   contact: {
     path: '/contact',
@@ -95,7 +101,8 @@ const pages = {
     bodyClass: 'page-contact',
     title: 'Inquire — Virtuoso Catering House',
     description: 'Start an inquiry with Virtuoso Catering House. Based in Noida, Delhi NCR, serving weddings, brand activations, and private events.',
-    ogImage: content.contactOfficeImage
+    ogImage: content.contactOfficeImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Inquire', path: '/contact' }]
   },
   // Local-SEO landing pages migrated from the previous WordPress site.
   // Slugs, titles, and descriptions match the archived WordPress URLs
@@ -108,7 +115,8 @@ const pages = {
     bodyClass: 'page-landing',
     title: content.landingPages['best-catering-services-in-noida'].metaTitle,
     description: content.landingPages['best-catering-services-in-noida'].metaDescription,
-    ogImage: content.landingPages['best-catering-services-in-noida'].image
+    ogImage: content.landingPages['best-catering-services-in-noida'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Catering Services in Noida', path: '/best-catering-services-in-noida' }]
   },
   landingGreaterNoida: {
     path: '/catering-services-in-greater-noida',
@@ -118,7 +126,8 @@ const pages = {
     bodyClass: 'page-landing',
     title: content.landingPages['catering-services-in-greater-noida'].metaTitle,
     description: content.landingPages['catering-services-in-greater-noida'].metaDescription,
-    ogImage: content.landingPages['catering-services-in-greater-noida'].image
+    ogImage: content.landingPages['catering-services-in-greater-noida'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Catering Services in Greater Noida', path: '/catering-services-in-greater-noida' }]
   },
   landingCorporate: {
     path: '/corporate-catering-services-in-noida',
@@ -128,7 +137,8 @@ const pages = {
     bodyClass: 'page-landing',
     title: content.landingPages['corporate-catering-services-in-noida'].metaTitle,
     description: content.landingPages['corporate-catering-services-in-noida'].metaDescription,
-    ogImage: content.landingPages['corporate-catering-services-in-noida'].image
+    ogImage: content.landingPages['corporate-catering-services-in-noida'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Corporate Catering Services in Noida', path: '/corporate-catering-services-in-noida' }]
   },
   landingBrandEvent: {
     path: '/luxury-brand-event-catering-delhi-ncr',
@@ -138,7 +148,8 @@ const pages = {
     bodyClass: 'page-landing',
     title: content.landingPages['luxury-brand-event-catering-delhi-ncr'].metaTitle,
     description: content.landingPages['luxury-brand-event-catering-delhi-ncr'].metaDescription,
-    ogImage: content.landingPages['luxury-brand-event-catering-delhi-ncr'].image
+    ogImage: content.landingPages['luxury-brand-event-catering-delhi-ncr'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Luxury Brand Event Catering Delhi NCR', path: '/luxury-brand-event-catering-delhi-ncr' }]
   },
   // Real case-study posts recovered from the WordPress database backup.
   blogLamborghiniTemerario: {
@@ -149,7 +160,8 @@ const pages = {
     title: 'Lamborghini Temerario Launch Catering, Delhi, 2025 | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').image,
-    post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario')
+    post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Lamborghini Temerario Launch Catering', path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario' }]
   },
   blogTeslaGurugram: {
     path: '/blog/tesla-centre-gurugram-launch-catering',
@@ -159,7 +171,8 @@ const pages = {
     title: 'Tesla Centre Gurugram Launch Catering, November 2025 | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
-    post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering')
+    post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Tesla Centre Gurugram Launch Catering', path: '/blog/tesla-centre-gurugram-launch-catering' }]
   },
   blogFerrariTrackDay: {
     path: '/blog/ferrari-track-day-catering-buddh-international-circuit',
@@ -169,7 +182,8 @@ const pages = {
     title: 'Ferrari Track Day Catering, Buddh International Circuit, April 2026 | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').image,
-    post: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit')
+    post: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Ferrari Track Day Catering', path: '/blog/ferrari-track-day-catering-buddh-international-circuit' }]
   },
   blogWeddingCateringGuide: {
     path: '/blog/how-to-plan-wedding-catering-delhi-ncr',
@@ -179,7 +193,8 @@ const pages = {
     title: 'How to Plan Wedding Catering in Delhi NCR | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').image,
-    post: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr')
+    post: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How to Plan Wedding Catering in Delhi NCR', path: '/blog/how-to-plan-wedding-catering-delhi-ncr' }]
   },
   press: {
     path: '/press',
@@ -188,7 +203,8 @@ const pages = {
     bodyClass: 'page-press',
     title: 'Press — Virtuoso Catering House',
     description: 'Press coverage and mentions of Virtuoso Catering House, a luxury experiential catering company based in Noida, Delhi NCR.',
-    ogImage: content.heroImage
+    ogImage: content.heroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Press', path: '/press' }]
   }
 };
 
