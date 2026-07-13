@@ -8,6 +8,7 @@ const siteUrl = 'https://www.virtuosocatering.com';
 const business = {
   name: 'Virtuoso Catering House',
   description: 'Virtuoso Catering House is a luxury experiential catering company based in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
+  logo: 'https://www.virtuosocatering.com/images/virtuoso-catering-house-logo.png',
   telephone: '+91-8700915463',
   email: 'virtuosocatering@gmail.com',
   streetAddress: 'A-15, A-Block, Sector 61',
