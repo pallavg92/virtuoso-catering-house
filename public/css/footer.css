@@ -99,3 +99,30 @@
 .site-footer__socials a:hover {
   color: var(--color-gold);
 }
+
+.whatsapp-float {
+  position: fixed;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-wine);
+  color: var(--color-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(23, 25, 15, 0.35);
+  z-index: var(--z-lightbox);
+  transition: background var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-float:hover {
+  background: var(--color-wine-light);
+  transform: scale(1.06);
+}
