@@ -85,7 +85,7 @@ const pages = {
     activePage: 'services',
     bodyClass: 'page-services',
     title: 'Services & Menus — Virtuoso Catering House',
-    description: 'Weddings, brand activations, private dining, and bespoke menus from Virtuoso Catering House, a luxury experiential caterer in Noida.',
+    description: 'Weddings, brand activations, mixology, and bespoke menus from Virtuoso Catering House, a luxury experiential caterer in Noida.',
     ogImage: content.services[0].image
   },
   contact: {

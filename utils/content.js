@@ -18,11 +18,11 @@ const services = [
     image: img('mv-brand-activation', 1400, 1800)
   },
   {
-    slug: 'private-dining',
-    title: 'Private Dining',
+    slug: 'mixology',
+    title: 'Mixology',
     kicker: '03',
-    copy: 'An intimate table, a chef in your kitchen, a menu written for no one else. Private dining the way it was meant to feel — unhurried.',
-    image: img('mv-private-dining', 1400, 1800)
+    copy: 'Live mixology stations and batch-crafted cocktail programs, built to move at the pace of the room — from a signature welcome pour to a full bar designed around your menu.',
+    image: img('mv-mixology', 1400, 1800)
   },
   {
     slug: 'bespoke',
