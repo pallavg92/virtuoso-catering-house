@@ -48,6 +48,26 @@
     </div>
   </section>
 
+  <% founders.forEach(function(founder) { %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "<%= founder.name %>",
+    "jobTitle": "<%= founder.role %>",
+    "description": "<%- JSON.stringify(founder.bio).slice(1, -1) %>",
+    "image": "<%= siteUrl %><%= founder.image %>",
+    "url": "<%= siteUrl %>/about",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "<%= business.name %>",
+      "url": "<%= siteUrl %>"
+    },
+    "sameAs": ["<%= founder.linkedin %>"]
+  }
+  </script>
+  <% }); %>
+
   <!-- HOW WE WORK -->
   <section class="timeline section section--charcoal">
     <div class="container">
