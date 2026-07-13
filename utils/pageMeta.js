@@ -7,6 +7,7 @@ const siteUrl = 'https://www.virtuosocatering.com';
 
 const business = {
   name: 'Virtuoso Catering House',
+  description: 'Virtuoso Catering House is a luxury experiential catering company based in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
   telephone: '+91-8700915463',
   email: 'virtuosocatering@gmail.com',
   streetAddress: 'A-15, A-Block, Sector 61',
@@ -17,6 +18,12 @@ const business = {
   // Resolved from the business's actual Google Maps listing (maps.app.goo.gl/VztH6YKQfN13Yogu7).
   latitude: 28.5964201,
   longitude: 77.3641803,
+  // Virtuoso is a catering company, not a dine-in restaurant — schema.org has
+  // no dedicated "Caterer" type (open feature request, never implemented:
+  // github.com/schemaorg/schemaorg/issues/1813), so we use plain LocalBusiness
+  // rather than the restaurant-oriented FoodEstablishment subtype, and list
+  // cuisines directly rather than implying a fixed dine-in menu.
+  cuisines: ['Asian', 'Indian', 'Mexican', 'Continental', 'Bakery', 'Mughlai', 'Chinese', 'Sushi'],
   sameAs: [
     'https://www.instagram.com/virtuosocateringhouse/',
     'https://pin.it/3EwnJeOiZ',

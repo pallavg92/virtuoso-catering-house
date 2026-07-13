@@ -49,8 +49,9 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "FoodEstablishment"],
+  "@type": "LocalBusiness",
   "name": "<%= business.name %>",
+  "description": "<%= business.description %>",
   "image": "<%= ogImage %>",
   "url": "<%= siteUrl %>",
   "telephone": "<%= business.telephone %>",
@@ -68,7 +69,7 @@
     "latitude": <%= business.latitude %>,
     "longitude": <%= business.longitude %>
   },
-  "servesCuisine": "Catering",
+  "servesCuisine": <%- JSON.stringify(business.cuisines) %>,
   "priceRange": "$$$",
   "sameAs": <%- JSON.stringify(business.sameAs) %>
 }
