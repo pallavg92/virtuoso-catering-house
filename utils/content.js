@@ -52,11 +52,26 @@ const instagramAccounts = [
 
 // Placeholder case studies — replace with real work write-ups (blog-format) as they're published.
 const ourWork = [
-  { slug: 'ferrari-apac-launch', title: 'Ferrari APAC — Product Launch Experience', image: img('mv-work-1', 1200, 1500) },
-  { slug: 'aravalli-wedding', title: 'A Wedding in the Aravalli Hills', image: img('mv-work-2', 1200, 1500) },
-  { slug: 'lamborghini-activation', title: 'Lamborghini Delhi — Brand Activation Dinner', image: img('mv-work-3', 1200, 1500) },
-  { slug: 'masaba-afterparty', title: 'House of Masaba — Runway After-Party', image: img('mv-work-4', 1200, 1500) },
-  { slug: 'private-anniversary', title: 'A Private Anniversary, Six Guests, One Table', image: img('mv-work-5', 1200, 1500) }
+  {
+    title: 'Lamborghini Temerario — Product Launch',
+    image: '/images/lamborghini-temerario-hero.jpg',
+    link: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario'
+  },
+  {
+    title: 'Tesla Centre Gurugram — Grand Opening',
+    image: '/images/virtuoso-catering-house-tesla-centre-gurugram-exterior-2025.jpg',
+    link: '/blog/tesla-centre-gurugram-launch-catering'
+  },
+  {
+    title: 'Ferrari Track Day — Buddh International Circuit',
+    image: '/images/virtuoso-catering-house-esperienza-ferrari-buddh-circuit-2026.jpg',
+    link: '/blog/ferrari-track-day-catering-buddh-international-circuit'
+  },
+  {
+    title: 'A Wedding Reception',
+    image: '/images/virtuoso-catering-house-weddings-service.jpg',
+    link: '/blog/how-to-plan-wedding-catering-delhi-ncr'
+  }
 ];
 
 // Placeholder blog posts — replace with real posts as they're written.
