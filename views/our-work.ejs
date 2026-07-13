@@ -32,7 +32,7 @@
 
       <div class="our-work__grid">
         <% ourWork.forEach(function(work, i) { %>
-        <a href="/blog" class="our-work-card reveal-up" data-cursor="hover">
+        <a href="<%= work.link %>" class="our-work-card reveal-up" data-cursor="hover">
           <img src="<%= work.image %>" alt="<%= work.title %>" loading="lazy">
           <div class="our-work-card__scrim"></div>
           <span class="our-work-card__title"><%= work.title %></span>
