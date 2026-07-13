@@ -246,6 +246,23 @@
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faq.map(function(item) {
+      return {
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      };
+    })
+  }) %>
+  </script>
   <% } %>
 
   <!-- CTA BANNER -->
