@@ -151,6 +151,17 @@ const pages = {
     ogImage: content.landingPages['luxury-brand-event-catering-delhi-ncr'].image,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Luxury Brand Event Catering Delhi NCR', path: '/luxury-brand-event-catering-delhi-ncr' }]
   },
+  landingWedding: {
+    path: '/luxury-wedding-catering-delhi-ncr',
+    view: 'landing',
+    landingSlug: 'luxury-wedding-catering-delhi-ncr',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['luxury-wedding-catering-delhi-ncr'].metaTitle,
+    description: content.landingPages['luxury-wedding-catering-delhi-ncr'].metaDescription,
+    ogImage: content.landingPages['luxury-wedding-catering-delhi-ncr'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Luxury Wedding Catering Delhi NCR', path: '/luxury-wedding-catering-delhi-ncr' }]
+  },
   // Real case-study posts recovered from the WordPress database backup.
   blogLamborghiniTemerario: {
     path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',

@@ -42,6 +42,7 @@ router.get('/best-catering-services-in-noida', (req, res) => render(res, pages.l
 router.get('/catering-services-in-greater-noida', (req, res) => render(res, pages.landingGreaterNoida));
 router.get('/corporate-catering-services-in-noida', (req, res) => render(res, pages.landingCorporate));
 router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, pages.landingBrandEvent));
+router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => render(res, pages.landingWedding));
 router.get('/press', (req, res) => render(res, pages.press));
 
 // 301 redirects from the retired WordPress site's URLs to their closest
@@ -64,7 +65,6 @@ router.get('/tesla-centre-gurugram-launch-catering-november-2025', (req, res) =>
 router.get('/luxury-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/blog'));
 router.get('/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/luxury-brand-event-catering-delhi-ncr'));
 router.get('/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
-router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 router.get('/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 
 // WordPress used nested page hierarchy (parent/child permalinks), not flat
@@ -73,7 +73,7 @@ router.get('/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirec
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/luxury-brand-event-catering-delhi-ncr'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr/lamborghini-temerario-launch-catering-delhi-2025', (req, res) => res.redirect(301, '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-fashion-and-retail-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
-router.get('/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
+router.get('/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', (req, res) => res.redirect(301, '/luxury-wedding-catering-delhi-ncr'));
 router.get('/luxury-brand-event-catering-delhi-ncr/luxury-private-event-catering-delhi-ncr', (req, res) => res.redirect(301, '/services'));
 
 // A WordPress-uploaded menu PDF still has real Search Console impression
