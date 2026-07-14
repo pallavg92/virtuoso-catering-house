@@ -671,15 +671,15 @@ const landingPages = {
     }
   },
   'luxury-wedding-catering-delhi-ncr': {
-    metaTitle: 'Luxury Wedding Catering, Delhi NCR | Virtuoso Catering House',
-    metaDescription: 'Virtuoso Catering House designs wedding catering across every function, from mehendi to reception, for families across Delhi NCR who want the food, presentation, and service handled by a specialist, not a banquet team.',
+    metaTitle: 'Wedding Caterers in Noida | Luxury Wedding Catering, Delhi NCR',
+    metaDescription: 'Virtuoso Catering House is a team of wedding caterers based in Noida, designing catering across every function, from mehendi to reception, for families across Delhi NCR who want the food, presentation, and service handled by a specialist, not a banquet team.',
     eyebrow: 'Weddings',
-    h1: 'Luxury Wedding Catering, Delhi NCR',
+    h1: 'Wedding Caterers in Noida, Delhi NCR',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
     lead: {
       heading: 'A Menu for Every Function, Not One Menu for the Whole Wedding',
       paragraphs: [
-        'A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
+        'Virtuoso Catering House is a team of wedding caterers based in Noida, working across Delhi NCR. A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
         'How far we take a menu depends on where a family is in their own understanding of F&B. Some couples want the classics done well. Others are already deep into the scene and ask for speciality Indian catering, restaurant pop-ups inside the wedding, or celebrity chefs who bring their own team and take exclusive ownership of one section of the menu. A live sushi bar is one of our favourite formats to execute for exactly this reason. It looks clean, it looks sophisticated, and it gives guests something to watch as well as eat.',
         'The single biggest decision a family makes is caterer versus banquet. A banquet spreads the food across one of several teams it is juggling that night. A specialist caterer takes exclusive ownership of three things: the food, the presentation, and the crockery and cutlery. Those three pillars are the actual difference, and they are why a dedicated caterer outperforms a banquet kitchen on any night that matters.'
       ]
@@ -714,6 +714,7 @@ const landingPages = {
       }
     },
     faq: [
+      { q: 'Are you wedding caterers based in Noida?', a: 'Yes. Virtuoso Catering House is based in Noida, Sector 61, and works on weddings across Delhi NCR, from Noida and Greater Noida to Delhi and Gurugram.' },
       { q: 'Should the menu be different for the mehendi versus the engagement or cocktail night?', a: 'Yes. Regional cuisines and lighter meals tend to suit the mehendi best, since it is usually followed by the engagement or cocktail night, which is where guests do the most indulgent eating of the wedding.' },
       { q: 'What is the difference between booking a specialist caterer and using a banquet’s in-house catering?', a: 'A banquet spreads its kitchen across several events on the same night. A specialist caterer takes exclusive ownership of three things: the food, the presentation, and the crockery and cutlery. Those three pillars are the real difference.' },
       { q: 'Do you offer celebrity chef sections or specialty concepts like a live sushi bar?', a: 'Yes. For families who want to go further than a classic menu, we bring in celebrity chefs who run their own dedicated section, or build formats like restaurant pop-ups and live sushi bars inside the wedding.' },
