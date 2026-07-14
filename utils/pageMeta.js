@@ -207,6 +207,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How to Plan Wedding Catering in Delhi NCR', path: '/blog/how-to-plan-wedding-catering-delhi-ncr' }]
   },
+  blogBathBodyWorks: {
+    path: '/blog/bath-body-works-touch-of-gold-product-launch',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Bath & Body Works Touch of Gold Product Launch Catering, Noida | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch').image,
+    post: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Bath & Body Works Touch of Gold Launch', path: '/blog/bath-body-works-touch-of-gold-product-launch' }]
+  },
   press: {
     path: '/press',
     view: 'press',
