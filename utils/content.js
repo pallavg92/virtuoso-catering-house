@@ -309,7 +309,7 @@ const blogPosts = [
     image: '/images/virtuoso-catering-house-grazing-table-bath-body-works-2026.jpg',
     relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
-      'Virtuoso Catering House designed and executed the catering for the Touch of Gold product launch by Bath & Body Works at Promenade Mall on 9 February 2026, in front of a room of clients and influencers. The brief was direct: every element on the table needed to visually announce the new Touch of Gold range, built around gold as the defining colour and the Bath & Body Works brand carried through the food itself, not just the styling around it.'
+      'Virtuoso Catering House designed and executed the catering for the Touch of Gold product launch by Bath & Body Works at Promenade Mall on 9 February 2026, serving a room of clients and influencers with a single all-gold grazing table built to carry the new product range through the food itself.'
     ],
     sections: [
       {
@@ -675,7 +675,7 @@ const landingPages = {
   },
   'luxury-brand-event-catering-delhi-ncr': {
     metaTitle: 'Luxury Brand Event Catering, Delhi NCR | Virtuoso Catering House',
-    metaDescription: 'Virtuoso Catering House designs food and beverage experiences for luxury brand launches across Delhi NCR, including automotive reveals, retail openings, and activations for Lamborghini, Tesla, Ferrari APAC, and BMW.',
+    metaDescription: 'Virtuoso Catering House designs food and beverage experiences for luxury brand launches across Delhi NCR, including automotive reveals, retail launches, and activations for Lamborghini, Tesla, Ferrari APAC, BMW, and Bath & Body Works.',
     eyebrow: 'Brand Activations',
     h1: 'Luxury Brand Event Catering, Delhi NCR',
     image: '/images/lamborghini-temerario-hero.jpg',
@@ -689,11 +689,12 @@ const landingPages = {
     },
     specializations: {
       heading: 'Where We’ve Done This',
-      intro: 'Four briefs, four different rooms, one discipline: the food never gets in front of the brand it’s serving.',
+      intro: 'Five briefs, five different rooms, one discipline: the food never gets in front of the brand it’s serving.',
       items: [
         { title: 'Lamborghini Temerario, Delhi', points: ['The Delhi launch at Lamborghini’s Sarita Vihar showroom, 100 UHNI guests and automotive media, April 2025.', 'A single circulation-first grazing table, timed sushi and canape rotation, a purple-themed mocktail matched to the Temerario’s colour language.'], link: { path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario', label: 'Read the full case study' } },
         { title: 'Tesla Centre Gurugram', points: ['The opening of Tesla Centre Gurugram at Orchid Business Park, 150 senior journalists, PR, and HNI clients, November 2025.', 'No fixed stations. Food rotated through the space on a timed cycle so nothing interrupted guest flow around the cars.'], link: { path: '/blog/tesla-centre-gurugram-launch-catering', label: 'Read the full case study' } },
-        { title: 'Ferrari APAC & BMW', points: ['Luxury automotive brand activation catering executed for Ferrari APAC and BMW dealer events across Delhi NCR.', 'Each brief built from the brand’s design language, not a repeated format from the last launch.'], link: { path: '/blog/ferrari-track-day-catering-buddh-international-circuit', label: 'Read the Ferrari track day case study' } }
+        { title: 'Ferrari APAC & BMW', points: ['Luxury automotive brand activation catering executed for Ferrari APAC and BMW dealer events across Delhi NCR.', 'Each brief built from the brand’s design language, not a repeated format from the last launch.'], link: { path: '/blog/ferrari-track-day-catering-buddh-international-circuit', label: 'Read the Ferrari track day case study' } },
+        { title: 'Bath & Body Works, Touch of Gold Launch', points: ['The Touch of Gold product launch at Promenade Mall, in front of clients and influencers, February 2026.', 'A single all-gold grazing table with branded macarons and a gold truffle tower, built to carry the product range through the food itself.'], link: { path: '/blog/bath-body-works-touch-of-gold-product-launch', label: 'Read the full case study' } }
       ]
     },
     whyUs: {
@@ -721,7 +722,8 @@ const landingPages = {
       { q: 'How does Virtuoso approach catering for luxury brand and automotive events?', a: 'Every brief starts with the brand’s design language, not a standard menu. We develop food, beverage format, and service choreography that reflect the aesthetic of the brand or vehicle being launched. The Lamborghini Temerario brief took three weeks of concept development before a single menu item was confirmed.' },
       { q: 'How far in advance should a luxury brand book Virtuoso for a launch event in Delhi NCR?', a: 'We recommend a minimum of six to eight weeks. That gives us time to build a concept aligned with the brand’s identity rather than adapting an existing format.' },
       { q: 'Does Virtuoso conduct menu trials before brand launch events?', a: 'Yes, every menu goes through a formal trial process. Each dish is tasted and assessed against two criteria: aesthetic presentation and ease of consumption in a live, standing-room event environment. Dishes that don’t meet both are adjusted or replaced before final approval.' },
-      { q: 'Which luxury brands has Virtuoso catered for in Delhi NCR?', a: 'Virtuoso Catering House has executed luxury brand activation catering for Lamborghini, Tesla India, Ferrari APAC, and BMW across Delhi NCR, alongside weddings, private dining, and bespoke menu work.' },
+      { q: 'Which luxury brands has Virtuoso catered for in Delhi NCR?', a: 'Virtuoso Catering House has executed luxury brand activation catering for Lamborghini, Tesla India, Ferrari APAC, BMW, and Bath & Body Works across Delhi NCR, alongside weddings, private dining, and bespoke menu work.' },
+      { q: 'Does Virtuoso cater for retail and beauty brand product launches, not just automotive?', a: 'Yes. For the Bath & Body Works Touch of Gold product launch at Promenade Mall, we built a single all-gold grazing table with branded macarons and a gold truffle tower, carrying the product range through the food itself rather than just the styling around it.' },
       { q: 'What guest capacity can Virtuoso handle for a brand activation?', a: 'We’ve served events from intimate 50-guest brand previews to 150-plus guest flagship launches. That includes 150 senior journalists and HNI guests at the Tesla Centre Gurugram opening, and 100 UHNI guests and automotive media at the Lamborghini Temerario launch.' }
     ],
     author: {
