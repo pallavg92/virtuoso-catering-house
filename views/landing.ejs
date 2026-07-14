@@ -82,6 +82,9 @@
             <% }); %>
           </ul>
           <% } %>
+          <% if (item.link) { %>
+          <a href="<%= item.link.path %>" class="link-underline landing-card__link"><%= item.link.label %></a>
+          <% } %>
         </div>
         <% }); %>
       </div>

@@ -854,6 +854,15 @@
   color: rgba(253, 248, 240, 0.7);
 }
 
+.landing-card__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+}
+
+.section--charcoal .landing-card__link {
+  color: var(--color-gold-soft);
+}
+
 .landing-faq__list {
   display: flex;
   flex-direction: column;

@@ -635,9 +635,9 @@ const landingPages = {
       heading: 'Where We’ve Done This',
       intro: 'Four briefs, four different rooms, one discipline: the food never gets in front of the brand it’s serving.',
       items: [
-        { title: 'Lamborghini Temerario, Delhi', points: ['The Delhi launch at Lamborghini’s Sarita Vihar showroom, 100 UHNI guests and automotive media, April 2025.', 'A single circulation-first grazing table, timed sushi and canape rotation, a purple-themed mocktail matched to the Temerario’s colour language.'] },
-        { title: 'Tesla Centre Gurugram', points: ['The opening of Tesla Centre Gurugram at Orchid Business Park, 150 senior journalists, PR, and HNI clients, November 2025.', 'No fixed stations. Food rotated through the space on a timed cycle so nothing interrupted guest flow around the cars.'] },
-        { title: 'Ferrari APAC & BMW', points: ['Luxury automotive brand activation catering executed for Ferrari APAC and BMW dealer events across Delhi NCR.', 'Each brief built from the brand’s design language, not a repeated format from the last launch.'] }
+        { title: 'Lamborghini Temerario, Delhi', points: ['The Delhi launch at Lamborghini’s Sarita Vihar showroom, 100 UHNI guests and automotive media, April 2025.', 'A single circulation-first grazing table, timed sushi and canape rotation, a purple-themed mocktail matched to the Temerario’s colour language.'], link: { path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario', label: 'Read the full case study' } },
+        { title: 'Tesla Centre Gurugram', points: ['The opening of Tesla Centre Gurugram at Orchid Business Park, 150 senior journalists, PR, and HNI clients, November 2025.', 'No fixed stations. Food rotated through the space on a timed cycle so nothing interrupted guest flow around the cars.'], link: { path: '/blog/tesla-centre-gurugram-launch-catering', label: 'Read the full case study' } },
+        { title: 'Ferrari APAC & BMW', points: ['Luxury automotive brand activation catering executed for Ferrari APAC and BMW dealer events across Delhi NCR.', 'Each brief built from the brand’s design language, not a repeated format from the last launch.'], link: { path: '/blog/ferrari-track-day-catering-buddh-international-circuit', label: 'Read the Ferrari track day case study' } }
       ]
     },
     whyUs: {
