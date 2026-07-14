@@ -316,7 +316,8 @@ const blogPosts = [
         heading: 'The Challenge',
         paragraphs: [
           'A product launch built around a room of clients and influencers is also a room built for photographs. The table needed to read instantly in a single frame, on brand and unmistakably gold, without the visual clutter that comes from spreading a menu across multiple stations.',
-          'Bath & Body Works wanted the food itself to feel branded, not just styled to match a colour palette. That meant the menu had to carry the Touch of Gold identity in the ingredients and presentation, not only in the table linen and florals around it.'
+          'Bath & Body Works wanted the food itself to feel branded, not just styled to match a colour palette. That meant the menu had to carry the Touch of Gold identity in the ingredients and presentation, not only in the table linen and florals around it.',
+          'For Aarti Sharma, our co-founder, the brief carried a personal history. "Before Bath & Body Works entered India, I used to specifically purchase their products when I was on trips abroad. I was incredibly excited to execute a table for this iconic brand," she said.'
         ],
         image: {
           src: '/images/virtuoso-catering-house-aarti-sharma-truffle-tower-bath-body-works-2026.jpg',
