@@ -467,6 +467,12 @@ const blogPosts = [
         paragraphs: [
           'By the time the wedding arrives, nothing on the menu is being decided in real time. Live stations, trained servers, and a kitchen team run the same process that was tested weeks earlier, at the scale the day actually requires.'
         ]
+      },
+      {
+        heading: 'Ready to Start Planning?',
+        paragraphs: [
+          'If you are planning your wedding, call us at +91 87009 15463 or write to virtuosocatering@gmail.com. We will get in touch and take you through the steps from here.'
+        ]
       }
     ],
     faq: [
