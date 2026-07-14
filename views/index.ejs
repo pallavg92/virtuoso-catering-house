@@ -194,6 +194,25 @@
     </div>
   </section>
 
+  <!-- EXPLORE BY OCCASION & LOCATION -->
+  <section class="explore-links section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Explore</span>
+        <h2 class="section-title reveal-up">By Occasion &amp; Location</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="explore-links__grid">
+        <% commercialPages.forEach(function(page) { %>
+        <a href="<%= page.path %>" class="explore-links__item reveal-up" data-cursor="hover">
+          <span class="explore-links__label"><%= page.label %></span>
+          <p class="explore-links__blurb"><%= page.blurb %></p>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA BANNER -->
   <section class="cta-banner section section--wine">
     <div class="container cta-banner__inner">

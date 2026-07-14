@@ -21,6 +21,7 @@
     </div>
     <div class="page-intro__scrim"></div>
     <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
       <span class="eyebrow eyebrow--light reveal-up"><%= data.eyebrow %></span>
       <h1 class="page-intro__title reveal-up"><%= data.h1 %></h1>
     </div>
@@ -80,6 +81,9 @@
             <li><%= point %></li>
             <% }); %>
           </ul>
+          <% } %>
+          <% if (item.link) { %>
+          <a href="<%= item.link.path %>" class="link-underline landing-card__link"><%= item.link.label %></a>
           <% } %>
         </div>
         <% }); %>
@@ -265,6 +269,25 @@
   }) %>
   </script>
   <% } %>
+
+  <!-- EXPLORE MORE -->
+  <section class="explore-links section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Explore More</span>
+        <h2 class="section-title reveal-up">Other Ways We Can Help</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="explore-links__grid">
+        <% commercialPages.filter(function(page) { return page.path !== '/' + landingSlug; }).forEach(function(page) { %>
+        <a href="<%= page.path %>" class="explore-links__item reveal-up" data-cursor="hover">
+          <span class="explore-links__label"><%= page.label %></span>
+          <p class="explore-links__blurb"><%= page.blurb %></p>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA BANNER -->
   <section class="cta-banner section section--wine">
