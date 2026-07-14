@@ -425,7 +425,7 @@ const blogPosts = [
     title: 'How Do Luxury Wedding Caterers Build a Custom Menu? A Step-by-Step Look Inside Virtuoso’s Process',
     excerpt: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial. Here is exactly how that process works at Virtuoso.',
     date: '2026-07-14',
-    image: img('mv-blog-menu-process', 1200, 800),
+    image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
     relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
     lead: [
       'A luxury wedding caterer builds a custom menu in five stages: a discovery conversation about your story and guests, a hands-on tasting session, menu customization for dietary and cultural needs, ingredient sourcing, and a final chef trial before sign-off. At Virtuoso, this runs across several weeks before your wedding date.'
