@@ -218,6 +218,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Bath & Body Works Touch of Gold Launch', path: '/blog/bath-body-works-touch-of-gold-product-launch' }]
   },
+  blogMenuBuildingProcess: {
+    path: '/blog/how-luxury-wedding-caterers-build-custom-menu',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'How Luxury Wedding Caterers Build a Custom Menu | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu').image,
+    post: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How Luxury Wedding Caterers Build a Custom Menu', path: '/blog/how-luxury-wedding-caterers-build-custom-menu' }]
+  },
   blogPresentationMyths: {
     path: '/blog/does-wedding-presentation-need-big-budget',
     view: 'blog-post',

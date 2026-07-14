@@ -103,6 +103,23 @@
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faq.map(function(item) {
+      return {
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      };
+    })
+  }) %>
+  </script>
   <% } %>
 
   <% if (post.author) { %>

@@ -473,6 +473,73 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'how-luxury-wedding-caterers-build-custom-menu',
+    title: 'How Do Luxury Wedding Caterers Build a Custom Menu? A Step-by-Step Look Inside Virtuoso’s Process',
+    excerpt: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial. Here is exactly how that process works at Virtuoso.',
+    date: '2026-07-14',
+    image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
+    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    lead: [
+      'A luxury wedding caterer builds a custom menu in five stages: a discovery conversation about your story and guests, a hands-on tasting session, menu customization for dietary and cultural needs, ingredient sourcing, and a final chef trial before sign-off. At Virtuoso, this runs across several weeks before your wedding date.'
+    ],
+    sections: [
+      {
+        heading: 'Step 1: The Discovery Conversation',
+        paragraphs: [
+          'This is a sit-down conversation, not a form to fill out. We ask about the cities you grew up in, the dish your family makes that nobody else gets right, and the two or three dishes you already know have to be on the table. The goal by the end of this conversation is a flavor brief, not a guest count.'
+        ]
+      },
+      {
+        heading: 'Step 2: The Tasting Session',
+        paragraphs: [
+          'Nothing served at the tasting is a mockup. If a dish is on the table during your tasting, it is cooked by the same kitchen team, using the same process, that will serve your wedding. This is deliberate. It is the stage where a dish that sounds good on paper either holds up or does not.',
+          'Tastings happen at Virtuoso’s experience centre in Noida, Sector 61, not at a live event. "Tasting is the most important component of our discovery process. Unlike other caterers, we do not invite couples for tasting at our events. Instead, we host couples with family for an intimate tasting session at our experience centre. It leaves more space for conversation and honesty," said Aarti Sharma, co-founder of Virtuoso Catering House.'
+        ]
+      },
+      {
+        heading: 'Step 3: Menu Customization',
+        paragraphs: [
+          'After the tasting, the menu is adjusted for dietary needs, family traditions, and any dish the couple wants reworked. This is also where regional or cultural elements get folded in, so the final menu reads as personal rather than borrowed from a template.'
+        ]
+      },
+      {
+        heading: 'Step 4: Sourcing the Ingredients',
+        paragraphs: [
+          'Once the menu is locked, sourcing begins for seasonal and premium ingredients. A dish that tasted right in the tasting session can fall flat on the wedding day if the ingredients behind it are not sourced with the same care, so this step happens well before the final week of planning.'
+        ]
+      },
+      {
+        heading: 'Step 5: The Chef’s Trial Run and Final Sign-Off',
+        paragraphs: [
+          'Every dish is tested again in the kitchen before it is formally approved, checking plating, portioning, and consistency at the volume the wedding actually needs. Couples receive the final tasting notes and sign off here, which is what keeps the wedding day itself close to surprise-free.'
+        ]
+      },
+      {
+        heading: 'Wedding Day Execution',
+        paragraphs: [
+          'By the time the wedding arrives, nothing on the menu is being decided in real time. Live stations, trained servers, and a kitchen team run the same process that was tested weeks earlier, at the scale the day actually requires.'
+        ]
+      },
+      {
+        heading: 'Ready to Start Planning?',
+        paragraphs: [
+          'If you are planning your wedding, call us at +91 87009 15463 or write to virtuosocatering@gmail.com. We will get in touch and take you through the steps from here.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'How long does it take to finalize a wedding catering menu?', a: 'Most couples move from the first tasting to a locked menu within two to three weeks. The timeline depends on how many rounds of customization are needed and how far out the wedding date is, but the tasting session is where most of the real decisions get made.' },
+      { q: 'Can a wedding caterer customize a menu for dietary restrictions or religious requirements?', a: 'Yes. Dietary needs and cultural or religious requirements are gathered during the discovery conversation, before the tasting menu is even built, so the tasting already reflects what is actually possible to serve rather than a generic starting point.' },
+      { q: 'What happens if a couple does not like a dish during the tasting?', a: 'That dish gets reworked or replaced before the trial run stage. The tasting session exists precisely to catch this early, so nothing reaches the trial run, let alone the wedding day, without the couple’s approval.' },
+      { q: 'How many tasting sessions happen before a wedding?', a: 'Typically one structured tasting session covers the full menu, with a follow-up trial run for any dishes that were customized or reworked. Couples are not left choosing blind between rounds, since each reworked version is tasted before it is approved.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 
