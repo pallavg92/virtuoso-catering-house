@@ -36,6 +36,7 @@ router.get('/blog/tesla-centre-gurugram-launch-catering', (req, res) => render(r
 router.get('/blog/ferrari-track-day-catering-buddh-international-circuit', (req, res) => render(res, pages.blogFerrariTrackDay));
 router.get('/blog/how-to-plan-wedding-catering-delhi-ncr', (req, res) => render(res, pages.blogWeddingCateringGuide));
 router.get('/blog/bath-body-works-touch-of-gold-product-launch', (req, res) => render(res, pages.blogBathBodyWorks));
+router.get('/blog/does-wedding-presentation-need-big-budget', (req, res) => render(res, pages.blogPresentationMyths));
 router.get('/services', (req, res) => render(res, pages.services));
 router.get('/menu', (req, res) => res.redirect(301, '/services'));
 router.get('/contact', (req, res) => render(res, pages.contact));

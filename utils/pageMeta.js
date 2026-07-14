@@ -218,6 +218,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Bath & Body Works Touch of Gold Launch', path: '/blog/bath-body-works-touch-of-gold-product-launch' }]
   },
+  blogPresentationMyths: {
+    path: '/blog/does-wedding-presentation-need-big-budget',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Does a Stunning Wedding Presentation Need a Big Budget? | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget').image,
+    post: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Does a Stunning Wedding Presentation Need a Big Budget?', path: '/blog/does-wedding-presentation-need-big-budget' }]
+  },
   press: {
     path: '/press',
     view: 'press',
