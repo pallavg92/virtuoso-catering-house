@@ -425,7 +425,7 @@ const blogPosts = [
     title: 'Does a Stunning Wedding Presentation Need a Big Budget? Here Is What Actually Makes the Difference',
     excerpt: 'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space, and dishes rehearsed enough times that nothing is left to chance.',
     date: '2026-07-14',
-    image: img('mv-blog-presentation-myths', 1200, 800),
+    image: '/images/virtuoso-catering-house-presentation-myths-hero.jpg',
     relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
     lead: [
       'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space for chefs to plate under pressure, and dishes rehearsed enough times that nothing is left to chance. At Virtuoso, servers carry the food. Chefs create the presentation.'
