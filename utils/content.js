@@ -419,15 +419,15 @@ const pressMentions = [
 // verbatim per instruction rather than rewritten in the new site's voice.
 const landingPages = {
   'best-catering-services-in-noida': {
-    metaTitle: 'Best Catering Services in Noida You Must Try in 2026',
-    metaDescription: 'Make your celebrations memorable with Virtuoso Catering, the best catering services in Noida offering gourmet dishes and exceptional event experiences.',
+    metaTitle: 'Catering Services in Noida | Best Caterers, Noida',
+    metaDescription: 'Virtuoso offers catering services in Noida for weddings, parties, and private events. Book trusted caterers in Noida for gourmet food and exceptional service.',
     eyebrow: 'Noida',
-    h1: 'Enjoy Delicious Food with Virtuoso Best Catering Services in Noida',
+    h1: 'Catering Services in Noida, Trusted by Families Across the City',
     image: img('mv-landing-noida', 2400, 1200),
     lead: {
       heading: 'Catering Services in Noida for Weddings and Events',
       paragraphs: [
-        'Seeking top-notch catering services in Noida? If so, then Virtuoso, best caterers in Noida is here to cater to your needs.',
+        'Looking for reliable catering services in Noida? Virtuoso is the caterer families and companies across the city turn to for weddings, parties, and private events.',
         'Our team combines professionalism with flavor and affordability, ensuring luxury catering in Noida.',
         'We deliver tailored to your unique needs unforgettable experiences through great food and service.'
       ]
@@ -487,6 +487,7 @@ const landingPages = {
       ]
     },
     faq: [
+      { q: 'Do you provide catering services in Noida for both small and large events?', a: 'Yes. We cater to events beginning from 20 guests, and also provide larger packages for 100 plus guests, across Noida and the surrounding areas.' },
       { q: 'What is for catering the minimum number of guests?', a: 'We cater to events beginning from 20 guests. Additionally we also provide larger packages for 100 plus guests.' },
       { q: 'Do you provide live counters and servers?', a: 'Yes, we do. We offer for service during the event, live food stations and professional staff.' },
       { q: 'Are vegetarian or non-vegetarian catering offered?', a: 'We offer both options. Menus can be based on your dietary preferences, fully customized.' },

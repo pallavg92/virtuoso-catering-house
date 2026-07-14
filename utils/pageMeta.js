@@ -116,7 +116,7 @@ const pages = {
     title: content.landingPages['best-catering-services-in-noida'].metaTitle,
     description: content.landingPages['best-catering-services-in-noida'].metaDescription,
     ogImage: content.landingPages['best-catering-services-in-noida'].image,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Catering Services in Noida', path: '/best-catering-services-in-noida' }]
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Catering Services in Noida', path: '/best-catering-services-in-noida' }]
   },
   landingGreaterNoida: {
     path: '/catering-services-in-greater-noida',
