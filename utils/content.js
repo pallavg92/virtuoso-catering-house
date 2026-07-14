@@ -104,6 +104,7 @@ const blogPosts = [
     excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario, a grazing table built for circulation, not congregation.',
     date: '2026-05-22',
     image: '/images/lamborghini-temerario-hero.jpg',
+    relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
       'Virtuoso Catering House designed and executed the complete hospitality experience for the Delhi launch of the Lamborghini Temerario at Lamborghini Delhi, Sarita Vihar, on April 30, 2025. The event hosted 100 UHNI guests including automotive media and senior Lamborghini clientele. The brief was precise: the food and beverage experience should feel like the car. That brief took three weeks to translate into a concept.'
     ],
@@ -167,6 +168,7 @@ const blogPosts = [
     excerpt: 'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram, with clean, aesthetic food built for a room where every guest is working.',
     date: '2026-05-23',
     image: '/images/virtuoso-catering-house-tesla-centre-gurugram-exterior-2025.jpg',
+    relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
       'Virtuoso Catering House designed and executed the complete F&B experience for the opening of Tesla Centre Gurugram at Orchid Business Park, Badshahpur Sohna Road, Gurugram in November 2025. The event hosted 150 guests including senior automotive journalists, PR professionals, and HNI clients. The brief was precise: clean, aesthetic food that works in a busy, high-energy environment where guests are moving, networking, and experiencing the space simultaneously.'
     ],
@@ -234,6 +236,7 @@ const blogPosts = [
     excerpt: 'Virtuoso Catering House designed and executed the complete hospitality experience for La Esperienza Ferrari Delhi, a four day Ferrari APAC track day at Buddh International Circuit, built around an exclusively Italian menu.',
     date: '2026-05-02',
     image: '/images/virtuoso-catering-house-esperienza-ferrari-buddh-circuit-2026.jpg',
+    relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
       'Virtuoso Catering House designed and executed the complete hospitality experience for La Esperienza Ferrari Delhi, a four day track day hosted by Ferrari APAC at the Buddh International Circuit from 9 to 12 April 2026. The event brought together 300 guests across Ferraristas, media, and celebrities. The brief was exact: an exclusively Italian menu, sourced down to the water, held to one standard through every stage of planning. Only the best for the best.'
     ],
@@ -303,6 +306,7 @@ const blogPosts = [
     excerpt: 'A practical guide to planning wedding catering in Delhi NCR, from matching the menu to each function’s mood to knowing when a specialized caterer actually outperforms a banquet kitchen.',
     date: '2026-07-08',
     image: img('mv-blog-wedding-guide', 1200, 800),
+    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
     lead: [
       'Most couples do not need a fixed price list. They need to know how to think about the decision. The right wedding catering setup depends less on a formula and more on how initiated the family is into food, and on matching every function, from the mehendi to the wedding day itself, to its own mood rather than repeating the same menu four times.'
     ],
@@ -841,12 +845,24 @@ const menu = {
 
 const eventTypes = ['Wedding', 'Private', 'Brand', 'Other'];
 
+// The 5 SEO/commercial landing pages, used to cross-link them from the
+// homepage, /services, and each other, so none of them are reachable
+// only through the footer or the sitemap.
+const commercialPages = [
+  { path: '/best-catering-services-in-noida', label: 'Catering in Noida', blurb: 'Full-service wedding, corporate, and private event catering across Noida.' },
+  { path: '/catering-services-in-greater-noida', label: 'Catering in Greater Noida', blurb: 'The same specialist catering, extended across Greater Noida and Noida Extension.' },
+  { path: '/corporate-catering-services-in-noida', label: 'Corporate Catering, Noida', blurb: 'Office lunches, product launches, and corporate events across Noida.' },
+  { path: '/luxury-wedding-catering-delhi-ncr', label: 'Wedding Caterers, Noida', blurb: 'A menu for every function, from the mehendi to the reception.' },
+  { path: '/luxury-brand-event-catering-delhi-ncr', label: 'Luxury Brand Events', blurb: 'Catering for automotive and retail launches, built from the brand’s design language.' }
+];
+
 module.exports = {
   services,
   instagramAccounts,
   ourWork,
   blogPosts,
   landingPages,
+  commercialPages,
   pressAndClients,
   pressMentions,
   brandQuote,

@@ -1,0 +1,12 @@
+<% if (typeof breadcrumbs !== 'undefined' && breadcrumbs && breadcrumbs.length > 1) { %>
+<nav class="breadcrumb-trail" aria-label="Breadcrumb">
+  <% breadcrumbs.forEach(function(crumb, i) { %>
+    <% if (i === breadcrumbs.length - 1) { %>
+    <span class="breadcrumb-trail__current" aria-current="page"><%= crumb.name %></span>
+    <% } else { %>
+    <a href="<%= crumb.path %>" class="breadcrumb-trail__link"><%= crumb.name %></a>
+    <span class="breadcrumb-trail__sep" aria-hidden="true">/</span>
+    <% } %>
+  <% }); %>
+</nav>
+<% } %>

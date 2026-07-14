@@ -20,6 +20,7 @@
     </div>
     <div class="page-intro__scrim"></div>
     <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
       <span class="eyebrow eyebrow--light reveal-up"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
       <h1 class="page-intro__title reveal-up"><%= post.title %></h1>
     </div>
@@ -75,6 +76,9 @@
       <% }); %>
 
       <div class="blog-post__prose">
+        <% if (post.relatedLink) { %>
+        <p class="blog-post__copy reveal-up"><a href="<%= post.relatedLink.path %>" class="link-underline"><%= post.relatedLink.label %></a></p>
+        <% } %>
         <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
       </div>
     </div>

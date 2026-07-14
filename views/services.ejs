@@ -20,6 +20,7 @@
     </div>
     <div class="page-intro__scrim"></div>
     <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
       <span class="eyebrow eyebrow--light reveal-up">Services</span>
       <h1 class="page-intro__title reveal-up">Every Detail,<br>Considered</h1>
     </div>
@@ -45,6 +46,8 @@
           <p class="service-post-card__copy"><%= service.copy %></p>
           <% if (service.slug === 'brand-activations') { %>
           <a href="/luxury-brand-event-catering-delhi-ncr" class="link-underline">Read More</a>
+          <% } else if (service.slug === 'weddings') { %>
+          <a href="/luxury-wedding-catering-delhi-ncr" class="link-underline">Read More</a>
           <% } else { %>
           <a href="#menu-panels" class="link-underline">View Sample Menu</a>
           <% } %>
@@ -95,6 +98,25 @@
             <% }); %>
           </div>
         </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS WE SERVE -->
+  <section class="explore-links section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Areas We Serve</span>
+        <h2 class="section-title reveal-up">Catering Across Delhi NCR</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="explore-links__grid">
+        <% commercialPages.forEach(function(page) { %>
+        <a href="<%= page.path %>" class="explore-links__item reveal-up" data-cursor="hover">
+          <span class="explore-links__label"><%= page.label %></span>
+          <p class="explore-links__blurb"><%= page.blurb %></p>
+        </a>
         <% }); %>
       </div>
     </div>
