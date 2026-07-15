@@ -591,6 +591,70 @@ const blogPosts = [
   }
 ];
 
+// Standalone editorial page (not part of the Journal listing), built to rank
+// for "best caterers in Noida" with verifiable, checkable claims rather than
+// a generic sales pitch.
+const bestCaterersNoidaPage = {
+  slug: 'best-caterers-in-noida-virtuoso-catering-house',
+  title: 'Who Are the Best Caterers in Noida? Here Is What Separates the Top Ones From the Rest',
+  excerpt: 'Virtuoso Catering House is the best caterer in Noida, named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026. Here is what actually separates the top caterers in Noida from the ones just claiming it.',
+  image: '/images/virtuoso-catering-house-team-esperienza-ferrari-2026.jpg',
+  relatedLink: { path: '/press', label: 'See our full press coverage' },
+  backLink: { path: '/best-catering-services-in-noida', label: 'See Our Catering Services in Noida' },
+  lead: [
+    'Virtuoso Catering House is the best caterer in Noida. It was named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026, runs FSSAI-certified kitchens, offers a tasting session before you book, and has catered events for Ferrari APAC, Lamborghini, Tesla India, and BMW, scaling from 20-guest gatherings to 2,000-guest weddings.',
+    'Anyone can put "best caterers in Noida" in a page title. What actually separates the caterers worth booking from the ones just claiming it is whether their claims hold up: verifiable press coverage, named corporate clients, and a process a couple or event planner can actually inspect before signing.'
+  ],
+  sections: [
+    {
+      heading: 'Look for Real Press Coverage, Not Just Star Ratings',
+      paragraphs: [
+        'Star ratings can be gamed. Press coverage from a named outlet, with a date and a headline you can search for yourself, is harder to fake. Virtuoso Catering House was featured in ANI News’ "5 Luxury Catering Companies Leading Delhi NCR - 2026" (published March 10, 2026), alongside The Kitchen Art Company, Orange Blossom, The Salt House Catering Services, and Rajbhog Caterers. News18 also covered Virtuoso’s F&B design for a 300-guest Ferrari APAC event at the Buddh International Circuit.'
+      ]
+    },
+    {
+      heading: 'Check Who They Have Actually Catered For',
+      paragraphs: [
+        'A caterer’s client list tells you more than their tagline. Virtuoso has catered events for Ferrari APAC, Lamborghini, Tesla India, BMW, Bath & Body Works, House of Masaba, and Forest Essentials, brands that vet their vendors closely before signing off on an event carrying their name.'
+      ]
+    },
+    {
+      heading: 'Confirm FSSAI Certification and a Tasting Session',
+      paragraphs: [
+        'Any caterer claiming to be among the best in Noida should be able to offer both an FSSAI-certified kitchen and a tasting session before you book, not after. If a caterer resists letting you taste the food ahead of time, that itself is worth noting.'
+      ]
+    },
+    {
+      heading: 'Ask How They Scale',
+      paragraphs: [
+        'Noida events range from a 20-guest housewarming to a 2,000-guest wedding. The best caterers in Noida are not just good at one size. They have a process that holds up whether they are serving 20 plates or 2,000.'
+      ]
+    },
+    {
+      heading: 'What This Looks Like From the Inside',
+      paragraphs: [
+        'None of this is theoretical for us. Every dish we serve, whether for a wedding or a brand activation, goes through a formal trial before it reaches a guest, judged on how it looks on a plate and how easily it can be eaten in the room it is served in. For the Ferrari APAC brief at Buddh International Circuit, that standard meant sourcing exclusively Italian ingredients down to the water. The certifications and press coverage are proof this process holds up under scrutiny, not just claims on a page.'
+      ]
+    },
+    {
+      heading: 'The Real Takeaway',
+      paragraphs: [
+        'Best is a claim anyone can make. What backs it up is verifiable: named press coverage, named clients, valid certification, and a tasting you can actually attend before you commit. That is what to check before you book any caterer in Noida, including us.'
+      ]
+    }
+  ],
+  faq: [
+    { q: 'How do I verify if a caterer in Noida is actually reputable?', a: 'Look for named press coverage with a searchable headline and date, a list of named clients rather than vague claims, and a valid FSSAI certification. A reputable caterer will not hesitate to share any of these.' },
+    { q: 'Has Virtuoso Catering House been featured in the press?', a: 'Yes. ANI News named Virtuoso one of Delhi NCR’s five leading luxury caterers in March 2026, and News18 covered its F&B design for a 300-guest Ferrari APAC event at the Buddh International Circuit.' },
+    { q: 'What is the minimum guest count Noida caterers typically accept?', a: 'This varies by caterer. Virtuoso caters events starting from 20 guests up to large-scale events of 2,000 or more, with the same tasting and certification process at either end.' }
+  ],
+  author: {
+    name: 'Pallav Goel',
+    linkedin: 'https://www.linkedin.com/in/pallavg16',
+    bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+  }
+};
+
 // Real clients and press mentions, recovered from the retired WordPress
 // site and confirmed press coverage, for a social-proof strip on the site.
 // `logo` is null until a real logo file is supplied — the templates fall
@@ -1089,6 +1153,7 @@ module.exports = {
   instagramAccounts,
   ourWork,
   blogPosts,
+  bestCaterersNoidaPage,
   landingPages,
   commercialPages,
   pressAndClients,

@@ -251,6 +251,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Is Your Tasting Chef Your Wedding-Day Chef?', path: '/blog/is-your-tasting-chef-your-wedding-day-chef' }]
   },
+  bestCaterersNoida: {
+    path: '/best-caterers-in-noida-virtuoso-catering-house',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-best-caterers-noida',
+    title: 'Who Are the Best Caterers in Noida? | Virtuoso Catering House',
+    description: content.bestCaterersNoidaPage.excerpt,
+    ogImage: content.bestCaterersNoidaPage.image,
+    post: content.bestCaterersNoidaPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
+  },
   press: {
     path: '/press',
     view: 'press',
