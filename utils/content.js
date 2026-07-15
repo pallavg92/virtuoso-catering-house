@@ -588,6 +588,67 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'wedding-catering-menu-in-delhi',
+    title: 'What’s Actually on a Wedding Catering Menu in Delhi? A Dish-by-Dish Breakdown by Function',
+    excerpt: 'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters at the cocktail, and a fuller multi-cuisine spread at the reception.',
+    date: '2026-07-15',
+    image: '/images/virtuoso-catering-house-weddings-service.jpg',
+    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    lead: [
+      'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters and starters at the cocktail or engagement, and a fuller multi-cuisine spread, North Indian, Continental, Chinese, and fusion, at the reception. The dishes change by function because the mood of each one is different, not because of a fixed template.',
+      'A family sat across from me a few months ago and said, "Just give us the reception menu for the mehendi too. We\'ll trim it down later." I\'ve learned to catch that sentence early, because it\'s where most Delhi wedding menus go wrong. Trimming a big menu doesn\'t give you a lighter one. It gives you a smaller version of the wrong thing.',
+      'Ask ten Delhi families what should be on a wedding menu and you\'ll get ten different answers, because the honest answer depends on which function you\'re asking about. The mehendi, the cocktail night, and the reception aren\'t the same event in different outfits. They\'re three different moods, and the food has to keep pace with each one.'
+    ],
+    sections: [
+      {
+        heading: 'Mehendi: Lighter, Regional, and Built to Pace the Guests',
+        paragraphs: [
+          'The mehendi usually lands right before the real spectacle: the engagement or cocktail night, the one most guests quietly treat as the main event. Which means the mehendi\'s job isn\'t to impress. It\'s to not get in the way. Regional dishes do best here, kept deliberately light, so nobody\'s already full by the time the evening that actually matters shows up. Nothing sadder than a guest who peaked at 6pm.'
+        ]
+      },
+      {
+        heading: 'Cocktail and Engagement: Where the Real Eating Happens',
+        paragraphs: [
+          'This is the one function where restraint takes a night off. On purpose. Live counters, sharper flavours, a service pace that keeps people moving from one plate to the next. Starters carry more weight here than at any other function, because this is the night families are willing to be a little ambitious. A live sushi bar is the cleanest example of that ambition. It looks sophisticated, and just as important, it gives guests something to watch, not just eat. Half the appeal of a live counter is the theatre of it.'
+        ]
+      },
+      {
+        heading: 'Reception: The Full Spread',
+        paragraphs: [
+          'The reception is where the menu finally stops holding back: North Indian classics, Continental plates, Chinese counters, fusion dishes that take two cuisines and make them behave like one course. It\'s usually the largest, most formal function of the three, and the menu earns that scale honestly. Not a curated handful stretched thin to look like more. An actual full spread.'
+        ]
+      },
+      {
+        heading: 'How Far a Menu Goes Depends on the Family, Not the Budget',
+        paragraphs: [
+          'Some families want five dishes done so well nobody asks for a sixth. Others arrive already fluent in food. They\'ll ask for speciality Indian catering, a restaurant pop-up built inside the wedding, or a celebrity chef who brings their own team and simply owns one section of the menu outright. The live sushi bar is usually where that ownership model shows up first. Either way, it\'s rarely a budget conversation. It\'s a taste conversation that happens to have a budget attached to it.'
+        ]
+      },
+      {
+        heading: 'Vegetarian and Non-Vegetarian, Planned Separately, Not as an Afterthought',
+        paragraphs: [
+          'A wedding menu in Delhi rarely runs on one track, and it shouldn\'t. Vegetarian and non-vegetarian get planned as two distinct menus, not one menu with a few substitutions bolted on. The substitution approach has a tell: it makes the vegetarian plate feel like the understudy instead of the lead. Nobody wants to be someone\'s backup dinner at their own wedding.'
+        ]
+      },
+      {
+        heading: 'Ready to Start Planning Your Menu?',
+        paragraphs: [
+          'Call us at +91 87009 15463 or write to virtuosocatering@gmail.com. Or simply leave a hi on WhatsApp and we\'ll get in touch.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'Does the wedding menu stay the same across all functions?', a: 'No, and it shouldn\'t. The mehendi, cocktail or engagement, and reception each carry a different mood, and the menu follows it: lighter and regional at the mehendi, indulgent live counters at the cocktail, a fuller multi-cuisine spread at the reception.' },
+      { q: 'What cuisines are typically included in a Delhi wedding catering menu?', a: 'North Indian, South Indian, Continental, Chinese, and fusion. How far you take each one depends on the function, and how ambitious the family wants to get.' },
+      { q: 'Are vegetarian and non-vegetarian menus planned differently for Delhi weddings?', a: 'Yes. Two distinct menus, not one menu with workarounds, so the vegetarian spread reads as a complete menu in its own right, not a scaled-down version of the other one.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 

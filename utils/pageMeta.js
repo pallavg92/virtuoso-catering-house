@@ -251,6 +251,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Is Your Tasting Chef Your Wedding-Day Chef?', path: '/blog/is-your-tasting-chef-your-wedding-day-chef' }]
   },
+  blogWeddingMenuBreakdown: {
+    path: '/blog/wedding-catering-menu-in-delhi',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'What’s Actually on a Wedding Catering Menu in Delhi? | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi').image,
+    post: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'What’s on a Wedding Catering Menu in Delhi?', path: '/blog/wedding-catering-menu-in-delhi' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
