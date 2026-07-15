@@ -358,6 +358,7 @@ const blogPosts = [
   },
   {
     slug: 'how-to-plan-wedding-catering-delhi-ncr',
+    url: '/blog/how-to-plan-wedding-catering-delhi-ncr',
     title: 'How to Plan Wedding Catering in Delhi NCR: A Practical Guide',
     excerpt: 'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood, choosing a specialist caterer over a banquet kitchen, and locking your date with a real tasting before anything is signed.',
     date: '2026-07-08',
@@ -422,6 +423,7 @@ const blogPosts = [
   },
   {
     slug: 'does-wedding-presentation-need-big-budget',
+    url: '/blog/does-wedding-presentation-need-big-budget',
     title: 'Does a Stunning Wedding Presentation Need a Big Budget? Here Is What Actually Makes the Difference',
     excerpt: 'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space, and dishes rehearsed enough times that nothing is left to chance.',
     date: '2026-07-14',
@@ -476,6 +478,7 @@ const blogPosts = [
   },
   {
     slug: 'how-luxury-wedding-caterers-build-custom-menu',
+    url: '/blog/how-luxury-wedding-caterers-build-custom-menu',
     title: 'How Do Luxury Wedding Caterers Build a Custom Menu? A Step-by-Step Look Inside Virtuoso’s Process',
     excerpt: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial. Here is exactly how that process works at Virtuoso.',
     date: '2026-07-14',
@@ -543,6 +546,7 @@ const blogPosts = [
   },
   {
     slug: 'is-your-tasting-chef-your-wedding-day-chef',
+    url: '/blog/is-your-tasting-chef-your-wedding-day-chef',
     title: 'Is the Chef at Your Wedding Tasting the Same One Cooking Your Wedding? Here Is the Catering Industry Truth',
     excerpt: 'At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding. Here is why that gap happens, and how Virtuoso closes it.',
     date: '2026-07-15',
@@ -591,6 +595,7 @@ const blogPosts = [
   },
   {
     slug: 'wedding-catering-menu-in-delhi',
+    url: '/blog/wedding-catering-menu-in-delhi',
     title: 'What’s Actually on a Wedding Catering Menu in Delhi? A Dish-by-Dish Breakdown by Function',
     excerpt: 'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters at the cocktail, and a fuller multi-cuisine spread at the reception.',
     date: '2026-07-15',
@@ -652,6 +657,7 @@ const blogPosts = [
   },
   {
     slug: 'luxury-catering-cost-delhi-ncr',
+    url: '/blog/luxury-catering-cost-delhi-ncr',
     title: 'How Much Does Luxury Catering Cost in Delhi NCR?',
     excerpt: 'Luxury catering in Delhi NCR runs ₹2,500 to ₹6,000 per guest for corporate events and starts at ₹3,000 per plate for weddings. Here is what actually moves that number.',
     date: '2026-07-15',
@@ -717,6 +723,7 @@ const blogPosts = [
   },
   {
     slug: 'dos-and-donts-finalizing-wedding-menu',
+    url: '/blog/dos-and-donts-finalizing-wedding-menu',
     title: 'Do\'s and Don\'ts of Finalizing a Wedding Menu: How to Avoid 40 Dishes Nobody Remembers',
     excerpt: 'The right way to finalize a wedding menu starts with a conversation with your caterer, not a line item list. Here are the do\'s and don\'ts that keep a menu from ballooning to forty dishes nobody remembers.',
     date: '2026-07-15',
