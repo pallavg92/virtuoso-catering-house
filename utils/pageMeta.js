@@ -21,9 +21,11 @@ const business = {
   longitude: 77.3641803,
   // Virtuoso is a catering company, not a dine-in restaurant — schema.org has
   // no dedicated "Caterer" type (open feature request, never implemented:
-  // github.com/schemaorg/schemaorg/issues/1813), so we use plain LocalBusiness
-  // rather than the restaurant-oriented FoodEstablishment subtype, and list
-  // cuisines directly rather than implying a fixed dine-in menu.
+  // github.com/schemaorg/schemaorg/issues/1813). The LocalBusiness JSON-LD in
+  // partials/head.ejs declares @type as ["LocalBusiness", "FoodEstablishment"]
+  // rather than the more specific "Restaurant" subtype, since FoodEstablishment
+  // itself doesn't imply dine-in service and is required for servesCuisine to
+  // validate (servesCuisine isn't a valid property on plain LocalBusiness).
   cuisines: ['Asian', 'Indian', 'Mexican', 'Continental', 'Bakery', 'Mughlai', 'Chinese', 'Sushi'],
   sameAs: [
     'https://www.instagram.com/virtuosocateringhouse/',
@@ -39,8 +41,8 @@ const pages = {
     view: 'index',
     activePage: 'home',
     bodyClass: 'page-home',
-    title: 'Virtuoso Catering House — Culinary Artistry for Unforgettable Occasions',
-    description: 'Virtuoso Catering House is a luxury experiential catering company based in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
+    title: 'Virtuoso Catering House — Luxury Catering, Delhi NCR',
+    description: 'Virtuoso Catering House is a luxury experiential caterer in Noida, Delhi NCR, crafting bespoke F&B for weddings, brand activations, and private events.',
     ogImage: content.heroImage,
     breadcrumbs: [{ name: 'Home', path: '/' }]
   },
@@ -168,8 +170,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Lamborghini Temerario Launch Catering, Delhi, 2025 | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').excerpt,
+    title: 'Lamborghini Temerario Launch Catering | Virtuoso Catering House',
+    description: 'Virtuoso Catering House designed the F&B experience for the Lamborghini Temerario launch in Delhi: a grazing table built for circulation, not congregation.',
     ogImage: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario').image,
     post: content.blogPosts.find((p) => p.slug === 'what-we-did-for-the-launch-of-the-lamborghini-temerario'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Lamborghini Temerario Launch Catering', path: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario' }]
@@ -179,8 +181,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Tesla Centre Gurugram Launch Catering, November 2025 | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').excerpt,
+    title: 'Tesla Centre Gurugram Launch Catering | Virtuoso Catering House',
+    description: 'Virtuoso Catering House designed the F&B experience for the Tesla Centre Gurugram opening: clean, aesthetic food for a room where every guest is working.',
     ogImage: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering').image,
     post: content.blogPosts.find((p) => p.slug === 'tesla-centre-gurugram-launch-catering'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Tesla Centre Gurugram Launch Catering', path: '/blog/tesla-centre-gurugram-launch-catering' }]
@@ -190,8 +192,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Ferrari Track Day Catering, Buddh International Circuit, April 2026 | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').excerpt,
+    title: 'Ferrari Track Day Catering, Buddh Circuit | Virtuoso Catering House',
+    description: 'Virtuoso Catering House led hospitality for La Esperienza Ferrari Delhi, a 4-day Ferrari APAC track day at Buddh Circuit, with an exclusively Italian menu.',
     ogImage: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit').image,
     post: content.blogPosts.find((p) => p.slug === 'ferrari-track-day-catering-buddh-international-circuit'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Ferrari Track Day Catering', path: '/blog/ferrari-track-day-catering-buddh-international-circuit' }]
@@ -201,8 +203,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'How to Plan Wedding Catering in Delhi NCR | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').excerpt,
+    title: 'Wedding Catering in Delhi NCR: A Guide | Virtuoso Catering House',
+    description: 'Planning wedding catering in Delhi NCR comes down to three decisions: menu by function, a specialist caterer over a banquet, and a real tasting before signing.',
     ogImage: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr').image,
     post: content.blogPosts.find((p) => p.slug === 'how-to-plan-wedding-catering-delhi-ncr'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How to Plan Wedding Catering in Delhi NCR', path: '/blog/how-to-plan-wedding-catering-delhi-ncr' }]
@@ -212,8 +214,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Bath & Body Works Touch of Gold Product Launch Catering, Noida | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch').excerpt,
+    title: 'Bath & Body Works Touch of Gold Launch Catering | Virtuoso Catering House',
+    description: 'Virtuoso Catering House designed the catering for Bath & Body Works’ Touch of Gold launch at Promenade Mall: a single all-gold grazing table and branded food.',
     ogImage: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch').image,
     post: content.blogPosts.find((p) => p.slug === 'bath-body-works-touch-of-gold-product-launch'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Bath & Body Works Touch of Gold Launch', path: '/blog/bath-body-works-touch-of-gold-product-launch' }]
@@ -223,8 +225,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'How Luxury Wedding Caterers Build a Custom Menu | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu').excerpt,
+    title: 'How Wedding Caterers Build a Custom Menu | Virtuoso Catering House',
+    description: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial before your wedding.',
     ogImage: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu').image,
     post: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How Luxury Wedding Caterers Build a Custom Menu', path: '/blog/how-luxury-wedding-caterers-build-custom-menu' }]
@@ -234,8 +236,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Does a Stunning Wedding Presentation Need a Big Budget? | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget').excerpt,
+    title: 'Does Wedding Presentation Need a Big Budget? | Virtuoso Catering House',
+    description: 'A stunning wedding presentation doesn’t require a big budget. It takes a trained team, proper workspace, and dishes rehearsed until nothing is left to chance.',
     ogImage: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget').image,
     post: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Does a Stunning Wedding Presentation Need a Big Budget?', path: '/blog/does-wedding-presentation-need-big-budget' }]
@@ -245,7 +247,7 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Is the Chef at Your Wedding Tasting the Same One Cooking Your Wedding? | Virtuoso Catering House',
+    title: 'Is Your Tasting Chef Your Wedding-Day Chef? | Virtuoso Catering House',
     description: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef').image,
     post: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef'),
@@ -256,19 +258,30 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'What’s Actually on a Wedding Catering Menu in Delhi? | Virtuoso Catering House',
-    description: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi').excerpt,
+    title: 'Wedding Catering Menu in Delhi: Dish Breakdown | Virtuoso Catering House',
+    description: 'Wedding catering in Delhi spans three function-specific menus: lighter dishes at the mehendi, live counters at cocktail, fuller spread at reception.',
     ogImage: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi').image,
     post: content.blogPosts.find((p) => p.slug === 'wedding-catering-menu-in-delhi'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'What’s on a Wedding Catering Menu in Delhi?', path: '/blog/wedding-catering-menu-in-delhi' }]
+  },
+  blogCateringCost: {
+    path: '/blog/luxury-catering-cost-delhi-ncr',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'How Much Does Luxury Catering Cost in Delhi NCR? | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'luxury-catering-cost-delhi-ncr').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'luxury-catering-cost-delhi-ncr').image,
+    post: content.blogPosts.find((p) => p.slug === 'luxury-catering-cost-delhi-ncr'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How Much Does Luxury Catering Cost in Delhi NCR?', path: '/blog/luxury-catering-cost-delhi-ncr' }]
   },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
     activePage: '',
     bodyClass: 'page-best-caterers-noida',
-    title: 'Who Are the Best Caterers in Noida? | Virtuoso Catering House',
-    description: content.bestCaterersNoidaPage.excerpt,
+    title: 'Best Caterers in Noida | Virtuoso Catering House',
+    description: 'Virtuoso Catering House is the best caterer in Noida, named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026.',
     ogImage: content.bestCaterersNoidaPage.image,
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]

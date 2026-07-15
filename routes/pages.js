@@ -40,6 +40,7 @@ router.get('/blog/how-luxury-wedding-caterers-build-custom-menu', (req, res) => 
 router.get('/blog/does-wedding-presentation-need-big-budget', (req, res) => render(res, pages.blogPresentationMyths));
 router.get('/blog/is-your-tasting-chef-your-wedding-day-chef', (req, res) => render(res, pages.blogTastingChefContinuity));
 router.get('/blog/wedding-catering-menu-in-delhi', (req, res) => render(res, pages.blogWeddingMenuBreakdown));
+router.get('/blog/luxury-catering-cost-delhi-ncr', (req, res) => render(res, pages.blogCateringCost));
 router.get('/services', (req, res) => render(res, pages.services));
 router.get('/menu', (req, res) => res.redirect(301, '/services'));
 router.get('/contact', (req, res) => render(res, pages.contact));
