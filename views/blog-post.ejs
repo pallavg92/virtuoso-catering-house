@@ -56,6 +56,18 @@
         <% if (section.pullQuote) { %>
         <blockquote class="blog-post__pull-quote reveal-up"><%= section.pullQuote %></blockquote>
         <% } %>
+        <% if (section.list && section.list.length) { %>
+        <ul class="landing-list">
+          <% section.list.forEach(function(item) { %>
+          <li class="landing-list__item reveal-up"><%= item %></li>
+          <% }); %>
+        </ul>
+        <% } %>
+        <% if (section.links && section.links.length) { %>
+        <% section.links.forEach(function(link) { %>
+        <p class="blog-post__copy reveal-up"><a href="<%= link.path %>" class="link-underline"><%= link.label %></a></p>
+        <% }); %>
+        <% } %>
       </div>
 
       <% if (section.image) { %>

@@ -781,6 +781,87 @@ const bestCaterersNoidaPage = {
   }
 };
 
+// Standalone pillar page (not part of the Journal listing) targeting
+// "wedding caterers in Delhi NCR" as its own page distinct from the
+// existing /luxury-wedding-catering-delhi-ncr landing page.
+const weddingCaterersDelhiNcrPage = {
+  slug: 'wedding-caterers-delhi-ncr',
+  title: 'Wedding Caterers in Delhi NCR',
+  excerpt: 'Boutique luxury wedding catering across Delhi, Noida & Gurugram. Bespoke menus for mehendi, cocktail & reception, plated with intention, not served from a buffet.',
+  image: '/images/virtuoso-catering-house-weddings-service.jpg',
+  backLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See Our Full Wedding Catering Overview' },
+  lead: [
+    'Most wedding caterers in Delhi will ask you one question first: how many guests? We ask a different one: how many moments.',
+    'Because a wedding isn\'t one meal. It\'s several, back to back, each one setting a different mood, and the caterer\'s job isn\'t to feed the room. It\'s to make sure each function feels like it was built for that exact moment, not repeated from the last one.',
+    'Virtuoso Catering House has catered weddings across Delhi, Noida, and Gurugram on exactly that belief: fewer dishes, more intention, every course earning its place.'
+  ],
+  sections: [
+    {
+      heading: 'What Separates the Best Wedding Caterers in Delhi',
+      paragraphs: [
+        'Any caterer can print a menu with two hundred items on it. Very few can tell you why a wedding menu with twenty considered dishes will outperform it every time.',
+        'Bespoke menus, built function by function. Mehendi, cocktail, and reception don\'t share a menu in our world, they share a philosophy. Each one is designed for its own mood, not copy-pasted with a different tablecloth.',
+        'Plated service, not default buffet. A buffet says help yourself. A plated course says we made this for you. For the moments that matter most, the reception especially, that difference is the whole difference.',
+        'Choreography, not just cooking. The best wedding catering is timed to the day itself: canapés land during the toast, mains arrive as the energy peaks, dessert closes the night instead of interrupting it. That rhythm is staffing and coordination most caterers never invest in, because it doesn\'t show up in a portfolio photo.',
+        'One couple described the result better than we could:'
+      ],
+      pullQuote: 'They did not just cater our wedding, they translated us into a menu. Guests are still talking about the burnt honey course.'
+    },
+    {
+      heading: 'Luxury Wedding Catering, Without the Noise',
+      paragraphs: [
+        '"Luxury" gets used loosely by wedding caterers in Delhi NCR, usually to mean expensive, or imported, or gold leaf on everything. We mean something narrower: restraint.',
+        'Luxury is the discipline to serve six unforgettable courses instead of twenty forgettable ones. It\'s a live station that\'s actually chef-led, not a garnish on a bigger spread. It\'s a cocktail program designed by a mixologist, not just an open bar with premium labels. It\'s plated with restraint, seasoned with sentiment, never louder than the day itself.',
+        'That\'s the standard behind every wedding we take on, from intimate 50-guest gatherings to celebrations of 1500 and beyond.'
+      ]
+    },
+    {
+      heading: 'Every Function, One Philosophy',
+      paragraphs: [],
+      list: [
+        'Custom menu design for mehendi, cocktail, and reception: three menus, not one menu worn three times',
+        'Full plated service where the occasion calls for it, never a default',
+        'Emotional pacing, timed to the celebration\'s rhythm rather than a generic service schedule',
+        'Live bartending and dessert service, designed around your event rather than added to it',
+        'Full coordination and staffing, so the team disappears into the background exactly when it should'
+      ],
+      links: [
+        { path: '/blog/how-to-plan-wedding-catering-delhi-ncr', label: 'Read the full wedding planning guide' },
+        { path: '/blog/luxury-catering-cost-delhi-ncr', label: 'Read our full cost breakdown' }
+      ]
+    },
+    {
+      heading: 'Where We Cater Weddings',
+      paragraphs: [
+        'Based in Sector 61, Noida, we cater weddings across Delhi, Noida, and Gurugram, the full Delhi NCR region, from intimate celebrations of 50 to grand weddings of 1500+ guests.'
+      ]
+    },
+    {
+      heading: 'Let\'s Design Your Wedding, Function by Function',
+      paragraphs: [
+        'We don\'t quote a flat per-plate rate, because no two weddings we\'ve catered have ever wanted the same thing. Tell us about your day, we\'ll tell you what it takes to make each function unforgettable.'
+      ],
+      links: [
+        { path: '/contact', label: 'Get in Touch' },
+        { path: 'mailto:virtuosocatering@gmail.com', label: 'virtuosocatering@gmail.com' },
+        { path: 'tel:+918700915463', label: '+91 87009 15463' }
+      ]
+    }
+  ],
+  faq: [
+    { q: 'What makes a wedding caterer "luxury" versus just expensive?', a: 'Restraint, not price. A luxury wedding caterer curates a tighter menu built with intention, rather than maximizing how much food is on offer. The cost often comes from staffing, plating, and choreography, not just premium ingredients.' },
+    { q: 'Do mehendi, cocktail, and reception need separate menus?', a: 'They should. Each function has a different energy: relaxed and colourful for mehendi, theatrical for cocktail night, restrained and sentimental for the reception. One repeated menu across all three usually shows.' },
+    { q: 'How far in advance should we book a wedding caterer in Delhi NCR?', a: '6 to 9 months out is ideal, especially for peak wedding season dates, since bespoke menu design and tastings take time to get right.' },
+    { q: 'Do you offer tastings before booking?', a: 'Yes, every wedding menu goes through a tasting as part of our consultation, design, tasting, refinement process.' },
+    { q: 'How many guests can you cater for?', a: 'Anywhere from intimate gatherings of 50 to weddings of 1500 and beyond, all with the same full-service coordination.' }
+  ],
+  author: {
+    name: 'Pallav Goel',
+    linkedin: 'https://www.linkedin.com/in/pallavg16',
+    bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+  }
+};
+
 // Real clients and press mentions, recovered from the retired WordPress
 // site and confirmed press coverage, for a social-proof strip on the site.
 // `logo` is null until a real logo file is supplied — the templates fall
@@ -1281,6 +1362,7 @@ module.exports = {
   ourWork,
   blogPosts,
   bestCaterersNoidaPage,
+  weddingCaterersDelhiNcrPage,
   landingPages,
   commercialPages,
   pressAndClients,

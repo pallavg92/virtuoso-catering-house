@@ -286,6 +286,17 @@ const pages = {
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
   },
+  weddingCaterersDelhiNcr: {
+    path: '/wedding-caterers-delhi-ncr',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-wedding-caterers-delhi-ncr',
+    title: 'Wedding Caterers in Delhi NCR | Virtuoso Catering House',
+    description: content.weddingCaterersDelhiNcrPage.excerpt,
+    ogImage: content.weddingCaterersDelhiNcrPage.image,
+    post: content.weddingCaterersDelhiNcrPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Wedding Caterers in Delhi NCR', path: '/wedding-caterers-delhi-ncr' }]
+  },
   press: {
     path: '/press',
     view: 'press',

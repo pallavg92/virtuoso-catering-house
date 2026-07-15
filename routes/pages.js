@@ -51,6 +51,7 @@ router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, p
 router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => render(res, pages.landingWedding));
 router.get('/press', (req, res) => render(res, pages.press));
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
+router.get('/wedding-caterers-delhi-ncr', (req, res) => render(res, pages.weddingCaterersDelhiNcr));
 
 // 301 redirects from the retired WordPress site's URLs to their closest
 // equivalent on the new site, so existing backlinks/bookmarks/search
