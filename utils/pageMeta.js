@@ -275,6 +275,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'luxury-catering-cost-delhi-ncr'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How Much Does Luxury Catering Cost in Delhi NCR?', path: '/blog/luxury-catering-cost-delhi-ncr' }]
   },
+  blogWeddingMenuDosDonts: {
+    path: '/blog/dos-and-donts-finalizing-wedding-menu',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Do\'s and Don\'ts of Finalizing a Wedding Menu | Virtuoso Catering House',
+    description: 'The right way to finalize a wedding menu starts with a conversation with your caterer, not a line item list. Here are the do\'s and don\'ts that help.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'dos-and-donts-finalizing-wedding-menu').image,
+    post: content.blogPosts.find((p) => p.slug === 'dos-and-donts-finalizing-wedding-menu'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Do\'s and Don\'ts of Finalizing a Wedding Menu', path: '/blog/dos-and-donts-finalizing-wedding-menu' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',

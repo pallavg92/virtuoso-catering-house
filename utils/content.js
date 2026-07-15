@@ -714,6 +714,73 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'dos-and-donts-finalizing-wedding-menu',
+    title: 'Do\'s and Don\'ts of Finalizing a Wedding Menu: How to Avoid 40 Dishes Nobody Remembers',
+    excerpt: 'The right way to finalize a wedding menu starts with a conversation with your caterer, not a line item list. Here are the do\'s and don\'ts that keep a menu from ballooning to forty dishes nobody remembers.',
+    date: '2026-07-15',
+    image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
+    relatedLink: { path: '/wedding-caterers-delhi-ncr', label: 'See how we approach wedding catering across Delhi NCR' },
+    lead: [
+      'The right way to finalize a wedding menu starts with a conversation, not a line item list: what food genuinely matters to you, and what your guests actually expect to eat. Everything else gets decided from there. The wrong way is adding dish after dish from a template until the list hits forty items nobody asked for.',
+      'Most wedding menus don\'t fail because of bad dishes. They fail because they were built line item by line item instead of from an actual conversation. The couples who end up with a menu they and their guests remember are the ones who sat down with their caterer and talked through two questions before adding a single item: what food matters to us, and what will our guests actually want to eat.'
+    ],
+    sections: [
+      {
+        heading: 'Do: Start With What Food Matters to You',
+        paragraphs: [
+          'Before any list gets drawn up, sit with your caterer and talk through the dishes that actually mean something, a family recipe, a cuisine tied to where you grew up, a dish from your first date. That conversation gives the menu a spine. Everything added after should connect back to it, not compete with it.'
+        ]
+      },
+      {
+        heading: 'Don\'t: Start With a Template and Add to It',
+        paragraphs: [
+          'Working from a standard package and adding line items on top is how a menu grows without anyone deciding it should. Each addition feels small in the moment, one more starter, one more counter, but there\'s no conversation anchoring any of it, so the list just keeps growing until someone finally asks why there are forty dishes.'
+        ]
+      },
+      {
+        heading: 'Do: Talk Through What Guests Actually Expect',
+        paragraphs: [
+          'Your guests bring their own expectations to a wedding, shaped by their background, the season, the region. A real conversation with your caterer should cover who\'s coming and what they\'ll genuinely look for, not guess at it after the menu is already printed. That\'s different from asking a caterer to vaguely aim for "crowd-pleasers."'
+        ]
+      },
+      {
+        heading: 'Don\'t: Add Dishes to Cover Every Guess About What Guests Might Want',
+        paragraphs: [
+          'Trying to preempt every possible guest preference by adding a dish for each one is how "what will people want to eat" turns into forty options instead of ten thoughtful ones. It\'s a guessing exercise dressed up as generosity. A caterer who\'s actually talked through your guest list with you can tell you what\'s genuinely worth including, instead of hedging with more dishes.'
+        ],
+        pullQuote: 'It\'s a guessing exercise dressed up as generosity.'
+      },
+      {
+        heading: 'Do: Let the Caterer Push Back',
+        paragraphs: [
+          'A caterer who only says yes to every request isn\'t doing their job. Part of that opening conversation should be the caterer telling you honestly which additions are worth it and which ones are there out of habit or nerves. That pushback is what keeps a menu tight.'
+        ]
+      },
+      {
+        heading: 'Don\'t: Treat the Menu as a Checklist to Fill',
+        paragraphs: [
+          'Approaching a wedding menu like a checklist, appetizers, mains, live counters, desserts, and filling each category until it feels complete is how a menu grows without ever being examined as a whole. The conversation should decide what\'s on the list, not the categories.'
+        ]
+      },
+      {
+        heading: 'The Real Takeaway',
+        paragraphs: [
+          'A wedding menu built from a real conversation, what matters to you, what your guests expect, rarely needs forty dishes to feel complete. It\'s the menus built without that conversation, filled in line item by line item, that end up long and forgettable.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What\'s the first step in finalizing a wedding menu?', a: 'A conversation with your caterer about two things: the dishes that genuinely matter to you, and what your guests are likely to expect. That conversation should happen before any list of items is drawn up, not after.' },
+      { q: 'How do I know if a dish belongs on the menu or not?', a: 'It should connect back to either what matters to you personally or what your guests genuinely expect, not just be there because it fits a category like "starters" or "live counters" that felt incomplete without it.' },
+      { q: 'Should I let my caterer push back on menu requests?', a: 'Yes. A caterer who tells you honestly which additions are worth it and which ones aren\'t is more useful than one who agrees to everything, since that honesty is often what keeps a forty-item list from happening in the first place.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 
