@@ -359,26 +359,26 @@ const blogPosts = [
   {
     slug: 'how-to-plan-wedding-catering-delhi-ncr',
     title: 'How to Plan Wedding Catering in Delhi NCR: A Practical Guide',
-    excerpt: 'A practical guide to planning wedding catering in Delhi NCR, from matching the menu to each function’s mood to knowing when a specialized caterer actually outperforms a banquet kitchen.',
+    excerpt: 'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood, choosing a specialist caterer over a banquet kitchen, and locking your date with a real tasting before anything is signed.',
     date: '2026-07-08',
     image: img('mv-blog-wedding-guide', 1200, 800),
     relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
     lead: [
-      'Most couples do not need a fixed price list. They need to know how to think about the decision. The right wedding catering setup depends less on a formula and more on how initiated the family is into food, and on matching every function, from the mehendi to the wedding day itself, to its own mood rather than repeating the same menu four times.'
+      'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood instead of repeating one menu across the wedding, choosing a specialist caterer over a banquet kitchen for exclusive ownership of food and presentation, and locking your date with a tasting at the caterer’s own kitchen before anything is signed.'
     ],
     sections: [
       {
-        heading: 'Match the Menu to the Day, Not Just the Guest List',
+        heading: 'Match the Menu to Each Function, Not the Guest List',
         paragraphs: [
-          'A wedding is not one event. It is a sequence of them, and each one carries its own energy. The mehendi is usually followed by the engagement or cocktail, which tends to be the most exciting day of the entire celebration. That changes what should be served. Regional cuisines do well at the mehendi, and meals are generally kept lighter, because guests are pacing themselves for what comes next.',
+          'A wedding is not one event. It is a sequence of functions, and each one carries its own energy. The mehendi is usually followed by the engagement or cocktail, which tends to be the most exciting day of the entire celebration. That changes what should be served. Regional cuisines do well at the mehendi, and meals are generally kept lighter, because guests are pacing themselves for what comes next.',
           'The engagement is where people actually indulge. Guests are in full celebration mode, and this is usually the day families are most willing to explore favourite dishes and more ambitious formats. Planning the same heavy, elaborate menu across every function misses this rhythm entirely.'
         ]
       },
       {
-        heading: 'How Much F&B Knowledge Does the Family Bring In?',
+        heading: 'How Much Food Knowledge the Family Brings In',
         paragraphs: [
           'The single biggest factor in how a wedding menu comes together is not the budget. It is how initiated the decision makers are into food. Some families want a small number of true favourites, done well, with a setup that matches the vibe and theme of the party. Others arrive already fluent in what is possible.',
-          'Families further along that curve ask for speciality Indian catering, restaurant pop up concepts inside the wedding, and sometimes a celebrity chef for a single section of the event. Celebrity chefs typically bring their own team and take ownership of the planning and menu for that one section only, while everything else runs alongside it. A sushi bar is one of the cleanest examples. Done well, it looks sophisticated and restrained in a way a standard live counter does not.'
+          'Families further along that curve ask for speciality Indian catering, restaurant pop-up concepts inside the wedding, and sometimes a celebrity chef for a single section of the event. Celebrity chefs typically bring their own team and take ownership of the planning and menu for that one section only, while everything else runs alongside it. A live sushi bar is one of the cleanest examples of this: done well, it looks sophisticated and restrained in a way a standard live counter does not.'
         ]
       },
       {
@@ -391,13 +391,13 @@ const blogPosts = [
       {
         heading: 'When to Book',
         paragraphs: [
-          'Book as soon as the venue is finalised, and ideally before. Rates can move once a date is set, though how much depends entirely on the caterer being considered. Waiting until closer to the date narrows both the menu options and the team available to execute them properly.'
+          'Book as soon as the venue is finalised, and ideally before. Most couples move from their first tasting to a locked menu within two to three weeks, so starting early keeps that timeline realistic instead of compressing it into the final month. Rates can also move once a date is set, though how much depends entirely on the caterer being considered.'
         ]
       },
       {
         heading: 'What the Tasting Process Actually Looks Like',
         paragraphs: [
-          'Every engagement starts with a private tasting. For Virtuoso, that means inviting clients to our experience centre in Noida, Sector 61, where the menu can be tasted and refined before anything is finalised. It is easier to adjust a dish on a plate in front of you than to describe it over a call.'
+          'Every engagement starts with a private tasting at our experience centre, A-15, A-Block, Sector 61, Noida, not at a live event. Hosting the tasting away from an active wedding gives families room to taste, adjust, and ask honest questions without the noise of someone else’s celebration happening around them. It is easier to adjust a dish on a plate in front of you than to describe it over a call.'
         ]
       },
       {
@@ -408,11 +408,11 @@ const blogPosts = [
       }
     ],
     faq: [
-      { q: 'How far in advance should I book a wedding caterer in Delhi NCR?', a: 'As soon as your venue is finalised, and ideally even before. Rates and availability can shift once a date is confirmed, though this depends on the specific caterer you are working with.' },
+      { q: 'How far in advance should I book a wedding caterer in Delhi NCR?', a: 'As soon as your venue is finalised, and ideally even before. Most couples move from their first tasting to a locked menu within two to three weeks, and rates or availability can shift once a date is confirmed, so starting early keeps more of the calendar open.' },
       { q: 'What is the difference between a wedding caterer and banquet catering?', a: 'A banquet’s food is handled by one team among several the venue runs simultaneously. A specialized caterer’s exclusive focus is the food, which shows up in three places specifically: the food itself, the presentation, and the crockery and cutlery.' },
       { q: 'Should the menu be the same across all wedding functions?', a: 'No. Each function has its own mood. The mehendi is typically followed by the engagement or cocktail, the most exciting day of the celebration, so mehendi menus tend to favour lighter, regional dishes while engagement menus can be more indulgent and ambitious.' },
-      { q: 'Do you offer celebrity chef or specialty catering concepts for weddings?', a: 'Yes. For families further along in their food knowledge, we offer speciality Indian catering, restaurant pop up concepts, and celebrity chef sections, where a chef brings their own team and owns the menu for one specific part of the event, such as a live sushi bar.' },
-      { q: 'Where does the tasting process happen?', a: 'At our experience centre in Noida, Sector 61, where clients taste and refine the menu in person before anything is finalised.' }
+      { q: 'Do you offer celebrity chef or specialty catering concepts for weddings?', a: 'Yes. For families further along in their food knowledge, we offer speciality Indian catering, restaurant pop-up concepts, and celebrity chef sections, where a chef brings their own team and owns the menu for one specific part of the event, such as a live sushi bar.' },
+      { q: 'Where does the tasting process happen?', a: 'At our experience centre, A-15, A-Block, Sector 61, Noida, not at a live event, so families can taste and refine the menu in an unhurried, private setting before anything is finalised.' }
     ],
     author: {
       name: 'Pallav Goel',
@@ -534,6 +534,54 @@ const blogPosts = [
       { q: 'Can a wedding caterer customize a menu for dietary restrictions or religious requirements?', a: 'Yes. Dietary needs and cultural or religious requirements are gathered during the discovery conversation, before the tasting menu is even built, so the tasting already reflects what is actually possible to serve rather than a generic starting point.' },
       { q: 'What happens if a couple does not like a dish during the tasting?', a: 'That dish gets reworked or replaced before the trial run stage. The tasting session exists precisely to catch this early, so nothing reaches the trial run, let alone the wedding day, without the couple’s approval.' },
       { q: 'How many tasting sessions happen before a wedding?', a: 'Typically one structured tasting session covers the full menu, with a follow-up trial run for any dishes that were customized or reworked. Couples are not left choosing blind between rounds, since each reworked version is tasted before it is approved.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
+  },
+  {
+    slug: 'is-your-tasting-chef-your-wedding-day-chef',
+    title: 'Is the Chef at Your Wedding Tasting the Same One Cooking Your Wedding? Here Is the Catering Industry Truth',
+    excerpt: 'At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding. Here is why that gap happens, and how Virtuoso closes it.',
+    date: '2026-07-15',
+    image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
+    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    lead: [
+      'No. At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding, since kitchen staff rotate by event availability. At Virtuoso, Aarti Sharma, our co-founder, personally runs your tasting at our Noida experience centre, and the same kitchen team she trains at rehearsal is who cooks your wedding.',
+      'Couples spend hours picking the right dishes at a tasting, then assume that experience is locked in. In most catering operations, it is not. Kitchen staff get assigned event by event, and a caterer running multiple weddings on the same weekend cannot always guarantee the same hands touch every plate.'
+    ],
+    sections: [
+      {
+        heading: 'Why Tasting Day and Wedding Day Are Often Different Kitchens',
+        paragraphs: [
+          'Bigger catering companies typically operate with a bench of chefs who rotate across events based on availability. The chef who impressed you at the tasting might be booked on another wedding the same weekend as yours, and someone else steps in to execute the menu from a recipe card instead of firsthand experience with it.'
+        ]
+      },
+      {
+        heading: 'Why This Gap Matters More Than Couples Realize',
+        paragraphs: [
+          'A recipe on paper does not capture the small judgment calls a chef makes while cooking: seasoning it correctly, timing when it comes off heat, plating it the way it looked at the tasting. When a different chef executes it, small drifts happen, which is often why couples say the food tasted better at the tasting than at the wedding.'
+        ]
+      },
+      {
+        heading: 'How Virtuoso Closes That Gap',
+        paragraphs: [
+          'Tastings at Virtuoso are run personally by Aarti Sharma, our co-founder, at our experience centre in Noida’s Sector 61, not at a live event. The same team present at your tasting is the one that plates your wedding. Every dish is rehearsed twice before your day: once during the tasting itself, once during a dedicated chef’s rehearsal. There is no handoff between a tasting kitchen and an execution kitchen. What you approve is what gets cooked.'
+        ]
+      },
+      {
+        heading: 'The Real Takeaway',
+        paragraphs: [
+          'Continuity matters more than most couples are told to ask about. Before locking in a caterer, it is worth confirming whether the chef at your tasting will actually be the one in the kitchen on your wedding day.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'Does the chef who runs your wedding tasting always cook your wedding?', a: 'Not always. Many catering companies rotate kitchen staff across events, so the chef at your tasting may not be the one cooking on the actual day unless the caterer specifically confirms continuity.' },
+      { q: 'Why would a wedding menu taste different on the day compared to the tasting?', a: 'The most common reason is a change in who is cooking. Small judgment calls around seasoning, timing, and plating vary between chefs, even when they are using the same recipe.' },
+      { q: 'How can couples make sure the same chef cooks their wedding as their tasting?', a: 'Ask the caterer directly. At Virtuoso, Aarti Sharma personally runs every tasting, and the same team rehearses each dish twice, once at the tasting and once at a dedicated chef’s rehearsal, before your wedding day, so continuity is built in rather than something you have to request.' }
     ],
     author: {
       name: 'Pallav Goel',

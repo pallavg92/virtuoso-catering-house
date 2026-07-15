@@ -240,6 +240,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'does-wedding-presentation-need-big-budget'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Does a Stunning Wedding Presentation Need a Big Budget?', path: '/blog/does-wedding-presentation-need-big-budget' }]
   },
+  blogTastingChefContinuity: {
+    path: '/blog/is-your-tasting-chef-your-wedding-day-chef',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Is the Chef at Your Wedding Tasting the Same One Cooking Your Wedding? | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef').image,
+    post: content.blogPosts.find((p) => p.slug === 'is-your-tasting-chef-your-wedding-day-chef'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Is Your Tasting Chef Your Wedding-Day Chef?', path: '/blog/is-your-tasting-chef-your-wedding-day-chef' }]
+  },
   press: {
     path: '/press',
     view: 'press',

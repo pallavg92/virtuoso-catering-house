@@ -29,7 +29,7 @@
   <!-- OUR WORK GRID -->
   <section class="our-work-page section section--ivory">
     <div class="container">
-      <p class="our-work-page__intro reveal-up">A selection of weddings, brand activations, and private events we have designed and executed. Full write-ups are being published as a journal, one project at a time.</p>
+      <p class="our-work-page__intro reveal-up">A selection of weddings, brand activations, and private events we have designed and executed. Full write-ups are being published as a journal, one project at a time — each documenting the brief we were given, the constraints we worked around, and the decisions that shaped the final menu and room.</p>
 
       <div class="our-work__grid">
         <% ourWork.forEach(function(work, i) { %>
@@ -39,6 +39,21 @@
           <span class="our-work-card__title"><%= work.title %></span>
         </a>
         <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="our-work-page__approach section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Our Approach</span>
+        <h2 class="section-title reveal-up">From Brief to Final Course</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <p class="blog-post__copy reveal-up">Every project on this page started the same way — a conversation about who the room is for and what the day needs to feel like. A product launch, like our work for Lamborghini's Temerario reveal or the Tesla Centre opening in Gurugram, is paced around a stage moment: the menu has to move fast, plate cleanly under photography, and never compete with the reveal itself. A wedding runs on a different clock, with courses timed to the ceremony, the reception, and the dance floor, and a tasting menu built around the couple's own story rather than a generic banquet format.</p>
+        <p class="blog-post__copy reveal-up">What stays constant across formats is the process: a private tasting before anything is finalized, a menu built around the venue's kitchen and service constraints, and a service team briefed on the specific choreography of that day. The projects above are a sample — most of what we execute happens for clients who prefer to keep their events private, so this page will grow slowly and selectively rather than all at once.</p>
       </div>
     </div>
   </section>
