@@ -42,8 +42,21 @@
 
   function raf() {
     target = window.scrollY || window.pageYOffset;
-    current += (target - current) * ease;
-    if (Math.abs(target - current) < 0.05) current = target;
+    const delta = target - current;
+    // Scrollbar drags, Home/End/PageUp/PageDown, hash-link jumps, and
+    // scrollIntoView() all move window.scrollY in one instant jump rather
+    // than the many small deltas a wheel/trackpad produces. Lerping those
+    // the same way left the painted position lagging window.scrollY by
+    // hundreds of ms, so a click right after one of those jumps could land
+    // on stale content and silently do nothing. Snap instantly instead —
+    // normal scrolling still glides since its deltas stay under the
+    // threshold.
+    if (Math.abs(delta) > window.innerHeight * 0.9) {
+      current = target;
+    } else {
+      current += delta * ease;
+      if (Math.abs(target - current) < 0.05) current = target;
+    }
     content.style.transform = `translate3d(0, ${-current}px, 0)`;
     if (window.ScrollTrigger) window.ScrollTrigger.update();
     requestAnimationFrame(raf);
