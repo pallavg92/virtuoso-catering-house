@@ -297,6 +297,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'parameters-to-consider-before-booking-wedding-caterer'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Parameters to Consider Before Booking Your Wedding Caterer', path: '/blog/parameters-to-consider-before-booking-wedding-caterer' }]
   },
+  blogFivestarPresentation: {
+    path: '/blog/wedding-food-presentation-five-star-hotel',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: '5-Star Wedding Food Presentation | Virtuoso Catering House',
+    description: '5-star wedding food presentation comes from manpower and material: trained butlers and chefs plating at every station, served on pristine bone china.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'wedding-food-presentation-five-star-hotel').image,
+    post: content.blogPosts.find((p) => p.slug === 'wedding-food-presentation-five-star-hotel'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Wedding Food Presentation Like a 5-Star Hotel', path: '/blog/wedding-food-presentation-five-star-hotel' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
