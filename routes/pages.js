@@ -42,6 +42,7 @@ router.get('/blog/is-your-tasting-chef-your-wedding-day-chef', (req, res) => ren
 router.get('/blog/wedding-catering-menu-in-delhi', (req, res) => render(res, pages.blogWeddingMenuBreakdown));
 router.get('/blog/luxury-catering-cost-delhi-ncr', (req, res) => render(res, pages.blogCateringCost));
 router.get('/blog/dos-and-donts-finalizing-wedding-menu', (req, res) => render(res, pages.blogWeddingMenuDosDonts));
+router.get('/blog/parameters-to-consider-before-booking-wedding-caterer', (req, res) => render(res, pages.blogParametersBeforeBooking));
 router.get('/services', (req, res) => render(res, pages.services));
 router.get('/menu', (req, res) => res.redirect(301, '/services'));
 router.get('/contact', (req, res) => render(res, pages.contact));

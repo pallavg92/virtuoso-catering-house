@@ -788,6 +788,62 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'parameters-to-consider-before-booking-wedding-caterer',
+    url: '/blog/parameters-to-consider-before-booking-wedding-caterer',
+    title: 'Parameters to Consider Before Booking Your Wedding Caterer',
+    excerpt: 'Before booking a wedding caterer, confirm four things: an FSSAI-certified kitchen, an in-house team that actually executes the menu, clarity on what\'s cooked in-house, and real connections to specialty chefs for anything else.',
+    date: '2026-07-15',
+    image: '/images/virtuoso-catering-house-weddings-service.jpg',
+    relatedLink: { path: '/wedding-caterers-delhi-ncr', label: 'See how we approach wedding catering across Delhi NCR' },
+    lead: [
+      'Before booking a wedding caterer, confirm four things: an FSSAI-certified kitchen, an in-house team that actually executes the menu rather than subcontracting it, clarity on how much of the menu is cooked in-house versus outsourced, and real connections to specialty restaurants or chefs for anything outside the caterer\'s core kitchen.',
+      'Most couples evaluate a wedding caterer on menu and price. Those matter, but they don\'t tell you whether the caterer can actually deliver what\'s on the proposal. Four operational questions do a better job of predicting whether your wedding day goes smoothly than any tasting alone.'
+    ],
+    sections: [
+      {
+        heading: 'Does the Kitchen Have Valid FSSAI Certification?',
+        paragraphs: [
+          'This is the baseline, not a bonus. FSSAI certification means the kitchen has been inspected against food safety standards, covering everything from ingredient storage to hygiene during preparation. A caterer should be able to produce this on request without hesitation. If they can\'t, that\'s worth treating as a serious flag, not a minor gap.'
+        ]
+      },
+      {
+        heading: 'Does the Caterer Have an In-House Team to Execute the Menu?',
+        paragraphs: [
+          'A proposal is only as good as the team standing behind it on the actual day. Ask directly whether the chefs and service staff who show up at your wedding are the caterer\'s own trained team, or whether execution gets handed off to a different crew brought in for the event. A caterer without a real in-house team is harder to hold accountable if something goes wrong.'
+        ]
+      },
+      {
+        heading: 'How Much of the Menu Is Actually Cooked In-House?',
+        paragraphs: [
+          'A long, multi-cuisine menu looks impressive on a proposal, but not every kitchen can execute every cuisine well. Ask specifically how much of the menu is prepared in-house versus sourced or subcontracted elsewhere. This isn\'t automatically a dealbreaker, but you should know where each dish is actually coming from, rather than assuming a single kitchen is producing all of it.'
+        ]
+      },
+      {
+        heading: 'Does the Caterer Have Connections Beyond Their Own Kitchen?',
+        paragraphs: [
+          'Sometimes a family wants something genuinely outside a caterer\'s core strength, a specific regional specialty, an authentic cuisine that needs its own dedicated chef, or a pop-up-style section led by an outside name. A caterer with real relationships to specialty restaurants or chefs can bring that in properly instead of attempting a weaker in-house version or turning the request down outright.'
+        ],
+        pullQuote: 'A caterer with real relationships to specialty restaurants or chefs can bring that in properly, instead of attempting a weaker in-house version.'
+      },
+      {
+        heading: 'The Real Takeaway',
+        paragraphs: [
+          'Menu and price are what get discussed first, but certification, team ownership, execution transparency, and outside connections are what actually determine whether the wedding you were promised is the wedding you get.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'Why does FSSAI certification matter for a wedding caterer?', a: 'It confirms the kitchen has been inspected against food safety standards covering ingredient storage, preparation hygiene, and handling. A caterer should be able to provide this without hesitation, and its absence is a legitimate reason for concern.' },
+      { q: 'Why does it matter if a caterer\'s team is in-house versus outsourced?', a: 'An in-house team is the same group that was assessed during your tasting and planning conversations, which makes accountability clearer if something goes wrong on the day. An outsourced or last-minute crew introduces a layer of uncertainty a couple usually isn\'t told about upfront.' },
+      { q: 'Should a caterer be able to bring in outside specialists for certain dishes?', a: 'Ideally, yes, when a request is genuinely outside their core strength. A caterer with real relationships to specialty restaurants or chefs can deliver that properly instead of offering a weaker in-house substitute or declining the request altogether.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 

@@ -286,6 +286,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'dos-and-donts-finalizing-wedding-menu'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Do\'s and Don\'ts of Finalizing a Wedding Menu', path: '/blog/dos-and-donts-finalizing-wedding-menu' }]
   },
+  blogParametersBeforeBooking: {
+    path: '/blog/parameters-to-consider-before-booking-wedding-caterer',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Parameters to Consider Before Booking Your Wedding Caterer | Virtuoso Catering House',
+    description: 'Before booking a wedding caterer, confirm FSSAI certification, an in-house execution team, and clarity on what\'s actually cooked in-house.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'parameters-to-consider-before-booking-wedding-caterer').image,
+    post: content.blogPosts.find((p) => p.slug === 'parameters-to-consider-before-booking-wedding-caterer'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Parameters to Consider Before Booking Your Wedding Caterer', path: '/blog/parameters-to-consider-before-booking-wedding-caterer' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
