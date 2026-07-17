@@ -308,6 +308,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'wedding-food-presentation-five-star-hotel'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Wedding Food Presentation Like a 5-Star Hotel', path: '/blog/wedding-food-presentation-five-star-hotel' }]
   },
+  blogChoosingWeddingMenu: {
+    path: '/blog/choosing-wedding-menu-four-factors',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Choosing Your Wedding Menu: Four Factors, in Order | Virtuoso Catering House',
+    description: 'A wedding menu is best built in four moves: guest dietary needs, signature dishes vs. crowd-pleasers, sequencing for flow, then plating and service.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'choosing-wedding-menu-four-factors').image,
+    post: content.blogPosts.find((p) => p.slug === 'choosing-wedding-menu-four-factors'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Choosing Your Wedding Menu: Four Factors', path: '/blog/choosing-wedding-menu-four-factors' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
