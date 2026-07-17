@@ -1043,6 +1043,21 @@ const weddingCaterersDelhiNcrPage = {
       ]
     },
     {
+      heading: 'We May Be the Right Fit If...',
+      paragraphs: [],
+      list: [
+        '...you believe food is not a course in an event. It\'s part of the story.',
+        '...you don\'t want your guests to say, "The food was good." You want them to remember how the evening felt.',
+        '...you believe every celebration deserves a culinary language of its own, not a menu recycled from the last hundred events.',
+        '...you see flavour, presentation, service, music, flowers and space as parts of the same experience.',
+        '...you care less about how many dishes are on the menu and more about why every dish belongs there.',
+        '...you believe a wedding menu should feel unmistakably like the couple, and a brand experience should never feel like it could belong to anyone else.',
+        '...you appreciate craftsmanship over abundance, restraint over excess, originality over imitation.',
+        '...you understand that unforgettable experiences are rarely created by spending more. They\'re created by caring more, by asking better questions, by noticing details others overlook, by designing moments that feel effortless, yet could never have happened by accident.'
+      ],
+      outro: 'If these ideas resonate with you, we\'ll probably enjoy creating something extraordinary together.'
+    },
+    {
       heading: 'Let\'s Design Your Wedding, Function by Function',
       paragraphs: [
         'We don\'t quote a flat per-plate rate, because no two weddings we\'ve catered have ever wanted the same thing. Tell us about your day, we\'ll tell you what it takes to make each function unforgettable.'

@@ -63,6 +63,9 @@
           <% }); %>
         </ul>
         <% } %>
+        <% if (section.outro) { %>
+        <p class="blog-post__copy reveal-up"><%= section.outro %></p>
+        <% } %>
         <% if (section.links && section.links.length) { %>
         <% section.links.forEach(function(link) { %>
         <p class="blog-post__copy reveal-up"><a href="<%= link.path %>" class="link-underline"<% if (/^https?:/.test(link.path)) { %> target="_blank" rel="noopener"<% } %>><%= link.label %></a></p>
