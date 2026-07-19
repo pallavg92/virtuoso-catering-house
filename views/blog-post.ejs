@@ -34,7 +34,7 @@
       <% if (post.lead) { %>
       <div class="blog-post__prose">
         <% post.lead.forEach(function(paragraph) { %>
-        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= paragraph %></p>
+        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%- paragraph %></p>
         <% }); %>
       </div>
       <% } %>
@@ -42,7 +42,7 @@
       <% if (post.body) { %>
       <div class="blog-post__prose">
         <% post.body.forEach(function(paragraph) { %>
-        <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+        <p class="blog-post__copy reveal-up"><%- paragraph %></p>
         <% }); %>
       </div>
       <% } %>
@@ -51,7 +51,7 @@
       <div class="blog-post__prose">
         <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
         <% section.paragraphs.forEach(function(paragraph) { %>
-        <p class="blog-post__copy reveal-up"><%= paragraph %></p>
+        <p class="blog-post__copy reveal-up"><%- paragraph %></p>
         <% }); %>
         <% if (section.pullQuote) { %>
         <blockquote class="blog-post__pull-quote reveal-up"><%= section.pullQuote %></blockquote>

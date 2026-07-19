@@ -55,6 +55,7 @@ router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => render(res, pages
 router.get('/press', (req, res) => render(res, pages.press));
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
 router.get('/wedding-caterers-delhi-ncr', (req, res) => render(res, pages.weddingCaterersDelhiNcr));
+router.get('/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding', (req, res) => render(res, pages.hireWeddingCaterersDelhi));
 
 // Every 301 redirect (renamed paths + retired WordPress URLs) lives in
 // utils/redirects.js, shared with scripts/build.js so the static deploy

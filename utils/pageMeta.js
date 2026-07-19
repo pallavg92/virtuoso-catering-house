@@ -341,6 +341,17 @@ const pages = {
     post: content.weddingCaterersDelhiNcrPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Wedding Caterers in Delhi NCR', path: '/wedding-caterers-delhi-ncr' }]
   },
+  hireWeddingCaterersDelhi: {
+    path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-hire-wedding-caterers-delhi',
+    title: 'How to Hire Wedding Caterers in Delhi for a Luxury Wedding | Virtuoso Catering House',
+    description: content.hireWeddingCaterersDelhiPage.excerpt,
+    ogImage: content.hireWeddingCaterersDelhiPage.image,
+    post: content.hireWeddingCaterersDelhiPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'How to Hire Wedding Caterers in Delhi', path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding' }]
+  },
   press: {
     path: '/press',
     view: 'press',
