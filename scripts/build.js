@@ -13,6 +13,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const bundleCss = require('./bundle-css');
+const redirects = require('../utils/redirects');
 
 async function renderPage(page) {
   const viewPath = path.join(VIEWS_DIR, `${page.view}.ejs`);
@@ -53,6 +54,29 @@ function copyPublicAssets() {
   console.log('  copied /public -> /dist');
 }
 
+// The static host (Apache/LiteSpeed on Hostinger) has no Express router to
+// run the redirects in utils/redirects.js, so without this file every
+// legacy WordPress URL and renamed path (e.g. /gallery, /menu) just 404s
+// in production even though it "works" against the local dev server.
+// RewriteRule (not mod_alias Redirect) is used with a $ anchor so nested
+// paths like /luxury-brand-event-catering-delhi-ncr/... match exactly
+// instead of a shorter prefix rule swallowing a longer URL first.
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function writeHtaccess() {
+  const rules = redirects
+    .map(({ from, to }) => {
+      const pattern = escapeRegex(from.replace(/^\//, ''));
+      return `RewriteRule ^${pattern}/?$ ${to} [R=301,L]`;
+    })
+    .join('\n');
+  const htaccess = `RewriteEngine On\n\n${rules}\n`;
+  fs.writeFileSync(path.join(DIST_DIR, '.htaccess'), htaccess);
+  console.log(`  wrote dist/.htaccess (${redirects.length} redirects)`);
+}
+
 function writeSitemap() {
   const today = new Date().toISOString().slice(0, 10);
   const urls = Object.values(pages)
@@ -80,6 +104,7 @@ async function build() {
   }
   await renderNotFound();
 
+  writeHtaccess();
   writeSitemap();
 
   console.log('Build complete -> dist/');
