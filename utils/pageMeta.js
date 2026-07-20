@@ -352,6 +352,17 @@ const pages = {
     post: content.hireWeddingCaterersDelhiPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'How to Hire Wedding Caterers in Delhi', path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding' }]
   },
+  bestWeddingCaterersDelhi: {
+    path: '/best-wedding-caterers-in-delhi-what-sets-them-apart',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-best-wedding-caterers-delhi',
+    title: 'Best Wedding Caterers in Delhi: What Sets Them Apart | Virtuoso Catering House',
+    description: content.bestWeddingCaterersDelhiPage.excerpt,
+    ogImage: content.bestWeddingCaterersDelhiPage.image,
+    post: content.bestWeddingCaterersDelhiPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/best-wedding-caterers-in-delhi-what-sets-them-apart' }]
+  },
   press: {
     path: '/press',
     view: 'press',
