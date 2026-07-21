@@ -19,6 +19,20 @@
     drawer.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    // Any site popup (entry/exit-intent) that triggered this should not
+    // stay open behind the drawer, regardless of which trigger fired.
+    document.querySelectorAll('.site-popup.is-open').forEach((popup) => {
+      popup.classList.remove('is-open');
+      popup.setAttribute('aria-hidden', 'true');
+    });
+
+    const eventType = e && e.currentTarget && e.currentTarget.dataset && e.currentTarget.dataset.eventType;
+    if (eventType) {
+      const select = form.querySelector('#drawer-eventType');
+      if (select) select.value = eventType;
+    }
+
     const firstField = form.querySelector('input, select, textarea');
     if (firstField) firstField.focus();
   }
@@ -97,6 +111,13 @@
 
       setStatus(data.message || 'Thank you — your inquiry has been received.', 'success');
       form.reset();
+
+      // Lets the entry/exit popups know not to prompt again this session.
+      try {
+        sessionStorage.setItem('vch_inquiry_sent', '1');
+      } catch (storageErr) {
+        // Swallow — best-effort only.
+      }
 
       // Analytics is best-effort — a tracking failure must never surface
       // as a false error after the inquiry has already been received.

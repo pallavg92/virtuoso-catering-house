@@ -22,7 +22,8 @@ const SOURCE_FILES = [
   'forms.css',
   'footer.css',
   'animations.css',
-  'pages.css'
+  'pages.css',
+  'popups.css'
 ];
 
 function bundleCss() {
