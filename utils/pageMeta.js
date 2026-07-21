@@ -363,6 +363,17 @@ const pages = {
     post: content.bestWeddingCaterersDelhiPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/best-wedding-caterers-in-delhi-what-sets-them-apart' }]
   },
+  caterersInDelhiFindingTheRightFit: {
+    path: '/caterers-in-delhi-finding-the-right-fit-for-your-event',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-caterers-in-delhi-right-fit',
+    title: 'Caterers in Delhi: Finding the Right Fit for Your Event | Virtuoso Catering House',
+    description: content.caterersInDelhiFindingTheRightFitPage.excerpt,
+    ogImage: content.caterersInDelhiFindingTheRightFitPage.image,
+    post: content.caterersInDelhiFindingTheRightFitPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Caterers in Delhi: Finding the Right Fit', path: '/caterers-in-delhi-finding-the-right-fit-for-your-event' }]
+  },
   press: {
     path: '/press',
     view: 'press',
