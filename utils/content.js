@@ -1061,6 +1061,57 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'bmw-civil-lines-launch-catering',
+    url: '/blog/bmw-civil-lines-launch-catering',
+    title: 'A 20-Minute Gluten-Free Lunch for BMW Group India\'s Leadership Team',
+    excerpt: 'Virtuoso Catering House designed and executed a fully gluten-free plated lunch for BMW Group India\'s leadership team at the BMW Infinity Cars, Civil Lines launch, a 30-guest floating service built around a 20-minute serve-and-clear window with zero room for error.',
+    date: '2025-08-08',
+    image: '/images/bmw-civil-lines-launch/virtuoso-catering-house-bmw-civil-lines-hero.jpg',
+    relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
+    lead: [
+      'Virtuoso Catering House designed and executed the catering for BMW Group India\'s launch at BMW Infinity Cars, Civil Lines in Delhi in August 2025, serving the brand\'s top leadership team, including Vikram Pawah, then President and CEO of BMW Group India, alongside senior management, 30 guests in total. The brief carried two non-negotiables: every dish had to be gluten-free using only the best ingredients available, and the entire meal, from first plate to last, had to be served and cleared inside a 20-minute floating window. No buffet.'
+    ],
+    sections: [
+      {
+        heading: 'The Brief',
+        paragraphs: [
+          'A leadership lunch inside a vehicle launch runs on the event\'s clock, not the kitchen\'s. BMW\'s team gave us a narrow, firm brief: strictly gluten-free, ingredients vetted and approved in advance, plated fresh rather than pre-staged, and served entirely as a floating format with no buffet line. The tightest constraint was time. From the moment the leadership team sat down to the final plate being cleared, we had twenty minutes.'
+        ]
+      },
+      {
+        heading: 'The Execution',
+        paragraphs: [
+          'Getting the menu approved took real back-and-forth. Every dish was built to the gluten-free specification from the ground up, and ingredients were discussed in detail with BMW\'s team before a single item was confirmed. On the day, the chef team was aligned and prepping from the early hours of the morning, and we stayed in close coordination with the event management team to track exactly when the leadership group would be seated, since the serving window depended entirely on that timing. The moment the group sat down, service began immediately. From first plate to full clearance, the complete meal was served and cleared inside twenty minutes.',
+          'Presentation carried a quiet nod to the brand: refined marble platters and ceramic ware finished in hues of blue, a subtle echo of BMW\'s colour identity rather than an overt branding exercise.'
+        ],
+        image: {
+          src: '/images/bmw-civil-lines-launch/virtuoso-catering-house-bmw-civil-lines-rice-paper-roll.jpg',
+          caption: 'Summer veggie rice paper rolls, one of several dishes built gluten-free from the ground up.'
+        },
+        images: [
+          { src: '/images/bmw-civil-lines-launch/bmw-infinity-cars-civil-lines-facade.jpg', caption: 'BMW Infinity Cars, Civil Lines, the site of the launch.' },
+          { src: '/images/bmw-civil-lines-launch/bmw-infinity-cars-civil-lines-interior.jpg', caption: 'Inside the showroom floor where the leadership lunch was served.' }
+        ]
+      },
+      {
+        heading: 'The Result',
+        paragraphs: [
+          'The feedback came directly from BMW\'s marketing head after the event: "We had a fantastic meal, everything went well." For a 20-minute, zero-buffet, fully gluten-free service in front of BMW Group India\'s top leadership, that\'s close to the best outcome available.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What catering did Virtuoso Catering House provide for the BMW Civil Lines launch?', a: 'Virtuoso Catering House designed and executed a fully gluten-free floating lunch for BMW Group India\'s leadership team at the BMW Infinity Cars, Civil Lines launch in Delhi in August 2025. The 30-guest service, which included then President and CEO Vikram Pawah, was served and cleared inside a 20-minute window with no buffet.' },
+      { q: 'How does Virtuoso handle strict dietary requirements like gluten-free menus for corporate events?', a: 'Every ingredient is vetted and approved with the client\'s team before the menu is finalised, and dishes are built gluten-free from the ground up rather than adapted from a standard menu. For the BMW brief, that meant discussing ingredients in detail in advance and confirming the full menu only once every requirement was met.' },
+      { q: 'How does Virtuoso manage extremely tight service windows at leadership-level events?', a: 'Timing is coordinated directly with the event management team so the kitchen knows exactly when guests will be seated, not an estimated schedule. Chefs are aligned and prepping from early morning, and service begins the moment guests sit down. For BMW, that discipline meant a full plated meal, served and cleared, inside twenty minutes.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 

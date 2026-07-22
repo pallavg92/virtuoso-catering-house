@@ -242,6 +242,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'food-trends-delhi-ncr-weddings-2026'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Food Trends Taking Over Delhi NCR Weddings in 2026', path: '/blog/food-trends-delhi-ncr-weddings-2026' }]
   },
+  blogBmwCivilLines: {
+    path: '/blog/bmw-civil-lines-launch-catering',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'BMW Civil Lines Launch Catering | Virtuoso Catering House',
+    description: 'Virtuoso Catering House served a fully gluten-free plated lunch for BMW Group India\'s leadership team at the BMW Infinity Cars, Civil Lines launch, served and cleared inside a 20-minute window.',
+    ogImage: content.blogPosts.find((p) => p.slug === 'bmw-civil-lines-launch-catering').image,
+    post: content.blogPosts.find((p) => p.slug === 'bmw-civil-lines-launch-catering'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'BMW Civil Lines Launch Catering', path: '/blog/bmw-civil-lines-launch-catering' }]
+  },
   blogPresentationMyths: {
     path: '/blog/does-wedding-presentation-need-big-budget',
     view: 'blog-post',
