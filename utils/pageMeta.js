@@ -231,6 +231,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'how-luxury-wedding-caterers-build-custom-menu'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How Luxury Wedding Caterers Build a Custom Menu', path: '/blog/how-luxury-wedding-caterers-build-custom-menu' }]
   },
+  blogFoodTrends2026: {
+    path: '/blog/food-trends-delhi-ncr-weddings-2026',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Food Trends Taking Over Delhi NCR Weddings in 2026 | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'food-trends-delhi-ncr-weddings-2026').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'food-trends-delhi-ncr-weddings-2026').image,
+    post: content.blogPosts.find((p) => p.slug === 'food-trends-delhi-ncr-weddings-2026'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Food Trends Taking Over Delhi NCR Weddings in 2026', path: '/blog/food-trends-delhi-ncr-weddings-2026' }]
+  },
   blogPresentationMyths: {
     path: '/blog/does-wedding-presentation-need-big-budget',
     view: 'blog-post',

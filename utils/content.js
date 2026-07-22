@@ -998,6 +998,69 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/pallavg16',
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
+  },
+  {
+    slug: 'food-trends-delhi-ncr-weddings-2026',
+    url: '/blog/food-trends-delhi-ncr-weddings-2026',
+    title: 'Food Trends Taking Over Delhi NCR Weddings in 2026',
+    excerpt: 'Five food trends are defining Delhi NCR weddings in 2026: chef-led experiences, global fusion plates, elevated botanical mixology, hyper-regional Indian cuisine, and experiential late-night dessert stations, all pointing toward food guests actively take part in rather than a meal that sits and waits.',
+    date: '2026-07-21',
+    image: '/images/virtuoso-catering-house-mixology-service.jpg',
+    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach luxury wedding catering across Delhi NCR' },
+    lead: [
+      'Five food trends are defining Delhi NCR weddings in 2026: chef-led experiences, global fusion plates, elevated botanical mixology, a revival of hyper-regional Indian cuisine, and experiential late-night dessert stations. The through-line is a shift from food as a meal stop to food as an experience guests actively take part in.',
+      'Wedding food in Delhi NCR has moved past the long static buffet. The dishes still matter, but in 2026 the bigger shift is about how food is served, watched, and remembered. Here are the five trends actually showing up on the best wedding menus this season, and why each one has caught on.'
+    ],
+    sections: [
+      {
+        heading: 'Chef-Led Experiences',
+        paragraphs: [
+          'The single biggest shift is toward chef-led experiences, where a section of the wedding is carved out as its own restaurant, a live pizzeria, a sushi pop-up, a fine-dine Modern Indian counter, built as a complete culinary theatre rather than a single visible cook. At its simplest this is a live counter with a trained chef finishing dishes in front of guests, chaat, dosa, live sushi, cooked fresh and styled to be watched rather than just eaten. At its most ambitious, it\'s a celebrity chef curating a section of the menu with their own team, sometimes set up as a full pop-up restaurant inside the wedding, complete with its own kitchen and plating counter. Either way, the appeal is the same: guests gather around food being made, and the cooking itself becomes part of the event rather than something that happened somewhere else.',
+          'Virtuoso brought this to life at a 300-guest wedding at a farmhouse in Noida in March 2026, where Chef Vishal Kochar led a molecular experience built around live ice carving. Guests watched blocks of ice worked into faceted "iced diamonds" and hand-carved drinking glasses in real time, a different kind of visible craft from a live tandoor or dosa counter, but built on the same instinct: let people watch the work happen. It was, by a wide margin, the moment guests talked about most.'
+        ]
+      },
+      {
+        heading: 'Global Fusion Plates',
+        paragraphs: [
+          'Fusion has matured past novelty into a genuine expectation. The dishes gaining ground are the ones that marry Indian flavour with global formats: paneer tacos, Indo-Chinese noodles, Thai chaat, and Indo-Mexican plates. Ramen bars in particular have become a crowd favourite, turning a simple bowl of noodles into an interactive moment. Part of the appeal is practical, fusion options give younger and international guests, and anyone less familiar with traditional vegetarian Indian food, something they recognise and want to eat.'
+        ]
+      },
+      {
+        heading: 'Elevated Botanical Mixology',
+        paragraphs: [
+          'The bar has become its own attraction. In 2026, couples are moving past a standard open bar toward custom cocktail programs and tableside mixology, where a professional mixologist crafts drinks in front of guests as an interactive element. The flavour direction is distinctly botanical, herb-infused syrups, specialty teas, and cold-pressed juices running through both cocktails and mocktails. The alcohol-free side is being taken as seriously as the cocktails, which matters at Indian weddings where a large share of guests don\'t drink but still expect something crafted rather than a soft drink.',
+          'That same molecular bar is a good example of where botanical mixology is actually headed: not just flavour but form. Drinks were served in the hand-carved ice glasses guests had just watched take shape, alongside herb and botanical infusions built to hold up next to that level of visual craft. The bar wasn\'t a service point on the side of the room. It was the second thing guests photographed after the couple.'
+        ]
+      },
+      {
+        heading: 'A Revival of Hyper-Regional Indian Cuisine',
+        paragraphs: [
+          'Against all the fusion and global influence, the opposite instinct is trending just as hard: a surge in specific regional Indian cuisine. Instead of a generic "North Indian" spread, couples are curating menus around particular regional and heritage dishes, done authentically. It reads as more personal and more premium at once, because a well-executed regional specialty signals a caterer who actually knows the cuisine rather than one running the same standardised menu across every wedding.'
+        ]
+      },
+      {
+        heading: 'Experiential Late-Night Dessert Stations',
+        paragraphs: [
+          'Dessert has moved from a table at the back to a moment in the programme. Late-night desserts are getting more experiential, with roaming carts, live dessert corners, and individual plated formats replacing the single static sweets table. Formats that let guests watch or assemble, a live dessert counter, a roaming cart circulating late in the night, land better than a fixed display precisely because they bring the same interactive energy the rest of the menu now carries.'
+        ]
+      },
+      {
+        heading: 'The Common Thread',
+        paragraphs: [
+          'Every one of these trends points the same direction: away from food that sits and waits, toward food guests engage with. Chef-led experiences, tableside mixology, and roaming dessert carts are all versions of the same idea, that at a 2026 wedding, the serving of the food is as much a part of the experience as the food itself.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What is the biggest wedding food trend in Delhi NCR for 2026?', a: 'Chef-led experiences. Live food stations have become one of the most requested wedding features, with dishes cooked fresh in front of guests, and at the higher end, celebrity chefs curating a section of the menu with their own team, sometimes as a full pop-up restaurant inside the wedding. The emphasis is on the chef being visible and central, which is what turns the food into an experience.' },
+      { q: 'Are fusion dishes still popular at Indian weddings in 2026?', a: 'Yes. Global fusion plates like paneer tacos, Indo-Chinese noodles, and ramen bars are a defining trend, partly because they give younger and international guests familiar, appealing options alongside traditional dishes.' },
+      { q: 'What is trending for wedding drinks in 2026?', a: 'Elevated, botanical mixology. Couples are choosing custom cocktail programs and tableside mixology with herb-infused syrups, specialty teas, and cold-pressed juices, with alcohol-free mocktails treated with the same care as the cocktails.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 
