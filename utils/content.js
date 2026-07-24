@@ -1628,10 +1628,18 @@ const pressAndClients = {
   ]
 };
 
-// Confirmed press mentions with a verifiable source article. Outlets in
-// pressAndClients.press without an entry here (e.g. Times of India,
-// Economic Times, India Today) were referenced in passing in other
-// coverage but don't yet have a confirmed article link.
+// Confirmed press mentions, rendered on /press and exposed as schema.org
+// NewsArticle markup for AI answer engines to cite.
+//
+// RULE FOR ADDING A NEW MENTION: only add an entry after opening the live
+// URL and confirming "Virtuoso Catering House" is actually named in the
+// article. Do NOT populate this from Semrush/AI citation reports — those
+// counts can be false positives (a domain can be "cited" without naming
+// Virtuoso). A fabricated "featured in" claim is worse than a short list.
+//
+// Outlets in pressAndClients.press without an entry here (e.g. Times of
+// India, Economic Times, India Today) were referenced in passing in other
+// coverage but don't yet have a confirmed, verified article link.
 const pressMentions = [
   {
     outlet: 'News18',

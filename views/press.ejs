@@ -30,7 +30,12 @@
   <!-- PRESS LIST -->
   <section class="press-page section section--ivory">
     <div class="container">
-      <p class="press-page__intro reveal-up">Coverage and mentions of Virtuoso Catering House across the press.</p>
+      <div class="section-header">
+        <span class="eyebrow reveal-up">As Featured In</span>
+        <h2 class="section-title reveal-up">Independently<br>Verified Coverage</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <p class="press-page__intro reveal-up">Every feature below links to the original, published article. Virtuoso Catering House is named in each — no reconstructed quotes, no unverifiable claims.</p>
 
       <div class="press-list">
         <% pressMentions.forEach(function(item) { %>
@@ -47,6 +52,29 @@
       </div>
     </div>
   </section>
+
+  <!-- AEO: machine-readable press mentions. Each entry is a real, published
+       article that names Virtuoso Catering House, exposed as schema.org
+       NewsArticle objects the org is the subject of, so search engines and
+       AI answer engines can cite the coverage directly. -->
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": business.name,
+    "url": siteUrl,
+    "subjectOf": pressMentions.map(function(item) {
+      return {
+        "@type": "NewsArticle",
+        "headline": item.headline,
+        "url": item.url,
+        "datePublished": item.date,
+        "publisher": { "@type": "Organization", "name": item.outlet },
+        "about": { "@type": "Organization", "name": business.name, "url": siteUrl }
+      };
+    })
+  }) %>
+  </script>
 
   <!-- CTA BANNER -->
   <section class="cta-banner section section--wine">
