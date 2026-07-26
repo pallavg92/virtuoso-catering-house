@@ -153,6 +153,17 @@ const pages = {
     ogImage: content.landingPages['luxury-brand-event-catering-delhi-ncr'].image,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Luxury Brand Event Catering Delhi NCR', path: '/luxury-brand-event-catering-delhi-ncr' }]
   },
+  landingWeddingCaterersDelhi: {
+    path: '/wedding-caterers-in-delhi',
+    view: 'landing',
+    landingSlug: 'wedding-caterers-in-delhi',
+    activePage: 'landing',
+    bodyClass: 'page-landing',
+    title: content.landingPages['wedding-caterers-in-delhi'].metaTitle,
+    description: content.landingPages['wedding-caterers-in-delhi'].metaDescription,
+    ogImage: content.landingPages['wedding-caterers-in-delhi'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/wedding-caterers-in-delhi' }]
+  },
   landingWedding: {
     path: '/luxury-wedding-catering-delhi-ncr',
     view: 'landing',

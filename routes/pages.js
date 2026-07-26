@@ -53,6 +53,7 @@ router.get('/best-catering-services-in-noida', (req, res) => render(res, pages.l
 router.get('/catering-services-in-greater-noida', (req, res) => render(res, pages.landingGreaterNoida));
 router.get('/corporate-catering-services-in-noida', (req, res) => render(res, pages.landingCorporate));
 router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, pages.landingBrandEvent));
+router.get('/wedding-caterers-in-delhi', (req, res) => render(res, pages.landingWeddingCaterersDelhi));
 router.get('/luxury-wedding-catering-delhi-ncr', (req, res) => render(res, pages.landingWedding));
 router.get('/press', (req, res) => render(res, pages.press));
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
