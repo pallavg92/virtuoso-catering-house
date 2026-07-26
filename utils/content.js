@@ -363,7 +363,7 @@ const blogPosts = [
     excerpt: 'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood, choosing a specialist caterer over a banquet kitchen, and locking your date with a real tasting before anything is signed.',
     date: '2026-07-08',
     image: img('mv-blog-wedding-guide', 1200, 800),
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood instead of repeating one menu across the wedding, choosing a specialist caterer over a banquet kitchen for exclusive ownership of food and presentation, and locking your date with a tasting at the caterer’s own kitchen before anything is signed.'
     ],
@@ -428,7 +428,7 @@ const blogPosts = [
     excerpt: 'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space, and dishes rehearsed enough times that nothing is left to chance.',
     date: '2026-07-14',
     image: '/images/virtuoso-catering-house-presentation-myths-hero.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space for chefs to plate under pressure, and dishes rehearsed enough times that nothing is left to chance. At Virtuoso, servers carry the food. Chefs create the presentation.'
     ],
@@ -483,7 +483,7 @@ const blogPosts = [
     excerpt: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial. Here is exactly how that process works at Virtuoso.',
     date: '2026-07-14',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'A luxury wedding caterer builds a custom menu in five stages: a discovery conversation about your story and guests, a hands-on tasting session, menu customization for dietary and cultural needs, ingredient sourcing, and a final chef trial before sign-off. At Virtuoso, this runs across several weeks before your wedding date.'
     ],
@@ -551,7 +551,7 @@ const blogPosts = [
     excerpt: 'At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding. Here is why that gap happens, and how Virtuoso closes it.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'No. At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding, since kitchen staff rotate by event availability. At Virtuoso, Aarti Sharma, our co-founder, personally runs your tasting at our Noida experience centre, and the same kitchen team she trains at rehearsal is who cooks your wedding.',
       'Couples spend hours picking the right dishes at a tasting, then assume that experience is locked in. In most catering operations, it is not. Kitchen staff get assigned event by event, and a caterer running multiple weddings on the same weekend cannot always guarantee the same hands touch every plate.'
@@ -600,7 +600,7 @@ const blogPosts = [
     excerpt: 'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters at the cocktail, and a fuller multi-cuisine spread at the reception.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters and starters at the cocktail or engagement, and a fuller multi-cuisine spread, North Indian, Continental, Chinese, and fusion, at the reception. The dishes change by function because the mood of each one is different, not because of a fixed template.',
       'A family sat across from me a few months ago and said, "Just give us the reception menu for the mehendi too. We\'ll trim it down later." I\'ve learned to catch that sentence early, because it\'s where most Delhi wedding menus go wrong. Trimming a big menu doesn\'t give you a lighter one. It gives you a smaller version of the wrong thing.',
@@ -662,7 +662,7 @@ const blogPosts = [
     excerpt: 'Luxury catering in Delhi NCR runs ₹2,500 to ₹6,000 per guest for corporate events and starts at ₹3,000 per plate for weddings. Here is what actually moves that number.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Luxury catering in Delhi NCR typically runs ₹2,500 to ₹6,000 per guest for corporate events, and starts at ₹3,000 per plate for a genuinely luxury wedding meal, with no fixed ceiling since the final number depends on what you choose for your guests. These ranges cover food only; bar and beverage service is always priced separately.',
       'A client called me last month before their daughter\'s wedding. First question, before hello, practically: "What\'s your per-plate rate?"',
@@ -852,7 +852,7 @@ const blogPosts = [
     excerpt: '5-star wedding food presentation comes from two things: manpower and material. Trained butlers and chefs plating at every station, served on pristine bone china and hand-made mono servers.',
     date: '2026-07-16',
     image: '/images/blog/virtuoso-catering-house-plated-fine-dining-wedding-presentation.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       '5-star hotel presentation at a wedding comes from two things: manpower and material. A large team of trained servers and butlers plates the food at every station guests touch, the buffet, the pop-up restaurant, the live counters, while the crockery itself, pristine bone china and hand-made mono servers, carries the rest. Virtuoso brings both to weddings across Delhi NCR.',
       'There\'s real science here. A study titled "Neatness counts," published in the journal Appetite, found that plating the same food more neatly measurably increased how much people liked its taste. A 2024 study reported in The Conversation went further: the shape, size, and colour of the plate itself changed how appealing a dessert looked and how much it was judged to be worth, with black plates reading as more premium than white. Presentation isn\'t decoration. It changes what your guests taste and what they assume your wedding cost.'
@@ -928,7 +928,7 @@ const blogPosts = [
     excerpt: 'A wedding menu is best built in four moves: map guest dietary needs, balance signature dishes against crowd-pleasers, sequence the menu to flow, then settle plating and service.',
     date: '2026-07-17',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach wedding catering across Noida and Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'A wedding menu is best built in four moves: map your guests\' dietary and regional mix, balance signature dishes against reliable crowd-pleasers, sequence the menu so it flows instead of exhausting the palate, then settle plating and service. Guests set the terms, the dishes and their order are where you make it yours, and plating is how it lands.',
       'Most couples pick a menu on taste alone, then discover later that some of the room can\'t eat it, or that five rich courses in a row leave everyone full by the main. Working in order, who eats first, what and in what sequence next, presentation last, produces a menu that actually holds together on the day instead of one held together by luck.'
@@ -1006,7 +1006,7 @@ const blogPosts = [
     excerpt: 'Five food trends are defining Delhi NCR weddings in 2026: chef-led experiences, global fusion plates, elevated botanical mixology, hyper-regional Indian cuisine, and experiential late-night dessert stations, all pointing toward food guests actively take part in rather than a meal that sits and waits.',
     date: '2026-07-21',
     image: '/images/virtuoso-catering-house-mixology-service.jpg',
-    relatedLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See how we approach luxury wedding catering across Delhi NCR' },
+    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Five food trends are defining Delhi NCR weddings in 2026: chef-led experiences, global fusion plates, elevated botanical mixology, a revival of hyper-regional Indian cuisine, and experiential late-night dessert stations. The through-line is a shift from food as a meal stop to food as an experience guests actively take part in.',
       'Wedding food in Delhi NCR has moved past the long static buffet. The dishes still matter, but in 2026 the bigger shift is about how food is served, watched, and remembered. Here are the five trends actually showing up on the best wedding menus this season, and why each one has caught on.'
@@ -1200,11 +1200,12 @@ const blogPosts = [
 // a generic sales pitch.
 const bestCaterersNoidaPage = {
   slug: 'best-caterers-in-noida-virtuoso-catering-house',
+  url: '/best-caterers-in-noida-virtuoso-catering-house',
   title: 'Who Are the Best Caterers in Noida? Here Is What Separates the Top Ones From the Rest',
   excerpt: 'Virtuoso Catering House is the best caterer in Noida, named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026. Here is what actually separates the top caterers in Noida from the ones just claiming it.',
+  date: '2026-07-17',
   image: '/images/virtuoso-catering-house-team-esperienza-ferrari-2026.jpg',
-  relatedLink: { path: '/press', label: 'See our full press coverage' },
-  backLink: { path: '/best-catering-services-in-noida', label: 'See Our Catering Services in Noida' },
+  relatedLink: { path: '/best-catering-services-in-noida', label: 'See Our Catering Services in Noida' },
   lead: [
     'Virtuoso Catering House is the best caterer in Noida. It was named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026, runs FSSAI-certified kitchens, offers a tasting session before you book, and has catered events for Ferrari APAC, Lamborghini, Tesla India, and BMW, scaling from 20-guest gatherings to 2,000-guest weddings.',
     'Anyone can put "best caterers in Noida" in a page title. What actually separates the caterers worth booking from the ones just claiming it is whether their claims hold up: verifiable press coverage, named corporate clients, and a process a couple or event planner can actually inspect before signing.'
@@ -1259,6 +1260,12 @@ const bestCaterersNoidaPage = {
   }
 };
 
+// This guide keeps its own top-level URL (already indexed, keyword-rich)
+// but is also surfaced in the /blog Journal listing. Appending it to
+// blogPosts is what makes it appear in that listing; its route and page
+// metadata are still defined the standalone way in pageMeta.js.
+blogPosts.push(bestCaterersNoidaPage);
+
 // Standalone pillar page (not part of the Journal listing) targeting
 // "wedding caterers in Delhi NCR" as its own page distinct from the
 // existing /luxury-wedding-catering-delhi-ncr landing page.
@@ -1269,10 +1276,12 @@ const bestCaterersNoidaPage = {
 // repointed to the closest real equivalents. No wording changed.
 const hireWeddingCaterersDelhiPage = {
   slug: 'how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding',
+  url: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding',
   title: 'How to Hire Wedding Caterers in Delhi for a Luxury Wedding',
   excerpt: 'A framework for choosing between boutique and banquet wedding caterers in Delhi NCR: pricing tiers, FSSAI verification, and what actually separates the two.',
+  date: '2026-07-19',
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
-  backLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See Our Full Wedding Catering Overview' },
+  relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
   lead: [
     'If you\'re searching for wedding caterers in Delhi, the options are not the problem. Directories list numerous caterers across the NCR corridor, from Gurugram to Greater Noida, covering every cuisine and every price point imaginable. And yet couples routinely finish their wedding receptions with a sense that the food was fine, forgettable, and identical to the last three weddings they attended. The volume of options does not translate into the right choice. It obscures it.',
     'The question worth asking before you compare per-plate prices or scroll through menu PDFs is a simpler one: do you want a caterer who feeds your guests, or one who creates an experience your guests will remember? That distinction defines the fundamental split in Delhi\'s wedding catering market, and every other decision flows from it. Within the Delhi NCR corridor, a small cohort of boutique operators, including Virtuoso Catering House, has spent years redefining what wedding catering feels like when scale is not the priority. This article is not a directory. It is a framework for choosing correctly.'
@@ -1338,7 +1347,7 @@ const hireWeddingCaterersDelhiPage = {
     {
       heading: 'Pricing Tiers, Package Inclusions, and the Add-Ons Most Couples Miss',
       paragraphs: [
-        'Delhi wedding catering spans a wide price range, and the headline per-plate figure rarely tells the complete story. Understanding what each tier actually delivers, including <a href="/luxury-wedding-catering-delhi-ncr" class="link-underline">wedding catering packages in Delhi</a> across budget to luxury segments, prevents costly misalignments between expectation and execution.'
+        'Delhi wedding catering spans a wide price range, and the headline per-plate figure rarely tells the complete story. Understanding what each tier actually delivers, including <a href="/wedding-caterers-in-delhi" class="link-underline">wedding catering packages in Delhi</a> across budget to luxury segments, prevents costly misalignments between expectation and execution.'
       ]
     },
     {
@@ -1408,12 +1417,20 @@ const hireWeddingCaterersDelhiPage = {
   }
 };
 
+// This guide keeps its own top-level URL (already indexed, keyword-rich)
+// but is also surfaced in the /blog Journal listing. Appending it to
+// blogPosts is what makes it appear in that listing; its route and page
+// metadata are still defined the standalone way in pageMeta.js.
+blogPosts.push(hireWeddingCaterersDelhiPage);
+
 const bestWeddingCaterersDelhiPage = {
   slug: 'best-wedding-caterers-in-delhi-what-sets-them-apart',
+  url: '/best-wedding-caterers-in-delhi-what-sets-them-apart',
   title: 'Best Wedding Caterers in Delhi: What Sets Them Apart',
   excerpt: 'Six criteria that separate the best wedding caterers in Delhi from the rest: menu design, live stations, plating philosophy, verifiable credentials, pricing tiers, and booking safeguards.',
+  date: '2026-07-20',
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
-  backLink: { path: '/luxury-wedding-catering-delhi-ncr', label: 'See Our Full Wedding Catering Overview' },
+  relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
   lead: [
     'When searching for the best wedding caterers in Delhi, most couples encounter the same experience: a polished brochure, a menu that runs to three pages, and a price quote that arrives within the hour. What the brochure rarely tells you is whether a caterer can build a menu around your family\'s story, execute it with precision across six functions, and still deliver at a 500-person reception without a single visible lapse. At that scale, the gap between a capable caterer and a truly exceptional one becomes apparent fast.',
     'If you are planning a wedding with non-negotiable standards, you need clear criteria rather than a long list of names. Certain wedding caterers in Delhi NCR have set a measurably higher bar. Virtuoso Catering House, known in the luxury circuit for catering Ferrari and Lamborghini brand events alongside high-net-worth weddings, offers one concrete reference point. The standards that define their work are also the standards that define any genuinely exceptional catering partner. Here are the six criteria that separate the best from the rest.'
@@ -1495,7 +1512,7 @@ const bestWeddingCaterersDelhiPage = {
       paragraphs: [
         'A few red flags are worth naming directly: vague answers about service staff numbers, an inability to show an FSSAI licence on request, resistance to reference calls, a quote with no line-item breakdown, and a tasting menu that bears no relationship to the brief you gave them. Any one of these warrants serious reconsideration. At the luxury end of the Delhi wedding food catering market, you are hiring a creative partner who will represent your family\'s hospitality to every single guest at one of the most significant events of your life.',
         'The difference between a good wedding caterer and a truly exceptional one is measurable once you know what to look for. Menu depth across every function, buffet and live counter execution that serves rather than overwhelms, plating discipline rooted in restraint, verifiable credentials from high-stakes events, pricing transparency that holds up under scrutiny, and a booking process that protects your interests from the first conversation: these are the six standards that define the best wedding caterers in Delhi.',
-        'For couples planning a <a href="/luxury-wedding-catering-delhi-ncr" class="link-underline">luxury wedding in Delhi NCR</a>, the starting point with a catering partner like Virtuoso Catering House is a conversation, not a quote form. Share your wedding story, the functions, the guest profile, the feeling you want each moment to carry, then watch how the caterer responds. A serious catering house listens before it proposes. That first exchange will tell you more than any brochure ever will.'
+        'For couples planning a <a href="/wedding-caterers-in-delhi" class="link-underline">luxury wedding in Delhi NCR</a>, the starting point with a catering partner like Virtuoso Catering House is a conversation, not a quote form. Share your wedding story, the functions, the guest profile, the feeling you want each moment to carry, then watch how the caterer responds. A serious catering house listens before it proposes. That first exchange will tell you more than any brochure ever will.'
       ]
     }
   ],
@@ -1506,12 +1523,18 @@ const bestWeddingCaterersDelhiPage = {
   }
 };
 
+// Keeps its own top-level URL (already indexed) but is also surfaced in
+// the /blog Journal listing, same treatment as hireWeddingCaterersDelhiPage.
+blogPosts.push(bestWeddingCaterersDelhiPage);
+
 const caterersInDelhiFindingTheRightFitPage = {
   slug: 'caterers-in-delhi-finding-the-right-fit-for-your-event',
+  url: '/caterers-in-delhi-finding-the-right-fit-for-your-event',
   title: 'Caterers in Delhi: Finding the Right Fit for Your Event',
   excerpt: 'A guide to matching your event\'s ambition to the right kind of caterer in Delhi NCR: pricing tiers, dietary verification, FSSAI credentials, and what to ask at a tasting.',
+  date: '2026-07-21',
   image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
-  backLink: { path: '/services', label: 'See Our Full Range of Catering Services' },
+  relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
   lead: [
     'Caterers in Delhi are listed across every marketplace and aggregator you can find, but most event hosts approach the search in a way that sets them up for disappointment. They filter by price, shortlist a few names with strong ratings, and book whichever responds fastest. The event happens. The food is fine. And something still feels off.',
     'What is almost always missing is this: the caterer was chosen for availability rather than fit. A 400-guest baraat and a 40-person automotive brand launch are both "events in Delhi NCR," but they require entirely different kinds of catering partners. This guide maps the full spectrum, from high-volume buffet operators to boutique experiential houses like Virtuoso Catering House, which approaches every menu as a narrative rather than a checklist. By the end, you will know the realistic costs at each tier, how to verify dietary claims and hygiene credentials, what to ask at a tasting, and how to narrow your shortlist to the one caterer whose capability genuinely matches your event.'
@@ -1588,6 +1611,10 @@ const caterersInDelhiFindingTheRightFitPage = {
     bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
   }
 };
+
+// Keeps its own top-level URL (already indexed) but is also surfaced in
+// the /blog Journal listing, same treatment as the other PDF-sourced guides.
+blogPosts.push(caterersInDelhiFindingTheRightFitPage);
 
 // Real clients and press mentions, recovered from the retired WordPress
 // site and confirmed press coverage, for a social-proof strip on the site.
@@ -1957,16 +1984,16 @@ const landingPages = {
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the brand’s growth and strategy in the luxury experiential catering space, deciding which clients the house takes on and what standard it holds itself to. That includes its automotive and brand activation work across Delhi NCR, from the Lamborghini Temerario launch to the Tesla Centre Gurugram opening.'
     }
   },
-  'luxury-wedding-catering-delhi-ncr': {
-    metaTitle: 'Wedding Caterers in Noida | Luxury Wedding Catering, Delhi NCR',
-    metaDescription: 'Virtuoso Catering House is a team of wedding caterers based in Noida, designing catering across every function, from mehendi to reception, for families across Delhi NCR who want the food, presentation, and service handled by a specialist, not a banquet team.',
+  'wedding-caterers-in-noida': {
+    metaTitle: 'Wedding Caterers in Noida | Virtuoso Catering House',
+    metaDescription: 'Virtuoso Catering House is a team of wedding caterers based in Noida, designing catering across every function, from mehendi to reception, for Noida families who want the food, presentation, and service handled by a specialist, not a banquet team.',
     eyebrow: 'Weddings',
-    h1: 'Wedding Caterers in Noida, Delhi NCR',
+    h1: 'Wedding Caterers in Noida',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
     lead: {
       heading: 'A Menu for Every Function, Not One Menu for the Whole Wedding',
       paragraphs: [
-        'Virtuoso Catering House is a team of wedding caterers based in Noida, working across Delhi NCR. A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
+        'Virtuoso Catering House is a team of wedding caterers based in Noida, Sector 61. A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
         'How far we take a menu depends on where a family is in their own understanding of F&B. Some couples want the classics done well. Others are already deep into the scene and ask for speciality Indian catering, restaurant pop-ups inside the wedding, or celebrity chefs who bring their own team and take exclusive ownership of one section of the menu. A live sushi bar is one of our favourite formats to execute for exactly this reason. It looks clean, it looks sophisticated, and it gives guests something to watch as well as eat.',
         'The single biggest decision a family makes is caterer versus banquet. A banquet spreads the food across one of several teams it is juggling that night. A specialist caterer takes exclusive ownership of three things: the food, the presentation, and the crockery and cutlery. Those three pillars are the actual difference, and they are why a dedicated caterer outperforms a banquet kitchen on any night that matters.'
       ]
@@ -1977,7 +2004,7 @@ const landingPages = {
       items: [
         { title: 'Mehendi & Regional Celebrations', points: ['Regional cuisines tend to suit the mehendi best.', 'Meals are kept lighter by design, since the bigger eating day is usually the one right after it.'] },
         { title: 'Engagement & Cocktail Nights', points: ['The most anticipated day on the calendar, and where guests genuinely indulge in their favourite food.', 'Party mode drives the format, live counters, sharper flavours, a faster pace of service.'] },
-        { title: 'Elevated Concepts', points: ['For families further along in their F&B journey: speciality Indian catering, in-wedding restaurant pop-ups, and celebrity chef sections with their own dedicated team.', 'A live sushi bar is one of our favourite formats. Clean, sophisticated, and genuinely engaging for guests to watch.'] }
+        { title: 'Elevated Concepts', points: ['For families further along in their F&B journey: speciality Indian catering, in-wedding restaurant pop-ups, and celebrity chef sections with their own dedicated team.', 'A live sushi bar is one of our favourite formats. Clean, sophisticated, and genuinely engaging for guests to watch.'], link: { path: '/best-catering-services-in-noida', label: 'See Our Catering Services in Noida' } }
       ]
     },
     whyUs: {
@@ -2001,7 +2028,7 @@ const landingPages = {
       }
     },
     faq: [
-      { q: 'Are you wedding caterers based in Noida?', a: 'Yes. Virtuoso Catering House is based in Noida, Sector 61, and works on weddings across Delhi NCR, from Noida and Greater Noida to Delhi and Gurugram.' },
+      { q: 'Are you wedding caterers based in Noida?', a: 'Yes. Virtuoso Catering House is based in Noida, Sector 61, and works on weddings across Noida and Greater Noida.' },
       { q: 'Should the menu be different for the mehendi versus the engagement or cocktail night?', a: 'Yes. Regional cuisines and lighter meals tend to suit the mehendi best, since it is usually followed by the engagement or cocktail night, which is where guests do the most indulgent eating of the wedding.' },
       { q: 'What is the difference between booking a specialist caterer and using a banquet’s in-house catering?', a: 'A banquet spreads its kitchen across several events on the same night. A specialist caterer takes exclusive ownership of three things: the food, the presentation, and the crockery and cutlery. Those three pillars are the real difference.' },
       { q: 'Do you offer celebrity chef sections or specialty concepts like a live sushi bar?', a: 'Yes. For families who want to go further than a classic menu, we bring in celebrity chefs who run their own dedicated section, or build formats like restaurant pop-ups and live sushi bars inside the wedding.' },
@@ -2136,7 +2163,7 @@ const commercialPages = [
   { path: '/best-catering-services-in-noida', label: 'Catering in Noida', blurb: 'Full-service wedding, corporate, and private event catering across Noida.' },
   { path: '/catering-services-in-greater-noida', label: 'Catering in Greater Noida', blurb: 'The same specialist catering, extended across Greater Noida and Noida Extension.' },
   { path: '/corporate-catering-services-in-noida', label: 'Corporate Catering, Noida', blurb: 'Office lunches, product launches, and corporate events across Noida.' },
-  { path: '/luxury-wedding-catering-delhi-ncr', label: 'Wedding Caterers, Noida', blurb: 'A menu for every function, from the mehendi to the reception.' },
+  { path: '/wedding-caterers-in-noida', label: 'Wedding Caterers, Noida', blurb: 'A menu for every function, from the mehendi to the reception.' },
   { path: '/luxury-brand-event-catering-delhi-ncr', label: 'Luxury Brand Events', blurb: 'Catering for automotive and retail launches, built from the brand’s design language.' },
   { path: '/best-caterers-in-noida-virtuoso-catering-house', label: 'Who Are the Best Caterers in Noida?', blurb: 'Verifiable press coverage, named clients, and what to actually check before you book.' }
 ];

@@ -164,16 +164,16 @@ const pages = {
     ogImage: content.landingPages['wedding-caterers-in-delhi'].image,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/wedding-caterers-in-delhi' }]
   },
-  landingWedding: {
-    path: '/luxury-wedding-catering-delhi-ncr',
+  landingWeddingCaterersNoida: {
+    path: '/wedding-caterers-in-noida',
     view: 'landing',
-    landingSlug: 'luxury-wedding-catering-delhi-ncr',
+    landingSlug: 'wedding-caterers-in-noida',
     activePage: 'landing',
     bodyClass: 'page-landing',
-    title: content.landingPages['luxury-wedding-catering-delhi-ncr'].metaTitle,
-    description: content.landingPages['luxury-wedding-catering-delhi-ncr'].metaDescription,
-    ogImage: content.landingPages['luxury-wedding-catering-delhi-ncr'].image,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Luxury Wedding Catering Delhi NCR', path: '/luxury-wedding-catering-delhi-ncr' }]
+    title: content.landingPages['wedding-caterers-in-noida'].metaTitle,
+    description: content.landingPages['wedding-caterers-in-noida'].metaDescription,
+    ogImage: content.landingPages['wedding-caterers-in-noida'].image,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Wedding Caterers in Noida', path: '/wedding-caterers-in-noida' }]
   },
   // Real case-study posts recovered from the WordPress database backup.
   blogLamborghiniTemerario: {
@@ -355,13 +355,13 @@ const pages = {
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
-    activePage: '',
-    bodyClass: 'page-best-caterers-noida',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
     title: 'Best Caterers in Noida | Virtuoso Catering House',
     description: 'Virtuoso Catering House is the best caterer in Noida, named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026.',
     ogImage: content.bestCaterersNoidaPage.image,
     post: content.bestCaterersNoidaPage,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
   },
   blogQuietCraft: {
     path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding',
@@ -377,35 +377,35 @@ const pages = {
   hireWeddingCaterersDelhi: {
     path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding',
     view: 'blog-post',
-    activePage: '',
-    bodyClass: 'page-hire-wedding-caterers-delhi',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
     title: 'How to Hire Wedding Caterers in Delhi for a Luxury Wedding | Virtuoso Catering House',
     description: content.hireWeddingCaterersDelhiPage.excerpt,
     ogImage: content.hireWeddingCaterersDelhiPage.image,
     post: content.hireWeddingCaterersDelhiPage,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'How to Hire Wedding Caterers in Delhi', path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding' }]
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How to Hire Wedding Caterers in Delhi', path: '/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding' }]
   },
   bestWeddingCaterersDelhi: {
     path: '/best-wedding-caterers-in-delhi-what-sets-them-apart',
     view: 'blog-post',
-    activePage: '',
-    bodyClass: 'page-best-wedding-caterers-delhi',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
     title: 'Best Wedding Caterers in Delhi: What Sets Them Apart | Virtuoso Catering House',
     description: content.bestWeddingCaterersDelhiPage.excerpt,
     ogImage: content.bestWeddingCaterersDelhiPage.image,
     post: content.bestWeddingCaterersDelhiPage,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/best-wedding-caterers-in-delhi-what-sets-them-apart' }]
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Best Wedding Caterers in Delhi', path: '/best-wedding-caterers-in-delhi-what-sets-them-apart' }]
   },
   caterersInDelhiFindingTheRightFit: {
     path: '/caterers-in-delhi-finding-the-right-fit-for-your-event',
     view: 'blog-post',
-    activePage: '',
-    bodyClass: 'page-caterers-in-delhi-right-fit',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
     title: 'Caterers in Delhi: Finding the Right Fit for Your Event | Virtuoso Catering House',
     description: content.caterersInDelhiFindingTheRightFitPage.excerpt,
     ogImage: content.caterersInDelhiFindingTheRightFitPage.image,
     post: content.caterersInDelhiFindingTheRightFitPage,
-    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Caterers in Delhi: Finding the Right Fit', path: '/caterers-in-delhi-finding-the-right-fit-for-your-event' }]
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Caterers in Delhi: Finding the Right Fit', path: '/caterers-in-delhi-finding-the-right-fit-for-your-event' }]
   },
   press: {
     path: '/press',

@@ -13,6 +13,10 @@ const redirects = [
   // both of which target the same "wedding caterers in Delhi NCR" territory.
   { from: '/wedding-caterers-delhi-ncr', to: '/blog/the-quiet-craft-behind-an-unforgettable-wedding' },
 
+  // Re-scoped from a muddled broad "Delhi NCR" pillar (its title and H1 had
+  // drifted to mix in Noida) into a clean, Noida-only Tier 2 pillar.
+  { from: '/luxury-wedding-catering-delhi-ncr', to: '/wedding-caterers-in-noida' },
+
   // Legacy WordPress URLs
   { from: '/about-us', to: '/about' },
   { from: '/contact-us', to: '/contact' },
@@ -40,7 +44,7 @@ const redirects = [
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr/lamborghini-temerario-launch-catering-delhi-2025', to: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario' },
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-automotive-event-catering-delhi-ncr', to: '/luxury-brand-event-catering-delhi-ncr' },
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-fashion-and-retail-event-catering-delhi-ncr', to: '/services' },
-  { from: '/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', to: '/luxury-wedding-catering-delhi-ncr' },
+  { from: '/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', to: '/wedding-caterers-in-noida' },
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-private-event-catering-delhi-ncr', to: '/services' },
 
   // A WordPress-uploaded menu PDF still has real Search Console impression
