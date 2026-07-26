@@ -8,6 +8,11 @@ const redirects = [
   { from: '/gallery', to: '/social' },
   { from: '/menu', to: '/services' },
 
+  // Re-scoped as a Journal editorial piece to resolve cannibalization
+  // against /wedding-caterers-in-delhi and /luxury-wedding-catering-delhi-ncr,
+  // both of which target the same "wedding caterers in Delhi NCR" territory.
+  { from: '/wedding-caterers-delhi-ncr', to: '/blog/the-quiet-craft-behind-an-unforgettable-wedding' },
+
   // Legacy WordPress URLs
   { from: '/about-us', to: '/about' },
   { from: '/contact-us', to: '/contact' },
