@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1f3864">
+<title>Site Recce Form</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2f5597; --line:#c9cfda; --ink:#14181f;
+    --muted:#5b6472; --yes:#1a7f3c; --no:#b3261e; --amber:#fff2cc;
+    --bg:#f4f6f9; --card:#fff;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    padding-bottom:120px;
+  }
+  header{
+    background:var(--navy); color:#fff; padding:14px 16px;
+    position:sticky; top:0; z-index:10;
+    padding-top:calc(14px + env(safe-area-inset-top));
+  }
+  header h1{margin:0; font-size:17px; letter-spacing:.3px}
+  header .sub{font-size:12px; opacity:.8; margin-top:2px}
+  main{padding:12px}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    margin-bottom:12px; overflow:hidden;
+  }
+  h2{
+    margin:0; padding:11px 14px; font-size:13px; text-transform:uppercase;
+    letter-spacing:.6px; background:#d9e2f3; color:var(--navy);
+    border-bottom:1px solid var(--line);
+  }
+  .field{padding:10px 14px; border-bottom:1px solid #eef0f4}
+  .field:last-child{border-bottom:0}
+  label{display:block; font-size:13px; color:var(--muted); margin-bottom:5px; font-weight:600}
+  input[type=text],input[type=date],input[type=time],input[type=number],textarea{
+    width:100%; padding:11px 12px; font-size:16px; font-family:inherit;
+    border:1px solid var(--line); border-radius:8px; background:var(--amber); color:var(--ink);
+  }
+  textarea{min-height:70px; resize:vertical}
+  input:focus,textarea:focus{outline:2px solid var(--blue); outline-offset:-1px}
+  .unit{font-size:12px; color:var(--muted); margin-top:4px}
+
+  .comp{padding:12px 14px; border-bottom:1px solid #eef0f4}
+  .comp:last-child{border-bottom:0}
+  .comp.flag{background:#fff5f4; box-shadow:inset 3px 0 0 var(--no)}
+  .comp.done{box-shadow:inset 3px 0 0 var(--yes)}
+  .comp h3{margin:0 0 3px; font-size:16px}
+  .comp .proof{font-size:13px; color:var(--muted); margin:0 0 10px}
+  .comp .proof b{color:var(--ink); font-weight:600}
+  .row{display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap}
+  .row .q{font-size:13px; font-weight:600; color:var(--muted); flex:1 1 auto; min-width:120px}
+
+  .seg{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; flex:0 0 auto}
+  .seg button{
+    appearance:none; border:0; background:#fff; color:var(--muted);
+    font:600 15px/1 inherit; padding:11px 20px; cursor:pointer;
+  }
+  .seg button+button{border-left:1px solid var(--line)}
+  .seg button[aria-pressed=true][data-v=yes]{background:var(--yes); color:#fff}
+  .seg button[aria-pressed=true][data-v=no]{background:var(--no); color:#fff}
+
+  .action{display:none}
+  .action.show{display:block}
+  .action label{color:var(--no)}
+
+  .status{
+    position:fixed; left:0; right:0; bottom:0; background:#fff;
+    border-top:1px solid var(--line); padding:10px 14px;
+    padding-bottom:calc(10px + env(safe-area-inset-bottom)); z-index:20;
+  }
+  .status .line{display:flex; justify-content:space-between; align-items:center; gap:10px}
+  .pill{font:700 13px/1 inherit; padding:8px 12px; border-radius:20px; color:#fff; background:var(--muted); white-space:nowrap}
+  .pill.ok{background:var(--yes)} .pill.bad{background:var(--no)} .pill.warn{background:#a56a00}
+  .counts{font-size:13px; color:var(--muted)}
+  .btns{display:flex; gap:8px; margin-top:8px}
+  .btns button{
+    flex:1; padding:12px 8px; font:600 14px/1 inherit; border-radius:8px;
+    border:1px solid var(--navy); background:var(--navy); color:#fff; cursor:pointer;
+  }
+  .btns button.alt{background:#fff; color:var(--navy)}
+  .note{font-size:12px; color:var(--muted); padding:10px 14px; line-height:1.5}
+  dialog{
+    border:0; border-radius:12px; padding:0; width:min(94vw,640px); max-height:80vh;
+  }
+  dialog::backdrop{background:rgba(0,0,0,.45)}
+  dialog .dh{background:var(--navy); color:#fff; padding:12px 14px; font-weight:700; font-size:15px}
+  dialog textarea{
+    width:100%; border:0; border-radius:0; background:#fff; min-height:46vh;
+    padding:12px 14px; font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;
+  }
+  dialog .df{display:flex; gap:8px; padding:10px 14px; border-top:1px solid var(--line)}
+  dialog .df button{flex:1; padding:11px; font:600 14px/1 inherit; border-radius:8px; border:1px solid var(--navy); background:var(--navy); color:#fff}
+  dialog .df button.alt{background:#fff; color:var(--navy)}
+  .saved{font-size:11px; color:var(--muted); text-align:center; padding:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Site Recce Form</h1>
+  <div class="sub">Virtuoso Catering House &middot; Operations</div>
+</header>
+
+<main>
+
+<section>
+  <h2>Event details</h2>
+  <div class="field"><label for="f_event">Event name</label><input type="text" id="f_event" data-k="event"></div>
+  <div class="field"><label for="f_client">Client</label><input type="text" id="f_client" data-k="client"></div>
+  <div class="field"><label for="f_edate">Event date</label><input type="date" id="f_edate" data-k="edate"></div>
+  <div class="field"><label for="f_venue">Venue name and address</label><textarea id="f_venue" data-k="venue"></textarea></div>
+  <div class="field"><label for="f_by">Recce done by</label><input type="text" id="f_by" data-k="by"></div>
+  <div class="field"><label for="f_rdate">Recce date</label><input type="date" id="f_rdate" data-k="rdate"></div>
+  <div class="field"><label for="f_rtime">Recce time</label><input type="time" id="f_rtime" data-k="rtime"></div>
+  <div class="note">SOP review is three days before the event. <span id="sopdate"></span></div>
+</section>
+
+<section>
+  <h2>Site measurements</h2>
+  <div class="note" style="padding-bottom:2px">These go straight into the Venue Master File. Take them once, never visit this venue again.</div>
+  <div class="field"><label for="m_boh">Kitchen area, back of house</label><input type="number" inputmode="decimal" id="m_boh" data-k="m_boh"><div class="unit">square feet</div></div>
+  <div class="field"><label for="m_stations">Stations that fit vs stations chef needs</label><input type="text" id="m_stations" data-k="m_stations"><div class="unit">for example 6 of 8</div></div>
+  <div class="field"><label for="m_load">Connected load available</label><input type="number" inputmode="decimal" id="m_load" data-k="m_load"><div class="unit">KW</div></div>
+  <div class="field"><label for="m_water">Water source distance from kitchen</label><input type="number" inputmode="decimal" id="m_water" data-k="m_water"><div class="unit">metres</div></div>
+  <div class="field"><label for="m_floors">Floors to be serviced</label><input type="text" id="m_floors" data-k="m_floors"></div>
+  <div class="field"><label for="m_walk">Kitchen to service walk time, trolley loaded</label><input type="number" inputmode="decimal" id="m_walk" data-k="m_walk"><div class="unit">minutes</div></div>
+  <div class="field"><label for="m_foh">Front of house presentation area</label><input type="number" inputmode="decimal" id="m_foh" data-k="m_foh"><div class="unit">square feet</div></div>
+  <div class="field"><label for="m_power">Front of house power points</label><input type="text" id="m_power" data-k="m_power"><div class="unit">count and location</div></div>
+</section>
+
+<section>
+  <h2>Components</h2>
+  <div class="note" style="padding-bottom:2px">A component counts as covered only if the proof is attached. Every No needs an action and an owner.</div>
+  <div id="comps"></div>
+</section>
+
+<section>
+  <h2>Anything else seen on site</h2>
+  <div class="field"><textarea id="f_notes" data-k="notes" placeholder="Loose observations, venue contact names, things to check before dispatch"></textarea></div>
+</section>
+
+<div class="saved" id="saved">Saved on this phone automatically</div>
+</main>
+
+<div class="status">
+  <div class="line">
+    <div class="counts" id="counts">Covered 0 of 10 &middot; Proofs 0 of 10</div>
+    <div class="pill" id="pill">INCOMPLETE</div>
+  </div>
+  <div class="btns">
+    <button type="button" class="alt" id="btnGroup">Group message</button>
+    <button type="button" id="btnReport">Full report</button>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="dh" id="dlgTitle">Report</div>
+  <textarea id="dlgText" readonly></textarea>
+  <div class="df">
+    <button type="button" class="alt" id="dlgClose">Close</button>
+    <button type="button" id="dlgCopy">Copy</button>
+  </div>
+</dialog>
+
+<script>
+const COMPONENTS = [
+  ["Pre-visit preparation","Chef requirement sheet: equipment, tables, utensils"],
+  ["Access and logistics","Photos: loading and unloading point, entry and exit, lift or back door"],
+  ["Kitchen (back of house)","Photos of kitchen area, plus sketch with BOH table positions marked"],
+  ["Utilities and load","Photos: electrical panel or DB, water point, storage space"],
+  ["Front of house layout","Photos of the area, plus measured sketch"],
+  ["Presentation mapping","FOH sketch with plated, island, live, bar and grazing positions marked on it"],
+  ["Service viability","Video of the kitchen to service route, walked"],
+  ["Risks and contingencies","Photos of the exposed or restricted areas"],
+  ["Client communication","Screenshot of the written message or email covering masking, table, utility needs and risks"],
+  ["Handover","Full site walkthrough video, group intimation message, venue file entry"]
+];
+const KEY = "virtuoso.recce.v1";
+const state = JSON.parse(localStorage.getItem(KEY) || "{}");
+
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+function get(k){ return state[k] || ""; }
+function set(k,v){ state[k]=v; save(); }
+
+// ---- build component cards
+const wrap = document.getElementById("comps");
+COMPONENTS.forEach(([name, proof], i) => {
+  const n = i + 1;
+  const el = document.createElement("div");
+  el.className = "comp"; el.id = "comp"+n;
+  el.innerHTML = `
+    <h3>${n}. ${name}</h3>
+    <p class="proof"><b>Proof:</b> ${proof}</p>
+    <div class="row"><span class="q">Covered?</span>
+      <span class="seg" data-key="c${n}">
+        <button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button>
+      </span></div>
+    <div class="row"><span class="q">Proof attached?</span>
+      <span class="seg" data-key="p${n}">
+        <button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button>
+      </span></div>
+    <div class="action" id="act${n}">
+      <label for="a${n}">Action and owner, required</label>
+      <textarea id="a${n}" data-k="a${n}" placeholder="What is being done about it, who owns it, by when"></textarea>
+    </div>`;
+  wrap.appendChild(el);
+});
+
+// ---- wire toggles
+document.querySelectorAll(".seg").forEach(seg => {
+  const key = seg.dataset.key;
+  seg.querySelectorAll("button").forEach(b => {
+    b.addEventListener("click", () => {
+      const v = b.dataset.v;
+      set(key, get(key) === v ? "" : v);
+      paint();
+    });
+  });
+});
+
+// ---- wire text inputs
+document.querySelectorAll("[data-k]").forEach(inp => {
+  inp.value = get(inp.dataset.k);
+  inp.addEventListener("input", () => { set(inp.dataset.k, inp.value); paint(); });
+});
+
+function fmtDate(iso){
+  if(!iso) return "";
+  const [y,m,d] = iso.split("-").map(Number);
+  const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return `${d} ${M[m-1]} ${y}`;
+}
+function fmtTime(t){
+  if(!t) return "";
+  let [h,m] = t.split(":").map(Number);
+  const ap = h >= 12 ? "pm" : "am";
+  h = h % 12 || 12;
+  return `${h}:${String(m).padStart(2,"0")} ${ap}`;
+}
+
+function paint(){
+  // toggles
+  document.querySelectorAll(".seg").forEach(seg => {
+    const v = get(seg.dataset.key);
+    seg.querySelectorAll("button").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+  });
+
+  let covered = 0, proofs = 0, missing = 0, answered = 0;
+  for(let n = 1; n <= COMPONENTS.length; n++){
+    const c = get("c"+n), p = get("p"+n), a = get("a"+n).trim();
+    if(c) answered++;
+    if(c === "yes") covered++;
+    if(p === "yes") proofs++;
+    const gap = c === "no" || p === "no";
+    document.getElementById("act"+n).classList.toggle("show", gap);
+    const card = document.getElementById("comp"+n);
+    card.classList.toggle("flag", gap && !a);
+    card.classList.toggle("done", c === "yes" && p === "yes");
+    if(gap && !a) missing++;
+  }
+
+  document.getElementById("counts").textContent =
+    `Covered ${covered} of 10 · Proofs ${proofs} of 10`;
+
+  const pill = document.getElementById("pill");
+  let label, cls;
+  if(answered < COMPONENTS.length){ label = "INCOMPLETE"; cls = ""; }
+  else if(covered === 10 && proofs === 10){ label = "CLEARED"; cls = "ok"; }
+  else if(missing > 0){ label = "NOT READY"; cls = "bad"; }
+  else { label = "GAPS OPEN"; cls = "warn"; }
+  pill.textContent = label;
+  pill.className = "pill " + cls;
+
+  const ed = get("edate");
+  document.getElementById("sopdate").textContent = ed
+    ? "For this event that is " + fmtDate(new Date(new Date(ed).getTime() - 3*864e5).toISOString().slice(0,10)) + "."
+    : "";
+}
+
+function groupMessage(){
+  const ev = get("event") || "[event]";
+  const d  = fmtDate(get("rdate")) || "[date]";
+  const t  = fmtTime(get("rtime")) || "[time]";
+  return `Site Recce for ${ev} on ${d} at ${t} is completed. A site recce report will soon follow.`;
+}
+
+function fullReport(){
+  const L = [];
+  L.push("SITE RECCE REPORT");
+  L.push("Event: " + (get("event") || "-"));
+  L.push("Client: " + (get("client") || "-"));
+  L.push("Event date: " + (fmtDate(get("edate")) || "-"));
+  L.push("Venue: " + (get("venue") || "-"));
+  L.push("Recce by: " + (get("by") || "-"));
+  L.push("Recce date: " + (fmtDate(get("rdate")) || "-") + " " + fmtTime(get("rtime")));
+  L.push("");
+  L.push("SITE MEASUREMENTS (for Venue Master File)");
+  [["Kitchen area (sq ft)","m_boh"],["Stations fit vs needed","m_stations"],
+   ["Connected load (KW)","m_load"],["Water distance (m)","m_water"],
+   ["Floors serviced","m_floors"],["Kitchen to service walk (min)","m_walk"],
+   ["FOH area (sq ft)","m_foh"],["FOH power points","m_power"]]
+    .forEach(([lab,k]) => L.push("  " + lab + ": " + (get(k) || "-")));
+  L.push("");
+  L.push("COMPONENTS");
+  COMPONENTS.forEach(([name], i) => {
+    const n = i + 1;
+    const c = (get("c"+n) || "-").toUpperCase();
+    const p = (get("p"+n) || "-").toUpperCase();
+    const a = get("a"+n).trim();
+    L.push(`  ${n}. ${name} | Covered: ${c} | Proof: ${p}`);
+    if(a) L.push("      Action: " + a);
+    else if(c === "no" || p === "no") L.push("      Action: MISSING");
+  });
+  const notes = get("notes").trim();
+  if(notes){ L.push(""); L.push("NOTES"); L.push("  " + notes); }
+  L.push("");
+  L.push("STATUS: " + document.getElementById("pill").textContent);
+  L.push("");
+  L.push("--- paste block for the Excel, cell C18 ---");
+  COMPONENTS.forEach(([, proof], i) => {
+    const n = i + 1;
+    const c = get("c"+n) ? get("c"+n)[0].toUpperCase() + get("c"+n).slice(1) : "";
+    const p = get("p"+n) ? get("p"+n)[0].toUpperCase() + get("p"+n).slice(1) : "";
+    L.push([c, proof, p, get("a"+n).replace(/\s+/g, " ").trim()].join("\t"));
+  });
+  return L.join("\n");
+}
+
+const dlg = document.getElementById("dlg");
+function open(title, text){
+  document.getElementById("dlgTitle").textContent = title;
+  document.getElementById("dlgText").value = text;
+  dlg.showModal();
+}
+document.getElementById("btnGroup").onclick  = () => open("Group message", groupMessage());
+document.getElementById("btnReport").onclick = () => open("Full report", fullReport());
+document.getElementById("dlgClose").onclick  = () => dlg.close();
+document.getElementById("dlgCopy").onclick   = async () => {
+  const ta = document.getElementById("dlgText");
+  try { await navigator.clipboard.writeText(ta.value); }
+  catch { ta.removeAttribute("readonly"); ta.select(); document.execCommand("copy"); ta.setAttribute("readonly",""); }
+  const b = document.getElementById("dlgCopy");
+  b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1400);
+};
+
+paint();
+</script>
+</body>
+</html>
