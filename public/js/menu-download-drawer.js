@@ -115,6 +115,9 @@
         if (typeof gtag === 'function') {
           gtag('event', 'generate_lead', { event_type: 'Menu Download' });
         }
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'Menu Download' });
+        }
       } catch (trackingErr) {
         // Swallow — the download itself already succeeded.
       }

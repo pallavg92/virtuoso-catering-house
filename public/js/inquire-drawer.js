@@ -125,6 +125,9 @@
         if (typeof gtag === 'function') {
           gtag('event', 'generate_lead', { event_type: payload.eventType || 'General' });
         }
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: payload.eventType || 'General' });
+        }
       } catch (trackingErr) {
         // Swallow — the inquiry itself already succeeded.
       }

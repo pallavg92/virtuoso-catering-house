@@ -35,6 +35,11 @@
       if (typeof gtag === 'function') {
         gtag('event', target.dataset.trackEvent);
       }
+      // WhatsApp is the highest-volume contact path — mirror it to Meta
+      // as the standard Contact event so ad audiences can build on it.
+      if (typeof fbq === 'function' && target.dataset.trackEvent === 'whatsapp_click') {
+        fbq('track', 'Contact');
+      }
     } catch (trackingErr) {
       // Swallow — never block the element's own action.
     }
