@@ -2080,7 +2080,7 @@ const founders = [
   {
     name: 'Aarti Sharma',
     role: 'Co-Founder',
-    bio: 'Aarti builds luxury catering experiences that sit at the intersection of experiential F&B, beverage innovation, and large-scale event production — from live experiential stations and mixology concepts to refined plated dining and immersive guest journeys. Her work spans premium weddings, brand launches, and high-profile corporate experiences. Every detail — presentation, pacing, pour — is designed to feel seamless, memorable, and deeply intentional.',
+    bio: 'For Aarti, hospitality is more than exceptional food or flawless service. It is the art of creating experiences that become the soul of a remarkable event. From the very first conversation to the final execution, she believes in listening deeply, understanding every nuance of a client\'s brief, and bringing each vision to life with precision, creativity, and genuine care. Together with co-founder Pallav Goel, she leads the strategic growth and creative direction of Virtuoso Catering House, with a shared vision of establishing it as the benchmark for extraordinary culinary experiences, where excellence is not simply delivered, it is thoughtfully orchestrated.',
     image: '/images/founder-aarti-sharma.jpg',
     linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/'
   },
