@@ -75,6 +75,25 @@ function writeHtaccess() {
   const htaccess = `RewriteEngine On\n\n${rules}\n`;
   fs.writeFileSync(path.join(DIST_DIR, '.htaccess'), htaccess);
   console.log(`  wrote dist/.htaccess (${redirects.length} redirects)`);
+
+  // Belt-and-braces noindex for the paid-traffic landers. Every page under
+  // /lp/ already carries <meta name="robots" content="noindex">, but an
+  // X-Robots-Tag header also covers responses whose markup is never parsed.
+  // Scoped to the /lp/ directory by living inside it, so it can never catch
+  // a real page elsewhere on the site.
+  //
+  // Deliberately NOT a robots.txt Disallow: blocking the crawl would stop
+  // Google reading the noindex at all, and a URL linked from anywhere could
+  // then still surface in results as a bare link. IfModule-guarded so a host
+  // without mod_headers degrades quietly instead of 500-ing the directory.
+  const lpDir = path.join(DIST_DIR, 'lp');
+  if (fs.existsSync(lpDir)) {
+    fs.writeFileSync(
+      path.join(lpDir, '.htaccess'),
+      '<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n</IfModule>\n'
+    );
+    console.log('  wrote dist/lp/.htaccess (noindex header for paid landers)');
+  }
 }
 
 function writeSitemap() {
