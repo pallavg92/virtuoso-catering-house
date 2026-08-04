@@ -80,7 +80,13 @@ async function sendEvent({ eventName, eventId, req, userData = {}, customData = 
   const pixelId = process.env.META_PIXEL_ID;
   const token = process.env.META_CAPI_TOKEN;
 
-  if (!pixelId || !token) return { sent: false, reason: 'not configured' };
+  if (!pixelId || !token) {
+    // Logged, not silent: without this line the runtime logs look identical
+    // whether the event was delivered or the token was simply never set,
+    // which makes "is CAPI actually live?" unanswerable from the outside.
+    console.log(`[capi] skipped ${eventName} — META_PIXEL_ID/META_CAPI_TOKEN not set`);
+    return { sent: false, reason: 'not configured' };
+  }
 
   const { fbp, fbc } = readIdentifiers(req);
 
@@ -122,13 +128,14 @@ async function sendEvent({ eventName, eventId, req, userData = {}, customData = 
     const body = await res.json().catch(() => ({}));
 
     if (!res.ok) {
-      console.error('Meta CAPI rejected event:', res.status, JSON.stringify(body));
+      console.error(`[capi] REJECTED ${eventName} — http ${res.status} ${JSON.stringify(body)}`);
       return { sent: false, reason: `http ${res.status}` };
     }
+    console.log(`[capi] sent ${eventName} id=${eventId} received=${body.events_received}`);
     return { sent: true, received: body.events_received };
   } catch (err) {
     // Timeout, DNS failure, Meta outage — all non-fatal by design.
-    console.error('Meta CAPI request failed:', err.message);
+    console.error(`[capi] FAILED ${eventName} — ${err.message}`);
     return { sent: false, reason: err.message };
   }
 }
