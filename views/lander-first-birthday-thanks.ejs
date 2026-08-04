@@ -338,12 +338,19 @@ mark.hl{background:var(--amber-300);color:var(--ink-900);font-weight:var(--weigh
 
 <script>
   /* Conversion fires here, once. sessionStorage stops a refresh or a
-     back-button return from counting the same enquiry twice. */
+     back-button return from counting the same enquiry twice.
+
+     eventID is the id the server already used when it sent this same Lead
+     through the Conversions API. Matching them is what makes Meta treat the
+     browser and server reports as one conversion instead of two. */
   (function () {
+    var eventId = '<%= typeof eventId !== "undefined" ? eventId : "" %>';
     try {
       if (!sessionStorage.getItem('virtuoso_fb_lead')) {
         sessionStorage.setItem('virtuoso_fb_lead', '1');
-        if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'First Birthday' });
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: 'First Birthday' }, eventId ? { eventID: eventId } : undefined);
+        }
         if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_type: 'First Birthday' });
       }
     } catch (err) {

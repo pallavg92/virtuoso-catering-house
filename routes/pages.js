@@ -5,6 +5,7 @@ const { siteUrl, business, pages } = require('../utils/pageMeta');
 const redirects = require('../utils/redirects');
 const { sendInquiry } = require('../utils/mailer');
 const { validateInquiry, extractFields: extractInquiryFields } = require('../utils/validateInquiry');
+const { sendEvent: sendMetaEvent, newEventId } = require('../utils/metaCapi');
 
 function render(res, page) {
   res.render(page.view, {
@@ -83,8 +84,10 @@ router.post('/lp/first-birthday', async (req, res) => {
     });
   }
 
+  const fields = extractInquiryFields(req.body);
+
   try {
-    await sendInquiry(extractInquiryFields(req.body));
+    await sendInquiry(fields);
   } catch (err) {
     console.error('First-birthday lander: failed to send inquiry email', err);
     return res.status(500).render(pages.lpFirstBirthday.view, {
@@ -99,11 +102,31 @@ router.post('/lp/first-birthday', async (req, res) => {
     });
   }
 
+  // Conversions API. The same event_id is handed to the thank-you page so the
+  // browser pixel reports it too and Meta collapses the pair into one
+  // conversion. Awaited (with a 2s timeout inside) rather than fired and
+  // forgotten, so a failure is logged rather than lost — but it can never
+  // reject, and the enquiry has already been emailed by this point either way.
+  const eventId = newEventId();
+  await sendMetaEvent({
+    eventName: 'Lead',
+    eventId,
+    req,
+    userData: { email: fields.email, phone: fields.phone, city: fields.eventLocation },
+    customData: { content_name: 'First Birthday' },
+    sourceUrl: siteUrl + '/lp/first-birthday'
+  });
+
   // 303 so a refresh of the thank-you page cannot re-submit the form.
-  return res.redirect(303, '/lp/first-birthday/thank-you');
+  return res.redirect(303, '/lp/first-birthday/thank-you?eid=' + encodeURIComponent(eventId));
 });
 
-router.get('/lp/first-birthday/thank-you', (req, res) => render(res, pages.lpFirstBirthdayThanks));
+router.get('/lp/first-birthday/thank-you', (req, res) => render(res, {
+  ...pages.lpFirstBirthdayThanks,
+  // Empty when someone opens the URL directly rather than via the form; the
+  // template falls back to generating its own id in that case.
+  eventId: typeof req.query.eid === 'string' ? req.query.eid : ''
+}));
 
 router.get('/lp/private-celebrations-delhi-ncr', (req, res) => render(res, pages.lpWedding));
 router.get('/lp/private-celebrations-delhi-ncr/thank-you', (req, res) => render(res, pages.lpWeddingThanks));
