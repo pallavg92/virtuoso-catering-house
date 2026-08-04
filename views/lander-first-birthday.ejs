@@ -17,8 +17,13 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1747975173071768');
-fbq('track', 'PageView');
+/* Only report from the live domain. Without this guard, local dev and
+   staging traffic lands in the same dataset as real visitors and skews
+   both the audience pool and the conversion counts. */
+if (/(^|\.)virtuosocatering\.com$/.test(location.hostname)) {
+  fbq('init', '1747975173071768');
+  fbq('track', 'PageView');
+}
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
