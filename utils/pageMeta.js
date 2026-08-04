@@ -164,6 +164,16 @@ const pages = {
     ogImage: content.landingPages['wedding-caterers-in-delhi'].image,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/wedding-caterers-in-delhi' }]
   },
+  privacyPolicy: {
+    path: '/privacy-policy',
+    view: 'privacy-policy',
+    activePage: '',
+    bodyClass: 'page-privacy',
+    title: 'Privacy Policy — Virtuoso Catering House',
+    description: 'How Virtuoso Catering House collects, uses and protects personal information submitted through virtuosocatering.com.',
+    ogImage: content.heroImage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]
+  },
   // First-birthday paid lander. This page is self-contained (its own <head>,
   // inline design-system CSS, self-hosted fonts) so it does NOT use
   // partials/head.ejs — its noindex tag and Meta Pixel are inside the

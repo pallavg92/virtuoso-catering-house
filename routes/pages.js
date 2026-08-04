@@ -59,6 +59,7 @@ router.get('/corporate-catering-services-in-noida', (req, res) => render(res, pa
 router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, pages.landingBrandEvent));
 router.get('/wedding-caterers-in-delhi', (req, res) => render(res, pages.landingWeddingCaterersDelhi));
 router.get('/wedding-caterers-in-noida', (req, res) => render(res, pages.landingWeddingCaterersNoida));
+router.get('/privacy-policy', (req, res) => render(res, pages.privacyPolicy));
 router.get('/press', (req, res) => render(res, pages.press));
 // First-birthday paid lander. Unlike the rest of the site this form is a
 // native POST with no JavaScript, so the server re-renders the page with

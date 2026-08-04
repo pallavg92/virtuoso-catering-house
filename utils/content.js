@@ -2214,6 +2214,94 @@ const celebrationsLander = {
   }
 };
 
+// Privacy policy. Written against what the site actually does: three
+// enquiry forms, GA4, and the Meta Pixel. If any of those change, this
+// has to change with them — an inaccurate policy is worse than none.
+const privacyPolicy = {
+  updated: '4 August 2026',
+  intro: 'Virtuoso Catering House ("we", "us") is a catering company based in Noida, Uttar Pradesh. This policy explains what personal information we collect through virtuosocatering.com, why we collect it, who it is shared with, and how you can ask us to remove it.',
+  sections: [
+    {
+      heading: 'Who we are',
+      paragraphs: [
+        'Virtuoso Catering House, A-15, A-Block, Sector 61, Noida, Uttar Pradesh 201301, India. You can reach us at virtuosocatering@gmail.com or +91 87009 15463. We are the data fiduciary for the information described here.'
+      ]
+    },
+    {
+      heading: 'What we collect, and when',
+      paragraphs: [
+        'We only collect personal information when you choose to give it to us through one of our enquiry forms. We do not require you to create an account, and we do not take payments on this website.'
+      ],
+      list: [
+        'Enquiry form: your name, email address, mobile number, event type, event date and guest count.',
+        'Menu download form: your name, email address, mobile number, event date and guest count.',
+        'First-birthday enquiry form: your name, mobile number, event date, guest count, the locality of your event, and anything you choose to tell us about the celebration you are planning. An email address is optional on this form.',
+        'Automatically, through cookies and similar technology: pages you viewed, approximate location derived from your IP address, device and browser type, and how you arrived at the site.'
+      ]
+    },
+    {
+      heading: 'Why we use it',
+      paragraphs: [
+        'The details you submit through a form are used to reply to your enquiry, understand your event, prepare a proposal, and arrange a tasting. Enquiries are sent to our own email inbox and read by our events team.',
+        'Information collected automatically is used to understand how the site is used and to measure whether our advertising reaches people who find it relevant.',
+        'We do not sell your personal information. We do not share it with other catering companies or with anyone for their own marketing.'
+      ]
+    },
+    {
+      heading: 'Analytics and advertising',
+      paragraphs: [
+        'We use Google Analytics 4 to understand how visitors use the site, and the Meta Pixel to measure our advertising on Facebook and Instagram and to show ads to people who have visited the site.',
+        'Where you submit a form, the Meta Pixel may send a scrambled (hashed) version of details such as your email address or mobile number so Meta can tell whether an advert led to your enquiry. Meta receives this in a form designed not to be readable as your original details, and we never send the readable version.',
+        'You can limit this. Most browsers let you block or delete cookies, and your Facebook and Instagram ad settings let you control how your activity is used for advertising. Blocking these will not affect your ability to use the site or contact us.'
+      ]
+    },
+    {
+      heading: 'Who else sees your information',
+      paragraphs: [
+        'Only the people and services needed to run our business and this website:'
+      ],
+      list: [
+        'Our email provider, which delivers and stores enquiries sent to us.',
+        'Our website host, which serves the site and keeps standard server logs.',
+        'Google, for Analytics.',
+        'Meta, for advertising measurement, where you have visited the site or submitted a form.',
+        'Anyone we are legally required to disclose to.'
+      ]
+    },
+    {
+      heading: 'Messaging us on WhatsApp',
+      paragraphs: [
+        'Our WhatsApp button opens a conversation with us on WhatsApp, which is operated by Meta. Anything you send there is governed by WhatsApp\'s own privacy terms as well as this policy. We use those conversations only to discuss your event.'
+      ]
+    },
+    {
+      heading: 'How long we keep it',
+      paragraphs: [
+        'We keep enquiry correspondence for as long as we may reasonably need it to serve you, and to keep records of events we have catered. If you ask us to delete your details and we have no legal reason to keep them, we will. Analytics and advertising data is retained according to the settings and standard retention periods of Google and Meta.'
+      ]
+    },
+    {
+      heading: 'Your rights',
+      paragraphs: [
+        'Under India\'s Digital Personal Data Protection Act, 2023, you can ask us what personal information we hold about you, ask us to correct it if it is wrong, ask us to delete it, and withdraw consent you previously gave.',
+        'Email virtuosocatering@gmail.com with the phrase "Privacy request" in the subject line and we will respond. We may ask you to confirm your identity before we act, so that we do not disclose someone else\'s information by mistake.'
+      ]
+    },
+    {
+      heading: 'Children',
+      paragraphs: [
+        'This site is intended for adults planning events. We do not knowingly collect personal information from children. Where an enquiry concerns a child\'s celebration, the information we hold is the parent\'s or guardian\'s, not the child\'s.'
+      ]
+    },
+    {
+      heading: 'Changes to this policy',
+      paragraphs: [
+        'If we change how we collect or use personal information, we will update this page and the date shown at the top. Significant changes will be described here rather than made quietly.'
+      ]
+    }
+  ]
+};
+
 const commercialPages = [
   { path: '/wedding-caterers-in-delhi', label: 'Best Wedding Caterers in Delhi', blurb: 'What separates the best and top wedding caterers in Delhi, and where Virtuoso fits.' },
   { path: '/best-catering-services-in-noida', label: 'Catering in Noida', blurb: 'Full-service wedding, corporate, and private event catering across Noida.' },
@@ -2235,6 +2323,7 @@ module.exports = {
   caterersInDelhiFindingTheRightFitPage,
   landingPages,
   celebrationsLander,
+  privacyPolicy,
   commercialPages,
   pressAndClients,
   pressMentions,
