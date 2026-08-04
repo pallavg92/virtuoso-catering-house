@@ -164,6 +164,56 @@ const pages = {
     ogImage: content.landingPages['wedding-caterers-in-delhi'].image,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Best Wedding Caterers in Delhi', path: '/wedding-caterers-in-delhi' }]
   },
+  // First-birthday paid lander. This page is self-contained (its own <head>,
+  // inline design-system CSS, self-hosted fonts) so it does NOT use
+  // partials/head.ejs — its noindex tag and Meta Pixel are inside the
+  // template itself rather than inherited.
+  lpFirstBirthday: {
+    path: '/lp/first-birthday',
+    view: 'lander-first-birthday',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'First birthdays in Delhi NCR — Virtuoso Catering House',
+    description: 'For first-birthday celebrations of 50 guests or more in Delhi NCR, Virtuoso brings menu, live experiences, presentation and service together as one personalised F&B experience.',
+    breadcrumbs: []
+  },
+  lpFirstBirthdayThanks: {
+    path: '/lp/first-birthday/thank-you',
+    view: 'lander-first-birthday-thanks',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'Thank you — Virtuoso Catering House',
+    description: 'Your first-birthday enquiry is with our F&B curator.',
+    breadcrumbs: []
+  },
+  // Paid-traffic landing pages. noindex so they cannot compete with the SEO
+  // pages targeting the same keywords, and excluded from the sitemap below.
+  lpWedding: {
+    path: '/lp/private-celebrations-delhi-ncr',
+    view: 'lander',
+    activePage: '',
+    bodyClass: 'page-lander',
+    noindex: true,
+    excludeFromSitemap: true,
+    title: content.celebrationsLander.metaTitle,
+    description: content.celebrationsLander.metaDescription,
+    ogImage: content.celebrationsLander.image,
+    breadcrumbs: []
+  },
+  lpWeddingThanks: {
+    path: '/lp/private-celebrations-delhi-ncr/thank-you',
+    view: 'lander-thanks',
+    activePage: '',
+    bodyClass: 'page-lander-thanks',
+    noindex: true,
+    excludeFromSitemap: true,
+    title: 'Thank You | Virtuoso Catering House',
+    description: 'Your wedding menu download is on its way.',
+    ogImage: content.celebrationsLander.image,
+    breadcrumbs: []
+  },
   landingWeddingCaterersNoida: {
     path: '/wedding-caterers-in-noida',
     view: 'landing',

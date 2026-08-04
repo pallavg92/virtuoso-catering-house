@@ -80,6 +80,7 @@ function writeHtaccess() {
 function writeSitemap() {
   const today = new Date().toISOString().slice(0, 10);
   const urls = Object.values(pages)
+    .filter((page) => !page.excludeFromSitemap)
     .map((page) => {
       const loc = siteUrl + (page.path === '/' ? '/' : page.path);
       return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;

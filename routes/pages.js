@@ -3,6 +3,8 @@ const router = express.Router();
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const redirects = require('../utils/redirects');
+const { sendInquiry } = require('../utils/mailer');
+const { validateInquiry, extractFields: extractInquiryFields } = require('../utils/validateInquiry');
 
 function render(res, page) {
   res.render(page.view, {
@@ -17,6 +19,7 @@ function render(res, page) {
 router.get('/sitemap.xml', (req, res) => {
   const today = new Date().toISOString().slice(0, 10);
   const urls = Object.values(pages)
+    .filter((page) => !page.excludeFromSitemap)
     .map((page) => {
       const loc = siteUrl + (page.path === '/' ? '/' : page.path);
       return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;
@@ -57,6 +60,52 @@ router.get('/luxury-brand-event-catering-delhi-ncr', (req, res) => render(res, p
 router.get('/wedding-caterers-in-delhi', (req, res) => render(res, pages.landingWeddingCaterersDelhi));
 router.get('/wedding-caterers-in-noida', (req, res) => render(res, pages.landingWeddingCaterersNoida));
 router.get('/press', (req, res) => render(res, pages.press));
+// First-birthday paid lander. Unlike the rest of the site this form is a
+// native POST with no JavaScript, so the server re-renders the page with
+// errors and the visitor's own answers on failure, and 303s to the
+// thank-you page (where the Meta Lead event fires) on success.
+router.get('/lp/first-birthday', (req, res) => render(res, pages.lpFirstBirthday));
+
+router.post('/lp/first-birthday', async (req, res) => {
+  const errors = validateInquiry(req.body);
+
+  if (Object.keys(errors).length > 0) {
+    return res.status(400).render(pages.lpFirstBirthday.view, {
+      ...content,
+      ...pages.lpFirstBirthday,
+      canonicalUrl: siteUrl + pages.lpFirstBirthday.path,
+      siteUrl,
+      business,
+      errors,
+      values: req.body,
+      status: 'Please check the highlighted fields.'
+    });
+  }
+
+  try {
+    await sendInquiry(extractInquiryFields(req.body));
+  } catch (err) {
+    console.error('First-birthday lander: failed to send inquiry email', err);
+    return res.status(500).render(pages.lpFirstBirthday.view, {
+      ...content,
+      ...pages.lpFirstBirthday,
+      canonicalUrl: siteUrl + pages.lpFirstBirthday.path,
+      siteUrl,
+      business,
+      errors: {},
+      values: req.body,
+      status: 'Something went wrong sending your enquiry. Please call us on +91 87009 15463.'
+    });
+  }
+
+  // 303 so a refresh of the thank-you page cannot re-submit the form.
+  return res.redirect(303, '/lp/first-birthday/thank-you');
+});
+
+router.get('/lp/first-birthday/thank-you', (req, res) => render(res, pages.lpFirstBirthdayThanks));
+
+router.get('/lp/private-celebrations-delhi-ncr', (req, res) => render(res, pages.lpWedding));
+router.get('/lp/private-celebrations-delhi-ncr/thank-you', (req, res) => render(res, pages.lpWeddingThanks));
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
 router.get('/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding', (req, res) => render(res, pages.hireWeddingCaterersDelhi));
 router.get('/best-wedding-caterers-in-delhi-what-sets-them-apart', (req, res) => render(res, pages.bestWeddingCaterersDelhi));

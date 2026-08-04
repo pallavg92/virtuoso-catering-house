@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<main class="lander-thanks">
+  <div class="lander-thanks__inner">
+    <p class="lander__eyebrow">Menu on its way</p>
+    <h1 class="lander-thanks__title">Thank you. Our team will be in touch shortly.</h1>
+    <p class="lander-thanks__copy">
+      Your download should start automatically. We will call within one working day
+      to understand your functions and guest numbers.
+    </p>
+
+    <div class="lander-thanks__actions">
+      <a class="lander-thanks__btn" id="thanks-download" href="/downloads/virtuoso-catering-house-menu.pdf" download>Download the Menu</a>
+      <a class="lander-thanks__btn lander-thanks__btn--ghost" href="https://wa.me/918700915463?text=Hi%2C%20I%20just%20downloaded%20your%20wedding%20menu%20and%20would%20like%20to%20discuss%20my%20wedding." target="_blank" rel="noopener">Talk to Us on WhatsApp</a>
+    </div>
+
+    <div class="lander-thanks__next">
+      <strong>What happens next</strong>
+      <ol>
+        <li>We call to understand your dates, venue and functions.</li>
+        <li>We propose a menu built function by function, not one menu repeated.</li>
+        <li>You taste it at our Sector 61 experience centre before anything is confirmed.</li>
+      </ol>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Fire the Meta conversion here so a URL-based Custom Conversion and the
+  // standard Lead event both work. sessionStorage guards against a refresh
+  // or back-button landing counting the same lead twice.
+  (function () {
+    try {
+      if (!sessionStorage.getItem('virtuoso_lead_counted')) {
+        sessionStorage.setItem('virtuoso_lead_counted', '1');
+        if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Wedding Lander' });
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_type: 'Wedding Lander' });
+      }
+    } catch (err) {
+      // Never let a tracking failure break the download below.
+    }
+
+    // Auto-start the menu download the visitor came for.
+    try {
+      var link = document.getElementById('thanks-download');
+      if (link) setTimeout(function () { link.click(); }, 800);
+    } catch (err) {
+      // The manual button is still there if this fails.
+    }
+  })();
+</script>
+</body>
+</html>

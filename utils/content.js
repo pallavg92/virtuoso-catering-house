@@ -2158,6 +2158,62 @@ const eventTypes = ['Wedding', 'Private', 'Brand', 'Other'];
 // The 5 SEO/commercial landing pages, used to cross-link them from the
 // homepage, /services, and each other, so none of them are reachable
 // only through the footer or the sitemap.
+// Copy for the paid-traffic wedding landing page. Kept deliberately short:
+// this page is read in a few seconds by someone who just tapped an ad, not
+// browsed like the SEO pages. Every claim here is one we can evidence.
+// Copy for the paid-traffic private-celebrations landing page. Deliberately
+// short: this is read in seconds by someone who just tapped an Instagram ad,
+// not browsed like the SEO pages. Every claim here is one we can evidence.
+const celebrationsLander = {
+  metaTitle: 'Private Celebration Catering, Delhi NCR | Virtuoso Catering House',
+  metaDescription: 'Get the Virtuoso menu for private celebrations across Delhi NCR — birthdays, baby showers, anniversaries and private gatherings, from 20 guests up.',
+  image: '/images/virtuoso-catering-house-weddings-service.jpg',
+
+  // 1. HEADLINE — split so the payoff can carry the accent face.
+  eyebrow: 'Private Celebrations · Delhi NCR',
+  h1Lead: 'Your guests will still be talking about the food',
+  h1Accent: 'long after the party.',
+
+  // 2. SUB-HEADLINE — clarifies the promise the headline makes.
+  sub: 'See the exact menus we build for private celebrations across Delhi NCR. Birthdays, baby showers, anniversaries and intimate gatherings, from twenty guests up.',
+
+  // 3. VISUAL PROOF — show the thing being offered.
+  proofVisual: {
+    image: '/images/virtuoso-catering-house-weddings-service.jpg',
+    caption: 'Inside the menu: canapés, live counters, plated courses and desserts, with the thinking behind each one.'
+  },
+
+  // 4. CTA — what you get, and how you get it.
+  cta: {
+    what: 'The complete Virtuoso celebrations menu.',
+    how: 'Fill the form and it opens straight away. No wait, no callback needed.'
+  },
+
+  form: {
+    title: 'Where should we send it?',
+    submit: 'Show Me the Menu',
+    privacy: 'Used only to send the menu and follow up about your event. Never shared.',
+    eventTypes: ['Birthday', 'First Birthday', 'Baby Shower', 'Anniversary', 'Private Gathering', 'Wedding', 'Other']
+  },
+
+  // 7. PROOF OF WORK — the single biggest objection.
+  stats: [
+    { figure: '20', label: 'Smallest gathering we cater' },
+    { figure: '2,000', label: 'Largest event we have served' },
+    { figure: '5', label: 'Luxury caterers ANI News named as leading Delhi NCR. We are one.' }
+  ],
+  clients: {
+    heading: 'Brands that vet their vendors hard have already trusted this kitchen',
+    logos: ['Ferrari', 'Lamborghini', 'Tesla', 'BMW', 'Bath & Body Works', 'House of Masaba'],
+    note: 'La Esperienza Ferrari at Buddh International Circuit · Lamborghini Temerario launch, Delhi · Tesla Centre opening, Gurugram'
+  },
+  closing: {
+    heading: 'We take a limited number of events per date.',
+    copy: 'Every menu is tasted at our Sector 61 experience centre in Noida before anything is confirmed. Nothing reaches your table that has not already been on ours.',
+    cta: 'Get the Menu'
+  }
+};
+
 const commercialPages = [
   { path: '/wedding-caterers-in-delhi', label: 'Best Wedding Caterers in Delhi', blurb: 'What separates the best and top wedding caterers in Delhi, and where Virtuoso fits.' },
   { path: '/best-catering-services-in-noida', label: 'Catering in Noida', blurb: 'Full-service wedding, corporate, and private event catering across Noida.' },
@@ -2178,6 +2234,7 @@ module.exports = {
   bestWeddingCaterersDelhiPage,
   caterersInDelhiFindingTheRightFitPage,
   landingPages,
+  celebrationsLander,
   commercialPages,
   pressAndClients,
   pressMentions,

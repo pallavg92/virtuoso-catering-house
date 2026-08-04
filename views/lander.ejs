@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<% const data = celebrationsLander; %>
+
+<main class="lander">
+
+  <!-- Wordmark only. No navigation: every link on a paid page is spend leaking. -->
+  <header class="lander__bar">
+    <span class="lander__wordmark">Virtuoso Catering House</span>
+    <a href="tel:+918700915463" class="lander__bar-phone">+91 87009 15463</a>
+  </header>
+
+  <!-- 1 + 2 — headline and sub-headline, given room to land. -->
+  <section class="lander__hero">
+    <p class="lander__eyebrow"><span class="lander__eyebrow-rule"></span><%= data.eyebrow %></p>
+    <h1 class="lander__title">
+      <%= data.h1Lead %>
+      <em class="lander__title-accent"><%= data.h1Accent %></em>
+    </h1>
+    <p class="lander__sub"><%= data.sub %></p>
+  </section>
+
+  <!-- 3 — visual proof of the thing being offered. -->
+  <figure class="lander__visual">
+    <img src="<%= data.proofVisual.image %>" alt="Virtuoso Catering House wedding menu and service" loading="eager" width="1600" height="900">
+    <figcaption><%= data.proofVisual.caption %></figcaption>
+  </figure>
+
+  <!-- 4 + 5 — the offer restated, then the form. -->
+  <section class="lander__offer" id="get-the-menu">
+    <div class="lander__offer-copy">
+      <p class="lander__cta-what"><%= data.cta.what %></p>
+      <p class="lander__cta-how"><%= data.cta.how %></p>
+    </div>
+
+    <div class="lander__form-card">
+      <h2 class="lander__form-title"><%= data.form.title %></h2>
+
+      <form id="lander-form" novalidate>
+        <div class="lander-field">
+          <label for="lf-name">Name</label>
+          <input type="text" id="lf-name" name="name" autocomplete="name" required>
+          <span class="lander-field__error" data-error-for="name"></span>
+        </div>
+
+        <div class="lander-field">
+          <label for="lf-phone">Mobile</label>
+          <input type="tel" id="lf-phone" name="phone" autocomplete="tel" inputmode="tel" required>
+          <span class="lander-field__error" data-error-for="phone"></span>
+        </div>
+
+        <div class="lander-field">
+          <label for="lf-email">Email</label>
+          <input type="email" id="lf-email" name="email" autocomplete="email" inputmode="email" required>
+          <span class="lander-field__error" data-error-for="email"></span>
+        </div>
+
+        <div class="lander-field">
+          <label for="lf-type">Type of event</label>
+          <select id="lf-type" name="eventType" required>
+            <option value="">Select</option>
+            <% data.form.eventTypes.forEach(function(t) { %>
+            <option value="<%= t %>"><%= t %></option>
+            <% }); %>
+          </select>
+          <span class="lander-field__error" data-error-for="eventType"></span>
+        </div>
+
+        <div class="lander__row">
+          <div class="lander-field">
+            <label for="lf-date">Day of event</label>
+            <input type="date" id="lf-date" name="eventDate">
+            <span class="lander-field__error" data-error-for="eventDate"></span>
+          </div>
+          <div class="lander-field">
+            <label for="lf-pax">Pax</label>
+            <input type="number" id="lf-pax" name="guestCount" min="1" inputmode="numeric">
+            <span class="lander-field__error" data-error-for="guestCount"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="lander__submit" id="lander-submit"><%= data.form.submit %></button>
+        <p class="lander__status" id="lander-status" role="status" aria-live="polite"></p>
+        <p class="lander__privacy"><%= data.form.privacy %></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 7 — proof of work, the biggest objection. -->
+  <section class="lander__stats">
+    <% data.stats.forEach(function(s) { %>
+    <div class="lander__stat">
+      <p class="lander__stat-figure"><%= s.figure %></p>
+      <p class="lander__stat-label"><%= s.label %></p>
+    </div>
+    <% }); %>
+  </section>
+
+  <section class="lander__clients">
+    <h2 class="lander__clients-heading"><%= data.clients.heading %></h2>
+    <ul class="lander__client-list">
+      <% data.clients.logos.forEach(function(c) { %>
+      <li><%= c %></li>
+      <% }); %>
+    </ul>
+    <p class="lander__clients-note"><%= data.clients.note %></p>
+  </section>
+
+  <section class="lander__closing">
+    <h2 class="lander__closing-heading"><%= data.closing.heading %></h2>
+    <p class="lander__closing-copy"><%= data.closing.copy %></p>
+    <a href="#get-the-menu" class="lander__closing-cta"><%= data.closing.cta %></a>
+  </section>
+
+  <footer class="lander__foot">
+    <p>Virtuoso Catering House · A-15, A-Block, Sector 61, Noida</p>
+    <p><a href="tel:+918700915463">+91 87009 15463</a> · <a href="mailto:virtuosocatering@gmail.com">virtuosocatering@gmail.com</a></p>
+  </footer>
+
+</main>
+
+<script src="/js/lander-form.js" defer></script>
+</body>
+</html>

@@ -30,6 +30,11 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= title %></title>
 <meta name="description" content="<%= description %>">
+<% if (typeof noindex !== 'undefined' && noindex) { %>
+<!-- Paid-traffic landing pages are excluded from search so they cannot
+     cannibalise the SEO pages targeting the same keywords. -->
+<meta name="robots" content="noindex, nofollow">
+<% } %>
 <link rel="canonical" href="<%= canonicalUrl %>">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">

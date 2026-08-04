@@ -12,10 +12,20 @@ function validateInquiry(body) {
   const guestCount = (body.guestCount || '').trim();
 
   if (!name || name.length < 2) errors.name = 'Please enter your full name.';
-  if (!email || !EMAIL_RE.test(email)) errors.email = 'Please enter a valid email address.';
+  // Email is only required when we have no phone number. The paid-traffic
+  // landers ask for a mobile instead — one reliable contact route is enough,
+  // and every extra field measurably costs conversions on cold ad traffic.
+  if (!email && !phone) {
+    errors.email = 'Please enter an email address or a mobile number.';
+  } else if (email && !EMAIL_RE.test(email)) {
+    errors.email = 'Please enter a valid email address.';
+  }
   if (!phone || !PHONE_RE.test(phone)) errors.phone = 'Please enter a valid mobile number.';
   if (!eventType) errors.eventType = 'Please select an event type.';
-  if (guestCount && (isNaN(Number(guestCount)) || Number(guestCount) < 0)) {
+  // guestCount accepts a band ("101-150", "Not finalised yet") from the
+  // landers as well as a plain number from the site's inquiry drawer, so it
+  // is only rejected when it is a number that makes no sense.
+  if (guestCount && !isNaN(Number(guestCount)) && Number(guestCount) < 0) {
     errors.guestCount = 'Guest count must be a positive number.';
   }
 
@@ -29,7 +39,11 @@ function extractFields(body) {
     phone: (body.phone || '').trim(),
     eventDate: (body.eventDate || '').trim(),
     eventType: (body.eventType || '').trim(),
-    guestCount: (body.guestCount || '').trim()
+    guestCount: (body.guestCount || '').trim(),
+    // Supplied by the paid-traffic landers only. The vision note is the
+    // whole basis of the curator call, so it must survive to the inbox.
+    eventLocation: (body.eventLocation || '').trim(),
+    eventVision: (body.eventVision || '').trim()
   };
 }
 

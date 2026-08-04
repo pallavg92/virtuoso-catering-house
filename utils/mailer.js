@@ -29,11 +29,15 @@ async function sendInquiry(fields) {
   const subject = `New Inquiry — ${fields.eventType || 'General'} — ${fields.name}`;
   const text = [
     `Name: ${fields.name}`,
-    `Email: ${fields.email}`,
+    `Email: ${fields.email || '—'}`,
     `Mobile: ${fields.phone || '—'}`,
     `Event Date: ${fields.eventDate || '—'}`,
     `Event Type: ${fields.eventType || '—'}`,
-    `Guest Count: ${fields.guestCount || '—'}`
+    `Guest Count: ${fields.guestCount || '—'}`,
+    `Location: ${fields.eventLocation || '—'}`,
+    '',
+    'What they are imagining:',
+    fields.eventVision || '—'
   ].join('\n');
 
   if (!transporter) {
