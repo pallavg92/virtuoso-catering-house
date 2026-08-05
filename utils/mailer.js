@@ -85,17 +85,21 @@ async function sendMenuDownloadRequest(fields) {
 }
 
 
-// Brandbook palette, sampled from the logo and the design system.
-const BRAND = {
-  green: '#4F6E51',        // logo field — the header band matches it exactly
-  ink: '#101F10',
-  body: '#3B4738',
-  muted: '#6C8168',
-  ochre: '#935A11',
-  parchment: '#FAF6EE',
-  card: '#FEFCF7',
-  hairline: '#E6DFCE'
-};
+const fs = require('fs');
+const path = require('path');
+
+// The acknowledgement is a designed email kept as its own HTML file so it can
+// be edited without touching this module. Two tokens are filled at send time:
+// {{FIRST_NAME}} and {{DETAIL_ROWS}}. Read once at startup rather than per
+// send — it never changes while the process is running.
+const ACK_TEMPLATE = (() => {
+  try {
+    return fs.readFileSync(path.join(__dirname, '..', 'emails', 'enquiry-received.html'), 'utf8');
+  } catch (err) {
+    console.error('Acknowledgement template missing — falling back to plain text only:', err.message);
+    return null;
+  }
+})();
 
 function escapeHtml(value) {
   return String(value == null ? '' : value)
@@ -103,114 +107,21 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// Email HTML is not web HTML: tables for layout, styles inlined, and only
-// web-safe families. Cormorant Garamond and Work Sans cannot be relied on in
-// a mail client, so Georgia and Helvetica stand in for them — closest common
-// match to the brand's serif/sans pairing.
-function acknowledgementHtml({ firstName, summary }) {
-  const rows = summary.map(([label, value]) => `
-              <tr>
-                <td style="padding:6px 0;font:400 12px/1.5 Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:${BRAND.muted};width:38%;vertical-align:top;">${escapeHtml(label)}</td>
-                <td style="padding:6px 0;font:400 15px/1.5 Helvetica,Arial,sans-serif;color:${BRAND.body};vertical-align:top;">${escapeHtml(value)}</td>
-              </tr>`).join('');
+// Builds only the rows we actually have a value for, so an enquiry without a
+// date doesn't show an empty "Date" line. The final row drops its bottom
+// padding to match the design, whichever row that turns out to be.
+function detailRows(pairs) {
+  const label = 'padding:11px 0 0 0;border-top:1px solid #e8e0d4;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;mso-line-height-rule:exactly;color:#5f5650;';
+  const valueBase = 'border-top:1px solid #e8e0d4;font-family:Georgia,\'Times New Roman\',serif;font-size:16px;line-height:22px;mso-line-height-rule:exactly;color:#101f10;';
 
-  const detailsBlock = summary.length ? `
-        <tr>
-          <td style="padding:0 32px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BRAND.card};border:1px solid ${BRAND.hairline};">
-              <tr><td style="padding:20px 24px;">
-                <p style="margin:0 0 12px;font:400 12px/1.5 Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:${BRAND.ochre};">What you shared</p>
-                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
-              </td></tr>
-            </table>
-          </td>
-        </tr>
-        <tr><td style="height:28px;line-height:28px;font-size:0;">&nbsp;</td></tr>` : '';
-
-  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="color-scheme" content="light" />
-<meta name="supported-color-schemes" content="light" />
-<title>We have your enquiry</title>
-</head>
-<body style="margin:0;padding:0;background:${BRAND.parchment};">
-  <!-- Preview text: what shows beside the subject line in the inbox. -->
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Someone from our team will call you within one working day.</div>
-
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BRAND.parchment};">
-    <tr>
-      <td align="center" style="padding:24px 12px;">
-
-        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:100%;">
-
-          <!-- Header. bgcolor matches the logo's own field so a blocked
-               image still reads as a deliberate green band. -->
-          <tr>
-            <td align="center" bgcolor="${BRAND.green}" style="background:${BRAND.green};padding:28px 24px;">
-              <img src="https://www.virtuosocatering.com/images/virtuoso-catering-house-logo.png"
-                   width="240" alt="Virtuoso Catering House"
-                   style="display:block;width:240px;max-width:70%;height:auto;border:0;outline:none;text-decoration:none;" />
-            </td>
-          </tr>
-
-          <tr>
-            <td style="background:${BRAND.card};padding:36px 32px 8px;">
-              <p style="margin:0 0 6px;font:400 12px/1.5 Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:${BRAND.ochre};">Enquiry received</p>
-              <h1 style="margin:0 0 20px;font:400 30px/1.25 Georgia,'Times New Roman',serif;color:${BRAND.ink};">Thank you, ${escapeHtml(firstName)}.</h1>
-              <p style="margin:0 0 16px;font:400 16px/1.65 Helvetica,Arial,sans-serif;color:${BRAND.body};">
-                Your enquiry has reached our team. Someone will call you within one working day
-                to understand what you are planning and talk through how we would approach it.
-              </p>
-            </td>
-          </tr>
-
-          <tr><td style="background:${BRAND.card};height:12px;line-height:12px;font-size:0;">&nbsp;</td></tr>
-          ${detailsBlock ? `<tr><td style="background:${BRAND.card};">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${detailsBlock}</table>
-          </td></tr>` : ''}
-
-          <tr>
-            <td style="background:${BRAND.card};padding:0 32px 32px;">
-              <p style="margin:0 0 24px;font:400 15px/1.65 Helvetica,Arial,sans-serif;color:${BRAND.body};">
-                If any of that is wrong, or you would rather speak sooner, call or WhatsApp us
-                on <a href="tel:+918700915463" style="color:${BRAND.ochre};text-decoration:none;">+91 87009 15463</a>.
-              </p>
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr><td bgcolor="${BRAND.green}" style="background:${BRAND.green};">
-                  <a href="https://wa.me/918700915463" style="display:inline-block;padding:13px 26px;font:600 14px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;color:#FFFFFF;text-decoration:none;">MESSAGE US ON WHATSAPP</a>
-                </td></tr>
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="background:${BRAND.parchment};padding:22px 32px 8px;border-top:1px solid ${BRAND.hairline};">
-              <p style="margin:0 0 4px;font:400 14px/1.6 Helvetica,Arial,sans-serif;color:${BRAND.body};">Virtuoso Catering House</p>
-              <p style="margin:0;font:400 13px/1.6 Helvetica,Arial,sans-serif;color:${BRAND.muted};">
-                A-15, A-Block, Sector 61, Noida 201301<br />
-                <a href="tel:+918700915463" style="color:${BRAND.muted};text-decoration:none;">+91 87009 15463</a> &middot;
-                <a href="https://www.virtuosocatering.com" style="color:${BRAND.muted};text-decoration:none;">virtuosocatering.com</a>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="background:${BRAND.parchment};padding:8px 32px 24px;">
-              <p style="margin:0;font:400 11px/1.6 Helvetica,Arial,sans-serif;color:${BRAND.muted};">
-                You are receiving this because you submitted an enquiry on virtuosocatering.com.
-                <a href="https://www.virtuosocatering.com/privacy-policy" style="color:${BRAND.muted};">Privacy policy</a>.
-              </p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
+  return pairs.map(([name, value], i) => {
+    const last = i === pairs.length - 1;
+    const valuePad = last ? 'padding:11px 0 0 0;' : 'padding:11px 0 11px 0;';
+    return `<tr>
+                  <td class="lbl stack compact" width="130" style="width:130px;${label}" valign="top">${escapeHtml(name)}</td>
+                  <td class="stack compact" style="${valuePad}${valueBase}" valign="top">${escapeHtml(value)}</td>
+                </tr>`;
+  }).join('\n                ');
 }
 
 // Formats an ISO date (2026-12-05) the way a person would read it. Anything
@@ -277,15 +188,18 @@ async function sendEnquiryAcknowledgement(fields) {
   // Sent as multipart: the HTML for clients that render it, the plain text
   // for those that don't and for anyone reading with images off. Skipping the
   // text part is a well-known way to look like spam.
-  const html = acknowledgementHtml({
-    firstName,
-    summary: [
-      fields.eventType ? ['Occasion', fields.eventType] : null,
-      fields.eventDate ? ['Date', readableDate(fields.eventDate)] : null,
-      fields.guestCount ? ['Guests', fields.guestCount] : null,
-      fields.eventLocation ? ['Where', fields.eventLocation] : null
-    ].filter(Boolean)
-  });
+  const pairs = [
+    fields.eventType ? ['Occasion', fields.eventType] : null,
+    fields.eventDate ? ['Date', readableDate(fields.eventDate)] : null,
+    fields.guestCount ? ['Guests', fields.guestCount] : null,
+    fields.eventLocation ? ['Venue / Location', fields.eventLocation] : null
+  ].filter(Boolean);
+
+  const html = ACK_TEMPLATE
+    ? ACK_TEMPLATE
+        .replace('{{FIRST_NAME}}', escapeHtml(firstName))
+        .replace('{{DETAIL_ROWS}}', detailRows(pairs))
+    : undefined;
 
   await transporter.sendMail({
     from,
