@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { sendInquiry, sendMenuDownloadRequest } = require('../utils/mailer');
+const { sendInquiry, sendMenuDownloadRequest, sendEnquiryAcknowledgement } = require('../utils/mailer');
 const { validateInquiry, extractFields } = require('../utils/validateInquiry');
 const { validateMenuDownload, extractFields: extractMenuDownloadFields } = require('../utils/validateMenuDownload');
 
@@ -15,6 +15,15 @@ router.post('/inquiry', async (req, res) => {
 
   try {
     const result = await sendInquiry(fields);
+
+    // Acknowledgement to the enquirer. Separate try/catch on purpose: the
+    // enquiry has already reached the inbox, so a failure here is a missing
+    // courtesy email, not a lost lead, and must not surface as an error.
+    try {
+      await sendEnquiryAcknowledgement(fields);
+    } catch (ackErr) {
+      console.error('Failed to send enquiry acknowledgement:', ackErr.message);
+    }
     return res.json({
       ok: true,
       message: 'Your inquiry has been received. Our events team will be in touch within two business days.',
@@ -40,6 +49,15 @@ router.post('/menu-download', async (req, res) => {
 
   try {
     const result = await sendMenuDownloadRequest(fields);
+
+    // Acknowledgement to the enquirer. Separate try/catch on purpose: the
+    // enquiry has already reached the inbox, so a failure here is a missing
+    // courtesy email, not a lost lead, and must not surface as an error.
+    try {
+      await sendEnquiryAcknowledgement(fields);
+    } catch (ackErr) {
+      console.error('Failed to send enquiry acknowledgement:', ackErr.message);
+    }
     return res.json({
       ok: true,
       message: 'Thank you — your download will begin shortly.',

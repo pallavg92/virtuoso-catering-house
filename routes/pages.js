@@ -3,7 +3,7 @@ const router = express.Router();
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const redirects = require('../utils/redirects');
-const { sendInquiry } = require('../utils/mailer');
+const { sendInquiry, sendEnquiryAcknowledgement } = require('../utils/mailer');
 const { validateInquiry, extractFields: extractInquiryFields } = require('../utils/validateInquiry');
 const { sendEvent: sendMetaEvent, newEventId } = require('../utils/metaCapi');
 
@@ -100,6 +100,14 @@ router.post('/lp/first-birthday', async (req, res) => {
       values: req.body,
       status: 'Something went wrong sending your enquiry. Please call us on +91 87009 15463.'
     });
+  }
+
+  // Acknowledgement to the enquirer, if they gave us an email. Guarded
+  // separately so a courtesy-email failure never affects a captured lead.
+  try {
+    await sendEnquiryAcknowledgement(fields);
+  } catch (ackErr) {
+    console.error('First-birthday lander: acknowledgement failed', ackErr.message);
   }
 
   // Conversions API. The same event_id is handed to the thank-you page so the
