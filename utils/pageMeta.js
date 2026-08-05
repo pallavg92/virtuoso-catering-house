@@ -423,6 +423,17 @@ const pages = {
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
   },
+  blogHospitalityBeforeFood: {
+    path: '/blog/best-wedding-caterers-hospitality-before-food',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Why the Best Wedding Caterers Think About How Guests Feel First | Virtuoso Catering House',
+    description: content.blogPosts.find((p) => p.slug === 'best-wedding-caterers-hospitality-before-food').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'best-wedding-caterers-hospitality-before-food').image,
+    post: content.blogPosts.find((p) => p.slug === 'best-wedding-caterers-hospitality-before-food'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Why the Best Wedding Caterers Think About How Guests Feel First', path: '/blog/best-wedding-caterers-hospitality-before-food' }]
+  },
   blogQuietCraft: {
     path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding',
     view: 'blog-post',

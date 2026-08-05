@@ -43,6 +43,7 @@ router.get('/blog/bath-body-works-touch-of-gold-product-launch', (req, res) => r
 router.get('/blog/how-luxury-wedding-caterers-build-custom-menu', (req, res) => render(res, pages.blogMenuBuildingProcess));
 router.get('/blog/food-trends-delhi-ncr-weddings-2026', (req, res) => render(res, pages.blogFoodTrends2026));
 router.get('/blog/bmw-civil-lines-launch-catering', (req, res) => render(res, pages.blogBmwCivilLines));
+router.get('/blog/best-wedding-caterers-hospitality-before-food', (req, res) => render(res, pages.blogHospitalityBeforeFood));
 router.get('/blog/the-quiet-craft-behind-an-unforgettable-wedding', (req, res) => render(res, pages.blogQuietCraft));
 router.get('/blog/does-wedding-presentation-need-big-budget', (req, res) => render(res, pages.blogPresentationMyths));
 router.get('/blog/is-your-tasting-chef-your-wedding-day-chef', (req, res) => render(res, pages.blogTastingChefContinuity));
