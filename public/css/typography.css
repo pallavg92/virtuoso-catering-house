@@ -38,7 +38,15 @@ p:last-child {
 }
 
 .eyebrow--gold {
-  color: var(--color-gold);
+  color: var(--vls-amber);
+}
+
+/* Amber holds 5.25:1 on Parchment but drops to 3.03:1 on Forest. Candlelight
+   is the system's accent type for inverse grounds. R 2.03. */
+.section--charcoal .eyebrow--gold,
+.site-footer .eyebrow--gold,
+.cta-banner .eyebrow--gold {
+  color: var(--vls-candlelight);
 }
 
 .section-title {
