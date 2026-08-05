@@ -1199,7 +1199,11 @@ const blogPosts = [
     title: 'Why the Best Wedding Caterers Think About How Guests Feel Before They Think About Food',
     excerpt: 'The best wedding caterers begin with a question before the menu: how do we want every guest to feel? Food, service and presentation are how they answer it, not the goal itself.',
     date: '2026-08-06',
-    image: '/images/virtuoso-catering-house-weddings-service.jpg',
+    // Supplied by the founder for this post. A composed image rather than a
+    // straight photograph, so it sits outside the Visual Language System's
+    // imagery rules (R 9.09) and its 16:9 ratio is not one of the three the
+    // system permits. Kept deliberately, as a recorded decision.
+    image: '/images/hospitality-before-food-hero.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'The best wedding caterers begin with a question before the menu: how do we want every guest to feel? Food, service and presentation are how they answer it, not the goal itself. It is why families rarely hire whoever cooks best, and instead choose the caterer who will treat their guests the way the host family would.',
