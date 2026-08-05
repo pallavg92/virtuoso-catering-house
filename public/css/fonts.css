@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Virtuōso Visual Language System — the two licensed faces.
+   Self-hosted, not fetched from a CDN: the system loads no external assets,
+   and a webfont that fails to arrive silently drops the brand's voice.
+   ========================================================================== */
+
+/* Voice I Ceremonial — titles, dish names, pull quotes, guest names.
+   Sentence case, tracking −0.005 to 0 em, floor 22 px. */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-italic-400.woff2') format('woff2');
+}
+
+/* Voices II Editorial and III Operational — prose, and tracked capitals
+   for labels, courses, dates and folios. */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('/fonts/worksans-300-400-500-600.woff2') format('woff2');
+}

@@ -110,13 +110,13 @@
   bottom: var(--space-md);
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--color-wine);
   color: var(--color-ivory);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(23, 25, 15, 0.35);
+  box-shadow: none;
   z-index: var(--z-lightbox);
   transition: background var(--dur-fast) ease, transform var(--dur-fast) ease;
 }
@@ -128,5 +128,5 @@
 
 .whatsapp-float:hover {
   background: var(--color-wine-light);
-  transform: scale(1.06);
+  transform: none;
 }

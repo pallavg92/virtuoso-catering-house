@@ -38,7 +38,7 @@
   padding: var(--space-lg) var(--space-md) var(--space-md);
   text-align: center;
   border: var(--border-hairline);
-  box-shadow: 0 30px 80px rgba(23, 25, 15, 0.35);
+  box-shadow: none;
   transform: translateY(24px) scale(0.98);
   opacity: 0;
   transition: transform 0.5s var(--ease-premium), opacity 0.5s var(--ease-premium);
@@ -82,7 +82,7 @@
 .site-popup__option {
   padding: var(--space-2xs) var(--space-sm);
   border: 1px solid rgba(47, 53, 43, 0.25);
-  border-radius: 999px;
+  border-radius: 0;
   font-family: var(--font-sans);
   font-size: var(--fs-small);
   letter-spacing: var(--tracking-wide);

@@ -1,7 +1,7 @@
 /**
  * Central home for GSAP + ScrollTrigger driven motion:
  * load-in reveals for hero/page-intro bands, scroll-triggered reveals
- * for everything else, count-up stats, magnetic buttons, and parallax media.
+ * for everything else, count-up stats, and magnetic buttons.
  */
 (function () {
   if (typeof gsap === 'undefined') return;
@@ -94,25 +94,11 @@
     });
   }
 
-  function initParallax() {
-    document.querySelectorAll('[data-parallax] img').forEach((img) => {
-      gsap.fromTo(
-        img,
-        { yPercent: -9 },
-        {
-          yPercent: 9,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: img.closest('[data-parallax]'),
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-          }
-        }
-      );
-    });
-
-  }
+  // Parallax is prohibited by the Visual Language System (R 11.11): motion
+  // reveals, it does not perform. Nothing scales, nothing slides, nothing
+  // moves at a different rate to the page. The [data-parallax] hooks are
+  // left in the markup as plain image frames.
+  function initParallax() {}
 
   function start() {
     initLoadReveals();

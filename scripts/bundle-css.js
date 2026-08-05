@@ -11,6 +11,7 @@ const CSS_DIR = path.join(__dirname, '..', 'public', 'css');
 const OUTPUT_FILE = path.join(CSS_DIR, 'bundle.css');
 
 const SOURCE_FILES = [
+  'fonts.css',
   'variables.css',
   'base.css',
   'typography.css',

@@ -93,7 +93,7 @@
   margin-left: 0.75em;
   border: 2px solid rgba(253, 248, 240, 0.4);
   border-top-color: var(--color-ivory);
-  border-radius: 50%;
+  border-radius: 0;
   animation: spin 0.7s linear infinite;
 }
 
