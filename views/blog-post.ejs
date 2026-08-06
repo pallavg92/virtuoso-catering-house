@@ -97,6 +97,11 @@
         <% if (post.relatedLink) { %>
         <p class="blog-post__copy reveal-up"><a href="<%= post.relatedLink.path %>" class="link-underline"><%= post.relatedLink.label %></a></p>
         <% } %>
+        <!-- Crawlable route to the enquiry page. The CTA banner below opens a
+             JavaScript drawer, so without this anchor /contact receives no
+             internal link from any Journal post. Per-post copy can override it
+             via post.enquiryLink. -->
+        <p class="blog-post__copy reveal-up"><a href="<%= (post.enquiryLink && post.enquiryLink.path) || '/contact' %>" class="link-underline"><%= (post.enquiryLink && post.enquiryLink.label) || 'Tell us about your event and start an enquiry' %></a></p>
         <% if (post.backLink) { %>
         <a href="<%= post.backLink.path %>" class="link-underline reveal-up"><%= post.backLink.label %></a>
         <% } else { %>
