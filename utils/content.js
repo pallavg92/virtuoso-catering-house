@@ -81,6 +81,21 @@ const ourWork = [
 // The Journal. Every entry here is a real, published post with its own route
 // in routes/pages.js — three scaffolding placeholders that never had routes
 // were removed, since they appeared nowhere but still counted as thin content.
+//
+// REFRESH CYCLE
+// `date` is publication and never changes. `updated` is optional; set it when
+// a post's published copy changes in a way a reader would notice, and it flows
+// through to three places at once: the visible "Updated" line on the article,
+// `dateModified` in its BlogPosting schema, and its `lastmod` in the sitemap.
+//
+// The discipline that matters is what does NOT get an `updated`. Fixing a typo,
+// swapping a word, or adding a place name is not a modification, and stamping
+// those is how a site trains Google to stop believing its own dates. Rewritten
+// openings, replaced sources, changed prices, revised guidance: those are.
+//
+// Suggested cadence: review the five oldest posts each quarter. Anything with
+// a price, a year in the title, or a claim about how the market behaves ages
+// fastest and should be checked first.
 const blogPosts = [
   {
     slug: 'what-we-did-for-the-launch-of-the-lamborghini-temerario',
@@ -836,6 +851,7 @@ const blogPosts = [
     title: 'How Do You Get Wedding Food Presentation That Looks Like a 5-Star Hotel?',
     excerpt: '5-star wedding food presentation comes from two things: manpower and material. Trained butlers and chefs plating at every station, served on pristine bone china and hand-made mono servers.',
     date: '2026-07-16',
+    updated: '2026-08-12',
     image: '/images/blog/virtuoso-catering-house-plated-fine-dining-wedding-presentation.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
@@ -908,6 +924,7 @@ const blogPosts = [
     title: 'Choosing Your Wedding Menu? Weigh These Four Factors, in Order',
     excerpt: 'A wedding menu is best built in four moves: map guest dietary needs, balance signature dishes against crowd-pleasers, sequence the menu to flow, then settle plating and service.',
     date: '2026-07-17',
+    updated: '2026-08-12',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
@@ -1048,6 +1065,7 @@ const blogPosts = [
     title: 'A 20-Minute Gluten-Free Lunch for BMW Group India\'s Leadership Team',
     excerpt: 'Virtuoso Catering House designed and executed a fully gluten-free plated lunch for BMW Group India\'s leadership team at the BMW Infinity Cars, Civil Lines launch, a 30-guest floating service built around a 20-minute serve-and-clear window with zero room for error.',
     date: '2025-08-08',
+    updated: '2026-08-12',
     image: '/images/bmw-civil-lines-launch/virtuoso-catering-house-bmw-civil-lines-hero.jpg',
     relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
@@ -1100,6 +1118,7 @@ const blogPosts = [
     title: 'The Quiet Craft Behind an Unforgettable Wedding',
     excerpt: 'What actually separates a wedding guests forget by Monday from one they\'re still describing months later isn\'t a bigger budget. It\'s restraint, choreography, and a menu built function by function instead of recycled across the day.',
     date: '2026-07-22',
+    updated: '2026-08-12',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See how we compare among wedding caterers in Delhi' },
     lead: [
@@ -1519,6 +1538,7 @@ const bestWeddingCaterersDelhiPage = {
   title: 'Best Wedding Caterers in Delhi: What Sets Them Apart',
   excerpt: 'Six criteria that separate the best wedding caterers in Delhi from the rest: menu design, live stations, plating philosophy, verifiable credentials, pricing tiers, and booking safeguards.',
   date: '2026-07-20',
+  updated: '2026-08-12',
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
   relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
   lead: [
