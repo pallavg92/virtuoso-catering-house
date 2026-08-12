@@ -41,6 +41,21 @@
         </a>
         <% }); %>
       </div>
+
+      <!-- The constraint each project was actually executed against. The grid
+           above is images and titles; this is the part that distinguishes the
+           work from a logo wall. -->
+      <div class="blog-post__prose">
+        <ul class="landing-list">
+          <% ourWork.forEach(function(work) { %>
+          <% if (work.summary) { %>
+          <li class="landing-list__item reveal-up">
+            <a href="<%= work.link %>" class="link-underline"><%= work.title %></a><br><%= work.summary %>
+          </li>
+          <% } %>
+          <% }); %>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -55,6 +70,44 @@
       <div class="blog-post__prose">
         <p class="blog-post__copy reveal-up">Every project on this page started the same way — a conversation about who the room is for and what the day needs to feel like. A product launch, like our work for Lamborghini's Temerario reveal or the Tesla Centre opening in Gurugram, is paced around a stage moment: the menu has to move fast, plate cleanly under photography, and never compete with the reveal itself. A wedding runs on a different clock, with courses timed to the ceremony, the reception, and the dance floor, and a tasting menu built around the couple's own story rather than a generic banquet format.</p>
         <p class="blog-post__copy reveal-up">What stays constant across formats is the process: a private tasting before anything is finalized, a menu built around the venue's kitchen and service constraints, and a service team briefed on the specific choreography of that day. The projects above are a sample — most of what we execute happens for clients who prefer to keep their events private, so this page will grow slowly and selectively rather than all at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE PROJECTS HAVE IN COMMON. Named constraints rather than
+       adjectives, so the page argues for itself instead of asserting. -->
+  <section class="section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light reveal-up">The Common Thread</span>
+        <h2 class="section-title reveal-up">What These Events Had in Common</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="landing-cards landing-cards--compact">
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title landing-card__title--gold">A clock we did not control</h3>
+          <ul class="landing-card__list">
+            <li>A launch is paced around a stage moment, and the food has to work around it rather than the other way round. At BMW Infinity Cars the entire meal had to be served and cleared inside a 20-minute floating window, with no buffet to hide behind.</li>
+          </ul>
+        </div>
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title landing-card__title--gold">A venue without a kitchen</h3>
+          <ul class="landing-card__list">
+            <li>Showroom floors, a race circuit and farmhouses have no working kitchen. We build one on site, including tandoors and refrigeration, so the final stage of cooking happens where the guests are standing.</li>
+          </ul>
+        </div>
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title landing-card__title--gold">Food that had to photograph</h3>
+          <ul class="landing-card__list">
+            <li>At a brand event the food is part of the campaign, not just catering. It has to hold its appearance under lights and cameras for the length of the event, and still be worth eating at the end of it.</li>
+          </ul>
+        </div>
+        <div class="landing-card reveal-up">
+          <h3 class="landing-card__title landing-card__title--gold">Constraints treated as the brief</h3>
+          <ul class="landing-card__list">
+            <li>A fully gluten-free menu, a Jain requirement, a guest list spanning several dietary needs. These get designed into procurement from the start rather than worked around on the day, which is the only way they do not show.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

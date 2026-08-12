@@ -45,6 +45,15 @@
           <span class="service-post-card__kicker"><%= service.kicker %></span>
           <h3 class="service-post-card__title"><%= service.title %></h3>
           <p class="service-post-card__copy"><%= service.copy %></p>
+          <!-- How the service actually runs. The line above says what it is
+               called; these say what a client is buying. -->
+          <% if (service.detail && service.detail.length) { %>
+          <ul class="landing-card__list">
+            <% service.detail.forEach(function(point) { %>
+            <li><%= point %></li>
+            <% }); %>
+          </ul>
+          <% } %>
           <% if (service.slug === 'brand-activations') { %>
           <a href="/luxury-brand-event-catering-delhi-ncr" class="link-underline">Read More</a>
           <% } else if (service.slug === 'weddings') { %>

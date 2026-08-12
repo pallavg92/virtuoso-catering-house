@@ -9,6 +9,12 @@
 const services = [
   {
     slug: 'weddings',
+    detail: [
+      'A separate menu per function, because a mehendi, a cocktail night and a reception are three different moods rather than one event repeated.',
+      'A full tasting with your family at our Sector 61 experience centre before anything is confirmed.',
+      'Every dish rehearsed twice, once at the tasting and once at a dedicated chef\u2019s rehearsal.',
+      'Two servers to every ten guests, held as a standard rather than quoted as an upgrade.'
+    ],
     title: 'Weddings',
     kicker: '01',
     copy: 'From the first toast to the last dance, every course is choreographed to the rhythm of your day — plated with restraint, seasoned with sentiment.',
@@ -16,6 +22,12 @@ const services = [
   },
   {
     slug: 'brand-activations',
+    detail: [
+      'Menus timed backwards from the run of show, so service never competes with the reveal.',
+      'Canap\u00e9s designed to be eaten standing, in one hand, and to photograph as part of the campaign.',
+      'Dietary constraints treated as design inputs rather than exceptions, including fully gluten-free builds.',
+      'Delivered for Lamborghini, Ferrari, Tesla, BMW and Bath & Body Works.'
+    ],
     title: 'Brand Activations',
     kicker: '02',
     copy: 'Product launches, brand experiences, and press previews — for names that never compromise on how a room feels. We design the food and beverage language around the story being told.',
@@ -23,6 +35,12 @@ const services = [
   },
   {
     slug: 'mixology',
+    detail: [
+      'Live stations staffed to keep pace with the room rather than a queue forming at one bar.',
+      'Batch-crafted programmes for volume, built so the tenth drink matches the first.',
+      'Non-alcoholic builds treated with the same seriousness, not an afterthought jug.',
+      'Bar and beverage is always quoted separately from food, so neither hides inside the other.'
+    ],
     title: 'Mixology',
     kicker: '03',
     copy: 'Live mixology stations and batch-crafted cocktail programs, built to move at the pace of the room — from a signature welcome pour to a full bar designed around your menu.',
@@ -30,6 +48,12 @@ const services = [
   },
   {
     slug: 'bespoke',
+    detail: [
+      'Menus built from a conversation about provenance and memory, not selected from a template.',
+      'Speciality formats where a family wants them, including restaurant pop-ups inside a wedding and live sushi counters.',
+      'Jain, vegetarian and vegan menus prepared in separate areas rather than the same line rearranged.',
+      'Sourcing decisions made per dish, which is the largest single lever on what a menu finally costs.'
+    ],
     title: 'Bespoke Menus',
     kicker: '04',
     copy: 'Every menu begins as a conversation. We build tasting notes around memory, provenance, and the story you want your guests to leave with.',
@@ -55,24 +79,46 @@ const instagramAccounts = [
 ];
 
 // Placeholder case studies — replace with real work write-ups (blog-format) as they're published.
+// Each entry carries a `summary` naming the actual constraint of that event.
+// A grid of client logos proves who let us in the door; the guest count, the
+// dietary restriction and the service window are what prove we could execute
+// once inside, and they are the part a reader deciding between caterers is
+// actually weighing. BMW and Bath & Body Works were written up in the Journal
+// but had never been listed here at all.
 const ourWork = [
   {
     title: 'Lamborghini Temerario — Product Launch',
+    summary: 'An F&B experience designed to echo the car itself, for the India reveal of the Temerario.',
     image: '/images/lamborghini-temerario-hero.jpg',
     link: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario'
   },
   {
     title: 'Tesla Centre Gurugram — Grand Opening',
+    summary: '150 senior journalists and HNI guests, served around a stage moment that could not be delayed.',
     image: '/images/virtuoso-catering-house-tesla-centre-gurugram-exterior-2025.jpg',
     link: '/blog/tesla-centre-gurugram-launch-catering'
   },
   {
     title: 'Ferrari Track Day — Buddh International Circuit',
+    summary: '300 Ferraristi, media and celebrity guests, catered trackside across four days.',
     image: '/images/virtuoso-catering-house-esperienza-ferrari-buddh-circuit-2026.jpg',
     link: '/blog/ferrari-track-day-catering-buddh-international-circuit'
   },
   {
+    title: 'BMW Infinity Cars, Civil Lines — Launch',
+    summary: 'A fully gluten-free menu for 30 guests including the then President and CEO of BMW Group India, served and cleared inside a 20-minute floating window. No buffet.',
+    image: '/images/bmw-civil-lines-launch/virtuoso-catering-house-bmw-civil-lines-hero.jpg',
+    link: '/blog/bmw-civil-lines-launch-catering'
+  },
+  {
+    title: 'Bath & Body Works — Touch of Gold',
+    summary: 'A gold truffle tower and branded macarons built for a beauty launch where the food had to photograph as part of the campaign.',
+    image: '/images/virtuoso-catering-house-gold-truffle-tower-bath-body-works-2026.jpg',
+    link: '/blog/bath-body-works-touch-of-gold-product-launch'
+  },
+  {
     title: 'A Wedding Reception',
+    summary: 'Menus built per function rather than one menu repeated, with every dish rehearsed twice before the day.',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
     link: '/blog/how-to-plan-wedding-catering-delhi-ncr'
   }
