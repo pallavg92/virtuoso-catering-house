@@ -74,29 +74,10 @@ const ourWork = [
   }
 ];
 
-// Placeholder blog posts — replace with real posts as they're written.
+// The Journal. Every entry here is a real, published post with its own route
+// in routes/pages.js — three scaffolding placeholders that never had routes
+// were removed, since they appeared nowhere but still counted as thin content.
 const blogPosts = [
-  {
-    slug: 'wedding-menu-around-a-love-story',
-    title: 'Designing a Wedding Menu Around a Love Story',
-    excerpt: 'How we translate a couple’s history — where they met, what they cook together — into a tasting menu that feels personal rather than performed.',
-    date: '2026-05-14',
-    image: img('mv-blog-1', 1200, 800)
-  },
-  {
-    slug: 'what-a-launch-dinner-requires',
-    title: 'What a Product Launch Dinner Actually Requires',
-    excerpt: 'Notes from the field on pacing a room, briefing a brand team, and building a menu that supports the story on stage instead of competing with it.',
-    date: '2026-04-02',
-    image: img('mv-blog-2', 1200, 800)
-  },
-  {
-    slug: 'plating-for-camera-vs-guest',
-    title: 'Plating for the Camera vs. Plating for the Guest',
-    excerpt: 'A dish built for a photograph and a dish built to be eaten are not always the same thing. Here is how we design for both.',
-    date: '2026-02-19',
-    image: img('mv-blog-3', 1200, 800)
-  },
   {
     slug: 'what-we-did-for-the-launch-of-the-lamborghini-temerario',
     url: '/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario',
@@ -2185,8 +2166,15 @@ const process = [
   { step: '04', title: 'The Final Day', copy: 'We execute — quietly, precisely, and completely present, so you experience the event as a guest, not a host.' }
 ];
 
+// The `slug` here is load-bearing beyond routing: it forms the canonical
+// Person @id (`{siteUrl}/team/{slug}#person`) that the About page, the team
+// page and every blog post's `author` field all point at. One entity
+// referenced from many places consolidates authorship signals instead of
+// scattering twenty-odd unconnected mentions of the same name.
 const founders = [
   {
+    slug: 'aarti-sharma',
+    knowsAbout: ['Wedding catering', 'Menu design', 'Culinary direction', 'Hospitality'],
     name: 'Aarti Sharma',
     role: 'Co-Founder',
     bio: 'For Aarti, hospitality is more than exceptional food or flawless service. It is the art of creating experiences that become the soul of a remarkable event. From the very first conversation to the final execution, she believes in listening deeply, understanding every nuance of a client\'s brief, and bringing each vision to life with precision, creativity, and genuine care. Together with co-founder Pallav Goel, she leads the strategic growth and creative direction of Virtuoso Catering House, with a shared vision of establishing it as the benchmark for extraordinary culinary experiences, where excellence is not simply delivered, it is thoughtfully orchestrated.',
@@ -2194,6 +2182,8 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/'
   },
   {
+    slug: 'pallav-goel',
+    knowsAbout: ['Luxury catering', 'Wedding catering', 'Brand event catering', 'Experiential food and beverage'],
     name: 'Pallav Goel',
     role: 'Co-Founder',
     bio: 'Pallav leads Virtuoso’s growth, strategy, and brand direction — deciding which clients the house takes on and what standard it holds itself to. His focus is building Virtuoso into the definitive name in luxury experiential catering across India, from automotive launches to fashion activations to premium private events across Delhi NCR and beyond.',

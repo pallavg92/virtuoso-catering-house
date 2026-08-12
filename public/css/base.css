@@ -19,9 +19,17 @@ body {
   overflow-wrap: break-word;
 }
 
-img, picture, video {
+img, video {
   display: block;
   max-width: 100%;
+}
+
+/* The build wraps every local <img> in a <picture> so a WebP can be offered
+   ahead of the original. `display: contents` means that wrapper generates no
+   box of its own, so the <img> stays the flex/grid item its parent's layout
+   was written against and nothing shifts. */
+picture {
+  display: contents;
 }
 
 a {

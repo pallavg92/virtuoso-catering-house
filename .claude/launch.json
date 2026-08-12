@@ -4,8 +4,32 @@
     {
       "name": "dev-server",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "dist-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "serve:dist"
+      ],
+      "port": 4100
+    },
+    {
+      "name": "ops-hub",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "ops-hub",
+        "run",
+        "dev"
+      ],
+      "port": 3100
     }
   ]
 }

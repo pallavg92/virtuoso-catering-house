@@ -13,6 +13,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const bundleCss = require('./bundle-css');
+const postProcess = require('./html-post');
 const redirects = require('../utils/redirects');
 
 async function renderPage(page) {
@@ -72,9 +73,53 @@ function writeHtaccess() {
       return `RewriteRule ^${pattern}/?$ ${to} [R=301,L]`;
     })
     .join('\n');
-  const htaccess = `RewriteEngine On\n\n${rules}\n`;
+  // Compression and caching. Every block is IfModule-guarded so a host
+  // without the module skips it rather than returning a 500.
+  //
+  // The TTLs are deliberately uneven. Images and fonts get a year because
+  // they are effectively immutable — a changed picture gets a new filename.
+  // CSS and JS get a week, not a year, because bundle.css has no content
+  // hash in its name: cache it for a year and a visitor who has been to the
+  // site before would keep the old stylesheet long after a deploy. HTML is
+  // never cached, so a content change is live immediately.
+  const performance = `
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json application/xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\\.(jpg|jpeg|png|webp|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+`;
+
+  const htaccess = `RewriteEngine On\n\n${rules}\n${performance}`;
   fs.writeFileSync(path.join(DIST_DIR, '.htaccess'), htaccess);
-  console.log(`  wrote dist/.htaccess (${redirects.length} redirects)`);
+  console.log(`  wrote dist/.htaccess (${redirects.length} redirects + compression/caching)`);
 
   // Belt-and-braces noindex for the paid-traffic landers. Every page under
   // /lp/ already carries <meta name="robots" content="noindex">, but an
@@ -96,18 +141,46 @@ function writeHtaccess() {
   }
 }
 
+// Every local image on a built page, for the image sitemap. Read back out of
+// the rendered HTML rather than from the page data, so it reflects what the
+// page actually shows. Runs before the <picture> rewrite, which is why it
+// only ever sees plain <img> tags.
+function imagesOnPage(page) {
+  const rel = page.path === '/' ? 'index.html' : `${page.path.replace(/^\//, '')}.html`;
+  const file = path.join(DIST_DIR, rel);
+  if (!fs.existsSync(file)) return [];
+  const html = fs.readFileSync(file, 'utf8');
+  const srcs = [...html.matchAll(/<img\b[^>]*\ssrc="([^"]+)"/gi)]
+    .map((m) => m[1])
+    .filter((src) => /^\/(images|img)\//.test(src));
+  return [...new Set(srcs)];
+}
+
 function writeSitemap() {
-  const today = new Date().toISOString().slice(0, 10);
   const urls = Object.values(pages)
     .filter((page) => !page.excludeFromSitemap)
     .map((page) => {
       const loc = siteUrl + (page.path === '/' ? '/' : page.path);
-      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;
+
+      // A real date or none at all. Stamping every URL with the build date
+      // told Google all 37 pages changed on every deploy, which is how a
+      // site teaches Google to ignore its lastmod altogether — and that is
+      // exactly the freshness signal worth keeping accurate.
+      const modified = page.lastmod || (page.post && (page.post.updated || page.post.date));
+      const lastmod = modified ? `\n    <lastmod>${modified}</lastmod>` : '';
+
+      const images = imagesOnPage(page)
+        .map((src) => `\n    <image:image>\n      <image:loc>${siteUrl}${src}</image:loc>\n    </image:image>`)
+        .join('');
+
+      return `  <url>\n    <loc>${loc}</loc>${lastmod}${images}\n  </url>`;
     })
     .join('\n');
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`;
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), xml);
-  console.log('  wrote dist/sitemap.xml');
+  const dated = Object.values(pages).filter((p) => !p.excludeFromSitemap && (p.lastmod || (p.post && p.post.date))).length;
+  console.log(`  wrote dist/sitemap.xml (${dated} URLs with a real lastmod, images included)`);
 }
 
 async function build() {
@@ -126,6 +199,9 @@ async function build() {
 
   writeHtaccess();
   writeSitemap();
+
+  // Last, because it rewrites the HTML that everything above produced.
+  postProcess();
 
   console.log('Build complete -> dist/');
 }

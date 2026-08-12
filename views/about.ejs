@@ -51,23 +51,24 @@
     </div>
   </section>
 
+  <!-- Same @id as the node published on /team/{slug}, so these two pages
+       describe one entity rather than two competing ones. `url` points at
+       the team page because that is the canonical home for the person. -->
   <% founders.forEach(function(founder) { %>
   <script type="application/ld+json">
-  {
+  <%- JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "<%= founder.name %>",
-    "jobTitle": "<%= founder.role %>",
-    "description": "<%- JSON.stringify(founder.bio).slice(1, -1) %>",
-    "image": "<%= siteUrl %><%= founder.image %>",
-    "url": "<%= siteUrl %>/about",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "<%= business.name %>",
-      "url": "<%= siteUrl %>"
-    },
-    "sameAs": ["<%= founder.linkedin %>"]
-  }
+    "@id": siteUrl + '/team/' + founder.slug + '#person',
+    "name": founder.name,
+    "jobTitle": founder.role,
+    "description": founder.bio,
+    "image": siteUrl + founder.image,
+    "url": siteUrl + '/team/' + founder.slug,
+    "knowsAbout": founder.knowsAbout,
+    "worksFor": { "@id": siteUrl + '/#organization' },
+    "sameAs": [founder.linkedin]
+  }) %>
   </script>
   <% }); %>
 

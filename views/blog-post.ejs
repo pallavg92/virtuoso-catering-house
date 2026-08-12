@@ -23,7 +23,16 @@
     <div class="page-intro__content container">
       <%- include('partials/breadcrumb') %>
       <% if (post.date) { %>
-      <span class="eyebrow eyebrow--light reveal-up"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+      <!-- <time datetime> gives crawlers an unambiguous ISO date; the visible
+           text stays in the reader's format. If post.updated is set it shows
+           as well, since a visible update date is worth as much to a reader
+           deciding whether to trust the piece as it is to a crawler. -->
+      <span class="eyebrow eyebrow--light reveal-up">
+        <time datetime="<%= post.date %>"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>
+        <% if (post.updated && post.updated !== post.date) { %>
+        · Updated <time datetime="<%= post.updated %>"><%= new Date(post.updated).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>
+        <% } %>
+      </span>
       <% } %>
       <h1 class="page-intro__title reveal-up"><%= post.title %></h1>
     </div>

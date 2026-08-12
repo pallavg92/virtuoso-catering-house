@@ -56,6 +56,24 @@ const pages = {
     ogImage: content.aboutHeroImage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
   },
+  // Author entity page. Every post's `author` field resolves to the Person
+  // node published here, and the page lists back every article they wrote.
+  teamPallavGoel: {
+    path: '/team/pallav-goel',
+    view: 'team-member',
+    activePage: 'about',
+    bodyClass: 'page-team-member',
+    title: 'Pallav Goel, Co-Founder — Virtuoso Catering House',
+    description: 'Pallav Goel is Co-Founder of Virtuoso Catering House in Noida, leading growth, strategy and brand direction across luxury wedding and brand event catering in Delhi NCR.',
+    ogImage: content.founders.find((f) => f.slug === 'pallav-goel').image,
+    member: content.founders.find((f) => f.slug === 'pallav-goel'),
+    authoredPosts: content.blogPosts.filter((p) => p.author && p.author.name === 'Pallav Goel'),
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+      { name: 'Pallav Goel', path: '/team/pallav-goel' }
+    ]
+  },
   ourWork: {
     path: '/our-work',
     view: 'our-work',
@@ -200,30 +218,10 @@ const pages = {
   },
   // Paid-traffic landing pages. noindex so they cannot compete with the SEO
   // pages targeting the same keywords, and excluded from the sitemap below.
-  lpWedding: {
-    path: '/lp/private-celebrations-delhi-ncr',
-    view: 'lander',
-    activePage: '',
-    bodyClass: 'page-lander',
-    noindex: true,
-    excludeFromSitemap: true,
-    title: content.celebrationsLander.metaTitle,
-    description: content.celebrationsLander.metaDescription,
-    ogImage: content.celebrationsLander.image,
-    breadcrumbs: []
-  },
-  lpWeddingThanks: {
-    path: '/lp/private-celebrations-delhi-ncr/thank-you',
-    view: 'lander-thanks',
-    activePage: '',
-    bodyClass: 'page-lander-thanks',
-    noindex: true,
-    excludeFromSitemap: true,
-    title: 'Thank You | Virtuoso Catering House',
-    description: 'Your wedding menu download is on its way.',
-    ogImage: content.celebrationsLander.image,
-    breadcrumbs: []
-  },
+  // The private-celebrations lander was superseded by /lp/first-birthday and
+  // is retired. Both its URLs 301 to the enquiry page via utils/redirects.js
+  // rather than 404ing, so any ad, bookmark or message still carrying the old
+  // link lands somewhere useful.
   landingWeddingCaterersNoida: {
     path: '/wedding-caterers-in-noida',
     view: 'landing',
@@ -489,5 +487,25 @@ const pages = {
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Press', path: '/press' }]
   }
 };
+
+// Service schema data for the commercial landing pages. Kept as one map
+// rather than a `service` key on each page so the six stay consistent with
+// each other, and so the shape is obvious when a seventh location is added.
+// `areaServed` is the city the page actually targets, not the whole of NCR —
+// claiming a wider area than the page addresses weakens the entity signal.
+const SERVICE_META = {
+  'best-catering-services-in-noida': { name: 'Catering Services', areaServed: 'Noida' },
+  'catering-services-in-greater-noida': { name: 'Catering Services', areaServed: 'Greater Noida' },
+  'corporate-catering-services-in-noida': { name: 'Corporate Event Catering', areaServed: 'Noida' },
+  'luxury-brand-event-catering-delhi-ncr': { name: 'Brand Event Catering', areaServed: 'Delhi NCR' },
+  'wedding-caterers-in-delhi': { name: 'Wedding Catering', areaServed: 'Delhi' },
+  'wedding-caterers-in-noida': { name: 'Wedding Catering', areaServed: 'Noida' }
+};
+
+Object.values(pages).forEach((page) => {
+  if (page.landingSlug && SERVICE_META[page.landingSlug]) {
+    page.service = SERVICE_META[page.landingSlug];
+  }
+});
 
 module.exports = { siteUrl, business, pages };

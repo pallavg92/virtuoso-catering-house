@@ -33,6 +33,7 @@ router.get('/sitemap.xml', (req, res) => {
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
 router.get('/our-work', (req, res) => render(res, pages.ourWork));
+router.get('/team/pallav-goel', (req, res) => render(res, pages.teamPallavGoel));
 router.get('/social', (req, res) => render(res, pages.social));
 router.get('/blog', (req, res) => render(res, pages.blog));
 router.get('/blog/what-we-did-for-the-launch-of-the-lamborghini-temerario', (req, res) => render(res, pages.blogLamborghiniTemerario));
@@ -137,8 +138,6 @@ router.get('/lp/first-birthday/thank-you', (req, res) => render(res, {
   eventId: typeof req.query.eid === 'string' ? req.query.eid : ''
 }));
 
-router.get('/lp/private-celebrations-delhi-ncr', (req, res) => render(res, pages.lpWedding));
-router.get('/lp/private-celebrations-delhi-ncr/thank-you', (req, res) => render(res, pages.lpWeddingThanks));
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
 router.get('/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding', (req, res) => render(res, pages.hireWeddingCaterersDelhi));
 router.get('/best-wedding-caterers-in-delhi-what-sets-them-apart', (req, res) => render(res, pages.bestWeddingCaterersDelhi));

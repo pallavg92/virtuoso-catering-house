@@ -25,7 +25,7 @@ if (/(^|\.)virtuosocatering\.com$/.test(location.hostname)) {
   fbq('track', 'PageView');
 }
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
@@ -101,6 +101,7 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "<%= siteUrl %>/#organization",
   "name": "<%= business.name %>",
   "url": "<%= siteUrl %>",
   "logo": "<%= business.logo %>",
@@ -117,6 +118,50 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
   "sameAs": <%- JSON.stringify(business.sameAs) %>
 }
 </script>
+
+<% if (typeof post !== 'undefined' && post && post.title) { %>
+<!-- Article-level structured data. `author` is a bare @id reference rather
+     than an inline Person: the full node lives on /team/{slug}, so every
+     post reinforces one entity instead of describing a new one each time.
+     dateModified falls back to the publication date — never a build date,
+     which would claim a freshness the content has not earned. -->
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": canonicalUrl + '#article',
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "headline": post.title,
+  "description": post.excerpt || description,
+  "image": siteUrl + post.image,
+  "datePublished": post.date,
+  "dateModified": post.updated || post.date,
+  "inLanguage": "en-IN",
+  "author": post.author && post.author.name === 'Pallav Goel'
+    ? { "@id": siteUrl + '/team/pallav-goel#person' }
+    : { "@type": "Organization", "@id": siteUrl + '/#organization' },
+  "publisher": { "@id": siteUrl + '/#organization' }
+}) %>
+</script>
+<% } %>
+
+<% if (typeof service !== 'undefined' && service) { %>
+<!-- Service schema for the commercial landing pages, tying the offering to
+     the provider entity and to the single city the page actually targets. -->
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": canonicalUrl + '#service',
+  "name": service.name,
+  "serviceType": service.name,
+  "description": description,
+  "provider": { "@id": siteUrl + '/#organization' },
+  "areaServed": { "@type": "City", "name": service.areaServed },
+  "url": canonicalUrl
+}) %>
+</script>
+<% } %>
 
 <% if (typeof breadcrumbs !== 'undefined' && breadcrumbs && breadcrumbs.length > 1) { %>
 <script type="application/ld+json">

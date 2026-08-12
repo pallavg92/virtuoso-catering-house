@@ -47,6 +47,12 @@ const redirects = [
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-wedding-catering-delhi-ncr', to: '/wedding-caterers-in-noida' },
   { from: '/luxury-brand-event-catering-delhi-ncr/luxury-private-event-catering-delhi-ncr', to: '/services' },
 
+  // Retired paid lander, superseded by /lp/first-birthday. It was noindex so
+  // there is no search equity to preserve, but old ad links and bookmarks
+  // still exist — send them to the enquiry page rather than a 404.
+  { from: '/lp/private-celebrations-delhi-ncr/thank-you', to: '/contact' },
+  { from: '/lp/private-celebrations-delhi-ncr', to: '/contact' },
+
   // A WordPress-uploaded menu PDF still has real Search Console impression
   // volume (1,299 in the last 90 days) — redirect it to the current
   // download instead of letting it 404 now that /wp-content/ isn't served.
