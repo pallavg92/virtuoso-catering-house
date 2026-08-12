@@ -1,6 +1,10 @@
-// Centralized placeholder content for Virtuoso Catering House.
-// Images are sourced from picsum.photos (seeded, so they stay stable across reloads).
-const img = (seed, w = 1600, h = 2000) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
+// Content source of truth for Virtuoso Catering House.
+//
+// Every image path here points at a real file in /public/images. There was a
+// picsum.photos helper in this spot that generated random remote placeholders;
+// four of them were still live, including the hero and og:image of the Tier-1
+// Noida landing page. It is deliberately gone rather than left unused, so a
+// placeholder cannot reach production again by being the convenient option.
 
 const services = [
   {
@@ -343,7 +347,7 @@ const blogPosts = [
     title: 'How to Plan Wedding Catering in Delhi NCR: A Practical Guide',
     excerpt: 'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood, choosing a specialist caterer over a banquet kitchen, and locking your date with a real tasting before anything is signed.',
     date: '2026-07-08',
-    image: img('mv-blog-wedding-guide', 1200, 800),
+    image: '/images/virtuoso-catering-house-weddings-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Planning wedding catering in Delhi NCR comes down to three decisions: matching the menu to each function’s mood instead of repeating one menu across the wedding, choosing a specialist caterer over a banquet kitchen for exclusive ownership of food and presentation, and locking your date with a tasting at the caterer’s own kitchen before anything is signed.'
@@ -1820,7 +1824,7 @@ const landingPages = {
     metaDescription: 'Virtuoso offers catering services in Noida for weddings, parties, and private events. Book trusted caterers in Noida for gourmet food and exceptional service.',
     eyebrow: 'Noida',
     h1: 'Catering Services in Noida, Trusted by Families Across the City',
-    image: img('mv-landing-noida', 2400, 1200),
+    image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
     lead: {
       heading: 'Catering Services in Noida for Weddings and Events',
       paragraphs: [
@@ -1893,79 +1897,118 @@ const landingPages = {
     ]
   },
   'catering-services-in-greater-noida': {
-    metaTitle: 'Caterers with Premium Catering Services in Greater Noida',
-    metaDescription: 'Virtuoso Catering provides premium catering services in Greater Noida. Book our expert caterers for weddings, parties, and events. Get an instant quote now!',
+    metaTitle: 'Caterers in Greater Noida | Premium Catering Services',
+    metaDescription: 'Virtuoso Catering House caters weddings, brand launches and private celebrations across Greater Noida, from Jaypee Greens and Pari Chowk to Sector 150 and Greater Noida West.',
     eyebrow: 'Greater Noida',
-    h1: 'Trusted Caterers in Greater Noida for Every Occasion',
-    image: img('mv-landing-greater-noida', 2400, 1200),
+    h1: 'Caterers in Greater Noida for Weddings, Brand Events and Private Celebrations',
+    image: '/images/virtuoso-catering-house-live-cooking-station-tesla-centre-gurugram-2025-1.jpg',
     lead: {
-      heading: 'Best Caterers in Greater Noida',
+      heading: 'Catering Services in Greater Noida',
       paragraphs: [
-        'Looking for the best caterers in Greater Noida? Your search ends with us. We guarantee the taste that brings people together.',
-        'Our catering services in Greater Noida are tailored to deliver a memorable culinary experience. Be it for a wedding or a birthday party or a private gathering.',
-        'The catering team at Virtuoso Catering ensures for your special occasion, great taste and quality.'
+        'Virtuoso Catering House provides catering services across Greater Noida for weddings, brand launches and private celebrations, working out of our kitchen and experience centre in Noida, Sector 61. We take exclusive ownership of three things on every event: the food, the presentation, and the crockery and cutlery. A banquet kitchen divides all three across whatever else it is running that night.',
+        'Greater Noida asks something different of a caterer than Noida does. The venues are further apart, the farmhouses along the Yamuna Expressway and around Jaypee Greens have no permanent kitchen to speak of, and the drive from a central production kitchen is long enough that food finished in advance arrives tired. So we build the kitchen on site. Tandoors, live counters and finishing stations go up at the venue, and the last stage of cooking happens where your guests are standing rather than an hour away.',
+        'That approach costs more than sending trays from a central kitchen, which is why we are not the right answer for every event in Greater Noida. It is the right answer when the food is meant to be remembered rather than merely served.'
       ]
     },
     specializations: {
-      heading: 'Catering Specializations',
+      heading: 'What We Cater in Greater Noida',
       items: [
-        { title: 'Wedding Catering In Greater Noida', points: ['Wedding is an important milestone. Ensure the food served to guests is memorable. We as trusted wedding caterers provide full-service solutions that encompasses:', 'Pre-wedding tastings.', 'Diverse menus. From North Indian and South Indian to Mughlai, Chinese, Continental, and Fusion.', 'Multi-cuisine buffet. Or plated services.', 'Desserts and mocktail stations.', 'Trained staff and uniformed servers.'] },
-        { title: 'Corporate Catering Services', points: ['Be it a business event or an office party or a product launch, we cater to them all. Known for professionalism and quality, our corporate catering services in Greater Noida covers following services:', 'Custom Corporate Menus.', 'Packed Meal Options.', 'Buffet Setups.', 'On-site service staff.', 'Flexible packages for regular office lunch / dinner.'] },
-        { title: 'Birthday & Party Catering', points: ['Planning your or dear one’s birthday party? Or planning a family celebration? Whatever be it, our catering services in Greater Noida offer diverse menus. We are just perfect kids, teens, and adults alike. We encompass:', 'Custom Birthday Menus.', 'Themed Cakes and Desserts.', 'LIVE Chaat, Tandoor, and Pasta Counters.', 'Return Gift Packages (on request).'] },
-        { title: 'Outdoor & Private Event Catering', points: ['Covers private dinners and religious ceremonies. Also, anniversaries’, and festive events.', 'Mobile Kitchen Setups.', 'Tent & Décor Arrangements (Optional).', 'Eco-friendly disposable serving ware.', 'On-site supervision.'] }
+        {
+          title: 'Wedding Catering in Greater Noida',
+          points: [
+            'A wedding is a sequence of functions rather than one event with one menu, and each function wants a different mood on the plate. Mehendi menus stay lighter and lean regional, because the cocktail night that follows is where the most ambitious eating of the whole wedding belongs.',
+            'Every family tastes the full menu before anything is confirmed, at our experience centre rather than at somebody else’s live event.',
+            'Aarti Sharma, our co-founder, runs the tasting personally, and the team she trains at rehearsal is the team that cooks on the day.',
+            'Each dish is rehearsed twice before your wedding, once at the tasting and once at a dedicated chef’s rehearsal.',
+            'Service runs at two servers to every ten guests, which is what keeps courses moving and tables clear.'
+          ]
+        },
+        {
+          title: 'Brand and Corporate Event Catering',
+          points: [
+            'Product launches, showroom openings and press previews, where the food carries part of the brand story rather than simply feeding the room. We have done this for Lamborghini, Ferrari, BMW, Tesla and Bath & Body Works.',
+            'Menus built around the brief, including canapés designed to be eaten standing and photographed well.',
+            'Live stations that give guests something to watch as well as eat.',
+            'Timings built backwards from the run of show, so service never competes with the speeches.'
+          ]
+        },
+        {
+          title: 'Private Celebrations',
+          points: [
+            'Milestone birthdays, anniversaries and family gatherings at farmhouses, apartments and clubhouses across Greater Noida.',
+            'Plated service where the room suits it, stations where it does not.',
+            'Menus that account for Jain, vegetarian and vegan guests properly, prepared in separate areas rather than assembled from the same line.'
+          ]
+        },
+        {
+          title: 'Outdoor and Farmhouse Events',
+          points: [
+            'Greater Noida has more open-air and farmhouse venues than most of NCR, and they are the hardest events to execute well.',
+            'Full mobile kitchen built at the venue, including tandoors and refrigeration.',
+            'Power and water requirements surveyed before the date, not discovered on the day.',
+            'Weather contingencies planned for October through February, when most of these events actually happen.'
+          ]
+        }
       ]
     },
     extraLists: [
       {
-        heading: 'Multi-cuisine Catering In Greater Noida',
-        intro: 'We offer a diverse confluence of cuisines. We cater to varied palates and preferences. Each menu is crafted with attention to detail.',
-        items: ['North Indian.', 'South Indian.', 'Bengali & Eastern India Delicacies.', 'Gujarati & Marathi dishes.', 'Chinese.', 'Italian.', 'Continental.', 'Mediterranean & Lebanese.', 'Thai, Japanese, & Korean (on request).', 'Indo-Chinese.', 'Tandoori & Grilled LIVE Stations.', 'Pasta & Salad Bars.', 'Chaat Counters.', 'Mocktails & Beverage Stations.'],
-        outro: 'Every item at Virtuoso is made on-site freshly. We delivered hot food to your venue in temperature-controlled vehicles.'
+        heading: 'Cuisines We Cook',
+        intro: 'We would rather cook fifteen things properly than list forty. These are the kitchens our chefs actually specialise in.',
+        items: ['North Indian and Mughlai.', 'South Indian.', 'Bengali and Awadhi.', 'Gujarati, Rajasthani and Marathi.', 'Italian and Mediterranean.', 'Lebanese and Levantine.', 'Pan-Asian, including a live sushi counter.', 'Continental and modern European.', 'Tandoor and grill stations.', 'Chaat and regional street food, done well.'],
+        outro: 'Every dish is finished on site. Nothing is cooked to completion in a central kitchen and reheated at your venue, which is the single most common reason catered food disappoints.'
       },
       {
-        heading: 'Food Safety First – Hygienic Catering',
-        intro: 'Food hygiene is in today’s health-conscious world no more optional. It is more important than ever. We as leading caterers in Greater Noida, strictly conform to:',
-        items: ['Sanitized Kitchen Practices.', 'FSSAI Compliance.', 'Use of fresh produce and filtered water.', 'Food-grade packaging materials.', 'Audit of all our kitchens.', 'Regular Staff Health Checks.']
+        heading: 'Food Safety and Hygiene',
+        intro: 'Food safety in India is governed by the Food Safety and Standards Authority of India, and catering at scale is exactly where standards slip when nobody is watching. Ours are non-negotiable.',
+        items: ['Licensed and operating under FSSAI regulation.', 'Cold chain maintained from procurement through to service.', 'Separate preparation areas for vegetarian, Jain and non-vegetarian menus.', 'Filtered water used for cooking as well as drinking.', 'Staff health checks on a fixed schedule.', 'On-site supervision by a named person for the duration of every event.']
       },
       {
-        heading: 'Areas We Serve In Greater Noida',
-        intro: 'We offer catering services in Greater Noida and surrounding areas including:',
-        items: ['Alpha, Beta, & Gamma Sectors.', 'Sector 150 & 151.', 'Knowledge Park I, II, III.', 'Pari Chowk.', 'Omega, Delta, Zeta Sectors.', 'Noida Extension / Greater Noida West.', 'Ecotech & Industrial Zones.', 'YEIDA & Jaypee Greens.'],
-        outro: 'We bring whether your event is in a farmhouse or office space or banquet hall or society clubhouse, within your reach our services.'
+        heading: 'Areas We Serve in Greater Noida',
+        intro: 'We cater across Greater Noida and the surrounding belt, including:',
+        items: ['Alpha, Beta and Gamma sectors.', 'Sector 150 and Sector 151.', 'Knowledge Park I, II and III.', 'Pari Chowk and the Expo Mart area.', 'Omega, Delta and Zeta sectors.', 'Greater Noida West, also known as Noida Extension.', 'Ecotech and the industrial belt.', 'Jaypee Greens and the YEIDA farmhouse corridor.'],
+        outro: 'Farmhouse, clubhouse, banquet hall or office rooftop, the kitchen comes to the venue. Tell us where the event is and we will tell you honestly whether we can execute it to our standard there.'
       }
     ],
     whyUs: {
-      heading: 'Why Us For Catering Services In Greater Noida?',
-      intro: 'Here is why we stand apart from the rest.',
+      heading: 'Why Families in Greater Noida Choose a Specialist Caterer',
+      intro: 'The real decision is not which caterer. It is caterer or banquet. Here is the difference, stated plainly.',
       items: [
-        { title: 'Customized menu options.', points: [] },
-        { title: 'Competitive pricing sans hidden charges.', points: [] },
-        { title: 'Quality assurance in every dish served.', points: [] },
-        { title: 'Personalized attention.', points: [] },
-        { title: 'On-time delivery and setup.', points: [] },
-        { title: '24/7 support.', points: [] }
+        { title: 'The food is ours alone', points: ['Menu, sourcing and kitchen execution belong to one team, not shared with the two other functions a banquet is running the same evening.'] },
+        { title: 'The presentation is designed', points: ['Every course, station and counter is styled deliberately rather than assembled from a standard banquet layout.'] },
+        { title: 'The tableware is chosen', points: ['Crockery, cutlery and glassware are selected for the menu, which is the detail most guests notice without being able to name.'] },
+        { title: 'You taste before you commit', points: ['A full tasting at our Noida experience centre, hosted with your family, before anything is signed.'] },
+        { title: 'The tasting chef is the wedding chef', points: ['No handover between a tasting kitchen and an execution kitchen. What you approve is what gets cooked.'] },
+        { title: 'Staffed properly', points: ['Two servers for every ten guests, so nobody waits and no table sits uncleared.'] }
       ]
     },
     closing: {
-      heading: 'Book The Best Caterers In Greater Noida Today',
+      heading: 'Talk to Us About Your Event in Greater Noida',
       paragraphs: [
-        'Want a tension-free event? If so, it should start with finding the right food partner for the event. That’s where we come in. Let us help make your event memorable with lasting deliciously memories. We’re best placed with our spotless track record and scores of happy customers, to serve up tasty experience that’s satisfying.'
+        'Start with a conversation rather than a price list. Tell us what the occasion is, roughly how many people, and where in Greater Noida it is happening. We will tell you what is genuinely possible at that venue and what it costs to do properly. If we are not the right fit, we would rather say so early than after you have committed.',
+        'Weddings and larger celebrations start at ₹3,000 per plate for the core meal. Bar and beverage service is priced separately.'
       ]
     },
     faq: [
-      { q: 'Are tasting sessions provided before booking?', a: 'Yes, we do offer them. This is upon request for bulk events or weddings.' },
-      { q: 'Should your services be booked in advances?', a: 'Yes, book at least 2-4 weeks in advance. This ensures availability.' },
-      { q: 'Do you offer and handle vegetarian-only or Jain menus?', a: 'Yes, we do. We also specialize in Vegetarian, Jain, and Vegan Menus with dedicated kitchen areas.' },
-      { q: 'Are wait staff and cutlery offered?', a: 'Yes. All our packages include servers, cutlery, and buffet setup. This is unless specified otherwise.' },
-      { q: 'Is your food FSSAI certified?', a: 'Yes. We operate strictly under FSSAI guidelines. We also maintain food safety standards.' }
-    ]
+      { q: 'How much does catering cost in Greater Noida?', a: 'For a genuinely luxury standard, the core meal starts at ₹3,000 per plate, with bar and beverage priced separately. Corporate events typically run ₹2,500 to ₹6,000 per guest. The final number moves with menu complexity, service style and staffing rather than guest count alone.' },
+      { q: 'Do you cater at farmhouses in Greater Noida with no kitchen?', a: 'Yes, and it is a large part of what we do along the Yamuna Expressway and around Jaypee Greens. We build a full mobile kitchen at the venue, including tandoors and refrigeration, so the final stage of cooking happens on site rather than an hour away.' },
+      { q: 'Can we taste the menu before booking?', a: 'Yes, and we would rather you did. Tastings are hosted at our experience centre in Noida, Sector 61, not at somebody else’s live event, so there is room for honest conversation. Aarti Sharma, our co-founder, runs them personally.' },
+      { q: 'How far in advance should we book?', a: 'For weddings on peak muhurat dates, three to six months is realistic, because every family with that date is competing for the same vendors and staff. For corporate events and private celebrations, three to four weeks is usually enough.' },
+      { q: 'Do you handle Jain, vegetarian and vegan menus?', a: 'Yes, with separate preparation areas rather than the same line rearranged. Jain requirements in particular need to be planned into procurement, not worked around on the day, so tell us early.' },
+      { q: 'Are you FSSAI licensed?', a: 'Yes. We are licensed and operate under Food Safety and Standards Authority of India regulation, with cold chain maintained from procurement through to service and scheduled staff health checks.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   },
   'corporate-catering-services-in-noida': {
     metaTitle: 'Corporate Caterers Noida | Corporate Catering Services in Noida',
     metaDescription: 'Make your events memorable with Virtuoso Catering. Book now for corporate catering services in Noida with professional corporate caterers you can trust.',
     eyebrow: 'Corporate',
     h1: 'Corporate Catering Services In Noida',
-    image: img('mv-landing-corporate', 2400, 1200),
+    image: '/images/virtuoso-catering-house-canape-tesla-centre-gurugram-2025.jpg',
     lead: {
       paragraphs: [
         'Planning a large-scale corporate event?',
@@ -2434,7 +2477,7 @@ module.exports = {
   eventTypes,
   heroImage: '/images/hero-candlelit-florals.jpg',
   aboutHeroImage: '/images/virtuoso-catering-house-about-hero.jpg',
-  contactOfficeImage: img('mv-office', 1400, 1700),
+  contactOfficeImage: '/images/virtuoso-catering-house-about-hero.jpg',
   blogHeroImage: '/images/virtuoso-catering-house-journal-hero.svg',
   servicesHeroImage: '/images/virtuoso-catering-house-services-hero.svg'
 };
