@@ -64,6 +64,19 @@ function webpSize(buf) {
   return null;
 }
 
+// An SVG has no header to read, but it shifts the layout exactly like a
+// raster image does when it arrives unsized. Explicit width/height win;
+// otherwise the viewBox gives the intrinsic ratio, which is all the browser
+// needs to reserve the right box.
+function svgSize(text) {
+  const w = text.match(/<svg[^>]*\bwidth="([\d.]+)/i);
+  const h = text.match(/<svg[^>]*\bheight="([\d.]+)/i);
+  if (w && h) return { width: Math.round(+w[1]), height: Math.round(+h[1]) };
+  const box = text.match(/viewBox="[\d.\-]+\s+[\d.\-]+\s+([\d.]+)\s+([\d.]+)"/i);
+  if (box) return { width: Math.round(+box[1]), height: Math.round(+box[2]) };
+  return null;
+}
+
 const sizeCache = new Map();
 
 function dimensions(srcPath) {
@@ -71,10 +84,14 @@ function dimensions(srcPath) {
   let result = null;
   try {
     const file = path.join(DIST, srcPath.replace(/^\//, '').split('?')[0]);
-    const buf = fs.readFileSync(file);
-    if (buf.slice(0, 2).toString('hex') === 'ffd8') result = jpegSize(buf);
-    else if (buf.slice(1, 4).toString('ascii') === 'PNG') result = pngSize(buf);
-    else if (buf.slice(0, 4).toString('ascii') === 'RIFF') result = webpSize(buf);
+    if (/\.svg$/i.test(file)) {
+      result = svgSize(fs.readFileSync(file, 'utf8'));
+    } else {
+      const buf = fs.readFileSync(file);
+      if (buf.slice(0, 2).toString('hex') === 'ffd8') result = jpegSize(buf);
+      else if (buf.slice(1, 4).toString('ascii') === 'PNG') result = pngSize(buf);
+      else if (buf.slice(0, 4).toString('ascii') === 'RIFF') result = webpSize(buf);
+    }
   } catch {
     result = null;
   }
@@ -96,9 +113,10 @@ function processHtml(html) {
 
   const out = html.replace(IMG_RE, (tag) => {
     const src = attr(tag, 'src');
-    // Only local raster images. Tracking pixels and anything remote are left
-    // exactly as they are.
-    if (!src || !/^\/(images|img)\//.test(src) || !/\.(jpe?g|png)$/i.test(src)) return tag;
+    // Local images only — tracking pixels and anything remote are left exactly
+    // as they are. SVGs get sized and prioritised like everything else; they
+    // just have no WebP to offer, which the wrap step below handles.
+    if (!src || !/^\/(images|img)\//.test(src) || !/\.(jpe?g|png|svg)$/i.test(src)) return tag;
 
     let next = tag;
 

@@ -14,6 +14,7 @@ const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const bundleCss = require('./bundle-css');
 const postProcess = require('./html-post');
+const minifyJs = require('./minify-js');
 const redirects = require('../utils/redirects');
 
 async function renderPage(page) {
@@ -202,6 +203,7 @@ async function build() {
 
   // Last, because it rewrites the HTML that everything above produced.
   postProcess();
+  await minifyJs();
 
   console.log('Build complete -> dist/');
 }

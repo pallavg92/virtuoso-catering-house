@@ -508,4 +508,10 @@ Object.values(pages).forEach((page) => {
   }
 });
 
+// The services hub is not a location page, so it has no landingSlug, but it
+// is the page that describes the offering itself and needs the Service node
+// as much as any of them. Delhi NCR is right here — unlike the city pages,
+// this one genuinely addresses the whole region.
+pages.services.service = { name: 'Luxury Event Catering', areaServed: 'Delhi NCR' };
+
 module.exports = { siteUrl, business, pages };
