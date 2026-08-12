@@ -2252,6 +2252,80 @@ const founders = [
   }
 ];
 
+// Long-form content for /about. This page is the one a person, or a model,
+// reads to decide whether Virtuoso is a real operator or a lead-generation
+// shell, so every claim below is one that can be checked elsewhere on the
+// site: named clients, named events, a licensed kitchen, a published address,
+// a stated price floor. Nothing here asserts a founding year, a headcount, an
+// award or an event tally, because none of those are recorded anywhere yet.
+const aboutPage = {
+  intro: {
+    heading: 'A Catering House, Not a Banquet Kitchen',
+    paragraphs: [
+      'Virtuoso Catering House is a luxury catering company based at A-15, A-Block, Sector 61, Noida, working across Delhi NCR. We are led by two co-founders, Aarti Sharma and Pallav Goel, and we cater three kinds of event: weddings, brand and product launches, and private celebrations.',
+      'The distinction that matters most in this business is the one between a caterer and a banquet. A banquet kitchen divides its attention across every function it is running that night, and the food, the presentation and the tableware are each somebody else’s partial responsibility. We take exclusive ownership of all three. That is the whole proposition, and everything below is what it costs to mean it.',
+      'It also means we are not the right answer for every event. Our core wedding menu starts at ₹3,000 per plate, and there is a level below which a genuinely luxury standard cannot be executed without something quietly being cut. We would rather say that early than discover it together in a kitchen at eleven at night.'
+    ]
+  },
+  standard: {
+    heading: 'The House Standard',
+    intro: 'These are the specific commitments that separate what we do from what a proposal can promise. They are operational rather than aspirational, which means they can be checked.',
+    items: [
+      {
+        title: 'You taste the menu before you commit',
+        copy: 'Every family tastes the full menu at our experience centre in Sector 61, Noida, hosted with your family, before anything is signed. Not at somebody else’s live event, which is where most tastings in this industry happen and where honest conversation is impossible.'
+      },
+      {
+        title: 'The tasting chef is the chef on the day',
+        copy: 'Aarti Sharma runs every tasting personally, and the kitchen team she trains at rehearsal is the team that cooks your event. There is no handover between a tasting kitchen and an execution kitchen. What you approve is what gets cooked.'
+      },
+      {
+        title: 'Every dish is rehearsed twice',
+        copy: 'Once during your tasting, and once again at a dedicated chef’s rehearsal before the day. Rehearsal is where timing problems surface, and they surface in our kitchen rather than in front of your guests.'
+      },
+      {
+        title: 'Two servers for every ten guests',
+        copy: 'Service ratio is the least visible decision a caterer makes and the one guests feel most. At two to ten, courses keep moving, tables do not sit uncleared, and nobody waits. It is expensive to hold that ratio, which is why most caterers quietly do not.'
+      },
+      {
+        title: 'The kitchen travels to the venue',
+        copy: 'For farmhouse and outdoor events, we build a full mobile kitchen on site, including tandoors and refrigeration, so the final stage of cooking happens where your guests are standing. Food finished in a central kitchen and driven an hour arrives tired, and no amount of presentation hides it.'
+      },
+      {
+        title: 'The tableware is chosen, not issued',
+        copy: 'Crockery, cutlery and glassware are selected for the menu rather than pulled from a standard banquet set. It is the detail guests notice without being able to name.'
+      }
+    ]
+  },
+  clients: {
+    heading: 'Who We Have Cooked For',
+    intro: 'Brand work is the most demanding version of what we do, because the food carries part of someone else’s story and the timings are not ours to move. These are events we have executed, each written up in full in the Journal.',
+    items: [
+      'Lamborghini, for the India launch of the Temerario, where the food was designed to echo the car.',
+      'Ferrari, at the Esperienza Ferrari track day at the Buddh International Circuit, serving 300 Ferraristi, media and celebrity guests.',
+      'Tesla, at the opening of the Tesla Centre in Gurugram, serving 150 senior journalists and HNI guests.',
+      'BMW Group India, at the BMW Infinity Cars launch in Civil Lines, Delhi, a fully gluten-free menu for 30 guests including the then President and CEO, served and cleared inside a 20-minute window.',
+      'Bath & Body Works, for the Touch of Gold launch, including a gold truffle tower and branded macarons.',
+      'House of Masaba, Kalki Fashion, Sunaina Khera and Forest Essentials, across fashion and beauty activations.'
+    ],
+    outro: 'Our work has been covered by ANI News, The Times of India and Republic India.'
+  },
+  reach: {
+    heading: 'Where We Work',
+    paragraphs: [
+      'We are based in Noida and cater across Delhi NCR: Noida, Greater Noida and Greater Noida West, Delhi, and Gurugram. Venue type matters more to us than distance. A farmhouse along the Yamuna Expressway with no permanent kitchen is a different job from a hotel ballroom with a working one, and we price and staff them differently because they are not the same event.',
+      'If you tell us where your event is, we will tell you honestly whether we can execute to our standard at that venue. Sometimes the answer is no.'
+    ]
+  },
+  safety: {
+    heading: 'Licensing and Food Safety',
+    paragraphs: [
+      'Virtuoso Catering House is licensed and operates under Food Safety and Standards Authority of India regulation. Catering at scale is exactly where food safety slips when nobody is watching, so ours is not left to the day.',
+      'Cold chain is maintained from procurement through to service. Vegetarian, Jain and non-vegetarian menus are prepared in separate areas rather than on the same line rearranged. Filtered water is used for cooking as well as drinking, staff health checks run on a fixed schedule, and every event has a named person supervising on site for its duration.'
+    ]
+  }
+};
+
 const menu = {
   categories: [
     {
@@ -2490,6 +2564,7 @@ module.exports = {
   testimonials,
   process,
   founders,
+  aboutPage,
   menu,
   eventTypes,
   heroImage: '/images/hero-candlelit-florals.jpg',

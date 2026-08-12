@@ -842,6 +842,15 @@
   color: var(--color-wine);
 }
 
+/* Wine resolves to almost exactly the Forest ground, so this modifier renders
+   invisible on a dark section. It went unnoticed while the pattern only ever
+   appeared on ivory. Candlelight is the accent the system specifies for type
+   on Forest (R 2.03), and it is what the eyebrows and Action links already use
+   in the same situation. */
+.section--charcoal .landing-card__title--gold {
+  color: var(--vls-candlelight);
+}
+
 .landing-card__list {
   color: var(--text-muted-light);
   display: flex;
