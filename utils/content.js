@@ -885,13 +885,9 @@ const blogPosts = [
         paragraphs: [],
         links: [
           { path: 'https://www.sciencedirect.com/science/article/abs/pii/S0195666311005459', label: 'Zellner et al., "Neatness counts: How plating affects liking for the taste of food," Appetite' },
-          { path: 'https://theconversation.com/psychology-can-change-the-way-food-tastes-heres-how-to-use-it-to-make-the-most-of-your-meals-269212', label: 'Psychology can change the way food tastes, The Conversation' },
-          { path: 'https://www.zola.com/expert-advice/buffet-vs-plated-which-style-of-catering-to-choose', label: 'Buffet vs. plated: which style of catering to choose, Zola' },
-          { path: 'https://www.leonardspalazzo.com/style-of-service/', label: 'What style of service is right for your event, Leonard\'s Palazzo' },
-          { path: 'https://weddingsbyeventcrafter.com/2025-2026-indian-wedding-trend-experiential-food-stations/', label: '2025/2026 Indian wedding trend: experiential food stations, Weddings by Event Crafter' },
-          { path: 'https://www.wedica.in/live-counters-at-indian-weddings-planning-guide/', label: 'Live counters at Indian weddings: planning guide, Wedica' },
-          { path: 'https://jqyceramics.com/why-do-luxury-hotels-consistently-choose-bone-china-tableware-sets/', label: 'Why luxury hotels choose bone china tableware, JQY Ceramics' },
-          { path: 'https://pitochina.com/bone-china-vs-porcelain-dinnerware-a-complete-guide-for-hospitality/', label: 'Bone china vs porcelain: a guide for hospitality, Pito' }
+          { path: 'https://ora.ox.ac.uk/objects/uuid:969f804d-79c3-45a1-870d-6ca91acb1852', label: 'Spence, "Gastrophysics: a new scientific approach to eating," University of Oxford' },
+          { path: 'https://ora.ox.ac.uk/objects/uuid:149878ea-83c2-4ef1-895e-87b724dba6db', label: 'Spence, "Gastrophysics: the lens of psychological and sensory research," University of Oxford' },
+          { path: 'https://theconversation.com/psychology-can-change-the-way-food-tastes-heres-how-to-use-it-to-make-the-most-of-your-meals-269212', label: 'Psychology can change the way food tastes, The Conversation' }
         ]
       }
     ],
@@ -963,13 +959,12 @@ const blogPosts = [
         heading: 'Sources',
         paragraphs: [],
         links: [
-          { path: 'https://www.meeshaforyou.com/blog/dealing-with-dietary-restrictions-for-indian-wedding-catering', label: 'Dealing with dietary restrictions for Indian wedding catering, Meesha' },
-          { path: 'https://www.cater-event.com/menu-planning/designing-a-wedding-menu-that-mirrors-your-couples-personalities', label: 'Designing a wedding menu that mirrors couples\' personalities, Catersource' },
-          { path: 'https://www.chefsargent.co.uk/what-goes-into-a-tasting-menu-behind-the-scenes-of-building-a-five-course-experience/', label: 'What goes into a tasting menu, Chef Sargent' },
-          { path: 'https://theculinarycollectiveatl.com/5-course-meal/', label: 'How to master a 5-course meal, The Culinary Collective' },
-          { path: 'https://www.sciencedirect.com/science/article/abs/pii/S0195666311005459', label: 'Neatness counts: how plating affects liking for the taste of food, ScienceDirect' },
-          { path: 'https://theconversation.com/psychology-can-change-the-way-food-tastes-heres-how-to-use-it-to-make-the-most-of-your-meals-269212', label: 'Psychology can change the way food tastes, The Conversation' },
-          { path: 'https://primedumpster.com/dumpsters/how-to-estimate-wedding-trash/', label: 'How to estimate wedding trash, Prime Dumpster' }
+          { path: 'https://www.fssai.gov.in/upload/uploadfiles/files/Guidance_Document_Catering_Sector_19_01_2018(4).pdf', label: 'Guidance Document for the Catering Sector, Food Safety and Standards Authority of India' },
+          { path: 'https://www.fssai.gov.in/upload/uploadfiles/files/Compendium_Labelling_Display_28_12_2022.pdf', label: 'Compendium of Labelling and Display Regulations, including allergen declaration, FSSAI' },
+          { path: 'https://www.sciencedirect.com/science/article/abs/pii/S0195666311005459', label: 'Zellner et al., "Neatness counts: How plating affects liking for the taste of food," Appetite' },
+          { path: 'https://ora.ox.ac.uk/objects/uuid:969f804d-79c3-45a1-870d-6ca91acb1852', label: 'Spence, "Gastrophysics: a new scientific approach to eating," University of Oxford' },
+          { path: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10451323/', label: 'Individual differences in plate wasting behavior, National Library of Medicine' },
+          { path: 'https://theconversation.com/psychology-can-change-the-way-food-tastes-heres-how-to-use-it-to-make-the-most-of-your-meals-269212', label: 'Psychology can change the way food tastes, The Conversation' }
         ]
       }
     ],
