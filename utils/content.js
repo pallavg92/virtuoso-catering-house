@@ -415,7 +415,7 @@ const blogPosts = [
     image: '/images/virtuoso-catering-house-presentation-myths-hero.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
-      'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space for chefs to plate under pressure, and dishes rehearsed enough times that nothing is left to chance. At Virtuoso, servers carry the food. Chefs create the presentation.'
+      'A stunning wedding presentation does not require a massive budget. It requires a trained culinary team, a proper working space for chefs to plate under pressure, and dishes rehearsed enough times that nothing is left to chance. At Virtuoso Catering House in Noida, servers carry the food. Chefs create the presentation.'
     ],
     sections: [
       {
@@ -588,7 +588,7 @@ const blogPosts = [
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters and starters at the cocktail or engagement, and a fuller multi-cuisine spread, North Indian, Continental, Chinese, and fusion, at the reception. The dishes change by function because the mood of each one is different, not because of a fixed template.',
-      'A family sat across from me a few months ago and said, "Just give us the reception menu for the mehendi too. We\'ll trim it down later." I\'ve learned to catch that sentence early, because it\'s where most Delhi wedding menus go wrong. Trimming a big menu doesn\'t give you a lighter one. It gives you a smaller version of the wrong thing.',
+      'A family sat across from me at our Noida experience centre a few months ago and said, "Just give us the reception menu for the mehendi too. We\'ll trim it down later." I\'ve learned to catch that sentence early, because it\'s where most Delhi wedding menus go wrong. Trimming a big menu doesn\'t give you a lighter one. It gives you a smaller version of the wrong thing.',
       'Ask ten Delhi families what should be on a wedding menu and you\'ll get ten different answers, because the honest answer depends on which function you\'re asking about. The mehendi, the cocktail night, and the reception aren\'t the same event in different outfits. They\'re three different moods, and the food has to keep pace with each one.'
     ],
     sections: [
@@ -716,7 +716,7 @@ const blogPosts = [
     relatedLink: { path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding', label: 'Read: The Quiet Craft Behind an Unforgettable Wedding' },
     lead: [
       'The right way to finalize a wedding menu starts with a conversation, not a line item list: what food genuinely matters to you, and what your guests actually expect to eat. Everything else gets decided from there. The wrong way is adding dish after dish from a template until the list hits forty items nobody asked for.',
-      'Most wedding menus don\'t fail because of bad dishes. They fail because they were built line item by line item instead of from an actual conversation. The couples who end up with a menu they and their guests remember are the ones who sat down with their caterer and talked through two questions before adding a single item: what food matters to us, and what will our guests actually want to eat.'
+      'Most wedding menus in Delhi NCR don\'t fail because of bad dishes. They fail because they were built line item by line item instead of from an actual conversation. At Virtuoso Catering House, the couples who end up with a menu they and their guests remember are the ones who sat down with their caterer and talked through two questions before adding a single item: what food matters to us, and what will our guests actually want to eat.'
     ],
     sections: [
       {
@@ -784,7 +784,7 @@ const blogPosts = [
     relatedLink: { path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding', label: 'Read: The Quiet Craft Behind an Unforgettable Wedding' },
     lead: [
       'Before booking a wedding caterer, confirm four things: an FSSAI-certified kitchen, an in-house team that actually executes the menu rather than subcontracting it, clarity on how much of the menu is cooked in-house versus outsourced, and real connections to specialty restaurants or chefs for anything outside the caterer\'s core kitchen.',
-      'Most couples evaluate a wedding caterer on menu and price. Those matter, but they don\'t tell you whether the caterer can actually deliver what\'s on the proposal. Four operational questions do a better job of predicting whether your wedding day goes smoothly than any tasting alone.'
+      'Most couples in Delhi NCR evaluate a wedding caterer on menu and price. Those matter, but they don\'t tell you whether the caterer can actually deliver what\'s on the proposal. Four operational questions do a better job of predicting whether your wedding day goes smoothly than any tasting alone. They are the four we answer at Virtuoso Catering House without waiting to be asked.'
     ],
     sections: [
       {
@@ -912,7 +912,7 @@ const blogPosts = [
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'A wedding menu is best built in four moves: map your guests\' dietary and regional mix, balance signature dishes against reliable crowd-pleasers, sequence the menu so it flows instead of exhausting the palate, then settle plating and service. Guests set the terms, the dishes and their order are where you make it yours, and plating is how it lands.',
-      'Most couples pick a menu on taste alone, then discover later that some of the room can\'t eat it, or that five rich courses in a row leave everyone full by the main. Working in order, who eats first, what and in what sequence next, presentation last, produces a menu that actually holds together on the day instead of one held together by luck.'
+      'Most couples in Delhi NCR pick a menu on taste alone, then discover later that some of the room can\'t eat it, or that five rich courses in a row leave everyone full by the main. Working in order, who eats first, what and in what sequence next, presentation last, produces a menu that actually holds together on the day instead of one held together by luck. It is the order we work in at Virtuoso Catering House on every wedding we cater.'
     ],
     sections: [
       {
@@ -1051,7 +1051,8 @@ const blogPosts = [
     image: '/images/bmw-civil-lines-launch/virtuoso-catering-house-bmw-civil-lines-hero.jpg',
     relatedLink: { path: '/luxury-brand-event-catering-delhi-ncr', label: 'See how we approach luxury brand event catering across Delhi NCR' },
     lead: [
-      'Virtuoso Catering House designed and executed the catering for BMW Group India\'s launch at BMW Infinity Cars, Civil Lines in Delhi in August 2025, serving the brand\'s top leadership team, including Vikram Pawah, then President and CEO of BMW Group India, alongside senior management, 30 guests in total. The brief carried two non-negotiables: every dish had to be gluten-free using only the best ingredients available, and the entire meal, from first plate to last, had to be served and cleared inside a 20-minute floating window. No buffet.'
+      'Virtuoso Catering House designed and executed the catering for BMW Group India\'s launch at BMW Infinity Cars, Civil Lines in Delhi in August 2025. We served 30 guests, including Vikram Pawah, then President and CEO of BMW Group India, a fully gluten-free menu delivered inside a 20-minute floating window.',
+      'The brief carried two non-negotiables. Every dish had to be gluten-free using only the best ingredients available, and the entire meal, from first plate to last, had to be served and cleared inside that window. No buffet.'
     ],
     sections: [
       {
@@ -1102,7 +1103,7 @@ const blogPosts = [
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See how we compare among wedding caterers in Delhi' },
     lead: [
-      'Most wedding caterers in Delhi will ask you one question first: how many guests? We ask a different one: how many moments.',
+      'What separates an unforgettable wedding from a merely well-fed one is not the length of the menu. It is how carefully each function is paced, staffed and sequenced. Most wedding caterers in Delhi ask how many guests before anything else. At Virtuoso Catering House in Noida, we ask how many moments.',
       'Because a wedding isn\'t one meal. It\'s several, back to back, each one setting a different mood, and the caterer\'s job isn\'t to feed the room. It\'s to make sure each function feels like it was built for that exact moment, not repeated from the last one.',
       'Virtuoso Catering House has catered weddings across Delhi, Noida, and Gurugram on exactly that belief: fewer dishes, more intention, every course earning its place.'
     ],
@@ -1187,8 +1188,8 @@ const blogPosts = [
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
       'The best wedding caterers begin with a question before the menu: how do we want every guest to feel? Food, service and presentation are how they answer it, not the goal itself. It is why families rarely hire whoever cooks best, and instead choose the caterer who will treat their guests the way the host family would.',
-      'Food is the most visible part of wedding catering, and rightly so. Preparing food for hundreds of guests is demanding. Ingredients must be sourced well, recipes must be consistent, temperatures must be maintained, and every dish must reach the guest as it was intended.',
-      'But producing good food is still only the beginning of a caterer\u2019s responsibility. Were taste alone the measure of wedding catering, a beloved street-food vendor or the neighbourhood restaurant serving your family\u2019s favourite dishes could cater the entire celebration. Their food may be exceptional, but families rarely make that choice.',
+      'Food is the most visible part of wedding catering, and rightly so. Preparing food for hundreds of guests at a Delhi NCR wedding is demanding. Ingredients must be sourced well, recipes must be consistent, temperatures must be maintained, and every dish must reach the guest as it was intended.',
+      'But producing good food is still only the beginning of a caterer\u2019s responsibility, and at Virtuoso Catering House we treat it as exactly that, a beginning. Were taste alone the measure of wedding catering, a beloved street-food vendor or the neighbourhood restaurant serving your family\u2019s favourite dishes could cater the entire celebration. Their food may be exceptional, but families rarely make that choice.',
       'Because a wedding caterer is not expected merely to cook and serve good food.'
     ],
     sections: [
@@ -1521,7 +1522,8 @@ const bestWeddingCaterersDelhiPage = {
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
   relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
   lead: [
-    'When searching for the best wedding caterers in Delhi, most couples encounter the same experience: a polished brochure, a menu that runs to three pages, and a price quote that arrives within the hour. What the brochure rarely tells you is whether a caterer can build a menu around your family\'s story, execute it with precision across six functions, and still deliver at a 500-person reception without a single visible lapse. At that scale, the gap between a capable caterer and a truly exceptional one becomes apparent fast.',
+    'The best wedding caterers in Delhi are separated from the rest by three things: whether they can build a menu around your family\'s story, whether they can execute it across six functions without drift, and whether that standard holds at a 500-person reception. A brochure will tell you none of this.',
+      'Most couples searching encounter the same experience instead: a polished brochure, a menu that runs to three pages, and a price quote that arrives within the hour. At that scale, the gap between a capable caterer and a truly exceptional one becomes apparent fast.',
     'If you are planning a wedding with non-negotiable standards, you need clear criteria rather than a long list of names. Certain wedding caterers in Delhi NCR have set a measurably higher bar. Virtuoso Catering House, known in the luxury circuit for catering Ferrari and Lamborghini brand events alongside high-net-worth weddings, offers one concrete reference point. The standards that define their work are also the standards that define any genuinely exceptional catering partner. Here are the six criteria that separate the best from the rest.'
   ],
   sections: [
