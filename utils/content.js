@@ -2303,15 +2303,82 @@ const founders = [
 // site: named clients, named events, a licensed kitchen, a published address,
 // a stated price floor. Nothing here asserts a founding year, a headcount, an
 // award or an event tally, because none of those are recorded anywhere yet.
+// Long-form content for /about, supplied by the founders. The short-line
+// paragraph rhythm is deliberate and is theirs, so it is preserved rather than
+// packed back into dense blocks. Em dashes in the source copy were converted to
+// commas, per standing preference on published Virtuoso writing.
 const aboutPage = {
   intro: {
     heading: 'An Experiential Catering House',
     paragraphs: [
-      'The distinction that matters most to us is that we are not your normal caterers with a normal menu. We create F&B experiences that align with the values of the brands we work with, and with the stories of the people we cater for at weddings and private parties.',
-      'Virtuoso Catering House is led by two co-founders, Aarti Sharma and Pallav Goel, and is based at A-15, A-Block, Sector 61, Noida. We work across weddings, brand and product launches, and private celebrations.',
-      'Do not expect a set menu from us. Every event begins as a conversation about who is in the room and what the day needs to feel like, and the menu is built from there rather than selected from a list.'
+      'Virtuoso Catering House is a luxury catering and F&B experience design company based in Noida, India. We create bespoke food and beverage experiences for weddings, private celebrations, brand launches and product launches, designing the menu, presentation and hospitality around the people, story and purpose of each event.',
+      'We are not built around a catalogue of menus.',
+      'We are built around an idea: that food and beverage should belong to the event it is served at.'
     ]
   },
+  sections: [
+    {
+      heading: 'We Design F&B Experiences',
+      paragraphs: [
+        'Catering begins long before the first plate reaches a guest.',
+        'It begins with understanding who is in the room, why they have gathered and what the occasion needs to feel like.',
+        'For a luxury brand, that could mean translating its aesthetic, values and identity into an F&B experience that feels unmistakably aligned with the world it has created.',
+        'For a wedding, it could mean understanding the couple, their families, their memories, their tastes and the kind of hospitality they want their guests to remember.',
+        'For a private celebration, it could simply mean taking someone\u2019s idea of a beautiful afternoon, dinner or milestone and giving it a culinary language of its own.',
+        'The food comes after that conversation.',
+        'Because a remarkable menu is not selected. It is designed.'
+      ]
+    },
+    {
+      heading: 'No Set Menus. By Design.',
+      paragraphs: [
+        'You will not be handed a conventional catering menu and asked to choose twelve dishes from it.',
+        'Virtuoso Catering House specialises in bespoke catering and customised menu design.',
+        'Every event begins with a conversation. We learn the occasion, the guest profile, the setting, the style of service and the experience being imagined, and build the food and beverage programme around it.',
+        'That may shape the cuisine. It may shape how the food is served.',
+        'It may lead us towards circulated small plates, chef-led stations, a sculptural grazing table, an intimate plated dinner or an entirely different format.',
+        'The objective is never novelty.',
+        'It is coherence, so that the food, presentation, service and story feel like parts of the same experience.'
+      ]
+    },
+    {
+      heading: 'Catering for Brands',
+      paragraphs: [
+        'When we cater for a brand, we treat F&B as another medium through which it can speak.',
+        'A fashion launch, automotive experience, luxury retail event or product unveiling already has a visual and emotional language. The food should not feel disconnected from it.',
+        'Our role is to understand that language and translate it into hospitality.',
+        'From menu development and culinary concepts to presentation, grazing experiences, live food interactions and service formats, we design F&B intended to feel native to the brand and the event around it.',
+        'Brand experience and food experience should not exist in two different worlds.'
+      ]
+    },
+    {
+      heading: 'Catering for Weddings and Private Celebrations',
+      paragraphs: [
+        'Personal events demand a different kind of understanding.',
+        'Here, the story does not belong to a brand. It belongs to people.',
+        'We work with couples, families and private hosts to create bespoke catering experiences for weddings, intimate gatherings and important celebrations.',
+        'Instead of beginning with what we would like to serve, we begin with what the occasion means to you.',
+        'Perhaps there is a dish connected to a memory.',
+        'Perhaps your guests span generations, and the menu needs to balance familiarity with discovery.',
+        'Perhaps you have experienced exceptional hospitality somewhere in the world and want to recreate the feeling rather than reproduce the food.',
+        'Perhaps you simply know that you do not want your celebration to feel like every other catered event.',
+        'That is where our work begins.'
+      ]
+    },
+    {
+      heading: 'Our Approach to Luxury Catering',
+      paragraphs: [
+        'To us, luxury in food and beverage is not excess. It is thoughtfulness.',
+        'It is knowing when to add something, and when to take something away.',
+        'It is a canap\u00e9 that makes sense in a guest\u2019s hand.',
+        'A live experience that invites curiosity without becoming theatre for its own sake.',
+        'A familiar flavour expressed with greater finesse.',
+        'A presentation that complements the room rather than competing with it.',
+        'And service that feels considered without ever calling attention to itself.',
+        'The details vary from one event to another. The intention remains the same: to make the F&B feel considered, personal and inseparable from the experience of the event itself.'
+      ]
+    }
+  ],
   clients: {
     heading: 'Experiences We Have Created',
     intro: 'Brand work is the most demanding version of what we do, because the food carries part of someone else\u2019s story and the timings are not ours to move. These are events we have executed, each written up in full in the Journal.',
@@ -2324,6 +2391,24 @@ const aboutPage = {
       'House of Masaba, Kalki Fashion, Sunaina Khera and Forest Essentials, across fashion and beauty activations.'
     ],
     outro: 'Our work has been covered by ANI News, The Times of India and Republic India.'
+  },
+  leadership: {
+    heading: 'Led by Aarti Sharma and Pallav Goel',
+    paragraphs: [
+      'Virtuoso Catering House is led by co-founders Aarti Sharma and Pallav Goel, who bring more than a decade of combined experience across luxury hospitality, premium event management and concept-led F&B design.',
+      'Together, we are building Virtuoso around a more experience-led approach to catering, one in which culinary thinking, hospitality, presentation and storytelling come together rather than being treated as separate disciplines.',
+      'Our work spans weddings, private celebrations, brand experiences, product launches and luxury events, with each engagement developed specifically for the occasion rather than adapted from a standard package.',
+      'Virtuoso Catering House is based at A-15, A-Block, Sector 61, Noida, Uttar Pradesh, India.'
+    ]
+  },
+  closing: {
+    heading: 'What We Create',
+    paragraphs: [
+      'We create bespoke catering and food and beverage experiences for people and brands who want the hospitality at their event to say something.',
+      'Something about their taste. Their story. Their world. Or the way they want their guests to feel.',
+      'We do not begin with a menu.',
+      'We begin with the experience, and design the F&B from there.'
+    ]
   }
 };
 

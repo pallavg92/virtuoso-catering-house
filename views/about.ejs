@@ -27,8 +27,7 @@
     </div>
   </section>
 
-  <!-- WHO WE ARE. Sits above the founders because a reader arriving here wants
-       to know what the business is before who runs it. -->
+  <!-- WHO WE ARE -->
   <section class="section section--ivory">
     <div class="container">
       <div class="section-header">
@@ -43,6 +42,24 @@
       </div>
     </div>
   </section>
+
+  <!-- THE APPROACH. Grounds alternate so five prose sections in a row do not
+       read as one wall of text. -->
+  <% aboutPage.sections.forEach(function(block, i) { %>
+  <section class="section <%= i % 2 === 1 ? 'section--charcoal' : 'section--ivory' %>">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= block.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% block.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%= p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% }); %>
 
   <!-- CLIENTS -->
   <section class="section section--ivory">
@@ -65,15 +82,25 @@
     </div>
   </section>
 
+  <!-- LEADERSHIP. Sits directly above the founder profiles, which it introduces. -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Leadership</span>
+        <h2 class="section-title reveal-up"><%= aboutPage.leadership.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% aboutPage.leadership.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%= p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
   <!-- FOUNDERS -->
   <section class="founders section section--ivory">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal-up">The Founders</span>
-        <h2 class="section-title reveal-up">Aarti Sharma &amp; Pallav Goel</h2>
-        <span class="section-header__line"></span>
-      </div>
-
       <div class="founders__grid">
         <% founders.forEach(function(founder) { %>
         <div class="founder-block reveal-up">
@@ -130,6 +157,21 @@
             <p><%= item.copy %></p>
           </div>
         </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CREATE -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= aboutPage.closing.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% aboutPage.closing.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%= p %></p>
         <% }); %>
       </div>
     </div>

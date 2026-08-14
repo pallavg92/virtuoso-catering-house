@@ -935,6 +935,22 @@
   color: var(--color-charcoal);
 }
 
+/* Prose was only ever set on light grounds, so both of these resolve to a
+   near-Forest colour and become unreadable the moment a prose block sits on a
+   dark section. Same latent bug as landing-card__title--gold, found the same
+   way: by measuring rather than looking. */
+.section--charcoal .blog-post__copy {
+  color: var(--text-muted-dark);
+}
+
+.section--charcoal .blog-post__copy--lead {
+  color: var(--text-on-dark);
+}
+
+.section--charcoal .blog-post__copy--lead:first-child::first-letter {
+  color: var(--vls-candlelight);
+}
+
 .blog-post__copy--lead:first-child::first-letter {
   float: left;
   font-family: var(--font-serif);
