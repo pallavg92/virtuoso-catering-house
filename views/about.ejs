@@ -44,30 +44,6 @@
     </div>
   </section>
 
-  <!-- THE HOUSE STANDARD -->
-  <section class="section section--charcoal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow eyebrow--light reveal-up">How We Hold the Line</span>
-        <h2 class="section-title reveal-up"><%= aboutPage.standard.heading %></h2>
-        <span class="section-header__line"></span>
-      </div>
-      <div class="blog-post__prose">
-        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= aboutPage.standard.intro %></p>
-      </div>
-      <div class="landing-cards landing-cards--compact">
-        <% aboutPage.standard.items.forEach(function(item) { %>
-        <div class="landing-card reveal-up">
-          <h3 class="landing-card__title landing-card__title--gold"><%= item.title %></h3>
-          <ul class="landing-card__list">
-            <li><%= item.copy %></li>
-          </ul>
-        </div>
-        <% }); %>
-      </div>
-    </div>
-  </section>
-
   <!-- CLIENTS -->
   <section class="section section--ivory">
     <div class="container">
@@ -154,43 +130,6 @@
             <p><%= item.copy %></p>
           </div>
         </div>
-        <% }); %>
-      </div>
-    </div>
-  </section>
-
-  <!-- REACH + LICENSING. Both are things a reader checking whether we are a
-       real operator will look for, and neither existed on this page before. -->
-  <section class="section section--ivory">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal-up">Coverage</span>
-        <h2 class="section-title reveal-up"><%= aboutPage.reach.heading %></h2>
-        <span class="section-header__line"></span>
-      </div>
-      <div class="blog-post__prose">
-        <% aboutPage.reach.paragraphs.forEach(function(p) { %>
-        <p class="blog-post__copy reveal-up"><%= p %></p>
-        <% }); %>
-        <p class="blog-post__copy reveal-up">
-          <a href="/wedding-caterers-in-noida" class="link-underline">Wedding caterers in Noida</a> ·
-          <a href="/wedding-caterers-in-delhi" class="link-underline">Wedding caterers in Delhi</a> ·
-          <a href="/catering-services-in-greater-noida" class="link-underline">Catering in Greater Noida</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--ivory">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal-up">Standards</span>
-        <h2 class="section-title reveal-up"><%= aboutPage.safety.heading %></h2>
-        <span class="section-header__line"></span>
-      </div>
-      <div class="blog-post__prose">
-        <% aboutPage.safety.paragraphs.forEach(function(p) { %>
-        <p class="blog-post__copy reveal-up"><%= p %></p>
         <% }); %>
       </div>
     </div>

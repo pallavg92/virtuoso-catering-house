@@ -1968,9 +1968,9 @@ const landingPages = {
     lead: {
       heading: 'Catering Services in Greater Noida',
       paragraphs: [
-        'Virtuoso Catering House provides catering services across Greater Noida for weddings, brand launches and private celebrations, working out of our kitchen and experience centre in Noida, Sector 61. We take exclusive ownership of three things on every event: the food, the presentation, and the crockery and cutlery. A banquet kitchen divides all three across whatever else it is running that night.',
+        'Virtuoso Catering House provides catering services across Greater Noida for weddings, brand launches and private celebrations, working out of our kitchen and experience centre in Noida, Sector 61. We are not a set-menu caterer. Every event is built as an F&B experience around the people it is for, which is a different proposition from choosing dishes off a list somebody else wrote.',
         'Greater Noida asks something different of a caterer than Noida does. The venues are further apart, the farmhouses along the Yamuna Expressway and around Jaypee Greens have no permanent kitchen to speak of, and the drive from a central production kitchen is long enough that food finished in advance arrives tired. So we build the kitchen on site. Tandoors, live counters and finishing stations go up at the venue, and the last stage of cooking happens where your guests are standing rather than an hour away.',
-        'That approach costs more than sending trays from a central kitchen, which is why we are not the right answer for every event in Greater Noida. It is the right answer when the food is meant to be remembered rather than merely served.'
+        'That approach asks more of a kitchen than sending trays from a central one, which is why we are not the right answer for every event in Greater Noida. It is the right answer when the food is meant to be remembered rather than merely served.'
       ]
     },
     specializations: {
@@ -2034,11 +2034,11 @@ const landingPages = {
       }
     ],
     whyUs: {
-      heading: 'Why Families in Greater Noida Choose a Specialist Caterer',
-      intro: 'The real decision is not which caterer. It is caterer or banquet. Here is the difference, stated plainly.',
+      heading: 'What Makes Us Different From Other Caterers',
+      intro: 'Most caterers will send you a menu. Here is what we do instead, stated plainly enough that you can hold us to it.',
       items: [
-        { title: 'The food is ours alone', points: ['Menu, sourcing and kitchen execution belong to one team, not shared with the two other functions a banquet is running the same evening.'] },
-        { title: 'The presentation is designed', points: ['Every course, station and counter is styled deliberately rather than assembled from a standard banquet layout.'] },
+        { title: 'No set menu', points: ['Every menu is designed for the event in front of us, built around who is in the room and what the occasion is meant to feel like, rather than assembled from a standing list.'] },
+        { title: 'The presentation is designed', points: ['Every course, station and counter is styled deliberately, as part of the experience rather than as a way of getting food onto a table.'] },
         { title: 'The tableware is chosen', points: ['Crockery, cutlery and glassware are selected for the menu, which is the detail most guests notice without being able to name.'] },
         { title: 'You taste before you commit', points: ['A full tasting at our Noida experience centre, hosted with your family, before anything is signed.'] },
         { title: 'The tasting chef is the wedding chef', points: ['No handover between a tasting kitchen and an execution kitchen. What you approve is what gets cooked.'] },
@@ -2048,12 +2048,11 @@ const landingPages = {
     closing: {
       heading: 'Talk to Us About Your Event in Greater Noida',
       paragraphs: [
-        'Start with a conversation rather than a price list. Tell us what the occasion is, roughly how many people, and where in Greater Noida it is happening. We will tell you what is genuinely possible at that venue and what it costs to do properly. If we are not the right fit, we would rather say so early than after you have committed.',
-        'Weddings and larger celebrations start at ₹3,000 per plate for the core meal. Bar and beverage service is priced separately.'
+        'Start with a conversation. Tell us what the occasion is, roughly how many people, and where in Greater Noida it is happening. We will tell you what is genuinely possible at that venue and how we would approach it. If we are not the right fit, we would rather say so early than after you have committed.'
       ]
     },
     faq: [
-      { q: 'How much does catering cost in Greater Noida?', a: 'For a genuinely luxury standard, the core meal starts at ₹3,000 per plate, with bar and beverage priced separately. Corporate events typically run ₹2,500 to ₹6,000 per guest. The final number moves with menu complexity, service style and staffing rather than guest count alone.' },
+      { q: 'Do you work to a fixed menu?', a: 'No. Every menu is designed for the specific event, built around who is in the room, the occasion, and for brand work the story the client is telling. We start with a conversation rather than a menu card, which is why two events with the same guest count can look nothing like each other.' },
       { q: 'Do you cater at farmhouses in Greater Noida with no kitchen?', a: 'Yes, and it is a large part of what we do along the Yamuna Expressway and around Jaypee Greens. We build a full mobile kitchen at the venue, including tandoors and refrigeration, so the final stage of cooking happens on site rather than an hour away.' },
       { q: 'Can we taste the menu before booking?', a: 'Yes, and we would rather you did. Tastings are hosted at our experience centre in Noida, Sector 61, not at somebody else’s live event, so there is room for honest conversation. Aarti Sharma, our co-founder, runs them personally.' },
       { q: 'How far in advance should we book?', a: 'For weddings on peak muhurat dates, three to six months is realistic, because every family with that date is competing for the same vendors and staff. For corporate events and private celebrations, three to four weeks is usually enough.' },
@@ -2306,46 +2305,16 @@ const founders = [
 // award or an event tally, because none of those are recorded anywhere yet.
 const aboutPage = {
   intro: {
-    heading: 'A Catering House, Not a Banquet Kitchen',
+    heading: 'An Experiential Catering House',
     paragraphs: [
-      'Virtuoso Catering House is a luxury catering company based at A-15, A-Block, Sector 61, Noida, working across Delhi NCR. We are led by two co-founders, Aarti Sharma and Pallav Goel, and we cater three kinds of event: weddings, brand and product launches, and private celebrations.',
-      'The distinction that matters most in this business is the one between a caterer and a banquet. A banquet kitchen divides its attention across every function it is running that night, and the food, the presentation and the tableware are each somebody else’s partial responsibility. We take exclusive ownership of all three. That is the whole proposition, and everything below is what it costs to mean it.',
-      'It also means we are not the right answer for every event. Our core wedding menu starts at ₹3,000 per plate, and there is a level below which a genuinely luxury standard cannot be executed without something quietly being cut. We would rather say that early than discover it together in a kitchen at eleven at night.'
-    ]
-  },
-  standard: {
-    heading: 'The House Standard',
-    intro: 'These are the specific commitments that separate what we do from what a proposal can promise. They are operational rather than aspirational, which means they can be checked.',
-    items: [
-      {
-        title: 'You taste the menu before you commit',
-        copy: 'Every family tastes the full menu at our experience centre in Sector 61, Noida, hosted with your family, before anything is signed. Not at somebody else’s live event, which is where most tastings in this industry happen and where honest conversation is impossible.'
-      },
-      {
-        title: 'The tasting chef is the chef on the day',
-        copy: 'Aarti Sharma runs every tasting personally, and the kitchen team she trains at rehearsal is the team that cooks your event. There is no handover between a tasting kitchen and an execution kitchen. What you approve is what gets cooked.'
-      },
-      {
-        title: 'Every dish is rehearsed twice',
-        copy: 'Once during your tasting, and once again at a dedicated chef’s rehearsal before the day. Rehearsal is where timing problems surface, and they surface in our kitchen rather than in front of your guests.'
-      },
-      {
-        title: 'Two servers for every ten guests',
-        copy: 'Service ratio is the least visible decision a caterer makes and the one guests feel most. At two to ten, courses keep moving, tables do not sit uncleared, and nobody waits. It is expensive to hold that ratio, which is why most caterers quietly do not.'
-      },
-      {
-        title: 'The kitchen travels to the venue',
-        copy: 'For farmhouse and outdoor events, we build a full mobile kitchen on site, including tandoors and refrigeration, so the final stage of cooking happens where your guests are standing. Food finished in a central kitchen and driven an hour arrives tired, and no amount of presentation hides it.'
-      },
-      {
-        title: 'The tableware is chosen, not issued',
-        copy: 'Crockery, cutlery and glassware are selected for the menu rather than pulled from a standard banquet set. It is the detail guests notice without being able to name.'
-      }
+      'The distinction that matters most to us is that we are not your normal caterers with a normal menu. We create F&B experiences that align with the values of the brands we work with, and with the stories of the people we cater for at weddings and private parties.',
+      'Virtuoso Catering House is led by two co-founders, Aarti Sharma and Pallav Goel, and is based at A-15, A-Block, Sector 61, Noida. We work across weddings, brand and product launches, and private celebrations.',
+      'Do not expect a set menu from us. Every event begins as a conversation about who is in the room and what the day needs to feel like, and the menu is built from there rather than selected from a list.'
     ]
   },
   clients: {
-    heading: 'Who We Have Cooked For',
-    intro: 'Brand work is the most demanding version of what we do, because the food carries part of someone else’s story and the timings are not ours to move. These are events we have executed, each written up in full in the Journal.',
+    heading: 'Experiences We Have Created',
+    intro: 'Brand work is the most demanding version of what we do, because the food carries part of someone else\u2019s story and the timings are not ours to move. These are events we have executed, each written up in full in the Journal.',
     items: [
       'Lamborghini, for the India launch of the Temerario, where the food was designed to echo the car.',
       'Ferrari, at the Esperienza Ferrari track day at the Buddh International Circuit, serving 300 Ferraristi, media and celebrity guests.',
@@ -2355,20 +2324,6 @@ const aboutPage = {
       'House of Masaba, Kalki Fashion, Sunaina Khera and Forest Essentials, across fashion and beauty activations.'
     ],
     outro: 'Our work has been covered by ANI News, The Times of India and Republic India.'
-  },
-  reach: {
-    heading: 'Where We Work',
-    paragraphs: [
-      'We are based in Noida and cater across Delhi NCR: Noida, Greater Noida and Greater Noida West, Delhi, and Gurugram. Venue type matters more to us than distance. A farmhouse along the Yamuna Expressway with no permanent kitchen is a different job from a hotel ballroom with a working one, and we price and staff them differently because they are not the same event.',
-      'If you tell us where your event is, we will tell you honestly whether we can execute to our standard at that venue. Sometimes the answer is no.'
-    ]
-  },
-  safety: {
-    heading: 'Licensing and Food Safety',
-    paragraphs: [
-      'Virtuoso Catering House is licensed and operates under Food Safety and Standards Authority of India regulation. Catering at scale is exactly where food safety slips when nobody is watching, so ours is not left to the day.',
-      'Cold chain is maintained from procurement through to service. Vegetarian, Jain and non-vegetarian menus are prepared in separate areas rather than on the same line rearranged. Filtered water is used for cooking as well as drinking, staff health checks run on a fixed schedule, and every event has a named person supervising on site for its duration.'
-    ]
   }
 };
 
