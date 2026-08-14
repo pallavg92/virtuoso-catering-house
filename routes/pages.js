@@ -1,5 +1,7 @@
+const path = require('path');
 const express = require('express');
 const router = express.Router();
+const { processHtml } = require('../scripts/html-post');
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const redirects = require('../utils/redirects');
@@ -7,6 +9,16 @@ const { sendInquiry, sendEnquiryAcknowledgement } = require('../utils/mailer');
 const { validateInquiry, extractFields: extractInquiryFields } = require('../utils/validateInquiry');
 const { sendEvent: sendMetaEvent, newEventId } = require('../utils/metaCapi');
 
+// Images live in /public, which is what express.static() serves.
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
+
+// Every page goes out through the same image post-processing the static build
+// applies to /dist — width/height, fetchpriority on the hero, and a <picture>
+// wrapper offering the pre-built .webp. Production serves this Express app
+// rather than /dist, so without this hop none of it reached a real visitor.
+//
+// Cost is a single regex pass; the file reads behind it are memoised per
+// asset path inside html-post, so a page pays for its images once per boot.
 function render(res, page) {
   res.render(page.view, {
     ...content,
@@ -14,16 +26,27 @@ function render(res, page) {
     canonicalUrl: siteUrl + (page.path === '/' ? '/' : page.path),
     siteUrl,
     business
+  }, (err, html) => {
+    if (err) return res.req.next(err);
+    res.send(processHtml(html, PUBLIC_DIR).html);
   });
 }
 
 router.get('/sitemap.xml', (req, res) => {
-  const today = new Date().toISOString().slice(0, 10);
   const urls = Object.values(pages)
     .filter((page) => !page.excludeFromSitemap)
     .map((page) => {
       const loc = siteUrl + (page.path === '/' ? '/' : page.path);
-      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;
+
+      // A real date or none at all. Stamping every URL with the current date
+      // told Google all 38 pages changed on every request, which is how a
+      // site teaches Google to ignore its lastmod altogether — and that is
+      // exactly the freshness signal worth keeping accurate. Mirrors
+      // writeSitemap() in scripts/build.js; keep the two in step.
+      const modified = page.lastmod || (page.post && (page.post.updated || page.post.date));
+      const lastmod = modified ? `\n    <lastmod>${modified}</lastmod>` : '';
+
+      return `  <url>\n    <loc>${loc}</loc>${lastmod}\n  </url>`;
     })
     .join('\n');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
@@ -33,6 +56,7 @@ router.get('/sitemap.xml', (req, res) => {
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
 router.get('/our-work', (req, res) => render(res, pages.ourWork));
+router.get('/team/aarti-sharma', (req, res) => render(res, pages.teamAartiSharma));
 router.get('/team/pallav-goel', (req, res) => render(res, pages.teamPallavGoel));
 router.get('/social', (req, res) => render(res, pages.social));
 router.get('/blog', (req, res) => render(res, pages.blog));

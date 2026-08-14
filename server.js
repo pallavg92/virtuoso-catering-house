@@ -18,9 +18,58 @@ bundleCss();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Security headers. Set by hand rather than pulling in helmet: this is the
+// whole of what the site needs, and the dependency list is deliberately short.
+// Applied before express.static so static assets carry them too.
+//
+// Deliberately NOT set here:
+//   * Content-Security-Policy. The pages carry inline <script> blocks and load
+//     Google Tag Manager and Meta Pixel, so a policy strict enough to be worth
+//     having needs per-request nonces and an allowlist for both vendors. Done
+//     carelessly it silently breaks analytics or the enquiry modal, so it wants
+//     its own pass with every page tested, not a line added here.
+//   * includeSubDomains / preload on HSTS. Both are effectively irreversible
+//     for as long as max-age, and they would cover subdomains this repo never
+//     mentions — a webmail or panel host on plain HTTP would become
+//     unreachable. Worth adding once every subdomain is confirmed HTTPS.
+app.use((req, res, next) => {
+  // Browsers ignore HSTS received over plain HTTP, so this is inert in local
+  // development and takes effect only on the live HTTPS origin.
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=()');
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Cache lifetimes for static assets, mirroring the scheme scripts/build.js
+// writes into dist/.htaccess. That file only ever applied to the static build,
+// which production does not serve, so until now every CSS, JS, font and image
+// request came back with no Cache-Control at all and was refetched on each
+// visit. Same policy, applied where it actually takes effect.
+//
+// The split matters: an image or font is immutable in practice, because
+// changing one means writing a new filename. bundle.css and the JS are not —
+// they keep their names and are regenerated on every boot, so a year-long
+// immutable cache would pin visitors to a stale stylesheet after a deploy.
+// A week is the same compromise dist/.htaccess makes. Worth revisiting with a
+// content hash in the filename, which would let these be immutable too.
+const ONE_YEAR = 31536000;
+const ONE_WEEK = 604800;
+
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    if (/\.(jpe?g|png|gif|webp|avif|svg|ico|woff2?)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', `public, max-age=${ONE_YEAR}, immutable`);
+    } else if (/\.(css|js)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', `public, max-age=${ONE_WEEK}`);
+    }
+  }
+}));
 
 // Canonicalize to the www host declared in utils/pageMeta.js (siteUrl).
 // Google was indexing virtuosocatering.com and www.virtuosocatering.com
@@ -29,6 +78,16 @@ app.use((req, res, next) => {
   if (req.hostname === 'virtuosocatering.com') {
     return res.redirect(301, `https://www.virtuosocatering.com${req.originalUrl}`);
   }
+  next();
+});
+
+// Rendered pages revalidate every time. This sits after express.static so it
+// only touches HTML, and it completes the dist/.htaccess policy, which caps
+// text/html at zero seconds. Express still sends an ETag, so a page that has
+// not changed costs a 304 rather than a full body — fresh content without
+// paying for it twice.
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   next();
 });
 

@@ -2284,7 +2284,8 @@ const founders = [
     role: 'Co-Founder',
     bio: 'For Aarti, hospitality is more than exceptional food or flawless service. It is the art of creating experiences that become the soul of a remarkable event. From the very first conversation to the final execution, she believes in listening deeply, understanding every nuance of a client\'s brief, and bringing each vision to life with precision, creativity, and genuine care. Together with co-founder Pallav Goel, she leads the strategic growth and creative direction of Virtuoso Catering House, with a shared vision of establishing it as the benchmark for extraordinary culinary experiences, where excellence is not simply delivered, it is thoughtfully orchestrated.',
     image: '/images/founder-aarti-sharma.jpg',
-    linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/'
+    linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+    instagram: 'https://www.instagram.com/aartirattansharma/'
   },
   {
     slug: 'pallav-goel',

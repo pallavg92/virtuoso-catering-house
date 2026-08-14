@@ -37,7 +37,9 @@
           and can be reached through <a href="/contact" class="link-underline">the enquiry page</a>.
         </p>
         <p class="blog-post__copy reveal-up">
-          <a href="<%= member.linkedin %>" target="_blank" rel="noopener me" class="link-underline">Connect on LinkedIn</a>
+          <% if (member.linkedin) { %><a href="<%= member.linkedin %>" target="_blank" rel="noopener me" class="link-underline">Connect on LinkedIn</a><% } %>
+          <% if (member.linkedin && member.instagram) { %> &middot; <% } %>
+          <% if (member.instagram) { %><a href="<%= member.instagram %>" target="_blank" rel="noopener me" class="link-underline">Follow on Instagram</a><% } %>
         </p>
       </div>
     </div>
@@ -85,7 +87,7 @@
     "url": siteUrl + '/team/' + member.slug,
     "knowsAbout": member.knowsAbout,
     "worksFor": { "@id": siteUrl + '/#organization' },
-    "sameAs": [member.linkedin]
+    "sameAs": [member.linkedin, member.instagram].filter(Boolean)
   }) %>
   </script>
 

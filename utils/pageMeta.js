@@ -56,8 +56,27 @@ const pages = {
     ogImage: content.aboutHeroImage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
   },
-  // Author entity page. Every post's `author` field resolves to the Person
+  // Author entity pages. Every post's `author` field resolves to the Person
   // node published here, and the page lists back every article they wrote.
+  // One page per founder slug: /about and every post emit a Person @id of
+  // `{siteUrl}/team/{slug}#person`, so a founder without a page here leaves
+  // that @id resolving to a 404.
+  teamAartiSharma: {
+    path: '/team/aarti-sharma',
+    view: 'team-member',
+    activePage: 'about',
+    bodyClass: 'page-team-member',
+    title: 'Aarti Sharma, Co-Founder — Virtuoso Catering House',
+    description: 'Aarti Sharma is Co-Founder of Virtuoso Catering House in Noida, leading creative direction and menu design across luxury wedding and event catering in Delhi NCR.',
+    ogImage: content.founders.find((f) => f.slug === 'aarti-sharma').image,
+    member: content.founders.find((f) => f.slug === 'aarti-sharma'),
+    authoredPosts: content.blogPosts.filter((p) => p.author && p.author.name === 'Aarti Sharma'),
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+      { name: 'Aarti Sharma', path: '/team/aarti-sharma' }
+    ]
+  },
   teamPallavGoel: {
     path: '/team/pallav-goel',
     view: 'team-member',

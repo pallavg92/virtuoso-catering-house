@@ -132,7 +132,7 @@
     "url": siteUrl + '/team/' + founder.slug,
     "knowsAbout": founder.knowsAbout,
     "worksFor": { "@id": siteUrl + '/#organization' },
-    "sameAs": [founder.linkedin]
+    "sameAs": [founder.linkedin, founder.instagram].filter(Boolean)
   }) %>
   </script>
   <% }); %>

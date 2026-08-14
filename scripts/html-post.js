@@ -1,6 +1,18 @@
-// Post-processes every built HTML file in /dist. Runs as the last step of
-// `npm run build`, on whatever host does the deploy, so everything here is
-// plain Node with no binaries and no dependencies.
+// Post-processes rendered HTML: sizes images, prioritises the hero, and serves
+// WebP where a sibling exists. Plain Node, no binaries and no dependencies.
+//
+// Two callers, one implementation:
+//
+//   * `npm run build` calls postProcess() as its last step, rewriting the built
+//     files in /dist against the images in /dist.
+//   * The Express app calls processHtml() per response in routes/pages.js,
+//     against the images in /public.
+//
+// Both matter because production serves the Express app directly, not /dist.
+// For a long time only the build path existed, which meant every optimisation
+// below was written, committed, and then shipped to a target nothing served —
+// the live site got none of it. Hence `assetRoot`: the passes are identical,
+// only the directory the image files are read from differs.
 //
 // Three passes over each <img>:
 //
@@ -77,13 +89,18 @@ function svgSize(text) {
   return null;
 }
 
+// Both caches are keyed by resolved absolute path, not by the src attribute,
+// so the same process can serve more than one asset root without collisions.
+// They also turn the per-request cost in the Express path into a one-off:
+// after the first render of a page, every image on it is a map lookup.
 const sizeCache = new Map();
+const webpCache = new Map();
 
-function dimensions(srcPath) {
-  if (sizeCache.has(srcPath)) return sizeCache.get(srcPath);
+function dimensions(srcPath, assetRoot) {
+  const file = path.join(assetRoot, srcPath.replace(/^\//, '').split('?')[0]);
+  if (sizeCache.has(file)) return sizeCache.get(file);
   let result = null;
   try {
-    const file = path.join(DIST, srcPath.replace(/^\//, '').split('?')[0]);
     if (/\.svg$/i.test(file)) {
       result = svgSize(fs.readFileSync(file, 'utf8'));
     } else {
@@ -95,8 +112,16 @@ function dimensions(srcPath) {
   } catch {
     result = null;
   }
-  sizeCache.set(srcPath, result);
+  sizeCache.set(file, result);
   return result;
+}
+
+function hasWebp(webpSrc, assetRoot) {
+  const file = path.join(assetRoot, webpSrc.replace(/^\//, ''));
+  if (webpCache.has(file)) return webpCache.get(file);
+  const exists = fs.existsSync(file);
+  webpCache.set(file, exists);
+  return exists;
 }
 
 // --- the rewrite ------------------------------------------------------------
@@ -108,7 +133,7 @@ function attr(tag, name) {
   return m ? m[1] : null;
 }
 
-function processHtml(html) {
+function processHtml(html, assetRoot = DIST) {
   const stats = { sized: 0, prioritised: 0, wrapped: 0 };
 
   const out = html.replace(IMG_RE, (tag) => {
@@ -121,7 +146,7 @@ function processHtml(html) {
     let next = tag;
 
     if (!/\bwidth=/i.test(next) && !/\bheight=/i.test(next)) {
-      const dim = dimensions(src);
+      const dim = dimensions(src, assetRoot);
       if (dim && dim.width && dim.height) {
         next = next.replace(/<img\b/i, `<img width="${dim.width}" height="${dim.height}"`);
         stats.sized += 1;
@@ -134,7 +159,7 @@ function processHtml(html) {
     }
 
     const webpSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
-    if (fs.existsSync(path.join(DIST, webpSrc.replace(/^\//, '')))) {
+    if (hasWebp(webpSrc, assetRoot)) {
       next = `<picture><source srcset="${webpSrc}" type="image/webp">${next}</picture>`;
       stats.wrapped += 1;
     }
@@ -157,7 +182,7 @@ function postProcess() {
   const total = { sized: 0, prioritised: 0, wrapped: 0 };
 
   files.forEach((file) => {
-    const { html, stats } = processHtml(fs.readFileSync(file, 'utf8'));
+    const { html, stats } = processHtml(fs.readFileSync(file, 'utf8'), DIST);
     fs.writeFileSync(file, html);
     total.sized += stats.sized;
     total.prioritised += stats.prioritised;
@@ -167,6 +192,10 @@ function postProcess() {
   console.log(`  post-processed ${files.length} pages: ${total.sized} images sized, ${total.prioritised} prioritised, ${total.wrapped} served as webp`);
 }
 
+// postProcess stays the default export so `require('./html-post')` in
+// scripts/build.js keeps working unchanged; processHtml is named for the
+// Express path, which post-processes one response at a time.
 module.exports = postProcess;
+module.exports.processHtml = processHtml;
 
 if (require.main === module) postProcess();
