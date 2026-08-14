@@ -1,5 +1,5 @@
-// Shared inquiry-form validation, used by both the Express dev route
-// (routes/api.js) and the Netlify serverless function (netlify/functions/inquiry.js).
+// Inquiry-form validation, used by the Express route in routes/api.js, which
+// serves the form in production as well as locally.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+\d][\d\s-]{6,}$/;
 

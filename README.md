@@ -1,6 +1,6 @@
 # Virtuoso Catering House
 
-A premium, awards-style marketing website for a luxury catering company, built with Node.js, Express, and EJS on the backend, and hand-crafted CSS with vanilla JavaScript + GSAP/ScrollTrigger on the front end. The site is statically generated (SSG) for production and deploys to Netlify as plain HTML + a serverless function.
+A premium, awards-style marketing website for a luxury catering company, built with Node.js, Express, and EJS on the backend, and hand-crafted CSS with vanilla JavaScript + GSAP/ScrollTrigger on the front end. Production runs the Express app on Hostinger, rendering every page from the same EJS templates used in development.
 
 ## Local Development
 
@@ -13,40 +13,54 @@ npm start        # starts the Express dev server once, no auto-restart
 
 The dev server runs at [http://localhost:3000](http://localhost:3000) and renders every page dynamically with EJS on each request — this is the fastest way to iterate on templates/styles locally.
 
-## Production: Static Build
+## Production: Express on Hostinger
 
-Production does **not** run the Express server. Instead, `npm run build` pre-renders every page to plain HTML in `/dist`:
+Production runs `server.js` directly on Hostinger's Node hosting, behind their
+`hcdn` edge. Every page is rendered per request from the EJS templates in
+`views/`, and `routes/api.js` handles the Inquire drawer and menu-download
+forms. There is no separate production codepath: what the dev server renders is
+what visitors get.
+
+**This matters when adding an optimisation.** The site previously deployed to
+Netlify as a static build, and several SEO fixes were written as build-time
+steps against `/dist`. After the move to Hostinger those steps kept running at
+build time and kept never reaching a visitor — the live sitemap advertised a
+fake `lastmod`, images shipped unsized and unwrapped, and static assets carried
+no `Cache-Control` for months. Anything that changes the HTML or the response
+headers has to live in the Express path (`server.js`, `routes/`, `views/`) to
+have any effect. `scripts/html-post.js` is shared by both paths and takes an
+`assetRoot` for exactly this reason.
+
+## Deploying
+
+Pushing to `main` on GitHub deploys to Hostinger.
+
+There is no build step to run first — Express renders from `views/` at request
+time. SMTP credentials live in the Hostinger environment, not in the repo (see
+Environment Variables below).
+
+Verify a deploy landed by checking something the change should have altered, for
+example:
+
+```bash
+curl -sI https://www.virtuosocatering.com/ | grep -i cache-control
+curl -s https://www.virtuosocatering.com/sitemap.xml | head -20
+```
+
+## Optional: Static Build
+
+`npm run build` still pre-renders every page to `/dist` and is wired to
+`npm run serve:dist`. It is **not** what production serves — it is useful for
+inspecting a fully static export, and `scripts/build.js` remains the reference
+implementation for the sitemap and image passes.
 
 ```bash
 npm run build
 ```
 
-This:
-- Renders `/`, `/about`, `/our-work`, `/gallery`, `/blog`, `/services`, `/contact`, and a `404.html` to static files in `/dist`
-- Copies all of `/public` (css, js, images, downloads, favicon, robots.txt) into `/dist`
-- Generates `/dist/sitemap.xml` from the same page list
-
-The generated HTML is byte-identical in appearance to what the Express dev server renders — the same EJS templates, CSS, and JS run either way. Only *when* the HTML gets built changes (once at deploy time, instead of per-request).
-
-## Deploying to Netlify
-
-`netlify.toml` is already configured:
-
-- **Build command:** `npm run build`
-- **Publish directory:** `dist`
-- **Functions directory:** `netlify/functions`
-- `/api/inquiry` is redirected to the `inquiry` Netlify Function so the Inquire drawer form works exactly as it does locally — `public/js/inquire-drawer.js` needs no changes.
-
-To deploy:
-
-1. Push this repo to GitHub (already done if you're reading this from the repo).
-2. In Netlify: **Add new site → Import an existing project → select this repo.** Netlify reads `netlify.toml` and fills in the build settings automatically.
-3. Add the SMTP environment variables (see below) under **Site settings → Environment variables**.
-4. Deploy. Netlify serves the static pages from its global CDN and runs `netlify/functions/inquiry.js` on-demand whenever the contact form is submitted — no server to keep running or pay for.
-
 ## Environment Variables (Nodemailer / Contact Form)
 
-Used both by the local Express dev server (via `.env`) and by the Netlify Function (via Netlify's dashboard env vars — same variable names, no `.env` file needed there).
+Used by the Express app both locally (via `.env`) and in production (set them in Hostinger's environment settings — same variable names, no `.env` file deployed).
 
 Copy `.env.example` to `.env` for local development:
 
@@ -65,31 +79,29 @@ cp .env.example .env
 | `INQUIRY_FROM_EMAIL`  | The "from" address used when sending (often must match `SMTP_USER`)   |
 | `PORT`                | Port the local Express dev server listens on (default `3000`)         |
 
-**If no SMTP credentials are set, nothing crashes.** `POST /api/inquiry` (or the Netlify Function in production) still validates the submission normally and logs the inquiry details to the console instead of emailing — handy for testing without a mail provider configured yet.
+**If no SMTP credentials are set, nothing crashes.** `POST /api/inquiry` still validates the submission normally and logs the inquiry details to the console instead of emailing — handy for testing without a mail provider configured yet.
 
 ## SEO / AEO
 
 - `utils/pageMeta.js` centralizes each page's title, meta description, canonical URL, and Open Graph image — used by both the dev server and the static build so they never drift apart. `siteUrl` there is set to `https://www.virtuosocatering.com`.
 - Every page includes Open Graph + Twitter Card tags, a canonical `<link>`, and `FoodEstablishment` JSON-LD structured data (name, address, phone, social profiles) in `views/partials/head.ejs`, sourced from `utils/pageMeta.js`.
-- `public/robots.txt` points crawlers at `/sitemap.xml`, which is regenerated on every `npm run build`.
+- `public/robots.txt` points crawlers at `/sitemap.xml`, which the Express app generates per request in `routes/pages.js` from the same `pages` registry the routes use. Each URL carries its real `lastmod`, or none — never a synthetic "today", which would teach Google to ignore the field.
 
 ## File Structure
 
 ```
-server.js                   Express app entry point (local dev only)
+server.js                   Express app entry point — runs in production and locally
 scripts/
-  build.js                  Static site build: EJS -> /dist HTML, copies /public, writes sitemap.xml
-netlify.toml                Netlify build config + /api/inquiry -> function redirect
-netlify/functions/
-  inquiry.js                Serverless inquiry-form handler (production)
+  build.js                  Optional static export: EJS -> /dist HTML, copies /public, writes sitemap.xml
+  html-post.js              Image passes (width/height, fetchpriority, <picture>/webp) shared by the Express path and the static build
 routes/
-  pages.js                  Renders all page views (dev server only: /, /about, /our-work, /gallery, /blog, /services, /contact; /menu redirects to /services)
-  api.js                    POST /api/inquiry — dev-server equivalent of the Netlify function
+  pages.js                  Renders all page views and /sitemap.xml (/, /about, /our-work, /blog, /services, /contact, /team/*; /menu redirects to /services)
+  api.js                    POST /api/inquiry and /api/menu-download — serves the forms in production
 utils/
   content.js                 Centralized placeholder copy/data for all pages (services, ourWork, blogPosts, testimonials, process, founders, menu, etc.)
   pageMeta.js                 Per-page SEO metadata (title, description, canonical, OG) + business info
   mailer.js                   Nodemailer transport + console-log fallback
-  validateInquiry.js          Shared form validation (used by both routes/api.js and the Netlify function)
+  validateInquiry.js          Form validation used by routes/api.js
 views/
   partials/                  head, nav (includes the global Inquire drawer), footer, preloader, cursor, scripts includes
   index.ejs, about.ejs,
@@ -113,4 +125,4 @@ public/
 - **Inquire** is a global slide-in drawer (markup lives in `views/partials/nav.ejs`, behavior in `public/js/inquire-drawer.js`), reachable from any page via the nav, footer, or CTA buttons — not a dedicated page navigation.
 - **Motion**: All scroll-driven animation respects `prefers-reduced-motion`, degrading to instant/simple states.
 - **Custom cursor** and the lerped smooth-scroll are automatically disabled on touch/coarse-pointer devices.
-- `/dist` is build output and is gitignored — it's regenerated by `npm run build` (Netlify runs this automatically on every deploy).
+- `/dist` is build output and is gitignored. It is regenerated by `npm run build` and is **not** what production serves — see Production above.

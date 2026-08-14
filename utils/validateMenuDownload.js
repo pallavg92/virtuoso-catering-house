@@ -1,5 +1,5 @@
-// Shared menu-download-gate validation, used by both the Express dev route
-// (routes/api.js) and the Netlify serverless function (netlify/functions/menu-download.js).
+// Menu-download-gate validation, used by the Express route in routes/api.js,
+// which serves the form in production as well as locally.
 const { EMAIL_RE, PHONE_RE } = require('./validateInquiry');
 
 function validateMenuDownload(body) {

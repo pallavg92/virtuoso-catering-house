@@ -18,31 +18,6 @@ bundleCss();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Security headers. Set by hand rather than pulling in helmet: this is the
-// whole of what the site needs, and the dependency list is deliberately short.
-// Applied before express.static so static assets carry them too.
-//
-// Deliberately NOT set here:
-//   * Content-Security-Policy. The pages carry inline <script> blocks and load
-//     Google Tag Manager and Meta Pixel, so a policy strict enough to be worth
-//     having needs per-request nonces and an allowlist for both vendors. Done
-//     carelessly it silently breaks analytics or the enquiry modal, so it wants
-//     its own pass with every page tested, not a line added here.
-//   * includeSubDomains / preload on HSTS. Both are effectively irreversible
-//     for as long as max-age, and they would cover subdomains this repo never
-//     mentions — a webmail or panel host on plain HTTP would become
-//     unreachable. Worth adding once every subdomain is confirmed HTTPS.
-app.use((req, res, next) => {
-  // Browsers ignore HSTS received over plain HTTP, so this is inert in local
-  // development and takes effect only on the live HTTPS origin.
-  res.setHeader('Strict-Transport-Security', 'max-age=31536000');
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=()');
-  next();
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
