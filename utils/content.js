@@ -710,7 +710,7 @@ const blogPosts = [
     image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
-      'Luxury catering in Delhi NCR is quoted per event, not off a rate card. Two weddings with the same guest count, the same city and the same season can land at very different numbers, because they are not buying the same thing. Food is quoted separately from bar and beverage service in every case.',
+      'Luxury catering in Delhi NCR is quoted per event rather than off a rate card. The market runs across four tiers, from economy buffets through mid-range and premium to luxury chef-led plated service, and each is a different service model rather than a longer menu. Two weddings with the same guest count and season can land at very different numbers because they are not buying the same thing.',
       'A client called me last month before their daughter\'s wedding. First question, before hello, practically: "What\'s your per-plate rate?"',
       'I get this question every week. And every week, I have to disappoint people with the honest answer: it depends. Not because I\'m being cagey. Because "per plate" is the wrong unit to think in.',
       'Here\'s why. Two events, same guest count, same city, same season, one can cost double the other. Not because one caterer is better at cooking. Because they\'re not buying the same thing.',
@@ -757,7 +757,7 @@ const blogPosts = [
       }
     ],
     faq: [
-      { q: 'How is luxury wedding catering priced in Delhi NCR?', a: 'Per event, not off a rate card. The quote is built from menu complexity, staffing ratio, service style and season, then set against your actual brief. Food is quoted separately from bar and beverage service. Ask us for a current figure for your own event.' },
+      { q: 'How is luxury wedding catering priced in Delhi NCR?', a: 'Per event rather than off a rate card. The market spans four tiers, from economy buffets through mid-range and premium to luxury chef-led plated service. Within a tier the quote moves on menu complexity, staffing ratio, service style and season. Food is priced separately from bar service.' },
       { q: 'Why won\'t a luxury caterer give a per-plate rate upfront?', a: 'Because per plate is the wrong unit. It assumes every event wants the same thing, and most families asking for a quote have not yet decided what they want. A number given before that conversation describes a template, not your wedding.' },
       { q: 'Why do two quotes for the same wedding differ so much?', a: 'They are usually describing different scopes. A luxury quote carries consultation, menu development, the tasting, staffing ratio and plated service. A lower number often means one of those has been removed rather than priced better. Ask each caterer exactly what is included.' },
       { q: 'Does the wedding date affect the price?', a: 'Yes. Delhi NCR weddings cluster on a small number of fixed muhurat dates each season, so venues, top-tier vendors and skilled staff are all competing for on those same days. Demand spikes on specific dates rather than spreading across the year, and pricing follows.' }
@@ -1945,19 +1945,19 @@ const landingPages = {
       }
     ],
     closing: {
-      heading: 'Book The Best Catering Services In Noida',
+      heading: 'Booking Catering in Noida',
       paragraphs: [
-        'Great food makes celebrations memorable. Our expert team whether it’s a grand wedding or a corporate event, ensure your event delivers a memorable experience with lasting memories.',
-        'We translate your vision into a memorable reality. Let us together make your next event truly deliciously memorable. That leaves a lasting impression.'
+        'Start with the date, the venue and roughly how many guests. That is enough for us to say honestly whether we are the right caterer for the event, which is a conversation worth having before anyone talks about menus.',
+        'If we are, the next step is a tasting. You eat the menu you are considering, cooked by the chef who will cook it on the day, and you decide from there rather than from a photograph.'
       ]
     },
     faq: [
-      { q: 'Do you provide catering services in Noida for both small and large events?', a: 'Yes. We cater to events beginning from 20 guests, and also provide larger packages for 100 plus guests, across Noida and the surrounding areas.' },
-      { q: 'What is for catering the minimum number of guests?', a: 'We cater to events beginning from 20 guests. Additionally we also provide larger packages for 100 plus guests.' },
-      { q: 'Do you provide live counters and servers?', a: 'Yes, we do. We offer for service during the event, live food stations and professional staff.' },
-      { q: 'Are vegetarian or non-vegetarian catering offered?', a: 'We offer both options. Menus can be based on your dietary preferences, fully customized.' },
-      { q: 'When to book ideally?', a: 'Book at least 2-4 weeks in advance. This ensures availability. We especially help for wedding season or festivals.' },
-      { q: 'Do you provide before booking tastings?', a: 'Yes, we do. We offer them for select events and menu types. Contact our customer support team to schedule one.' }
+      { q: 'What is the minimum guest count for catering in Noida?', a: 'We cater from 20 guests upwards, and have run events up to 2,000. A small count is not a lesser version of the job. With twenty people at the table there is nowhere for a weak dish to hide, so the standard has to hold.' },
+      { q: 'Which areas of Noida do you cater in?', a: 'Across Noida including Sectors 18, 62, 63, 104 and 137, plus Noida Extension, Greater Noida, Ghaziabad and Indirapuram. Travel time matters more than distance here, so venues off the Expressway or the DND get planned around the traffic.' },
+      { q: 'Do you provide live counters and serving staff?', a: 'Yes. Pasta, tandoor and chaat stations, with staff briefed on the menu rather than only the timings. A live counter is only worth having if the queue keeps moving, which is a staffing decision more than a menu one.' },
+      { q: 'Do you cater vegetarian, Jain and sattvic menus?', a: 'Yes, all three. Jain and sattvic menus are prepared in separate vessels rather than adapted from the main menu. That distinction is the one that matters to families who keep it strictly, and it is worth asking any caterer directly.' },
+      { q: 'How far in advance should I book a caterer in Noida?', a: 'Two to four weeks suits most events. Wedding season, roughly November to February, is the exception: dates cluster on a few auspicious days and every family competes for the same venues and staff, so book those months ahead.' },
+      { q: 'Can I taste the menu before booking?', a: 'Yes. You taste the menu you are considering before committing to it, and the chef who cooks that tasting is the chef on your event. Ask any caterer that second part directly, because it is not the norm.' }
     ]
   },
   'catering-services-in-greater-noida': {
