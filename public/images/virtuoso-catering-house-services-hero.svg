@@ -1,0 +1,72 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5E1B22"/>
+      <stop offset="55%" stop-color="#3F1418"/>
+      <stop offset="100%" stop-color="#17190F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#C9A768" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C9A768" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCC594"/>
+      <stop offset="100%" stop-color="#C9A768"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+
+  <!-- thin editorial frame -->
+  <rect x="70" y="70" width="1780" height="940" fill="none" stroke="#C9A768" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- scattered fine linework sprigs, echoing the journal hero -->
+  <g stroke="#C9A768" stroke-opacity="0.2" stroke-width="1.2" fill="none">
+    <path d="M150,150 Q175,120 205,130 Q190,160 160,170 Q140,160 150,150 Z"/>
+    <path d="M150,150 Q130,125 145,100"/>
+    <path d="M1770,910 Q1795,880 1825,890 Q1810,920 1780,930 Q1760,920 1770,910 Z"/>
+    <path d="M1770,910 Q1750,885 1765,860"/>
+  </g>
+
+  <!-- four medallions, one per service pillar, evenly spaced -->
+  <g transform="translate(0,540)">
+
+    <!-- Weddings: interlocking rings -->
+    <g transform="translate(510,0)" stroke="url(#goldLine)" fill="none">
+      <circle cx="-18" cy="0" r="70" stroke-width="2.4" opacity="0.9"/>
+      <circle cx="18" cy="0" r="70" stroke-width="2.4" opacity="0.9"/>
+    </g>
+
+    <!-- Brand Activations: spotlight burst -->
+    <g transform="translate(810,0)" stroke="url(#goldLine)" fill="none" stroke-linecap="round">
+      <circle cx="0" cy="0" r="46" stroke-width="2.2" opacity="0.9"/>
+      <line x1="0" y1="-96" x2="0" y2="-70" stroke-width="2"/>
+      <line x1="0" y1="70" x2="0" y2="96" stroke-width="2"/>
+      <line x1="-96" y1="0" x2="-70" y2="0" stroke-width="2"/>
+      <line x1="96" y1="0" x2="70" y2="0" stroke-width="2"/>
+      <line x1="-68" y1="-68" x2="-49" y2="-49" stroke-width="2"/>
+      <line x1="68" y1="-68" x2="49" y2="-49" stroke-width="2"/>
+      <line x1="-68" y1="68" x2="-49" y2="49" stroke-width="2"/>
+      <line x1="68" y1="68" x2="49" y2="49" stroke-width="2"/>
+    </g>
+
+    <!-- Mixology: coupe glass -->
+    <g transform="translate(1110,0)" stroke="url(#goldLine)" stroke-width="2.2" fill="none" stroke-linecap="round">
+      <path d="M-56,-72 Q-56,-8 0,-8 Q56,-8 56,-72 Q28,-56 0,-56 Q-28,-56 -56,-72 Z"/>
+      <line x1="0" y1="-8" x2="0" y2="70"/>
+      <line x1="-38" y1="70" x2="38" y2="70"/>
+    </g>
+
+    <!-- Bespoke Menus: folded card -->
+    <g transform="translate(1410,0)" stroke="url(#goldLine)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-52,-70 L52,-70 L52,72 L-52,72 Z"/>
+      <line x1="-30" y1="-38" x2="30" y2="-38"/>
+      <line x1="-30" y1="-10" x2="30" y2="-10"/>
+      <line x1="-30" y1="18" x2="12" y2="18"/>
+    </g>
+  </g>
+
+  <!-- hairline connecting the four medallions -->
+  <line x1="440" y1="540" x2="1480" y2="540" stroke="#C9A768" stroke-opacity="0.28" stroke-width="1"/>
+</svg>

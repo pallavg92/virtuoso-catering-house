@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  background: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease-premium), visibility 0.8s var(--ease-premium);
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader__inner {
+  text-align: center;
+  opacity: 0;
+  animation: preloader-fade-in 1s var(--ease-premium) 0.15s forwards;
+}
+
+.preloader__mark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1.2rem + 2vw, 2.5rem);
+  color: var(--color-ivory);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.preloader__bar {
+  width: clamp(160px, 20vw, 240px);
+  height: 1px;
+  background: rgba(253, 248, 240, 0.15);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.preloader__bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-gold);
+  transition: width 0.3s var(--ease-premium);
+}
+
+@keyframes preloader-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body:not(.preloader-active) {
+  overflow: visible;
+}
+
+body.preloader-active {
+  overflow: hidden;
+  height: 100vh;
+}

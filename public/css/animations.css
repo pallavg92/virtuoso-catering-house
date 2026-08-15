@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Scroll-reveal animation primitives
+   Actual triggering is handled by gsap-animations.js (ScrollTrigger).
+   These classes define the resting/revealed states only.
+   ========================================================================== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s var(--ease-premium), transform 0.9s var(--ease-premium);
+}
+
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-line > span {
+  transition: transform 1s var(--ease-premium);
+}
+
+.hero__title.in-view .reveal-line > span,
+.reveal-line.in-view > span {
+  transform: translateY(0);
+}
+
+/* Parallax media wrapper — JS applies inline transforms via GSAP */
+[data-parallax] img {
+  will-change: transform;
+}
+
+/* Magnetic buttons — JS sets transform, this just ensures smooth settle */
+[data-magnetic] {
+  transition: transform 0.4s var(--ease-premium);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .reveal-line > span {
+    transform: none;
+    transition: none;
+  }
+  [data-parallax] img {
+    transform: none !important;
+  }
+  [data-magnetic] {
+    transition: none;
+  }
+}
+
+/* Fallback: if JS never runs, don't leave content invisible */
+.no-js .reveal-up,
+.no-js .reveal-line > span {
+  opacity: 1;
+  transform: none;
+}

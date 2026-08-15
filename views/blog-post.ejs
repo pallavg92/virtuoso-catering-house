@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+<%- include('partials/whatsapp-float') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= post.image %>" alt="<%= post.title %>" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
+      <% if (post.date) { %>
+      <!-- <time datetime> gives crawlers an unambiguous ISO date; the visible
+           text stays in the reader's format. If post.updated is set it shows
+           as well, since a visible update date is worth as much to a reader
+           deciding whether to trust the piece as it is to a crawler. -->
+      <span class="eyebrow eyebrow--light reveal-up">
+        <time datetime="<%= post.date %>"><%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>
+        <% if (post.updated && post.updated !== post.date) { %>
+        · Updated <time datetime="<%= post.updated %>"><%= new Date(post.updated).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>
+        <% } %>
+      </span>
+      <% } %>
+      <h1 class="page-intro__title reveal-up"><%= post.title %></h1>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="blog-post section section--ivory">
+    <div class="container">
+      <% if (post.lead) { %>
+      <div class="blog-post__prose">
+        <% post.lead.forEach(function(paragraph) { %>
+        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%- paragraph %></p>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <% if (post.body) { %>
+      <div class="blog-post__prose">
+        <% post.body.forEach(function(paragraph) { %>
+        <p class="blog-post__copy reveal-up"><%- paragraph %></p>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <% (post.sections || []).forEach(function(section) { %>
+      <div class="blog-post__prose">
+        <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+        <% section.paragraphs.forEach(function(paragraph) { %>
+        <p class="blog-post__copy reveal-up"><%- paragraph %></p>
+        <% }); %>
+        <% if (section.pullQuote) { %>
+        <blockquote class="blog-post__pull-quote reveal-up"><%= section.pullQuote %></blockquote>
+        <% } %>
+        <% if (section.list && section.list.length) { %>
+        <ul class="landing-list">
+          <% section.list.forEach(function(item) { %>
+          <li class="landing-list__item reveal-up"><%= item %></li>
+          <% }); %>
+        </ul>
+        <% } %>
+        <% if (section.outro) { %>
+        <p class="blog-post__copy reveal-up"><%= section.outro %></p>
+        <% } %>
+        <% if (section.links && section.links.length) { %>
+        <% section.links.forEach(function(link) { %>
+        <p class="blog-post__copy reveal-up"><a href="<%= link.path %>" class="link-underline"<% if (/^https?:/.test(link.path)) { %> target="_blank" rel="noopener"<% } %>><%= link.label %></a></p>
+        <% }); %>
+        <% } %>
+      </div>
+
+      <% if (section.image) { %>
+      <figure class="blog-post__image-break reveal-up">
+        <img src="<%= section.image.src %>" alt="<%= section.image.caption %>" loading="lazy">
+        <figcaption><%= section.image.caption %></figcaption>
+      </figure>
+      <% } %>
+
+      <% if (section.images && section.images.length) { %>
+      <div class="blog-post__duo reveal-up">
+        <% section.images.forEach(function(img) { %>
+        <figure>
+          <img src="<%= img.src %>" alt="<%= img.caption %>" loading="lazy">
+          <figcaption><%= img.caption %></figcaption>
+        </figure>
+        <% }); %>
+      </div>
+      <% } %>
+      <% }); %>
+
+      <div class="blog-post__prose">
+        <% if (post.relatedLink) { %>
+        <p class="blog-post__copy reveal-up"><a href="<%= post.relatedLink.path %>" class="link-underline"><%= post.relatedLink.label %></a></p>
+        <% } %>
+        <!-- Crawlable route to the enquiry page. The CTA banner below opens a
+             JavaScript drawer, so without this anchor /contact receives no
+             internal link from any Journal post. Per-post copy can override it
+             via post.enquiryLink. -->
+        <p class="blog-post__copy reveal-up"><a href="<%= (post.enquiryLink && post.enquiryLink.path) || '/contact' %>" class="link-underline"><%= (post.enquiryLink && post.enquiryLink.label) || 'Tell us about your event and start an enquiry' %></a></p>
+        <% if (post.backLink) { %>
+        <a href="<%= post.backLink.path %>" class="link-underline reveal-up"><%= post.backLink.label %></a>
+        <% } else { %>
+        <a href="/blog" class="link-underline reveal-up">Back to the Journal</a>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <% if (post.faq && post.faq.length) { %>
+  <!-- FAQ -->
+  <section class="landing-faq section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Questions</span>
+        <h2 class="section-title reveal-up">Frequently Asked Questions</h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="landing-faq__list">
+        <% post.faq.forEach(function(item) { %>
+        <details class="landing-faq__item reveal-up">
+          <summary class="landing-faq__question"><%= item.q %></summary>
+          <p class="landing-faq__answer"><%= item.a %></p>
+        </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faq.map(function(item) {
+      return {
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      };
+    })
+  }) %>
+  </script>
+  <% } %>
+
+  <% if (post.author) { %>
+  <!-- AUTHOR -->
+  <section class="blog-post-author section section--ivory">
+    <div class="container blog-post__prose">
+      <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
+      <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
+      <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>
+      <% if (post.author.linkedin) { %>
+      <a href="<%= post.author.linkedin %>" target="_blank" rel="noopener" class="link-underline reveal-up">Connect on LinkedIn</a>
+      <% } %>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Planning a Launch<br>of Your Own?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

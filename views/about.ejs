@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+<%- include('partials/whatsapp-float') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= aboutHeroImage %>" alt="A candlelit plated dish by Virtuoso Catering House" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
+      <span class="eyebrow eyebrow--light reveal-up">About Virtuoso Catering House</span>
+      <h1 class="page-intro__title reveal-up">Where Every Detail<br>Becomes the Experience</h1>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Who We Are</span>
+        <h2 class="section-title reveal-up"><%= aboutPage.intro.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% aboutPage.intro.paragraphs.forEach(function(p, i) { %>
+        <p class="blog-post__copy <%= i === 0 ? 'blog-post__copy--lead' : '' %> reveal-up"><%- p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE APPROACH. Grounds alternate so five prose sections in a row do not
+       read as one wall of text. -->
+  <% aboutPage.sections.forEach(function(block, i) { %>
+  <section class="section <%= i % 2 === 1 ? 'section--charcoal' : 'section--ivory' %>">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%- block.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% block.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%- p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% }); %>
+
+  <!-- CLIENTS -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Selected Work</span>
+        <h2 class="section-title reveal-up"><%= aboutPage.clients.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <p class="blog-post__copy reveal-up"><%= aboutPage.clients.intro %></p>
+        <ul class="landing-list">
+          <% aboutPage.clients.items.forEach(function(item) { %>
+          <li class="landing-list__item reveal-up"><%= item %></li>
+          <% }); %>
+        </ul>
+        <p class="blog-post__copy reveal-up"><%= aboutPage.clients.outro %></p>
+        <p class="blog-post__copy reveal-up"><a href="/our-work" class="link-underline">See the work in full</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP. Sits directly above the founder profiles, which it introduces. -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal-up">Leadership</span>
+        <h2 class="section-title reveal-up"><%= aboutPage.leadership.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% aboutPage.leadership.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%- p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders section section--ivory">
+    <div class="container">
+      <div class="founders__grid">
+        <% founders.forEach(function(founder) { %>
+        <div class="founder-block reveal-up">
+          <div class="founder-block__image">
+            <img src="<%= founder.image %>" alt="<%= founder.name %>, <%= founder.role %> of Virtuoso Catering House" loading="lazy">
+          </div>
+          <span class="eyebrow eyebrow--gold"><%= founder.role %></span>
+          <h3 class="founder-block__name"><%= founder.name %></h3>
+          <p class="founder-block__bio"><%= founder.bio %></p>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Same @id as the node published on /team/{slug}, so these two pages
+       describe one entity rather than two competing ones. `url` points at
+       the team page because that is the canonical home for the person. -->
+  <% founders.forEach(function(founder) { %>
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": siteUrl + '/team/' + founder.slug + '#person',
+    "name": founder.name,
+    "jobTitle": founder.role,
+    "description": founder.bio,
+    "image": siteUrl + founder.image,
+    "url": siteUrl + '/team/' + founder.slug,
+    "knowsAbout": founder.knowsAbout,
+    "worksFor": { "@id": siteUrl + '/#organization' },
+    "sameAs": [founder.linkedin, founder.instagram].filter(Boolean)
+  }) %>
+  </script>
+  <% }); %>
+
+  <!-- HOW WE WORK -->
+  <section class="timeline section section--charcoal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light reveal-up">How We Work</span>
+        <h2 class="section-title reveal-up">From Brief to Final Night</h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <div class="timeline__list" id="timeline-list">
+        <div class="timeline__progress" id="timeline-progress"></div>
+        <% process.forEach(function(item, i) { %>
+        <div class="timeline__item reveal-up">
+          <span class="timeline__year"><%= item.step %></span>
+          <div class="timeline__dot"></div>
+          <div class="timeline__body">
+            <h3><%= item.title %></h3>
+            <p><%= item.copy %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CREATE -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= aboutPage.closing.heading %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <% aboutPage.closing.paragraphs.forEach(function(p) { %>
+        <p class="blog-post__copy reveal-up"><%- p %></p>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Ready to Start<br>the Conversation?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>
