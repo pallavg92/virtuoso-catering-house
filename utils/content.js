@@ -1892,56 +1892,56 @@ const landingPages = {
     lead: {
       heading: 'Catering Services in Noida for Weddings and Events',
       paragraphs: [
-        'Looking for reliable catering services in Noida? Virtuoso is the caterer families and companies across the city turn to for weddings, parties, and private events.',
-        'Our team combines professionalism with flavor and affordability, ensuring luxury catering in Noida.',
-        'We deliver tailored to your unique needs unforgettable experiences through great food and service.'
+        'Virtuoso Catering House is a luxury caterer based in Noida, working across Sector 18 to Noida Extension and out into Greater Noida and Ghaziabad. We cook Italian, Asian and modern Indian out of FSSAI-certified kitchens, build a menu per event rather than per package, and start every booking with a tasting, so nothing is a surprise on the day.',
+        'Most catering in this city is sold as a package. You pick a tier, you get the spread that comes with it, and the same spread went out last weekend to somebody else. That works, and for a large-volume function it is often the right answer.',
+        'We work the other way around. The menu is designed after the conversation about who is in the room and what the evening is supposed to feel like, which is why we quote against a brief rather than off a rate card. It is a different way of buying catering, and it is not the cheaper one.'
       ]
     },
     featureList: {
-      heading: 'Top Features That Make Us Best Catering Services In Noida',
-      intro: 'The following tells why clients trust us the best catering services in Noida.',
+      heading: 'What You Actually Get',
+      intro: 'The parts of the job that decide how an event goes, and that are worth asking any Noida caterer about before you book.',
       items: [
-        'Tasting Sessions Available: for select packages. This allows before you book to try.',
-        'Eco-friendly Practices: Ensures sustainable catering. That comes with biodegradable cutlery and minimal food wastage.',
-        'Live Counters: Like Pasta Stations, Tandoor Setups, and Chaat Carts.',
-        'Themed Presentations: To match your theme. From royal Indian spreads to modern buffet setups.',
-        'Post-event Cleanups: Handle every aspect after party clean-up. No worries about anything.'
+        'A tasting before you commit. You sit down with the menu you are considering and eat it, and the chef who cooks that tasting is the chef on your event.',
+        'Live counters run properly. Pasta, tandoor and chaat stations are only worth having if the queue moves, which is a staffing question more than a menu one.',
+        'Presentation built for the room. A royal Indian spread and a modern plated service need different crockery, different lighting and different service choreography.',
+        'Full clearance afterwards. The kitchen goes back the way it was found, which matters most at farmhouse and society venues where you are answerable to somebody else.',
+        'Lower-waste service. Biodegradable disposables where they are used, and quantities planned to the guest count rather than padded for safety.'
       ]
     },
     specializations: {
       heading: 'Events Virtuoso Caterers Covers',
-      intro: 'We offer for every occasion a catering solution.',
+      intro: 'Different occasions need different things from a caterer. These are the ones we work on most often across Noida.',
       items: [
-        { title: 'Wedding Catering', points: ['Offer full-service wedding catering in Noida. This includes live food counters, chaat stations, and dessert bars.', 'Offer customizable menus to match your theme and tradition.'] },
-        { title: 'Corporate Catering', points: ['Ensure professional service. That encompass from business meetings and conferences to office parties and annual functions.', 'Offer different menu options. This includes breakfast, lunch, high tea, and dinner.'] },
-        { title: 'Birthday & Private Parties', points: ['Handle every aspect of your event. From birthday bash to anniversary celebration.', 'Offer luxury catering in Noida for private parties. This includes flavorful dishes and engaging food presentations.'] },
-        { title: 'Housewarming & Religious Functions', points: ['Offer for housewarming events, best catering services in Noida. This includes showers, pujas, and other religious gatherings.', 'Offer thoughtfully curated menus-traditional and sattvic for spiritual occasions.'] },
-        { title: 'Outdoor Catering', points: ['Offer efficient outdoor catering in Noida. Be it for a picnic or family get-together or community feast.', 'Manage all logistics from food counters to table setup and disposables.'] }
+        { title: 'Wedding Catering', points: ['A separate menu per function, because a mehendi, a cocktail night and a reception are three different evenings rather than one repeated three times.', 'Live counters, chaat stations and dessert setups staffed so the queue keeps moving, which is the part guests actually remember.'] },
+        { title: 'Corporate Catering', points: ['Board meetings, conferences, office parties and annual functions, run to the clock so the catering fits the agenda rather than interrupting it.', 'Breakfast, working lunch, high tea or dinner service, sized to the room and the length of the day.'] },
+        { title: 'Birthday and Private Parties', points: ['Milestone birthdays and anniversaries, at home or at a venue, handled end to end so the host gets to be a guest.', 'Small guest counts are where a caterer is most exposed, because there is nowhere for a weak dish to hide.'] },
+        { title: 'Housewarming and Religious Functions', points: ['Grihapravesh, pujas and family gatherings, cooked to the observance the occasion actually requires.', 'Sattvic and Jain menus prepared in separate vessels rather than adapted from the main menu, which is the distinction that matters to families who keep it strictly.'] },
+        { title: 'Outdoor Catering', points: ['Farmhouse lawns, society greens and open venues, where the kitchen has to be built on site before anything gets cooked.', 'Power, water and access decide what is possible outdoors long before the menu does, so we walk the site first.'] }
       ]
     },
     whyUs: {
       heading: 'Why Us For Your Catering Services In Noida?',
-      intro: 'We at Virtuoso Catering know every event is different with own flavor. Accordingly we offer customized menu options. We come with flexible catering packages for different event’s size, style, and budget.',
+      intro: 'Every event is different, so the menu is built for it rather than picked off a tier. What stays constant is the standard of the kitchen, the ratio of staff to guests, and the fact that you taste the food before you commit to it.',
       items: [
-        { title: 'Diverse Menu Selection', points: ['Specialize in multi-cuisine catering, Indian and international dishes.', 'Craft catering to every palate, menus. From North Indian and South Indian classics to Continental delights, Chinese favorites, and more.'] },
-        { title: 'Luxury Pricing', points: ['Offer cost-effective packages. This ensures within your budget high-quality food.', 'Collaborate with you to design the best catering experience. That matches your expectations with no compromise on quality or service.'] },
-        { title: 'Experienced Team', points: ['Comprise of skilled chefs, and event coordinators. We guarantee a flawless dining experience.', 'Ensure with meticulous attention to detail, seamless execution of your event.'] },
-        { title: 'Hygiene & Safety Standards', points: ['Maintain in food preparation, packaging, and service, strict hygiene protocols.', 'Maintain FSSAI certified kitchens. This ensures only fresh, quality ingredients are used.'] },
-        { title: 'On-time Delivery & Setup', points: ['Ensure on-time food delivery and buffet setup.', 'Ensure no worries. Either about delays or last-minute issues.'] }
+        { title: 'Italian, Asian and Modern Indian', points: ['Three kitchens we are genuinely known for, rather than a list long enough to cover everything and specialise in nothing.', 'A menu can run across all three in one evening, provided each course earns its place instead of padding the count.'] },
+        { title: 'Quoted Against Your Brief', points: ['We price the event you are actually having, not a tier you are sorted into, which is why the conversation comes before the number.', 'Nothing is cut quietly to hit a figure. If something has to change to fit a budget, you decide what changes.'] },
+        { title: 'The Team That Tastes Is the Team That Cooks', points: ['The chef at your tasting is the chef on your event. Ask any caterer this directly, because it is not the norm.', 'Service staff are briefed on the menu, not just the timings, so a guest asking what is in a dish gets an answer.'] },
+        { title: 'FSSAI-Certified Kitchens', points: ['Strict protocols through preparation, transport and service, which matters most when the kitchen is temporary and built on site.', 'Our FSSAI number is verifiable on the FoSCoS portal in seconds. Check ours, and check anyone else you are considering.'] },
+        { title: 'On Time, Including the Setup', points: ['Service starts when it is meant to start. Setup is scheduled backwards from that, not forwards from our arrival.', 'Noida traffic is planned for rather than apologised for, particularly for venues off the Expressway and the DND.'] }
       ]
     },
     extraLists: [
       {
         heading: 'Luxury Catering In Noida',
-        intro: 'We at Virtuoso Catering believe in accessibility of great food for all. Our pricing plans are conceived to cater to different event needs. We also suit to all budgets. Be it 20 guests or 2000 guests. We offer scalable packages that include',
+        intro: 'We have run events at both ends of the scale, from a twenty-guest private dinner to a two thousand-guest wedding, and the standard does not move between them. What changes is the logistics. A quote covers:',
         items: ['Menu design and customization.', 'Full meal setup. Buffet or Plated.', 'Serving staff and chefs.', 'Equipment and disposables.', 'Décor (optional).'],
-        outro: 'Connect for a free consultation with our team. Gets for luxury catering in Noida a customized quote that match your event needs.'
+        outro: 'Tell us the date, the venue and roughly how many guests, and we will come back with a menu and a number built for that event.'
       },
       {
         heading: 'Service Areas We Cover In Noida',
-        intro: 'We provide across all major sectors and neighboring regions, catering services in Noida. We include:',
+        intro: 'We cater across Noida and the surrounding region. Travel time matters more than distance here, so if your venue sits off the Expressway or the DND we will plan the kitchen build and service timings around it:',
         items: ['Sector 18, 62, 63, 104, 137.', 'Noida Extension (Greater Noida West).', 'Ghaziabad.', 'Greater Noida.', 'Indirapuram.', 'Delhi NCR (on request).'],
-        outro: 'Our team ensures no matter where you’re located prompt and professional services at your venue.'
+        outro: 'Wherever the venue sits, the kitchen build and the service timings are planned around getting there, not around hoping the traffic behaves.'
       }
     ],
     closing: {
@@ -2189,7 +2189,8 @@ const landingPages = {
     lead: {
       heading: 'A Menu for Every Function, Not One Menu for the Whole Wedding',
       paragraphs: [
-        'Virtuoso Catering House is a team of wedding caterers based in Noida, Sector 61. A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
+        'Virtuoso Catering House is a luxury wedding caterer in Noida, Sector 61. We hold FSSAI certification, put the chef who cooks your tasting on the wedding itself, and build a separate menu for each function rather than repeating one across the calendar. The same kitchen caters brand events for Ferrari APAC, Lamborghini, Tesla India and BMW, at guest counts from twenty to two thousand.',
+        'A wedding is not one event with one menu. It is a sequence of functions, each with its own mood, and the food should follow that mood rather than repeat itself. At the mehendi, regional cuisines tend to land best, and meals are kept lighter, because the mehendi is usually followed by the engagement or cocktail night, which is where the party mode and the most exciting eating of the whole wedding actually happens.',
         'How far we take a menu depends on where a family is in their own understanding of F&B. Some couples want the classics done well. Others are already deep into the scene and ask for speciality Indian catering, restaurant pop-ups inside the wedding, or celebrity chefs who bring their own team and take exclusive ownership of one section of the menu. A live sushi bar is one of our favourite formats to execute for exactly this reason. It looks clean, it looks sophisticated, and it gives guests something to watch as well as eat.',
         'The single biggest decision a family makes is caterer versus banquet. A banquet spreads the food across one of several teams it is juggling that night. A specialist caterer takes exclusive ownership of three things: the food, the presentation, and the crockery and cutlery. Those three pillars are the actual difference, and they are why a dedicated caterer outperforms a banquet kitchen on any night that matters.'
       ]
