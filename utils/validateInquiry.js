@@ -67,4 +67,4 @@ function sanitiseAttribution(raw) {
   return out;
 }
 
-module.exports = { validateInquiry, extractFields, EMAIL_RE, PHONE_RE };
+module.exports = { validateInquiry, extractFields, sanitiseAttribution, EMAIL_RE, PHONE_RE };

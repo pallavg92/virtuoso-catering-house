@@ -21,29 +21,36 @@ function buildTransporter() {
   });
 }
 
+// Printed at the bottom of every lead email so the source travels with the
+// lead into the inbox rather than living in a dashboard nobody opens. When a
+// deal closes months later, the Google click id here is what lets it be
+// uploaded back to Ads as an offline conversion, and the landing page is what
+// tells us which page actually earned the lead.
+//
+// Shared by both lead forms: the enquiry drawer and the menu-download gate.
+// Returns an empty array when there is nothing to report, so a lead with no
+// attribution produces no empty heading.
+function attributionLines(a) {
+  if (!a || !Object.keys(a).length) return [];
+  const rows = [
+    ['Google click id', a.gclid || a.gbraid || a.wbraid],
+    ['Microsoft click id', a.msclkid],
+    ['Campaign', [a.utmSource, a.utmMedium, a.utmCampaign].filter(Boolean).join(' / ')],
+    ['Search term', a.utmTerm],
+    ['Landed on', a.landingPage],
+    ['Submitted from', a.submittedFrom],
+    ['Referrer', a.referrer]
+  ].filter(([, v]) => v);
+  if (!rows.length) return [];
+  return ['', '--- Where this lead came from ---', ...rows.map(([k, v]) => `${k}: ${v}`)];
+}
+
 async function sendInquiry(fields) {
   const transporter = buildTransporter();
   const to = process.env.INQUIRY_TO_EMAIL || 'virtuosocatering@gmail.com';
   const from = process.env.INQUIRY_FROM_EMAIL || 'virtuosocatering@gmail.com';
 
   const subject = `New Inquiry — ${fields.eventType || 'General'} — ${fields.name}`;
-  // Printed at the bottom of the enquiry so the source travels with the lead
-  // into the inbox. When a deal closes months later, the Google click id here
-  // is what lets it be uploaded back to Ads as an offline conversion, and the
-  // landing page is what tells us which page actually earned the enquiry.
-  const attributionLines = (a) => {
-    if (!a || !Object.keys(a).length) return [];
-    const rows = [
-      ['Google click id', a.gclid || a.gbraid || a.wbraid],
-      ['Campaign', [a.utmSource, a.utmMedium, a.utmCampaign].filter(Boolean).join(' / ')],
-      ['Search term', a.utmTerm],
-      ['Landed on', a.landingPage],
-      ['Enquired from', a.submittedFrom],
-      ['Referrer', a.referrer]
-    ].filter(([, v]) => v);
-    if (!rows.length) return [];
-    return ['', '--- Where this lead came from ---', ...rows.map(([k, v]) => `${k}: ${v}`)];
-  };
   const text = [
     `Name: ${fields.name}`,
     `Email: ${fields.email || '—'}`,
@@ -87,7 +94,8 @@ async function sendMenuDownloadRequest(fields) {
     `Email: ${fields.email}`,
     `Mobile: ${fields.phone}`,
     `Event Date: ${fields.eventDate}`,
-    `Estimated Pax: ${fields.guestCount}`
+    `Estimated Pax: ${fields.guestCount}`,
+    ...attributionLines(fields.attribution)
   ].join('\n');
 
   if (!transporter) {
