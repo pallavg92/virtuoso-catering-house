@@ -158,8 +158,14 @@ function processHtml(html, assetRoot = DIST) {
       stats.prioritised += 1;
     }
 
+    // SVGs reach this point deliberately — they get sized and prioritised like
+    // any other image. They must not be wrapped, though: the replace below is a
+    // no-op on a .svg, so webpSrc would still be the SVG, hasWebp() would find
+    // it, and the tag would end up announcing an SVG as type="image/webp".
+    // Requiring the swap to have actually changed the filename is what keeps
+    // the wrap to the raster images that have a real .webp sibling.
     const webpSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
-    if (hasWebp(webpSrc, assetRoot)) {
+    if (webpSrc !== src && hasWebp(webpSrc, assetRoot)) {
       next = `<picture><source srcset="${webpSrc}" type="image/webp">${next}</picture>`;
       stats.wrapped += 1;
     }

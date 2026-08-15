@@ -68,13 +68,27 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 <link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/bundle.css">
 
+<%#
+  ONE business entity, not two. This used to emit a rich LocalBusiness with no
+  @id alongside a thin Organization that had one. Every reference elsewhere on
+  the site (Service.provider, BlogPosting.publisher, Person.worksFor) points at
+  #organization, so the thin node was the only one anything could resolve, and
+  the geo, cuisines and price range were unreachable.
+
+  LocalBusiness is a subtype of Organization, so a single node typed
+  LocalBusiness + FoodEstablishment and carrying the #organization @id satisfies
+  every existing reference while exposing the full description. Keep the @id
+  stable: changing it orphans every reference again.
+-%>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "FoodEstablishment"],
+  "@id": "<%= siteUrl %>/#organization",
   "name": "<%= business.name %>",
   "description": "<%= business.description %>",
   "image": "<%= ogImage %>",
+  "logo": "<%= business.logo %>",
   "url": "<%= siteUrl %>",
   "telephone": "<%= business.telephone %>",
   "email": "<%= business.email %>",
@@ -91,30 +105,9 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
     "latitude": <%= business.latitude %>,
     "longitude": <%= business.longitude %>
   },
+  "areaServed": <%- JSON.stringify(business.areaServed.map((a) => ({ '@type': 'City', name: a }))) %>,
   "servesCuisine": <%- JSON.stringify(business.cuisines) %>,
   "priceRange": "$$$",
-  "sameAs": <%- JSON.stringify(business.sameAs) %>
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "<%= siteUrl %>/#organization",
-  "name": "<%= business.name %>",
-  "url": "<%= siteUrl %>",
-  "logo": "<%= business.logo %>",
-  "telephone": "<%= business.telephone %>",
-  "email": "<%= business.email %>",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "<%= business.streetAddress %>",
-    "addressLocality": "<%= business.addressLocality %>",
-    "addressRegion": "<%= business.addressRegion %>",
-    "postalCode": "<%= business.postalCode %>",
-    "addressCountry": "<%= business.addressCountry %>"
-  },
   "sameAs": <%- JSON.stringify(business.sameAs) %>
 }
 </script>

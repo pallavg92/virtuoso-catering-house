@@ -1,0 +1,102 @@
+[
+  {
+    "path": "/",
+    "strategy": "mobile",
+    "performance": 65,
+    "seo": 100,
+    "accessibility": 96,
+    "best_practices": 100,
+    "lcp": "6.1\u00a0s",
+    "fcp": "2.6\u00a0s",
+    "cls": "0",
+    "tbt": "210\u00a0ms",
+    "si": "6.4\u00a0s",
+    "opportunities": [
+      [
+        "Reduce unused JavaScript",
+        141311,
+        1010
+      ]
+    ]
+  },
+  {
+    "path": "/wedding-caterers-in-noida",
+    "strategy": "mobile",
+    "performance": 56,
+    "seo": 100,
+    "accessibility": 96,
+    "best_practices": 100,
+    "lcp": "6.1\u00a0s",
+    "fcp": "2.7\u00a0s",
+    "cls": "0",
+    "tbt": "470\u00a0ms",
+    "si": "6.1\u00a0s",
+    "opportunities": [
+      [
+        "Reduce unused JavaScript",
+        139247,
+        840
+      ]
+    ]
+  },
+  {
+    "path": "/best-catering-services-in-noida",
+    "strategy": "mobile",
+    "performance": 58,
+    "seo": 100,
+    "accessibility": 96,
+    "best_practices": 100,
+    "lcp": "4.7\u00a0s",
+    "fcp": "2.8\u00a0s",
+    "cls": "0",
+    "tbt": "590\u00a0ms",
+    "si": "6.2\u00a0s",
+    "opportunities": [
+      [
+        "Reduce unused JavaScript",
+        141305,
+        450
+      ]
+    ]
+  },
+  {
+    "path": "/wedding-caterers-in-delhi",
+    "strategy": "mobile",
+    "performance": 45,
+    "seo": 100,
+    "accessibility": 96,
+    "best_practices": 100,
+    "lcp": "5.0\u00a0s",
+    "fcp": "2.9\u00a0s",
+    "cls": "0",
+    "tbt": "1,260\u00a0ms",
+    "si": "7.5\u00a0s",
+    "opportunities": [
+      [
+        "Reduce unused JavaScript",
+        141305,
+        600
+      ]
+    ]
+  },
+  {
+    "path": "/blog/luxury-catering-cost-delhi-ncr",
+    "strategy": "mobile",
+    "performance": 62,
+    "seo": 100,
+    "accessibility": 100,
+    "best_practices": 100,
+    "lcp": "6.2\u00a0s",
+    "fcp": "2.6\u00a0s",
+    "cls": "0",
+    "tbt": "320\u00a0ms",
+    "si": "6.1\u00a0s",
+    "opportunities": [
+      [
+        "Reduce unused JavaScript",
+        140855,
+        1050
+      ]
+    ]
+  }
+]

@@ -26,7 +26,18 @@ const business = {
   // rather than the more specific "Restaurant" subtype, since FoodEstablishment
   // itself doesn't imply dine-in service and is required for servesCuisine to
   // validate (servesCuisine isn't a valid property on plain LocalBusiness).
-  cuisines: ['Asian', 'Indian', 'Mexican', 'Continental', 'Bakery', 'Mughlai', 'Chinese', 'Sushi'],
+  // Declared on the core business entity, not just on individual Service
+  // blocks. A service-area business competing on "in Noida" has to say which
+  // areas it serves on the node that describes the business itself, which is
+  // also the node Gemini reads when answering "who caters in Noida".
+  areaServed: ['Noida', 'Greater Noida', 'Ghaziabad', 'Delhi', 'Gurugram'],
+
+  // The three the house is actually known for, confirmed by Pallav 2026-08-15.
+  // Previously this listed eight, including Mexican and Bakery, which appear
+  // nowhere on the site — schema that claims more than the pages can evidence
+  // is what teaches a search or answer engine to distrust the whole entity. A
+  // short, true list also reads more luxury than a long one.
+  cuisines: ['Italian', 'Asian', 'Modern Indian'],
   sameAs: [
     'https://www.instagram.com/virtuosocateringhouse/',
     'https://pin.it/3EwnJeOiZ',
@@ -67,7 +78,7 @@ const pages = {
     activePage: 'about',
     bodyClass: 'page-team-member',
     title: 'Aarti Sharma, Co-Founder — Virtuoso Catering House',
-    description: 'Aarti Sharma is Co-Founder of Virtuoso Catering House in Noida, leading creative direction and menu design across luxury wedding and event catering in Delhi NCR.',
+    description: 'Aarti Sharma is Co-Founder of Virtuoso Catering House in Noida, leading creative direction and menu design for luxury weddings and events across Delhi NCR.',
     ogImage: content.founders.find((f) => f.slug === 'aarti-sharma').image,
     member: content.founders.find((f) => f.slug === 'aarti-sharma'),
     authoredPosts: content.blogPosts.filter((p) => p.author && p.author.name === 'Aarti Sharma'),

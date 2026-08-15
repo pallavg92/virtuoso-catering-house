@@ -529,7 +529,7 @@ const blogPosts = [
     excerpt: 'A luxury wedding caterer builds a custom menu in five stages, from a discovery conversation to a final chef trial. Here is exactly how that process works at Virtuoso.',
     date: '2026-07-14',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'See How We Cater Noida Weddings' },
     lead: [
       'A luxury wedding caterer builds a custom menu in five stages: a discovery conversation about your story and guests, a hands-on tasting session, menu customization for dietary and cultural needs, ingredient sourcing, and a final chef trial before sign-off. At Virtuoso, this runs across several weeks before your wedding date.'
     ],
@@ -597,7 +597,7 @@ const blogPosts = [
     excerpt: 'At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding. Here is why that gap happens, and how Virtuoso closes it.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'Wedding Caterers in Noida' },
     lead: [
       'No. At most wedding caterers, the chef who runs your tasting is not the chef who cooks your wedding, since kitchen staff rotate by event availability. At Virtuoso, Aarti Sharma, our co-founder, personally runs your tasting at our Noida experience centre, and the same kitchen team she trains at rehearsal is who cooks your wedding.',
       'Couples spend hours picking the right dishes at a tasting, then assume that experience is locked in. In most catering operations, it is not. Kitchen staff get assigned event by event, and a caterer running multiple weddings on the same weekend cannot always guarantee the same hands touch every plate.'
@@ -705,25 +705,25 @@ const blogPosts = [
     slug: 'luxury-catering-cost-delhi-ncr',
     url: '/blog/luxury-catering-cost-delhi-ncr',
     title: 'How Much Does Luxury Catering Cost in Delhi NCR?',
-    excerpt: 'Luxury catering in Delhi NCR runs ₹2,500 to ₹6,000 per guest for corporate events and starts at ₹3,000 per plate for weddings. Here is what actually moves that number.',
+    excerpt: 'Per plate is the wrong unit to think in. Two Delhi NCR weddings with the same guest count, city and season can land at very different numbers, and it is never about who cooks better. Here is what actually moves it.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
     lead: [
-      'Luxury catering in Delhi NCR typically runs ₹2,500 to ₹6,000 per guest for corporate events, and starts at ₹3,000 per plate for a genuinely luxury wedding meal, with no fixed ceiling since the final number depends on what you choose for your guests. These ranges cover food only; bar and beverage service is always priced separately.',
+      'Luxury catering in Delhi NCR is quoted per event, not off a rate card. Two weddings with the same guest count, the same city and the same season can land at very different numbers, because they are not buying the same thing. Food is quoted separately from bar and beverage service in every case.',
       'A client called me last month before their daughter\'s wedding. First question, before hello, practically: "What\'s your per-plate rate?"',
       'I get this question every week. And every week, I have to disappoint people with the honest answer: it depends. Not because I\'m being cagey. Because "per plate" is the wrong unit to think in.',
-      'Here\'s why. Two events, same guest count, same city, same season, one can cost ₹3,000 a head, the other ₹6,000. Not because one caterer is better at cooking. Because they\'re not buying the same thing.',
-      'So let\'s actually answer the question people are searching for, with real numbers, and then explain what those numbers are actually made of.'
+      'Here\'s why. Two events, same guest count, same city, same season, one can cost double the other. Not because one caterer is better at cooking. Because they\'re not buying the same thing.',
+      'So let\'s actually answer the question people are searching for, by explaining what a luxury quote is made of and which decisions move it.'
     ],
     sections: [
       {
-        heading: 'The Honest Ranges',
+        heading: 'What a Luxury Quote Actually Covers',
         paragraphs: [
-          'These are starting points, not quotes. Every number below assumes Delhi NCR, a full-service luxury caterer (not a banquet hall\'s in-house kitchen), and a guest count that isn\'t a wedding of 50.',
-          'Corporate events, ₹2,500 to ₹6,000 per guest.',
-          'Weddings, starting at ₹3,000 per plate for the core meal. There\'s no fixed ceiling above that. The number moves with what you choose for your guests, from the menu to the format to the level of service.',
-          'A genuinely luxurious per-plate rate cannot realistically be executed under ₹3,000. Below that, something usually gets cut. Most Delhi NCR weddings also cluster around a small number of fixed muhurat dates each season, and every family with a date on that calendar is competing for the same venues, the same top-tier vendors, and the same skilled staff at once. That demand doesn\'t spread evenly across the year, it spikes on those specific dates, and the market prices accordingly. If you\'re set on a genuinely luxury standard, treat a quote well under ₹3,000 on a muhurat date with a little care, and ask exactly what it includes.'
+          'Before comparing two quotes, check they describe the same thing. Ours assumes Delhi NCR, a full-service luxury caterer rather than a banquet hall\'s in-house kitchen, and food quoted separately from bar and beverage service. A number that looks lower is often a smaller scope, not a better rate.',
+          'At a genuine luxury standard the quote carries the consultation, the menu development, the tasting, the staffing ratio and the plated service choreography. It is not a food cost with extras bolted on afterwards. When a quote comes in well below what everyone else is saying, the honest question is not why they are cheaper. It is which of those things has been taken out.',
+          'Season matters more than most families expect. Delhi NCR weddings cluster around a small number of fixed muhurat dates, and every family with a date on that calendar is competing for the same venues, the same top-tier vendors and the same skilled staff at once. That demand does not spread evenly across the year, it spikes on those specific dates, and the market prices accordingly.',
+          'For a current figure on your own event, ask us. We quote against the actual brief, which is the only number that means anything, and we would rather give you a real one than publish a range you then have to negotiate against.'
         ]
       },
       {
@@ -757,9 +757,10 @@ const blogPosts = [
       }
     ],
     faq: [
-      { q: 'What is the average per-plate cost for a wedding in Delhi NCR?', a: 'For a genuinely luxury standard, the core wedding meal starts at ₹3,000 per plate in Delhi NCR. There\'s no fixed ceiling; the final number depends on the choices you make for your guests.' },
-      { q: 'Why can\'t a luxury wedding caterer go below ₹3,000 a plate?', a: 'Below ₹3,000, something in the execution usually gets cut. Most Delhi NCR weddings also cluster around a limited number of fixed muhurat dates, so demand for top-tier venues, vendors, and staff spikes on those dates, and pricing follows. If you\'re set on a genuinely luxury standard, treat a much lower quote with care and ask exactly what it includes.' },
-      { q: 'How much does corporate event catering cost in Delhi NCR?', a: 'Corporate catering in Delhi NCR typically runs ₹2,500 to ₹6,000 per guest, with the number moving based on menu complexity, staffing, and execution rather than guest count alone.' }
+      { q: 'How is luxury wedding catering priced in Delhi NCR?', a: 'Per event, not off a rate card. The quote is built from menu complexity, staffing ratio, service style and season, then set against your actual brief. Food is quoted separately from bar and beverage service. Ask us for a current figure for your own event.' },
+      { q: 'Why won\'t a luxury caterer give a per-plate rate upfront?', a: 'Because per plate is the wrong unit. It assumes every event wants the same thing, and most families asking for a quote have not yet decided what they want. A number given before that conversation describes a template, not your wedding.' },
+      { q: 'Why do two quotes for the same wedding differ so much?', a: 'They are usually describing different scopes. A luxury quote carries consultation, menu development, the tasting, staffing ratio and plated service. A lower number often means one of those has been removed rather than priced better. Ask each caterer exactly what is included.' },
+      { q: 'Does the wedding date affect the price?', a: 'Yes. Delhi NCR weddings cluster on a small number of fixed muhurat dates each season, so venues, top-tier vendors and skilled staff are all competing for on those same days. Demand spikes on specific dates rather than spreading across the year, and pricing follows.' }
     ],
     author: {
       name: 'Pallav Goel',
@@ -774,7 +775,7 @@ const blogPosts = [
     excerpt: 'The right way to finalize a wedding menu starts with a conversation with your caterer, not a line item list. Here are the do\'s and don\'ts that keep a menu from ballooning to forty dishes nobody remembers.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding', label: 'Read: The Quiet Craft Behind an Unforgettable Wedding' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'Planning a Noida Wedding? Start Here' },
     lead: [
       'The right way to finalize a wedding menu starts with a conversation, not a line item list: what food genuinely matters to you, and what your guests actually expect to eat. Everything else gets decided from there. The wrong way is adding dish after dish from a template until the list hits forty items nobody asked for.',
       'Most wedding menus in Delhi NCR don\'t fail because of bad dishes. They fail because they were built line item by line item instead of from an actual conversation. At Virtuoso Catering House, the couples who end up with a menu they and their guests remember are the ones who sat down with their caterer and talked through two questions before adding a single item: what food matters to us, and what will our guests actually want to eat.'
@@ -842,7 +843,7 @@ const blogPosts = [
     excerpt: 'Before booking a wedding caterer, confirm four things: an FSSAI-certified kitchen, an in-house team that actually executes the menu, clarity on what\'s cooked in-house, and real connections to specialty chefs for anything else.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
-    relatedLink: { path: '/blog/the-quiet-craft-behind-an-unforgettable-wedding', label: 'Read: The Quiet Craft Behind an Unforgettable Wedding' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'Book Wedding Caterers in Noida' },
     lead: [
       'Before booking a wedding caterer, confirm four things: an FSSAI-certified kitchen, an in-house team that actually executes the menu rather than subcontracting it, clarity on how much of the menu is cooked in-house versus outsourced, and real connections to specialty restaurants or chefs for anything outside the caterer\'s core kitchen.',
       'Most couples in Delhi NCR evaluate a wedding caterer on menu and price. Those matter, but they don\'t tell you whether the caterer can actually deliver what\'s on the proposal. Four operational questions do a better job of predicting whether your wedding day goes smoothly than any tasting alone. They are the four we answer at Virtuoso Catering House without waiting to be asked.'
@@ -899,7 +900,7 @@ const blogPosts = [
     date: '2026-07-16',
     updated: '2026-08-12',
     image: '/images/blog/virtuoso-catering-house-plated-fine-dining-wedding-presentation.jpg',
-    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'Wedding Catering in Noida' },
     lead: [
       '5-star hotel presentation at a wedding comes from two things: manpower and material. A large team of trained servers and butlers plates the food at every station guests touch, the buffet, the pop-up restaurant, the live counters, while the crockery itself, pristine bone china and hand-made mono servers, carries the rest. Virtuoso brings both to weddings across Delhi NCR.',
       'There\'s real science here. A study titled "Neatness counts," published in the journal Appetite, found that plating the same food more neatly measurably increased how much people liked its taste. A 2024 study reported in The Conversation went further: the shape, size, and colour of the plate itself changed how appealing a dessert looked and how much it was judged to be worth, with black plates reading as more premium than white. Presentation isn\'t decoration. It changes what your guests taste and what they assume your wedding cost.'
@@ -972,7 +973,7 @@ const blogPosts = [
     date: '2026-07-17',
     updated: '2026-08-12',
     image: '/images/virtuoso-catering-house-menu-planning-hero.jpg',
-    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'Our Noida Wedding Catering' },
     lead: [
       'A wedding menu is best built in four moves: map your guests\' dietary and regional mix, balance signature dishes against reliable crowd-pleasers, sequence the menu so it flows instead of exhausting the palate, then settle plating and service. Guests set the terms, the dishes and their order are where you make it yours, and plating is how it lands.',
       'Most couples in Delhi NCR pick a menu on taste alone, then discover later that some of the room can\'t eat it, or that five rich courses in a row leave everyone full by the main. Working in order, who eats first, what and in what sequence next, presentation last, produces a menu that actually holds together on the day instead of one held together by luck. It is the order we work in at Virtuoso Catering House on every wedding we cater.'
@@ -1470,13 +1471,13 @@ const hireWeddingCaterersDelhiPage = {
     {
       heading: 'Where Banquet Catering Genuinely Excels',
       paragraphs: [
-        'For very large guest counts, 500 and above, multi-day celebrations where volume and variety are the primary concerns, and weddings with <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">per-plate budgets</a> in the ₹800 to ₹2,500 range, banquet catering is the rational choice. Operators such as Royal Delights Catering and Tandoori Tales handle the banquet model competently for North Indian and Punjabi menus, with live grilling counters and dessert stations that photograph well and satisfy a broad audience. Turban Tales, known for its rooted North Indian spread, has received consistent recognition from local event planners for reliable high-volume delivery. Many upper-mid tier operators have meaningfully upgraded their offerings and service standards in recent years.'
+        'For very large guest counts, 500 and above, multi-day celebrations where volume and variety are the primary concerns, and weddings working to an economy or mid-range <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">per-plate budget</a>, banquet catering is the rational choice. Operators such as Royal Delights Catering and Tandoori Tales handle the banquet model competently for North Indian and Punjabi menus, with live grilling counters and dessert stations that photograph well and satisfy a broad audience. Turban Tales, known for its rooted North Indian spread, has received consistent recognition from local event planners for reliable high-volume delivery. Many upper-mid tier operators have meaningfully upgraded their offerings and service standards in recent years.'
       ]
     },
     {
       heading: 'The Trade-offs Couples Often Discover Too Late',
       paragraphs: [
-        'At luxury price points, ₹4,000 per plate and above, the gap between what a banquet caterer delivers and what a boutique operator produces becomes most visible. The same limitations surface consistently: menu standardisation that makes one wedding\'s spread feel indistinguishable from the last, service that is efficient but not choreographed, and restricted room for dietary personalisation across Jain, vegan, South Indian, and Bengali requirements within the same function. It is worth noting that the degree of personalisation varies by operator and venue; some banquet caterers accommodate specialist dietary menus, but this is the exception rather than the norm at scale. Couples who have paid premium prices for a banquet experience often describe the result as technically correct but emotionally flat. That distinction matters enormously at a luxury wedding.'
+        'At luxury price points, the gap between what a banquet caterer delivers and what a boutique operator produces becomes most visible. The same limitations surface consistently: menu standardisation that makes one wedding\'s spread feel indistinguishable from the last, service that is efficient but not choreographed, and restricted room for dietary personalisation across Jain, vegan, South Indian, and Bengali requirements within the same function. It is worth noting that the degree of personalisation varies by operator and venue; some banquet caterers accommodate specialist dietary menus, but this is the exception rather than the norm at scale. Couples who have paid premium prices for a banquet experience often describe the result as technically correct but emotionally flat. That distinction matters enormously at a luxury wedding.'
       ]
     },
     {
@@ -1508,13 +1509,13 @@ const hireWeddingCaterersDelhiPage = {
     {
       heading: 'Per-Plate Pricing Across Budget to Luxury Tiers',
       paragraphs: [
-        'The market in 2026 broadly falls into four tiers. Economy (₹800 to ₹1,500 per plate) covers basic multi-course vegetarian meals with minimal service and standard crockery. Mid-range (₹1,500 to ₹2,500) delivers multi-cuisine buffets with live counters for chaat, tandoor, and Indo-Chinese stations. Premium (₹2,500 to ₹4,000) introduces gourmet options, higher service standards, and dessert counters. Luxury and boutique (₹4,000 to above ₹6,500) covers chef-led plated fine dining, international cuisine, and fully choreographed service. Non-vegetarian menus typically cost approximately 35% more than their vegetarian equivalents at any tier. Boutique operators work with controlled guest counts by design, which means bulk pricing discounts do not apply.'
+        'The market broadly falls into four tiers, and it is worth knowing which one a quote belongs to before comparing it with another. Economy covers basic multi-course vegetarian meals with minimal service and standard crockery. Mid-range delivers multi-cuisine buffets with live counters for chaat, tandoor, and Indo-Chinese stations. Premium introduces gourmet options, higher service standards, and dessert counters. Luxury and boutique covers chef-led plated fine dining, international cuisine, and fully choreographed service. Non-vegetarian menus cost meaningfully more than their vegetarian equivalents at any tier. Boutique operators work with controlled guest counts by design, which means bulk pricing discounts do not apply. For current figures, ask each caterer to quote against your actual brief.'
       ]
     },
     {
       heading: 'Common Add-On Charges That Catch Couples Off Guard',
       paragraphs: [
-        'The line-item charges that rarely appear in headline quotes deserve specific attention. Live counter additions carry a premium of ₹150 to ₹400 per plate, with speciality counters (sushi, molecular dessert, imported cheese) costing ₹25,000 to ₹75,000 as a flat fee. Tasting sessions are often charged separately at ₹2,000 to ₹5,000. Crockery upgrades, off-site logistics, overtime after 10 PM, and GST (typically 18%, applied on top of the per-plate quote) add meaningfully to the final invoice. Always request a fully itemised proposal, not a single per-plate figure. Even packages marketed as all-inclusive commonly exclude taxes, gratuity, and cake-cutting fees. If the caterer cannot produce a line-item breakdown, treat that as a signal.'
+        'The line-item charges that rarely appear in headline quotes deserve specific attention. Live counter additions carry a per-plate premium, and speciality counters such as sushi, molecular dessert or imported cheese are usually charged as a flat fee on top. Tasting sessions are often billed separately. Crockery upgrades, off-site logistics, overtime after 10 PM, and GST applied on top of the per-plate quote all add meaningfully to the final invoice. Always request a fully itemised proposal, not a single per-plate figure. Even packages marketed as all-inclusive commonly exclude taxes, gratuity, and cake-cutting fees. If the caterer cannot produce a line-item breakdown, treat that as a signal.'
       ]
     },
     {
@@ -1534,7 +1535,7 @@ const hireWeddingCaterersDelhiPage = {
       heading: 'Lead Times, Tasting Sessions, and Seasonal Booking Windows',
       paragraphs: [
         'Peak wedding season in Delhi runs from October to February. During this window, which accounts for an estimated 400,000 to 500,000 weddings across the NCR, top-tier caterers typically fill their calendars 8 to 12 months in advance. For quality wedding catering services in Delhi at any tier, booking 4 to 6 months ahead is the minimum advisable during peak season; waiting beyond that meaningfully limits your options. Off-season events (March to September) allow for shorter lead times of 2 to 4 weeks, though waiting is still a risk for larger functions.',
-        'A dedicated pre-wedding tasting session is one of the most reliable indicators of a caterer\'s actual quality before the wedding day, and far more informative than a <a href="/downloads/virtuoso-catering-house-menu.pdf" class="link-underline">PDF menu</a> or a site visit alone. Premium caterers typically charge for this separately, at ₹2,000 to ₹5,000, and that is entirely reasonable. Request it as part of the initial booking conversation rather than as an afterthought.'
+        'A dedicated pre-wedding tasting session is one of the most reliable indicators of a caterer\'s actual quality before the wedding day, and far more informative than a <a href="/downloads/virtuoso-catering-house-menu.pdf" class="link-underline">PDF menu</a> or a site visit alone. Premium caterers typically charge for this separately, and that is entirely reasonable. Request it as part of the initial booking conversation rather than as an afterthought.'
       ]
     },
     {
@@ -1635,13 +1636,13 @@ const bestWeddingCaterersDelhiPage = {
     {
       heading: 'Pricing Tiers: What the Best Wedding Caterers in Delhi Offer at Each Level',
       paragraphs: [
-        'Delhi\'s <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">per-plate market in 2026</a> is wide. Economy vegetarian buffets start at ₹800 to ₹1,500 per plate. Quality mid-range weddings typically sit at ₹1,500 to ₹2,500, with 8 to 10 starters, three or four live counters, and a mithai station. Premium plated service with high-quality ingredients runs ₹2,500 to ₹4,000 per plate, and luxury and boutique experiences with chef-led menus and imported ingredients reach ₹4,000 to above ₹6,500. Each tier reflects a distinct service model, not merely a longer menu.'
+        'Delhi\'s <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">per-plate market</a> is wide. Economy vegetarian buffets sit at the bottom. Quality mid-range weddings step up to 8 to 10 starters, three or four live counters, and a mithai station. Premium plated service brings higher-quality ingredients, and luxury and boutique experiences run chef-led menus with imported ingredients. Each tier reflects a distinct service model, not merely a longer menu, which is why comparing two quotes only works once you know which tier each one is describing.'
       ]
     },
     {
       heading: 'Understanding the Hidden Costs',
       paragraphs: [
-        'The hidden costs are where most couples are caught off guard. Live counters add ₹150 to ₹400 per plate depending on complexity, and premium additions like molecular dessert stations or sushi bars can cost ₹25,000 to ₹75,000 as a flat fee for a 500-person event. GST is typically additional unless explicitly included in writing. Non-vegetarian menus cost roughly 35% more than vegetarian menus at the same quality tier. A quote that looks competitive can become significantly more expensive once these additions are factored in.'
+        'The hidden costs are where most couples are caught off guard. Live counters add a per-plate premium depending on complexity, and premium additions like molecular dessert stations or sushi bars are usually charged as a flat fee on top. GST is typically additional unless explicitly included in writing. Non-vegetarian menus cost meaningfully more than vegetarian menus at the same quality tier. A quote that looks competitive can become significantly more expensive once these additions are factored in, which is why an itemised proposal matters more than a headline number.'
       ]
     },
     {
@@ -1710,15 +1711,15 @@ const caterersInDelhiFindingTheRightFitPage = {
       heading: 'Caterers in Delhi: A Tier-by-Tier Pricing Breakdown',
       paragraphs: [
         'Pricing in Delhi\'s catering market follows a clear tier structure in 2026, though the final figure on your invoice depends on guest count, venue logistics, and what is actually included in the base quote.',
-        'At the budget tier, expect <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">₹800 to ₹1,500 per plate</a>. This covers a basic buffet with four to five starters, standard mains, and minimal service staff.',
-        'The mid-range tier, where most Delhi weddings land, runs ₹1,500 to ₹2,500 per plate. This covers eight to ten starters, three to four live counters, a mithai station, and noticeably better presentation. Both tiers typically quote food cost alone; GST is additional, and staffing or crockery may appear as separate line items on the final invoice.',
-        'The premium tier (₹2,500 to ₹4,000 per plate) brings multiple cuisines, several live counters, elevated service, and aesthetic crockery. Above this sits luxury plated dining, which starts at ₹4,000 per plate and can reach ₹6,500 or more for chef-led, multi-course sit-down meals with full service choreography and bespoke menu design. Non-vegetarian menus typically run approximately 35% above vegetarian pricing at any tier. At the luxury level, the per-plate figure is typically inclusive of consultation, menu development, and plated service; it is not a food cost with extras bolted on.'
+        'At the <a href="/blog/luxury-catering-cost-delhi-ncr" class="link-underline">budget tier</a>, expect a basic buffet with four to five starters, standard mains, and minimal service staff.',
+        'The mid-range tier, where most Delhi weddings land, covers eight to ten starters, three to four live counters, a mithai station, and noticeably better presentation. Both tiers typically quote food cost alone; GST is additional, and staffing or crockery may appear as separate line items on the final invoice.',
+        'The premium tier brings multiple cuisines, several live counters, elevated service, and aesthetic crockery. Above this sits luxury plated dining, meaning chef-led, multi-course sit-down meals with full service choreography and bespoke menu design. Non-vegetarian menus run meaningfully above vegetarian pricing at any tier. At the luxury level, the quote is typically inclusive of consultation, menu development, and plated service; it is not a food cost with extras bolted on. Ask each caterer for a current figure against your own brief rather than working from a published range.'
       ]
     },
     {
       heading: 'Dietary Customisation Done Right: Jain, Vegetarian, and Speciality Menus',
       paragraphs: [
-        'Delhi has a well-established network of Jain-certified caterers, and the dietary principles they work within are non-negotiable: no onion, no garlic, no root vegetables, and strictly vegetarian preparation throughout. Names such as Cuisineo Catering, Chatori Kitchen, <a href="https://www.instagram.com/angithi_tadka_by_madaan/" class="link-underline" target="_blank" rel="noopener">Angithi Tadka by Madaan</a>, and Satwik Caterers are recognised in this segment, with per-plate ranges running from approximately ₹400 to ₹700 at the affordable end and ₹1,500 to ₹3,500 for luxury wedding contexts.',
+        'Delhi has a well-established network of Jain-certified caterers, and the dietary principles they work within are non-negotiable: no onion, no garlic, no root vegetables, and strictly vegetarian preparation throughout. Names such as Cuisineo Catering, Chatori Kitchen, <a href="https://www.instagram.com/angithi_tadka_by_madaan/" class="link-underline" target="_blank" rel="noopener">Angithi Tadka by Madaan</a>, and Satwik Caterers are recognised in this segment, across both affordable and luxury wedding contexts.',
         'The question to ask every caterer who claims to offer Jain options is operational rather than philosophical: are the Jain dishes prepared in separate vessels, or are they simply modifications of the standard menu cooked in the same kitchen? The distinction matters enormously for guests with strict observance. A caterer who treats this as a credential question rather than a kitchen-process question is signalling something important about how seriously they take it.',
         'At the boutique end of the market, dietary requirements are treated as <a href="/blog/how-luxury-wedding-caterers-build-custom-menu" class="link-underline">creative parameters</a> rather than constraints. A Jain menu designed with provenance, regional identity, and plating restraint is a different experience from a Jain counter placed alongside the main buffet as an afterthought. When shortlisting <a href="/wedding-caterers-in-delhi" class="link-underline">party caterers in Delhi</a> for events with significant Jain guest counts, look specifically for companies that include dietary consultation as part of the booking process, not as an add-on request after the contract is signed.'
       ]
@@ -1879,7 +1880,7 @@ const landingPages = {
       { q: 'Who are the best wedding caterers in Delhi?', a: 'The best wedding caterers in Delhi are the ones who build a menu specific to your wedding rather than reselling a standard package, offer a real tasting before you book, and can show verified credentials and references. Virtuoso Catering House is a boutique specialist in this category, working across Delhi NCR from a base in Noida.' },
       { q: 'What should I look for in wedding caterers in Delhi?', a: 'Menu customisation by function, a genuine pre-booking tasting, a valid and verifiable FSSAI licence, a clear staff-to-guest service ratio, and an itemised quote with no hidden add-ons.' },
       { q: 'Who are the top wedding caterers in Delhi for a luxury wedding?', a: 'Delhi NCR\'s recognised luxury catering circuit includes The Kitchen Art Company, Foodlink, Food Inc Catering by Yum Yum Tree, Creative Cuisines Inc, and Virtuoso Catering House, the last named alongside The Kitchen Art Company in national press coverage of the city\'s leading luxury caterers.' },
-      { q: 'How much does it cost to hire wedding caterers in Delhi?', a: 'Pricing in Delhi runs from roughly ₹800 to ₹1,500 per plate at the economy tier up to ₹4,000 and above for luxury, chef-led plated service, with non-vegetarian menus typically running about 35% higher than vegetarian at the same tier.' }
+      { q: 'How much does it cost to hire wedding caterers in Delhi?', a: 'Delhi spans four tiers, from economy buffets through mid-range and premium to luxury chef-led plated service, and each reflects a different service model rather than a longer menu. Non-vegetarian menus run higher than vegetarian at the same tier. Ask each caterer to quote against your actual brief.' }
     ]
   },
   'best-catering-services-in-noida': {
@@ -2180,7 +2181,7 @@ const landingPages = {
     }
   },
   'wedding-caterers-in-noida': {
-    metaTitle: 'Wedding Caterers in Noida | Virtuoso Catering House',
+    metaTitle: 'Luxury Wedding Caterers in Noida — Exclusive Catering',
     metaDescription: 'Virtuoso Catering House is a team of wedding caterers based in Noida, designing catering across every function, from mehendi to reception, for Noida families who want the food, presentation, and service handled by a specialist, not a banquet team.',
     eyebrow: 'Weddings',
     h1: 'Wedding Caterers in Noida',
