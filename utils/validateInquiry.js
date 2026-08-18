@@ -12,12 +12,14 @@ function validateInquiry(body) {
   const guestCount = (body.guestCount || '').trim();
 
   if (!name || name.length < 2) errors.name = 'Please enter your full name.';
-  // Email is only required when we have no phone number. The paid-traffic
-  // landers ask for a mobile instead — one reliable contact route is enough,
-  // and every extra field measurably costs conversions on cold ad traffic.
-  if (!email && !phone) {
-    errors.email = 'Please enter an email address or a mobile number.';
-  } else if (email && !EMAIL_RE.test(email)) {
+  // Email is required, not one-of-email-or-phone as it used to be. Every lead
+  // now gets an automatic acknowledgement (sendEnquiryAcknowledgement), and
+  // without an address there is nothing to send it to. Both live forms already
+  // mark the field required in the markup, so this aligns the server with what
+  // the browser is already enforcing rather than tightening the ask.
+  if (!email) {
+    errors.email = 'Please enter an email address so we can confirm your enquiry.';
+  } else if (!EMAIL_RE.test(email)) {
     errors.email = 'Please enter a valid email address.';
   }
   if (!phone || !PHONE_RE.test(phone)) errors.phone = 'Please enter a valid mobile number.';

@@ -7,35 +7,71 @@
 <meta name="description" content="For first-birthday celebrations of 50 guests or more in Delhi NCR, Virtuoso brings menu, live experiences, presentation and service together as one personalised F&amp;B experience." />
 <meta name="robots" content="noindex" /><!-- paid traffic lander: remove if this page should be indexed -->
 
-<!-- Meta Pixel Code -->
+<!-- Hero preload. The hero is a CSS background-image on .hero-overlay, so the
+     browser cannot discover it until it has downloaded and parsed the stylesheet,
+     which on this page meant the largest element did not arrive until ~7s on
+     mobile while first paint happened at 1.1s. Preloading the exact URL the CSS
+     requests starts the fetch immediately without causing a second download. -->
+<link rel="preload" as="image" href="/img/hero-first-birthday.jpg" fetchpriority="high" />
+
+<!-- Analytics, queued immediately and fetched late.
+     The stubs below run at once, so fbq('init'), fbq('track') and every gtag()
+     call are captured into their queues in the normal order. Only the two
+     vendor script files are deferred, and they replay the queue on arrival, so
+     nothing is dropped: a PageView still reports, and the lead events on the
+     thank-you page still fire with their event_id.
+     Why: on this lander the three tracking files total ~394KB, four times the
+     weight of the hero image, and they were competing with it for the network
+     during first paint. This is paid traffic, so every second of delay is money.
+     Loads on whichever comes first: page load plus a short delay, or the first
+     real interaction. A visitor who leaves inside ~2s may not register a
+     PageView, which is the accepted trade for the pages actually rendering. -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-/* Only report from the live domain. Without this guard, local dev and
-   staging traffic lands in the same dataset as real visitors and skews
-   both the audience pool and the conversion counts. */
-if (/(^|\.)virtuosocatering\.com$/.test(location.hostname)) {
-  fbq('init', '1747975173071768');
-  fbq('track', 'PageView');
-}
+(function () {
+  // Meta stub. Queues calls exactly as the official snippet does.
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[]}(window, document,'script');
+
+  // GA4 stub. dataLayer preserves ordering until gtag.js arrives.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+
+  // Only report from the live domain. Without this guard, local dev and
+  // staging traffic lands in the same dataset as real visitors and skews
+  // both the audience pool and the conversion counts.
+  var live = /(^|\.)virtuosocatering\.com$/.test(location.hostname);
+  if (live) {
+    fbq('init', '1747975173071768');
+    fbq('track', 'PageView');
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-7D4B5HCKXQ');
+
+  var loaded = false;
+  function loadVendors() {
+    if (loaded || !live) return;
+    loaded = true;
+    ['https://connect.facebook.net/en_US/fbevents.js',
+     'https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ'].forEach(function (src) {
+      var t = document.createElement('script');
+      t.async = true; t.src = src;
+      document.head.appendChild(t);
+    });
+  }
+
+  // Whichever happens first.
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (evt) {
+    window.addEventListener(evt, loadVendors, { once: true, passive: true });
+  });
+  if (document.readyState === 'complete') setTimeout(loadVendors, 2000);
+  else window.addEventListener('load', function () { setTimeout(loadVendors, 2000); });
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7D4B5HCKXQ');
-</script>
 
 <style>
 /* ============================================================
@@ -377,6 +413,12 @@ mark.hl{background:var(--amber-300);color:var(--ink-900);font-weight:var(--weigh
       <label for="f-phone">Mobile / WhatsApp</label>
       <input id="f-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" value="<%= typeof values !== 'undefined' && values.phone ? values.phone : '' %>" />
       <span class="lander-field__error" data-error-for="phone"><%= typeof errors !== 'undefined' && errors.phone ? errors.phone : '' %></span>
+    </div>
+
+    <div class="field">
+      <label for="f-email">Email</label>
+      <input id="f-email" name="email" type="email" required inputmode="email" autocomplete="email" value="<%= typeof values !== 'undefined' && values.email ? values.email : '' %>" />
+      <span class="lander-field__error" data-error-for="email"><%= typeof errors !== 'undefined' && errors.email ? errors.email : '' %></span>
     </div>
 
     <div class="field">
