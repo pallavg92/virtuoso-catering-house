@@ -705,7 +705,7 @@ const blogPosts = [
     slug: 'luxury-catering-cost-delhi-ncr',
     url: '/blog/luxury-catering-cost-delhi-ncr',
     title: 'How Much Does Luxury Catering Cost in Delhi NCR?',
-    excerpt: 'Per plate is the wrong unit to think in. Two Delhi NCR weddings with the same guest count, city and season can land at very different numbers, and it is never about who cooks better. Here is what actually moves it.',
+    excerpt: 'Per plate is the wrong unit. Two Delhi NCR weddings with the same guest count and season can cost very differently, and it is never about who cooks better.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
@@ -1047,7 +1047,7 @@ const blogPosts = [
     slug: 'food-trends-delhi-ncr-weddings-2026',
     url: '/blog/food-trends-delhi-ncr-weddings-2026',
     title: 'Food Trends Taking Over Delhi NCR Weddings in 2026',
-    excerpt: 'Five food trends are defining Delhi NCR weddings in 2026: chef-led experiences, global fusion plates, elevated botanical mixology, hyper-regional Indian cuisine, and experiential late-night dessert stations, all pointing toward food guests actively take part in rather than a meal that sits and waits.',
+    excerpt: 'Five trends shaping Delhi NCR weddings in 2026: chef-led experiences, fusion plates, botanical mixology, hyper-regional Indian, and late-night dessert stations.',
     date: '2026-07-21',
     image: '/images/virtuoso-catering-house-mixology-service.jpg',
     relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
@@ -1163,7 +1163,7 @@ const blogPosts = [
     slug: 'the-quiet-craft-behind-an-unforgettable-wedding',
     url: '/blog/the-quiet-craft-behind-an-unforgettable-wedding',
     title: 'The Quiet Craft Behind an Unforgettable Wedding',
-    excerpt: 'What actually separates a wedding guests forget by Monday from one they\'re still describing months later isn\'t a bigger budget. It\'s restraint, choreography, and a menu built function by function instead of recycled across the day.',
+    excerpt: 'What separates a forgettable wedding from one guests still describe months later is not budget. It is restraint, choreography, and a menu built per function.',
     date: '2026-07-22',
     updated: '2026-08-12',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
@@ -1244,7 +1244,7 @@ const blogPosts = [
     slug: 'best-wedding-caterers-hospitality-before-food',
     url: '/blog/best-wedding-caterers-hospitality-before-food',
     title: 'Why the Best Wedding Caterers Think About How Guests Feel Before They Think About Food',
-    excerpt: 'The best wedding caterers begin with a question before the menu: how do we want every guest to feel? Food, service and presentation are how they answer it, not the goal itself.',
+    excerpt: 'The best wedding caterers start with a question before the menu: how should every guest feel? Food, service and presentation are the answer, not the goal.',
     date: '2026-08-06',
     // Supplied by the founder for this post. A composed image rather than a
     // straight photograph, so it sits outside the Visual Language System's
@@ -1583,7 +1583,7 @@ const bestWeddingCaterersDelhiPage = {
   slug: 'best-wedding-caterers-in-delhi-what-sets-them-apart',
   url: '/best-wedding-caterers-in-delhi-what-sets-them-apart',
   title: 'Best Wedding Caterers in Delhi: What Sets Them Apart',
-  excerpt: 'Six criteria that separate the best wedding caterers in Delhi from the rest: menu design, live stations, plating philosophy, verifiable credentials, pricing tiers, and booking safeguards.',
+  excerpt: 'Six things that separate the best wedding caterers in Delhi: menu design, live stations, plating, verifiable credentials, pricing tiers and booking safeguards.',
   date: '2026-07-20',
   updated: '2026-08-12',
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
@@ -1689,7 +1689,7 @@ const caterersInDelhiFindingTheRightFitPage = {
   slug: 'caterers-in-delhi-finding-the-right-fit-for-your-event',
   url: '/caterers-in-delhi-finding-the-right-fit-for-your-event',
   title: 'Caterers in Delhi: Finding the Right Fit for Your Event',
-  excerpt: 'A guide to matching your event\'s ambition to the right kind of caterer in Delhi NCR: pricing tiers, dietary verification, FSSAI credentials, and what to ask at a tasting.',
+  excerpt: 'Matching your event to the right caterer in Delhi NCR: pricing tiers, dietary verification, FSSAI credentials, and what to ask at a tasting.',
   date: '2026-07-21',
   image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
   relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
@@ -1835,7 +1835,7 @@ const pressMentions = [
 // verbatim per instruction rather than rewritten in the new site's voice.
 const landingPages = {
   'wedding-caterers-in-delhi': {
-    metaTitle: 'Best Wedding Caterers in Delhi | Top Wedding Caterers, Delhi NCR | Virtuoso',
+    metaTitle: 'Best Wedding Caterers in Delhi NCR | Virtuoso',
     metaDescription: 'Looking for the best wedding caterers in Delhi? Here is what separates the top wedding caterers in the city, and where Virtuoso Catering House fits among them.',
     eyebrow: 'Weddings — Delhi',
     h1: 'Best Wedding Caterers in Delhi',
@@ -1962,7 +1962,7 @@ const landingPages = {
   },
   'catering-services-in-greater-noida': {
     metaTitle: 'Caterers in Greater Noida | Premium Catering Services',
-    metaDescription: 'Virtuoso Catering House caters weddings, brand launches and private celebrations across Greater Noida, from Jaypee Greens and Pari Chowk to Sector 150 and Greater Noida West.',
+    metaDescription: 'Weddings, brand launches and private celebrations across Greater Noida, from Jaypee Greens and Pari Chowk to Sector 150 and Greater Noida West.',
     eyebrow: 'Greater Noida',
     h1: 'Caterers in Greater Noida for Weddings, Brand Events and Private Celebrations',
     image: '/images/virtuoso-catering-house-live-cooking-station-tesla-centre-gurugram-2025-1.jpg',
@@ -2067,7 +2067,7 @@ const landingPages = {
     }
   },
   'corporate-catering-services-in-noida': {
-    metaTitle: 'Corporate Caterers Noida | Corporate Catering Services in Noida',
+    metaTitle: 'Corporate Catering Services in Noida | Virtuoso',
     metaDescription: 'Make your events memorable with Virtuoso Catering. Book now for corporate catering services in Noida with professional corporate caterers you can trust.',
     eyebrow: 'Corporate',
     h1: 'Corporate Catering Services In Noida',
@@ -2122,8 +2122,8 @@ const landingPages = {
     }
   },
   'luxury-brand-event-catering-delhi-ncr': {
-    metaTitle: 'Luxury Brand Event Catering, Delhi NCR | Virtuoso Catering House',
-    metaDescription: 'Virtuoso Catering House designs food and beverage experiences for luxury brand launches across Delhi NCR, including automotive reveals, retail launches, and activations for Lamborghini, Tesla, Ferrari APAC, BMW, and Bath & Body Works.',
+    metaTitle: 'Luxury Brand Event Catering, Delhi NCR | Virtuoso',
+    metaDescription: 'Luxury brand event catering across Delhi NCR. Automotive reveals and retail launches for Lamborghini, Tesla, Ferrari APAC, BMW and Bath & Body Works.',
     eyebrow: 'Brand Activations',
     h1: 'Luxury Brand Event Catering, Delhi NCR',
     image: '/images/lamborghini-temerario-hero.jpg',
@@ -2182,7 +2182,7 @@ const landingPages = {
   },
   'wedding-caterers-in-noida': {
     metaTitle: 'Luxury Wedding Caterers in Noida — Exclusive Catering',
-    metaDescription: 'Virtuoso Catering House is a team of wedding caterers based in Noida, designing catering across every function, from mehendi to reception, for Noida families who want the food, presentation, and service handled by a specialist, not a banquet team.',
+    metaDescription: 'Luxury wedding caterers in Noida. A separate menu for every function, mehendi to reception, with a tasting before you book and the tasting chef on the day.',
     eyebrow: 'Weddings',
     h1: 'Wedding Caterers in Noida',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
@@ -2487,7 +2487,7 @@ const eventTypes = ['Wedding', 'Private', 'Brand', 'Other'];
 // short: this is read in seconds by someone who just tapped an Instagram ad,
 // not browsed like the SEO pages. Every claim here is one we can evidence.
 const celebrationsLander = {
-  metaTitle: 'Private Celebration Catering, Delhi NCR | Virtuoso Catering House',
+  metaTitle: 'Private Celebration Catering, Delhi NCR | Virtuoso',
   metaDescription: 'Get the Virtuoso menu for private celebrations across Delhi NCR — birthdays, baby showers, anniversaries and private gatherings, from 20 guests up.',
   image: '/images/virtuoso-catering-house-weddings-service.jpg',
 
