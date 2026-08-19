@@ -13,6 +13,27 @@
 // `choose` is the count where the printed menu says "Choose any N". It is
 // shown to the reader because it is genuinely useful when planning, and it is
 // the detail a generic recycled dish list on a competitor blog cannot fake.
+
+// Editorial blocks for the /wedding-menu page.
+//
+// Deliberately contains no operational claims: no tasting timings, no cover
+// ranges, no service windows, no prices. Pallav confirmed on 2026-08-19 that
+// the figures in the design handoff were not accurate for this business, so
+// the Formats, Process and Pricing sections it specified are not built. Every
+// line below restates something already published elsewhere on the site.
+const composition = [
+  { no: '01', name: 'The room', note: 'A mehendi, a cocktail night and a reception are three different evenings, not one repeated three times. The menu is written for each.' },
+  { no: '02', name: 'The service', note: 'A live counter is only worth having if the queue keeps moving. Format decides the menu as much as the kitchen does.' },
+  { no: '03', name: 'The kitchen', note: 'Italian, Asian and modern Indian, cooked out of FSSAI-certified kitchens. A menu can run across all three, provided each course earns its place.' }
+];
+
+const dietary = [
+  { label: 'Vegetarian', text: 'Every menu on this page is vegetarian as written.' },
+  { label: 'Jain and sattvic', text: 'Prepared in separate vessels rather than adapted from the main menu. That distinction is the one that matters to families who keep it strictly, and it is worth asking any caterer directly.' },
+  { label: 'Non-vegetarian', text: 'Composed on request, and planned as its own menu rather than added to this one.' },
+  { label: 'Certification', text: 'Our FSSAI number is verifiable on the FoSCoS portal in seconds. Check ours, and check anyone else you are considering.' }
+];
+
 const weddingMenu = {
   title: 'The Wedding Signatures Menu',
   summary: 'A vegetarian tasting menu, curated end to end for understated luxury.',
@@ -109,5 +130,8 @@ const weddingMenu = {
     }
   ]
 };
+
+weddingMenu.composition = composition;
+weddingMenu.dietary = dietary;
 
 module.exports = weddingMenu;

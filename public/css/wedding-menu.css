@@ -1,0 +1,202 @@
+/* /wedding-menu — typographic menu page.
+ *
+ * Built to the Virtuoso Visual Language System handoff. Everything here uses
+ * the --vls-* tokens already defined in variables.css; no new colour is
+ * introduced. Namespaced .wm- throughout so it cannot collide with the
+ * section/landing classes the rest of the site uses.
+ *
+ * House rules this file obeys, and which are easy to break by accident:
+ *   no corner radius, no shadow, no filled button, no #fff or #000,
+ *   no gradient, no icon, lowercase is never letterspaced, and brass is
+ *   used for rules and terminals only, never to set a letterform.
+ *
+ * Rule weights carry meaning and there are only three:
+ *   0.4pt hairline   — between list items and table rows
+ *   0.5pt structural — under section heads
+ *   1.6pt anchor     — used once, on the dietary block
+ */
+
+.page-wedding-menu {
+  --wm-container: 1160px;
+  --wm-rhythm: clamp(64px, 8vw, 128px);
+  --wm-hairline: 0.4pt solid var(--border-hairline, oklch(85% 0.02 80 / 40%));
+  --wm-structural: 0.5pt solid var(--border-subtle, oklch(75% 0.02 80 / 55%));
+  --wm-on-inverse: 0.5pt solid oklch(97% 0.01 85 / 18%);
+  background: var(--vls-parchment);
+}
+
+.wm-container { max-width: var(--wm-container); margin: 0 auto; padding: 0 32px; }
+.wm-section { padding: var(--wm-rhythm) 0; }
+
+/* Tracked capitals. Tracking is a function of size; lowercase never gets it. */
+.wm-eyebrow {
+  font-family: var(--font-sans, 'Work Sans', sans-serif);
+  font-weight: 400; font-size: 0.8125rem; text-transform: uppercase;
+  letter-spacing: .24em; color: var(--vls-amber); margin: 0;
+}
+.wm-eyebrow--light { color: var(--vls-candlelight); }
+.wm-eyebrow--slate { color: var(--vls-slate); }
+.wm-eyebrow--forest { color: var(--vls-forest); }
+
+/* The macron device. The page's one signature motion, on the hero only. */
+.wm-device {
+  display: block; width: 56px; height: 0.8pt; border: 0;
+  background: var(--vls-brass); margin: 24px 0;
+  transform: scaleX(0); transform-origin: left;
+}
+.wm-device--light { background: var(--vls-candlelight); }
+.wm-device--static { transform: scaleX(1); }
+.wm-hero .wm-device { animation: wm-draw 480ms cubic-bezier(.4, 0, .2, 1) forwards; }
+@keyframes wm-draw { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .wm-hero .wm-device { animation: wm-fade 150ms linear forwards; transform: scaleX(1); opacity: 0; }
+  @keyframes wm-fade { to { opacity: 1; } }
+}
+
+/* Type scale, fluid 375 -> 1440. */
+.wm-h1 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300;
+  font-size: clamp(2.75rem, 1.6rem + 5.1vw, 5.5rem); line-height: 1.08;
+  letter-spacing: -0.01em; color: var(--vls-parchment); max-width: 14ch; margin: 0;
+}
+.wm-h2 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300;
+  font-size: clamp(2rem, 1.35rem + 2.9vw, 3.5rem); line-height: 1.12;
+  color: var(--vls-forest); margin: 0;
+}
+.wm-h3 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300;
+  font-size: clamp(1.5rem, 1.35rem + 0.7vw, 2rem); line-height: 1.2;
+  color: var(--vls-forest); margin: 0;
+}
+.wm-lead {
+  font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 300;
+  font-size: clamp(1.125rem, 1.1rem + 0.12vw, 1.25rem); line-height: 1.72;
+  color: var(--vls-ink); max-width: 640px; margin: 0 0 24px;
+}
+.wm-note {
+  font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 300;
+  font-size: 0.875rem; line-height: 1.6; color: var(--vls-slate); margin: 0;
+}
+
+/* Actions. A tracked capital word over a 1px rule. Never a filled button. */
+.wm-action {
+  display: inline-block; font-family: var(--font-sans, 'Work Sans', sans-serif);
+  font-weight: 400; font-size: 0.8125rem; text-transform: uppercase;
+  letter-spacing: .24em; color: var(--vls-forest); text-decoration: none;
+  border: 0; border-bottom: 1px solid var(--vls-brass); background: none;
+  padding: 12px 0; min-height: 44px; cursor: pointer;
+  transition: color 150ms cubic-bezier(.4, 0, .2, 1);
+}
+.wm-action:hover { color: var(--vls-amber); }
+.wm-action--light { color: var(--vls-parchment); border-bottom-color: var(--vls-candlelight); }
+.wm-action--light:hover { color: var(--vls-candlelight); }
+.wm-actions { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 32px; }
+
+/* Hero, the page's one sanctioned full-bleed grid break. */
+.wm-hero { background: var(--vls-forest); padding: clamp(64px, 9vw, 128px) 0 0; }
+.wm-hero__row { display: flex; flex-wrap: wrap; gap: 64px; }
+.wm-hero__col { flex: 1 1 460px; }
+.wm-hero__aside { flex: 1 1 380px; }
+.wm-hero__standfirst {
+  font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 300;
+  font-size: clamp(1.125rem, 1.1rem + 0.12vw, 1.25rem); line-height: 1.72;
+  color: var(--vls-sage-wash); max-width: 520px; margin: 24px 0 0;
+}
+.wm-spec {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  border-top: var(--wm-on-inverse); margin-top: var(--wm-rhythm);
+}
+.wm-spec__cell { padding: 24px 24px 48px 0; border-left: 0.4pt solid oklch(97% 0.01 85 / 18%); padding-left: 24px; }
+.wm-spec__cell:first-child { border-left: 0; padding-left: 0; }
+.wm-spec__label {
+  font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 400;
+  font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .24em;
+  color: var(--vls-olive-mist); margin: 0 0 12px;
+}
+.wm-spec__value {
+  font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300;
+  font-size: 1.5rem; line-height: 1.3; color: var(--vls-parchment); margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Asymmetric 5 + 7, the default section layout. */
+.wm-split { display: flex; flex-wrap: wrap; gap: 64px; }
+.wm-split__label { flex: 1 1 300px; }
+.wm-split__body { flex: 2 1 460px; }
+
+/* Section head with a structural rule under it. */
+.wm-head { border-bottom: var(--wm-structural); padding-bottom: 24px; margin-bottom: 48px; }
+.wm-head__row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.wm-head__note { font-size: 0.875rem; color: var(--vls-slate); max-width: 380px; margin: 0; line-height: 1.6; }
+
+/* Enumerated rows: composition, dietary. */
+.wm-rows { border-top: var(--wm-hairline); }
+.wm-row { display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-bottom: var(--wm-hairline); }
+.wm-row__no { font-family: var(--font-sans, 'Work Sans', sans-serif); font-size: 0.8125rem; letter-spacing: .24em; color: var(--vls-slate); font-variant-numeric: tabular-nums; flex: 0 0 48px; }
+.wm-row__label { flex: 1 1 160px; font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 400; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .24em; color: var(--vls-forest); }
+.wm-row__name { flex: 1 1 200px; font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300; font-size: 1.5rem; color: var(--vls-forest); }
+.wm-row__text { flex: 2 1 300px; font-size: 1rem; line-height: 1.6; color: var(--vls-slate); }
+.wm-rows--anchor { border-top: 1.6pt solid var(--vls-brass); }
+
+/* Dish lists. Two columns on desktop, one below ~700px, by grid not query. */
+.wm-dishes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); column-gap: 64px; list-style: none; margin: 0; padding: 0; }
+.wm-dish { padding: 16px 0; border-bottom: var(--wm-hairline); }
+.wm-dish__name { font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300; font-size: clamp(1.5rem, 1.35rem + 0.7vw, 2rem); line-height: 1.25; color: var(--vls-forest); display: block; }
+.wm-dish__note { font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 300; font-size: 0.875rem; color: var(--vls-slate); display: block; margin-top: 4px; }
+
+/* Grazing groups. */
+.wm-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px 64px; }
+.wm-group__title { font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 400; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .24em; color: var(--vls-forest); border-bottom: var(--wm-structural); padding-bottom: 12px; margin: 0 0 12px; }
+.wm-group__list { list-style: none; margin: 0; padding: 0; }
+.wm-group__item { font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300; font-size: 1.375rem; color: var(--vls-forest); padding: 12px 0; border-bottom: var(--wm-hairline); }
+
+/* Station blocks. */
+.wm-stations { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); column-gap: 64px; }
+.wm-station { padding: 24px 0 32px; }
+.wm-station__no { font-family: var(--font-sans, 'Work Sans', sans-serif); font-size: 0.8125rem; letter-spacing: .24em; color: var(--vls-slate); font-variant-numeric: tabular-nums; display: block; margin-bottom: 8px; }
+.wm-station__line { font-size: 0.875rem; line-height: 1.6; color: var(--vls-slate); max-width: 440px; margin: 12px 0 16px; }
+.wm-pair { display: flex; flex-wrap: wrap; gap: 16px; padding: 12px 0; border-top: var(--wm-hairline); }
+.wm-pair__label { flex: 1 1 140px; font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 400; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: .24em; color: var(--vls-slate); }
+.wm-pair__value { flex: 2 1 220px; font-family: var(--font-display, 'Cormorant Garamond', serif); font-weight: 300; font-size: 1.375rem; color: var(--vls-ink); }
+
+/* Grounds. Depth is ground colour only, never shadow. */
+.wm-section--vellum { background: var(--vls-vellum); }
+.wm-section--forest { background: var(--vls-forest); }
+.wm-section--forest .wm-h2,
+.wm-section--forest .wm-h3 { color: var(--vls-parchment); }
+.wm-section--forest .wm-lead,
+.wm-section--forest .wm-note { color: var(--vls-sage-wash); }
+
+/* Enquiry form. Inputs are rules, not boxes. */
+.wm-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+.wm-field--wide { grid-column: 1 / -1; }
+.wm-field__label { display: block; font-family: var(--font-sans, 'Work Sans', sans-serif); font-weight: 400; font-size: 0.75rem; text-transform: uppercase; letter-spacing: .24em; color: var(--vls-olive-mist); margin-bottom: 8px; }
+.wm-field__input {
+  width: 100%; background: none; border: 0; border-bottom: var(--wm-on-inverse);
+  padding: 12px 0; min-height: 44px; font-family: var(--font-sans, 'Work Sans', sans-serif);
+  font-weight: 300; font-size: 1rem; color: var(--vls-parchment);
+  transition: border-color 150ms cubic-bezier(.4, 0, .2, 1);
+}
+.wm-field__input[type="number"], .wm-field__input[inputmode="numeric"] { font-variant-numeric: tabular-nums; }
+.wm-field__input:focus { border-bottom: 1.2pt solid var(--vls-brass); outline: 2px solid var(--vls-brass); outline-offset: 2px; }
+.wm-field__error { display: block; font-size: 0.875rem; color: var(--vls-candlelight); margin-top: 8px; min-height: 1.4em; }
+.wm-form__foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+
+/* Focus is never removed. */
+.page-wedding-menu a:focus-visible,
+.page-wedding-menu button:focus-visible { outline: 2px solid var(--vls-brass); outline-offset: 2px; }
+
+@media print {
+  [data-noprint] { display: none !important; }
+  .page-wedding-menu { background: var(--vls-parchment); }
+  .wm-section, .wm-station, .wm-group { break-inside: avoid; }
+  .wm-hero { background: none; }
+  .wm-h1, .wm-hero__standfirst, .wm-spec__value { color: var(--vls-ink); }
+  .wm-spec__label { color: var(--vls-slate); }
+}
+
+/* Anchor clearance. The handoff assumed a static header and said no offset was
+   needed; this site's nav is position:fixed, so each anchored section carries
+   its own scroll margin rather than the page compensating in JavaScript. */
+.page-wedding-menu [id] { scroll-margin-top: 96px; }

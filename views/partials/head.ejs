@@ -98,7 +98,7 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 
 <link rel="preload" href="/fonts/cormorant-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/bundle.css">
+<link rel="stylesheet" href="/css/bundle.css<%= typeof cssVersion !== 'undefined' && cssVersion ? '?v=' + cssVersion : '' %>">
 
 <%#
   ONE business entity, not two. This used to emit a rich LocalBusiness with no

@@ -4,6 +4,7 @@
 // time in a Lighthouse audit). Cascade order matches the original
 // individual <link> tags exactly — do not reorder without checking for
 // specificity regressions.
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,7 +26,8 @@ const SOURCE_FILES = [
   'animations.css',
   'pages.css',
   'popups.css',
-  'lander.css'
+  'lander.css',
+  'wedding-menu.css'
 ];
 
 // Conservative minifier: strips comments and collapses whitespace, and does
@@ -73,11 +75,20 @@ function minifyCss(css) {
     .trim();
 }
 
+// Returns a short content hash of the bundle it just wrote. The stylesheet
+// keeps a stable filename, so the hash is appended as ?v= at the point of use.
+// Without it, bundle.css is cached for a week under a name that never changes,
+// which means a visitor who loaded the site before a deploy keeps the old CSS
+// until the cache expires. That is not theoretical: it happened during
+// development of /wedding-menu, where a new stylesheet was invisible because
+// the browser was still holding the previous bundle.
 function bundleCss() {
   const combined = SOURCE_FILES
     .map((file) => fs.readFileSync(path.join(CSS_DIR, file), 'utf8'))
     .join('\n');
-  fs.writeFileSync(OUTPUT_FILE, minifyCss(combined));
+  const out = minifyCss(combined);
+  fs.writeFileSync(OUTPUT_FILE, out);
+  return crypto.createHash('sha1').update(out).digest('hex').slice(0, 8);
 }
 
 module.exports = bundleCss;

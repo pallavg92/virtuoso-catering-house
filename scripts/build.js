@@ -17,10 +17,16 @@ const postProcess = require('./html-post');
 const minifyJs = require('./minify-js');
 const redirects = require('../utils/redirects');
 
+// Set by bundleCss() in build(), read by renderPage(). The stylesheet keeps a
+// stable filename, so this hash is what busts a stale browser cache after a
+// deploy; see the note in scripts/bundle-css.js.
+let cssVersion = '';
+
 async function renderPage(page) {
   const viewPath = path.join(VIEWS_DIR, `${page.view}.ejs`);
   const locals = {
     ...content,
+    cssVersion,
     ...page,
     canonicalUrl: siteUrl + (page.path === '/' ? '/' : page.path),
     siteUrl,
@@ -190,7 +196,7 @@ async function build() {
   fs.rmSync(DIST_DIR, { recursive: true, force: true });
   fs.mkdirSync(DIST_DIR, { recursive: true });
 
-  bundleCss();
+  cssVersion = bundleCss();
   copyPublicAssets();
 
   for (const page of Object.values(pages)) {

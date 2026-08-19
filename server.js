@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 3000;
 
 // Regenerate the combined stylesheet on every boot so it can never go
 // stale relative to the individual source files in public/css/.
-bundleCss();
+const cssVersion = bundleCss();
+app.locals.cssVersion = cssVersion;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
