@@ -162,7 +162,14 @@
   <section class="blog-post-author section section--ivory">
     <div class="container blog-post__prose">
       <span class="eyebrow eyebrow--gold reveal-up">About the Author</span>
-      <h3 class="blog-post-author__name reveal-up"><%= post.author.name %></h3>
+      <%# Link the byline to the author's own page. team-member.ejs describes
+          this as a two-way relationship, but only the return leg existed: the
+          team page listed every article, and no article pointed back. That left
+          /team/* with no incoming internal links at all, which is what an
+          orphan page is, and it wasted the authorship signal the shared
+          Person @id was built to consolidate. -%>
+      <% const authorPage = (typeof founders !== 'undefined' ? founders : []).find(function (f) { return f.name === post.author.name; }); %>
+      <h3 class="blog-post-author__name reveal-up"><% if (authorPage) { %><a href="/team/<%= authorPage.slug %>" class="link-underline"><%= post.author.name %></a><% } else { %><%= post.author.name %><% } %></h3>
       <p class="blog-post-author__bio reveal-up"><%= post.author.bio %></p>
       <% if (post.author.linkedin) { %>
       <a href="<%= post.author.linkedin %>" target="_blank" rel="noopener" class="link-underline reveal-up">Connect on LinkedIn</a>

@@ -107,7 +107,7 @@
             <img src="<%= founder.image %>" alt="<%= founder.name %>, <%= founder.role %> of Virtuoso Catering House" loading="lazy">
           </div>
           <span class="eyebrow eyebrow--gold"><%= founder.role %></span>
-          <h3 class="founder-block__name"><%= founder.name %></h3>
+          <h3 class="founder-block__name"><a href="/team/<%= founder.slug %>" class="link-underline"><%= founder.name %></a></h3>
           <p class="founder-block__bio"><%= founder.bio %></p>
         </div>
         <% }); %>
