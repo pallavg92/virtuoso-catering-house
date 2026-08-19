@@ -104,6 +104,22 @@ const pages = {
       { name: 'Pallav Goel', path: '/team/pallav-goel' }
     ]
   },
+  weddingMenu: {
+    path: '/wedding-menu',
+    view: 'wedding-menu',
+    activePage: 'services',
+    bodyClass: 'page-wedding-menu',
+    title: 'Indian Wedding Menu List | Virtuoso',
+    description: 'The full wedding menu we cook in Noida and Delhi NCR: 244 vegetarian dishes across grazing, canapes, live stations, buffet and dessert. A real menu, not a sample.',
+    ogImage: content.heroImage,
+    weddingMenu: content.weddingMenu,
+    totalDishes: content.weddingMenu.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0), 0),
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Services & Menus', path: '/services' },
+      { name: 'Wedding Menu', path: '/wedding-menu' }
+    ]
+  },
   ourWork: {
     path: '/our-work',
     view: 'our-work',

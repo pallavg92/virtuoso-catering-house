@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<%- include('partials/head') %>
+</head>
+<body class="<%= bodyClass %>">
+
+<%- include('partials/preloader') %>
+<%- include('partials/cursor') %>
+<%- include('partials/nav') %>
+<%- include('partials/whatsapp-float') %>
+
+<main id="smooth-wrapper">
+<div id="smooth-content">
+
+  <!-- INTRO -->
+  <section class="page-intro page-intro--short">
+    <div class="page-intro__media" data-parallax>
+      <img src="<%= ogImage %>" alt="A Virtuoso Catering House wedding spread, plated and styled for service" loading="eager">
+    </div>
+    <div class="page-intro__scrim"></div>
+    <div class="page-intro__content container">
+      <%- include('partials/breadcrumb') %>
+      <span class="eyebrow eyebrow--light reveal-up">Wedding Menu</span>
+      <h1 class="page-intro__title reveal-up">Indian Wedding Menu List</h1>
+    </div>
+  </section>
+
+  <!-- LEAD. Answer-first: the block an answer engine can lift whole. -->
+  <section class="landing-lead section section--ivory">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title reveal-up"><%= weddingMenu.title %></h2>
+        <span class="section-header__line"></span>
+      </div>
+      <div class="blog-post__prose">
+        <p class="blog-post__copy blog-post__copy--lead reveal-up">This is the full wedding menu Virtuoso Catering House cooks in Noida and Delhi NCR: <%= totalDishes %> dishes across <%= weddingMenu.sections.length %> courses, from the grazing table through canapés, live stations and buffet to dessert. It is entirely vegetarian, and it is a real working menu rather than a sample, so you can plan a wedding from it.</p>
+        <p class="blog-post__copy reveal-up"><%= weddingMenu.summary %> Where a station says "choose any four", that is the real number, because a live counter only works if the queue keeps moving.</p>
+        <p class="blog-post__copy reveal-up">A separate menu is written for each function. A mehendi, a cocktail night and a reception are three different evenings rather than one repeated three times, which is why nothing below is fixed. See <a href="/wedding-caterers-in-noida" class="link-underline">wedding catering in Noida</a> or <a href="/wedding-caterers-in-delhi" class="link-underline">Delhi</a> for how a full wedding is planned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MENU. Grounds alternate so five long lists do not read as one wall. -->
+  <% weddingMenu.sections.forEach(function (section, i) { %>
+  <section class="landing-block section <%= i % 2 === 1 ? 'section--charcoal' : 'section--ivory' %>" id="section-<%= section.number %>">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow <%= i % 2 === 1 ? 'eyebrow--light' : '' %> reveal-up"><%= section.number %></span>
+        <h2 class="section-title reveal-up"><%= section.name %></h2>
+        <span class="section-header__line"></span>
+      </div>
+
+      <% section.groups.forEach(function (group) { %>
+      <div class="blog-post__prose">
+        <h3 class="reveal-up"><%= group.name %><% if (group.choose) { %> <span class="fine">(choose any <%= group.choose %>)</span><% } %></h3>
+        <% if (group.note) { %>
+        <p class="blog-post__copy reveal-up"><%= group.note %></p>
+        <% } %>
+        <ul class="landing-list">
+          <% group.items.forEach(function (item) { %>
+          <li class="landing-list__item reveal-up"><%= item %></li>
+          <% }); %>
+        </ul>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+  <% }); %>
+
+  <!-- CLOSING + DOWNLOAD -->
+  <section class="section section--ivory">
+    <div class="container">
+      <div class="blog-post__prose">
+        <p class="blog-post__copy blog-post__copy--lead reveal-up"><%= weddingMenu.closing %></p>
+        <p class="blog-post__copy reveal-up">
+          <a href="/downloads/virtuoso-catering-house-menu.pdf" class="link-underline" download>Download the menu as a PDF</a>
+          to share with your family, or
+          <a href="/contact" class="link-underline">start an enquiry</a>
+          and we will write one around your dates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu structured data. schema.org has a dedicated Menu type, and the
+       sitewide FoodEstablishment node points at this page through hasMenu, so
+       an engine reading the business also reaches its menu rather than finding
+       an unattached page of food words. Sections nest as MenuSection; every
+       dish is a MenuItem. No prices are declared: the menu is quoted per event
+       and inventing a number here would be a claim the site cannot support. -->
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "@id": canonicalUrl + '#menu',
+    "name": weddingMenu.title,
+    "description": weddingMenu.summary,
+    "url": canonicalUrl,
+    "inLanguage": "en-IN",
+    "provider": { "@id": siteUrl + '/#organization' },
+    "hasMenuSection": weddingMenu.sections.map(function (section) {
+      return {
+        "@type": "MenuSection",
+        "name": section.name,
+        "hasMenuSection": section.groups.map(function (group) {
+          return {
+            "@type": "MenuSection",
+            "name": group.name,
+            "description": group.note || undefined,
+            "hasMenuItem": group.items.map(function (item) {
+              return { "@type": "MenuItem", "name": item, "suitableForDiet": "https://schema.org/VegetarianDiet" };
+            })
+          };
+        })
+      };
+    })
+  }) %>
+  </script>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner section section--wine">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title reveal-up">Planning Something<br>Worth Remembering?</h2>
+      <button type="button" class="btn btn--gold-outline" data-magnetic data-inquire-trigger data-cursor="hover"><span>Start an Inquiry</span></button>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</div>
+</main>
+
+<%- include('partials/scripts') %>
+</body>
+</html>

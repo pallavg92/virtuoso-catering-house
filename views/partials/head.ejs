@@ -138,6 +138,7 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
     "longitude": <%= business.longitude %>
   },
   "areaServed": <%- JSON.stringify(business.areaServed.map((a) => ({ '@type': 'City', name: a }))) %>,
+  "hasMenu": "<%= siteUrl %>/wedding-menu#menu",
   "servesCuisine": <%- JSON.stringify(business.cuisines) %>,
   "priceRange": "$$$",
   "sameAs": <%- JSON.stringify(business.sameAs) %>

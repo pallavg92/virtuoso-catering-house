@@ -55,6 +55,7 @@ router.get('/sitemap.xml', (req, res) => {
 
 router.get('/', (req, res) => render(res, pages.home));
 router.get('/about', (req, res) => render(res, pages.about));
+router.get('/wedding-menu', (req, res) => render(res, pages.weddingMenu));
 router.get('/our-work', (req, res) => render(res, pages.ourWork));
 router.get('/team/aarti-sharma', (req, res) => render(res, pages.teamAartiSharma));
 router.get('/team/pallav-goel', (req, res) => render(res, pages.teamPallavGoel));

@@ -646,7 +646,7 @@ const blogPosts = [
     excerpt: 'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters at the cocktail, and a fuller multi-cuisine spread at the reception.',
     date: '2026-07-15',
     image: '/images/virtuoso-catering-house-weddings-service.jpg',
-    relatedLink: { path: '/wedding-caterers-in-delhi', label: 'See the Best Wedding Caterers in Delhi' },
+    relatedLink: { path: '/wedding-menu', label: 'See the Full Wedding Menu' },
     lead: [
       'Wedding catering in Delhi typically spans three function-specific menus: lighter regional dishes at the mehendi, indulgent live counters and starters at the cocktail or engagement, and a fuller multi-cuisine spread, North Indian, Continental, Chinese, and fusion, at the reception. The dishes change by function because the mood of each one is different, not because of a fixed template.',
       'A family sat across from me at our Noida experience centre a few months ago and said, "Just give us the reception menu for the mehendi too. We\'ll trim it down later." I\'ve learned to catch that sentence early, because it\'s where most Delhi wedding menus go wrong. Trimming a big menu doesn\'t give you a lighter one. It gives you a smaller version of the wrong thing.',
@@ -1812,6 +1812,8 @@ const pressAndClients = {
 // Outlets in pressAndClients.press without an entry here (e.g. Times of
 // India, Economic Times, India Today) were referenced in passing in other
 // coverage but don't yet have a confirmed, verified article link.
+const weddingMenu = require('./weddingMenu');
+
 const pressMentions = [
   {
     outlet: 'News18',
@@ -2648,6 +2650,7 @@ module.exports = {
   privacyPolicy,
   commercialPages,
   pressAndClients,
+  weddingMenu,
   pressMentions,
   brandQuote,
   testimonials,
