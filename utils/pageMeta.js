@@ -114,6 +114,7 @@ const pages = {
     ogImage: content.heroImage,
     weddingMenu: content.weddingMenu,
     totalDishes: content.weddingMenu.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0), 0),
+    publicDishes: content.weddingMenu.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + (g.gated ? 0 : g.items.length), 0), 0),
     breadcrumbs: [
       { name: 'Home', path: '/' },
       { name: 'Services & Menus', path: '/services' },

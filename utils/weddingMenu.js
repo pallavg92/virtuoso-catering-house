@@ -24,7 +24,8 @@ const weddingMenu = {
       groups: [
         {
           name: '360° Grazing Experience',
-          note: 'An immersive grazing table, curated with refined flavours and artful presentation.',
+          gated: true,
+          note: 'An immersive grazing table, curated with refined flavours and artful presentation. A fromage atelier, a croquembouche of exotic fruit, hummus in three styles, and a chocolate bite tower, built as one continuous table.',
           items: ['Tomato & Olive Crostini', 'Creamy Guacamole Bowl', 'Corn & Cheese Crostinis', 'Cumin Sour Cream Bowl', 'Spicy Hummus Platter', 'Assorted Chips & Tostadas Basket', 'Beetroot Hummus Platter', 'Artisan Bread Baskets', 'Classic Hummus Platter', 'Fromage Atelier with Exotic Fresh Fruit Croquembouche', 'Falafel Skewers', 'Seasonal Salad Medley', 'Sumac Pita Bread Bites', 'Dry Cakes, Cupcakes & Cookie Display', 'Quinoa Salad with Chilli Lime Dressing', 'Flavoured Chocolate Bite Towers', 'Hot Salsa Bowl']
         },
         {
@@ -53,7 +54,8 @@ const weddingMenu = {
         {
           name: "Chef's Edit Bites",
           choose: 6,
-          note: 'A curated selection of bite-sized creations, hand-crafted by our head chef.',
+          gated: true,
+          note: 'The signature course, hand-crafted by our head chef. Beet and truffle kebab with fig mousse, dal pakwan rebuilt, rajma galouti served in a rice-paper cornetto. These are the plates people photograph.',
           items: ['Beet & Truffle Kebab, Khari Crisp, Fig Mousse', 'Quattro Formaggi Dahi Kebab, Parmesan, Red Pepper Jam', 'Tandoori Broccoli, Gunpowder, Ginger Malai Sauce', 'Mushroom Pepper Fry, Coin Malabari Parotta, Water Chestnut', 'Rock Corn Tempura, Chilli Garlic Sea Salt, Mango Miso Gel', 'Goat Cheese Fritters, Salted Almonds & Spinach, Muhammara Chutney', 'Dal Pakwan 2.0, Pickled Onion & Chutneys, Chilli Gherkin Relish', 'Stuffed Sweet Potato Croquette, Spiced Mozzarella, Pineapple Compote', 'Spinach & Corn Phyllo Cigars, Cranberry Chutney', 'Nasi Goreng Arancini, Sambal Coconut Sauce, Jasmine Rice', 'Szechwan Paneer Tikka, Kaffir Lime Aioli, Lotus Root Crisps', 'Gochujang Cottage Cheese, Three Peppers, Korean Chilli Paste', 'Wasabi Malai Paneer Tikka, Gomae Sauce, Wasabi Caviars', 'Broccoli 65, Gunpowder, Lemon Curd', 'Rajma Galouti Cornetto, Rice Paper Cones, Truffle Cream Cheese']
         }
       ]

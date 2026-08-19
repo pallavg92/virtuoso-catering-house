@@ -34,7 +34,7 @@
         <span class="section-header__line"></span>
       </div>
       <div class="blog-post__prose">
-        <p class="blog-post__copy blog-post__copy--lead reveal-up">This is the full wedding menu Virtuoso Catering House cooks in Noida and Delhi NCR: <%= totalDishes %> dishes across <%= weddingMenu.sections.length %> courses, from the grazing table through canapés, live stations and buffet to dessert. It is entirely vegetarian, and it is a real working menu rather than a sample, so you can plan a wedding from it.</p>
+        <p class="blog-post__copy blog-post__copy--lead reveal-up">This is the wedding menu Virtuoso Catering House cooks in Noida and Delhi NCR: <%= publicDishes %> dishes across <%= weddingMenu.sections.length %> courses, from the grazing table through canapés, live stations and buffet to dessert. It is entirely vegetarian, and it is a real working menu rather than a sample, so you can plan a wedding from it.</p>
         <p class="blog-post__copy reveal-up"><%= weddingMenu.summary %> Where a station says "choose any four", that is the real number, because a live counter only works if the queue keeps moving.</p>
         <p class="blog-post__copy reveal-up">A separate menu is written for each function. A mehendi, a cocktail night and a reception are three different evenings rather than one repeated three times, which is why nothing below is fixed. See <a href="/wedding-caterers-in-noida" class="link-underline">wedding catering in Noida</a> or <a href="/wedding-caterers-in-delhi" class="link-underline">Delhi</a> for how a full wedding is planned.</p>
       </div>
@@ -57,11 +57,24 @@
         <% if (group.note) { %>
         <p class="blog-post__copy reveal-up"><%= group.note %></p>
         <% } %>
+        <%# Gated stations describe themselves and then stop. The dish list is
+            deliberately absent from the HTML rather than hidden with CSS:
+            serving a crawler content the visitor cannot see is cloaking, and
+            hidden text carries no weight anyway. What is written above is
+            true and specific enough to be worth reading on its own. -%>
+        <% if (group.gated) { %>
+        <p class="blog-post__copy reveal-up">
+          The full <%= group.items.length %> are in the menu PDF.
+          <button type="button" class="link-underline" data-menu-download-trigger data-cursor="hover">Download it here</button>
+          and we will send it across.
+        </p>
+        <% } else { %>
         <ul class="landing-list">
           <% group.items.forEach(function (item) { %>
           <li class="landing-list__item reveal-up"><%= item %></li>
           <% }); %>
         </ul>
+        <% } %>
       </div>
       <% }); %>
     </div>
@@ -108,7 +121,7 @@
             "@type": "MenuSection",
             "name": group.name,
             "description": group.note || undefined,
-            "hasMenuItem": group.items.map(function (item) {
+            "hasMenuItem": group.gated ? undefined : group.items.map(function (item) {
               return { "@type": "MenuItem", "name": item, "suitableForDiet": "https://schema.org/VegetarianDiet" };
             })
           };
