@@ -1,0 +1,207 @@
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+<!-- Analytics, queued immediately and fetched late.
+     The stubs below run at once, so fbq('init'), the PageView and every
+     gtag() call are captured into their queues in the normal order and
+     replayed when the vendor files arrive. Nothing is dropped, including the
+     generate_lead / Lead events the enquiry drawer fires on submit: opening
+     the drawer is itself an interaction, which triggers the load below well
+     before anyone finishes typing.
+
+     Why: gtag.js and the two Meta files are ~394KB, around 90% of all script
+     weight on every page, and none of the site's own JavaScript appears in
+     Lighthouse's unused-JavaScript list. They were competing with content for
+     the network and main thread during first paint. The identical change on
+     /lp/first-birthday took that page from 63 to 90 with LCP halved, and both
+     PageView beacons were verified still firing afterwards.
+
+     Loads on whichever comes first: two seconds after load, or the first real
+     interaction. The accepted trade is that a visitor who leaves inside ~2s
+     may not register a PageView. -->
+<script>
+(function () {
+  // Meta stub. Queues calls exactly as the official snippet does.
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[]}(window, document,'script');
+
+  // GA4 stub. dataLayer preserves ordering until gtag.js arrives.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+
+  // Only report from the live domain. Without this guard, local dev and
+  // staging traffic lands in the same dataset as real visitors and skews
+  // both the audience pool and the conversion counts.
+  var live = /(^|\.)virtuosocatering\.com$/.test(location.hostname);
+  if (live) {
+    fbq('init', '1747975173071768');
+    fbq('track', 'PageView');
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-7D4B5HCKXQ');
+
+  var loaded = false;
+  function loadVendors() {
+    if (loaded || !live) return;
+    loaded = true;
+    ['https://connect.facebook.net/en_US/fbevents.js',
+     'https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ'].forEach(function (src) {
+      var t = document.createElement('script');
+      t.async = true; t.src = src;
+      document.head.appendChild(t);
+    });
+  }
+
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (evt) {
+    window.addEventListener(evt, loadVendors, { once: true, passive: true });
+  });
+  if (document.readyState === 'complete') setTimeout(loadVendors, 2000);
+  else window.addEventListener('load', function () { setTimeout(loadVendors, 2000); });
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
+/></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Meta domain verification. Required before Aggregated Event Measurement
+     can be configured, which is what keeps iOS conversions measurable.
+     Removing this tag un-verifies the domain, so leave it in place. -->
+<meta name="facebook-domain-verification" content="dgogf2r9qzb3d0d9vufzjdan998lig" />
+
+<title><%= title %></title>
+<meta name="description" content="<%= description %>">
+<% if (typeof noindex !== 'undefined' && noindex) { %>
+<!-- Paid-traffic landing pages are excluded from search so they cannot
+     cannibalise the SEO pages targeting the same keywords. -->
+<meta name="robots" content="noindex, nofollow">
+<% } %>
+<link rel="canonical" href="<%= canonicalUrl %>">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Virtuoso Catering House">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= description %>">
+<meta property="og:url" content="<%= canonicalUrl %>">
+<meta property="og:image" content="<%= ogImage %>">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>">
+<meta name="twitter:image" content="<%= ogImage %>">
+
+
+<link rel="preload" href="/fonts/cormorant-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/bundle.css<%= typeof cssVersion !== 'undefined' && cssVersion ? '?v=' + cssVersion : '' %>">
+
+<%#
+  ONE business entity, not two. This used to emit a rich LocalBusiness with no
+  @id alongside a thin Organization that had one. Every reference elsewhere on
+  the site (Service.provider, BlogPosting.publisher, Person.worksFor) points at
+  #organization, so the thin node was the only one anything could resolve, and
+  the geo, cuisines and price range were unreachable.
+
+  LocalBusiness is a subtype of Organization, so a single node typed
+  LocalBusiness + FoodEstablishment and carrying the #organization @id satisfies
+  every existing reference while exposing the full description. Keep the @id
+  stable: changing it orphans every reference again.
+-%>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "FoodEstablishment"],
+  "@id": "<%= siteUrl %>/#organization",
+  "name": "<%= business.name %>",
+  "description": "<%= business.description %>",
+  "image": "<%= ogImage %>",
+  "logo": "<%= business.logo %>",
+  "url": "<%= siteUrl %>",
+  "telephone": "<%= business.telephone %>",
+  "email": "<%= business.email %>",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<%= business.streetAddress %>",
+    "addressLocality": "<%= business.addressLocality %>",
+    "addressRegion": "<%= business.addressRegion %>",
+    "postalCode": "<%= business.postalCode %>",
+    "addressCountry": "<%= business.addressCountry %>"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": <%= business.latitude %>,
+    "longitude": <%= business.longitude %>
+  },
+  "areaServed": <%- JSON.stringify(business.areaServed.map((a) => ({ '@type': 'City', name: a }))) %>,
+  "hasMenu": "<%= siteUrl %>/wedding-menu#menu",
+  "servesCuisine": <%- JSON.stringify(business.cuisines) %>,
+  "priceRange": "$$$",
+  "sameAs": <%- JSON.stringify(business.sameAs) %>
+}
+</script>
+
+<% if (typeof post !== 'undefined' && post && post.title) { %>
+<!-- Article-level structured data. `author` is a bare @id reference rather
+     than an inline Person: the full node lives on /team/{slug}, so every
+     post reinforces one entity instead of describing a new one each time.
+     dateModified falls back to the publication date — never a build date,
+     which would claim a freshness the content has not earned. -->
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": canonicalUrl + '#article',
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "headline": post.title,
+  "description": post.excerpt || description,
+  "image": siteUrl + post.image,
+  "datePublished": post.date,
+  "dateModified": post.updated || post.date,
+  "inLanguage": "en-IN",
+  "author": post.author && post.author.name === 'Pallav Goel'
+    ? { "@id": siteUrl + '/team/pallav-goel#person' }
+    : { "@type": "Organization", "@id": siteUrl + '/#organization' },
+  "publisher": { "@id": siteUrl + '/#organization' }
+}) %>
+</script>
+<% } %>
+
+<% if (typeof service !== 'undefined' && service) { %>
+<!-- Service schema for the commercial landing pages, tying the offering to
+     the provider entity and to the single city the page actually targets. -->
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": canonicalUrl + '#service',
+  "name": service.name,
+  "serviceType": service.name,
+  "description": description,
+  "provider": { "@id": siteUrl + '/#organization' },
+  "areaServed": { "@type": "City", "name": service.areaServed },
+  "url": canonicalUrl
+}) %>
+</script>
+<% } %>
+
+<% if (typeof breadcrumbs !== 'undefined' && breadcrumbs && breadcrumbs.length > 1) { %>
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map(function(crumb, i) {
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": crumb.name,
+      "item": siteUrl + (crumb.path === '/' ? '/' : crumb.path)
+    };
+  })
+}) %>
+</script>
+<% } %>

@@ -1,0 +1,122 @@
+<%#
+  The two slide-in drawers, deliberately rendered at the end of <body>.
+
+  They used to sit in nav.ejs, near the top of the source. Because their titles
+  are <h2> elements ("Tell Us About", "A Few Details"), every page's heading
+  outline opened with four form labels before its own <h1> and real headings.
+  Search engines and answer engines both read that outline to work out what a
+  page is about, so all 39 pages were introducing themselves with form copy.
+
+  Position in the source has no effect on how these render: both are fixed,
+  CSS-positioned dialogs. The <h2>s stay so screen readers keep the accessible
+  names that aria-labelledby points at.
+-%>
+<div class="inquire-drawer" id="inquire-drawer" aria-hidden="true">
+  <div class="inquire-drawer__overlay" id="inquire-drawer-overlay"></div>
+  <aside class="inquire-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="inquire-drawer-title">
+    <button type="button" class="inquire-drawer__close" id="inquire-drawer-close" aria-label="Close inquiry form" data-cursor="hover">&times;</button>
+
+    <span class="eyebrow eyebrow--gold">Start an Inquiry</span>
+    <h2 id="inquire-drawer-title" class="inquire-drawer__title">Tell Us About<br>Your Occasion</h2>
+    <p class="inquire-drawer__intro">Share a few details and our team will follow up within two business days.</p>
+
+    <form class="inquiry-form" id="inquiry-form" novalidate>
+      <div class="form-field">
+        <label for="drawer-name">Full Name</label>
+        <input type="text" id="drawer-name" name="name" autocomplete="name" required>
+        <span class="form-field__error" data-error-for="name"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-email">Email</label>
+        <input type="email" id="drawer-email" name="email" autocomplete="email" required>
+        <span class="form-field__error" data-error-for="email"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-phone">Mobile No.</label>
+        <input type="tel" id="drawer-phone" name="phone" autocomplete="tel" required>
+        <span class="form-field__error" data-error-for="phone"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-eventDate">Event Date <span class="form-field__optional">(optional)</span></label>
+        <input type="date" id="drawer-eventDate" name="eventDate">
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-eventType">Event Type</label>
+        <select id="drawer-eventType" name="eventType" required>
+          <option value="" disabled selected>Select an event type</option>
+          <% eventTypes.forEach(function(type) { %>
+          <option value="<%= type %>"><%= type %></option>
+          <% }); %>
+        </select>
+        <span class="form-field__error" data-error-for="eventType"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="drawer-guestCount">Estimated Guest Count <span class="form-field__optional">(optional)</span></label>
+        <input type="number" id="drawer-guestCount" name="guestCount" min="1" placeholder="e.g. 120">
+        <span class="form-field__error" data-error-for="guestCount"></span>
+      </div>
+
+      <button type="submit" class="btn btn--wine" id="inquiry-submit" data-cursor="hover">
+        <span class="btn__label">Send Inquiry</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+
+      <div class="inquiry-form__status" id="inquiry-status" role="status" aria-live="polite"></div>
+    </form>
+  </aside>
+</div>
+
+<div class="inquire-drawer" id="menu-drawer" aria-hidden="true">
+  <div class="inquire-drawer__overlay" id="menu-drawer-overlay"></div>
+  <aside class="inquire-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+    <button type="button" class="inquire-drawer__close" id="menu-drawer-close" aria-label="Close menu download form" data-cursor="hover">&times;</button>
+
+    <span class="eyebrow eyebrow--gold">Download the Menu</span>
+    <h2 id="menu-drawer-title" class="inquire-drawer__title">A Few Details<br>First</h2>
+    <p class="inquire-drawer__intro">Share your occasion and we'll send the full menu straight to your download.</p>
+
+    <form class="inquiry-form" id="menu-download-form" novalidate>
+      <div class="form-field">
+        <label for="menu-drawer-name">Full Name</label>
+        <input type="text" id="menu-drawer-name" name="name" autocomplete="name" required>
+        <span class="form-field__error" data-error-for="name"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-eventDate">Day of Event</label>
+        <input type="date" id="menu-drawer-eventDate" name="eventDate" required>
+        <span class="form-field__error" data-error-for="eventDate"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-guestCount">Estimated Pax</label>
+        <input type="number" id="menu-drawer-guestCount" name="guestCount" min="1" placeholder="e.g. 120" required>
+        <span class="form-field__error" data-error-for="guestCount"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-email">Email</label>
+        <input type="email" id="menu-drawer-email" name="email" autocomplete="email" required>
+        <span class="form-field__error" data-error-for="email"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="menu-drawer-phone">Mobile No.</label>
+        <input type="tel" id="menu-drawer-phone" name="phone" autocomplete="tel" required>
+        <span class="form-field__error" data-error-for="phone"></span>
+      </div>
+
+      <button type="submit" class="btn btn--wine" id="menu-download-submit" data-cursor="hover">
+        <span class="btn__label">Download Menu</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+
+      <div class="inquiry-form__status" id="menu-download-status" role="status" aria-live="polite"></div>
+    </form>
+  </aside>
+</div>

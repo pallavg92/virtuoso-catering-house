@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1f3864">
+<title>Site Recce</title>
+<style>
+  :root{--navy:#1f3864;--line:#c9cfda;--ink:#14181f;--muted:#5b6472;
+        --yes:#1a7f3c;--no:#b3261e;--amber:#fff2cc;--bg:#f4f6f9}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);padding-bottom:96px;
+       font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+  header{background:var(--navy);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:10;
+         padding-top:calc(14px + env(safe-area-inset-top))}
+  header h1{margin:0;font-size:17px}
+  main{padding:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+  .f{padding:10px 14px;border-bottom:1px solid #eef0f4}
+  .f:last-child{border-bottom:0}
+  label{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:5px}
+  input,textarea{width:100%;padding:11px 12px;font-family:inherit;font-size:16px;line-height:1.4;
+                 border:1px solid var(--line);border-radius:8px;background:var(--amber);color:var(--ink)}
+  textarea{min-height:64px;resize:vertical}
+  .item{padding:12px 14px;border-bottom:1px solid #eef0f4;display:flex;gap:12px;align-items:flex-start}
+  .item:last-child{border-bottom:0}
+  .item.ok{box-shadow:inset 3px 0 0 var(--yes)}
+  .item.flag{background:#fff5f4;box-shadow:inset 3px 0 0 var(--no)}
+  .tick{flex:0 0 auto;width:52px;height:52px;border:2px solid var(--line);border-radius:10px;
+        background:#fff;font-family:inherit;font-size:18px;font-weight:700;line-height:1;
+        color:var(--muted);cursor:pointer}
+  .tick[data-s=yes]{background:var(--yes);border-color:var(--yes);color:#fff}
+  .tick[data-s=no]{background:var(--no);border-color:var(--no);color:#fff}
+  .txt{flex:1 1 auto;min-width:0}
+  .txt b{display:block;font-size:16px;margin-bottom:2px}
+  .txt span{display:block;font-size:13px;color:var(--muted)}
+  .act{display:none;margin-top:8px}
+  .act.show{display:block}
+  .act label{color:var(--no)}
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
+       padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));z-index:20;
+       display:flex;gap:10px;align-items:center}
+  .pill{font-family:inherit;font-size:13px;font-weight:700;line-height:1;padding:9px 13px;
+        border-radius:20px;color:#fff;background:var(--muted);white-space:nowrap}
+  .pill.ok{background:var(--yes)} .pill.bad{background:var(--no)} .pill.warn{background:#a56a00}
+  .bar button{flex:1;padding:13px;font-family:inherit;font-size:15px;font-weight:600;line-height:1;
+              border-radius:8px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer}
+  .hint{font-size:12px;color:var(--muted);padding:10px 14px;line-height:1.5}
+  dialog{border:0;border-radius:12px;padding:0;width:min(94vw,620px)}
+  dialog::backdrop{background:rgba(0,0,0,.45)}
+  dialog textarea{border:0;border-radius:0;background:#fff;min-height:52vh;
+                  font:13px/1.5 ui-monospace,Menlo,Consolas,monospace}
+  dialog .df{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+  dialog .df button{flex:1;padding:11px;font-family:inherit;font-size:14px;font-weight:600;line-height:1;
+                    border-radius:8px;border:1px solid var(--navy);background:var(--navy);color:#fff}
+  dialog .df button.alt{background:#fff;color:var(--navy)}
+</style>
+</head>
+<body>
+
+<header><h1>Site Recce</h1></header>
+
+<main>
+  <div class="card">
+    <div class="f"><label for="ev">Event</label><input id="ev" data-k="ev"></div>
+    <div class="f"><label for="vn">Venue</label><input id="vn" data-k="vn"></div>
+    <div class="f"><label for="ed">Event date</label><input type="date" id="ed" data-k="ed"></div>
+    <div class="f"><label for="by">Recce by</label><input id="by" data-k="by"></div>
+  </div>
+
+  <div class="card">
+    <div class="hint">Tap once for done, twice for not done. A component is done only when its proof is taken.</div>
+    <div id="list"></div>
+  </div>
+
+  <div class="card">
+    <div class="f"><label for="nt">Notes</label><textarea id="nt" data-k="nt"></textarea></div>
+  </div>
+</main>
+
+<div class="bar">
+  <div class="pill" id="pill">0 / 10</div>
+  <button type="button" id="btn">Report</button>
+</div>
+
+<dialog id="dlg">
+  <textarea id="out" readonly></textarea>
+  <div class="df">
+    <button type="button" class="alt" id="close">Close</button>
+    <button type="button" id="copy">Copy</button>
+  </div>
+</dialog>
+
+<script>
+const ITEMS = [
+  ["Pre-visit preparation","Chef requirement sheet in hand"],
+  ["Access and logistics","Photos of loading point, entry and exit, lift or back door"],
+  ["Kitchen, back of house","Photos plus sketch with table positions marked"],
+  ["Utilities and load","Photos of panel, water point, storage"],
+  ["Front of house layout","Photos plus measured sketch"],
+  ["Presentation mapping","Sketch marked with plated, island, live, bar, grazing"],
+  ["Service viability","Video of the kitchen to service route, walked"],
+  ["Risks and contingencies","Photos of exposed or restricted areas"],
+  ["Client communication","Written message on masking, tables, utilities, risks"],
+  ["Handover","Walkthrough video, group message, venue file"]
+];
+const KEY = "virtuoso.recce.simple";
+const S = JSON.parse(localStorage.getItem(KEY) || "{}");
+const save = () => localStorage.setItem(KEY, JSON.stringify(S));
+const g = k => S[k] || "";
+
+const list = document.getElementById("list");
+ITEMS.forEach(([name, proof], i) => {
+  const n = i + 1;
+  const d = document.createElement("div");
+  d.className = "item"; d.id = "i" + n;
+  d.innerHTML = `
+    <button type="button" class="tick" id="t${n}">${n}</button>
+    <div class="txt">
+      <b>${name}</b><span>${proof}</span>
+      <div class="act" id="c${n}">
+        <label for="a${n}">What is being done, and who owns it</label>
+        <textarea id="a${n}" data-k="a${n}"></textarea>
+      </div>
+    </div>`;
+  list.appendChild(d);
+  document.getElementById("t" + n).addEventListener("click", () => {
+    const cur = g("s" + n);
+    S["s" + n] = cur === "" ? "yes" : cur === "yes" ? "no" : "";
+    save(); paint();
+  });
+});
+
+document.querySelectorAll("[data-k]").forEach(el => {
+  el.value = g(el.dataset.k);
+  el.addEventListener("input", () => { S[el.dataset.k] = el.value; save(); paint(); });
+});
+
+function paint(){
+  let done = 0, answered = 0, missing = 0;
+  for(let n = 1; n <= ITEMS.length; n++){
+    const s = g("s" + n), a = g("a" + n).trim();
+    const t = document.getElementById("t" + n);
+    t.dataset.s = s;
+    t.textContent = s === "yes" ? "✓" : s === "no" ? "✕" : n;
+    document.getElementById("c" + n).classList.toggle("show", s === "no");
+    const row = document.getElementById("i" + n);
+    row.classList.toggle("ok", s === "yes");
+    row.classList.toggle("flag", s === "no" && !a);
+    if(s) answered++;
+    if(s === "yes") done++;
+    if(s === "no" && !a) missing++;
+  }
+  const p = document.getElementById("pill");
+  p.textContent = done + " / " + ITEMS.length;
+  p.className = "pill " + (answered < ITEMS.length ? "" :
+    done === ITEMS.length ? "ok" : missing ? "bad" : "warn");
+}
+
+function fmt(iso){
+  if(!iso) return "-";
+  const [y,m,d] = iso.split("-").map(Number);
+  return d + " " + ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1] + " " + y;
+}
+
+function report(){
+  const L = ["SITE RECCE",
+    "Event: " + (g("ev") || "-"),
+    "Venue: " + (g("vn") || "-"),
+    "Event date: " + fmt(g("ed")),
+    "Recce by: " + (g("by") || "-"), ""];
+  ITEMS.forEach(([name], i) => {
+    const n = i + 1, s = g("s" + n), a = g("a" + n).trim();
+    L.push((s === "yes" ? "[done] " : s === "no" ? "[NOT DONE] " : "[blank] ") + name);
+    if(s === "no") L.push("   " + (a || "NO ACTION RECORDED"));
+  });
+  if(g("nt").trim()){ L.push("", "Notes: " + g("nt").trim()); }
+  L.push("", document.getElementById("pill").textContent + " components done.");
+  return L.join("\n");
+}
+
+const dlg = document.getElementById("dlg");
+document.getElementById("btn").onclick = () => {
+  document.getElementById("out").value = report();
+  dlg.showModal();
+};
+document.getElementById("close").onclick = () => dlg.close();
+document.getElementById("copy").onclick = async () => {
+  const ta = document.getElementById("out");
+  try { await navigator.clipboard.writeText(ta.value); }
+  catch { ta.removeAttribute("readonly"); ta.select(); document.execCommand("copy"); ta.setAttribute("readonly",""); }
+  const b = document.getElementById("copy");
+  b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1400);
+};
+
+paint();
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Custom cursor
+   ========================================================================== */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-gold);
+  opacity: 0.7;
+  transition: width var(--dur-fast) var(--ease-premium),
+              height var(--dur-fast) var(--ease-premium),
+              opacity var(--dur-fast) var(--ease-premium),
+              background var(--dur-fast) var(--ease-premium),
+              border-color var(--dur-fast) var(--ease-premium);
+}
+
+.cursor-ring.is-hovering {
+  width: 60px;
+  height: 60px;
+  background: rgba(201, 167, 104, 0.12);
+}
+
+.cursor-ring.is-hidden,
+.cursor-dot.is-hidden {
+  opacity: 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot, .cursor-ring {
+    display: none;
+  }
+  body, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
+}

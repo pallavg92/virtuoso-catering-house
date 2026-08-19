@@ -1,0 +1,23 @@
+<%- include('drawers') %>
+<%# ?v= is a content hash of public/js/*.js, so a behaviour change reaches
+    returning visitors immediately rather than when the week-long cache on
+    these stable filenames expires. See scripts/js-version.js. -%>
+<% const v = typeof jsVersion !== 'undefined' && jsVersion ? '?v=' + jsVersion : ''; %>
+<%- include('popups') %>
+
+<%# Loads before inquire-drawer so window.vchAttribution exists when a form is submitted. -%>
+<script src="/js/attribution.js<%= v %>"></script>
+<script src="/js/vendor/gsap.min.js"></script>
+<script src="/js/vendor/ScrollTrigger.min.js"></script>
+<script src="/js/smooth-scroll.js<%= v %>"></script>
+<script src="/js/cursor.js<%= v %>"></script>
+<script src="/js/nav.js<%= v %>"></script>
+<script src="/js/preloader.js<%= v %>"></script>
+<script src="/js/gsap-animations.js<%= v %>"></script>
+<script src="/js/inquire-drawer.js<%= v %>"></script>
+<script src="/js/popups.js<%= v %>"></script>
+<script src="/js/menu-download-drawer.js<%= v %>"></script>
+<% if (activePage === 'services') { %><script src="/js/menu-filter.js<%= v %>"></script><% } %>
+<% if (activePage === 'home' || activePage === 'landing') { %><script src="/js/testimonials.js<%= v %>"></script><% } %>
+<% if (activePage === 'about' || activePage === 'landing') { %><script src="/js/timeline.js<%= v %>"></script><% } %>
+<script src="/js/main.js<%= v %>"></script>

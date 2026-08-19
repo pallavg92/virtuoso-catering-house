@@ -1,0 +1,49 @@
+# Cache lifetimes for static assets.
+#
+# Why this file exists here, and not only in dist/:
+#
+# Production runs the Express app, not the static dist/ build, so
+# dist/.htaccess is never read by anything. Separately, Hostinger's edge
+# serves files that exist on disk without ever invoking Node, which is why
+# the express.static({ maxAge }) config in server.js cannot reach them
+# either. Proof: a request for a MISSING css file returns Express's 404
+# page, while a real css file carries no Express ETag and no Cache-Control.
+#
+# So CSS, JS and fonts were being re-downloaded on every visit. Google
+# PageSpeed, Ahrefs and Semrush all flag it independently.
+#
+# This file sits inside the directory those assets are served from, which is
+# the one place a rule might be picked up by whatever fronts the app.
+#
+# HTML is deliberately NOT covered. Rendered pages go through Express, which
+# already sets "public, max-age=0, must-revalidate" on them; adding a second
+# rule here would risk two systems setting the same header.
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Images and fonts are immutable in practice: changing one means writing a
+  # new filename, so a browser can hold them indefinitely.
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CSS and JS are deliberately NOT immutable. bundle.css keeps a stable
+  # filename and is regenerated on every boot, so an immutable year-long
+  # cache would pin visitors to a stale stylesheet after a deploy. A week is
+  # the compromise; a content hash in the filename would remove the need for
+  # it entirely and is the better long-term fix.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

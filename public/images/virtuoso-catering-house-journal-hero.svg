@@ -1,0 +1,79 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2F352B"/>
+      <stop offset="55%" stop-color="#232821"/>
+      <stop offset="100%" stop-color="#17190F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="68%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#C9A768" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#C9A768" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCC594"/>
+      <stop offset="100%" stop-color="#C9A768"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- fine linework texture: scattered botanical sprigs -->
+  <g stroke="#C9A768" stroke-opacity="0.22" stroke-width="1.2" fill="none">
+    <path d="M120,120 Q145,90 175,100 Q160,130 130,140 Q110,130 120,120 Z"/>
+    <path d="M120,120 Q100,95 115,70"/>
+    <path d="M1460,760 Q1485,730 1515,740 Q1500,770 1470,780 Q1450,770 1460,760 Z"/>
+    <path d="M1460,760 Q1440,735 1455,710"/>
+    <path d="M1500,140 Q1520,120 1545,128 Q1533,150 1510,158 Q1493,150 1500,140 Z"/>
+    <path d="M100,700 Q120,680 145,688 Q133,710 110,718 Q93,710 100,700 Z"/>
+  </g>
+
+  <!-- central motif: place setting, rendered as fine gold linework -->
+  <g transform="translate(1000,450)">
+    <!-- plate -->
+    <circle cx="0" cy="0" r="190" fill="none" stroke="url(#goldLine)" stroke-width="2" opacity="0.85"/>
+    <circle cx="0" cy="0" r="150" fill="none" stroke="url(#goldLine)" stroke-width="1" opacity="0.45"/>
+
+    <!-- fork, left of plate -->
+    <g transform="translate(-260,-10)" stroke="url(#goldLine)" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <line x1="0" y1="-150" x2="0" y2="150"/>
+      <line x1="-14" y1="-150" x2="-14" y2="-95"/>
+      <line x1="-14" y1="-95" x2="0" y2="-70"/>
+      <line x1="0" y1="-150" x2="0" y2="-95"/>
+      <line x1="14" y1="-150" x2="14" y2="-95"/>
+      <line x1="14" y1="-95" x2="0" y2="-70"/>
+    </g>
+
+    <!-- knife, right of plate -->
+    <g transform="translate(260,-10)" stroke="url(#goldLine)" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <line x1="0" y1="-150" x2="0" y2="150"/>
+      <path d="M-10,-150 Q0,-165 10,-150 L10,-85 Q0,-70 -10,-85 Z"/>
+    </g>
+
+    <!-- herb sprig resting across the plate -->
+    <g transform="translate(-30,10) rotate(-18)" stroke="url(#goldLine)" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <path d="M-120,0 Q0,-18 120,0"/>
+      <path d="M-90,-4 Q-80,-22 -68,-6"/>
+      <path d="M-55,-7 Q-45,-27 -32,-9"/>
+      <path d="M-20,-9 Q-10,-30 3,-11"/>
+      <path d="M15,-9 Q26,-29 40,-10"/>
+      <path d="M50,-6 Q60,-24 74,-7"/>
+      <path d="M85,-3 Q95,-18 106,-4"/>
+    </g>
+  </g>
+
+  <!-- quill / pen motif, upper left, nodding to "notes" -->
+  <g transform="translate(300,260) rotate(38)" stroke="url(#goldLine)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8">
+    <path d="M0,0 L210,0"/>
+    <path d="M210,0 L232,-14 L226,4 L232,20 Z"/>
+    <path d="M0,0 Q-10,10 -22,8"/>
+  </g>
+  <g transform="translate(295,300) rotate(38)" stroke="#C9A768" stroke-width="1" opacity="0.35" fill="none">
+    <line x1="0" y1="0" x2="150" y2="0"/>
+    <line x1="0" y1="14" x2="120" y2="14"/>
+    <line x1="0" y1="28" x2="135" y2="28"/>
+  </g>
+
+  <!-- thin frame line, editorial detail -->
+  <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#C9A768" stroke-opacity="0.18" stroke-width="1"/>
+</svg>
