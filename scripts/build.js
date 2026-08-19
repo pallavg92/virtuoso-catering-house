@@ -13,6 +13,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const bundleCss = require('./bundle-css');
+const checkRepoComplete = require('./check-repo-complete');
 const jsVersion = require('./js-version');
 const postProcess = require('./html-post');
 const minifyJs = require('./minify-js');
@@ -196,6 +197,9 @@ function writeSitemap() {
 
 async function build() {
   console.log('Building static site...');
+
+  // Fails the build if the repository could not reproduce it from a clone.
+  checkRepoComplete();
 
   fs.rmSync(DIST_DIR, { recursive: true, force: true });
   fs.mkdirSync(DIST_DIR, { recursive: true });
