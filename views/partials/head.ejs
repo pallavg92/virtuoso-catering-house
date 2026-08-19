@@ -1,37 +1,69 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ"></script>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+<!-- Analytics, queued immediately and fetched late.
+     The stubs below run at once, so fbq('init'), the PageView and every
+     gtag() call are captured into their queues in the normal order and
+     replayed when the vendor files arrive. Nothing is dropped, including the
+     generate_lead / Lead events the enquiry drawer fires on submit: opening
+     the drawer is itself an interaction, which triggers the load below well
+     before anyone finishes typing.
+
+     Why: gtag.js and the two Meta files are ~394KB, around 90% of all script
+     weight on every page, and none of the site's own JavaScript appears in
+     Lighthouse's unused-JavaScript list. They were competing with content for
+     the network and main thread during first paint. The identical change on
+     /lp/first-birthday took that page from 63 to 90 with LCP halved, and both
+     PageView beacons were verified still firing afterwards.
+
+     Loads on whichever comes first: two seconds after load, or the first real
+     interaction. The accepted trade is that a visitor who leaves inside ~2s
+     may not register a PageView. -->
 <script>
+(function () {
+  // Meta stub. Queues calls exactly as the official snippet does.
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[]}(window, document,'script');
+
+  // GA4 stub. dataLayer preserves ordering until gtag.js arrives.
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  window.gtag = function(){ dataLayer.push(arguments); };
+
+  // Only report from the live domain. Without this guard, local dev and
+  // staging traffic lands in the same dataset as real visitors and skews
+  // both the audience pool and the conversion counts.
+  var live = /(^|\.)virtuosocatering\.com$/.test(location.hostname);
+  if (live) {
+    fbq('init', '1747975173071768');
+    fbq('track', 'PageView');
+  }
   gtag('js', new Date());
   gtag('config', 'G-7D4B5HCKXQ');
-</script>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-/* Only report from the live domain. Without this guard, local dev and
-   staging traffic lands in the same dataset as real visitors and skews
-   both the audience pool and the conversion counts. */
-if (/(^|\.)virtuosocatering\.com$/.test(location.hostname)) {
-  fbq('init', '1747975173071768');
-  fbq('track', 'PageView');
-}
+  var loaded = false;
+  function loadVendors() {
+    if (loaded || !live) return;
+    loaded = true;
+    ['https://connect.facebook.net/en_US/fbevents.js',
+     'https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ'].forEach(function (src) {
+      var t = document.createElement('script');
+      t.async = true; t.src = src;
+      document.head.appendChild(t);
+    });
+  }
+
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (evt) {
+    window.addEventListener(evt, loadVendors, { once: true, passive: true });
+  });
+  if (document.readyState === 'complete') setTimeout(loadVendors, 2000);
+  else window.addEventListener('load', function () { setTimeout(loadVendors, 2000); });
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-
-<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Meta domain verification. Required before Aggregated Event Measurement
