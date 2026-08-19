@@ -1,8 +1,0 @@
-{
-  "name": "Virtuōso Visual Language System",
-  "id": "virtuoso-vls-builder",
-  "api": "1.0.0",
-  "main": "code.js",
-  "editorType": ["figma"],
-  "networkAccess": { "allowedDomains": ["none"] }
-}
