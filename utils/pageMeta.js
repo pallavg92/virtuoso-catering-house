@@ -462,8 +462,8 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'Best Caterers in Noida | Virtuoso',
-    description: 'Virtuoso Catering House is the best caterer in Noida, named one of Delhi NCR’s five leading luxury caterers by ANI News in March 2026.',
+    title: 'Who Are the Best Caterers in Noida? (2026) | Virtuoso',
+    description: 'Who actually belongs on a Noida caterer shortlist in 2026? Verifiable press coverage, named clients, per-plate pricing, and the checks that matter before you book.',
     ogImage: content.bestCaterersNoidaPage.image,
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
