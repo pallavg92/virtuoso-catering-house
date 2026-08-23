@@ -38,12 +38,25 @@ const business = {
   // is what teaches a search or answer engine to distrust the whole entity. A
   // short, true list also reads more luxury than a long one.
   cuisines: ['Italian', 'Asian', 'Modern Indian'],
+  // sameAs is the entity-consolidation wire: it tells answer engines that the
+  // rated marketplace profiles and this domain are one business, so the 5.0s
+  // on WedMeGood/WeddingWire/Justdial accrue to the entity the site describes.
+  // Only profiles Virtuoso controls or has verified belong here.
   sameAs: [
     'https://www.instagram.com/virtuosocateringhouse/',
+    'https://www.facebook.com/virtuosocateringhouse/',
+    'https://www.youtube.com/@VirtuosoCatering',
     'https://pin.it/3EwnJeOiZ',
     'https://www.linkedin.com/company/virtuoso-caterings',
-    'https://maps.app.goo.gl/VztH6YKQfN13Yogu7'
-  ]
+    'https://maps.app.goo.gl/VztH6YKQfN13Yogu7',
+    'https://www.wedmegood.com/profile/virtuoso-catering-house-25664531',
+    'https://www.weddingwire.in/caterers/virtuoso-catering-house--e491792',
+    'https://www.justdial.com/Noida/Prodigy-Catering-Noida-Sector-46/011PXX11-XX11-170913165601-F9N2_BZDET',
+    'https://vedding.in/vendors/virtuoso-catering-house'
+  ],
+  // Confirmed by Pallav 2026-08-23; must match every marketplace listing.
+  foundingDate: '2024-11',
+  priceRange: '₹3,500–₹3,800 per plate'
 };
 
 const pages = {
