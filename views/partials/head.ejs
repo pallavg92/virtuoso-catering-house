@@ -71,6 +71,15 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
      Removing this tag un-verifies the domain, so leave it in place. -->
 <meta name="facebook-domain-verification" content="dgogf2r9qzb3d0d9vufzjdan998lig" />
 
+<!-- Google Search Console ownership. A plain meta tag on purpose: this site
+     was previously verified through Google Analytics, and that broke the
+     moment gtag.js was deferred behind a load/interaction trigger, because
+     Google's verifier reads raw HTML and never runs the script that injects
+     it. A tag in the markup cannot be broken by a performance change.
+     Independent of the DNS TXT record, which verifies the sc-domain property.
+     Removing this un-verifies the property, so leave it in place. -->
+<meta name="google-site-verification" content="1-7MKRR6hsJmVCAMr-Cl9p1PZkU1ynhJo6KtqR1ce6s" />
+
 <title><%= title %></title>
 <meta name="description" content="<%= description %>">
 <% if (typeof noindex !== 'undefined' && noindex) { %>
