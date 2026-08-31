@@ -17,6 +17,12 @@ const redirects = [
   // drifted to mix in Noida) into a clean, Noida-only Tier 2 pillar.
   { from: '/luxury-wedding-catering-delhi-ncr', to: '/wedding-caterers-in-noida' },
 
+  // The old WordPress menu PDF. Search Console shows it holding 1,468
+  // impressions over 16 months at position 24, and it has been a 404 since the
+  // migration, so every one of those impressions was a dead end. /wedding-menu
+  // is the same intent in a form Google can actually read.
+  { from: '/wp-content/uploads/2025/04/Virtuoso-Menu-Chefs-Special-Most-Loved.pdf', to: '/wedding-menu' },
+
   // Legacy WordPress URLs
   { from: '/about-us', to: '/about' },
   { from: '/contact-us', to: '/contact' },

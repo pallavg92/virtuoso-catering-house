@@ -1886,8 +1886,8 @@ const landingPages = {
     ]
   },
   'best-catering-services-in-noida': {
-    metaTitle: 'Catering Services in Noida | Best Caterers, Noida',
-    metaDescription: 'Virtuoso offers catering services in Noida for weddings, parties, and private events. Book trusted caterers in Noida for gourmet food and exceptional service.',
+    metaTitle: 'Best Caterers in Noida | Weddings, Corporate, Brand Events',
+    metaDescription: 'Gourmet catering in Noida for weddings, brand activations and private dinners, from the team behind the Lamborghini and Tesla launches.',
     eyebrow: 'Noida',
     h1: 'Catering Services in Noida, Trusted by Families Across the City',
     image: '/images/virtuoso-catering-house-bespoke-menus-service.jpg',
@@ -1963,8 +1963,8 @@ const landingPages = {
     ]
   },
   'catering-services-in-greater-noida': {
-    metaTitle: 'Caterers in Greater Noida | Premium Catering Services',
-    metaDescription: 'Weddings, brand launches and private celebrations across Greater Noida, from Jaypee Greens and Pari Chowk to Sector 150 and Greater Noida West.',
+    metaTitle: 'Caterers in Greater Noida | Jaypee Greens to Sector 150',
+    metaDescription: 'Bespoke, chef-led catering for weddings, brand launches and private celebrations across Greater Noida, Jaypee Greens, Sector 150 and Greater Noida West.',
     eyebrow: 'Greater Noida',
     h1: 'Caterers in Greater Noida for Weddings, Brand Events and Private Celebrations',
     image: '/images/virtuoso-catering-house-live-cooking-station-tesla-centre-gurugram-2025-1.jpg',
@@ -2069,58 +2069,149 @@ const landingPages = {
     }
   },
   'corporate-catering-services-in-noida': {
-    metaTitle: 'Corporate Catering Services in Noida | Virtuoso',
-    metaDescription: 'Make your events memorable with Virtuoso Catering. Book now for corporate catering services in Noida with professional corporate caterers you can trust.',
+    metaTitle: 'Corporate Catering in Noida | Caterers for BMW and Tesla',
+    metaDescription: 'We served BMW Group India’s leadership a gluten-free lunch in a 20-minute window. Corporate catering in Noida for offices, launches and leadership meetings.',
     eyebrow: 'Corporate',
-    h1: 'Corporate Catering Services In Noida',
+    h1: 'Corporate Catering Services in Noida',
     image: '/images/virtuoso-catering-house-canape-tesla-centre-gurugram-2025.jpg',
     lead: {
+      heading: 'What Corporate Catering in Noida Actually Involves',
       paragraphs: [
-        'Planning a large-scale corporate event?',
-        'If so, we can cater to your corporate catering services in Noida.',
-        'With us, you get refined taste that meets slick professionalism. Every dish is crafted to impress. We ensure your corporate event is well-served.'
+        'Virtuoso Catering House caters corporate events across Noida and Delhi NCR: office lunches, conferences, product launches, and boardroom meetings. We build the kitchen on site rather than sending food across the city, and we work to the clock, because a corporate lunch that arrives late has already failed no matter how well it was cooked.',
+        'The tightest brief we have taken was a leadership lunch for BMW Group India at Civil Lines. Fully gluten free, plated, and served inside a twenty minute window between sessions. Not twenty five. That is the standard corporate catering gets judged against, and it is a different discipline from cooking well.',
+        'Most corporate quotes in Noida look alike on paper. What separates them is the staffing ratio, whether the kitchen is built on site or the food travels, and whether anyone has rehearsed the service window against a real clock. Those are the three things worth asking about before you compare numbers.'
       ]
     },
     specializations: {
-      heading: 'Types Of Corporate Catering Services',
+      heading: 'The Corporate Formats We Cook',
       items: [
-        { title: 'Daily Office Meals', points: ['Offer deliciously nutritious meals. We are freshly prepared every day. Then, later delivered to your office hot and tasty.', 'Offer varied catering packages. This includes breakfast, lunch, and evening snacks.'] },
-        { title: 'Corporate Events & Conferences', points: ['Offer complete range of solutions. From elaborate buffet spreads to elegant cocktail snacks.', 'Handle your entire food and beverage needs with precision. Be it for hosting a seminar or workshop.'] },
-        { title: 'Boardroom & Executive Meetings', points: ['Offer gourmet-level catering. We emphasize presentation and quality.', 'Ensure everything from the cuisine to cutlery is catered to.'] },
-        { title: 'Festive Celebrations & Employee Engagements', points: ['Offer themed menus. We come with customized catering solutions.', 'Ensure the menu adds a creative touch to your festive and corporate celebrations.'] },
-        { title: 'Corporate Outdoor Catering', points: ['Cater to off-site venues across Noida and NCR.', 'Deliver quality catering solutions. Be it for a corporate picnic or outdoor launch.'] }
+        {
+          title: 'Office Lunches and Daily Meals',
+          points: [
+            'Breakfast, lunch, and evening snacks, prepared fresh each day and delivered hot to your floor.',
+            'Set up as an ongoing package rather than a booking you have to make every week.'
+          ]
+        },
+        {
+          title: 'Conferences and Corporate Events',
+          points: [
+            'Buffet spreads through to circulated cocktail snacks, depending on whether the room is seated or standing.',
+            'The full food and beverage side of a seminar or workshop, including the breaks that decide whether the schedule holds.'
+          ]
+        },
+        {
+          title: 'Boardroom and Executive Meetings',
+          points: [
+            'Plated service for small rooms, where presentation and timing matter more than volume.',
+            'Cutlery, linen, and setup handled with the food, so nothing is left to the office to arrange.'
+          ]
+        },
+        {
+          title: 'Festive and Employee Engagement',
+          points: [
+            'Themed menus built around the occasion rather than a standard festive list.',
+            'Scaled for a full floor or a single team, with the same kitchen either way.'
+          ]
+        },
+        {
+          title: 'Off-Site and Outdoor Catering',
+          points: [
+            'Venues across Noida and Delhi NCR, including sites with no kitchen of their own.',
+            'Corporate offsites, sports days, and outdoor launches, cooked on location.'
+          ]
+        }
       ]
     },
     whyUs: {
-      heading: 'Why Us As Your Corporate Catering Services In Noida?',
-      intro: 'There’s rising demand in Noida for professional corporate caterers. That’s where we come in to deliver great food that matches the essence of your corporate culture. Here’s what sets us apart:',
+      heading: 'Why Companies in Noida Book Us Twice',
+      intro: 'Corporate catering is bought on reliability more than on menu. A wedding can absorb a ten minute delay. A conference break cannot. Here is what we hold ourselves to.',
       items: [
-        { title: 'Professionalism', points: ['Operate with precision and courtesy. From first enquiry to the final clean-up.', 'Is trained to handle corporate environments with decorum and discretion.'] },
-        { title: 'Customization', points: ['Offer fully customizable menus and theme-based setups.', 'Offer custom menus tailored to specific requirements.'] },
-        { title: 'Scalable Solutions', points: ['Ensure seamless scaling. Be it for 10 executives or 1000 employees.', 'Provide logistical capabilities. This ensures your food come fresh on-time and ready-to-serve.'] }
+        {
+          title: 'We Work to the Clock',
+          points: [
+            'Service windows are rehearsed before the day, not estimated on it.',
+            'The BMW leadership lunch had twenty minutes between sessions, and that is how it was planned and served.'
+          ]
+        },
+        {
+          title: 'Dietary Requirements Are the Brief, Not an Exception',
+          points: [
+            'Gluten free, Jain, sattvic, and vegetarian menus are built as their own menu rather than adapted from the main one.',
+            'Our FSSAI number is verifiable on the FoSCoS portal in seconds. Check ours, and check anyone else you are considering.'
+          ]
+        },
+        {
+          title: 'The Same Kitchen at Any Size',
+          points: [
+            'Ten executives in a boardroom or a full floor at a town hall, cooked by the same team to the same standard.',
+            'We have served 150 senior journalists at the Tesla Centre Gurugram opening and 300 guests across four days at Ferrari APAC’s track day at Buddh International Circuit.'
+          ]
+        }
       ]
     },
     extraLists: [
       {
-        intro: 'In addition, we also provide',
-        items: ['Meals prepared in modern kitchens. They conform to quality and hygiene protocols.', 'LIVE Counters, Dessert Stations, and Custom Setups. They are provided on request.', 'Flexible Packages for all business sizes. On-time delivery and professional setup. Professional and well-trained staff.', '24/7 Customer Support. Also, event coordination on request.'],
-        outro: 'Our top-notch catering services and adaptable flexibility makes us among the leading corporate caterers in Noida.'
-      },
-      {
-        heading: 'Whom We Cater To?',
-        intro: 'We cater to a wide array of companies across different sectors. They include:',
-        items: ['IT Parks in Sector 62, 63, and 125.', 'BPO & Tech Firms in Noida Expressway.', 'Startups & Incubators in Sectors 18 & 1.', 'Government & PSUs across Noida.'],
-        outro: 'We are whether it’s a high-rise corporate tower or a co-working space, just a call away.'
+        heading: 'Where We Work in Noida',
+        intro: 'Our kitchen is in Sector 61, which puts most of corporate Noida inside a short drive:',
+        items: [
+          'The IT parks in Sectors 62, 63, and 125.',
+          'Technology and BPO offices along the Noida Expressway.',
+          'Startups and incubators in Sectors 18 and 1.',
+          'Government offices and PSUs across the city.'
+        ],
+        outro: 'High rise tower or co-working floor, the setup is the same and the drive is short.'
       }
     ],
     steps: {
-      heading: 'Book Our Corporate Catering Services In Noida',
+      heading: 'How a Corporate Booking Works',
       items: [
-        { step: '01', title: 'Contact Us', copy: 'Call or Email us with requirements. This includes number of people, event type, preferred cuisine, date, and budget.' },
-        { step: '02', title: 'Get A Customized Quote', copy: 'Detailed proposal is sent based on your brief. This includes menu options, service plan, and cost breakdown.' },
-        { step: '03', title: 'Taste Before You Book', copy: 'Food Tastings offered for large events or long-term contracts. You can sample the quality. Then, make an informed decision.' },
-        { step: '04', title: 'Back And Relax', copy: 'Team at Virtuoso Catering once confirmed by you, takes over. They handle, from kitchen to service staff, every aspect.' }
+        { step: '01', title: 'Tell Us the Brief', copy: 'Headcount, event type, date, and any dietary requirements. If there is a fixed service window, tell us that first, because it changes the menu.' },
+        { step: '02', title: 'We Send a Proposal', copy: 'Menu options, the service plan, and a costed breakdown written against your brief rather than pulled off a rate card.' },
+        { step: '03', title: 'Taste It First', copy: 'Tastings are offered for large events and ongoing contracts, so the decision is made on the food rather than on a document.' },
+        { step: '04', title: 'We Take It From There', copy: 'Kitchen, service staff, setup, and clean up. On the day, the only thing your team should be doing is attending the event.' }
       ]
+    },
+    closing: {
+      heading: 'Send Us the Date and the Headcount',
+      paragraphs: [
+        'We do not send a standard corporate proposal, because the constraint is different every time. A conference break, a product launch, and a boardroom lunch are three different problems that happen to involve food. Tell us which one you have, what time it has to be on the table, and we will write the menu around that rather than around a package.'
+      ],
+      signature: {
+        name: 'Pallav Goel',
+        role: 'Co-Founder, Virtuoso Catering House',
+        linkedin: 'https://www.linkedin.com/in/pallavg16'
+      }
+    },
+    faq: [
+      {
+        q: 'What does corporate catering in Noida usually include?',
+        a: 'Food, service staff, equipment, and setup. The menu is the part people compare, but the staffing ratio and the equipment list are what decide whether a hundred people get served inside a scheduled break. Ask any caterer how many staff they are bringing before you compare their menus.'
+      },
+      {
+        q: 'Can you serve inside a fixed meeting window?',
+        a: 'Yes, and it is the constraint we plan backwards from. For BMW Group India’s leadership lunch at Civil Lines, the window between sessions was twenty minutes, plated, and fully gluten free. The service was rehearsed against that clock before the day rather than estimated on it.'
+      },
+      {
+        q: 'Do you handle daily office meals as well as one-off events?',
+        a: 'Both. Daily meals run as an ongoing package covering breakfast, lunch, and evening snacks, prepared fresh each day and delivered hot. One-off events are quoted individually, because a launch and a Tuesday lunch have almost nothing in common operationally.'
+      },
+      {
+        q: 'How do you handle dietary requirements at a corporate event?',
+        a: 'Gluten free, Jain, sattvic, and vegetarian menus are built as their own menu, prepared in separate vessels, rather than adapted from the main one by removing things. That distinction is the whole point and it is the one most often skipped.'
+      },
+      {
+        q: 'Which parts of Noida do you cover?',
+        a: 'All of it, and Delhi NCR beyond it. Our kitchen is in Sector 61, which is a short drive to the IT parks in Sectors 62, 63, and 125, the offices along the Noida Expressway, and the startup clusters in Sectors 18 and 1. We also cater off-site venues with no kitchen of their own.'
+      },
+      {
+        q: 'We have three corporate catering quotes. What should we compare?',
+        a: 'Three things beyond the menu. How many service staff each quote includes, whether the food is cooked on site or transported, and whether the caterer has asked you what time it needs to be on the table. A quote that has not asked about timing has not been planned.'
+      }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the corporate and brand side of the business across Delhi NCR, from daily office contracts in Noida to launch events for BMW Group India and Tesla, and sets the standard the kitchen is held to.'
     }
   },
   'luxury-brand-event-catering-delhi-ncr': {

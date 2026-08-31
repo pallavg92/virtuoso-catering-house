@@ -209,9 +209,21 @@
   <section class="testimonials section section--ivory">
     <div class="container">
       <span class="eyebrow reveal-up">Client Words</span>
+      <%#
+        Lead with a testimonial that matches what the page sells. The set is the
+        same four site-wide, but a wedding quote opening a corporate catering
+        page reads as carelessness, and it is the first thing a procurement
+        reader notices. This reorders only: nothing is invented, nothing hidden.
+      -%>
+      <% var ordered = (typeof service !== 'undefined' && service && /corporate|brand/i.test(service.name))
+           ? testimonials.slice().sort(function (a, b) {
+               function rank(t) { return /brand|founder|experience lead/i.test(t.role || '') ? 0 : 1; }
+               return rank(a) - rank(b);
+             })
+           : testimonials; %>
       <div class="testimonial-slider" id="testimonial-slider">
         <div class="testimonial-slider__track">
-          <% testimonials.forEach(function(t, i) { %>
+          <% ordered.forEach(function(t, i) { %>
           <div class="testimonial-slide <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>">
             <p class="testimonial-slide__quote">&ldquo;<%= t.quote %>&rdquo;</p>
             <div class="testimonial-slide__meta">
@@ -224,7 +236,7 @@
         <div class="testimonial-slider__controls">
           <button class="testimonial-slider__arrow" id="testimonial-prev" aria-label="Previous testimonial" data-cursor="hover">←</button>
           <div class="testimonial-slider__dots" id="testimonial-dots">
-            <% testimonials.forEach(function(t, i) { %>
+            <% ordered.forEach(function(t, i) { %>
             <button class="testimonial-slider__dot <%= i === 0 ? 'is-active' : '' %>" data-index="<%= i %>" aria-label="Go to testimonial <%= i + 1 %>"></button>
             <% }); %>
           </div>
