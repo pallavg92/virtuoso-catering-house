@@ -40,10 +40,10 @@
               tag this is the strongest signal the page has. It survives as the
               opening of the standfirst, where it reads the same and costs
               nothing. -%>
-          <h1 class="wm-h1">Our Indian wedding catering menu, published in full.</h1>
+          <h1 class="wm-h1">Our pure veg Indian wedding catering menu, published in full.</h1>
         </div>
         <div class="wm-hero__aside">
-          <p class="wm-hero__standfirst">A menu is composed for the room it is served in. <%= weddingMenu.summary %> This is the level of menu you can expect when you plan one with us. Take it as it is, or use it as the starting point for your own.</p>
+          <p class="wm-hero__standfirst">A menu is composed for the room it is served in. <%= weddingMenu.summary %> This is the level of menu you can expect when you plan one with us: 212 dishes published on this list, and 32 more in the menu PDF. Take it as it is, or use it as the starting point for your own.</p>
           <div class="wm-actions" data-noprint>
             <a class="wm-action wm-action--light" href="#enquiry">Enquire</a>
             <button type="button" class="wm-action wm-action--light" data-menu-download-trigger data-cursor="hover">Download the menu (PDF)</button>
@@ -139,7 +139,7 @@
       <div class="wm-split__label">
         <p class="wm-eyebrow">Dietary</p>
         <span class="wm-device wm-device--static" aria-hidden="true"></span>
-        <h2 class="wm-h2">Stated in words, not symbols.</h2>
+        <h2 class="wm-h2">A pure veg menu, stated in words rather than symbols.</h2>
       </div>
       <div class="wm-split__body">
         <div class="wm-rows wm-rows--anchor">
@@ -155,6 +155,63 @@
       </div>
     </div>
   </section>
+
+  <%#
+    FAQ. Answers are 40 to 60 words, answer-first, each self-contained enough
+    to be quoted on its own. Nothing here asserts a price, a lead time or a
+    capacity. Defined once as data and rendered twice, into the visible markup
+    and into the schema below, so the two cannot drift apart.
+  -%>
+  <% const weddingMenuFaq = [
+    {
+      q: 'What is included in a wedding catering menu?',
+      a: 'A wedding catering menu covers more than the mains. This one runs grazing, circulated canapes, live counters, the buffet and dessert, across five courses and thirty-four stations. What usually differs between two quotes is not the dish list but how many of those stations are live.'
+    },
+    {
+      q: 'How many dishes should an Indian wedding menu list have?',
+      a: 'Fewer than most families expect, chosen better. This page publishes 212 across five courses, but no single function uses all of them. A menu is drawn from the list for each function, so the mehendi and the reception never repeat each other.'
+    },
+    {
+      q: 'Can a full Indian wedding menu be pure veg?',
+      a: 'Yes, and this page is the proof. Every one of the 212 dishes here is vegetarian as written. A veg wedding menu does not need to be a shorter menu, it needs a kitchen that treats it as the brief rather than as a constraint.'
+    },
+    {
+      q: 'What is the difference between Jain, sattvic and vegetarian catering?',
+      a: 'Jain and sattvic menus are prepared in separate vessels rather than adapted from the main menu. That distinction is the whole point, and it is the one most often skipped. Vegetarian, as used on this page, means every dish is written that way from the start.'
+    }
+  ]; %>
+  <section class="wm-section wm-section--vellum" id="faq">
+    <div class="wm-container wm-split">
+      <div class="wm-split__label">
+        <p class="wm-eyebrow">Questions</p>
+        <span class="wm-device wm-device--static" aria-hidden="true"></span>
+        <h2 class="wm-h2">What families ask before they book.</h2>
+      </div>
+      <div class="wm-split__body">
+        <% weddingMenuFaq.forEach(function (item) { %>
+        <div class="wm-station">
+          <h3 class="wm-h3"><%= item.q %></h3>
+          <p class="wm-lead" style="margin-top:16px"><%= item.a %></p>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": canonicalUrl + '#faq',
+    "mainEntity": weddingMenuFaq.map(function (item) {
+      return {
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      };
+    })
+  }) %>
+  </script>
 
   <!-- ENQUIRY -->
   <section class="wm-section wm-section--forest" id="enquiry">

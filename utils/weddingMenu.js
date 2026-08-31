@@ -28,7 +28,7 @@ const composition = [
 ];
 
 const dietary = [
-  { label: 'Vegetarian', text: 'Every menu on this page is vegetarian as written.' },
+  { label: 'Pure veg', text: 'Every dish on this list is vegetarian as written, with no substitutions required and no asterisks. This is a veg wedding menu by design, not a filtered version of a larger one.' },
   { label: 'Jain and sattvic', text: 'Prepared in separate vessels rather than adapted from the main menu. That distinction is the one that matters to families who keep it strictly, and it is worth asking any caterer directly.' },
   { label: 'Non-vegetarian', text: 'Composed on request, and planned as its own menu rather than added to this one.' },
   { label: 'Certification', text: 'Our FSSAI number is verifiable on the FoSCoS portal in seconds. Check ours, and check anyone else you are considering.' }
@@ -37,7 +37,7 @@ const dietary = [
 const weddingMenu = {
   title: 'The Wedding Signatures Menu',
   summary: 'A vegetarian tasting menu, curated end to end for understated luxury.',
-  closing: 'Every menu above is a starting point. Final selections are always written around your event, your guests, and the season.',
+  closing: 'Every list above is a starting point. Final selections are always written around your event, your guests, and the season.',
   sections: [
     {
       number: '01',
