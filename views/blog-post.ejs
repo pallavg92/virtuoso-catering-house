@@ -60,7 +60,14 @@
 
       <% (post.sections || []).forEach(function(section) { %>
       <div class="blog-post__prose">
+        <!-- Entry label above the name, e.g. "No. 01 · Soft · bloomy rind". -->
+        <% if (section.kicker) { %>
+        <span class="blog-post__kicker reveal-up"><%= section.kicker %></span>
+        <% } %>
         <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+        <% if (section.attribution) { %>
+        <p class="blog-post__attribution reveal-up"><%= section.attribution %></p>
+        <% } %>
         <% section.paragraphs.forEach(function(paragraph) { %>
         <p class="blog-post__copy reveal-up"><%- paragraph %></p>
         <% }); %>
@@ -77,12 +84,55 @@
         <% if (section.outro) { %>
         <p class="blog-post__copy reveal-up"><%= section.outro %></p>
         <% } %>
+        <!-- Pairing line. The label is the one place amber sets type on a
+             light ground, per the Visual Language System. -->
+        <% if (section.pairing) { %>
+        <p class="blog-post__pairing-label reveal-up"><%= section.pairing.label %></p>
+        <p class="blog-post__pairing reveal-up"><%= section.pairing.items %></p>
+        <% } %>
         <% if (section.links && section.links.length) { %>
         <% section.links.forEach(function(link) { %>
         <p class="blog-post__copy reveal-up"><a href="<%= link.path %>" class="link-underline"<% if (/^https?:/.test(link.path)) { %> target="_blank" rel="noopener"<% } %>><%= link.label %></a></p>
         <% }); %>
         <% } %>
       </div>
+
+      <!-- Summary table. Rules only, no vertical borders and no zebra
+           striping: the system carries structure with weight, not fill.
+           Wrapped so a narrow screen scrolls the table rather than the page. -->
+      <% if (section.table) { %>
+      <div class="blog-post__table-wrap reveal-up">
+        <table class="blog-post__table">
+          <thead>
+            <tr>
+              <% section.table.head.forEach(function(cell) { %>
+              <th scope="col"><%= cell %></th>
+              <% }); %>
+            </tr>
+          </thead>
+          <tbody>
+            <% section.table.rows.forEach(function(row) { %>
+            <tr>
+              <% row.forEach(function(cell, ci) { %>
+              <% if (ci === 0) { %><th scope="row"><%= cell %></th><% } else { %><td><%= cell %></td><% } %>
+              <% }); %>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+      <% } %>
+
+      <% if (section.gallery) { %>
+      <div class="blog-post__gallery reveal-up">
+        <% section.gallery.images.forEach(function(src) { %>
+        <img src="<%= src %>" alt="A grazing table by Virtuoso Catering House at an event in Delhi NCR" loading="lazy">
+        <% }); %>
+      </div>
+      <% if (section.gallery.caption) { %>
+      <p class="blog-post__gallery-caption reveal-up"><%= section.gallery.caption %></p>
+      <% } %>
+      <% } %>
 
       <% if (section.image) { %>
       <figure class="blog-post__image-break reveal-up">

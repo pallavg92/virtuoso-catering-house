@@ -1349,6 +1349,167 @@ const blogPosts = [
       bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
     }
   }
+  ,{
+    slug: 'five-cheeses-for-a-cheese-board',
+    url: '/blog/five-cheeses-for-a-cheese-board',
+    title: 'How to Build a Cheese Board: Five Cheeses and Pairings',
+    excerpt: 'The five cheeses we put on almost any board: brie, truffle gouda, manchego, aged cheddar and Danish blue, with what to serve beside each one.',
+    date: '2026-09-01',
+    image: '/images/blog/cheese-board/virtuoso-catering-house-five-cheese-board-labelled.jpg',
+    imageCaption: 'The five-cheese board, labelled. Brie, gouda, manchego, aged cheddar, blue.',
+    relatedLink: { path: '/wedding-caterers-in-noida', label: 'See how we build grazing tables for events in Noida' },
+    // Scroll-depth offer on this post. House voice: it says what the reader
+    // gets and what they are joining, and does not pretend the email is free.
+    downloadOffer: {
+      eyebrow: 'Take It With You',
+      title: 'The Board,<br>On One Page',
+      copy: 'The five cheeses, what each one is doing, and what to put beside it, laid out on a single page you can take to the shop or hand to whoever is building the board.',
+      action: 'Send Me the Guide',
+      asset: 'cheese-board-guide',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+
+    lead: [
+      'A cheese board works best when five cheeses each do a different job: something soft, something nutty, something firm, something properly aged, and something with enough personality to divide the table. Brie, truffle gouda, manchego, aged cheddar and Danish blue cover all five, and each one wants something different beside it.',
+      'A good cheeseboard should make people hover around it.',
+      'Someone starts with the Brie. Someone else goes straight for the blue. There is always a person quietly eating most of the Manchego.',
+      'That is why we rarely think about a cheeseboard as simply five good cheeses. Each one needs to do something different.',
+      'Something soft. Something nutty. Something firm. Something properly aged. And something with enough personality to divide the table.',
+      'These are the five we would start with, and what we would put beside each one. We build boards like this every week for weddings and private dinners across Delhi NCR, so the notes below are what we have actually learned setting them up rather than a list copied from somewhere else.'
+    ],
+    sections: [
+      {
+        kicker: 'No. 01 · Soft · bloomy rind',
+        heading: 'Brie',
+        attribution: 'by — The Spotted Cow Fromagerie, Mumbai',
+        paragraphs: [
+          'Brie is where we like to begin because almost everybody understands it.',
+          'It is buttery, gentle and generous, and as it warms on the board the centre becomes softer and more luxurious. Give it around thirty minutes outside the refrigerator before serving. In a Delhi summer, keep that closer to fifteen.',
+          'We prefer putting the wheel down almost whole, with the first wedge already cut. It looks beautiful and, more importantly, gives everyone a signal to begin.'
+        ],
+        pairing: { label: 'Put beside it', items: 'Honey · strawberries · walnuts' }
+      },
+      {
+        kicker: 'No. 02 · Semi-hard',
+        heading: 'Truffle Gouda',
+        attribution: 'by — Gardeli, truffle-infused, deli cut',
+        paragraphs: [
+          'This is the easy indulgence of the board.',
+          'The Gouda is nutty and slightly sweet; the truffle gives it just enough richness without turning the entire board into a truffle board.',
+          'We like it sliced rather than left as a block. Fan the slices loosely across the board so guests can pick one up without having to stop and cut.',
+          'It sits somewhere between the softness of the Brie and the more assertive cheeses that follow.'
+        ],
+        pairing: { label: 'Put beside it', items: 'Green apple · fig preserve · roasted almonds' }
+      },
+      {
+        kicker: 'No. 03 · Firm · sheep’s milk',
+        heading: 'Manchego',
+        attribution: 'by — Vatsario',
+        paragraphs: [
+          'If Brie is soft and comforting, Manchego gives the board some structure.',
+          'It is savoury, nutty and slightly caramel-like, with the fuller flavour that comes from sheep’s milk. Cut it into slim triangles and leave a little of that unmistakable herringbone rind on each piece.',
+          'And if you can find quince paste, use it.',
+          'There are fashionable pairings and then there are pairings that have survived for a reason. Manchego and quince belong to the second category.'
+        ],
+        pairing: { label: 'Put beside it', items: 'Quince paste · Marcona-style almonds · green olives' }
+      },
+      {
+        kicker: 'No. 04 · Hard · aged',
+        heading: 'Aged Cheddar',
+        attribution: 'by — Vatsario',
+        paragraphs: [
+          'Never underestimate the value of putting one familiar cheese on an adventurous board.',
+          'A properly aged cheddar is sharp, savoury and slightly crumbly, with far more character than the everyday version most of us grew up with.',
+          'It also acts as a reset.',
+          'After Brie, truffle and sheep’s milk, there is something wonderfully reassuring about recognising exactly what you are eating, only in a much better version.',
+          'Break some pieces naturally rather than cutting every piece into a perfect cube. A little irregularity suits an aged cheese.'
+        ],
+        pairing: { label: 'Put beside it', items: 'Apple · dark chutney · seeded crackers' }
+      },
+      {
+        kicker: 'No. 05 · Blue-veined · soft and crumbly',
+        heading: 'Danish Blue',
+        attribution: 'by — Castello',
+        paragraphs: [
+          'Every board needs one cheese that people have an opinion about.',
+          'This is ours.',
+          'Danish blue is salty, creamy, pungent and unapologetic. You don’t need much of it, which is exactly why it works so well as the final cheese on the board.',
+          'We keep it toward one edge rather than placing it in the centre. Blue cheese has a habit of introducing itself to everything around it.',
+          'Instead of neat slices, break it into rough pieces and let guests take as much, or as little, as they want.',
+          'Then put something sweet beside it.',
+          'Blue cheese with pear and a little honey is one of those combinations that can convert someone who thought they didn’t like blue cheese.'
+        ],
+        pairing: { label: 'Put beside it', items: 'Pear · honey · fresh fig' }
+      },
+      {
+        heading: 'A small rule we follow',
+        paragraphs: [
+          'You do not need an accompaniment for every centimetre of the board.',
+          'In fact, one of the easiest ways to make a cheeseboard look less elegant is to keep filling every empty space.',
+          'Leave some room around the cheeses.',
+          'Use fruit, preserves and nuts to create a few deliberate pairings rather than a giant pile of everything that technically goes with cheese.',
+          'The cheese should still be the point.'
+        ]
+      },
+      {
+        heading: 'The board at a glance',
+        paragraphs: [],
+        table: {
+          head: ['Cheese', 'Its job on the board', 'Put beside it'],
+          rows: [
+            ['Brie', 'Soft, buttery and immediately inviting', 'Honey, strawberries, walnuts'],
+            ['Truffle Gouda', 'Nutty, indulgent and easy to eat', 'Green apple, fig preserve, almonds'],
+            ['Manchego', 'Savoury, firm and distinctive', 'Quince paste, almonds, olives'],
+            ['Aged Cheddar', 'Sharp, crumbly and reassuringly familiar', 'Apple, chutney, seeded crackers'],
+            ['Danish Blue', 'Salty, bold and deliberately divisive', 'Pear, honey, fresh fig']
+          ]
+        }
+      },
+      {
+        heading: 'From our tables',
+        paragraphs: [],
+        gallery: {
+          caption: 'Boards and grazing tables from Virtuoso events across Delhi NCR, 2025 to 2026.',
+          images: [
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-1.jpg',
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-2.jpg',
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-3.jpg',
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-4.jpg',
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-5.jpg',
+            '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-6.jpg'
+          ]
+        }
+      },
+      {
+        heading: 'Beyond these five',
+        paragraphs: [
+          'These five aren’t the ultimate cheeseboard. They’re the foundation.',
+          'Once you understand what each cheese is doing, the board can become far more interesting: different milk types, washed rinds, aged cheeses, regional varieties, charcuterie, preserves, warm breads, live finishing and pairings built around drinks.',
+          'That is how we approach grazing tables for weddings, launches and private dinners across Delhi NCR, working from our kitchen and experience centre in Noida, Sector 61.',
+          'We don’t begin by asking how many things we can put on the table.',
+          'We begin by asking what people should want to eat next.'
+        ],
+        links: [
+          { path: '/contact', label: 'Start an enquiry about a grazing table' },
+          { path: '/wedding-caterers-in-noida', label: 'Wedding catering in Noida' },
+          { path: '/luxury-brand-event-catering-delhi-ncr', label: 'Brand and launch catering in Delhi NCR' }
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What five cheeses should go on a cheese board?', a: 'Choose five cheeses that each do a different job: a soft bloomy rind such as brie, a semi-hard such as truffle gouda, a firm sheep’s milk such as manchego, a properly aged hard cheese such as aged cheddar, and a blue such as Danish blue. Between them you cover soft, nutty, firm, aged and bold, which is what keeps people moving around the board.' },
+      { q: 'How long before serving should cheese come out of the fridge?', a: 'Around thirty minutes for a soft cheese like brie, so the centre softens and the flavour opens up. In a Delhi or Noida summer, keep it closer to fifteen minutes, and bring the board out in stages rather than all at once.' },
+      { q: 'What should you serve with blue cheese?', a: 'Something sweet. Pear, honey and fresh fig are the three we come back to. Blue cheese is salty and pungent, and a sweet pairing is what converts people who think they do not like it. Keep it toward one edge of the board, because the aroma travels.' },
+      { q: 'How many accompaniments does a cheese board need?', a: 'Fewer than most people use. You do not need an accompaniment for every centimetre of the board, and filling every empty space is the quickest way to make it look less elegant. Build a few deliberate pairings and leave room around the cheeses so the cheese is still the point.' },
+      { q: 'Do you build grazing tables for events in Delhi NCR?', a: 'Yes. Virtuoso Catering House builds boards and grazing tables for weddings, brand launches and private dinners across Delhi NCR, including Noida, Greater Noida, Delhi and Gurugram, from our kitchen and experience centre in Sector 61, Noida.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
+    }
+  }
 ];
 
 // Standalone editorial page (not part of the Journal listing), built to rank

@@ -41,7 +41,7 @@
   It offers the download, which in turn hands into the enquiry form. See
   public/js/menu-download-drawer.js.
 -%>
-<div class="site-popup site-popup--scroll" id="menu-scroll-popup" aria-hidden="true">
+<div class="site-popup site-popup--scroll" id="menu-scroll-popup" data-scroll-popup aria-hidden="true">
   <div class="site-popup__overlay" data-popup-dismiss></div>
   <div class="site-popup__panel" role="dialog" aria-modal="true" aria-labelledby="menu-scroll-popup-title">
     <button type="button" class="site-popup__close" aria-label="Close" data-popup-dismiss data-cursor="hover">&times;</button>
@@ -52,6 +52,46 @@
       <button type="button" class="btn btn--wine" data-menu-download-trigger data-magnetic data-cursor="hover"><span>Download the Menu (PDF)</span></button>
     </div>
     <button type="button" class="site-popup__dismiss" data-popup-dismiss>I'll keep reading</button>
+  </div>
+</div>
+<% } %>
+
+<% if (typeof post !== 'undefined' && post && post.downloadOffer) { %>
+<%#
+  Journal guide offer. Fires on scroll depth like the menu popup, but keeps
+  the capture inside the panel rather than handing off to the enquiry drawer:
+  a reader who arrived from a social post is several steps away from booking
+  anything, and a five-field drawer at this moment loses most of them.
+  Name and email, then the file.
+-%>
+<div class="site-popup site-popup--scroll" id="guide-popup" data-scroll-popup aria-hidden="true">
+  <div class="site-popup__overlay" data-popup-dismiss></div>
+  <div class="site-popup__panel" role="dialog" aria-modal="true" aria-labelledby="guide-popup-title">
+    <button type="button" class="site-popup__close" aria-label="Close" data-popup-dismiss data-cursor="hover">&times;</button>
+    <span class="eyebrow eyebrow--gold"><%= post.downloadOffer.eyebrow %></span>
+    <h2 id="guide-popup-title" class="site-popup__title"><%- post.downloadOffer.title %></h2>
+    <p class="site-popup__intro"><%= post.downloadOffer.copy %></p>
+
+    <form class="inquiry-form" id="guide-download-form" novalidate
+          data-asset="<%= post.downloadOffer.asset %>" data-page="<%= post.title %>">
+      <div class="form-field">
+        <label for="guide-name">Full Name</label>
+        <input type="text" id="guide-name" name="name" autocomplete="name" required>
+        <span class="form-field__error" data-error-for="name"></span>
+      </div>
+      <div class="form-field">
+        <label for="guide-email">Email</label>
+        <input type="email" id="guide-email" name="email" autocomplete="email" inputmode="email" required>
+        <span class="form-field__error" data-error-for="email"></span>
+      </div>
+      <button type="submit" class="btn btn--wine" id="guide-submit" data-cursor="hover">
+        <span><%= post.downloadOffer.action %></span>
+      </button>
+      <div class="inquiry-form__status" id="guide-status" role="status" aria-live="polite"></div>
+      <p class="lander__privacy"><%= post.downloadOffer.privacy %></p>
+    </form>
+
+    <button type="button" class="site-popup__dismiss" data-popup-dismiss><%= post.downloadOffer.dismiss %></button>
   </div>
 </div>
 <% } %>

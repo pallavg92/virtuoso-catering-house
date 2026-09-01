@@ -6,8 +6,10 @@
 (function () {
   const entryPopup = document.getElementById('entry-popup');
   const exitPopup = document.getElementById('exit-popup');
-  // Only rendered on /wedding-menu; see views/partials/popups.ejs.
-  const scrollPopup = document.getElementById('menu-scroll-popup');
+  // Any popup that should fire on scroll depth carries [data-scroll-popup].
+  // Selector rather than a fixed id, so a second offer (the Journal guide
+  // download) reuses this logic instead of copying it.
+  const scrollPopup = document.querySelector('[data-scroll-popup]');
   if (!entryPopup && !exitPopup && !scrollPopup) return;
 
   const SESSION_KEY_ENTRY = 'vch_entry_popup_seen';

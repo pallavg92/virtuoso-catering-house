@@ -1133,3 +1133,117 @@
   color: var(--text-muted-light);
   font-size: 0.92rem;
 }
+
+/* ---- Journal entry labels, tables and galleries -------------------------
+   Added for the cheeseboard guide, but written generically so any post can
+   use them. All of it follows the Visual Language System: rules carry
+   structure rather than fills, nothing has a radius, and amber sets type
+   only on a light ground. */
+
+.blog-post__kicker {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+  margin-bottom: 0.75em;
+}
+
+.blog-post__attribution {
+  font-size: 0.875rem;
+  color: var(--text-muted-light);
+  margin-bottom: var(--space-md);
+}
+
+/* Amber on parchment measures 6.6:1, which clears AA. It must never be used
+   on the Forest ground, where it drops to about 3:1. */
+.blog-post__pairing-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vls-amber);
+  margin-bottom: 0.4em;
+}
+
+.blog-post__pairing {
+  font-size: 1rem;
+  color: var(--text-on-light);
+  margin-bottom: var(--space-md);
+}
+
+/* Horizontal rules only. A 1.6pt forest anchor on top, a 0.5pt head rule,
+   0.4pt between rows. No vertical borders, no zebra striping. */
+.blog-post__table-wrap {
+  max-width: 960px;
+  margin: 0 auto var(--space-lg);
+  overflow-x: auto;
+}
+
+.blog-post__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border-top: 2px solid var(--color-charcoal);
+}
+
+.blog-post__table thead th {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+  padding: 1rem 1.25rem 1rem 0;
+  border-bottom: 1px solid rgba(47, 53, 43, 0.35);
+  white-space: nowrap;
+}
+
+.blog-post__table tbody th {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--color-charcoal);
+  white-space: nowrap;
+}
+
+.blog-post__table tbody th,
+.blog-post__table tbody td {
+  padding: 1.15rem 1.25rem 1.15rem 0;
+  border-bottom: 1px solid rgba(47, 53, 43, 0.14);
+  vertical-align: top;
+  font-size: 0.95rem;
+  color: var(--text-muted-light);
+}
+
+/* Square crops on a three-up grid, collapsing to two on smaller screens.
+   Kept as a plain grid of images rather than figures: six captions would
+   compete with the single caption that describes the set. */
+.blog-post__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  max-width: 960px;
+  margin: 0 auto var(--space-sm);
+}
+
+.blog-post__gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-post__gallery-caption {
+  max-width: 960px;
+  margin: 0 auto var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--text-muted-light);
+}
+
+@media (max-width: 700px) {
+  .blog-post__gallery { grid-template-columns: repeat(2, 1fr); }
+}

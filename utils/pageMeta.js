@@ -481,6 +481,17 @@ const pages = {
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
   },
+  blogCheeseBoard: {
+    path: '/blog/five-cheeses-for-a-cheese-board',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'How to Build a Cheese Board: Five Cheeses and Pairings',
+    description: content.blogPosts.find((p) => p.slug === 'five-cheeses-for-a-cheese-board').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'five-cheeses-for-a-cheese-board').image,
+    post: content.blogPosts.find((p) => p.slug === 'five-cheeses-for-a-cheese-board'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'How to Build a Cheese Board', path: '/blog/five-cheeses-for-a-cheese-board' }]
+  },
   blogHospitalityBeforeFood: {
     path: '/blog/best-wedding-caterers-hospitality-before-food',
     view: 'blog-post',

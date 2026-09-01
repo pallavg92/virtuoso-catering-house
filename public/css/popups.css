@@ -123,3 +123,28 @@
     padding: var(--space-md) var(--space-sm) var(--space-sm);
   }
 }
+
+/* The popup panel centres its copy, which is right for a headline and wrong
+   for a form: a centred label floats away from the line it belongs to and
+   stops reading as a pair. Scoped to the guide form so the menu popup, which
+   has no fields of its own, is untouched. */
+#guide-download-form {
+  text-align: left;
+  max-width: 26rem;
+  margin: var(--space-md) auto 0;
+}
+
+#guide-download-form .form-field {
+  margin-bottom: var(--space-sm);
+}
+
+#guide-download-form .lander__privacy {
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted-light);
+  text-align: left;
+}
+
+#guide-download-form .btn {
+  margin-top: var(--space-sm);
+}

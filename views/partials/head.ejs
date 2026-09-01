@@ -177,9 +177,18 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
   "datePublished": post.date,
   "dateModified": post.updated || post.date,
   "inLanguage": "en-IN",
-  "author": post.author && post.author.name === 'Pallav Goel'
-    ? { "@id": siteUrl + '/team/pallav-goel#person' }
-    : { "@type": "Organization", "@id": siteUrl + '/#organization' },
+  "author": (function () {
+    // Resolve the byline to whichever founder wrote it, rather than hardcoding
+    // one name. This previously matched 'Pallav Goel' only, so a post by Aarti
+    // silently fell through to the Organization and her authorship never
+    // reached the schema at all. Falls back to the Organization for a byline
+    // with no matching team page, which is correct: an @id pointing at a page
+    // that does not exist is worse than no Person at all.
+    var match = (founders || []).find(function (f) { return post.author && f.name === post.author.name; });
+    return match
+      ? { "@id": siteUrl + '/team/' + match.slug + '#person' }
+      : { "@type": "Organization", "@id": siteUrl + '/#organization' };
+  })(),
   "publisher": { "@id": siteUrl + '/#organization' }
 }) %>
 </script>
