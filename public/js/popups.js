@@ -103,9 +103,42 @@
     });
   }
 
+  // Some offers want to be seen on arrival rather than earned by scrolling.
+  // A popup carrying data-popup-immediate opens after that many milliseconds
+  // instead of waiting for depth.
+  //
+  // With one deliberate exception: visitors arriving from a search engine
+  // still have to scroll for it. Google treats an interstitial that covers
+  // the content immediately after a search click as intrusive, and demotes
+  // the page for it on mobile. Social and direct traffic is unaffected by
+  // that rule, and is where this offer is aimed anyway, so the two audiences
+  // get the two behaviours rather than the whole page paying for one of them.
+  const SEARCH_REFERRER = /(^|\.)(google|bing|duckduckgo|yahoo|ecosia|brave|yandex)\./i;
+
+  function cameFromSearch() {
+    try {
+      return !!document.referrer && SEARCH_REFERRER.test(new URL(document.referrer).hostname);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  const immediateDelay = scrollPopup && scrollPopup.dataset.popupImmediate;
+
+  if (scrollPopup && immediateDelay && !cameFromSearch() && !sessionStorage.getItem(SESSION_KEY_SCROLL)) {
+    setTimeout(() => {
+      if (sessionStorage.getItem(SESSION_KEY_SCROLL)) return;
+      if (sessionStorage.getItem(SESSION_KEY_INQUIRY_SENT)) return;
+      if (document.querySelector('.inquire-drawer.is-open')) return;
+      open(scrollPopup);
+      sessionStorage.setItem(SESSION_KEY_SCROLL, '1');
+    }, Number(immediateDelay) || 0);
+  }
+
   // Scroll popup — fires on depth rather than a timer, because depth is the
   // only signal that says someone is actually reading. Once per session, and
-  // never after an inquiry has already been sent.
+  // never after an inquiry has already been sent. Still the path for search
+  // arrivals even when an immediate delay is set.
   if (scrollPopup && !sessionStorage.getItem(SESSION_KEY_SCROLL)) {
     let ticking = false;
 
