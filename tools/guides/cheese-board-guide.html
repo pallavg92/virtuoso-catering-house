@@ -1,0 +1,94 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Five cheeses for the board — Virtuoso Catering House</title>
+<!--
+  Source for /public/downloads/virtuoso-catering-house-cheese-board-guide.pdf,
+  the download offered on /blog/five-cheeses-for-a-cheese-board.
+
+  Rendered to PDF with headless Chromium; see the note at the foot of this
+  file. Kept in the repository rather than generated from a throwaway file, so
+  the guide can be edited and re-rendered instead of rebuilt from scratch.
+
+  Fonts are referenced relatively, so open this file from its own directory.
+-->
+<style>
+  /* Zero page margin, with the padding moved onto the body. The margin box is
+     outside the body and paints white however the background is set, which
+     left a white border framing the parchment on every edge. */
+  @page { size: A4; margin: 0; }
+
+  @font-face { font-family:'Cormorant Garamond'; src:url('../../public/fonts/cormorant-300.woff2') format('woff2'); font-weight:300; font-display:block; }
+  @font-face { font-family:'Work Sans'; src:url('../../public/fonts/worksans-300-400-500-600.woff2') format('woff2'); font-weight:300 600; font-display:block; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  /* Both html and body carry the ground, and print-color-adjust keeps it when
+     the renderer would otherwise drop backgrounds to save ink. */
+  html, body {
+    background:#FAF6EE;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    min-height:297mm;
+    padding:16mm 15mm;
+    color:#17100B;
+    font-family:'Work Sans',sans-serif; font-weight:300; font-size:9.5pt; line-height:1.55;
+  }
+
+  .wordmark { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:17pt; letter-spacing:.09em; color:#101F10; }
+  .descriptor { font-size:6pt; letter-spacing:.44em; text-transform:uppercase; color:#6B6257; margin-top:3px; }
+  header { border-bottom:1.4pt solid #101F10; padding-bottom:9px; margin-bottom:20px; }
+  .eyebrow { font-size:6.8pt; letter-spacing:.24em; text-transform:uppercase; color:#6B6257; }
+  .rule { width:44px; height:.8pt; background:#AA6926; margin:9px 0 11px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:27pt; line-height:1.08; color:#101F10; letter-spacing:-.005em; }
+  .stand { margin-top:9px; max-width:135mm; color:#3A322A; }
+
+  table { width:100%; border-collapse:collapse; margin-top:20px; border-top:1.6pt solid #101F10; }
+  th.h { font-size:6.8pt; letter-spacing:.2em; text-transform:uppercase; color:#6B6257; font-weight:500;
+         text-align:left; padding:8px 10px 8px 0; border-bottom:.5pt solid #8A8175; }
+  td, th.n { border-bottom:.4pt solid #C9C2B6; padding:11px 10px 11px 0; vertical-align:top; text-align:left; }
+  th.n { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:13.5pt; color:#101F10; white-space:nowrap; }
+  td { color:#3A322A; }
+
+  .lab { font-size:6.8pt; letter-spacing:.22em; text-transform:uppercase; color:#935A11; font-weight:500; }
+  .note { margin-top:22px; padding-top:14px; border-top:.4pt solid #C9C2B6; }
+  .note h2 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:14pt; color:#101F10; margin-bottom:7px; }
+  .note p { color:#3A322A; margin-bottom:5px; max-width:150mm; }
+
+  footer { margin-top:24px; padding-top:10px; border-top:.5pt solid #8A8175; font-size:7.6pt; color:#6B6257;
+           display:flex; justify-content:space-between; gap:14px; }
+</style></head><body>
+<header>
+  <div class="wordmark">virtuoso</div>
+  <div class="descriptor">Catering House</div>
+</header>
+
+<span class="eyebrow">The Journal · Boards</span>
+<div class="rule"></div>
+<h1>Five cheeses for the board</h1>
+<p class="stand">Five cheeses, each doing a different job: something soft, something nutty, something firm, something properly aged, and something with enough personality to divide the table.</p>
+
+<table>
+  <thead><tr><th class="h">Cheese</th><th class="h">Its job on the board</th><th class="h">Put beside it</th></tr></thead>
+  <tbody>
+    <tr><th class="n">Brie</th><td>Soft, buttery and immediately inviting</td><td>Honey, strawberries, walnuts</td></tr>
+    <tr><th class="n">Truffle Gouda</th><td>Nutty, indulgent and easy to eat</td><td>Green apple, fig preserve, almonds</td></tr>
+    <tr><th class="n">Manchego</th><td>Savoury, firm and distinctive</td><td>Quince paste, almonds, olives</td></tr>
+    <tr><th class="n">Aged Cheddar</th><td>Sharp, crumbly and reassuringly familiar</td><td>Apple, chutney, seeded crackers</td></tr>
+    <tr><th class="n">Danish Blue</th><td>Salty, bold and deliberately divisive</td><td>Pear, honey, fresh fig</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <h2>A small rule we follow</h2>
+  <p>You do not need an accompaniment for every centimetre of the board. Filling every empty space is the quickest way to make it look less elegant.</p>
+  <p>Leave some room around the cheeses. Build a few deliberate pairings rather than a pile of everything that technically goes with cheese.</p>
+  <p><span class="lab">And one more thing</span> &nbsp;Give the Brie around thirty minutes out of the refrigerator before serving. In a Delhi summer, closer to fifteen.</p>
+</div>
+
+<footer>
+  <span>virtuosocatering.com · Grazing tables and boards across Delhi NCR</span>
+  <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+</footer>
+</body></html>
