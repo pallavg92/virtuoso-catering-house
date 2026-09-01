@@ -32,6 +32,17 @@ picture {
   display: contents;
 }
 
+/* A <source> carries no content and must never occupy space. It normally does
+   not, but `display: contents` on the <picture> promotes its children to be
+   items of whatever lays the picture out, and a grid or flex container then
+   blockifies them. In the Journal gallery that turned six images into twelve
+   grid items, half of them empty, and staggered the whole 3x2 into a
+   broken staircase. Declared explicitly so it cannot happen anywhere the
+   build wraps an image inside a grid or flex parent. */
+picture > source {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;

@@ -1232,7 +1232,13 @@
 
 .blog-post__gallery img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  /* height:auto is load-bearing, not tidiness. The build writes real width and
+     height attributes onto every image so the browser can reserve space and
+     avoid layout shift, and an explicit height attribute is a presentational
+     hint that wins over aspect-ratio: without this the source's own 1600px
+     height applied and every tile rendered as a 269x1600 column. */
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
 }
@@ -1244,7 +1250,7 @@
   color: var(--text-muted-light);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 560px) {
   .blog-post__gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
