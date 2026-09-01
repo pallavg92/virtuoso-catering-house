@@ -88,25 +88,29 @@ router.post('/guide-download', async (req, res) => {
   const fields = extractGuideFields(req.body);
   const asset = ASSETS[fields.asset];
 
-  // The capture is the point, so the download is never held hostage to email
-  // delivery. If notifying the team fails, it is logged and the reader still
-  // gets their guide.
-  try {
-    await sendInquiry({
-      name: fields.name,
-      email: fields.email,
-      phone: '',
-      eventType: 'Guide download',
-      eventDate: '',
-      guestCount: '',
-      eventLocation: '',
-      eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. ${fields.attribution || ''}`.trim()
-    });
-  } catch (err) {
-    console.error('Guide download: failed to notify the team', err.message);
-  }
+  // Respond first, notify second. sendInquiry opens an SMTP connection to
+  // Gmail, which takes seconds, and awaiting it here meant the visitor watched
+  // a "one moment" button for the length of a mail handshake before their
+  // download began. The capture is already complete once we have the fields,
+  // so nothing is lost by telling the browser immediately and posting the
+  // notification behind it.
+  res.json({ ok: true, downloadUrl: asset.url });
 
-  return res.json({ ok: true, downloadUrl: asset.url });
+  // Deliberately not awaited, and its own catch: an unhandled rejection here
+  // would take the process down, and a failed notification must never be able
+  // to affect a reader who already has their guide.
+  sendInquiry({
+    name: fields.name,
+    email: fields.email,
+    phone: '',
+    eventType: 'Guide download',
+    eventDate: '',
+    guestCount: '',
+    eventLocation: '',
+    eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. ${fields.attribution || ''}`.trim()
+  }).catch((err) => {
+    console.error('Guide download: failed to notify the team', err.message);
+  });
 });
 
 module.exports = router;

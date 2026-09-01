@@ -109,6 +109,14 @@ src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 <link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/bundle.css<%= typeof cssVersion !== 'undefined' && cssVersion ? '?v=' + cssVersion : '' %>">
 
+<%# Warm the guide while the reader is still reading. rel=prefetch is
+    lowest-priority and idle-time only, so it never competes with the page,
+    but it means the download starts from cache the moment someone asks for
+    it rather than beginning a fresh request. Only on posts that offer one. -%>
+<% if (typeof downloadAssetUrl !== 'undefined' && downloadAssetUrl) { %>
+<link rel="prefetch" href="<%= downloadAssetUrl %>">
+<% } %>
+
 <%#
   ONE business entity, not two. This used to emit a rich LocalBusiness with no
   @id alongside a thin Organization that had one. Every reference elsewhere on

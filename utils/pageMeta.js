@@ -585,4 +585,15 @@ Object.values(pages).forEach((page) => {
 // this one genuinely addresses the whole region.
 pages.services.service = { name: 'Luxury Event Catering', areaServed: 'Delhi NCR' };
 
+// Resolve a post's download offer to its actual file, so the page can prefetch
+// it. The mapping itself stays server-side in validateGuideDownload, which is
+// what the API validates against; this only mirrors the URL for the <head>.
+const { ASSETS: GUIDE_ASSETS } = require('./validateGuideDownload');
+Object.values(pages).forEach((page) => {
+  const offer = page.post && page.post.downloadOffer;
+  if (offer && GUIDE_ASSETS[offer.asset]) {
+    page.downloadAssetUrl = GUIDE_ASSETS[offer.asset].url;
+  }
+});
+
 module.exports = { siteUrl, business, pages };
