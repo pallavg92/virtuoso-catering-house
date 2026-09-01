@@ -1355,8 +1355,16 @@ const blogPosts = [
     title: 'How to Build a Cheese Board: Five Cheeses and Pairings',
     excerpt: 'The five cheeses we put on almost any board: brie, truffle gouda, manchego, aged cheddar and Danish blue, with what to serve beside each one.',
     date: '2026-09-01',
-    image: '/images/blog/cheese-board/virtuoso-catering-house-five-cheese-board-labelled.jpg',
-    imageCaption: 'The five-cheese board, labelled. Brie, gouda, manchego, aged cheddar, blue.',
+    // Hero is a board shot from a real event. The labelled board that used to
+    // sit here is a diagram, not a photograph: its printed cheese names
+    // collided with the wordmark in the corner and were unreadable behind the
+    // scrim anyway. It now runs full width inside the article, where the
+    // labels can actually be read, which is the only reason it exists.
+    image: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-3.jpg',
+    leadImage: {
+      src: '/images/blog/cheese-board/virtuoso-catering-house-five-cheese-board-labelled.jpg',
+      caption: 'The five-cheese board, labelled. Brie, gouda, manchego, aged cheddar, blue.'
+    },
     relatedLink: { path: '/wedding-caterers-in-noida', label: 'See how we build grazing tables for events in Noida' },
     // Scroll-depth offer on this post. House voice: it says what the reader
     // gets and what they are joining, and does not pretend the email is free.

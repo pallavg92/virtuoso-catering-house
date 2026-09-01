@@ -50,6 +50,16 @@
       </div>
       <% } %>
 
+      <%# A diagram belongs with the text it explains, not behind a scrim as a
+          hero. Sits after the lead so a reader meets the labelled board before
+          the five entries that walk through it. -%>
+      <% if (post.leadImage) { %>
+      <figure class="blog-post__image-break reveal-up">
+        <img src="<%= post.leadImage.src %>" alt="<%= post.leadImage.caption %>" loading="lazy">
+        <figcaption><%= post.leadImage.caption %></figcaption>
+      </figure>
+      <% } %>
+
       <% if (post.body) { %>
       <div class="blog-post__prose">
         <% post.body.forEach(function(paragraph) { %>
