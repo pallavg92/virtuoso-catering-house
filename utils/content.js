@@ -1380,8 +1380,8 @@ const blogPosts = [
     ],
     sections: [
       {
-        kicker: 'No. 01 · Soft · bloomy rind',
-        heading: 'Brie',
+        heading: '1. Brie',
+        headingNote: 'Soft. Bloomy rind',
         attribution: 'by — The Spotted Cow Fromagerie, Mumbai',
         paragraphs: [
           'Brie is where we like to begin because almost everybody understands it.',
@@ -1391,8 +1391,8 @@ const blogPosts = [
         pairing: { label: 'Put beside it', items: 'Honey · strawberries · walnuts' }
       },
       {
-        kicker: 'No. 02 · Semi-hard',
-        heading: 'Truffle Gouda',
+        heading: '2. Truffle Gouda',
+        headingNote: 'Semi-hard',
         attribution: 'by — Gardeli, truffle-infused, deli cut',
         paragraphs: [
           'This is the easy indulgence of the board.',
@@ -1403,8 +1403,8 @@ const blogPosts = [
         pairing: { label: 'Put beside it', items: 'Green apple · fig preserve · roasted almonds' }
       },
       {
-        kicker: 'No. 03 · Firm · sheep’s milk',
-        heading: 'Manchego',
+        heading: '3. Manchego',
+        headingNote: 'Firm. Sheep’s milk',
         attribution: 'by — Vatsario',
         paragraphs: [
           'If Brie is soft and comforting, Manchego gives the board some structure.',
@@ -1415,8 +1415,8 @@ const blogPosts = [
         pairing: { label: 'Put beside it', items: 'Quince paste · Marcona-style almonds · green olives' }
       },
       {
-        kicker: 'No. 04 · Hard · aged',
-        heading: 'Aged Cheddar',
+        heading: '4. Aged Cheddar',
+        headingNote: 'Hard. Aged',
         attribution: 'by — Vatsario',
         paragraphs: [
           'Never underestimate the value of putting one familiar cheese on an adventurous board.',
@@ -1428,8 +1428,8 @@ const blogPosts = [
         pairing: { label: 'Put beside it', items: 'Apple · dark chutney · seeded crackers' }
       },
       {
-        kicker: 'No. 05 · Blue-veined · soft and crumbly',
-        heading: 'Danish Blue',
+        heading: '5. Danish Blue',
+        headingNote: 'Blue-veined. Soft and crumbly',
         attribution: 'by — Castello',
         paragraphs: [
           'Every board needs one cheese that people have an opinion about.',

@@ -1247,3 +1247,22 @@
 @media (max-width: 700px) {
   .blog-post__gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Style descriptor on the entry heading line. Subordinate to the cheese name
+   without dropping to a separate block: Voice III at reading size, muted, so
+   "1. Brie" still carries the line. */
+.blog-post__heading-note {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.5em;
+  letter-spacing: 0;
+  color: var(--text-muted-light);
+  white-space: nowrap;
+}
+
+/* Cormorant defaults to oldstyle figures, where "1" is a short stroke with no
+   flag or base and reads closer to a lowercase L than a numeral. Fine inside
+   running prose, wrong at the head of a numbered entry. */
+.blog-post__heading {
+  font-variant-numeric: lining-nums;
+}

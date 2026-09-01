@@ -60,11 +60,14 @@
 
       <% (post.sections || []).forEach(function(section) { %>
       <div class="blog-post__prose">
-        <!-- Entry label above the name, e.g. "No. 01 · Soft · bloomy rind". -->
         <% if (section.kicker) { %>
         <span class="blog-post__kicker reveal-up"><%= section.kicker %></span>
         <% } %>
-        <h2 class="blog-post__heading reveal-up"><%= section.heading %></h2>
+        <!-- The style descriptor sits on the heading line rather than above it.
+             As a separate tracked-caps label it read as a third disconnected
+             fragment stacked over the name, which is not what a numbered list
+             entry should look like. -->
+        <h2 class="blog-post__heading reveal-up"><%= section.heading %><% if (section.headingNote) { %><span class="blog-post__heading-note"> - <%= section.headingNote %></span><% } %></h2>
         <% if (section.attribution) { %>
         <p class="blog-post__attribution reveal-up"><%= section.attribution %></p>
         <% } %>
