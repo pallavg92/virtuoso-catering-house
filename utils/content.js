@@ -1360,7 +1360,7 @@ const blogPosts = [
     // collided with the wordmark in the corner and were unreadable behind the
     // scrim anyway. It now runs full width inside the article, where the
     // labels can actually be read, which is the only reason it exists.
-    image: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-3.jpg',
+    image: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-2.jpg',
     leadImage: {
       src: '/images/blog/cheese-board/virtuoso-catering-house-five-cheese-board-labelled.jpg',
       caption: 'The five-cheese board, labelled. Brie, gouda, manchego, aged cheddar, blue.'
