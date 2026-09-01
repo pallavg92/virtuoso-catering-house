@@ -14,7 +14,13 @@
 
   const SESSION_KEY_ENTRY = 'vch_entry_popup_seen';
   const SESSION_KEY_EXIT = 'vch_exit_popup_seen';
-  const SESSION_KEY_SCROLL = 'vch_menu_scroll_popup_seen';
+  // Keyed per popup, not one flag for all of them. There are two scroll
+  // offers now, the wedding menu and the Journal guide, and a shared key meant
+  // seeing one in a session permanently suppressed the other. A reader who had
+  // already met the menu popup would never be shown the guide.
+  const SESSION_KEY_SCROLL = scrollPopup
+    ? 'vch_scroll_popup_seen_' + scrollPopup.id
+    : 'vch_scroll_popup_seen';
   const SESSION_KEY_INQUIRY_SENT = 'vch_inquiry_sent';
   const SKIP_PATHS = ['/contact'];
 
