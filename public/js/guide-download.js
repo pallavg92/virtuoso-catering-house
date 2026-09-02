@@ -78,11 +78,26 @@
         return;
       }
 
-      // A download is a captured contact like any other, so it reports the
-      // same way the enquiry drawer does.
+      // A guide download is an audience signup, not a lead, and the two must
+      // not share an event name.
+      //
+      // Nothing is sent to Meta. Firing Lead here told the ad account that a
+      // cheese-guide download is a conversion, which teaches delivery to find
+      // more people who download cheese guides. That is the same failure that
+      // filled the first-birthday campaign with unqualified enquiries, and
+      // this audience has no relationship to the ad campaigns at all.
+      //
+      // GA4 gets a plain custom event rather than generate_lead, which is a
+      // recommended event meaning a lead was generated and is designed to be
+      // marked as a conversion. guide_download counts downloads without
+      // putting them anywhere near conversion reporting.
       try {
-        if (window.fbq) window.fbq('track', 'Lead', { content_name: form.dataset.page });
-        if (window.gtag) window.gtag('event', 'generate_lead', { event_label: form.dataset.page });
+        if (window.gtag) {
+          window.gtag('event', 'guide_download', {
+            guide: form.dataset.asset,
+            page: form.dataset.page
+          });
+        }
       } catch (e) {}
 
       setStatus('Your guide is downloading. Thank you.', false);

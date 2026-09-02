@@ -97,30 +97,39 @@ router.post('/guide-download', async (req, res) => {
   // notification behind it.
   res.json({ ok: true, downloadUrl: asset.url });
 
-  // Both of these run behind the response and neither is awaited. The sheet is
-  // a list-building convenience; the email is the record. A failure in either
-  // must never reach a reader who already has their guide.
+  // Behind the response, unawaited, so the download stays instant.
+  //
+  // The sheet is the record for this audience, not the inbox. An email only
+  // goes out when the sheet could not take the row, which includes the sheet
+  // not being configured yet. That keeps the inbox for actual enquiries while
+  // making it impossible to silently lose someone to a Google outage.
   logToSheet({
     name: fields.name,
     email: fields.email,
     source: asset.label,
     page: fields.page || 'the Journal',
     attribution: fields.attribution
-  });
+  }).then((result) => {
+    if (result.logged) return;
 
-  // Its own catch as well: an unhandled rejection here would take the process
-  // down.
-  sendInquiry({
-    name: fields.name,
-    email: fields.email,
-    phone: '',
-    eventType: 'Guide download',
-    eventDate: '',
-    guestCount: '',
-    eventLocation: '',
-    eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. ${fields.attribution || ''}`.trim()
+    console.warn(`[capture] sheet unavailable (${result.reason}) — emailing instead`);
+    // Subject says audience, not inquiry: this person asked for a guide, they
+    // did not ask us to cater anything.
+    return sendInquiry({
+      name: fields.name,
+      email: fields.email,
+      phone: '',
+      eventType: `Guide download (${asset.label})`,
+      eventDate: '',
+      guestCount: '',
+      eventLocation: '',
+      eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. Sheet was unavailable, so this is the only copy of this contact.`,
+      attribution: fields.attribution
+    });
   }).catch((err) => {
-    console.error('Guide download: failed to notify the team', err.message);
+    // Last resort. An unhandled rejection here would take the process down,
+    // and by this point the reader already has their guide.
+    console.error('[capture] both sheet and email failed', err.message);
   });
 });
 
