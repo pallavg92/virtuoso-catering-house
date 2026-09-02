@@ -13,6 +13,10 @@ const ASSETS = {
   'cheese-board-guide': {
     url: '/downloads/virtuoso-catering-house-cheese-board-guide.pdf',
     label: 'Cheese Board Guide'
+  },
+  'welcome-drinks-cards': {
+    url: '/downloads/virtuoso-catering-house-welcome-drinks.pdf',
+    label: 'Welcome Drinks Cards'
   }
 };
 

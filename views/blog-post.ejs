@@ -94,6 +94,16 @@
           <% }); %>
         </ul>
         <% } %>
+        <%# Ordered steps, for anything with a method. Distinct from `list`,
+            which is unordered: a recipe read out of order is a different
+            recipe. -%>
+        <% if (section.steps && section.steps.length) { %>
+        <ol class="blog-post__steps">
+          <% section.steps.forEach(function(step) { %>
+          <li class="reveal-up"><%= step %></li>
+          <% }); %>
+        </ol>
+        <% } %>
         <% if (section.outro) { %>
         <p class="blog-post__copy reveal-up"><%= section.outro %></p>
         <% } %>

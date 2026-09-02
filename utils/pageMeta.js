@@ -481,6 +481,17 @@ const pages = {
     post: content.bestCaterersNoidaPage,
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Who Are the Best Caterers in Noida?', path: '/best-caterers-in-noida-virtuoso-catering-house' }]
   },
+  blogWelcomeDrinks: {
+    path: '/blog/welcome-drinks-for-guests',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Welcome Drinks for Guests: Three Recipes to Serve',
+    description: content.blogPosts.find((p) => p.slug === 'welcome-drinks-for-guests').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'welcome-drinks-for-guests').image,
+    post: content.blogPosts.find((p) => p.slug === 'welcome-drinks-for-guests'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Welcome Drinks for Guests', path: '/blog/welcome-drinks-for-guests' }]
+  },
   blogCheeseBoard: {
     path: '/blog/five-cheeses-for-a-cheese-board',
     view: 'blog-post',
