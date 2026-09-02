@@ -1536,11 +1536,10 @@ const blogPosts = [
       dismiss: 'I\u2019ll keep reading'
     },
     lead: [
-      'Three welcome drinks we serve at events across Delhi NCR, all non-alcoholic and all built to be made ahead: butterfly pea flower lemonade, peach orange yuzu fizz, and sparkling rose lemonade with cucumber ribbons. Each is finished in front of the guest once the base is prepared, which is the only way a welcome drink holds up at any real scale.',
+      'Three welcome drinks we serve at events across Delhi NCR, all non-alcoholic and all built to be made ahead: butterfly pea flower lemonade, peach orange yuzu fizz, and sparkling rose lemonade with cucumber ribbons. All three are poured ahead and hold, so they can wait on a table by the entrance instead of being built while your guests are walking in.',
       'The welcome drink is the first thing a guest holds and the last thing most hosts think about.',
       'It arrives in the ten minutes when nobody knows anyone yet, when people are still deciding what kind of evening this is going to be. A good one gives them something to do with their hands and something to say about it.',
-      'These three are ours. They are non-alcoholic on purpose, because a welcome drink has to work for the guest who is driving, the guest who is fasting, and the grandmother who is not going to accept a cocktail at four in the afternoon.',
-      'All three can be prepared ahead and finished in front of the guest, which matters more than any single ingredient. A drink built entirely to order creates a queue at exactly the moment you least want one.'
+      'All three are made ahead and hold. Pour them shortly before the first guest is due and set them out on a table near the entrance, and people pick one up on the way in. Whoever is helping you at home can carry a tray of them. Nothing has to be assembled while your guests are standing in front of you.'
     ],
     sections: [
       {
@@ -1567,6 +1566,7 @@ const blogPosts = [
           'Garnish with a butterfly pea flower.'
         ],
         outro: 'Use fresh concentrate for the colour. An older batch goes muddy rather than violet, and the colour is most of the point.',
+        imageFirst: true,
         image: { src: '/images/blog/welcome-drinks/virtuoso-catering-house-butterfly-pea-flower-lemonade.jpg', caption: 'Butterfly pea flower lemonade, served over crushed ice.' }
       },
       {
@@ -1595,6 +1595,7 @@ const blogPosts = [
           'Garnish with an orange slice and a peach slice or edible flower.'
         ],
         outro: 'Fresh orange juice, not carton. It is the difference between bright and flat, and it is the one substitution guests notice.',
+        imageFirst: true,
         image: { src: '/images/blog/welcome-drinks/virtuoso-catering-house-peach-orange-yuzu-fizz.jpg', caption: 'Peach orange yuzu fizz, finished with an orange wheel.' }
       },
       {
@@ -1622,17 +1623,18 @@ const blogPosts = [
           'Finish with a fresh cucumber ribbon and a thin lemon slice.'
         ],
         outro: 'Choose a rose water with a subtle profile. A strong one overpowers the lemon and cucumber, and the drink stops being refreshing.',
+        imageFirst: true,
         image: { src: '/images/blog/welcome-drinks/virtuoso-catering-house-sparkling-rose-lemonade.jpg', caption: 'Sparkling rose lemonade with cucumber ribbons.' }
       },
       {
         heading: 'What actually matters at scale',
         paragraphs: [
-          'One of these is a pleasure to make. Two hundred, in half an hour, while guests are arriving, is a discipline.',
-          'Mix the base ahead. Every one of these three separates cleanly into a base you can prepare hours in advance and a finish that happens in front of the guest: the sparkling element, the ice, the garnish. Do the base in the kitchen and the finish at the table.',
-          'Never add the sparkling element early. It is the first thing to go flat and the only part a guest will notice has gone wrong.',
+          'A few of these is a pleasure to make. Two hundred guests served as they arrive is a discipline.',
+          'Make them ahead. All three are built to hold, so pour them shortly before the first guest is due rather than working through a queue once the room starts filling.',
+          'Set them out rather than serving to order. A table near the entrance with the glasses already poured is a calmer arrival than a bar with a line at it, and the room fills with people already holding something.',
           'Prepare garnishes as a batch. Cucumber ribbons and citrus wheels can be cut an hour ahead and held in cold water. Cutting them to order is what creates the queue.',
-          'Chill the glassware as well as the drink. A cold glass buys you ten minutes of the drink staying as it was intended, outdoors in Delhi, which is where most of these are actually served.'
-        ]
+        ],
+        pairing: { label: 'Pro tip', items: 'Chill the glassware before making the drink.' }
       },
       {
         heading: 'The three at a glance',
@@ -1661,9 +1663,9 @@ const blogPosts = [
       }
     ],
     faq: [
-      { q: 'What is a good non-alcoholic welcome drink for guests?', a: 'A welcome drink should be light, comfortable to hold while shaking hands, and finished in front of the guest rather than built to order. Butterfly pea flower lemonade, a peach orange yuzu fizz and a sparkling rose lemonade all work: each is non-alcoholic, each can be prepared ahead, and none is so sweet that a guest cannot finish it before dinner.' },
-      { q: 'How far in advance can you make welcome drinks?', a: 'Make the base ahead and the finish to order. Butterfly pea concentrate keeps refrigerated for around two days; a peach and orange base can be mixed the same morning; lemon and sugar syrup for rose lemonade can be combined and chilled. Never add the sparkling element until the moment of serving, because it is the first thing to go flat.' },
-      { q: 'How do you serve welcome drinks to a large number of guests?', a: 'Separate the base from the finish and batch everything you can. Cut garnishes an hour ahead and hold them in cold water, chill the glassware, and set the table up so the only thing happening there is the finish. A drink built entirely to order creates a queue exactly when guests are arriving.' },
+      { q: 'What is a good non-alcoholic welcome drink for guests?', a: 'A welcome drink should be light, comfortable to hold while shaking hands, and able to sit poured and waiting rather than being built to order. Butterfly pea flower lemonade, a peach orange yuzu fizz and a sparkling rose lemonade all work: each is non-alcoholic, each holds once poured, and none is so sweet that a guest cannot finish it before dinner.' },
+      { q: 'How far in advance can you make welcome drinks?', a: 'All three are built to be made ahead. Butterfly pea concentrate keeps refrigerated for around two days; a peach and orange base can be mixed the same morning; lemon and sugar syrup for rose lemonade can be combined and chilled. Pour them shortly before your first guest is due, garnish, and let them wait.' },
+      { q: 'How do you serve welcome drinks to a large number of guests?', a: 'Separate the base from the finish and batch everything you can. Cucumber ribbons and citrus wheels can be cut an hour ahead and held in cold water, so the garnish is never the thing holding up the tray.' },
       { q: 'Why does butterfly pea lemonade change colour?', a: 'Butterfly pea flower is naturally deep blue and reacts to acid, so it shifts toward violet and pink as lemon juice is added. The change happens in the glass while the guest is holding it, which is why it works so well as a welcome drink. Use fresh concentrate; an older batch goes muddy rather than violet.' },
       { q: 'Do you cater drinks for events in Delhi NCR?', a: 'Yes. Virtuoso Catering House designs food and beverage programmes for weddings, brand launches and private dinners across Delhi NCR, including Noida, Greater Noida, Delhi and Gurugram, from our kitchen and experience centre in Sector 61, Noida.' }
     ],

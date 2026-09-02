@@ -1305,3 +1305,10 @@
 
 .section--charcoal .blog-post__steps li { color: var(--text-muted-dark); }
 .section--charcoal .blog-post__steps li::before { color: var(--vls-candlelight); }
+
+/* A figure sitting inside the text measure rather than breaking out of it,
+   for images that belong to the paragraph immediately following. */
+.blog-post__image-break--inline {
+  max-width: 40rem;
+  margin: 0 auto var(--space-md);
+}

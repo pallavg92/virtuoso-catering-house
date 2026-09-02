@@ -81,6 +81,16 @@
         <% if (section.attribution) { %>
         <p class="blog-post__attribution reveal-up"><%= section.attribution %></p>
         <% } %>
+        <%# imageFirst puts the photograph directly under the name, where a
+            reader looking for a specific drink expects it. Opt-in, because the
+            case-study posts deliberately place their images after the prose
+            they illustrate. -%>
+        <% if (section.image && section.imageFirst) { %>
+        <figure class="blog-post__image-break blog-post__image-break--inline reveal-up">
+          <img src="<%= section.image.src %>" alt="<%= section.image.caption %>" loading="lazy">
+          <figcaption><%= section.image.caption %></figcaption>
+        </figure>
+        <% } %>
         <% section.paragraphs.forEach(function(paragraph) { %>
         <p class="blog-post__copy reveal-up"><%- paragraph %></p>
         <% }); %>
@@ -157,7 +167,7 @@
       <% } %>
       <% } %>
 
-      <% if (section.image) { %>
+      <% if (section.image && !section.imageFirst) { %>
       <figure class="blog-post__image-break reveal-up">
         <img src="<%= section.image.src %>" alt="<%= section.image.caption %>" loading="lazy">
         <figcaption><%= section.image.caption %></figcaption>
