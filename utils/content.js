@@ -1538,8 +1538,8 @@ const blogPosts = [
     lead: [
       'Three welcome drinks we serve at events across Delhi NCR, all non-alcoholic and all built to be made ahead: butterfly pea flower lemonade, peach orange yuzu fizz, and sparkling rose lemonade with cucumber ribbons. All three are poured ahead and hold, so they can wait on a table by the entrance instead of being built while your guests are walking in.',
       'The welcome drink is the first thing a guest holds and the last thing most hosts think about.',
-      'It arrives in the ten minutes when nobody knows anyone yet, when people are still deciding what kind of evening this is going to be. A good one gives them something to do with their hands and something to say about it.',
-      'All three are made ahead and hold. Pour them shortly before the first guest is due and set them out on a table near the entrance, and people pick one up on the way in. Whoever is helping you at home can carry a tray of them. Nothing has to be assembled while your guests are standing in front of you.'
+      'A good one gives them something to do with their hands and something to say about it.',
+      'All three are made ahead and hold. Pour them shortly before the first guest is due and set them out on a table near the entrance, and people pick one up on the way in. Whoever is helping you at home can carry a tray of them.'
     ],
     sections: [
       {
