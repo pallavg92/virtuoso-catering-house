@@ -29,7 +29,17 @@ const WEBHOOK = () => process.env.SHEET_WEBHOOK_URL;
 
 // Apps Script answers a POST with a 302 to script.googleusercontent.com, so
 // redirects have to be followed or every write looks like a failure.
-const TIMEOUT_MS = 4000;
+//
+// Twenty seconds, not four. Apps Script cold-starts: measured at 13.5s on the
+// first request after a quiet period, then 3.4s and 2.2s once warm. A four
+// second budget therefore succeeded in testing, when the script was being
+// hammered, and failed for the first real visitor of the day, who fell through
+// to the email fallback for no reason other than Google being slow to wake up.
+//
+// A long timeout costs nothing here. This call is made after the response has
+// already gone out, so nobody is waiting on it; the only thing a shorter
+// budget bought was giving up early.
+const TIMEOUT_MS = 20000;
 
 async function logToSheet(row) {
   const url = WEBHOOK();
