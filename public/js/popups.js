@@ -18,8 +18,12 @@
   // offers now, the wedding menu and the Journal guide, and a shared key meant
   // seeing one in a session permanently suppressed the other. A reader who had
   // already met the menu popup would never be shown the guide.
+  // Keyed on the offer, not the element. Every Journal offer renders the same
+  // #guide-popup markup, so keying on the id meant one shared flag: a reader
+  // who met the cheese guide would never be shown the drinks one, and the
+  // site would silently stop offering anything to its most engaged visitors.
   const SESSION_KEY_SCROLL = scrollPopup
-    ? 'vch_scroll_popup_seen_' + scrollPopup.id
+    ? 'vch_scroll_popup_seen_' + (scrollPopup.dataset.popupKey || scrollPopup.id)
     : 'vch_scroll_popup_seen';
   const SESSION_KEY_INQUIRY_SENT = 'vch_inquiry_sent';
   const SKIP_PATHS = ['/contact'];
