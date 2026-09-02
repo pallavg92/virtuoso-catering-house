@@ -15,10 +15,16 @@
   const statusEl = document.getElementById('guide-status');
   const label = submitBtn ? submitBtn.querySelector('span').textContent : '';
 
+  // The stylesheet keeps this element at opacity 0 until it carries
+  // .is-visible, and colours it via .is-success / .is-error. An earlier
+  // BEM-style class here matched no rule, so every message this function
+  // produced was rendered invisibly, including the failure ones.
   function setStatus(message, isError) {
     if (!statusEl) return;
     statusEl.textContent = message || '';
-    statusEl.className = 'inquiry-form__status' + (isError ? ' inquiry-form__status--error' : '');
+    statusEl.className = 'inquiry-form__status'
+      + (message ? ' is-visible' : '')
+      + (message ? (isError ? ' is-error' : ' is-success') : '');
   }
 
   function clearErrors() {
@@ -102,6 +108,21 @@
 
       setStatus('Your guide is downloading. Thank you.', false);
       triggerDownload(data.downloadUrl);
+
+      // Collapse the form once it has done its job. Leaving the fields on
+      // screen after a successful submit reads as though nothing happened,
+      // and the panel then has to be dismissed manually by someone who has
+      // already finished with it.
+      form.querySelectorAll('.form-field, .lander__privacy').forEach((el) => { el.hidden = true; });
+      if (submitBtn) submitBtn.hidden = true;
+
+      // Close via the popup's own dismiss control rather than touching its
+      // classes here, so the module that owns the popup also restores page
+      // scrolling and stays the single place that knows how to close it.
+      var panel = form.closest('.site-popup');
+      var dismiss = panel && panel.querySelector('[data-popup-dismiss]');
+      if (dismiss) setTimeout(function () { dismiss.click(); }, 2600);
+      return;
     } catch (err) {
       setStatus('Something went wrong. Please try again.', true);
     } finally {

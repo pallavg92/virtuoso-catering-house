@@ -24,6 +24,15 @@ img, video {
   max-width: 100%;
 }
 
+/* The hidden attribute is only display:none in the browser's own stylesheet,
+   so any author rule setting display beats it. .form-field is display:flex,
+   which meant el.hidden = true had no visible effect at all. Re-asserted here
+   so the attribute means what it says everywhere on the site. */
+[hidden] {
+  display: none !important;
+}
+
+
 /* The build wraps every local <img> in a <picture> so a WebP can be offered
    ahead of the original. `display: contents` means that wrapper generates no
    box of its own, so the <img> stays the flex/grid item its parent's layout
