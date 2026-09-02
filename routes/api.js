@@ -4,6 +4,7 @@ const { sendInquiry, sendMenuDownloadRequest, sendEnquiryAcknowledgement } = req
 const { validateInquiry, extractFields } = require('../utils/validateInquiry');
 const { validateMenuDownload, extractFields: extractMenuDownloadFields } = require('../utils/validateMenuDownload');
 const { validateGuideDownload, extractFields: extractGuideFields, ASSETS } = require('../utils/validateGuideDownload');
+const { logToSheet } = require('../utils/sheetLog');
 
 router.post('/inquiry', async (req, res) => {
   const errors = validateInquiry(req.body);
@@ -96,9 +97,19 @@ router.post('/guide-download', async (req, res) => {
   // notification behind it.
   res.json({ ok: true, downloadUrl: asset.url });
 
-  // Deliberately not awaited, and its own catch: an unhandled rejection here
-  // would take the process down, and a failed notification must never be able
-  // to affect a reader who already has their guide.
+  // Both of these run behind the response and neither is awaited. The sheet is
+  // a list-building convenience; the email is the record. A failure in either
+  // must never reach a reader who already has their guide.
+  logToSheet({
+    name: fields.name,
+    email: fields.email,
+    source: asset.label,
+    page: fields.page || 'the Journal',
+    attribution: fields.attribution
+  });
+
+  // Its own catch as well: an unhandled rejection here would take the process
+  // down.
   sendInquiry({
     name: fields.name,
     email: fields.email,
