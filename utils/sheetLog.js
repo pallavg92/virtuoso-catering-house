@@ -10,6 +10,21 @@
 // authoritative record is the notification email, and a reader who has already
 // been given their download must never see an error because a spreadsheet was
 // unreachable.
+
+// A spreadsheet cell wants a sentence, not an object. Mirrors the fields the
+// notification email reports so the two tell the same story.
+function flattenAttribution(a) {
+  if (!a || typeof a !== 'object') return '';
+  const parts = [
+    [a.utmSource, a.utmMedium, a.utmCampaign].filter(Boolean).join(' / '),
+    a.gclid || a.gbraid || a.wbraid ? 'google-click' : '',
+    a.fbclid ? 'meta-click' : '',
+    a.referrer ? `ref: ${a.referrer}` : '',
+    a.landingPage ? `landed: ${a.landingPage}` : ''
+  ].filter(Boolean);
+  return parts.join(' · ');
+}
+
 const WEBHOOK = () => process.env.SHEET_WEBHOOK_URL;
 
 // Apps Script answers a POST with a 302 to script.googleusercontent.com, so
@@ -36,7 +51,7 @@ async function logToSheet(row) {
         email: row.email || '',
         source: row.source || '',
         page: row.page || '',
-        attribution: row.attribution || ''
+        attribution: flattenAttribution(row.attribution)
       }),
       signal: AbortSignal.timeout(TIMEOUT_MS)
     });

@@ -36,7 +36,10 @@ function extractFields(body) {
     email: (body.email || '').trim(),
     asset: (body.asset || '').trim(),
     page: (body.page || '').trim(),
-    attribution: (body.attribution || '').trim()
+    // Passed through as the object the client sends, because the mailer's
+    // attributionLines() reads named fields off it. Trimming it as a string
+    // turned it into "[object Object]".
+    attribution: body.attribution && typeof body.attribution === 'object' ? body.attribution : null
   };
 }
 

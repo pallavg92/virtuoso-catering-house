@@ -57,7 +57,10 @@
       email: form.querySelector('[name="email"]').value,
       asset: form.dataset.asset,
       page: form.dataset.page,
-      attribution: (window.vchAttribution && window.vchAttribution.summary) || ''
+      // vchAttribution is a function returning an object, not an object with a
+      // .summary. Reading a property off the function silently yielded
+      // undefined, so every guide download was recorded with no source at all.
+      attribution: typeof window.vchAttribution === 'function' ? window.vchAttribution() : null
     };
 
     if (submitBtn) { submitBtn.disabled = true; submitBtn.querySelector('span').textContent = 'One moment'; }
