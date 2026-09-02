@@ -1536,7 +1536,7 @@ const blogPosts = [
       dismiss: 'I\u2019ll keep reading'
     },
     lead: [
-      'Three welcome drinks we serve at events across Delhi NCR, all non-alcoholic and all built to be made ahead: butterfly pea flower lemonade, peach orange yuzu fizz, and sparkling rose lemonade with cucumber ribbons. All three are poured ahead and hold, so they can wait on a table by the entrance instead of being built while your guests are walking in.',
+      'Three welcome drinks we serve at events across India, all non-alcoholic and all built to be made ahead: butterfly pea flower lemonade, peach orange yuzu fizz, and sparkling rose lemonade with cucumber ribbons. All three are poured ahead and hold, so they can wait on a table by the entrance instead of being built while your guests are walking in.',
       'The welcome drink is the first thing a guest holds and the last thing most hosts think about.',
       'A good one gives them something to do with their hands and something to say about it.',
       'All three are made ahead and hold. Pour them shortly before the first guest is due and set them out on a table near the entrance, and people pick one up on the way in. Whoever is helping you at home can carry a tray of them.'
