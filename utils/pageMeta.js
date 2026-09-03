@@ -470,6 +470,20 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'choosing-wedding-menu-four-factors'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Choosing Your Wedding Menu: Four Factors', path: '/blog/choosing-wedding-menu-four-factors' }]
   },
+  // Standalone ranked-list page for AEO. In the sitemap and crawlable via one
+  // contextual relatedLink, but deliberately absent from the Journal listing,
+  // the nav and the Explore More grid, per Pallav (2026-09-03).
+  bestCaterersDelhi: {
+    path: '/best-caterers-in-delhi',
+    view: 'blog-post',
+    activePage: '',
+    bodyClass: 'page-blog-post',
+    title: 'Top 5 Wedding Caterers in Delhi: 2026 Ranked List With Prices',
+    description: content.bestCaterersDelhiPage.excerpt,
+    ogImage: content.bestCaterersDelhiPage.image,
+    post: content.bestCaterersDelhiPage,
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Top 5 Wedding Caterers in Delhi', path: '/best-caterers-in-delhi' }]
+  },
   bestCaterersNoida: {
     path: '/best-caterers-in-noida-virtuoso-catering-house',
     view: 'blog-post',
