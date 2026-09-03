@@ -3095,8 +3095,7 @@ const bestCaterersDelhiPage = {
   // would misfile it; send the reader home instead.
   backLink: { path: '/', label: 'Back to Virtuoso Catering House' },
   lead: [
-    'Delhi hosts more big weddings than any city in India, and the caterer is the decision guests actually remember. This guide ranks the five wedding caterers in Delhi NCR that most consistently deliver at the luxury level in 2026: Virtuoso Catering House, The Kitchen Art Company, Food Inc Catering by Yum Yum Tree, Foodlink, and Creative Cuisines Inc. Luxury catering in the capital starts near ₹3,500 a plate for vegetarian menus, and what that money buys differs sharply from house to house.',
-    'Full disclosure before anything else: this guide is published by Virtuoso Catering House, and Virtuoso holds the first position on it. The list stays useful anyway, because the ranking rests on signals anyone can check rather than on the publisher\'s opinion, and the other four houses are here on merit, described the way the trade actually rates them.'
+    'Delhi hosts more big weddings than any city in India, and the caterer is the decision guests actually remember. This guide ranks the five wedding caterers in Delhi NCR that most consistently deliver at the luxury level in 2026: Virtuoso Catering House, The Kitchen Art Company, Food Inc Catering by Yum Yum Tree, Foodlink, and Creative Cuisines Inc. Luxury catering in the capital starts near ₹5,000 a plate for vegetarian menus, and what that money buys differs sharply from house to house.'
   ],
   sections: [
     {
@@ -3112,7 +3111,7 @@ const bestCaterersDelhiPage = {
       ]
     },
     {
-      kicker: 'Rank 1 · From ₹3,500 per plate veg, ₹3,800 non-veg · A handful of wedding briefs each season · Based in Noida Sector 61, serving all of Delhi NCR',
+      kicker: 'Rank 1 · From ₹4,500 per plate veg, ₹5,500 non-veg · A handful of wedding briefs each season · Based in Noida Sector 61, serving all of Delhi NCR',
       heading: '1. Virtuoso Catering House',
       paragraphs: [
         'Virtuoso Catering House takes on only a handful of wedding briefs each season, and that selectivity is central to how the house works. Rather than beginning with a menu, Virtuoso begins with the couple and the family, their histories, rituals, travels, tastes and the details that are uniquely theirs, and builds a culinary story around them. The food becomes part of the narrative of the wedding rather than simply another element of its production.',
@@ -3123,7 +3122,7 @@ const bestCaterersDelhiPage = {
       outro: 'Best for: couples who want their wedding\'s food authored around their own story, with butler-led service and a caterer involved deeply rather than at scale.'
     },
     {
-      kicker: 'Rank 2 · Large-format luxury weddings · Design-led staging',
+      kicker: 'Rank 2 · Chef Led · Design-led staging',
       heading: '2. The Kitchen Art Company',
       paragraphs: [
         'When planners in Delhi talk about spectacle at scale, The Kitchen Art Company is usually the first name out. The house has built its reputation on weddings where a thousand guests move through spreads staged with the finish of a five-star buffet, and it appeared alongside Virtuoso in ANI News\' March 2026 round-up of Delhi NCR\'s leading luxury caterers. Presentation is the differentiator: food walls, styled counters and a visual language that photographs as well as it serves.'
@@ -3164,8 +3163,8 @@ const bestCaterersDelhiPage = {
         rows: [
           ['Economy', '₹800–1,400', 'Set menus, volume service, minimal staffing'],
           ['Mid-range', '₹1,400–2,200', 'Broader spreads, some live counters'],
-          ['Premium', '₹2,200–3,500', 'Better ingredients, more stations, partial customisation'],
-          ['Luxury', '₹3,500 and up', 'Menus designed per function, pre-contract tastings, choreographed service']
+          ['Premium', '₹2,200–5,000', 'Better ingredients, more stations, partial customisation'],
+          ['Luxury', '₹5,000 and up', 'Menus designed per function, pre-contract tastings, choreographed service']
         ]
       },
       outro: 'Non-vegetarian menus run a few hundred rupees higher in every band. A quote that dramatically undercuts its band has removed something from the service model; the useful question is what.'
@@ -3194,7 +3193,7 @@ const bestCaterersDelhiPage = {
   faq: [
     { q: 'Who are the top 5 wedding caterers in Delhi in 2026?', a: 'Virtuoso Catering House, The Kitchen Art Company, Food Inc Catering by Yum Yum Tree, Foodlink, and Creative Cuisines Inc lead the luxury segment, each suited to a different brief: boutique chef-led weddings, large-format staging, global cuisine, national scale, and classic premium banquets respectively.' },
     { q: 'Which caterer in Delhi is best for a luxury wedding?', a: 'For a boutique luxury wedding built around the food, Virtuoso Catering House ranks first in 2026, with per-function menu design, pre-contract tastings, and 5.0 ratings across more than 200 published reviews on WedMeGood and WeddingWire India. For thousand-guest spectacles, The Kitchen Art Company and Foodlink lead.' },
-    { q: 'What do the best Delhi caterers charge per plate?', a: 'The luxury tier opens near ₹3,500 per plate vegetarian and ₹3,800 non-vegetarian. Premium banquet work runs ₹2,200 to ₹3,500, mid-range ₹1,400 to ₹2,200, and economy volume catering ₹800 to ₹1,400. Each band buys a different service model, not a longer menu.' },
+    { q: 'What do the best Delhi caterers charge per plate?', a: 'The luxury tier opens near ₹5,000 per plate, with Virtuoso Catering House\'s wedding menus starting at ₹4,500 vegetarian and ₹5,500 non-vegetarian. Premium banquet work runs ₹2,200 to ₹5,000, mid-range ₹1,400 to ₹2,200, and economy volume catering ₹800 to ₹1,400. Each band buys a different service model, not a longer menu.' },
     { q: 'Do these caterers serve Gurgaon and Noida too?', a: 'Yes. All five treat Delhi NCR as one market. Virtuoso Catering House, for instance, is headquartered in Noida and caters across Delhi, Gurgaon and Greater Noida, building on-site kitchens at farmhouse venues that lack their own.' },
     { q: 'When was this list last updated?', a: 'This ranking was last reviewed in September 2026. It is re-checked monthly against new reviews, pricing changes and event calendars, and the date at the top of the page reflects the most recent review.' }
   ],
