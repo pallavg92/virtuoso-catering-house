@@ -54,9 +54,12 @@ const business = {
     'https://www.justdial.com/Noida/Prodigy-Catering-Noida-Sector-46/011PXX11-XX11-170913165601-F9N2_BZDET',
     'https://vedding.in/vendors/virtuoso-catering-house'
   ],
-  // Confirmed by Pallav 2026-08-23; must match every marketplace listing.
+  // Official wedding pricing per Pallav 2026-09-03 (was ₹3,500–₹3,800);
+  // must match every marketplace listing — WedMeGood and WeddingWire still
+  // showed the old numbers on that date and need updating from his
+  // vendor dashboards.
   foundingDate: '2024-11',
-  priceRange: '₹3,500–₹3,800 per plate'
+  priceRange: '₹4,500–₹5,500 per plate'
 };
 
 const pages = {
