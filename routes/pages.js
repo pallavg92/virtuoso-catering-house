@@ -100,6 +100,13 @@ router.get('/lp/first-birthday', (req, res) => render(res, pages.lpFirstBirthday
 router.post('/lp/first-birthday', async (req, res) => {
   const errors = validateInquiry(req.body);
 
+  // The threshold checkbox is the whole point of this lander: it is what keeps
+  // enquiries below the engagement level off the phone. `required` in the
+  // markup is trivially bypassed, so the real gate is here.
+  if (req.body.budgetConfirmed !== 'yes') {
+    errors.budgetConfirmed = 'Please confirm the engagement level to continue.';
+  }
+
   if (Object.keys(errors).length > 0) {
     return res.status(400).render(pages.lpFirstBirthday.view, {
       ...content,

@@ -59,6 +59,8 @@ async function sendInquiry(fields) {
     `Event Type: ${fields.eventType || '—'}`,
     `Guest Count: ${fields.guestCount || '—'}`,
     `Location: ${fields.eventLocation || '—'}`,
+    ...(fields.pageVariant ? [`Page variant: ${fields.pageVariant}`] : []),
+    ...(fields.budgetConfirmed ? [`Confirmed ₹3,500+ per guest: ${fields.budgetConfirmed}`] : []),
     '',
     'What they are imagining:',
     fields.eventVision || '—',

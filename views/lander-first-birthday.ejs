@@ -4,28 +4,225 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>First birthdays in Delhi NCR — Virtuoso Catering House</title>
-<meta name="description" content="For first-birthday celebrations of 50 guests or more in Delhi NCR, Virtuoso brings menu, live experiences, presentation and service together as one personalised F&amp;B experience." />
-<meta name="robots" content="noindex" /><!-- paid traffic lander: remove if this page should be indexed -->
+<meta name="description" content="Virtuoso designs the first-birthday food experience around your family, the occasion and how you want the celebration to feel. 50 guests or more, Delhi NCR. One conversation, one written plan within 24 hours." />
+<meta name="robots" content="noindex" />
+<link rel="preload" href="/fonts/cormorant-300.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/cormorant-italic-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin />
 
-<!-- Hero preload. The hero is a CSS background-image on .hero-overlay, so the
-     browser cannot discover it until it has downloaded and parsed the stylesheet,
-     which on this page meant the largest element did not arrive until ~7s on
-     mobile while first paint happened at 1.1s. Preloading the exact URL the CSS
-     requests starts the fetch immediately without causing a second download. -->
-<link rel="preload" as="image" href="/img/hero-first-birthday.jpg" fetchpriority="high" />
+<style>
+/* ============================================================
+   VIRTUŌSO — FIRST BIRTHDAY LANDER v2
+   Built to the Sales Page Psychology skill and the 04.09.26 audit.
+   Order: hero (with reason to believe) → names → the work →
+   threshold + form → case study → contrast → how it works →
+   what a plan includes → FAQ → closing. One CTA target throughout.
+   Self-hosted fonts. No external CSS/JS. No form JS.
+   ============================================================ */
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/cormorant-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-italic-400.woff2') format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/worksans-300-400-500-600.woff2') format('woff2')}
 
-<!-- Analytics, queued immediately and fetched late.
-     The stubs below run at once, so fbq('init'), fbq('track') and every gtag()
-     call are captured into their queues in the normal order. Only the two
-     vendor script files are deferred, and they replay the queue on arrival, so
-     nothing is dropped: a PageView still reports, and the lead events on the
-     thank-you page still fire with their event_id.
-     Why: on this lander the three tracking files total ~394KB, four times the
-     weight of the hero image, and they were competing with it for the network
-     during first paint. This is paid traffic, so every second of delay is money.
-     Loads on whichever comes first: page load plus a short delay, or the first
-     real interaction. A visitor who leaves inside ~2s may not register a
-     PageView, which is the accepted trade for the pages actually rendering. -->
+:root{
+  /* colour as meaning — one job each */
+  --ink:#17100B;          /* type */
+  --ink-2:#3D342D;        /* body */
+  --ink-3:#5B5048;        /* secondary */
+  --ink-4:#8A7A6A;        /* decorative only — fails 4.5:1 for text; use --ink-3 for any label or caption */
+  --page:#FAF6EE;         /* parchment — the page */
+  --card:#FEFCF7;         /* linen — cards, alternate bands */
+  --band:#F3EDE0;         /* vellum — the form band */
+  --forest:#101F10;       /* the outcome / Virtuōso column, threshold, closing */
+  --old:#3D342D;          /* the old way column */
+  --old-ink:#D9D2C4;
+  --old-muted:#A89C8C;
+  --sage-wash:#E4E8DC;    /* the outcome highlight + testimonial ground. never the button */
+  --cta:#C9873A;          /* the action. nothing else is this colour */
+  --cta-hover:#E8C98A;
+  --cta-deep:#935A11;
+  --gold-text:#E8C98A;    /* labels on forest */
+  --error:#8B4A2F;
+  --hair:rgba(23,16,11,.1);
+  --hair-2:rgba(23,16,11,.12);
+  --field:rgba(23,16,11,.18);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Work Sans',Arial,Helvetica,sans-serif;
+  --pad:clamp(20px,5vw,48px);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--ink);text-decoration:none;transition:background 150ms var(--ease),color 150ms var(--ease)}
+a:hover{color:var(--cta-deep)}
+:focus-visible{outline:2px solid var(--cta-deep);outline-offset:2px}
+::selection{background:var(--sage-wash)}
+input[type=checkbox]{accent-color:var(--cta-deep)}
+strong{font-weight:500}
+
+.wrap{max-width:1160px;margin:0 auto;width:100%;padding-left:var(--pad);padding-right:var(--pad)}
+.band{padding-top:clamp(48px,7vw,104px);padding-bottom:clamp(48px,7vw,104px)}
+.band--card{background:var(--card);border-top:1px solid var(--hair)}
+.stack{display:flex;flex-direction:column}
+
+/* type */
+.eyebrow{font-size:12px;line-height:1.3;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--cta-deep);margin:0}
+.h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,2.2rem + 2.4vw,72px);line-height:1.04;letter-spacing:-.01em;margin:0;max-width:20ch;text-wrap:pretty}
+.h1 em{font-style:italic;font-weight:400;color:var(--gold-text)}
+.h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,1.6rem + 1.6vw,48px);line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:pretty}
+.h3{font-size:18px;line-height:1.3;font-weight:500;margin:0}
+.lede{font-size:clamp(17px,1rem + .35vw,20px);line-height:1.5;margin:0;max-width:52ch;text-wrap:pretty}
+.p{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0;max-width:60ch;text-wrap:pretty}
+.p--s{font-size:15px}
+.fine{font-size:14px;line-height:1.6;color:var(--ink-3);margin:0}
+.fine--xs{font-size:12px;color:var(--ink-3)}
+mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:2px 8px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* the action */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:17px 34px;border-radius:6px;border:0;background:var(--cta);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:background 150ms var(--ease),color 150ms var(--ease)}
+.btn:hover{background:var(--cta-hover);color:var(--ink)}
+.btn--form{width:100%}
+.btn--form:hover{background:var(--cta-deep);color:var(--card)}
+.btn__arrow{font-size:20px;line-height:1}
+
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:300;font-size:20px;line-height:1.1;letter-spacing:.09em;text-transform:uppercase;display:block}
+.wordmark__sub{font-size:10px;line-height:1.3;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:2px}
+.tel{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:500;letter-spacing:.06em}
+
+/* hero */
+.hero{position:relative;isolation:isolate;background-color:var(--forest);background-image:url('/img/hero-first-birthday.jpg');background-size:cover;background-position:52% 46%}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(100deg,rgba(11,20,11,.96) 0%,rgba(11,20,11,.9) 40%,rgba(11,20,11,.62) 70%,rgba(11,20,11,.36) 100%)}
+.hero__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;padding-top:clamp(28px,6vw,80px);padding-bottom:clamp(24px,5vw,64px)}
+@media (max-width:759px){.hero .lede{font-size:16px !important;line-height:1.45}.hero__inner .stack{gap:8px}.hero__proof{font-size:13px}}
+.hero .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--gold-text)}
+.hero .h1{color:var(--card)}
+.hero .lede{color:#EFE8D8}
+.hero .btn{box-shadow:0 10px 30px -10px rgba(0,0,0,.55)}
+.hero__proof{font-size:14px;line-height:1.5;color:#EFE8D8;margin:0;max-width:44ch}
+.hero__proof strong{color:var(--card)}
+.hero__proof span{color:#C9C2B4}
+.hero__small{display:none}
+
+/* names */
+.names{background:var(--card);border-bottom:1px solid var(--hair)}
+.names__row{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-top:22px;padding-bottom:22px}
+.names p{font-size:13px;line-height:1.6;margin:0;color:var(--ink-2)}
+.names .k{font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--ink-3);margin-right:10px}
+
+/* images */
+.frame{overflow:hidden;border-radius:4px}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame--32{aspect-ratio:3/2}
+.frame--11{aspect-ratio:1/1}
+.work{display:grid;grid-template-columns:1fr;gap:clamp(12px,2vw,24px)}
+.work figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.work figcaption{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.work figcaption strong{color:var(--ink)}
+
+/* threshold + form */
+.enquiry{background:var(--band);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.enquiry__grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start;padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(40px,6vw,88px)}
+.threshold{background:var(--forest);color:var(--card);border-radius:6px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:12px}
+.threshold .eyebrow{color:var(--gold-text)}
+.threshold__price{font-family:var(--serif);font-weight:400;font-size:clamp(24px,1.2rem + 1vw,32px);line-height:1.2;margin:0;text-wrap:pretty}
+.threshold__price span{color:var(--gold-text);white-space:nowrap}
+.threshold .p{color:#D9D2C4;font-size:15px}
+.form{background:var(--card);border:1px solid var(--hair);border-radius:8px;box-shadow:0 1px 2px rgba(23,16,11,.06),0 14px 40px -20px rgba(23,16,11,.25);padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:18px}
+.row{display:grid;grid-template-columns:1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;line-height:1.3;font-weight:500;color:var(--ink-2)}
+.field label .opt{font-weight:300;color:var(--ink-3)}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:12px 14px;font-family:var(--sans);font-size:16px;line-height:1.5;font-weight:300;color:var(--ink);background:var(--page);border:1px solid var(--field);border-radius:6px;appearance:none;transition:border-color 150ms var(--ease)}
+.field textarea{min-height:88px;line-height:1.6;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cta-deep);outline:2px solid var(--cta-deep);outline-offset:2px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--band);border-radius:6px;cursor:pointer}
+.check input{width:22px;height:22px;margin:1px 0 0;flex:none;cursor:pointer}
+.check span{font-size:15px;line-height:1.5}
+.lander-field__error{font-size:13px;line-height:1.5;color:var(--error)}
+.lander-field__error:not(:empty)::before{content:"! ";font-weight:600}
+.field:has(.lander-field__error:not(:empty)) input,.field:has(.lander-field__error:not(:empty)) select,.field:has(.lander-field__error:not(:empty)) textarea{border-color:var(--error);border-width:2px}
+.form__foot{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+#lander-status{font-size:15px;line-height:1.5;color:var(--ink-2);margin:0}
+#lander-status:empty{display:none}
+
+/* case study */
+.case{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.brief{margin:0;padding:0 0 0 22px;border-left:3px solid var(--cta);display:flex;flex-direction:column;gap:10px}
+.brief p{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(24px,1.2rem + 1vw,32px);line-height:1.25;margin:0;text-wrap:pretty}
+.brief footer{font-size:13px;line-height:1.5;color:var(--ink-3)}
+.spec{margin:0;display:grid;grid-template-columns:repeat(3,auto);gap:8px 32px;justify-content:start}
+.spec>div{display:flex;flex-direction:column;gap:2px}
+.spec dt{font-size:11px;line-height:1.3;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.spec dd{font-size:16px;line-height:1.4;margin:0}
+.quote{margin:0;background:var(--sage-wash);border-radius:8px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:12px}
+.quote p{font-size:clamp(17px,1rem + .35vw,20px);line-height:1.55;margin:0;color:var(--forest);text-wrap:pretty}
+.quote footer{font-size:14px;line-height:1.5;color:var(--ink-2);font-weight:500}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.5vw,16px)}
+.gallery .frame--wide{grid-column:1 / -1}
+
+/* contrast */
+.vs{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px)}
+.vs__col{border-radius:8px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:18px}
+.vs__col--old{background:var(--old);color:var(--old-ink)}
+.vs__col--old .eyebrow{color:var(--old-muted)}
+.vs__col--new{background:var(--forest);color:var(--card);box-shadow:0 20px 50px -24px rgba(16,31,16,.6)}
+.vs__col--new .eyebrow{color:var(--gold-text)}
+.vs ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.45}
+.vs li{display:flex;gap:12px}
+.vs li span{flex:none}
+.vs__col--old li span{color:var(--old-muted)}
+.vs__col--new li span{color:var(--gold-text)}
+
+/* how it works */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,32px)}
+.steps li{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:2px solid var(--cta)}
+.steps .n{font-family:var(--serif);font-size:34px;line-height:1;font-weight:300;color:var(--cta-deep)}
+
+/* includes */
+.incl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:0 32px}
+.incl--1col{grid-template-columns:1fr !important}
+.incl li{padding:14px 0;border-bottom:1px solid var(--hair-2);font-size:16px;line-height:1.5}
+.incl li span{color:var(--ink-3)}
+
+/* faq */
+.faq{margin:0;display:flex;flex-direction:column}
+.faq>div{padding:20px 0;border-top:1px solid var(--hair-2);display:flex;flex-direction:column;gap:8px}
+.faq>div:last-child{border-bottom:1px solid var(--hair-2)}
+.faq dt{font-size:18px;line-height:1.35;font-weight:500;margin:0}
+.faq dd{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0}
+
+/* closing + footer */
+.close{background:var(--forest);color:var(--card)}
+.close__inner{display:flex;flex-direction:column;gap:22px;align-items:flex-start;padding-top:clamp(56px,8vw,120px);padding-bottom:clamp(56px,8vw,120px)}
+.close .h2{color:var(--card);font-size:clamp(34px,1.8rem + 2vw,56px);line-height:1.06;max-width:20ch}
+.close .p{color:#D9D2C4;font-size:17px;line-height:1.55;max-width:52ch}
+.close .fine{color:var(--old-muted)}
+.foot{border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;padding-top:24px;padding-bottom:40px}
+.foot a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:var(--ink-2)}
+.foot a.u{text-decoration:underline;text-underline-offset:3px}
+
+/* two-column grid — the split point */
+.split{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start}
+
+@media (min-width:760px){
+  .work{grid-template-columns:repeat(3,1fr)}
+  .enquiry__grid,.case,.vs,.split{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:1fr 1fr}
+  .row--3{grid-template-columns:1fr 1fr 1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .incl{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1040px){
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .enquiry__grid{grid-template-columns:5fr 7fr}
+  .split{grid-template-columns:5fr 7fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms !important}}
+</style>
 <script>
 (function () {
   // Meta stub. Queues calls exactly as the official snippet does.
@@ -72,269 +269,14 @@
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
 /></noscript>
-
-<style>
-/* ============================================================
-   VIRTUOSO CATERING HOUSE — FIRST BIRTHDAY LANDER
-   Built on the Virtuoso Catering House design system:
-   tokens/colors.css, tokens/spacing.css, tokens/typography.css,
-   components/core/Button.jsx, components/core/Input.jsx.
-   Self-hosted fonts. No external CSS/JS/CDN. No form JS.
-   ============================================================ */
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/cormorant-300.woff2') format('woff2')}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-italic-400.woff2') format('woff2')}
-@font-face{font-family:'Work Sans';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/worksans-300-400-500-600.woff2') format('woff2')}
-
-:root{
-  /* base palette — verbatim from the design system's tokens/colors.css */
-  --green-900:oklch(22% 0.035 145);
-  --green-800:oklch(28% 0.045 145);
-  --green-700:oklch(34% 0.05 145);
-  --green-600:oklch(42% 0.055 145);
-  --sage-500:oklch(58% 0.045 140);
-  --sage-300:oklch(78% 0.03 135);
-  --sage-200:oklch(87% 0.02 130);
-  --amber-700:oklch(52% 0.11 65);
-  --amber-600:oklch(60% 0.12 65);
-  --amber-500:oklch(68% 0.12 68);
-  --amber-300:oklch(84% 0.07 75);
-  --clay-600:oklch(50% 0.08 45);
-  --clay-400:oklch(68% 0.06 48);
-  --parchment-100:oklch(97.5% 0.012 85);
-  --parchment-200:oklch(95% 0.015 82);
-  --parchment-300:oklch(91% 0.018 80);
-  --linen-50:oklch(99% 0.006 85);
-  --ink-900:oklch(18% 0.015 60);
-  --ink-700:oklch(30% 0.015 60);
-  --ink-500:oklch(46% 0.015 60);
-  --ink-300:oklch(66% 0.012 60);
-
-  /* semantic aliases */
-  --surface-page:var(--parchment-100);
-  --surface-card:var(--linen-50);
-  --surface-card-alt:var(--parchment-200);
-  --surface-inverse:var(--green-900);
-  --surface-accent-wash:var(--sage-200);
-  --text-primary:var(--ink-900);
-  --text-secondary:var(--ink-500);
-  --text-muted:var(--ink-300);
-  --text-on-inverse:var(--parchment-100);
-  --text-on-inverse-muted:var(--sage-300);
-  --brand-primary:var(--green-800);
-  --brand-primary-strong:var(--green-900);
-  --brand-secondary:var(--sage-500);
-  --brand-accent:var(--amber-600);
-  --brand-accent-strong:var(--amber-700);
-  --brand-clay:var(--clay-600);
-  --border-hairline:oklch(85% 0.02 80 / 40%);
-  --border-subtle:oklch(75% 0.02 80 / 55%);
-  --border-on-inverse:oklch(97% 0.01 85 / 18%);
-  --shadow-color:oklch(30% 0.03 100 / 12%);
-
-  /* type */
-  --font-display:'Cormorant Garamond',ui-serif,Georgia,serif;
-  --font-body:'Work Sans',ui-sans-serif,system-ui,sans-serif;
-  --text-display-xl:clamp(3rem,2.2rem + 3vw,5.5rem);
-  --text-display-l:clamp(2.25rem,1.9rem + 1.6vw,3.5rem);
-  --text-display-m:clamp(1.75rem,1.55rem + 0.9vw,2.5rem);
-  --text-title:1.375rem;
-  --text-body-l:1.125rem;
-  --text-body:1rem;
-  --text-body-s:0.875rem;
-  --text-label:0.8125rem;
-  --text-caption:0.75rem;
-  --leading-tight:1.08;--leading-snug:1.25;--leading-normal:1.5;--leading-relaxed:1.7;
-  --tracking-tight:-0.01em;--tracking-normal:0em;--tracking-label:0.22em;--tracking-wide:0.08em;
-  --weight-light:300;--weight-regular:400;--weight-medium:500;--weight-semibold:600;
-
-  /* space, radii, shadow, motion */
-  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;
-  --space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
-  --radius-sm:2px;--radius-md:4px;--radius-lg:8px;--radius-pill:999px;
-  --shadow-card:0 1px 2px var(--shadow-color),0 8px 24px -12px var(--shadow-color);
-  --shadow-raised:0 2px 4px var(--shadow-color),0 16px 40px -16px var(--shadow-color);
-  --ease-standard:cubic-bezier(.4,0,.2,1);
-  --duration-fast:150ms;--duration-normal:280ms;
-  --container-max:1160px;
-  --rule-hairline:1px solid var(--border-hairline);
-
-  --pad:clamp(24px,5vw,48px);
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-body);font-weight:var(--weight-light);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,video{display:block;max-width:100%;height:auto}
-a{color:var(--text-primary);text-decoration:none;transition:background var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard)}
-a:hover,a:active{color:var(--brand-accent-strong)}
-:focus-visible{outline:2px solid var(--brand-secondary);outline-offset:2px}
-::selection{background:var(--surface-accent-wash)}
-
-.wrap{max-width:var(--container-max);margin:0 auto;width:100%;padding-left:var(--pad);padding-right:var(--pad)}
-.band{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(48px,7vw,96px)}
-.band--card{background:var(--surface-card);border-top:var(--rule-hairline)}
-.band--inverse{background:var(--surface-inverse);color:var(--text-on-inverse)}
-.stack{display:flex;flex-direction:column}
-.rule{height:1px;width:48px;background:var(--brand-accent)}
-
-/* — type voices — */
-.eyebrow{font-size:var(--text-label);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--brand-accent-strong);margin:0}
-.h1{font-family:var(--font-display);font-weight:var(--weight-light);font-size:var(--text-display-l);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);margin:0;text-wrap:pretty}
-.h1 em{font-style:italic;font-weight:var(--weight-regular);font-size:var(--text-display-m);line-height:var(--leading-snug);color:var(--brand-accent-strong);display:inline-block;margin-top:var(--space-2)}
-.h2{font-family:var(--font-display);font-weight:var(--weight-light);font-size:var(--text-display-m);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);margin:0;text-wrap:pretty}
-.h3{font-family:var(--font-display);font-weight:var(--weight-regular);font-size:var(--text-title);line-height:var(--leading-snug);margin:0}
-.lede{font-size:var(--text-body-l);line-height:var(--leading-normal);color:var(--ink-700);margin:0;max-width:52ch;text-wrap:pretty}
-.p{font-size:var(--text-body);line-height:var(--leading-relaxed);color:var(--text-secondary);margin:0;max-width:60ch;text-wrap:pretty}
-.p--s{font-size:var(--text-body-s)}
-.label{font-size:var(--text-label);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--brand-primary);margin:0}
-.label--sage{color:var(--text-secondary);font-size:var(--text-caption)}
-.micro{font-size:var(--text-caption);line-height:var(--leading-relaxed);font-weight:var(--weight-regular);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary);margin:0}
-.fine{font-size:var(--text-body-s);line-height:var(--leading-relaxed);color:var(--text-secondary);margin:0}
-.fine--muted{color:var(--text-secondary);font-size:var(--text-caption)}
-
-/* HIGHLIGHT — the offer phrase, amber-300 wash (design-system accent tint) */
-mark.hl{background:var(--amber-300);color:var(--ink-900);font-weight:var(--weight-medium);padding:2px 6px;border-radius:var(--radius-sm);-webkit-box-decoration-break:clone;box-decoration-break:clone}
-
-/* — buttons: design system components/core/Button.jsx — */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);font-family:var(--font-body);font-weight:var(--weight-medium);font-size:var(--text-label);letter-spacing:var(--tracking-wide);text-transform:uppercase;padding:14px 28px;min-height:48px;border-radius:var(--radius-pill);border:1px solid transparent;cursor:pointer;transition:background var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard)}
-.btn--primary{background:var(--brand-primary);color:var(--text-on-inverse)}
-.btn--primary:hover{background:var(--brand-primary-strong);color:var(--text-on-inverse)}
-.btn--accent{background:var(--brand-accent);color:var(--ink-900)}
-.btn--accent:hover{background:var(--brand-accent-strong);color:var(--text-on-inverse)}
-.btn--secondary{background:transparent;color:var(--brand-primary);border-color:var(--brand-primary)}
-.btn--secondary:hover{background:var(--surface-accent-wash)}
-/* PRIMARY PAGE ACTION — deliberately the loudest element on the page */
-.btn--hero{font-size:0.9375rem;font-weight:var(--weight-semibold);padding:18px 36px;min-height:56px;box-shadow:var(--shadow-raised)}
-.btn__arrow{font-size:var(--text-body-l);line-height:1}
-@keyframes ctaPulse{
-  0%,100%{box-shadow:var(--shadow-raised),0 0 0 0 oklch(60% 0.12 65 / 45%)}
-  50%{box-shadow:var(--shadow-raised),0 0 0 10px oklch(60% 0.12 65 / 0%)}
-}
-.btn--pulse{animation:ctaPulse 2600ms var(--ease-standard) infinite}
-.btn--pulse:hover{animation:none}
-
-/* — top bar — */
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding-top:var(--space-4);padding-bottom:var(--space-4);border-bottom:var(--rule-hairline)}
-.wordmark{font-family:var(--font-display);font-weight:var(--weight-light);font-size:var(--text-title);line-height:var(--leading-tight);letter-spacing:var(--tracking-wide);text-transform:uppercase;display:block}
-.wordmark__sub{font-size:var(--text-caption);line-height:var(--leading-snug);font-weight:var(--weight-regular);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary);display:block;margin-top:var(--space-1)}
-.tel{display:inline-flex;align-items:center;min-height:44px;font-size:var(--text-label);font-weight:var(--weight-medium);letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--brand-primary)}
-
-/* — hero: overlay (default) — headline sits ON the photograph — */
-.hero-overlay{position:relative;isolation:isolate;background-color:var(--green-900);background-image:url('/img/hero-first-birthday.jpg');background-size:cover;background-position:52% 46%;border-bottom:var(--rule-hairline)}
-/* scrim: guarantees AA contrast for parchment text over the photograph */
-.hero-overlay::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(100deg,oklch(16% 0.03 145 / 94%) 0%,oklch(16% 0.03 145 / 86%) 38%,oklch(16% 0.03 145 / 58%) 68%,oklch(16% 0.03 145 / 34%) 100%)}
-.hero-overlay__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:var(--space-4);padding-top:clamp(48px,8vw,120px);padding-bottom:clamp(48px,8vw,120px)}
-.hero-overlay .eyebrow,.hero-overlay .h1 em{color:var(--amber-300)}
-.hero-overlay .rule{background:var(--amber-300)}
-.hero-overlay .h1{color:var(--text-on-inverse);max-width:22ch}
-.hero-overlay .lede{color:var(--parchment-300);max-width:48ch}
-.hero-overlay .p--s,.hero-overlay .micro{color:var(--text-on-inverse-muted)}
-.hero-overlay .btn--accent{box-shadow:0 2px 4px oklch(16% 0.03 145 / 35%),0 16px 40px -16px oklch(16% 0.03 145 / 45%)}
-.hero-overlay .btn--accent:hover{background:var(--amber-300);color:var(--ink-900)}
-
-/* — hero: split alternative — photograph beside the copy — */
-.hero{display:flex;flex-direction:column;gap:clamp(24px,4vw,48px);align-items:center;padding-top:clamp(24px,5vw,64px);padding-bottom:clamp(32px,5vw,64px)}
-.hero__copy{display:flex;flex-direction:column;gap:var(--space-4)}
-.figure{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
-.ph{background:var(--parchment-300);border:var(--rule-hairline);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.ph span{font-size:var(--text-caption);line-height:var(--leading-relaxed);font-weight:var(--weight-regular);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
-.ph--hero{aspect-ratio:4/5}
-.ph--45{aspect-ratio:4/5}
-.ph--11{aspect-ratio:1/1}
-.ph img,.ph video{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md)}
-
-/* — proof strip — */
-.thumbs{display:grid;grid-template-columns:1fr;gap:clamp(12px,2vw,24px)}
-.thumbs figcaption{font-size:var(--text-label);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-700);margin:0}
-
-/* — form: design system components/core/Input.jsx — */
-.enquiry{display:flex;flex-direction:column;gap:clamp(24px,4vw,64px);padding-top:clamp(32px,6vw,96px);padding-bottom:clamp(32px,6vw,96px)}
-.form{background:var(--surface-card-alt);border:var(--rule-hairline);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:clamp(24px,4vw,32px);display:flex;flex-direction:column;gap:var(--space-5)}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:var(--text-label);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
-.field label .opt{letter-spacing:0;text-transform:none;font-weight:var(--weight-light);color:var(--text-secondary)}
-.field input,.field select,.field textarea{width:100%;min-height:48px;padding:12px 14px;font-family:var(--font-body);font-size:var(--text-body);line-height:var(--leading-normal);font-weight:var(--weight-light);color:var(--text-primary);background:var(--surface-card);border:var(--rule-hairline);border-radius:var(--radius-md);appearance:none;transition:border-color var(--duration-fast) var(--ease-standard)}
-.field textarea{min-height:112px;line-height:var(--leading-relaxed);resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand-secondary);outline:2px solid var(--brand-secondary);outline-offset:2px}
-.lander-field__error{font-size:var(--text-body-s);line-height:var(--leading-normal);color:var(--brand-clay)}
-.lander-field__error:not(:empty)::before{content:"! ";font-weight:var(--weight-semibold)}
-.field:has(.lander-field__error:not(:empty)) input,
-.field:has(.lander-field__error:not(:empty)) select,
-.field:has(.lander-field__error:not(:empty)) textarea{border-color:var(--brand-clay);border-width:2px}
-.form__foot{display:flex;flex-direction:column;gap:var(--space-4);padding-top:var(--space-4);border-top:var(--rule-hairline)}
-.form__foot .btn{align-self:flex-start}
-#lander-status{font-size:var(--text-body);line-height:var(--leading-normal);color:var(--ink-700);margin:0}
-#lander-status:empty{display:none}
-
-/* — process — */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,32px)}
-.steps li{display:flex;flex-direction:column;gap:var(--space-3);background:var(--surface-card);border:var(--rule-hairline);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:var(--space-5)}
-.note{background:var(--surface-accent-wash);border-radius:var(--radius-md);padding:20px 24px;max-width:64ch}
-.note p{font-size:var(--text-body);line-height:var(--leading-relaxed);color:var(--ink-700);margin:0}
-
-/* — case study — */
-.case{display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)}
-.spec{margin:0;display:flex;flex-direction:column;border-top:var(--rule-hairline)}
-.spec>div{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-4) 0;border-bottom:var(--rule-hairline)}
-.spec dt{font-size:var(--text-caption);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
-.spec dd{font-size:var(--text-body);line-height:var(--leading-normal);color:var(--ink-700);margin:0}
-.spec dd.num{font-variant-numeric:tabular-nums}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,2vw,16px);align-content:start}
-.quote{margin:0;background:var(--surface-card-alt);border-radius:var(--radius-md);padding:var(--space-5) 28px;max-width:52ch}
-.quote p{font-family:var(--font-display);font-weight:var(--weight-regular);font-style:italic;font-size:var(--text-title);line-height:var(--leading-snug);color:var(--text-primary);margin:0 0 var(--space-3)}
-.quote footer{font-size:var(--text-caption);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
-
-/* — inclusions — */
-.incl{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px)}
-.incl>div{display:flex;flex-direction:column;gap:var(--space-2);background:var(--surface-card);border:var(--rule-hairline);border-radius:var(--radius-md);padding:20px 24px}
-
-/* — execution pills — */
-.proofs{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--space-2)}
-.proofs li{font-size:var(--text-label);line-height:var(--leading-snug);font-weight:var(--weight-medium);letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--brand-primary);background:var(--surface-card-alt);border:var(--rule-hairline);border-radius:var(--radius-pill);padding:12px 20px}
-
-/* — inverse band + footer — */
-.band--inverse .h2{color:var(--text-on-inverse)}
-.band--inverse .lede,.band--inverse .fine{color:var(--text-on-inverse-muted)}
-.band--inverse .btn--accent:hover{background:var(--amber-300);color:var(--ink-900)}
-.foot{border-top:var(--rule-hairline);display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;padding-top:var(--space-5);padding-bottom:var(--space-7)}
-.foot a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand-primary)}
-
-/* — tablet / desktop — */
-@media (min-width:760px){
-  .hero{flex-direction:row}
-  .hero__copy{flex:1 1 55%}
-  .hero .figure{flex:1 1 45%}
-  .thumbs{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .incl{grid-template-columns:repeat(2,1fr)}
-  .enquiry{flex-direction:row;align-items:flex-start}
-  .enquiry__intro{flex:1 1 40%}
-  .form{flex:1 1 60%}
-  .case__body{display:flex;gap:clamp(24px,4vw,48px)}
-  .case__body .spec{flex:1 1 45%}
-  .case__body .gallery{flex:1 1 55%}
-  .split{display:flex;gap:clamp(24px,4vw,48px);align-items:flex-start}
-  .split>*{flex:1 1 50%}
-}
-@media (min-width:1040px){
-  .steps{grid-template-columns:repeat(4,1fr)}
-  .incl{grid-template-columns:repeat(4,1fr)}
-}
-
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition-duration:.001ms !important;animation:none !important}
-}
-</style>
 </head>
 
 <body>
 
-<!-- 1 — TOP BAR ------------------------------------------------------- -->
+<!-- 01 TOP BAR -->
 <header class="wrap topbar">
-  <!-- Wordmark is deliberately not a link. On a page bought click by click,
-       a logo linking to the homepage is a paid visitor walking away. -->
-  <div aria-label="Virtuoso Catering House">
+  <!-- Not a link: on a paid-traffic page the logo is a side door. Phone stays tappable. -->
+  <div>
     <span class="wordmark">Virtu&#332;so</span>
     <span class="wordmark__sub">Catering House</span>
   </div>
@@ -342,315 +284,256 @@ mark.hl{background:var(--amber-300);color:var(--ink-900);font-weight:var(--weigh
 </header>
 
 <main>
-<!-- 2 — HERO (overlay: headline over the photograph) --------------------
-     To use the SPLIT hero instead (photo beside the copy), delete this
-     <section class="hero-overlay"> block and un-comment the one below it. -->
-<section class="hero-overlay">
-  <div class="wrap hero-overlay__inner">
-    <div class="stack" style="gap:var(--space-2);max-width:34ch">
-      <p class="eyebrow">First birthdays &middot; Delhi NCR</p>
-      <div class="rule"></div>
-    </div>
+<!-- 02 HERO -->
+<section class="hero">
+  <div class="wrap hero__inner">
+    <p class="eyebrow">First birthdays &middot; Delhi NCR &middot; 50 guests or more</p>
     <h1 class="h1">A first birthday should feel like your child&rsquo;s story.<br /><em>Not a menu you&rsquo;ve seen before.</em></h1>
-    <p class="lede">For celebrations of 50 guests or more, Virtuoso brings the menu, live experiences, presentation and service together as <mark class="hl">one personalised F&amp;B experience</mark>.</p>
-    <p class="p p--s" style="max-width:52ch">Begin with a short conversation with our F&amp;B curator. Once the brief and commercial scope are aligned, we create your first personalised direction within 24 hours.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;margin-top:var(--space-2)">
-      <a class="btn btn--accent btn--hero btn--pulse" href="#lander-form">Plan my child&rsquo;s first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+    <div class="stack" style="gap:12px;max-width:54ch">
+      <p class="lede" style="font-size:clamp(16px,.95rem + .3vw,19px)">Virtuoso designs the food experience around the people, the occasion and the way you want the celebration to feel.</p>
+      <p class="lede" style="font-size:clamp(16px,.95rem + .3vw,19px)">From passed canap&eacute;s and live counters to a plated buffet, presentation and dessert - everything is planned as one experience.</p>
+      <p class="lede" style="color:var(--card)">So <mark class="hl">the food becomes the party</mark>, not simply the meal at it.</p>
     </div>
-    <p class="micro">Real event concepts &middot; Professional execution &middot; Tasting-led finalisation</p>
-  </div>
-</section>
-
-<!-- ALTERNATIVE HERO — photograph beside the copy. Un-comment to use.
-<section class="wrap hero">
-  <div class="hero__copy">
-    <div class="stack" style="gap:var(––space-2)">
-      <p class="eyebrow">First birthdays &middot; Delhi NCR</p>
-      <div class="rule"></div>
-    </div>
-    <h1 class="h1">A first birthday should feel like your child&rsquo;s story.<br /><em>Not a menu you&rsquo;ve seen before.</em></h1>
-    <p class="lede">For celebrations of 50 guests or more, Virtuoso brings the menu, live experiences, presentation and service together as <mark class="hl">one personalised F&amp;B experience</mark>.</p>
-    <p class="p p––s">Begin with a short conversation with our F&amp;B curator. Once the brief and commercial scope are aligned, we create your first personalised direction within 24 hours.</p>
-    <!–– PRIMARY PAGE ACTION. Amber accent + raised shadow + soft pulse so it reads
-         unmistakably as the thing to click. Remove .btn––pulse for a static CTA. ––>
-    <div style="display:flex;flex-wrap:wrap;gap:var(––space-4);align-items:center;margin-top:var(––space-2)">
-      <a class="btn btn––accent btn––hero btn––pulse" href="#lander-form">Plan my child&rsquo;s first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-    <p class="micro">Real event concepts &middot; Professional execution &middot; Tasting-led finalisation</p>
-  </div>
-
-  <figure class="figure">
-    <div class="ph ph––hero"><img src="/img/hero-first-birthday.jpg" alt="Long brass buffet counter styled with table lamps, fresh flowers and stacked service ware at a Virtuoso event" width="874" height="1100" /></div>
-    <figcaption class="fine">A first-birthday experience planned and executed by Virtuoso Catering House.</figcaption>
-  </figure>
-</section>
--->
-
-<!-- 3 — ENQUIRY FORM -------------------------------------------------- -->
-<section class="wrap enquiry" id="enquiry">
-  <div class="enquiry__intro stack" style="gap:var(--space-4)">
-    <div class="stack" style="gap:var(--space-2)">
-      <p class="eyebrow">Start the conversation</p>
-      <div class="rule"></div>
-    </div>
-    <h2 class="h2">Tell us about the first birthday.</h2>
-    <p class="p" style="max-width:46ch">Share the essentials below. A Virtuoso F&amp;B curator will call to understand your celebration, show relevant work and explain how we would approach it.</p>
-  </div>
-
-  <!-- POST route: replace with the existing Express route, e.g. action="/enquiry" -->
-  <form class="form" id="lander-form" method="post" action="/lp/first-birthday">
-    <!-- This app has no CSRF middleware. If one is added later, render a
-         hidden _csrf input here (EJS evaluates its tags even inside HTML
-         comments, so the example cannot be left commented out). -->
-
-    <div class="field">
-      <label for="f-name">Name</label>
-      <input id="f-name" name="name" type="text" required autocomplete="name" value="<%= typeof values !== 'undefined' && values.name ? values.name : '' %>" />
-      <span class="lander-field__error" data-error-for="name"><%= typeof errors !== 'undefined' && errors.name ? errors.name : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-phone">Mobile / WhatsApp</label>
-      <input id="f-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" value="<%= typeof values !== 'undefined' && values.phone ? values.phone : '' %>" />
-      <span class="lander-field__error" data-error-for="phone"><%= typeof errors !== 'undefined' && errors.phone ? errors.phone : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-email">Email</label>
-      <input id="f-email" name="email" type="email" required inputmode="email" autocomplete="email" value="<%= typeof values !== 'undefined' && values.email ? values.email : '' %>" />
-      <span class="lander-field__error" data-error-for="email"><%= typeof errors !== 'undefined' && errors.email ? errors.email : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-date">Date of the celebration <span class="opt">(optional)</span></label>
-      <input id="f-date" name="eventDate" type="date" value="<%= typeof values !== 'undefined' && values.eventDate ? values.eventDate : '' %>" />
-      <span class="lander-field__error" data-error-for="eventDate"><%= typeof errors !== 'undefined' && errors.eventDate ? errors.eventDate : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-guests">Approximate guest count</label>
-      <select id="f-guests" name="guestCount" required>
-        <option value=""<%= (typeof values !== 'undefined' && values.guestCount === "") ? ' selected' : '' %>>Select</option>
-        <option value="Under 50"<%= (typeof values !== 'undefined' && values.guestCount === "Under 50") ? ' selected' : '' %>>Under 50</option>
-        <option value="50&ndash;75"<%= (typeof values !== 'undefined' && values.guestCount === "50&ndash;75") ? ' selected' : '' %>>50&ndash;75</option>
-        <option value="76&ndash;100"<%= (typeof values !== 'undefined' && values.guestCount === "76&ndash;100") ? ' selected' : '' %>>76&ndash;100</option>
-        <option value="101&ndash;150"<%= (typeof values !== 'undefined' && values.guestCount === "101&ndash;150") ? ' selected' : '' %>>101&ndash;150</option>
-        <option value="151&ndash;200"<%= (typeof values !== 'undefined' && values.guestCount === "151&ndash;200") ? ' selected' : '' %>>151&ndash;200</option>
-        <option value="201&ndash;250"<%= (typeof values !== 'undefined' && values.guestCount === "201&ndash;250") ? ' selected' : '' %>>201&ndash;250</option>
-        <option value="More than 250"<%= (typeof values !== 'undefined' && values.guestCount === "More than 250") ? ' selected' : '' %>>More than 250</option>
-        <option value="Not finalised yet"<%= (typeof values !== 'undefined' && values.guestCount === "Not finalised yet") ? ' selected' : '' %>>Not finalised yet</option>
-      </select>
-      <span class="lander-field__error" data-error-for="guestCount"><%= typeof errors !== 'undefined' && errors.guestCount ? errors.guestCount : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-locality">Event locality</label>
-      <input id="f-locality" name="eventLocation" type="text" required value="<%= typeof values !== 'undefined' && values.eventLocation ? values.eventLocation : '' %>" />
-      <span class="lander-field__error" data-error-for="eventLocation"><%= typeof errors !== 'undefined' && errors.eventLocation ? errors.eventLocation : '' %></span>
-    </div>
-
-    <div class="field">
-      <label for="f-vision">What are you imagining? <span class="opt">(optional)</span></label>
-      <textarea id="f-vision" name="eventVision" rows="4" placeholder="Tell us about the food, atmosphere, theme or guest experience you have in mind."><%= typeof values !== 'undefined' && values.eventVision ? values.eventVision : '' %></textarea>
-      <span class="lander-field__error" data-error-for="eventVision"><%= typeof errors !== 'undefined' && errors.eventVision ? errors.eventVision : '' %></span>
-    </div>
-
-    <input type="hidden" name="eventType" value="First Birthday" />
-
-    <div class="form__foot">
-      <button class="btn btn--accent btn--hero" id="lander-submit" type="submit">Request my curator call <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
-      <p id="lander-status" role="status" aria-live="polite"><%= typeof status !== 'undefined' ? status : '' %></p>
-      <p class="fine">We primarily design complete first-birthday food experiences for celebrations of 50 guests or more across Delhi NCR.</p>
-      <p class="fine fine--muted">By submitting, you agree that Virtuoso Catering House may contact you about your celebration. Your information will not be shared with third parties.</p>
-    </div>
-  </form>
-</section>
-
-<!-- 4 — COMPACT PROOF ------------------------------------------------- -->
-<section class="band--card" style="border-bottom:var(--rule-hairline)">
-  <div class="wrap stack" style="gap:var(--space-5);padding-top:clamp(32px,5vw,64px);padding-bottom:clamp(32px,5vw,64px)">
-    <div class="stack" style="gap:var(--space-3)">
-      <p class="eyebrow">Real first-birthday work</p>
-      <p class="lede">See how Virtuoso brings the menu, presentation, live experiences and service together as one coordinated celebration.</p>
-    </div>
-    <div class="thumbs">
-      <figure class="figure" style="gap:var(--space-2)">
-        <div class="ph ph--45"><img src="/img/proof-setting.jpg" alt="Tasting display of signature dishes on wooden risers with named Virtuoso menu cards, candles and gypsophila" width="665" height="941" /></div>
-        <figcaption>Overall setting</figcaption>
-      </figure>
-      <figure class="figure" style="gap:var(--space-2)">
-        <div class="ph ph--45"><img src="/img/proof-live.jpg" alt="Chef finishing a dish on a live teppan counter, steam rising as the sauce hits the plate" width="613" height="746" /></div>
-        <figcaption>Live food experience</figcaption>
-      </figure>
-      <figure class="figure" style="gap:var(--space-2)">
-        <div class="ph ph--45"><img src="/img/proof-service.jpg" alt="Polished brass serving bowls of pasta and vegetables arranged on a stepped counter with gypsophila" width="613" height="747" /></div>
-        <figcaption>Service detail</figcaption>
-      </figure>
+    <div class="stack" style="gap:14px;align-items:flex-start;margin-top:6px">
+      <a class="btn" href="#lander-form">Plan my child&rsquo;s first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      <p class="hero__proof"><strong>The team trusted for hospitality by Ferrari APAC, Lamborghini, Tesla India and BMW.</strong> <span>One conversation. One written plan within 24 hours.</span></p>
     </div>
   </div>
 </section>
 
-<!-- 5 — HOW THE PROCESS WORKS ----------------------------------------- -->
-<section class="wrap band">
-  <div class="stack" style="gap:clamp(32px,4vw,48px)">
-    <div class="stack" style="gap:var(--space-4)">
-      <div class="stack" style="gap:var(--space-2)">
-        <p class="eyebrow">From brief to celebration</p>
-        <div class="rule"></div>
+<!-- 03 NAMES -->
+<section class="names">
+  <div class="wrap names__row">
+    <p><span class="k">Catering for</span>Ferrari APAC &middot; Lamborghini &middot; Tesla India &middot; BMW &middot; Bath &amp; Body Works</p>
+    <p><span class="k">As seen in</span>Times of India &middot; Economic Times &middot; India Today &middot; News18 &middot; ANI</p>
+    <p><span class="k">Founded by</span>Aarti Sharma and Pallav Goel &middot; FSSAI Licensed</p>
+  </div>
+</section>
+
+<!-- 04 THE WORK -->
+<section class="wrap stack" style="gap:28px;padding-top:clamp(40px,6vw,80px);padding-bottom:clamp(32px,5vw,64px)">
+  <h2 class="h2" style="max-width:24ch">This is what a Virtuoso first birthday looks like.</h2>
+  <div class="work">
+    <figure>
+      <div class="frame frame--32"><img loading="lazy" src="/img/proof-setting.jpg" alt="Grazing display and food styling at a first-birthday celebration" width="613" height="765" /></div>
+      <figcaption><strong>The table.</strong> Grazing displays and food styling designed for guests to discover, share and linger around.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame frame--32"><img loading="lazy" src="/img/proof-live.jpg" alt="Live wood-fired pizza station plating for guests" width="613" height="765" /></div>
+      <figcaption><strong>The live experience.</strong> Food finished in front of your guests - chosen as much for the moment it creates as for the dish itself.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame frame--32"><img loading="lazy" src="/img/proof-service.jpg" alt="Virtuoso-branded tray of individually plated canap&eacute;s" width="613" height="747" /></div>
+      <figcaption><strong>The service.</strong> Canap&eacute;s are passed, live counters are attended and mains are plated for your guests - so dinner never becomes a buffet queue.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 05 THRESHOLD + FORM -->
+<section class="enquiry" id="enquiry">
+  <div class="wrap enquiry__grid">
+    <div class="stack" style="gap:22px">
+      <h2 class="h2">Tell us about the celebration.</h2>
+      <div class="threshold">
+        <p class="eyebrow">Before you write to us</p>
+        <p class="threshold__price">First-birthday experiences begin at <span>&#8377;3,500 per guest</span>.</p>
+        <p class="p">Our work is designed for celebrations of 50 guests or more where the menu, presentation and service are planned together as one experience.</p>
       </div>
-      <h2 class="h2" style="max-width:20ch">A considered process, before anything reaches the table.</h2>
+      <p class="p" style="max-width:44ch">Share the essentials. <strong>One person from Virtuoso will call you once</strong> to understand your family, the venue and how you want the evening to feel. No chasing. No repeated sales calls.</p>
     </div>
 
-    <ol class="steps">
-      <li>
-        <span class="label label--sage">Step 01</span>
-        <h3 class="h3">Tell us what you are planning</h3>
-        <p class="p">Share the date, approximate guest count, locality and the kind of celebration you have in mind.</p>
-      </li>
-      <li>
-        <span class="label label--sage">Step 02</span>
-        <h3 class="h3">Speak with an F&amp;B curator</h3>
-        <p class="p">We understand the family, food preferences, venue, service expectations and the experience you want your guests to have.</p>
-      </li>
-      <li>
-        <span class="label label--sage">Step 03</span>
-        <h3 class="h3">Receive a personalised direction</h3>
-        <p class="p">Once the brief and commercial scope are aligned, we develop the initial F&amp;B concept within 24 hours.</p>
-      </li>
-      <li>
-        <span class="label label--sage">Step 04</span>
-        <h3 class="h3">Taste, refine and confirm</h3>
-        <p class="p">Selected dishes are tasted, details are refined and the final experience is prepared for execution.</p>
-      </li>
-    </ol>
-
-    <div class="note">
-      <p>The 24-hour period begins after the brief and commercial scope are aligned in step 03 &mdash; not at form submission.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 6 — REAL FIRST-BIRTHDAY CASE STUDY -------------------------------- -->
-<section class="band band--card">
-  <div class="wrap case">
-    <div class="stack" style="gap:var(--space-4)">
-      <div class="stack" style="gap:var(--space-2)">
-        <p class="eyebrow">Proof of work</p>
-        <div class="rule"></div>
-      </div>
-      <h2 class="h2" style="max-width:20ch">From a family&rsquo;s idea to a complete F&amp;B experience.</h2>
-    </div>
-
-    <div class="case__body">
-      <dl class="spec">
-        <div><dt>Event</dt><dd>Shauryas First Birthday</dd></div>
-        <div><dt>Location</dt><dd>Noida</dd></div>
-        <div><dt>Guest count</dt><dd class="num">200</dd></div>
-        <div><dt>Family brief</dt><dd>Give us a perfect evening of snacks &amp; Live,, no buffet. We also want an elaborate grazing table where guests can be mingle with the drinks</dd></div>
-      </dl>
-
-      <div class="gallery">
-        <div class="ph ph--45"><img src="/img/case-setting.jpg" alt="Wider view of the celebration setting with themed food counters" width="600" height="751" /></div>
-        <div class="ph ph--45"><img src="/img/case-presentation.jpg" alt="Elephant-themed cupcake made for a first birthday" width="405" height="746" /></div>
-        <div class="ph ph--45"><img src="/img/case-counter.jpg" alt="Live pizza counter with printed menu signage" width="613" height="747" /></div>
-        <div class="ph ph--45"><img src="/img/case-dessert.jpg" alt="Pastel dessert display with individual servings" width="613" height="765" /></div>
-      </div>
-    </div>
-
-    <blockquote class="quote">
-      <p>&ldquo;A big thanks to team virtuoso for creating the perfect food experience for Shauryas first birthday. No one could have done it better&rdquo;</p>
-      <footer>Parnika &amp; Akash</footer>
-    </blockquote>
-  </div>
-</section>
-
-<!-- 7 — WHAT THE PERSONALISED CONCEPT CAN INCLUDE ---------------------- -->
-<section class="wrap band">
-  <div class="stack" style="gap:clamp(32px,4vw,48px)">
-    <div class="stack" style="gap:var(--space-4)">
-      <div class="stack" style="gap:var(--space-2)">
-        <p class="eyebrow">One cohesive direction</p>
-        <div class="rule"></div>
-      </div>
-      <h2 class="h2" style="max-width:18ch">Not separate dishes. One complete experience.</h2>
-    </div>
-    <div class="incl">
-      <div><h3 class="label">Event narrative</h3><p class="p">A central idea that connects the child, family and occasion.</p></div>
-      <div><h3 class="label">Menu architecture</h3><p class="p">A considered progression of canap&eacute;s, live experiences, mains and desserts.</p></div>
-      <div><h3 class="label">Live experiences</h3><p class="p">Food moments designed to encourage interaction and become part of the celebration.</p></div>
-      <div><h3 class="label">Presentation direction</h3><p class="p">A visual language for the food, displays, counters and service elements.</p></div>
-      <div><h3 class="label">Counter styling</h3><p class="p">Materials, forms and presentation details that support the event concept.</p></div>
-      <div><h3 class="label">Service style</h3><p class="p">A service approach designed around the venue, guest flow and atmosphere.</p></div>
-      <div><h3 class="label">Dessert experience</h3><p class="p">A finale that feels part of the story rather than an afterthought.</p></div>
-      <div><h3 class="label">Bar</h3><p class="p">Available as an additional curated service where required.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 8 — PROFESSIONAL EXECUTION ---------------------------------------- -->
-<section class="band band--card" style="border-bottom:var(--rule-hairline)">
-  <div class="wrap split">
-    <div class="stack" style="gap:var(--space-5)">
-      <div class="stack" style="gap:var(--space-4)">
-        <div class="stack" style="gap:var(--space-2)">
-          <p class="eyebrow">The idea is only the beginning</p>
-          <div class="rule"></div>
+    <form class="form" id="lander-form" method="post" action="/lp/first-birthday">
+      <%# If the app uses CSRF, render a hidden _csrf input here. %>
+      <div class="row">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" value="<%= typeof values !== 'undefined' && values.name ? values.name : '' %>" />
+          <span class="lander-field__error" data-error-for="name"><%= typeof errors !== 'undefined' && errors.name ? errors.name : '' %></span>
         </div>
-        <h2 class="h2">Designed thoughtfully. Executed professionally.</h2>
+        <div class="field">
+          <label for="f-phone">Mobile / WhatsApp</label>
+          <input id="f-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" value="<%= typeof values !== 'undefined' && values.phone ? values.phone : '' %>" />
+          <span class="lander-field__error" data-error-for="phone"><%= typeof errors !== 'undefined' && errors.phone ? errors.phone : '' %></span>
+        </div>
       </div>
-      <p class="lede">A beautiful concept only matters when the service, kitchen, presentation and guest experience work together on the day. Virtuoso plans the food and its execution as one coordinated responsibility.</p>
-      <!-- Keep these three only while they remain operationally true. -->
-      <ul class="proofs">
-        <li>Chef-led preparation</li>
-        <li>Planned service execution</li>
-        <li>Tasting-led finalisation</li>
-      </ul>
+      <div class="row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required inputmode="email" autocomplete="email" value="<%= typeof values !== 'undefined' && values.email ? values.email : '' %>" />
+          <span class="lander-field__error" data-error-for="email"><%= typeof errors !== 'undefined' && errors.email ? errors.email : '' %></span>
+        </div>
+        <div class="field">
+          <label for="f-date">Date <span class="opt">(if known)</span></label>
+          <input id="f-date" name="eventDate" type="date" value="<%= typeof values !== 'undefined' && values.eventDate ? values.eventDate : '' %>" />
+          <span class="lander-field__error" data-error-for="eventDate"><%= typeof errors !== 'undefined' && errors.eventDate ? errors.eventDate : '' %></span>
+        </div>
+        <div class="field">
+          <label for="f-guests">Guests</label>
+          <select id="f-guests" name="guestCount" required>
+            <option value=""<%= (typeof values !== 'undefined' && values.guestCount === "") ? ' selected' : '' %>>Select</option>
+            <option value="50&ndash;75"<%= (typeof values !== 'undefined' && values.guestCount === "50&ndash;75") ? ' selected' : '' %>>50&ndash;75</option>
+            <option value="76&ndash;100"<%= (typeof values !== 'undefined' && values.guestCount === "76&ndash;100") ? ' selected' : '' %>>76&ndash;100</option>
+            <option value="101&ndash;150"<%= (typeof values !== 'undefined' && values.guestCount === "101&ndash;150") ? ' selected' : '' %>>101&ndash;150</option>
+            <option value="151&ndash;200"<%= (typeof values !== 'undefined' && values.guestCount === "151&ndash;200") ? ' selected' : '' %>>151&ndash;200</option>
+            <option value="201&ndash;250"<%= (typeof values !== 'undefined' && values.guestCount === "201&ndash;250") ? ' selected' : '' %>>201&ndash;250</option>
+            <option value="More than 250"<%= (typeof values !== 'undefined' && values.guestCount === "More than 250") ? ' selected' : '' %>>More than 250</option>
+            <option value="Not finalised yet"<%= (typeof values !== 'undefined' && values.guestCount === "Not finalised yet") ? ' selected' : '' %>>Not finalised yet</option>
+          </select>
+          <span class="lander-field__error" data-error-for="guestCount"><%= typeof errors !== 'undefined' && errors.guestCount ? errors.guestCount : '' %></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-vision">What are you imagining? <span class="opt">(optional)</span></label>
+        <textarea id="f-vision" name="eventVision" rows="3" placeholder="The food, the atmosphere, the theme - anything you already have in mind."><%= typeof values !== 'undefined' && values.eventVision ? values.eventVision : '' %></textarea>
+        <span class="lander-field__error" data-error-for="eventVision"><%= typeof errors !== 'undefined' && errors.eventVision ? errors.eventVision : '' %></span>
+      </div>
+
+      <!-- THE QUALIFIER — required. Server must reject submissions without budgetConfirmed=yes. -->
+      <label class="check" for="f-threshold">
+        <input id="f-threshold" name="budgetConfirmed" type="checkbox" required value="yes"<%= typeof values !== 'undefined' && values.budgetConfirmed === 'yes' ? ' checked' : '' %> />
+        <span>Our celebration is planned at <strong>&#8377;3,500 per guest or above</strong>.</span>
+      </label>
+      <span class="lander-field__error" data-error-for="budgetConfirmed" style="margin-top:-12px"><%= typeof errors !== 'undefined' && errors.budgetConfirmed ? errors.budgetConfirmed : '' %></span>
+
+      <input type="hidden" name="eventType" value="First Birthday" />
+      <input type="hidden" name="pageVariant" value="v2-proof-first" />
+
+      <div class="form__foot">
+        <button class="btn btn--form" id="lander-submit" type="submit">Plan my child&rsquo;s first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+        <p id="lander-status" role="status" aria-live="polite"><%= typeof status !== 'undefined' ? status : '' %></p>
+        <p class="fine fine--xs" style="text-align:center">By submitting, you agree that Virtuoso Catering House may contact you about your celebration. Your details are not shared.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 06 CASE STUDY -->
+<section class="wrap band stack" style="gap:clamp(28px,4vw,48px)">
+  <div class="stack" style="gap:14px">
+    <p class="eyebrow">A real first birthday, in the family&rsquo;s words</p>
+    <h2 class="h2" style="max-width:22ch">A first birthday for 200 guests in Noida.</h2>
+  </div>
+  <div class="case">
+    <div class="stack" style="gap:28px">
+      <blockquote class="brief">
+        <p style="font-size:clamp(22px,1.1rem + 1vw,30px)">&ldquo;We wanted the evening to feel relaxed - passed bites, live counters and an elaborate grazing table where guests could mingle over drinks, followed by dinner without the usual buffet queue.&rdquo;</p>
+        <footer>The family&rsquo;s brief, before the celebration</footer>
+      </blockquote>
+      <dl class="spec">
+        <div><dt>Event</dt><dd>Shaurya&rsquo;s first birthday</dd></div>
+        <div><dt>Location</dt><dd>Noida</dd></div>
+        <div><dt>Guests</dt><dd style="font-variant-numeric:tabular-nums">200</dd></div>
+      </dl>
+      <blockquote class="quote">
+        <p>&ldquo;A big thanks to team Virtuoso for creating the perfect food experience for Shaurya&rsquo;s first birthday. <strong>No one could have done it better.</strong>&rdquo;</p>
+        <footer>Parnika &amp; Akash &middot; Noida &middot; 200 guests</footer>
+      </blockquote>
     </div>
     <div class="gallery">
-      <div class="ph ph--11"><img src="/img/exec-chefs.jpg" alt="Chef presenting a freshly plated pasta dish" width="597" height="728" /></div>
-      <div class="ph ph--11"><img src="/img/exec-staff.jpg" alt="Uniformed service team lined up before guests arrive" width="675" height="900" /></div>
-      <div class="ph ph--11"><img src="/img/exec-counter.jpg" alt="Live pasta counter being served during an event" width="549" height="669" /></div>
-      <div class="ph ph--11"><img src="/img/exec-guests.jpg" alt="Individually portioned canap&eacute;s ready to be served" width="900" height="536" /></div>
+      <div class="frame frame--32 frame--wide"><img loading="lazy" src="/img/exec-staff.jpg" alt="Uniformed Virtuoso service team lined up before guests arrive" width="675" height="900" style="object-position:50% 40%" /></div>
+      <div class="frame frame--11"><img loading="lazy" src="/img/case-setting.jpg" alt="Wider view of the celebration setting with themed food counters" width="600" height="751" /></div>
+      <div class="frame frame--11"><img loading="lazy" src="/img/case-counter.jpg" alt="Live pizza counter with printed menu signage" width="613" height="747" /></div>
     </div>
   </div>
 </section>
 
-<!-- 9 — TASTING -------------------------------------------------------- -->
+<!-- 07 CONTRAST -->
+<section class="band band--card" style="border-bottom:1px solid var(--hair)">
+  <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
+    <h2 class="h2" style="max-width:24ch">The usual first birthday, or a Virtuoso one.</h2>
+    <div class="vs">
+      <div class="vs__col vs__col--old">
+        <p class="eyebrow">The usual first birthday</p>
+        <ul>
+          <li><span>&mdash;</span>A catering package chosen from a catalogue</li>
+          <li><span>&mdash;</span>Guests moving through a self-service buffet line</li>
+          <li><span>&mdash;</span>Familiar counters repeated from one celebration to another</li>
+          <li><span>&mdash;</span>Dessert added because dessert has to be there</li>
+          <li><span>&mdash;</span>You coordinating caterers while trying to host your own guests</li>
+        </ul>
+      </div>
+      <div class="vs__col vs__col--new">
+        <p class="eyebrow">A Virtuoso first birthday</p>
+        <ul>
+          <li><span>&#10003;</span>A menu written around your family and the occasion</li>
+          <li><span>&#10003;</span>Passed canap&eacute;s and live experiences designed around how guests move through the room</li>
+          <li><span>&#10003;</span>A generous plated buffet, served by attendants rather than self-served</li>
+          <li><span>&#10003;</span>A dessert finale designed as a moment of its own</li>
+          <li><span>&#10003;</span>One person from Virtuoso running the food and service, so you can remain a guest at your own celebration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 HOW IT WORKS -->
+<section class="wrap band stack" style="gap:clamp(28px,4vw,44px)">
+  <div class="stack" style="gap:14px">
+    <p class="eyebrow">How it works</p>
+    <h2 class="h2" style="max-width:22ch">One conversation. One written plan within 24 hours.</h2>
+  </div>
+  <ol class="steps">
+    <li><span class="n">01</span><h3 class="h3">Tell us what you&rsquo;re planning</h3><p class="p p--s">Share the date, approximate guest count, venue and anything you already know about the celebration.</p></li>
+    <li><span class="n">02</span><h3 class="h3">Speak to the person who will plan your food</h3><p class="p p--s">We talk about your family, what you like to eat, the venue and how you want the celebration to feel.</p></li>
+    <li><span class="n">03</span><h3 class="h3">Receive your written plan</h3><p class="p p--s">Within 24 hours, we send the written plan for the celebration - the menu journey, live experiences, service style and presentation.</p></li>
+    <li><span class="n">04</span><h3 class="h3">Taste. Refine. Confirm.</h3><p class="p p--s">You taste the dishes, we make the final refinements and then lock the experience for the day.</p></li>
+  </ol>
+</section>
+
+<!-- 09 ONE PLAN -->
+<section class="band band--card">
+  <div class="wrap split">
+    <div class="stack" style="gap:14px">
+      <h2 class="h2" style="max-width:16ch">One plan. Everything working together.</h2>
+      <p class="p" style="max-width:40ch">Not separate dishes selected from a list. One experience, planned around a single idea.</p>
+    </div>
+    <ul class="incl incl--1col">
+      <li><strong>The culinary idea</strong> <span>&mdash; The family, the child and the celebration translated into one coherent idea for the food.</span></li>
+      <li><strong>The menu journey</strong> <span>&mdash; What begins the evening, what is passed, what guests discover live, when mains open and how dessert closes the celebration.</span></li>
+      <li><strong>Passed canap&eacute;s</strong> <span>&mdash; Bites designed to reach guests wherever they are in the room rather than making them search for food.</span></li>
+      <li><strong>Live experiences</strong> <span>&mdash; Chef-led counters designed around theatre, freshness and interaction.</span></li>
+      <li><strong>Grazing</strong> <span>&mdash; A generous table guests can discover casually while mingling over drinks.</span></li>
+      <li><strong>The plated buffet</strong> <span>&mdash; The abundance and choice of a buffet, with mains plated and served by our attendants instead of guests queuing with plates.</span></li>
+      <li><strong>Presentation &amp; styling</strong> <span>&mdash; How the food, displays, counters, tableware and presentation language come together visually.</span></li>
+      <li><strong>Service choreography</strong> <span>&mdash; How food moves through the room, where attendants are positioned and how each stage of the evening transitions into the next.</span></li>
+      <li><strong>The dessert finale</strong> <span>&mdash; A closing food moment designed as part of the evening, not simply another counter at the back of the room.</span></li>
+      <li><strong>The team on the day</strong> <span>&mdash; Chefs, service staff, counter attendants and one Virtuoso lead responsible for the food and service from start to finish.</span></li>
+      <li><strong>Bar</strong> <span>&mdash; Cocktail and beverage experiences can be added where required.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 FAQ -->
 <section class="wrap band split">
-  <div class="stack" style="gap:var(--space-4)">
-    <div class="stack" style="gap:var(--space-2)">
-      <p class="eyebrow">Before your guests taste it</p>
-      <div class="rule"></div>
-    </div>
-    <h2 class="h2">You experience the direction first.</h2>
-  </div>
-  <p class="lede">Once the concept and commercial framework are agreed, the tasting allows the family to experience selected dishes, discuss refinements and build confidence in the final menu.</p>
+  <h2 class="h2" style="max-width:14ch">Questions families ask.</h2>
+  <dl class="faq">
+    <div><dt>What does the first call involve?</dt><dd>Around twenty minutes with the person who will plan your food. We ask about your family, the venue, what you enjoy eating and how you want the celebration to feel. You also get to understand how we work before deciding whether you would like to go ahead.</dd></div>
+    <div><dt>What is in the 24-hour plan?</dt><dd>A written plan for the celebration covering the culinary idea, menu journey, live experiences, plated buffet, service style and presentation - along with an indicative cost for the guest count discussed. The 24 hours start once we have agreed the size and scale of the celebration on the call, not when you send the form.</dd></div>
+    <div><dt>What do you mean by a plated buffet?</dt><dd>You still have the generosity and variety of a beautifully presented main-course spread. The difference is in the service: our attendants plate the food for your guests instead of guests moving through a self-service buffet line.</dd></div>
+    <div><dt>Do you only do plated buffets?</dt><dd>No. The service style is designed around the celebration. Depending on the venue and brief, the evening may combine passed canap&eacute;s, grazing, live counters, plated buffet service and other formats.</dd></div>
+    <div><dt>Do you do celebrations under 50 guests?</dt><dd>Our first-birthday offering is primarily designed for celebrations of 50 guests or more. For smaller private celebrations, speak to us and we will tell you whether the format is suitable.</dd></div>
+    <div><dt>Will we be chased after we enquire?</dt><dd>No. One person from Virtuoso calls you once. If you would like to continue, you tell us. If not, that is the end of it.</dd></div>
+  </dl>
 </section>
 
-<!-- 10 — BROADER CREDIBILITY ------------------------------------------- -->
-<section class="wrap stack" style="gap:var(--space-5);padding-bottom:clamp(48px,7vw,96px)">
-  <h2 class="h2" style="max-width:26ch">Experience built across intimate celebrations and high-stakes hospitality.</h2>
-</section>
-
-<!-- 11 — CLOSING CTA BAND ---------------------------------------------- -->
-<section class="band--inverse">
-  <div class="wrap stack" style="gap:var(--space-5);align-items:flex-start;padding-top:clamp(56px,8vw,128px);padding-bottom:clamp(56px,8vw,128px)">
-    <h2 class="h2" style="max-width:20ch;font-size:var(--text-display-l)">Begin with the story you want the celebration to tell.</h2>
-    <p class="lede">Share the essentials with our curator. If the occasion fits Virtuoso&rsquo;s scope, we will understand the brief, align the commercial framework and create your first personalised F&amp;B direction within 24 hours.</p>
-    <a class="btn btn--accent btn--hero" href="#lander-form" style="margin-top:var(--space-2)">Discuss my first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-    <!-- Keep this line only if it is operationally true; otherwise delete it. -->
+<!-- 11 CLOSING -->
+<section class="close">
+  <div class="wrap close__inner">
+    <h2 class="h2">Begin with how you want the celebration to feel.</h2>
+    <p class="p">One conversation with the person who will plan your food. A written plan within 24 hours. Then a tasting, before anything is confirmed.</p>
+    <a class="btn" href="#lander-form" style="margin-top:6px">Plan my child&rsquo;s first birthday <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
     <p class="fine">We accept a limited number of private celebrations on each date.</p>
   </div>
 </section>
 </main>
 
-<!-- 12 — FOOTER --------------------------------------------------------- -->
+<!-- 12 FOOTER -->
 <footer class="wrap foot">
-  <span class="wordmark">Virtu&#332;so</span>
+  <span class="wordmark" style="font-size:18px">Virtu&#332;so</span>
   <span class="fine">Sector 61, Noida</span>
-  <a class="fine" href="tel:+918700915463">+91 87009 15463</a>
+  <a href="tel:+918700915463">+91 87009 15463</a>
   <span class="fine">virtuosocatering@gmail.com</span>
-  <a class="fine" href="/privacy-policy">Privacy policy</a>
+  <a class="u" href="/privacy-policy">Privacy policy</a>
 </footer>
 
 </body>

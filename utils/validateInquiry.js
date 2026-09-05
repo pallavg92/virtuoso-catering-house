@@ -46,6 +46,12 @@ function extractFields(body) {
     // whole basis of the curator call, so it must survive to the inbox.
     eventLocation: (body.eventLocation || '').trim(),
     eventVision: (body.eventVision || '').trim(),
+    // First-birthday lander v2 only. budgetConfirmed is the threshold checkbox,
+    // enforced in the route rather than here so the site's other forms are
+    // unaffected. pageVariant labels which version of the lander produced the
+    // enquiry, which is the only way to tell the two apart afterwards.
+    budgetConfirmed: (body.budgetConfirmed || '').trim(),
+    pageVariant: (body.pageVariant || '').trim(),
     // Captured on arrival by public/js/attribution.js. Not validated and never
     // required: it is diagnostic, and a missing value must never block a real
     // enquiry. Trimmed to keep a hostile payload out of the inbox.
