@@ -983,11 +983,21 @@
   margin: var(--space-xl) auto;
 }
 
+/* Article photos show at their own shape, uncropped. This rule used to force a
+   16:9 frame, but the build writes each image's real width and height onto the
+   tag, and that height beat the frame: every photo rendered at its full pixel
+   height at column width, so landscape shots became tall slivers with the sides
+   cut away. A strict 16:9 would have been no better for the portrait shots, which
+   would have lost more than half their height, labels included on the cheese
+   board diagram. Natural shape, capped at 80% of the screen and centred, keeps
+   every photo whole; the width and height attributes still reserve the space. */
 .blog-post__image-break img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  margin-inline: auto;
 }
 
 .blog-post__image-break figcaption {
@@ -1311,4 +1321,85 @@
 .blog-post__image-break--inline {
   max-width: 40rem;
   margin: 0 auto var(--space-md);
+}
+
+/* ==========================================================================
+   Call-to-action buttons
+   A deliberate departure from the house Action (tracked capitals over a brass
+   rule, no fill), approved by Pallav for conversion points: as plain text the
+   calls to action read as dead. This matches the filled amber button already
+   approved on the first-birthday lander, so the site has one filled style,
+   not several. Contrast measured on canvas (13.09.26): ink on amber 6.3:1,
+   ink on the hover amber 5.1:1, forest on parchment 15.9:1.
+   ========================================================================== */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 56px;
+  padding: 1rem 1.75rem;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  /* Labels wrap on a phone; centred and balanced they read as one button
+     rather than a left-aligned paragraph inside a box. */
+  text-align: center;
+  text-wrap: balance;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-premium),
+              color var(--dur-fast) var(--ease-premium),
+              border-color var(--dur-fast) var(--ease-premium);
+}
+
+.cta-button--primary {
+  background: #C9873A;
+  border-color: #C9873A;
+  color: var(--vls-ink);
+}
+
+.cta-button--primary:hover,
+.cta-button--primary:active {
+  background: #B5782F;
+  border-color: #B5782F;
+  color: var(--vls-ink);
+}
+
+.cta-button--secondary {
+  background: transparent;
+  border-color: var(--vls-forest);
+  color: var(--vls-forest);
+}
+
+.cta-button--secondary:hover,
+.cta-button--secondary:active {
+  background: var(--vls-forest);
+  color: var(--vls-parchment);
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--vls-forest);
+  outline-offset: 3px;
+}
+
+.cta-button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* Inside the offer popup the button spans the form, like the fields above it. */
+.cta-button--block {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .blog-post__copy .cta-button {
+    width: 100%;
+  }
 }

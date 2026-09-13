@@ -58,6 +58,18 @@
   bindDismiss(exitPopup);
   bindDismiss(scrollPopup);
 
+  // The guide offer shows once per visit, and search arrivals only see it after
+  // scrolling. A reader who dismissed it, or has not scrolled that far, still
+  // needs a way to ask for it, so any link pointing at the popup opens it.
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest && e.target.closest('a[href="#guide-popup"]');
+    const guidePopup = document.getElementById('guide-popup');
+    if (!trigger || !guidePopup) return;
+    e.preventDefault();
+    open(guidePopup);
+    sessionStorage.setItem(SESSION_KEY_SCROLL, '1');
+  });
+
   window.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     [entryPopup, exitPopup, scrollPopup].forEach((popup) => {
