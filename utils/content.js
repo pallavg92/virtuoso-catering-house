@@ -1370,7 +1370,8 @@ const blogPosts = [
   ,{
     slug: 'indian-diwali-grazing-table',
     url: '/blog/indian-diwali-grazing-table',
-    title: 'How We Build a Diwali Grazing Table',
+    title: 'How to Build a Grazing Table',
+    leadHeading: 'How We Build a Diwali Grazing Table',
     excerpt: 'How Virtuoso builds an Indian Diwali grazing table in six layers, from a bare carved table to a candlelit spread, with a Diwali grazing menu to download.',
     date: '2026-09-13',
     image: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-finished.jpg',

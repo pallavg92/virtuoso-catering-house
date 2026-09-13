@@ -514,7 +514,7 @@ const pages = {
     view: 'blog-post',
     activePage: 'blog',
     bodyClass: 'page-blog-post',
-    title: 'How to Build an Indian Diwali Grazing Table, Step by Step',
+    title: 'How to Build a Grazing Table',
     description: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table').excerpt,
     ogImage: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table').image,
     post: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table'),

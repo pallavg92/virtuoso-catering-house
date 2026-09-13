@@ -42,6 +42,14 @@
   <!-- ARTICLE -->
   <section class="blog-post section section--ivory">
     <div class="container">
+      <%# The hero H1 carries the broad search term; this narrower heading
+          opens the article. Its own wrapper keeps the lead's drop cap on
+          its first paragraph. -%>
+      <% if (post.leadHeading) { %>
+      <div class="blog-post__prose">
+        <h2 class="blog-post__heading reveal-up"><%= post.leadHeading %></h2>
+      </div>
+      <% } %>
       <% if (post.lead) { %>
       <div class="blog-post__prose">
         <% post.lead.forEach(function(paragraph) { %>
