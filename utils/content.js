@@ -1368,6 +1368,121 @@ const blogPosts = [
     }
   }
   ,{
+    slug: 'indian-diwali-grazing-table',
+    url: '/blog/indian-diwali-grazing-table',
+    title: 'How We Build a Diwali Grazing Table',
+    excerpt: 'How Virtuoso builds an Indian Diwali grazing table in six layers, from a bare carved table to a candlelit spread, with a Diwali grazing menu to download.',
+    date: '2026-09-13',
+    image: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-finished.jpg',
+    relatedLink: { path: '/blog/five-cheeses-for-a-cheese-board', label: 'Adding a cheese board to the same table? Start with these five cheeses' },
+    ctaTitle: 'Hosting Diwali<br>for a Crowd?',
+    downloadOffer: {
+      eyebrow: 'Diwali Grazing Menu',
+      title: 'The Indian<br>Grazing Edit',
+      copy: 'Sixteen dishes for an Indian Diwali grazing table, from mini raj kachori built at the table to rasmalai tres leches. Composed by Aarti Sharma, on one printable page.',
+      action: 'Send Me the Menu',
+      asset: 'diwali-grazing-menu',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+    lead: [
+      'When we put together a grazing table for Diwali, we don’t start with the food.',
+      '<strong>We start with a completely bare table.</strong>',
+      'Before deciding what goes onto it, we look at how the table sits in the room, how guests will approach it and how the entire spread will read from a distance.',
+      'Here’s how we build it, layer by layer.'
+    ],
+    sections: [
+      {
+        heading: '1. Start With the Bare Table',
+        paragraphs: [
+          'Choose a table that already has some character — beautiful wood, a carved edge or an interesting finish.',
+          'Instead of hiding it completely, <strong>we let parts of the table remain visible.</strong> It gives our setup warmth and makes it feel like it belongs in the home rather than something that has simply been placed there for an event.',
+          'Placement matters too.',
+          'Ideally, the table should have a backdrop behind it and enough space in front for guests to gather, graze and move away comfortably.'
+        ],
+        image: { src: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-step-1-bare-table.jpg', caption: 'The table on its own: carved sides and a warm wood top, lit only by the room around it.' }
+      },
+      {
+        heading: '2. Add the Festive Layer',
+        paragraphs: [
+          'For Diwali, gold is an easy place to begin.',
+          'But rather than covering the entire table, we use a textured runner — zari, woven metallics or something with a subtle shimmer — and allow some of the wood underneath to remain visible.',
+          'The idea is to make the table feel festive without making it feel overdone.'
+        ],
+        image: { src: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-step-2-festive-runner.jpg', caption: 'The gold runner laid long and falling over both ends, with the carved front of the table left on show.' }
+      },
+      {
+        heading: '3. Bring In the Flowers',
+        paragraphs: [
+          'Flowers go on before the grazing because they help us define the shape of the table.',
+          'We like creating height towards the two ends while keeping the centre relatively open.',
+          'Marigold, rajnigandha, brass and rose petals work beautifully for Diwali. Together, they bring warmth, familiarity and colour without needing too many decorative elements.',
+          'One detail worth remembering is fragrance.',
+          'Strongly scented flowers are best kept towards the ends of the table rather than immediately beside the grazing.'
+        ],
+        image: { src: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-step-3-rajnigandha-rose-petals.jpg', caption: 'Rajnigandha in brass at either end and rose petals in glass along the front, with the centre kept clear for the food.' }
+      },
+      {
+        heading: '4. Build Different Levels',
+        paragraphs: [
+          'This is one of the details that can completely change how a grazing table looks.',
+          'Before anything goes onto the table, <strong>we lay out all our platters, boards, stands and risers while they are still empty.</strong>',
+          'Some pieces stay low towards the front. Others are lifted through the middle, while taller elements sit towards the back.',
+          'We keep adjusting them until the table feels balanced even without any food on it.',
+          'That variation in height creates depth and keeps the table from starting to look like a conventional buffet.',
+          'And while we want abundance, we still leave breathing room.',
+          '<strong>A grazing table should feel generous, not crowded.</strong>'
+        ],
+        image: { src: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-step-4-wooden-platters.jpg', caption: 'Wooden stands and risers set out empty at three heights, with small brass bowls of rose petals between them.' }
+      },
+      {
+        heading: '5. Then Build the Grazing',
+        paragraphs: [
+          'Once the structure is ready, we begin thinking about how guests will actually experience the table.',
+          'What will they naturally reach for first?',
+          'Which elements should sit together?',
+          'Where will people pause?',
+          'Can several guests comfortably graze at the same time without everyone gathering around one spot?',
+          'This is where a grazing table becomes more than a collection of dishes.',
+          '<strong>There should be a natural rhythm to the way someone moves through it.</strong>'
+        ]
+      },
+      {
+        heading: '6. Light It Last',
+        paragraphs: [
+          'Lighting is always the final layer.',
+          'We prefer lots of smaller pockets of warm light rather than a few overpowering sources.',
+          'Diyas towards the front, protected candles further back and taller candle stands around the edges allow the brass, flowers, wood and serveware to catch the light differently across the table.',
+          'And that final layer is what brings everything together.',
+          '<strong>That is when the table begins to feel like Diwali.</strong>'
+        ],
+        image: { src: '/images/blog/diwali-grazing-table/virtuoso-catering-house-diwali-grazing-table-finished.jpg', caption: 'The finished table, lit in layers: small candles along the front, taller ones in glass behind, and every platter filled.' }
+      },
+      {
+        heading: 'What Goes On the Grazing Table?',
+        paragraphs: [
+          'I’ve put together a <strong>Diwali Grazing Menu</strong> with the dishes, accompaniments and combinations we would use to complete a table like this.',
+          '<a href="#guide-popup" class="cta-button cta-button--primary" data-cursor="hover">Download the Diwali Grazing Menu&nbsp;→</a>',
+          'And if you’d rather have us create the entire experience for your Diwali celebration:',
+          '<a href="/contact" class="cta-button cta-button--secondary" data-cursor="hover">Plan Your Diwali Party With Us&nbsp;→</a>',
+          'Tell us a little about your celebration and my team at Virtuoso will get in touch.'
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What is an Indian grazing table?', a: 'An Indian grazing table is a spread of small regional dishes laid out together, so guests help themselves through the evening. Instead of cheese and charcuterie it carries chaat, kachori, crostini with Indian relishes, dips, chutneys and small sweets, served on platters at several heights.' },
+      { q: 'What do you put on a Diwali grazing table?', a: 'Mix dry snacks, chaat, small bites, dips and sweets. Good choices include mini raj kachori, aloo chaat shots, dabeli bites, khaman sandwiches, kasundi mustard dip and rasmalai tres leches. Aarti Sharma’s sixteen-dish menu for this table can be downloaded from this page.' },
+      { q: 'Which flowers work best on a Diwali table?', a: 'Marigold, rajnigandha and rose petals are the classic Diwali choices. Place tall rajnigandha or marigold arrangements at the two ends, since tuberose is strongly scented, and keep rose petals in small glass votives along the front, where they add colour without crowding the food.' },
+      { q: 'Should I use real candles or LED diyas on a grazing table?', a: 'Use both, in different places. LED diyas belong along the front edge, where guests reach across and the runner sits close by. Real candles are best kept in tall glass holders towards the back, where they add warmth and height without being in anyone’s way.' },
+      { q: 'When is Diwali in 2026?', a: 'Diwali falls on Sunday 8 November 2026, with Lakshmi Puja that evening. The five days of the festival begin with Dhanteras on 6 November and end with Bhai Dooj on 10 November, and Diwali gatherings are usually planned around those five days.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company\u2019s experience centre in Sector 61, Noida.'
+    }
+  }
+  ,{
     slug: 'five-cheeses-for-a-cheese-board',
     url: '/blog/five-cheeses-for-a-cheese-board',
     title: 'How to Build a Cheese Board: Five Cheeses and Pairings',

@@ -509,6 +509,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'welcome-drinks-for-guests'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Welcome Drinks for Guests', path: '/blog/welcome-drinks-for-guests' }]
   },
+  blogDiwaliGrazing: {
+    path: '/blog/indian-diwali-grazing-table',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'How to Build an Indian Diwali Grazing Table, Step by Step',
+    description: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table').image,
+    post: content.blogPosts.find((p) => p.slug === 'indian-diwali-grazing-table'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Indian Diwali Grazing Table', path: '/blog/indian-diwali-grazing-table' }]
+  },
   blogCheeseBoard: {
     path: '/blog/five-cheeses-for-a-cheese-board',
     view: 'blog-post',

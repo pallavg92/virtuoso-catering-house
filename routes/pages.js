@@ -70,6 +70,7 @@ router.get('/blog/how-luxury-wedding-caterers-build-custom-menu', (req, res) => 
 router.get('/blog/food-trends-delhi-ncr-weddings-2026', (req, res) => render(res, pages.blogFoodTrends2026));
 router.get('/blog/bmw-civil-lines-launch-catering', (req, res) => render(res, pages.blogBmwCivilLines));
 router.get('/blog/welcome-drinks-for-guests', (req, res) => render(res, pages.blogWelcomeDrinks));
+router.get('/blog/indian-diwali-grazing-table', (req, res) => render(res, pages.blogDiwaliGrazing));
 router.get('/blog/five-cheeses-for-a-cheese-board', (req, res) => render(res, pages.blogCheeseBoard));
 router.get('/blog/best-wedding-caterers-hospitality-before-food', (req, res) => render(res, pages.blogHospitalityBeforeFood));
 router.get('/blog/the-quiet-craft-behind-an-unforgettable-wedding', (req, res) => render(res, pages.blogQuietCraft));

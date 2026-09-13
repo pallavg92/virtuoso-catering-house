@@ -17,6 +17,10 @@ const ASSETS = {
   'welcome-drinks-cards': {
     url: '/downloads/virtuoso-catering-house-welcome-drinks.pdf',
     label: 'Welcome Drinks Cards'
+  },
+  'diwali-grazing-menu': {
+    url: '/downloads/virtuoso-catering-house-diwali-grazing-menu.pdf',
+    label: 'Diwali Grazing Menu'
   }
 };
 
