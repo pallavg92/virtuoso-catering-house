@@ -1397,8 +1397,8 @@ const blogPosts = [
         headingNote: 'Creamy. Subtly earthy.',
         paragraphs: [
           'The quiet one on the table, and often the first bowl to empty.',
-          'Ricotta and Parmesan are whipped until light and airy, then finished with truffle oil, black pepper and a whisper of lemon zest. It sits ivory-white and silky in the bowl, and it reads as luxurious before anyone has tasted it.',
-          'The truffle is there as an aroma, never as the headline. We add it a little at a time and taste as we go, because too much turns an elegant dip into a heavy one.'
+          'It brings a soft, pale calm to the spread and sits beautifully beside the bolder colours around it.',
+          'It is the dip we reach for when a table needs a quiet touch of luxury.'
         ],
         pairing: { label: 'Serve it with', items: 'Crostini, lavash crisps, sourdough' },
         imageFirst: true,
@@ -1409,20 +1409,20 @@ const blogPosts = [
         headingNote: 'Tangy. Vibrant magenta.',
         paragraphs: [
           'This is the visual hero of the five.',
-          'Beetroot is roasted whole in its skin until a knife slides through, then blended with feta, Greek yogurt, olive oil, cumin and a squeeze of lemon. Roasting draws out a gentle sweetness, and the feta gives it a tang that keeps it bright.',
-          'The colour does the talking, so the garnish stays restrained: a little crumbled feta, chopped pistachio, fresh dill and a thread of olive oil.'
+          'Its colour draws the eye from across the room and gives the whole table a festive lift.',
+          'The colour does the talking, so we let it lead and keep everything around it understated.'
         ],
         pairing: { label: 'Serve it with', items: 'Crudités, crackers, pita' },
         imageFirst: true,
-        image: { src: '/images/blog/five-dips/virtuoso-catering-house-roasted-beetroot-whipped-feta-dip.jpg', caption: 'Roasted beetroot and whipped feta, garnished with feta, pistachio and fresh herbs.' }
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-roasted-beetroot-whipped-feta-dip.jpg', caption: 'Roasted beetroot and whipped feta, served in a scalloped bowl.' }
       },
       {
         heading: '3. Charred Pepper, Walnut & Smoked Paprika Dip',
         headingNote: 'Smoky. Deep ruby red.',
         paragraphs: [
           'Our more refined take on muhammara, the red pepper and walnut dip of the Levant.',
-          'Red peppers are charred until the skins blister, then blended with toasted walnuts, smoked paprika, tomato paste, pomegranate molasses and lemon. It is smoky, nutty and mildly sweet, with a little warmth from chilli flakes.',
-          'We stop blending before it turns smooth. The walnuts should still give it some bite, and that texture is what makes it feel substantial on a grazing table.'
+          'It adds warmth and depth to the table, and holds its own beside the creamier dips.',
+          'It is the one guests come back to with a second cracker.'
         ],
         pairing: { label: 'Serve it with', items: 'Pita crisps, lavash' },
         imageFirst: true,
@@ -1433,8 +1433,8 @@ const blogPosts = [
         headingNote: 'Fresh. Garden green.',
         paragraphs: [
           'The freshest bowl on the table, and the one that makes the colours around it glow.',
-          'Edamame is blanched for two to three minutes and plunged straight into ice water to hold its colour, then blended with basil, garlic, Greek yogurt, olive oil and lemon. Ice-cold water goes in a spoonful at a time until the dip turns silky.',
-          'It stays cold until the moment it is served. Warmth dulls the green, and the green is what guests notice first.'
+          'Its colour brings freshness to the spread, and it feels just right on a warm afternoon.',
+          'It suits a light daytime gathering as well as it does an evening grazing table.'
         ],
         pairing: { label: 'Serve it with', items: 'Rice crackers, crudités, lavash' },
         imageFirst: true,
@@ -1445,8 +1445,8 @@ const blogPosts = [
         headingNote: 'Sweet. Deeply savoury.',
         paragraphs: [
           'The richest of the five, and the one that rewards patience.',
-          'Onions are cooked slowly in butter for the better part of half an hour until deeply golden, finished with balsamic, then folded through whipped cream cheese, Greek yogurt and blue cheese with fresh thyme. It is sweet, savoury and tangy at once.',
-          'There is no shortcut to the onions. High heat browns them without building the sweetness, and the sweetness is the whole dip.'
+          'It brings a comforting richness to the table and balances the fresher dips beside it.',
+          'A small bowl goes a long way, and it is often the one guests ask about.'
         ],
         pairing: { label: 'Serve it with', items: 'Seeded crackers, toasted baguette, sourdough crostini, and slices of pear or apple' },
         imageFirst: true,
@@ -1500,9 +1500,9 @@ const blogPosts = [
     ],
     faq: [
       { q: 'What dips go on a grazing table?', a: 'Choose dips that differ in colour, texture and flavour. Our five are truffle and Parmesan whipped ricotta, roasted beetroot with whipped feta, charred pepper and walnut, edamame with basil and lemon, and caramelised onion with blue cheese. Together they put ivory, magenta, ruby, green and gold on one table.' },
-      { q: 'How much truffle oil goes in whipped ricotta?', a: 'Start with 1 teaspoon of truffle oil for 250 g of ricotta and 40 g of Parmesan, taste, and add up to a second teaspoon only if it needs it. Truffle oil is powerful, and the aim is a subtle earthy aroma rather than a strong truffle flavour.' },
-      { q: 'How do you keep edamame dip bright green?', a: 'Blanch the edamame for 2 to 3 minutes in lightly salted boiling water, then move it straight into ice-cold water to stop the cooking. Loosen the blended dip with ice-cold water, a tablespoon at a time, and keep it refrigerated until the moment it is served.' },
-      { q: 'What is charred pepper and walnut dip?', a: 'It is a dip of charred red peppers, toasted walnuts, smoked paprika, tomato paste, pomegranate molasses and lemon, closely related to muhammara from the Levant. It is smoky, nutty and mildly sweet, and it is best pulsed rather than puréed, so the walnuts keep some texture.' },
+      { q: 'How much truffle oil goes in whipped ricotta?', a: 'Use truffle oil sparingly and build it up a little at a time, tasting as you go. It is powerful, and the aim is a subtle earthy aroma rather than a strong truffle flavour. The exact quantities for our truffle and Parmesan whipped ricotta are in the downloadable recipes on this page.' },
+      { q: 'How do you keep edamame dip bright green?', a: 'Keep it cold. Warmth is what dulls the green, so the dip should stay refrigerated and reach the table at the last moment. The full method we use to hold its bright colour, from the edamame itself to the finished dip, is in the downloadable recipes on this page.' },
+      { q: 'What is charred pepper and walnut dip?', a: 'It is a smoky, nutty and mildly sweet dip of red peppers and walnuts, closely related to muhammara from the Levant. It is deep ruby red with a slightly coarse, spoonable texture, and it pairs well with pita crisps and lavash. Our full recipe is in the download on this page.' },
       { q: 'What do you serve with a blue cheese dip?', a: 'Serve caramelised onion and blue cheese dip with seeded crackers, toasted baguette or sourdough crostini, and add slices of pear or apple. The sweetness and acidity of the fruit cut through the richness of the blue cheese and the caramelised onion.' }
     ],
     author: {

@@ -123,7 +123,12 @@ router.post('/guide-download', async (req, res) => {
       eventDate: '',
       guestCount: '',
       eventLocation: '',
-      eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. Sheet was unavailable, so this is the only copy of this contact.`,
+      // The reason goes into the email because the server log is on Hostinger,
+      // out of reach, and an inbox full of fallbacks with no cause attached
+      // gives nothing to fix. "not configured" means SHEET_WEBHOOK_URL is
+      // missing from the environment; "fetch is not defined" means Node is
+      // older than 18; a timeout or http code points at Google or the network.
+      eventVision: `Downloaded "${asset.label}" from ${fields.page || 'the Journal'}. Sheet was unavailable (reason: ${result.reason}), so this is the only copy of this contact. Node ${process.version}.`,
       attribution: fields.attribution
     });
   }).catch((err) => {
