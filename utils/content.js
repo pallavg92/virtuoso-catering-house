@@ -1368,6 +1368,150 @@ const blogPosts = [
     }
   }
   ,{
+    slug: 'dips-for-a-grazing-table',
+    url: '/blog/dips-for-a-grazing-table',
+    title: 'Five Dips for a Grazing Table',
+    excerpt: 'Five dips we build for grazing tables: truffle whipped ricotta, beetroot and feta, charred pepper and walnut, edamame and basil, and caramelised onion with blue cheese.',
+    date: '2026-09-17',
+    image: '/images/blog/five-dips/virtuoso-catering-house-roasted-beetroot-whipped-feta-dip.jpg',
+    relatedLink: { path: '/blog/indian-diwali-grazing-table', label: 'Building the whole table? See how we lay out a grazing table, layer by layer' },
+    ctaTitle: 'Planning a Grazing<br>Table for Your Event?',
+    downloadOffer: {
+      eyebrow: 'The Five Recipes',
+      title: 'Every Dip,<br>Step by Step',
+      copy: 'All five recipes, each on its own page: ingredients, garnish, the method in order and the chef’s note that keeps it right. Composed by Aarti Sharma, ready to print.',
+      action: 'Send Me the Recipes',
+      asset: 'five-dips-recipes',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+    lead: [
+      'Five dips we build for grazing tables at Virtuoso: truffle and Parmesan whipped ricotta, roasted beetroot with whipped feta, charred pepper and walnut, edamame with basil and lemon, and caramelised onion with blue cheese. Each brings its own colour, texture and flavour, so together they read as one considered table rather than five bowls.',
+      'A grazing table is judged from across the room before anyone tastes a thing.',
+      'That is why we choose dips the way we choose flowers: for colour first. Ivory, magenta, ruby, green and gold, set side by side.',
+      'Below is what each one brings to the table and what to serve it with. The full recipes, with every quantity and every step, are in the download.'
+    ],
+    sections: [
+      {
+        heading: '1. Truffle & Parmesan Whipped Ricotta',
+        headingNote: 'Creamy. Subtly earthy.',
+        paragraphs: [
+          'The quiet one on the table, and often the first bowl to empty.',
+          'Ricotta and Parmesan are whipped until light and airy, then finished with truffle oil, black pepper and a whisper of lemon zest. It sits ivory-white and silky in the bowl, and it reads as luxurious before anyone has tasted it.',
+          'The truffle is there as an aroma, never as the headline. We add it a little at a time and taste as we go, because too much turns an elegant dip into a heavy one.'
+        ],
+        pairing: { label: 'Serve it with', items: 'Crostini, lavash crisps, sourdough' },
+        imageFirst: true,
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-truffle-parmesan-whipped-ricotta-dip.jpg', caption: 'Truffle and Parmesan whipped ricotta, finished with Parmesan, truffle and cracked black pepper.' }
+      },
+      {
+        heading: '2. Roasted Beetroot & Whipped Feta',
+        headingNote: 'Tangy. Vibrant magenta.',
+        paragraphs: [
+          'This is the visual hero of the five.',
+          'Beetroot is roasted whole in its skin until a knife slides through, then blended with feta, Greek yogurt, olive oil, cumin and a squeeze of lemon. Roasting draws out a gentle sweetness, and the feta gives it a tang that keeps it bright.',
+          'The colour does the talking, so the garnish stays restrained: a little crumbled feta, chopped pistachio, fresh dill and a thread of olive oil.'
+        ],
+        pairing: { label: 'Serve it with', items: 'Crudités, crackers, pita' },
+        imageFirst: true,
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-roasted-beetroot-whipped-feta-dip.jpg', caption: 'Roasted beetroot and whipped feta, garnished with feta, pistachio and fresh herbs.' }
+      },
+      {
+        heading: '3. Charred Pepper, Walnut & Smoked Paprika Dip',
+        headingNote: 'Smoky. Deep ruby red.',
+        paragraphs: [
+          'Our more refined take on muhammara, the red pepper and walnut dip of the Levant.',
+          'Red peppers are charred until the skins blister, then blended with toasted walnuts, smoked paprika, tomato paste, pomegranate molasses and lemon. It is smoky, nutty and mildly sweet, with a little warmth from chilli flakes.',
+          'We stop blending before it turns smooth. The walnuts should still give it some bite, and that texture is what makes it feel substantial on a grazing table.'
+        ],
+        pairing: { label: 'Serve it with', items: 'Pita crisps, lavash' },
+        imageFirst: true,
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-charred-pepper-walnut-smoked-paprika-dip.jpg', caption: 'Charred pepper, walnut and smoked paprika dip, topped with toasted walnuts.' }
+      },
+      {
+        heading: '4. Edamame, Basil & Lemon Silk',
+        headingNote: 'Fresh. Garden green.',
+        paragraphs: [
+          'The freshest bowl on the table, and the one that makes the colours around it glow.',
+          'Edamame is blanched for two to three minutes and plunged straight into ice water to hold its colour, then blended with basil, garlic, Greek yogurt, olive oil and lemon. Ice-cold water goes in a spoonful at a time until the dip turns silky.',
+          'It stays cold until the moment it is served. Warmth dulls the green, and the green is what guests notice first.'
+        ],
+        pairing: { label: 'Serve it with', items: 'Rice crackers, crudités, lavash' },
+        imageFirst: true,
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-edamame-basil-lemon-dip.jpg', caption: 'Edamame, basil and lemon silk, finished with whole edamame and basil leaves.' }
+      },
+      {
+        heading: '5. Caramelised Onion, Blue Cheese & Thyme Cream',
+        headingNote: 'Sweet. Deeply savoury.',
+        paragraphs: [
+          'The richest of the five, and the one that rewards patience.',
+          'Onions are cooked slowly in butter for the better part of half an hour until deeply golden, finished with balsamic, then folded through whipped cream cheese, Greek yogurt and blue cheese with fresh thyme. It is sweet, savoury and tangy at once.',
+          'There is no shortcut to the onions. High heat browns them without building the sweetness, and the sweetness is the whole dip.'
+        ],
+        pairing: { label: 'Serve it with', items: 'Seeded crackers, toasted baguette, sourdough crostini, and slices of pear or apple' },
+        imageFirst: true,
+        image: { src: '/images/blog/five-dips/virtuoso-catering-house-caramelised-onion-blue-cheese-thyme-dip.jpg', caption: 'Caramelised onion, blue cheese and thyme cream, finished with thyme and black pepper.' }
+      },
+      {
+        heading: 'Setting Five Dips on One Table',
+        paragraphs: [
+          'Five dips on a table can look generous or crowded. The difference is in how they are placed.',
+          'Alternate the colours. Put the magenta beetroot beside the pale ricotta and the green edamame beside the ruby pepper, so each bowl makes the one next to it look brighter.',
+          'Give every dip its own partner. Set the crackers, crisps or bread that suit each one directly beside its bowl, so guests find the right pairing without being told.',
+          'Chill all five, and garnish last. Every one of these dips settles and firms in the refrigerator, and a garnish added at the final moment is the one that still looks fresh when guests arrive.'
+        ],
+        pairing: { label: 'Chef’s note', items: 'Put pear and apple slices beside the blue cheese dip. The fruit cuts through its richness better than any cracker.' }
+      },
+      {
+        heading: 'The Five at a Glance',
+        paragraphs: [],
+        table: {
+          head: ['Dip', 'Flavour', 'Colour on the table', 'Serve with'],
+          rows: [
+            ['Truffle Whipped Ricotta', 'Creamy, subtly earthy', 'Ivory white', 'Crostini, sourdough'],
+            ['Beetroot & Whipped Feta', 'Tangy, slightly sweet', 'Vibrant magenta', 'Crudités, pita'],
+            ['Charred Pepper & Walnut', 'Smoky, nutty', 'Deep ruby red', 'Pita crisps, lavash'],
+            ['Edamame, Basil & Lemon', 'Fresh, herbaceous', 'Garden green', 'Rice crackers, crudités'],
+            ['Caramelised Onion & Blue Cheese', 'Sweet, savoury, umami', 'Beige with golden flecks', 'Seeded crackers, pear']
+          ]
+        }
+      },
+      {
+        heading: 'Get All Five Recipes',
+        paragraphs: [
+          'The quantities, garnishes and every step of the method for all five dips are in one printable set, with the chef’s note for each.',
+          '<a href="#guide-popup" class="cta-button cta-button--primary" data-cursor="hover">Download the Five Dip Recipes&nbsp;→</a>',
+          'And if you would rather we built the whole grazing table for your event, tell us a little about it and my team at Virtuoso will get in touch.',
+          '<a href="/contact" class="cta-button cta-button--secondary" data-cursor="hover">Plan Your Grazing Table With Us&nbsp;→</a>'
+        ]
+      },
+      {
+        heading: 'Beyond the Dips',
+        paragraphs: [
+          'Dips are one part of a grazing table. When we design grazing tables for weddings, launches and private events across Delhi NCR, the dips are chosen alongside everything else on it: the breads, the cheeses, the small bites and the setting itself.',
+          'We work from our kitchen and experience centre in Sector 61, Noida, and every table is built for the specific event rather than pulled from a list.'
+        ],
+        links: [
+          { path: '/blog/five-cheeses-for-a-cheese-board', label: 'Five cheeses for the board beside them' },
+          { path: '/wedding-caterers-in-noida', label: 'Wedding catering in Noida' },
+          { path: '/luxury-brand-event-catering-delhi-ncr', label: 'Brand and launch catering in Delhi NCR' }
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What dips go on a grazing table?', a: 'Choose dips that differ in colour, texture and flavour. Our five are truffle and Parmesan whipped ricotta, roasted beetroot with whipped feta, charred pepper and walnut, edamame with basil and lemon, and caramelised onion with blue cheese. Together they put ivory, magenta, ruby, green and gold on one table.' },
+      { q: 'How much truffle oil goes in whipped ricotta?', a: 'Start with 1 teaspoon of truffle oil for 250 g of ricotta and 40 g of Parmesan, taste, and add up to a second teaspoon only if it needs it. Truffle oil is powerful, and the aim is a subtle earthy aroma rather than a strong truffle flavour.' },
+      { q: 'How do you keep edamame dip bright green?', a: 'Blanch the edamame for 2 to 3 minutes in lightly salted boiling water, then move it straight into ice-cold water to stop the cooking. Loosen the blended dip with ice-cold water, a tablespoon at a time, and keep it refrigerated until the moment it is served.' },
+      { q: 'What is charred pepper and walnut dip?', a: 'It is a dip of charred red peppers, toasted walnuts, smoked paprika, tomato paste, pomegranate molasses and lemon, closely related to muhammara from the Levant. It is smoky, nutty and mildly sweet, and it is best pulsed rather than puréed, so the walnuts keep some texture.' },
+      { q: 'What do you serve with a blue cheese dip?', a: 'Serve caramelised onion and blue cheese dip with seeded crackers, toasted baguette or sourdough crostini, and add slices of pear or apple. The sweetness and acidity of the fruit cut through the richness of the blue cheese and the caramelised onion.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
+    }
+  }
+  ,{
     slug: 'indian-diwali-grazing-table',
     url: '/blog/indian-diwali-grazing-table',
     title: 'How to Build a Grazing Table',

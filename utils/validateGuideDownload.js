@@ -21,6 +21,10 @@ const ASSETS = {
   'diwali-grazing-menu': {
     url: '/downloads/virtuoso-catering-house-diwali-grazing-menu.pdf',
     label: 'Diwali Grazing Menu'
+  },
+  'five-dips-recipes': {
+    url: '/downloads/virtuoso-catering-house-five-dips-recipes.pdf',
+    label: 'Five Dip Recipes'
   }
 };
 

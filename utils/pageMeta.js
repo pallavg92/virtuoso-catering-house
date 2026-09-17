@@ -509,6 +509,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'welcome-drinks-for-guests'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Welcome Drinks for Guests', path: '/blog/welcome-drinks-for-guests' }]
   },
+  blogFiveDips: {
+    path: '/blog/dips-for-a-grazing-table',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Five Dips for a Grazing Table, and What to Serve With Each',
+    description: content.blogPosts.find((p) => p.slug === 'dips-for-a-grazing-table').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'dips-for-a-grazing-table').image,
+    post: content.blogPosts.find((p) => p.slug === 'dips-for-a-grazing-table'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Dips for a Grazing Table', path: '/blog/dips-for-a-grazing-table' }]
+  },
   blogDiwaliGrazing: {
     path: '/blog/indian-diwali-grazing-table',
     view: 'blog-post',
