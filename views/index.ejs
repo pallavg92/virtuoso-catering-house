@@ -17,6 +17,14 @@
   <section class="hero" id="hero">
     <div class="hero__media" data-parallax>
       <img src="<%= heroImage %>" alt="An elegantly plated dish at a candlelit dinner event" loading="eager">
+      <%# The photo above stays the first thing painted. The video lies over it
+          and hero-video.js reveals it once it can play, so a slow connection
+          keeps the photo instead of a black rectangle. The file address is in
+          data-src so nothing downloads for visitors on data saver or reduced
+          motion. -%>
+      <video class="hero__video" data-hero-video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+        <source data-src="/videos/virtuoso-catering-house-grazing-table-hero.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero__scrim"></div>
     <div class="hero__content">
@@ -32,7 +40,7 @@
         <a href="/services" class="btn btn--ghost-light" data-magnetic data-cursor="hover"><span>View Services</span></a>
       </div>
     </div>
-    <span class="hero__credit">Virtuoso for FERRARI ESPERIENZA, 2026, Delhi</span>
+    <span class="hero__credit">Virtuoso Grazing Table, 2026, Delhi</span>
     <div class="hero__scroll-cue" aria-hidden="true">
       <span class="hero__scroll-line"></span>
       <span class="hero__scroll-label">Scroll</span>

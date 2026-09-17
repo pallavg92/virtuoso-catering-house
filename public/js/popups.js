@@ -89,11 +89,24 @@
     !sessionStorage.getItem(SESSION_KEY_ENTRY) &&
     !sessionStorage.getItem(SESSION_KEY_INQUIRY_SENT)
   ) {
-    setTimeout(() => {
+    function showEntry() {
+      if (sessionStorage.getItem(SESSION_KEY_ENTRY)) return;
       if (sessionStorage.getItem(SESSION_KEY_INQUIRY_SENT)) return;
       open(entryPopup);
       sessionStorage.setItem(SESSION_KEY_ENTRY, '1');
-    }, 6000);
+    }
+
+    // Where a hero video plays, the welcome waits until the clip has run
+    // once, so the visitor sees the whole thing before being asked anything.
+    // The timer stays as a backstop: the video may be suppressed for reduced
+    // motion or data saver, or refused autoplay, and the welcome should still
+    // arrive rather than depend on footage that never plays.
+    if (document.querySelector('[data-hero-video]')) {
+      document.addEventListener('vch:hero-video-ended', showEntry, { once: true });
+      setTimeout(showEntry, 12000);
+    } else {
+      setTimeout(showEntry, 6000);
+    }
   }
 
   // Exit-intent popup — fine-pointer devices only (there's no reliable,
