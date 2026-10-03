@@ -204,9 +204,10 @@ router.post('/lp/diwali-2026', async (req, res) => {
     eventDate: str(body.eventDate),
     eventType: str(body.eventType) || 'Diwali Party',
     guestCount: str(body.guestCount),
-    // The office or home answer is the single most useful line for whoever
-    // makes the call back, so it travels where the inbox already prints it.
-    eventLocation: str(body.partyType),
+    // Office or home is the kind of party, not where it is. This lander never
+    // asks for a venue, so it carries its own field and the email keeps
+    // Location for pages that actually ask for one.
+    partyType: str(body.partyType),
     eventVision: str(body.eventVision),
     budgetConfirmed: 'yes',
     pageVariant: str(body.pageVariant),

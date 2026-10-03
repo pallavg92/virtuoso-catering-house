@@ -58,7 +58,12 @@ async function sendInquiry(fields) {
     `Event Date: ${fields.eventDate || '—'}`,
     `Event Type: ${fields.eventType || '—'}`,
     `Guest Count: ${fields.guestCount || '—'}`,
-    `Location: ${fields.eventLocation || '—'}`,
+    // Where the party is, and what kind of party it is, are two different
+    // questions. The Diwali lander asks the second one (office or home) and
+    // has no venue field, so it prints on its own line rather than being
+    // squeezed into Location, where it read as an address.
+    ...(fields.partyType ? [`Party type: ${fields.partyType}`] : []),
+    ...(fields.eventLocation ? [`Location: ${fields.eventLocation}`] : []),
     ...(fields.pageVariant ? [`Page variant: ${fields.pageVariant}`] : []),
     ...(fields.budgetConfirmed ? [`Confirmed ₹3,500+ per guest: ${fields.budgetConfirmed}`] : []),
     '',
