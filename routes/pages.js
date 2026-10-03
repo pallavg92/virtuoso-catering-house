@@ -242,6 +242,19 @@ router.post('/lp/diwali-2026', async (req, res) => {
     }
   }
 
+  // Only a real, in-season enquiry is reported to Meta as a Lead. An enquiry
+  // with no guest count, or for a date after Diwali, is emailed like any
+  // other but stays out of the conversion the ads optimise towards: those
+  // rarely book, and reporting them trains delivery to find more of them.
+  // The browser applies the same two tests, so the pair stays consistent.
+  const LAST_DATE = '2026-11-08';
+  const minGuests = parseInt(fields.guestCount, 10);
+  const qualified = Number.isFinite(minGuests) && fields.eventDate <= LAST_DATE;
+
+  if (!qualified) {
+    return res.json({ ok: true });
+  }
+
   // Same event id goes back to the page, so the browser pixel and this server
   // report are collapsed by Meta into one conversion instead of two.
   const eventId = newEventId();
@@ -250,7 +263,11 @@ router.post('/lp/diwali-2026', async (req, res) => {
     eventId,
     req,
     userData: { email, phone: fields.phone, city: '' },
-    customData: { content_name: 'Diwali 2026' },
+    customData: {
+      content_name: 'Diwali 2026',
+      value: minGuests * 3500,
+      currency: 'INR'
+    },
     sourceUrl: siteUrl + '/lp/diwali-2026'
   });
 
