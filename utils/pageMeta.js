@@ -259,6 +259,16 @@ const pages = {
   // inline design-system CSS, self-hosted fonts) so it does NOT use
   // partials/head.ejs — its noindex tag and Meta Pixel are inside the
   // template itself rather than inherited.
+  lpDiwali2026: {
+    path: '/lp/diwali-2026',
+    view: 'lander-diwali-2026',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'Diwali party catering in Delhi NCR — Virtuoso Catering House',
+    description: 'Diwali party catering for offices and homes across Delhi NCR. Live counters, a mixology bar and a menu designed around your evening. 50 guests or more.',
+    breadcrumbs: []
+  },
   lpFirstBirthday: {
     path: '/lp/first-birthday',
     view: 'lander-first-birthday',

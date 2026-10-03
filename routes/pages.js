@@ -167,6 +167,96 @@ router.post('/lp/first-birthday', async (req, res) => {
   return res.redirect(303, '/lp/first-birthday/thank-you?eid=' + encodeURIComponent(eventId));
 });
 
+// Diwali 2026 paid lander. Unlike the first-birthday page this one keeps its
+// own thank-you state in the page, so the form posts JSON here and stays put.
+// Validation is repeated on this side because `required` in the markup is
+// trivially bypassed, and the threshold tick is the whole point of the page.
+router.get('/lp/diwali-2026', (req, res) => render(res, pages.lpDiwali2026));
+
+router.post('/lp/diwali-2026', async (req, res) => {
+  const body = req.body || {};
+  const str = (v) => (typeof v === 'string' ? v.trim() : '');
+  const errors = {};
+
+  const name = str(body.name);
+  // The page sends +91XXXXXXXXXX; accept a bare ten digits too, in case the
+  // markup is ever reused somewhere that does not add the prefix.
+  const digits = str(body.phone).replace(/\D/g, '').replace(/^(91|0)(?=\d{10}$)/, '');
+  const email = str(body.email);
+
+  if (name.length < 2) errors.name = 'Please enter your name.';
+  if (!/^[6-9]\d{9}$/.test(digits)) errors.phone = 'Please enter a ten digit mobile number.';
+  if (!str(body.partyType)) errors.partyType = 'Please choose office or home.';
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(str(body.eventDate))) errors.eventDate = 'Please choose the date of your party.';
+  if (!str(body.guestCount)) errors.guestCount = 'Please choose how many guests you expect.';
+  // Email is optional on this form: the call-back is made on the phone number.
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) errors.email = 'That address does not read as an email.';
+  if (str(body.budgetConfirmed) !== 'yes') errors.budgetConfirmed = 'Please confirm the pricing to check your date.';
+
+  if (Object.keys(errors).length > 0) {
+    return res.status(400).json({ ok: false, errors });
+  }
+
+  const fields = {
+    name,
+    email,
+    phone: '+91' + digits,
+    eventDate: str(body.eventDate),
+    eventType: str(body.eventType) || 'Diwali Party',
+    guestCount: str(body.guestCount),
+    // The office or home answer is the single most useful line for whoever
+    // makes the call back, so it travels where the inbox already prints it.
+    eventLocation: str(body.partyType),
+    eventVision: str(body.eventVision),
+    budgetConfirmed: 'yes',
+    pageVariant: str(body.pageVariant),
+    // This page carries its own utm fields rather than the site's attribution
+    // script, so they are reshaped into the form the lead email prints.
+    attribution: {
+      utmSource: str(body.utm_source),
+      utmMedium: str(body.utm_medium),
+      utmCampaign: str(body.utm_campaign),
+      utmContent: str(body.utm_content),
+      utmTerm: str(body.utm_term),
+      gclid: str(body.gclid),
+      fbclid: str(body.fbclid),
+      landingPage: str(body.page_url)
+    }
+  };
+
+  try {
+    await sendInquiry(fields);
+  } catch (err) {
+    console.error('Diwali lander: failed to send inquiry email', err);
+    return res.status(500).json({
+      ok: false,
+      errors: { _general: 'We could not send your enquiry. Please call us on +91 87009 15463.' }
+    });
+  }
+
+  if (email) {
+    try {
+      await sendEnquiryAcknowledgement(fields);
+    } catch (ackErr) {
+      console.error('Diwali lander: acknowledgement failed', ackErr.message);
+    }
+  }
+
+  // Same event id goes back to the page, so the browser pixel and this server
+  // report are collapsed by Meta into one conversion instead of two.
+  const eventId = newEventId();
+  await sendMetaEvent({
+    eventName: 'Lead',
+    eventId,
+    req,
+    userData: { email, phone: fields.phone, city: '' },
+    customData: { content_name: 'Diwali 2026' },
+    sourceUrl: siteUrl + '/lp/diwali-2026'
+  });
+
+  return res.json({ ok: true, eventId });
+});
+
 router.get('/lp/first-birthday/thank-you', (req, res) => render(res, {
   ...pages.lpFirstBirthdayThanks,
   // Empty when someone opens the URL directly rather than via the form; the
