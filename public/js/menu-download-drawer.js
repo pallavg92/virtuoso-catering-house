@@ -151,12 +151,15 @@
 
       // Analytics is best-effort — a tracking failure must never surface
       // as a false error after the download has already been triggered.
+      //
+      // A plain custom event, not generate_lead, and nothing at all to Meta.
+      // Asking for the menu is an audience signal, not an enquiry: counting
+      // it as a Lead taught Meta's delivery to find more people who collect
+      // menus rather than more people who book. The Journal guides are
+      // tracked the same way, as menu_download / guide_download.
       try {
         if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', { event_type: 'Menu Download' });
-        }
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead', { content_name: 'Menu Download' });
+          gtag('event', 'menu_download', { event_type: 'Menu Download' });
         }
       } catch (trackingErr) {
         // Swallow — the download itself already succeeded.
