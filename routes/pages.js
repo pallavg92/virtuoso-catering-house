@@ -189,6 +189,7 @@ router.post('/lp/diwali-2026', async (req, res) => {
   if (!str(body.partyType)) errors.partyType = 'Please choose office or home.';
   if (!/^\d{4}-\d{2}-\d{2}$/.test(str(body.eventDate))) errors.eventDate = 'Please choose the date of your party.';
   if (!str(body.guestCount)) errors.guestCount = 'Please choose how many guests you expect.';
+  if (str(body.eventLocation).length < 2) errors.eventLocation = 'Please tell us where the party is.';
   // Email is required here as well as in the markup: `required` is trivially
   // bypassed, and the acknowledgement and the Meta match both depend on it.
   if (!email) {
@@ -209,10 +210,10 @@ router.post('/lp/diwali-2026', async (req, res) => {
     eventDate: str(body.eventDate),
     eventType: str(body.eventType) || 'Diwali Party',
     guestCount: str(body.guestCount),
-    // Office or home is the kind of party, not where it is. This lander never
-    // asks for a venue, so it carries its own field and the email keeps
-    // Location for pages that actually ask for one.
+    // Two different questions, two different lines in the lead email: what
+    // kind of party it is, and where it is being held.
     partyType: str(body.partyType),
+    eventLocation: str(body.eventLocation),
     eventVision: str(body.eventVision),
     budgetConfirmed: 'yes',
     pageVariant: str(body.pageVariant),

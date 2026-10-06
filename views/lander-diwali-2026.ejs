@@ -385,10 +385,16 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
               <span class="lander-field__error" id="name-err"></span>
             </div>
             <div class="field" id="f-phone">
-              <label for="phone">Mobile / WhatsApp</label>
+              <label for="phone">WhatsApp / mobile</label>
               <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="98765 43210" />
               <span class="lander-field__error" id="phone-err"></span>
             </div>
+          </div>
+
+          <div class="field" id="f-email">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required inputmode="email" autocomplete="email" />
+            <span class="lander-field__error" id="email-err"></span>
           </div>
 
           <fieldset class="field" id="f-type">
@@ -425,10 +431,10 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
             </div>
           </div>
 
-          <div class="field" id="f-email">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required inputmode="email" autocomplete="email" />
-            <span class="lander-field__error" id="email-err"></span>
+          <div class="field" id="f-location">
+            <label for="eventLocation">Where is the party?</label>
+            <input id="eventLocation" name="eventLocation" type="text" required autocomplete="address-level2" placeholder="Noida, Gurugram, South Delhi&hellip;" />
+            <span class="lander-field__error" id="location-err"></span>
           </div>
 
           <div class="field">
@@ -708,6 +714,8 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     check(!!guests.value, "f-guests", "guest-err", "Choose how many guests you expect.", guests);
     var email = document.getElementById("email");
     check(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()), "f-email", "email-err", "Enter your email address.", email);
+    var place = document.getElementById("eventLocation");
+    check(place.value.trim().length > 1, "f-location", "location-err", "Tell us where the party is.", place);
     var ack = document.getElementById("budgetConfirmed");
     check(ack.checked, "f-ack", "ack-err", "Please confirm the pricing to check your date.", ack);
     if (first) first.focus();
