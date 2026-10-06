@@ -189,8 +189,13 @@ router.post('/lp/diwali-2026', async (req, res) => {
   if (!str(body.partyType)) errors.partyType = 'Please choose office or home.';
   if (!/^\d{4}-\d{2}-\d{2}$/.test(str(body.eventDate))) errors.eventDate = 'Please choose the date of your party.';
   if (!str(body.guestCount)) errors.guestCount = 'Please choose how many guests you expect.';
-  // Email is optional on this form: the call-back is made on the phone number.
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) errors.email = 'That address does not read as an email.';
+  // Email is required here as well as in the markup: `required` is trivially
+  // bypassed, and the acknowledgement and the Meta match both depend on it.
+  if (!email) {
+    errors.email = 'Please enter your email address.';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    errors.email = 'That address does not read as an email.';
+  }
   if (str(body.budgetConfirmed) !== 'yes') errors.budgetConfirmed = 'Please confirm the pricing to check your date.';
 
   if (Object.keys(errors).length > 0) {

@@ -425,9 +425,10 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
             </div>
           </div>
 
-          <div class="field">
-            <label for="email">Email <span class="opt">(optional)</span></label>
-            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" />
+          <div class="field" id="f-email">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required inputmode="email" autocomplete="email" />
+            <span class="lander-field__error" id="email-err"></span>
           </div>
 
           <div class="field">
@@ -705,6 +706,8 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     check(!!dateEl.value && dateEl.value >= dateEl.min, "f-date", "date-err", "Choose the date of your party.", dateEl);
     var guests = document.getElementById("guestCount");
     check(!!guests.value, "f-guests", "guest-err", "Choose how many guests you expect.", guests);
+    var email = document.getElementById("email");
+    check(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()), "f-email", "email-err", "Enter your email address.", email);
     var ack = document.getElementById("budgetConfirmed");
     check(ack.checked, "f-ack", "ack-err", "Please confirm the pricing to check your date.", ack);
     if (first) first.focus();
