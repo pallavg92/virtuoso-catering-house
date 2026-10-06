@@ -6,6 +6,7 @@ const content = require('../utils/content');
 const { siteUrl, business, pages } = require('../utils/pageMeta');
 const redirects = require('../utils/redirects');
 const { sendInquiry, sendEnquiryAcknowledgement } = require('../utils/mailer');
+const { logLeadToSheet } = require('../utils/sheetLog');
 const { validateInquiry, extractFields: extractInquiryFields } = require('../utils/validateInquiry');
 const { sendEvent: sendMetaEvent, newEventId } = require('../utils/metaCapi');
 
@@ -258,9 +259,7 @@ router.post('/lp/diwali-2026', async (req, res) => {
   const minGuests = parseInt(fields.guestCount, 10);
   const qualified = Number.isFinite(minGuests) && fields.eventDate <= LAST_DATE;
 
-  if (!qualified) {
-    return res.json({ ok: true });
-  }
+
 
   // Same event id goes back to the page, so the browser pixel and this server
   // report are collapsed by Meta into one conversion instead of two.

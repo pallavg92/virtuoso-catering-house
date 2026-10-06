@@ -79,4 +79,36 @@ async function logToSheet(row) {
   }
 }
 
-module.exports = { logToSheet };
+// The Diwali lander writes to its own sheet, which has its own columns and its
+// own Apps Script behind LEAD_SHEET_WEBHOOK_URL. Same rules as above: every
+// failure is swallowed and logged, because the enquiry has already been
+// emailed by the time this runs and the sheet is the convenience copy.
+async function logLeadToSheet(row) {
+  const url = process.env.LEAD_SHEET_WEBHOOK_URL;
+  if (!url) {
+    console.log('[lead sheet] skipped — LEAD_SHEET_WEBHOOK_URL not set');
+    return { logged: false, reason: 'not configured' };
+  }
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(row),
+      signal: AbortSignal.timeout(TIMEOUT_MS)
+    });
+
+    if (!res.ok) {
+      console.error(`[lead sheet] REJECTED http ${res.status}`);
+      return { logged: false, reason: `http ${res.status}` };
+    }
+    console.log(`[lead sheet] appended — ${row.email || row.phone || 'no contact'}`);
+    return { logged: true };
+  } catch (err) {
+    console.error('[lead sheet] FAILED', err.message);
+    return { logged: false, reason: err.message };
+  }
+}
+
+module.exports = { logToSheet, logLeadToSheet };
