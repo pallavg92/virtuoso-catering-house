@@ -78,6 +78,11 @@ cp .env.example .env
 | `INQUIRY_TO_EMAIL`    | Address inquiries are delivered to                                    |
 | `INQUIRY_FROM_EMAIL`  | The "from" address used when sending (often must match `SMTP_USER`)   |
 | `PORT`                | Port the local Express dev server listens on (default `3000`)         |
+| `SHEET_WEBHOOK_URL`   | Apps Script web app that logs Journal guide downloads to their sheet  |
+| `LEAD_SHEET_WEBHOOK_URL` | Apps Script web app behind the Diwali 2026 lead sheet              |
+| `LEAD_SHEET_SECRET`   | Shared word that connector script checks before writing a row         |
+| `META_PIXEL_ID`       | Meta dataset id, for the server-side Conversions API                  |
+| `META_CAPI_TOKEN`     | Conversions API access token for that dataset                         |
 
 **If no SMTP credentials are set, nothing crashes.** `POST /api/inquiry` still validates the submission normally and logs the inquiry details to the console instead of emailing — handy for testing without a mail provider configured yet.
 
