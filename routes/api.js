@@ -138,4 +138,34 @@ router.post('/guide-download', async (req, res) => {
   });
 });
 
+// TEMPORARY. Answers one question that cannot be answered from outside: can
+// this server reach Apps Script at all, and does it have the settings it needs?
+// Reports no secrets — only whether each is present, the Node version, and
+// what a live call to the sheet returns. Remove once the lead sheet is proven.
+router.get('/diagnostics-sheet', async (req, res) => {
+  const out = {
+    node: process.version,
+    hasFetch: typeof fetch === 'function',
+    sheetWebhookSet: !!process.env.SHEET_WEBHOOK_URL,
+    leadWebhookSet: !!process.env.LEAD_SHEET_WEBHOOK_URL,
+    leadSecretSet: !!process.env.LEAD_SHEET_SECRET
+  };
+
+  if (out.hasFetch && out.leadWebhookSet) {
+    const started = Date.now();
+    try {
+      // GET, so nothing is written to the sheet.
+      const r = await fetch(process.env.LEAD_SHEET_WEBHOOK_URL, {
+        redirect: 'follow',
+        signal: AbortSignal.timeout(20000)
+      });
+      out.reach = { ok: r.ok, status: r.status, ms: Date.now() - started };
+    } catch (err) {
+      out.reach = { ok: false, error: err.message, ms: Date.now() - started };
+    }
+  }
+
+  res.json(out);
+});
+
 module.exports = router;
