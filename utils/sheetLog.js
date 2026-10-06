@@ -79,9 +79,10 @@ async function logToSheet(row) {
   }
 }
 
-// The Diwali lander writes to its own sheet, which has its own columns and its
-// own Apps Script behind LEAD_SHEET_WEBHOOK_URL. Same rules as above: every
-// failure is swallowed and logged, because the enquiry has already been
+// The Diwali lander writes to its own sheet, through the connector script the
+// campaign team supplied. That script reads JSON (not text/plain like the one
+// above) and refuses anything without the shared secret. Same rules otherwise:
+// every failure is swallowed and logged, because the enquiry has already been
 // emailed by the time this runs and the sheet is the convenience copy.
 async function logLeadToSheet(row) {
   const url = process.env.LEAD_SHEET_WEBHOOK_URL;
@@ -94,14 +95,21 @@ async function logLeadToSheet(row) {
     const res = await fetch(url, {
       method: 'POST',
       redirect: 'follow',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(row),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...row, secret: process.env.LEAD_SHEET_SECRET || '' }),
       signal: AbortSignal.timeout(TIMEOUT_MS)
     });
 
     if (!res.ok) {
       console.error(`[lead sheet] REJECTED http ${res.status}`);
       return { logged: false, reason: `http ${res.status}` };
+    }
+    // The script answers 200 with {ok:false} when the secret is wrong, so the
+    // body has to be read rather than trusting the status code.
+    const body = await res.json().catch(() => ({}));
+    if (body && body.ok === false) {
+      console.error(`[lead sheet] REFUSED — ${body.error || 'unknown reason'}`);
+      return { logged: false, reason: body.error || 'refused' };
     }
     console.log(`[lead sheet] appended — ${row.email || row.phone || 'no contact'}`);
     return { logged: true };

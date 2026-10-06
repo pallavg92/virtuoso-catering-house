@@ -259,25 +259,19 @@ router.post('/lp/diwali-2026', async (req, res) => {
   const minGuests = parseInt(fields.guestCount, 10);
   const qualified = Number.isFinite(minGuests) && fields.eventDate <= LAST_DATE;
 
-  // The lead sheet gets every enquiry, qualified or not, with a column saying
-  // which. Unawaited: the enquiry is already emailed, and nobody should wait on
-  // a spreadsheet. Failures are logged inside, never thrown.
-  const sheetRow = {
+  // Every enquiry goes to the lead sheet, qualified or not, in the shape the
+  // connector script expects: its own field names, and a shared secret it
+  // checks before writing. Unawaited; failures are logged inside, never thrown.
+  logLeadToSheet({
     name: fields.name,
-    // Leading apostrophe: Sheets otherwise reads +919876543210 as a number,
-    // drops the plus and can show it in scientific notation. The apostrophe
-    // is Sheets' own marker for "treat this as text" and is not displayed.
-    phone: "'" + fields.phone,
+    phone: fields.phone,
     email: fields.email,
-    eventDate: fields.eventDate,
+    event_date: fields.eventDate,
     guests: fields.guestCount,
-    adContent: fields.attribution.utmContent,
-    source: [fields.attribution.utmSource, fields.attribution.utmMedium, fields.attribution.utmCampaign].filter(Boolean).join(' / '),
-    counted: qualified ? 'Yes' : 'No',
-    notes: [fields.partyType, fields.eventLocation, fields.eventVision].filter(Boolean).join(' · '),
-    sentToMeta: qualified ? 'Yes' : 'No'
-  };
-  logLeadToSheet(sheetRow);
+    utm_content: fields.attribution.utmContent,
+    utm_source: fields.attribution.utmSource,
+    counted: qualified
+  });
 
   if (!qualified) {
     return res.json({ ok: true });
