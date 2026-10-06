@@ -186,7 +186,7 @@ router.post('/lp/diwali-2026', async (req, res) => {
 
   if (name.length < 2) errors.name = 'Please enter your name.';
   if (!/^[6-9]\d{9}$/.test(digits)) errors.phone = 'Please enter a ten digit mobile number.';
-  if (!str(body.partyType)) errors.partyType = 'Please choose office or home.';
+  if (!str(body.partyType)) errors.partyType = 'Please choose corporate or private.';
   if (!/^\d{4}-\d{2}-\d{2}$/.test(str(body.eventDate))) errors.eventDate = 'Please choose the date of your party.';
   if (!str(body.guestCount)) errors.guestCount = 'Please choose how many guests you expect.';
   if (str(body.eventLocation).length < 2) errors.eventLocation = 'Please tell us where the party is.';

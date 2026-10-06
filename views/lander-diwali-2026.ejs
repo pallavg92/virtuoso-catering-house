@@ -400,10 +400,10 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <fieldset class="field" id="f-type">
             <legend>Type of party</legend>
             <div class="seg">
-              <input type="radio" id="type-office" name="partyType" value="Office or client" />
-              <label for="type-office">Office or client</label>
-              <input type="radio" id="type-home" name="partyType" value="At home" />
-              <label for="type-home">At home</label>
+              <input type="radio" id="type-office" name="partyType" value="Corporate or brand" />
+              <label for="type-office">Corporate / Brand</label>
+              <input type="radio" id="type-home" name="partyType" value="Private" />
+              <label for="type-home">Private</label>
             </div>
             <span class="lander-field__error" id="type-err"></span>
           </fieldset>
@@ -708,7 +708,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     var phone = document.getElementById("phone");
     var digits = phone.value.replace(/\D/g, "").replace(/^(91|0)(?=\d{10}$)/, "");
     check(/^[6-9]\d{9}$/.test(digits), "f-phone", "phone-err", "Enter a 10-digit mobile number.", phone);
-    check(!!form.querySelector('input[name="partyType"]:checked'), "f-type", "type-err", "Choose office or home.", document.getElementById("type-office"));
+    check(!!form.querySelector('input[name="partyType"]:checked'), "f-type", "type-err", "Choose corporate or private.", document.getElementById("type-office"));
     check(!!dateEl.value && dateEl.value >= dateEl.min, "f-date", "date-err", "Choose the date of your party.", dateEl);
     var guests = document.getElementById("guestCount");
     check(!!guests.value, "f-guests", "guest-err", "Choose how many guests you expect.", guests);
