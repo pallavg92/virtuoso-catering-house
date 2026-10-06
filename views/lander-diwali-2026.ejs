@@ -469,7 +469,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
         <div id="done-view" class="done" hidden tabindex="-1">
           <p class="eyebrow">Enquiry received</p>
           <h3 class="h2" id="done-title">Thank you. Your enquiry is in.</h3>
-          <p class="p" id="done-text">One person from Virtuoso will call you to confirm your date and talk through your evening.</p>
+          <p class="p" id="done-text">Our representative will call you now to confirm your date and talk through your evening.</p>
           <p class="p">Prefer to talk now? Call <a href="tel:+918700915463"><strong>+91 87009 15463</strong></a>.</p>
           <button class="linkish" type="button" id="again">Send another enquiry</button>
         </div>
@@ -770,7 +770,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
       var firstName = data.name.split(/\s+/)[0];
       document.getElementById("done-title").textContent = "Thank you, " + firstName + ". Your enquiry is in.";
       var dateText = new Date(data.eventDate + "T12:00:00").toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
-      document.getElementById("done-text").textContent = "One person from Virtuoso will call you on " +
+      document.getElementById("done-text").textContent = "Our representative will call you now on " +
         data.phone.replace(/^\+91(\d{5})(\d{5})$/, "+91 $1 $2") + " to confirm " +
         dateText + " and talk through your evening.";
       document.getElementById("form-view").hidden = true;
