@@ -150,6 +150,16 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 .hero__proof{font-size:14px;line-height:1.5;color:#EFE8D8;margin:0;max-width:46ch}
 .hero__proof strong{color:var(--card)}
 .hero__proof span{color:#C9C2B4}
+/* Google rating. The figures are read off the Virtuoso listing and are
+   written here as plain text, so they can only ever change by hand. */
+.stars{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0}
+.stars__row{position:relative;display:inline-block;line-height:0;flex:0 0 auto}
+.stars__row svg{display:block;height:17px;width:auto}
+.stars__bed{fill:rgba(232,201,138,.28)}
+.stars__fill{position:absolute;top:0;left:0;bottom:0;width:98%;overflow:hidden;line-height:0}
+.stars__lit{fill:var(--cta-hover)}
+.stars__text{font-size:13.5px;line-height:1.4;letter-spacing:.02em;color:#D9D2C4}
+.stars__text strong{font-weight:500;color:var(--card)}
 .countdown{display:inline-flex;align-items:center;gap:10px;font-size:13px;line-height:1.4;font-weight:500;letter-spacing:.06em;color:var(--gold-text);margin:0}
 .countdown::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cta);box-shadow:0 0 0 4px rgba(201,135,58,.25)}
 @media (max-width:759px){.hero .lede{font-size:16px !important;line-height:1.45}.hero__inner .stack{gap:8px}.hero__proof{font-size:13px}
@@ -385,6 +395,13 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <span class="cta-big__line">Book my Diwali Party <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
           <span class="cta-big__sub">We&rsquo;ll check your date first.</span>
         </a>
+        <p class="stars">
+          <span class="stars__row">
+            <svg class="stars__bed" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg>
+            <span class="stars__fill"><svg class="stars__lit" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg></span>
+          </span>
+          <span class="stars__text">4.9 out of 5 on <strong>96 Google reviews</strong></span>
+        </p>
         <p class="countdown" id="countdown">Diwali is Sunday, 8 November</p>
       </div>
       <p class="hero__proof"><strong>The team trusted for hospitality by Ferrari APAC, Lamborghini, Tesla India and BMW.</strong> <span>One conversation. One written plan within 24 hours.</span></p>
@@ -773,6 +790,13 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
         <span class="cta-big__line">Book my Diwali Party <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
         <span class="cta-big__sub">We&rsquo;ll check your date first.</span>
       </a>
+      <p class="stars">
+        <span class="stars__row">
+          <svg class="stars__bed" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg>
+          <span class="stars__fill"><svg class="stars__lit" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg></span>
+        </span>
+        <span class="stars__text">4.9 out of 5 on <strong>96 Google reviews</strong></span>
+      </p>
       <p class="fine">We accept a limited number of parties on each date.</p>
     </div>
   </section>
