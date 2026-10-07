@@ -252,13 +252,6 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 .reel__film video{position:absolute;inset:0;opacity:0;transition:opacity 600ms ease}
 .reel__film video.is-ready{opacity:1}
 
-.counter{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px);align-items:start}
-.counter__film{position:relative;background:var(--forest);border-radius:8px;overflow:hidden;aspect-ratio:9/16;max-height:72vh}
-.counter__film video,.counter__film img{width:100%;height:100%;object-fit:cover;display:block}
-.counter__film video{position:absolute;inset:0;opacity:0;transition:opacity 600ms ease}
-.counter__film video.is-ready{opacity:1}
-.counter__stills{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
-.counter__stills img{width:100%;border-radius:8px;display:block}
 .host__shot{display:block;max-width:none;width:calc(100% + 2 * clamp(24px,3vw,36px) + 2px);margin:calc(-1 * (clamp(24px,3vw,36px) + 1px)) calc(-1 * (clamp(24px,3vw,36px) + 1px)) 6px;aspect-ratio:3/2;object-fit:cover;border-radius:8px 8px 0 0}
 .host__shot--film{position:relative;overflow:hidden;background:var(--forest)}
 .host__shot--film img,.host__shot--film video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
@@ -517,26 +510,23 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     </div>
   </section>
 
-  <!-- 04C THE COUNTER, MOVING -->
+  <!-- 04C THE SETUP -->
+  <%# About the setup, not the menu. What goes on the counter is decided on
+      a call with a person, so nothing here lists a dish. -%>
   <section class="band band--card" style="border-top:1px solid var(--hair)">
     <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
       <div class="stack" style="gap:14px">
-        <p class="eyebrow">One of your two live counters</p>
-        <h2 class="h2" style="max-width:24ch">A live counter, cooking in front of your guests.</h2>
-        <p class="p" style="max-width:62ch">A few seconds from a Virtuoso evening, and the chaat corner that stood beside it: brass handis, copper bowls, lit signage, gol gappa and bhalla papdi served to order. Our own counters, not stock photographs.</p>
+        <p class="eyebrow">The setup</p>
+        <h2 class="h2" style="max-width:24ch">The counter arrives built, lit and styled.</h2>
+        <p class="p" style="max-width:62ch">Copper handis on carved wood, brass lamps, white florals and dish cards, with the counter lit from under its edge. Our own setups, not stock photographs. We bring the infrastructure in, build it on site, and take it away the same night.</p>
+        <p class="p p--s" style="max-width:62ch"><strong>What goes on it is decided with you, on a call.</strong> We do not hand out a menu to pick from. Someone who plans food for a living asks what your evening is, then writes the plan around it.</p>
       </div>
-      <div class="counter">
-        <figure class="counter__film" data-counter-film>
-          <img src="/images/diwali/virtuoso-catering-house-diwali-live-counter-still.webp" alt="A Virtuoso live chaat counter, lit in brass and copper" loading="lazy" decoding="async">
-          <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
-            <source data-src="/videos/virtuoso-catering-house-diwali-live-counter.mp4" type="video/mp4">
-          </video>
-        </figure>
-        <div class="counter__stills">
-          <img src="/images/diwali/virtuoso-catering-house-diwali-live-chaat-counter.webp" alt="Two Virtuoso chefs behind a lit live chaat counter" loading="lazy" decoding="async">
-          <img src="/images/diwali/virtuoso-catering-house-diwali-chaat-corner-detail.webp" alt="The live chaat corner signage, brass handis and baskets" loading="lazy" decoding="async">
-        </div>
-      </div>
+      <figure class="reel__film" data-setup-film style="margin:0">
+        <img src="/images/diwali/virtuoso-catering-house-diwali-setup-still.webp" alt="Copper handis on carved wood with white florals and dish cards, on a lit counter" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+          <source data-src="/videos/virtuoso-catering-house-diwali-setup.mp4" type="video/mp4">
+        </video>
+      </figure>
     </div>
   </section>
 
@@ -1056,30 +1046,28 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     }, { threshold: 0.25 }).observe(team);
   }
 
-  /* The counter film. Nothing downloads until it is on screen, so a visitor
+  /* The setup film. Nothing downloads until it is on screen, so a visitor
      who never scrolls that far never pays for it. Skipped entirely for
      reduced motion and data saver, where the still photograph is the page. */
-  var film = document.querySelector("[data-counter-film]");
-  var filmVideo = film && film.querySelector("video");
-  var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  var wantsMotion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches && !(conn && conn.saveData);
-  if (filmVideo && wantsMotion && "IntersectionObserver" in window) {
-    var started = false;
+  var setup = document.querySelector("[data-setup-film]");
+  var setupVideo = setup && setup.querySelector("video");
+  if (setupVideo && motionOk && "IntersectionObserver" in window) {
+    var setupStarted = false;
     new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting) { if (started) filmVideo.pause(); return; }
-        if (!started) {
-          started = true;
-          filmVideo.addEventListener("canplay", function () { filmVideo.classList.add("is-ready"); }, { once: true });
-          Array.prototype.forEach.call(filmVideo.querySelectorAll("source[data-src]"), function (src) {
+        if (!entry.isIntersecting) { if (setupStarted) setupVideo.pause(); return; }
+        if (!setupStarted) {
+          setupStarted = true;
+          setupVideo.addEventListener("canplay", function () { setupVideo.classList.add("is-ready"); }, { once: true });
+          Array.prototype.forEach.call(setupVideo.querySelectorAll("source[data-src]"), function (src) {
             src.src = src.getAttribute("data-src");
           });
-          filmVideo.load();
+          setupVideo.load();
         }
-        var playing = filmVideo.play();
-        if (playing && typeof playing.catch === "function") playing.catch(function () {});
+        var u = setupVideo.play();
+        if (u && typeof u.catch === "function") u.catch(function () {});
       });
-    }, { threshold: 0.25 }).observe(film);
+    }, { threshold: 0.25 }).observe(setup);
   }
 
   /* Hide the mobile bar while the form is on screen */
