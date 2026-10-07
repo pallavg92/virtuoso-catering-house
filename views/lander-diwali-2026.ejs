@@ -247,6 +247,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 .host__line{font-family:var(--serif);font-size:clamp(19px,2.4vw,22px);font-style:italic;line-height:1.3;color:var(--ink);margin:4px 0 0}
 /* the film band under the hero */
 .reel{background:var(--forest);padding:clamp(18px,3vw,34px) 0 clamp(18px,3vw,34px)}
+.reel--team{padding:clamp(26px,4.5vw,52px) 0}
 .reel__film{position:relative;margin:0;background:#0B140B;border-radius:10px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 24px 60px -30px rgba(0,0,0,.8)}
 .reel__film img,.reel__film video{width:100%;height:100%;object-fit:cover;display:block}
 .reel__film video{position:absolute;inset:0;opacity:0;transition:opacity 600ms ease}
@@ -505,6 +506,21 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
         </div>
       </div>
       <p class="p p--s" style="max-width:68ch"><strong>The only thing we ask of you:</strong> the back-of-house tables our team needs to work on. Everything else arrives with us. We cater across Delhi NCR.</p>
+    </div>
+  </section>
+
+  <!-- 04B2 THE TEAM, MOVING -->
+  <%# Sits straight after the list of what is included, because the last
+      line of that list is about the people. Same lazy rules as the other
+      films: nothing downloads until the band is on screen. -%>
+  <section class="reel reel--team">
+    <div class="wrap">
+      <figure class="reel__film" data-team-film>
+        <img src="/images/diwali/virtuoso-catering-house-diwali-team-still.webp" alt="The Virtuoso team in red aprons, lined up at a Ferrari event" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+          <source data-src="/videos/virtuoso-catering-house-diwali-team.mp4" type="video/mp4">
+        </video>
+      </figure>
     </div>
   </section>
 
@@ -1023,6 +1039,28 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
         if (r && typeof r.catch === "function") r.catch(function () {});
       });
     }, { threshold: 0.25 }).observe(reel);
+  }
+
+  /* The team film, under the list of what is included. */
+  var team = document.querySelector("[data-team-film]");
+  var teamVideo = team && team.querySelector("video");
+  if (teamVideo && motionOk && "IntersectionObserver" in window) {
+    var teamStarted = false;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { if (teamStarted) teamVideo.pause(); return; }
+        if (!teamStarted) {
+          teamStarted = true;
+          teamVideo.addEventListener("canplay", function () { teamVideo.classList.add("is-ready"); }, { once: true });
+          Array.prototype.forEach.call(teamVideo.querySelectorAll("source[data-src]"), function (src) {
+            src.src = src.getAttribute("data-src");
+          });
+          teamVideo.load();
+        }
+        var t = teamVideo.play();
+        if (t && typeof t.catch === "function") t.catch(function () {});
+      });
+    }, { threshold: 0.25 }).observe(team);
   }
 
   /* The counter film. Nothing downloads until it is on screen, so a visitor
