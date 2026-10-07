@@ -94,6 +94,42 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 .btn[disabled]{opacity:.7;cursor:progress}
 .btn__arrow{font-size:20px;line-height:1}
 
+/* The big call to action. Wide, two lines, and alive rather than a flat
+   rectangle: the gold is lit from the top left like metal, a slow sheen
+   crosses it, and it lifts under the cursor and presses under a thumb.
+   Everything that moves is switched off for reduced motion below. */
+.cta-big{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;max-width:560px;min-height:clamp(74px,13vw,86px);padding:clamp(14px,3vw,18px) clamp(18px,4vw,30px);border:0;border-radius:10px;cursor:pointer;text-align:center;
+  background:linear-gradient(145deg,#E3AC5C 0%,#C9873A 46%,#B4742A 100%);
+  box-shadow:0 1px 0 rgba(255,245,225,.55) inset,0 -2px 0 rgba(90,50,8,.35) inset,0 14px 30px -14px rgba(90,50,8,.65);
+  transition:transform 180ms var(--ease),box-shadow 180ms var(--ease),filter 180ms var(--ease)}
+.cta-big__line{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:clamp(17px,3.5vw,21px);font-weight:600;letter-spacing:.01em;line-height:1.15;color:#231203}
+.cta-big__sub{font-family:var(--sans);font-size:clamp(12px,2.4vw,13.5px);font-weight:400;letter-spacing:.02em;line-height:1.35;color:rgba(35,18,3,.78)}
+.cta-big .btn__arrow{font-size:22px;transition:transform 180ms var(--ease)}
+
+/* the sheen, a narrow band of light crossing the face every few seconds */
+.cta-big::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:34%;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,248,232,.5) 50%,rgba(255,255,255,0) 100%);
+  transform:skewX(-18deg);animation:cta-sheen 4.6s var(--ease) 1.4s infinite}
+@keyframes cta-sheen{0%{left:-40%}22%{left:120%}100%{left:120%}}
+
+.cta-big:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 1px 0 rgba(255,245,225,.6) inset,0 -2px 0 rgba(90,50,8,.35) inset,0 20px 38px -14px rgba(90,50,8,.7)}
+.cta-big:hover .btn__arrow{transform:translateX(4px)}
+.cta-big:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(255,245,225,.4) inset,0 -1px 0 rgba(90,50,8,.3) inset,0 8px 18px -12px rgba(90,50,8,.6)}
+.cta-big:focus-visible{outline:3px solid var(--gold-text);outline-offset:3px}
+.cta-big[disabled]{opacity:.7;cursor:progress}
+.cta-big[disabled]::after{animation:none}
+
+/* On the dark hero the button needs to sit off the film, not in it. */
+.hero .cta-big{box-shadow:0 1px 0 rgba(255,245,225,.55) inset,0 -2px 0 rgba(90,50,8,.35) inset,0 18px 44px -16px rgba(0,0,0,.8)}
+
+/* Nothing sweeps, lifts or slides for anyone who asked for less movement.
+   The button keeps its lit metal face and its press, which are not motion. */
+@media (prefers-reduced-motion:reduce){
+  .cta-big::after{animation:none;display:none}
+  .cta-big,.cta-big .btn__arrow{transition:none}
+  .cta-big:hover{transform:none}
+}
+
 /* top bar */
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
 .wordmark{font-family:var(--serif);font-weight:300;font-size:20px;line-height:1.1;letter-spacing:.09em;text-transform:uppercase;display:block}
@@ -102,9 +138,11 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 
 /* hero */
 .hero{position:relative;isolation:isolate;background-color:var(--forest);background-image:url('/images/virtuoso-catering-house-red-velvet-grazing-table.webp');background-size:cover;background-position:60% 35%}
-.hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(100deg,rgba(11,20,11,.93) 0%,rgba(11,20,11,.86) 42%,rgba(11,20,11,.66) 72%,rgba(11,20,11,.45) 100%)}
-.hero__offer{font-size:14px;line-height:1.5;letter-spacing:.03em;font-weight:500;color:#F0DCB4;margin:0}
-.hero__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;padding-top:clamp(28px,6vw,80px);padding-bottom:clamp(24px,5vw,64px)}
+.hero__film{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:60% 35%;opacity:0;transition:opacity 900ms ease}
+.hero__film.is-ready{opacity:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(11,20,11,.93) 0%,rgba(11,20,11,.86) 42%,rgba(11,20,11,.66) 72%,rgba(11,20,11,.45) 100%)}
+.hero__offer{font-size:14px;line-height:1.5;letter-spacing:.03em;font-weight:500;color:#F8EDD6;margin:0}
+.hero__inner{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px;padding-top:clamp(44px,8vw,104px);padding-bottom:clamp(44px,7vw,96px)}
 .hero .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--gold-text)}
 .hero .h1{color:var(--card)}
 .hero .lede{color:#EFE8D8}
@@ -120,13 +158,14 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
    Top to bottom instead, lighter across the middle where the table is,
    and deep again behind the text at either end. */
 .hero{background-position:62% 42%}
+.hero__film{object-position:62% 42%}
 .hero::before{background:linear-gradient(180deg,rgba(11,20,11,.9) 0%,rgba(11,20,11,.78) 26%,rgba(11,20,11,.55) 52%,rgba(11,20,11,.82) 76%,rgba(11,20,11,.93) 100%)}}
 
 /* names */
 .names{background:var(--card);border-bottom:1px solid var(--hair)}
-.names__row{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-top:22px;padding-bottom:22px}
-.names p{font-size:13px;line-height:1.6;margin:0;color:var(--ink-2)}
-.names .k{font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--ink-3);margin-right:10px}
+.names__row{display:flex;flex-wrap:wrap;gap:8px 44px;padding-top:22px;padding-bottom:22px}
+.names p{font-size:14px;line-height:1.6;margin:0;color:var(--ink-2)}
+.names p strong{font-weight:500;color:var(--ink)}
 
 /* images */
 .frame{overflow:hidden;border-radius:4px;background:var(--band)}
@@ -195,6 +234,22 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 
 /* two ways to host */
 .hosts{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px)}
+.host__line{font-family:var(--serif);font-size:clamp(19px,2.4vw,22px);font-style:italic;line-height:1.3;color:var(--ink);margin:4px 0 0}
+/* the film band under the hero */
+.reel{background:var(--forest);padding:clamp(18px,3vw,34px) 0 clamp(18px,3vw,34px)}
+.reel__film{position:relative;margin:0;background:#0B140B;border-radius:10px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 24px 60px -30px rgba(0,0,0,.8)}
+.reel__film img,.reel__film video{width:100%;height:100%;object-fit:cover;display:block}
+.reel__film video{position:absolute;inset:0;opacity:0;transition:opacity 600ms ease}
+.reel__film video.is-ready{opacity:1}
+
+.counter{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px);align-items:start}
+.counter__film{position:relative;background:var(--forest);border-radius:8px;overflow:hidden;aspect-ratio:9/16;max-height:72vh}
+.counter__film video,.counter__film img{width:100%;height:100%;object-fit:cover;display:block}
+.counter__film video{position:absolute;inset:0;opacity:0;transition:opacity 600ms ease}
+.counter__film video.is-ready{opacity:1}
+.counter__stills{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
+.counter__stills img{width:100%;border-radius:8px;display:block}
+.host__shot{display:block;max-width:none;width:calc(100% + 2 * clamp(24px,3vw,36px) + 2px);margin:calc(-1 * (clamp(24px,3vw,36px) + 1px)) calc(-1 * (clamp(24px,3vw,36px) + 1px)) 6px;aspect-ratio:3/2;object-fit:cover;border-radius:8px 8px 0 0}
 .host{background:var(--card);border:1px solid var(--hair);border-radius:8px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px}
 .host ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column}
 .host li{padding:11px 0;border-top:1px solid var(--hair-2);font-size:15px;line-height:1.5;color:var(--ink-2);display:flex;gap:12px}
@@ -241,7 +296,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
   body{padding-bottom:84px}
   .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:10;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(16,31,16,.96);border-top:1px solid rgba(232,201,138,.25);transition:transform .3s var(--ease)}
   .mbar.away{transform:translateY(110%)}
-  .mbar .btn{flex:1;min-height:52px;padding:12px 16px;font-size:15px}
+  .mbar .btn{flex:1;min-height:52px;padding:12px 16px;font-size:15px;background:linear-gradient(145deg,#E3AC5C 0%,#C9873A 46%,#B4742A 100%);color:#231203;box-shadow:0 1px 0 rgba(255,245,225,.5) inset,0 -2px 0 rgba(90,50,8,.35) inset}
   .mbar .call{flex:0 0 auto;background:transparent;color:var(--card);border:1px solid rgba(232,201,138,.5)}
 }
 
@@ -314,29 +369,49 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 <main>
   <!-- 02 HERO -->
   <section class="hero">
+    <%# The grazing table film, the same one that runs on the homepage. The
+        still photograph behind it is the hero background, so a slow line or
+        a data saver setting still gets a finished first screen. -%>
+    <video class="hero__film" data-hero-film muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+      <source data-src="/videos/virtuoso-catering-house-grazing-table-hero.mp4" type="video/mp4">
+    </video>
     <div class="wrap hero__inner">
       <p class="eyebrow">Diwali parties &middot; Delhi NCR &middot; 50 guests or more</p>
-      <h1 class="h1">This Diwali, be a guest at your own party.<br /><em>We&rsquo;ll run the food, the counters and the bar.</em></h1>
-      <p class="lede" style="color:var(--card);max-width:46ch">So <mark class="hl">the food becomes the celebration</mark>, not simply the meal at it.</p>
+      <h1 class="h1">Culinary Artistry for Unforgettable Diwali Parties</h1>
+      <p class="lede" style="color:var(--card);max-width:46ch">Be a guest at your own party. We&rsquo;ll run the food, the counters and the bar, so the food becomes the celebration and not simply the meal at it.</p>
       <div class="stack" style="gap:12px;align-items:flex-start;margin-top:2px">
         <p class="hero__offer">From &#8377;3,500 per guest &middot; 50 guests minimum &middot; Delhi NCR</p>
-        <a class="btn" href="#lander-form">Submit <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="cta-big" href="#lander-form">
+          <span class="cta-big__line">Book my Diwali Party <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
+          <span class="cta-big__sub">We&rsquo;ll check your date first.</span>
+        </a>
         <p class="countdown" id="countdown">Diwali is Sunday, 8 November</p>
       </div>
-      <div class="stack" style="gap:12px;max-width:54ch;margin-top:6px">
-        <p class="lede">Virtuoso designs the food around your guests, your puja or programme, and the way you want the evening to feel.</p>
-        <p class="lede">From the welcome pour and live chaat and tandoor counters to a plated dinner and a mithai finale - everything is planned as one evening, for your office or your home.</p>
-        <p class="hero__proof"><strong>The team trusted for hospitality by Ferrari APAC, Lamborghini, Tesla India and BMW.</strong> <span>One conversation. One written plan within 24 hours.</span></p>
-      </div>
+      <p class="hero__proof"><strong>The team trusted for hospitality by Ferrari APAC, Lamborghini, Tesla India and BMW.</strong> <span>One conversation. One written plan within 24 hours.</span></p>
+    </div>
+  </section>
+
+  <!-- 02b THE FILM -->
+  <%# Fifteen seconds, no sound, directly under the hero. It carries the
+      proof the words above it are making, so it comes before anything is
+      asked of the reader. Nothing downloads until the band is on screen. -%>
+  <section class="reel">
+    <div class="wrap">
+      <figure class="reel__film" data-reel-film>
+        <img src="/images/diwali/virtuoso-catering-house-diwali-film-still.webp" alt="Masala peanut chaat served in paper cones, set in a steel bowl over roasted peanuts" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+          <source data-src="/videos/virtuoso-catering-house-diwali-film.mp4" type="video/mp4">
+        </video>
+      </figure>
     </div>
   </section>
 
   <!-- 03 NAMES -->
   <section class="names">
     <div class="wrap names__row">
-      <p><span class="k">Catering for</span>Ferrari APAC &middot; Lamborghini &middot; Tesla India &middot; BMW &middot; Bath &amp; Body Works</p>
-      <p><span class="k">As seen in</span>Times of India &middot; Economic Times &middot; India Today &middot; News18 &middot; ANI</p>
-      <p><span class="k">Founded by</span>Aarti Sharma and Pallav Goel &middot; FSSAI Licensed</p>
+      <p>Trusted by <strong>Ferrari APAC, Lamborghini, Tesla India, BMW</strong> and <strong>Bath &amp; Body Works</strong></p>
+      <p>Featured in <strong>Times of India, Economic Times, India Today, News18</strong> and <strong>ANI</strong></p>
+      <p>Founded by <strong>Aarti Sharma</strong> and <strong>Pallav Goel</strong>. FSSAI licensed.</p>
     </div>
   </section>
 
@@ -359,6 +434,86 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     </div>
   </section>
 
+  <!-- 04B WHAT IS INCLUDED -->
+  <section class="band" style="background:var(--band);border-top:1px solid var(--hair)">
+    <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
+      <div class="stack" style="gap:14px">
+        <p class="eyebrow">What &#8377;3,500 a guest covers</p>
+        <h2 class="h2" style="max-width:24ch">Everything the evening needs, included.</h2>
+        <p class="p" style="max-width:62ch">Every Diwali booking gets all of it. Nothing on this page is an upgrade, a package above yours, or a line that appears later on the bill.</p>
+      </div>
+      <div class="hosts">
+        <div class="host">
+          <img class="host__shot" src="/images/virtuoso-catering-house-live-cooking-station-tesla-centre-gurugram-2025-1.webp" alt="Virtuoso chefs cooking at a live station in front of guests" loading="lazy" decoding="async">
+          <h3 class="h3">The food</h3>
+          <p class="p p--s">A menu built for your evening, cooked in our kitchen and finished in front of your guests.</p>
+          <ul>
+            <li><span>&#10003;</span>A bespoke menu designed with you, then executed exactly as signed off</li>
+            <li><span>&#10003;</span>Our chefs on site, with two live counters cooking in front of guests</li>
+            <li><span>&#10003;</span>Produced in our FSSAI certified base kitchen, finished on site</li>
+            <li><span>&#10003;</span>FSSAI certified pure paneer in every preparation that calls for it</li>
+          </ul>
+        </div>
+        <div class="host">
+          <img class="host__shot" src="/img/case-setting.webp" alt="A styled food display with florals, signage and serviceware" loading="lazy" decoding="async">
+          <h3 class="h3">The look</h3>
+          <p class="p p--s">The food becomes part of the room, not a buffet pushed against a wall.</p>
+          <ul>
+            <li><span>&#10003;</span>Counters and live stations built into the space</li>
+            <li><span>&#10003;</span>Food displays, styling and F&amp;B d&eacute;cor elements</li>
+            <li><span>&#10003;</span>Crockery, cutlery and serviceware</li>
+          </ul>
+        </div>
+        <div class="host">
+          <img class="host__shot" src="/img/exec-staff.webp" alt="Virtuoso butlers lined up with trays before service begins" loading="lazy" decoding="async">
+          <h3 class="h3">The service</h3>
+          <p class="p p--s">Nobody in your family or your team has to supervise anything.</p>
+          <ul>
+            <li><span>&#10003;</span>Professional butlers through the evening</li>
+            <li><span>&#10003;</span>A dedicated event manager, and supervision of every service point</li>
+            <li><span>&#10003;</span>Guest flow planned so queues never form</li>
+            <li><span>&#10003;</span>Dietary requirements handled quietly, at the table</li>
+          </ul>
+        </div>
+        <div class="host">
+          <img class="host__shot" src="/images/virtuoso-catering-house-behind-the-scenes-tesla-centre-gurugram-2025.webp" alt="The Virtuoso kitchen team working behind the service line" loading="lazy" decoding="async">
+          <h3 class="h3">The part you never see</h3>
+          <p class="p p--s">We arrive long before your guests and leave the place as we found it.</p>
+          <ul>
+            <li><span>&#10003;</span>A site recce before the date, and back-of-house planning</li>
+            <li><span>&#10003;</span>Kitchen infrastructure and equipment brought in</li>
+            <li><span>&#10003;</span>Coordination with your venue, planner and d&eacute;cor team</li>
+            <li><span>&#10003;</span>Setup, event-day execution, and same-day pack-up and teardown</li>
+          </ul>
+        </div>
+      </div>
+      <p class="p p--s" style="max-width:68ch"><strong>The only thing we ask of you:</strong> the back-of-house tables our team needs to work on. Everything else arrives with us. We cater across Delhi NCR.</p>
+    </div>
+  </section>
+
+  <!-- 04C THE COUNTER, MOVING -->
+  <section class="band band--card" style="border-top:1px solid var(--hair)">
+    <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
+      <div class="stack" style="gap:14px">
+        <p class="eyebrow">One of your two live counters</p>
+        <h2 class="h2" style="max-width:24ch">A live counter, cooking in front of your guests.</h2>
+        <p class="p" style="max-width:62ch">A few seconds from a Virtuoso evening, and the chaat corner that stood beside it: brass handis, copper bowls, lit signage, gol gappa and bhalla papdi served to order. Our own counters, not stock photographs.</p>
+      </div>
+      <div class="counter">
+        <figure class="counter__film" data-counter-film>
+          <img src="/images/diwali/virtuoso-catering-house-diwali-live-counter-still.webp" alt="A Virtuoso live chaat counter, lit in brass and copper" loading="lazy" decoding="async">
+          <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+            <source data-src="/videos/virtuoso-catering-house-diwali-live-counter.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="counter__stills">
+          <img src="/images/diwali/virtuoso-catering-house-diwali-live-chaat-counter.webp" alt="Two Virtuoso chefs behind a lit live chaat counter" loading="lazy" decoding="async">
+          <img src="/images/diwali/virtuoso-catering-house-diwali-chaat-corner-detail.webp" alt="The live chaat corner signage, brass handis and baskets" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 05 THRESHOLD + FORM -->
   <section class="enquiry" id="enquiry">
     <div class="wrap enquiry__grid">
@@ -368,6 +523,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <p class="eyebrow">Before you write to us</p>
           <p class="threshold__price">Diwali parties begin at <span>&#8377;3,500 per guest</span>.</p>
           <p class="p">Our work is designed for parties of 50 guests or more - a minimum booking of &#8377;1,75,000 - where the menu, counters, bar and service are planned together as one evening.</p>
+          <p class="p p--s" style="margin-top:2px"><strong>Menu, chefs, two live counters, butlers, crockery, setup and same-day teardown are all included at that price.</strong></p>
         </div>
         <div class="boundary">
           <p class="eyebrow">A note before you enquire</p>
@@ -460,7 +616,10 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <input type="hidden" name="fbclid" id="fbclid" />
 
           <div class="form__foot">
-            <button class="btn btn--form" id="lander-submit" type="submit">Submit <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+            <button class="cta-big" id="lander-submit" type="submit" style="max-width:none">
+              <span class="cta-big__line">Book my Diwali Party <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="cta-big__sub">Our representative will call you today.</span>
+            </button>
             <p id="lander-status" role="status" aria-live="polite"></p>
             <p class="fine fine--xs" style="text-align:center">No payment to enquire. By submitting, you agree that Virtuoso Catering House may contact you about your party. Your details are not shared.</p>
           </div>
@@ -524,6 +683,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <p class="p p--s">For your team, your clients, or both. We time service around speeches, awards and gifting, so the evening runs to schedule and the people who organised it get to enjoy it too.</p>
           <ul>
             <li><span>&#10003;</span>Live chaat and tandoor counters, cooked in front of guests</li>
+            <li><span>&#10003;</span>Festive meals: starters, canap&eacute;s and chaat for your team</li>
             <li><span>&#10003;</span>Signature Diwali cocktails and mocktails</li>
             <li><span>&#10003;</span>Plated or buffet dinner for 50 to 500 guests</li>
           </ul>
@@ -532,10 +692,12 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
           <h3 class="h3">Diwali at home</h3>
           <p class="p p--s">Stay with your family through the puja and the card tables while our team runs the kitchen, the counters and the bar.</p>
           <ul>
-            <li><span>&#10003;</span>A grazing table for the card tables</li>
+            <li><span>&#10003;</span>Grazing options, laid out for the card tables</li>
+            <li><span>&#10003;</span>The latest bespoke culinary menus, written for your night</li>
             <li><span>&#10003;</span>A festive family-style dinner</li>
             <li><span>&#10003;</span>A mithai and dessert table, and a mixologist behind your bar</li>
           </ul>
+          <p class="host__line">No boring meals. Only the best.</p>
         </div>
       </div>
     </div>
@@ -607,7 +769,10 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     <div class="wrap close__inner">
       <h2 class="h2">The weekends before Diwali book first.</h2>
       <p class="p">One conversation with the person who will plan your food. A written plan within 24 hours. Then a tasting, before anything is confirmed.</p>
-      <a class="btn" href="#lander-form" style="margin-top:6px">Submit <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="cta-big" href="#lander-form" style="margin-top:6px">
+        <span class="cta-big__line">Book my Diwali Party <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
+        <span class="cta-big__sub">We&rsquo;ll check your date first.</span>
+      </a>
       <p class="fine">We accept a limited number of parties on each date.</p>
     </div>
   </section>
@@ -623,7 +788,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 </footer>
 
 <nav class="mbar" id="mbar" aria-label="Quick actions">
-  <a class="btn" href="#lander-form">Submit</a>
+  <a class="btn" href="#lander-form">Book my Diwali Party</a>
   <a class="btn call" href="tel:+918700915463" aria-label="Call +91 87009 15463">Call</a>
 </nav>
 
@@ -744,8 +909,9 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     var qualified = data.guestCount !== "Not finalised yet" && data.eventDate <= LAST_DATE;
 
     var btn = document.getElementById("lander-submit");
-    var label = btn.innerHTML;
-    btn.disabled = true; btn.textContent = "Sending…";
+    var btnLine = btn.querySelector(".cta-big__line");
+    var label = btnLine.innerHTML;
+    btn.disabled = true; btnLine.textContent = "Sending…";
 
     var send = fetch(LEAD_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
       .then(function (r) {
@@ -779,7 +945,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     }).catch(function () {
       document.getElementById("lander-status").textContent = "We couldn't send your enquiry. Check your connection and try again, or call +91 87009 15463.";
     }).finally(function () {
-      btn.disabled = false; btn.innerHTML = label;
+      btn.disabled = false; btnLine.innerHTML = label;
     });
   });
 
@@ -789,6 +955,77 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
     document.getElementById("form-view").hidden = false;
     document.getElementById("name").focus();
   });
+
+  /* The hero film. Same rules as the counter film below: nothing downloads
+     for reduced motion or data saver, and it pauses once it scrolls away. */
+  var heroFilm = document.querySelector("[data-hero-film]");
+  var motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    !((navigator.connection || {}).saveData);
+  if (heroFilm && motionOk) {
+    heroFilm.addEventListener("canplay", function () { heroFilm.classList.add("is-ready"); }, { once: true });
+    Array.prototype.forEach.call(heroFilm.querySelectorAll("source[data-src]"), function (src) {
+      src.src = src.getAttribute("data-src");
+    });
+    heroFilm.load();
+    var heroPlay = function () {
+      var r = heroFilm.play();
+      if (r && typeof r.catch === "function") r.catch(function () {});
+    };
+    heroPlay();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.isIntersecting ? heroPlay() : heroFilm.pause(); });
+      }, { threshold: 0 }).observe(heroFilm);
+    }
+  }
+
+  /* The film band under the hero. Same rules as the counter film below. */
+  var reel = document.querySelector("[data-reel-film]");
+  var reelVideo = reel && reel.querySelector("video");
+  if (reelVideo && motionOk && "IntersectionObserver" in window) {
+    var reelStarted = false;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { if (reelStarted) reelVideo.pause(); return; }
+        if (!reelStarted) {
+          reelStarted = true;
+          reelVideo.addEventListener("canplay", function () { reelVideo.classList.add("is-ready"); }, { once: true });
+          Array.prototype.forEach.call(reelVideo.querySelectorAll("source[data-src]"), function (src) {
+            src.src = src.getAttribute("data-src");
+          });
+          reelVideo.load();
+        }
+        var r = reelVideo.play();
+        if (r && typeof r.catch === "function") r.catch(function () {});
+      });
+    }, { threshold: 0.25 }).observe(reel);
+  }
+
+  /* The counter film. Nothing downloads until it is on screen, so a visitor
+     who never scrolls that far never pays for it. Skipped entirely for
+     reduced motion and data saver, where the still photograph is the page. */
+  var film = document.querySelector("[data-counter-film]");
+  var filmVideo = film && film.querySelector("video");
+  var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var wantsMotion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches && !(conn && conn.saveData);
+  if (filmVideo && wantsMotion && "IntersectionObserver" in window) {
+    var started = false;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { if (started) filmVideo.pause(); return; }
+        if (!started) {
+          started = true;
+          filmVideo.addEventListener("canplay", function () { filmVideo.classList.add("is-ready"); }, { once: true });
+          Array.prototype.forEach.call(filmVideo.querySelectorAll("source[data-src]"), function (src) {
+            src.src = src.getAttribute("data-src");
+          });
+          filmVideo.load();
+        }
+        var playing = filmVideo.play();
+        if (playing && typeof playing.catch === "function") playing.catch(function () {});
+      });
+    }, { threshold: 0.25 }).observe(film);
+  }
 
   /* Hide the mobile bar while the form is on screen */
   var bar = document.getElementById("mbar");
