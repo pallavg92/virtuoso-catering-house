@@ -269,6 +269,16 @@ const pages = {
     description: 'Diwali party catering for offices and homes across Delhi NCR. Live counters, a mixology bar and a menu designed around your evening. 50 guests or more.',
     breadcrumbs: []
   },
+  lpDiwali2026Plan: {
+    path: '/lp/diwali-2026-plan',
+    view: 'lander-diwali-2026-plan',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'Be a guest at your own Diwali party — Virtuoso Catering House',
+    description: 'Virtuoso plans, cooks, serves and clears Diwali parties of 50 guests or more across Delhi NCR. One call, and a written plan for your evening, with the cost, within 24 hours. Free.',
+    breadcrumbs: []
+  },
   lpFirstBirthday: {
     path: '/lp/first-birthday',
     view: 'lander-first-birthday',

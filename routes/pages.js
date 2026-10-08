@@ -173,8 +173,11 @@ router.post('/lp/first-birthday', async (req, res) => {
 // Validation is repeated on this side because `required` in the markup is
 // trivially bypassed, and the threshold tick is the whole point of the page.
 router.get('/lp/diwali-2026', (req, res) => render(res, pages.lpDiwali2026));
+// The plan variant: same form, same rules, same conversion. Only the words
+// around the form differ, which is the whole point of running the two.
+router.get('/lp/diwali-2026-plan', (req, res) => render(res, pages.lpDiwali2026Plan));
 
-router.post('/lp/diwali-2026', async (req, res) => {
+router.post(['/lp/diwali-2026', '/lp/diwali-2026-plan'], async (req, res) => {
   const body = req.body || {};
   const str = (v) => (typeof v === 'string' ? v.trim() : '');
   const errors = {};
@@ -290,7 +293,8 @@ router.post('/lp/diwali-2026', async (req, res) => {
       value: minGuests * 3500,
       currency: 'INR'
     },
-    sourceUrl: siteUrl + '/lp/diwali-2026'
+    // Whichever of the two pages posted, so Events Manager shows the real one.
+    sourceUrl: siteUrl + req.path
   });
 
   return res.json({ ok: true, eventId });
