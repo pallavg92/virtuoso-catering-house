@@ -832,7 +832,7 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
   // Posts to our own server, which emails the enquiry and reports the
   // Lead to Meta from the server with the same event id the pixel uses
   // below, so Meta counts one conversion rather than two.
-  var LEAD_ENDPOINT = "/lp/diwali-2026-plan";
+  var LEAD_ENDPOINT = location.pathname.replace(/\/$/, "");
   var PRICE_PER_GUEST = 3500;
   var DIWALI = new Date("2026-11-08T00:00:00+05:30");
 

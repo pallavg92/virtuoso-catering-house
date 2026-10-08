@@ -172,12 +172,16 @@ router.post('/lp/first-birthday', async (req, res) => {
 // own thank-you state in the page, so the form posts JSON here and stays put.
 // Validation is repeated on this side because `required` in the markup is
 // trivially bypassed, and the threshold tick is the whole point of the page.
-router.get('/lp/diwali-2026', (req, res) => render(res, pages.lpDiwali2026));
+// The ads point at /lp/diwali-2026, so that address now serves the plan page.
+// The original stays reachable for reference, and every copy of the form
+// posts to the handler below whichever address it sits on.
+router.get('/lp/diwali-2026', (req, res) => render(res, pages.lpDiwali2026Plan));
+router.get('/lp/diwali-2026-original', (req, res) => render(res, pages.lpDiwali2026));
 // The plan variant: same form, same rules, same conversion. Only the words
 // around the form differ, which is the whole point of running the two.
 router.get('/lp/diwali-2026-plan', (req, res) => render(res, pages.lpDiwali2026Plan));
 
-router.post(['/lp/diwali-2026', '/lp/diwali-2026-plan'], async (req, res) => {
+router.post(['/lp/diwali-2026', '/lp/diwali-2026-plan', '/lp/diwali-2026-original'], async (req, res) => {
   const body = req.body || {};
   const str = (v) => (typeof v === 'string' ? v.trim() : '');
   const errors = {};
