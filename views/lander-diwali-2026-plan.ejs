@@ -203,6 +203,18 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
 .cover__ask{margin-top:clamp(6px,1vw,12px)}
 @media (min-width:760px){.cover ul{grid-template-columns:1fr 1fr}}
 
+/* office or private, said once and loudly */
+.allofthem{font-family:var(--serif);font-weight:600;font-size:clamp(34px,1.6rem + 3vw,64px);line-height:1.05;letter-spacing:-.005em;color:var(--forest);margin:0;max-width:18ch;text-wrap:balance}
+
+/* a plain-spoken bold line under a heading */
+.lead-bold{font-family:var(--sans);font-weight:600;font-size:clamp(18px,1rem + .5vw,22px);line-height:1.45;color:var(--forest);margin:0;max-width:52ch}
+
+/* the rating on a light background */
+.stars--light .stars__text{color:var(--ink-2)}
+.stars--light .stars__text strong{color:var(--ink)}
+.stars--light .stars__bed{fill:rgba(147,90,17,.22)}
+.stars--light .stars__lit{fill:var(--cta)}
+
 /* the offer, beside the form */
 .offer{display:flex;flex-direction:column;gap:22px}
 .offer .threshold{gap:12px}
@@ -564,35 +576,14 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
     </div>
   </section>
 
-  <!-- 07 TWO KINDS OF PARTY -->
+  <!-- 07 OFFICE OR PRIVATE: one line, one button -->
   <section class="band band--card">
-    <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
-      <div class="stack" style="gap:14px">
-        <p class="eyebrow">Office party or family night</p>
-        <h2 class="h2" style="max-width:22ch">Two kinds of Diwali party. One team running the evening.</h2>
-      </div>
-      <div class="hosts">
-        <div class="host">
-          <h3 class="h3">Office and client parties</h3>
-          <p class="p p--s">For your team, your clients, or both. We time service around speeches, awards and gifting, so the evening runs to schedule and the people who organised it get to enjoy it too.</p>
-          <ul>
-            <li><span>&#10003;</span>Live chaat and tandoor counters, cooked in front of guests</li>
-            <li><span>&#10003;</span>Festive meals: starters, canap&eacute;s and chaat for your team</li>
-            <li><span>&#10003;</span>Plated or buffet dinner for 50 to 500 guests</li>
-          </ul>
-        </div>
-        <div class="host">
-          <h3 class="h3">Diwali at home</h3>
-          <p class="p p--s">Stay with your family through the puja and the card tables while our team runs the kitchen and the counters.</p>
-          <ul>
-            <li><span>&#10003;</span>Grazing options, laid out for the card tables</li>
-            <li><span>&#10003;</span>The latest bespoke culinary menus, written for your night</li>
-            <li><span>&#10003;</span>A festive family-style dinner</li>
-            <li><span>&#10003;</span>A mithai and dessert table</li>
-          </ul>
-          <p class="host__line">No boring meals. Only the best.</p>
-        </div>
-      </div>
+    <div class="wrap stack" style="gap:clamp(20px,3vw,28px);align-items:flex-start">
+      <h2 class="allofthem">Office party or private event, we can do them all!</h2>
+      <a class="cta-big" href="#lander-form">
+        <span class="cta-big__line">Get in touch now <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
+        <span class="cta-big__sub">Free. We&rsquo;ll call to confirm your date first.</span>
+      </a>
     </div>
   </section>
 
@@ -601,7 +592,12 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
     <div class="stack" style="gap:14px">
       <p class="eyebrow">Proof, not promises</p>
       <h2 class="h2" style="max-width:22ch">The same team that runs Ferrari&rsquo;s and Tesla&rsquo;s evenings.</h2>
-      <p class="stars" style="margin-top:6px">
+      <p class="lead-bold">We&rsquo;ve catered for the biggest brands (psst&hellip; Ferrari, Lamborghini) and can&rsquo;t wait to cater for you!</p>
+      <a class="cta-big" href="#lander-form" style="margin-top:4px">
+        <span class="cta-big__line">Get in touch now <span class="btn__arrow" aria-hidden="true">&rarr;</span></span>
+        <span class="cta-big__sub">Free. We&rsquo;ll call to confirm your date first.</span>
+      </a>
+      <p class="stars stars--light" style="margin-top:6px">
           <span class="stars__row">
             <svg class="stars__bed" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg>
             <span class="stars__fill"><svg class="stars__lit" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path transform="translate(0,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(24,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(48,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(72,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/><path transform="translate(96,0)" d="M12 2.6l2.82 6.09 6.68.86-4.92 4.57 1.26 6.6L12 17.5l-5.84 3.22 1.26-6.6L2.5 9.55l6.68-.86L12 2.6z"/></svg></span>
@@ -642,6 +638,7 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
     <div class="wrap enquiry__grid">
       <div class="offer">
         <h2 class="h2">What it costs, and what it costs to find out.</h2>
+        <p class="lead-bold">As we said before, &#8377;3,500 per person covers everything. And by the way, the written plan will be fabulous, and it&rsquo;s free for you.</p>
         <div class="threshold">
           <p class="eyebrow">The offer</p>
           <p class="threshold__price">A written plan for your Diwali party, <span>with the cost</span>, within 24 hours of one call. Free.</p>
