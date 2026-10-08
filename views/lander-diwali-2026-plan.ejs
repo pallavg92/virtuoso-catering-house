@@ -185,6 +185,24 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
 .plan-hl mark.hl{font-weight:400;padding:3px 8px}
 .plan-hl strong{font-weight:600}
 
+/* what it covers: Virtuoso green, bold gold, one unbroken list */
+.cover{background:var(--forest);color:var(--card)}
+.cover__inner{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
+.cover__eyebrow{margin:0}
+.cover__eyebrow mark{background:var(--gold-text);color:var(--forest);font-weight:600;letter-spacing:.16em;padding:5px 12px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cover__h{font-family:var(--serif);font-weight:600;font-size:clamp(52px,18vw,150px);line-height:.92;letter-spacing:-.01em;color:var(--gold-text);margin:4px 0 0}
+.cover__lead{font-family:var(--sans);font-weight:600;font-size:clamp(20px,1.05rem + 1vw,30px);line-height:1.25;color:var(--gold-text);margin:0;max-width:30ch}
+.cover__p{font-size:16px;line-height:1.6;color:#D9D2C4;margin:0;max-width:62ch}
+.cover__p strong{color:var(--card);font-weight:600}
+.cover__group{border-top:1px solid rgba(232,201,138,.32);padding-top:clamp(18px,2.4vw,26px);margin-top:clamp(6px,1vw,12px)}
+.cover__group h3{font-family:var(--sans);font-weight:600;font-size:clamp(22px,1.1rem + .9vw,30px);line-height:1.15;color:var(--gold-text);margin:0 0 16px}
+.cover ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px 40px}
+.cover li{display:flex;gap:12px;font-size:16.5px;line-height:1.45;color:#EFE8D8}
+.cover li span{color:var(--gold-text);flex:none;font-weight:600}
+.cover__sub{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin:22px 0 12px}
+.cover__ask{margin-top:clamp(6px,1vw,12px)}
+@media (min-width:760px){.cover ul{grid-template-columns:1fr 1fr}}
+
 /* the offer, beside the form */
 .offer{display:flex;flex-direction:column;gap:22px}
 .offer .threshold{gap:12px}
@@ -480,80 +498,69 @@ mark.hl--warm{background:#F2E2BF;color:var(--ink)}
     </div>
   </section>
 
-  <!-- 06 BENEFITS, with everything that is included under each -->
-  <section class="band" style="background:var(--band);border-top:1px solid var(--hair)">
-    <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
-      <div class="stack" style="gap:14px">
-        <p class="eyebrow">What &#8377;3,500 a guest covers</p>
-        <h2 class="h2" style="max-width:22ch">What changes on the night.</h2>
-        <p class="p" style="max-width:62ch">Every Diwali booking gets all of it. Nothing on this page is an upgrade, a package above yours, or a line that appears later on the bill.</p>
+  <!-- 06 WHAT IT COVERS: one continuous block, no pictures breaking it -->
+  <%# Three macro areas, as the offer is sold. Planning and execution sits
+      inside Hospitality, which is how the offer was written. No image
+      anywhere in here: the list is the point and it should read unbroken. -%>
+  <section class="cover">
+    <div class="wrap cover__inner">
+      <p class="eyebrow cover__eyebrow"><mark>What &#8377;3,500 a guest covers</mark></p>
+      <h2 class="cover__h">Everything!</h2>
+      <p class="cover__lead">&#8377;3,500 a guest literally covers everything.</p>
+      <p class="cover__p">Every Diwali booking gets all of it. Nothing below is an upgrade, a package above yours, or a line that appears later on the bill.</p>
+
+      <div class="cover__group">
+        <h3>Culinary</h3>
+        <ul>
+          <li><span>&#10003;</span>Bespoke menu creation</li>
+          <li><span>&#10003;</span>Complete execution of the finalised menu</li>
+          <li><span>&#10003;</span>Chefs on site</li>
+          <li><span>&#10003;</span>Live culinary experiences, wherever applicable</li>
+          <li><span>&#10003;</span>Production in our base kitchen under controlled, hygienic conditions</li>
+          <li><span>&#10003;</span>Certified pure paneer used across all applicable preparations</li>
+          <li><span>&#10003;</span>Quality-controlled ingredient sourcing</li>
+          <li><span>&#10003;</span>Fresh production, on-site finishing</li>
+          
+        </ul>
       </div>
-      <div class="hosts">
-        <div class="host">
-          <figure class="host__shot host__shot--film" data-team-film>
-            <img src="/images/diwali/virtuoso-catering-house-diwali-film-still.webp" alt="Masala peanut chaat served in paper cones, set in a steel bowl over roasted peanuts" loading="lazy" decoding="async">
-            <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
-              <source data-src="/videos/virtuoso-catering-house-diwali-film.mp4" type="video/mp4">
-            </video>
-          </figure>
-          <h3 class="h3">The food is the conversation</h3>
-          <p class="p p--s">Cooked in front of your guests, not wheeled out of a van.</p>
-          <ul>
-            <li><span>&#10003;</span>Bespoke menu creation</li>
-            <li><span>&#10003;</span>Complete execution of the finalised menu</li>
-            <li><span>&#10003;</span>Chefs on site</li>
-            <li><span>&#10003;</span>Live culinary experiences, wherever applicable</li>
-            <li><span>&#10003;</span>Production in our base kitchen under controlled, hygienic conditions</li>
-            <li><span>&#10003;</span>Certified pure paneer used across all applicable preparations</li>
-            <li><span>&#10003;</span>Quality-controlled ingredient sourcing</li>
-            <li><span>&#10003;</span>Fresh production, on-site finishing</li>
+
+      <div class="cover__group">
+        <h3>Presentation</h3>
+        <ul>
+          <li><span>&#10003;</span>Complete food presentation structure</li>
+          <li><span>&#10003;</span>F&amp;B d&eacute;cor elements</li>
+          <li><span>&#10003;</span>Counters and live stations</li>
+          <li><span>&#10003;</span>Food displays and presentation</li>
+          <li><span>&#10003;</span>Styling of the F&amp;B environment</li>
+          <li><span>&#10003;</span>Crockery, cutlery and serviceware</li>
           
-          </ul>
-        </div>
-        <div class="host">
-          <img class="host__shot" src="/img/case-setting.webp" alt="A styled food display with florals, signage and serviceware" loading="lazy" decoding="async">
-          <h3 class="h3">The counter is part of the room</h3>
-          <p class="p p--s">Built, lit and styled, so the food is on show rather than pushed against a wall.</p>
-          <ul>
-            <li><span>&#10003;</span>Complete food presentation structure</li>
-            <li><span>&#10003;</span>F&amp;B d&eacute;cor elements</li>
-            <li><span>&#10003;</span>Counters and live stations</li>
-            <li><span>&#10003;</span>Food displays and presentation</li>
-            <li><span>&#10003;</span>Styling of the F&amp;B environment</li>
-            <li><span>&#10003;</span>Crockery, cutlery and serviceware</li>
-          
-          </ul>
-        </div>
-        <div class="host">
-          <img class="host__shot" src="/img/exec-staff.webp" alt="Virtuoso butlers lined up with trays before service begins" loading="lazy" decoding="async">
-          <h3 class="h3">Nobody queues, and nobody is you</h3>
-          <p class="p p--s">Butlers, an event manager, and a plan for how guests move through the room.</p>
-          <ul>
-            <li><span>&#10003;</span>Professional butlers</li>
-            <li><span>&#10003;</span>Dedicated event manager</li>
-            <li><span>&#10003;</span>Service supervision</li>
-            <li><span>&#10003;</span>Guest flow and F&amp;B service planning</li>
-            <li><span>&#10003;</span>Dietary requirement management</li>
-          
-          </ul>
-        </div>
-        <div class="host">
-          <img class="host__shot" src="/images/virtuoso-catering-house-behind-the-scenes-tesla-centre-gurugram-2025.webp" alt="The Virtuoso kitchen team working behind the service line" loading="lazy" decoding="async">
-          <h3 class="h3">We arrive before your guests and leave as we found it</h3>
-          <p class="p p--s">A recce before the date, a kitchen brought in, and everything cleared the same night.</p>
-          <ul>
-            <li><span>&#10003;</span>Pre-event site recce</li>
-            <li><span>&#10003;</span>Back-of-house planning</li>
-            <li><span>&#10003;</span>Kitchen infrastructure and equipment</li>
-            <li><span>&#10003;</span>Coordination with venue, planner and d&eacute;cor team</li>
-            <li><span>&#10003;</span>Complete setup</li>
-            <li><span>&#10003;</span>Event-day execution</li>
-            <li><span>&#10003;</span>Pack-up and teardown</li>
-          
-          </ul>
-        </div>
+        </ul>
       </div>
-      <p class="p p--s" style="max-width:68ch"><strong>The only thing we ask of you:</strong> the back-of-house tables our team needs to work on. Everything else arrives with us.</p>
+
+      <div class="cover__group">
+        <h3>Hospitality</h3>
+        <ul>
+          <li><span>&#10003;</span>Professional butlers</li>
+          <li><span>&#10003;</span>Dedicated event manager</li>
+          <li><span>&#10003;</span>Service supervision</li>
+          <li><span>&#10003;</span>Guest flow and F&amp;B service planning</li>
+          <li><span>&#10003;</span>Dietary requirement management</li>
+          
+        </ul>
+        <p class="cover__sub">Planning and execution</p>
+        <ul>
+          <li><span>&#10003;</span>Pre-event site recce</li>
+          <li><span>&#10003;</span>Back-of-house planning</li>
+          <li><span>&#10003;</span>Kitchen infrastructure and equipment</li>
+          <li><span>&#10003;</span>Coordination with venue, planner and d&eacute;cor team</li>
+          <li><span>&#10003;</span>Complete setup</li>
+          <li><span>&#10003;</span>Event-day execution</li>
+          <li><span>&#10003;</span>Pack-up and teardown</li>
+          
+        </ul>
+      </div>
+
+      <p class="cover__p cover__ask"><strong>The only thing we ask of you:</strong> the back-of-house tables our team needs to work on. Everything else arrives with us.</p>
     </div>
   </section>
 
