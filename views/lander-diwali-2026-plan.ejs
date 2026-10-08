@@ -177,6 +177,14 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
 .story strong{color:var(--ink);font-weight:500}
 .story--close{font-family:var(--serif);font-style:italic;font-size:clamp(22px,1.1rem + 1vw,30px);line-height:1.25;color:var(--ink);margin:0}
 
+.story--close{line-height:1.5}
+.story--close mark{font-weight:400;padding:2px 10px}
+mark.hl--warm{background:#F2E2BF;color:var(--ink)}
+.plan-hl{display:flex;flex-direction:column;gap:10px;max-width:62ch;margin-top:4px}
+.plan-hl p{margin:0;font-size:clamp(17px,1rem + .35vw,19px);line-height:1.8;color:var(--forest)}
+.plan-hl mark.hl{font-weight:400;padding:3px 8px}
+.plan-hl strong{font-weight:600}
+
 /* the offer, beside the form */
 .offer{display:flex;flex-direction:column;gap:22px}
 .offer .threshold{gap:12px}
@@ -437,7 +445,7 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
         <h2 class="h2" style="max-width:20ch">You know how a Diwali party usually goes.</h2>
       </div>
       <p class="story">You pick a package off a PDF. The food turns up in steel chafing dishes, the same dishes that stood at three other parties that week. Guests queue at a buffet with a plate in one hand and a glass in the other. Somebody has to keep an eye on the kitchen, and that somebody is you. The mithai is there because mithai has to be there. By the time you finally sit down, to play the cards or enjoy the party, half the room is saying goodbye.</p>
-      <p class="story--close">The food was fine. The evening was work.</p>
+      <p class="story--close"><mark class="hl hl--warm">The food was fine. The evening was work.</mark></p>
     </div>
   </section>
 
@@ -447,6 +455,11 @@ mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:
       <div class="stack" style="gap:14px">
         <p class="eyebrow">There is another way to run the evening</p>
         <h2 class="h2" style="max-width:20ch">The Virtuoso Evening Plan.</h2>
+        <div class="plan-hl">
+          <p><mark class="hl"><strong>Fabulous food</strong>, not the same generic stuff from three other parties that everyone is bored of.</mark></p>
+          <p><mark class="hl"><strong>Seamless execution.</strong> You play the cards or party with your guests. We run the food.</mark></p>
+          <p><mark class="hl"><strong>Automatic.</strong></mark></p>
+        </div>
         <p class="p" style="max-width:62ch">Before you pay for anything, you speak to the person who will plan your food. Within 24 hours of that call you have a written plan: the menu journey, the live counters, how the service runs, how it all looks, and what it costs for your guest count. You taste the dishes. Then, and only then, you confirm. On the night, one person from Virtuoso runs the food and the service, and you do not check on anything.</p>
       </div>
       <ol class="steps">
