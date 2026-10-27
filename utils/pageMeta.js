@@ -540,6 +540,39 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'dips-for-a-grazing-table'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Dips for a Grazing Table', path: '/blog/dips-for-a-grazing-table' }]
   },
+  blogFourPastaSauces: {
+    path: '/blog/four-pasta-sauces',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Four Pasta Sauces: Pistachio Pesto to Spicy Vodka',
+    description: content.blogPosts.find((p) => p.slug === 'four-pasta-sauces').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'four-pasta-sauces').image,
+    post: content.blogPosts.find((p) => p.slug === 'four-pasta-sauces'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Four Pasta Sauces', path: '/blog/four-pasta-sauces' }]
+  },
+  blogDiwaliFusionCanapes: {
+    path: '/blog/diwali-fusion-canapes',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Three Diwali Fusion Canapés to Serve This Festive Season',
+    description: content.blogPosts.find((p) => p.slug === 'diwali-fusion-canapes').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'diwali-fusion-canapes').image,
+    post: content.blogPosts.find((p) => p.slug === 'diwali-fusion-canapes'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Diwali Fusion Canapés', path: '/blog/diwali-fusion-canapes' }]
+  },
+  blogDiwaliGrazingPalettes: {
+    path: '/blog/diwali-grazing-table-colour-palettes',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Diwali Grazing Table Colour Palettes: Warm or Cool?',
+    description: content.blogPosts.find((p) => p.slug === 'diwali-grazing-table-colour-palettes').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'diwali-grazing-table-colour-palettes').image,
+    post: content.blogPosts.find((p) => p.slug === 'diwali-grazing-table-colour-palettes'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Diwali Grazing Table Palettes', path: '/blog/diwali-grazing-table-colour-palettes' }]
+  },
   blogDiwaliGrazing: {
     path: '/blog/indian-diwali-grazing-table',
     view: 'blog-post',

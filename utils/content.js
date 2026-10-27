@@ -1955,6 +1955,381 @@ const blogPosts = [
       bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company\u2019s experience centre in Sector 61, Noida.'
     }
   }
+  ,{
+    slug: 'four-pasta-sauces',
+    url: '/blog/four-pasta-sauces',
+    title: 'Four Pasta Sauces, From Pistachio Pesto to Spicy Vodka',
+    excerpt: 'Four pasta sauces from our kitchen: pistachio pesto with burrata, truffle mushroom Parmesan, caramelised onion with goat cheese, and spicy tomato vodka.',
+    date: '2026-10-27',
+    image: '/images/blog/four-pasta-sauces/virtuoso-catering-house-four-pasta-sauces.jpg',
+    relatedLink: { path: '/blog/dips-for-a-grazing-table', label: 'Guests arriving before dinner? Set out five dips while the pasta water boils' },
+    ctaTitle: 'Hosting a Dinner<br>for Your Guests?',
+    downloadOffer: {
+      eyebrow: 'The Four Recipes',
+      title: 'Four Sauces,<br>Start to Finish',
+      copy: 'The quantities, the garnish and every step for all four sauces, each on its own printable page, with the note from Aarti Sharma that makes each one work.',
+      action: 'Send Me the Four Recipes',
+      asset: 'four-pasta-sauces',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+    lead: [
+      'Four pasta sauces from the Virtuoso kitchen: pistachio pesto with burrata, truffle mushroom Parmesan, caramelised onion with goat cheese, and spicy tomato vodka. Each one finishes the same way, tossed with the pasta in the pan with a splash of its own cooking water, which is what turns a good sauce into a glossy one.',
+      'They sit at four different points on the plate. One is fresh and green, one is earthy, one is sweet and tangy, and one brings heat.',
+      'Below is how each one tastes, how it looks, and the pasta it belongs with. The full recipes, with every quantity and every step, are in the download.'
+    ],
+    sections: [
+      {
+        heading: '1. Pistachio Pesto & Burrata',
+        headingNote: 'Nutty. Fresh. Subtly citrus.',
+        paragraphs: [
+          'Vibrant green pesto with a whole burrata set in the centre and torn open just before serving, so the cream runs into the pasta.',
+          'The pesto stays slightly textured on purpose. Blend the pistachios too far and the dish loses the contrast between silky pasta, coarse nuts and soft burrata.'
+        ],
+        pairing: { label: 'Best with', items: 'Spaghetti or linguine, toasted sourdough, a crisp white wine' },
+        imageFirst: true,
+        image: { src: '/images/blog/four-pasta-sauces/virtuoso-catering-house-pistachio-pesto-burrata-pasta.jpg', caption: 'Pistachio pesto spaghetti with a whole burrata, finished with crushed pistachios and basil.' }
+      },
+      {
+        heading: '2. Truffle Mushroom Parmesan',
+        headingNote: 'Earthy. Rich. Deeply savoury.',
+        paragraphs: [
+          'Golden-brown mushrooms folded through ribbons of pasta in a silky Parmesan cream.',
+          'The truffle goes in last, with the pan already off the heat. Added any earlier, its aroma cooks away and what remains tastes heavy rather than fragrant.'
+        ],
+        pairing: { label: 'Best with', items: 'Fettuccine or tagliatelle, garlic bread, grilled sourdough' },
+        imageFirst: true,
+        image: { src: '/images/blog/four-pasta-sauces/virtuoso-catering-house-truffle-mushroom-parmesan-pasta.jpg', caption: 'Truffle mushroom Parmesan fettuccine with golden mushrooms and fresh herbs.' }
+      },
+      {
+        heading: '3. Caramelised Onion & Goat Cheese',
+        headingNote: 'Sweet. Tangy. Creamy.',
+        paragraphs: [
+          'Onions cooked slowly until deeply golden, a pale and creamy goat cheese sauce, and toasted walnuts for crunch.',
+          'This is the patient one. The onions take the better part of half an hour, and that slow caramelisation is the sweetness that balances the tang of the goat cheese.'
+        ],
+        pairing: { label: 'Best with', items: 'Rigatoni or orecchiette, toasted walnuts, fresh herbs' },
+        imageFirst: true,
+        image: { src: '/images/blog/four-pasta-sauces/virtuoso-catering-house-caramelised-onion-goat-cheese-pasta.jpg', caption: 'Caramelised onion and goat cheese rigatoni with toasted walnuts and crumbled goat cheese.' }
+      },
+      {
+        heading: '4. Spicy Tomato Vodka',
+        headingNote: 'Creamy. Tangy. A gentle heat.',
+        paragraphs: [
+          'A glossy red-orange sauce that clings to every ridge of the rigatoni, finished with torn basil.',
+          'The last toss is where it is won. Let the pasta finish in the sauce with a little of its cooking water, and the starch gives it the shine you expect from a good restaurant.'
+        ],
+        pairing: { label: 'Best with', items: 'Rigatoni, garlic bread, Parmesan, fresh basil' },
+        imageFirst: true,
+        image: { src: '/images/blog/four-pasta-sauces/virtuoso-catering-house-spicy-tomato-vodka-pasta.jpg', caption: 'Spicy tomato vodka rigatoni with fresh basil and Parmesan.' }
+      },
+      {
+        heading: 'One Habit Behind All Four',
+        paragraphs: [
+          'Every one of these sauces is finished in the pan with the pasta, never spooned over the top.',
+          'Before you drain, keep back about a quarter cup of the cooking water. Toss the pasta into the sauce over low heat and add that water a little at a time. Its starch is what binds the sauce to the pasta, so it coats each piece instead of pooling at the bottom of the plate.',
+          'Cook the pasta to al dente rather than soft. It keeps cooking for the minute it spends in the sauce.'
+        ]
+      },
+      {
+        heading: 'The Four at a Glance',
+        paragraphs: [],
+        table: {
+          head: ['Sauce', 'Flavour', 'On the plate', 'Best with'],
+          rows: [
+            ['Pistachio Pesto & Burrata', 'Nutty, fresh, citrusy', 'Green pesto, white burrata', 'Spaghetti, linguine'],
+            ['Truffle Mushroom Parmesan', 'Earthy, rich, savoury', 'Golden mushrooms, ivory sauce', 'Fettuccine, tagliatelle'],
+            ['Caramelised Onion & Goat Cheese', 'Sweet, tangy, creamy', 'Golden onions, pale sauce', 'Rigatoni, orecchiette'],
+            ['Spicy Tomato Vodka', 'Creamy, tangy, spicy', 'Glossy red-orange, green basil', 'Rigatoni']
+          ]
+        }
+      },
+      {
+        heading: 'Get All Four Recipes',
+        paragraphs: [
+          'Every quantity, garnish and step for the four sauces is in one printable set, with Aarti’s note on each.',
+          '<a href="#guide-popup" class="cta-button cta-button--primary" data-cursor="hover">Download the Four Pasta Recipes&nbsp;→</a>',
+          'Hosting a dinner of your own and would rather not be at the stove? Tell us about the evening and my team at Virtuoso will get in touch.',
+          '<a href="/contact" class="cta-button cta-button--secondary" data-cursor="hover">Plan Your Dinner With Us&nbsp;→</a>'
+        ]
+      },
+      {
+        heading: 'Beyond the Pasta',
+        paragraphs: [
+          'Pasta is one course of an evening. For private dinners, weddings and launches across Delhi NCR, we design the whole menu around the occasion, from the first bite to the last plate, out of our kitchen in Sector 61, Noida.'
+        ],
+        links: [
+          { path: '/blog/dips-for-a-grazing-table', label: 'Five dips to set out before dinner' },
+          { path: '/blog/five-cheeses-for-a-cheese-board', label: 'Five cheeses for the board' },
+          { path: '/services', label: 'Our menus and services' }
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What is the secret to a glossy pasta sauce?', a: 'Finish the pasta in the sauce. Keep back about a quarter cup of the starchy cooking water before draining, then toss the pasta and sauce together over low heat, adding the water a little at a time. The starch binds the sauce so it coats the pasta instead of pooling.' },
+      { q: 'When should you add truffle oil to pasta?', a: 'Add it at the very end, with the pan already off the heat. Heat drives off its delicate aroma and can leave the dish tasting heavy. Start with a teaspoon, toss, and add more only if you want a stronger truffle note.' },
+      { q: 'How long does it take to caramelise onions for pasta?', a: 'Around 20 to 25 minutes over low to medium heat, stirring now and then, until the onions are soft and deeply golden. Rushing them over high heat browns the edges without building the sweetness that balances goat cheese in the sauce.' },
+      { q: 'Does vodka sauce taste of alcohol?', a: 'No. The vodka simmers in the tomato for a few minutes, long enough for the alcohol to cook off. What it leaves behind is a rounder tomato flavour and a silkier sauce once the cream goes in.' },
+      { q: 'Which pasta shape goes with which sauce?', a: 'Spaghetti or linguine for pistachio pesto, fettuccine or tagliatelle for truffle mushroom Parmesan, rigatoni or orecchiette for caramelised onion and goat cheese, and rigatoni for spicy tomato vodka, because its ridges hold a creamy sauce.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
+    }
+  }
+  ,{
+    slug: 'diwali-fusion-canapes',
+    url: '/blog/diwali-fusion-canapes',
+    title: 'Three Diwali Fusion Canapés',
+    excerpt: 'Three Indian fusion canapés for Diwali: achari mushroom crostini, desi salsa vol-au-vents and avocado sev puri, with all three recipes to download.',
+    date: '2026-10-27',
+    image: '/images/blog/diwali-fusion-canapes/virtuoso-catering-house-achari-mushroom-crostini.jpg',
+    relatedLink: { path: '/blog/diwali-grazing-table-colour-palettes', label: 'Setting the table they will sit on? Choose a warm or a cool Diwali palette' },
+    ctaTitle: 'Planning Canapés<br>for Your Diwali Party?',
+    downloadOffer: {
+      eyebrow: 'The Three Recipes',
+      title: 'Three Canapés,<br>Ready for Diwali',
+      copy: 'The full method for all three, each on its own printable page, with the garnish and the chef’s note that keeps every one crisp until it reaches the guest. Composed by Aarti Sharma.',
+      action: 'Send Me the Canapé Recipes',
+      asset: 'diwali-fusion-canapes',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+    lead: [
+      'Three fusion canapés we serve at Diwali: achari mushroom crostini, desi salsa vol-au-vents and avocado sev puri. Each sets an Indian filling on a crisp base, a crostini, a pastry case or a papdi, and each begins with a ready-made base, so the care goes into the filling and into keeping it crisp.',
+      'A canapé is eaten in one bite by a guest holding a drink. These three keep their crunch, carry real flavour and look like Diwali on the tray.',
+      'Below is what each one tastes like and when to serve it. The recipes, with every quantity and step, are in the download.'
+    ],
+    sections: [
+      {
+        heading: '1. Achari Mushroom Crostini',
+        headingNote: 'Tangy. Spiced. Savoury.',
+        paragraphs: [
+          'Golden crostini topped with mushrooms cooked in the whole spices of an Indian pickle, fennel, mustard, nigella and fenugreek, and finished with fresh coriander.',
+          'The filling is kept dry and concentrated on purpose, so the crostini underneath stays crisp all the way to the last guest.'
+        ],
+        pairing: { label: 'Best with', items: 'Cocktail parties, canapé platters, mocktails, sparkling wine' },
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-fusion-canapes/virtuoso-catering-house-achari-mushroom-crostini.jpg', caption: 'Achari mushroom crostini on a Virtuoso canapé tray.' }
+      },
+      {
+        heading: '2. Desi Salsa Vol-au-vents',
+        headingNote: 'Fresh. Zesty. Mildly spiced.',
+        paragraphs: [
+          'Flaky pastry cases filled with a colourful Indian-style salsa of tomato, cucumber, peppers and red onion, seasoned with chaat masala and roasted cumin, and finished with pomegranate.',
+          'Drain the salsa before it goes in. A wet salsa softens the pastry within minutes, which is also why these are assembled just before they go out.'
+        ],
+        pairing: { label: 'Best with', items: 'Welcome drinks, cocktail parties, mocktails, sparkling beverages' },
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-fusion-canapes/virtuoso-catering-house-desi-salsa-vol-au-vents.jpg', caption: 'Desi salsa vol-au-vents in crisp, flaky pastry cases.' }
+      },
+      {
+        heading: '3. Avocado Sev Puri',
+        headingNote: 'Creamy. Tangy. Chaat-inspired.',
+        paragraphs: [
+          'Crisp papdis topped with seasoned avocado, sweet tamarind and mint-coriander chutneys, fine sev and pomegranate. A street-food favourite, dressed for a cocktail evening.',
+          'The sev goes on at the last moment. Added early, it soaks up the chutney and loses the crunch the whole canapé depends on.'
+        ],
+        pairing: { label: 'Best with', items: 'Cocktail evenings, Indian fusion menus, welcome drinks, mocktails' },
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-fusion-canapes/virtuoso-catering-house-avocado-sev-puri.jpg', caption: 'Avocado sev puri on a Virtuoso canapé counter.' }
+      },
+      {
+        heading: 'Keeping Canapés Crisp on the Night',
+        paragraphs: [
+          'All three share one rule: the base must still be crisp when it reaches the guest.',
+          'Keep every filling as dry as it can be. Cook the mushrooms until no liquid is left in the pan, and drain the salsa before it meets the pastry.',
+          'Assemble close to service rather than an hour before, and garnish last. The pomegranate, coriander and sev are what make each tray look festive, and they look their freshest added in the final minutes.'
+        ]
+      },
+      {
+        heading: 'The Three at a Glance',
+        paragraphs: [],
+        table: {
+          head: ['Canapé', 'Flavour', 'Base', 'Best with'],
+          rows: [
+            ['Achari Mushroom Crostini', 'Tangy, spiced, savoury', 'Crostini', 'Cocktails, sparkling wine'],
+            ['Desi Salsa Vol-au-vents', 'Fresh, zesty, mildly spicy', 'Puff pastry case', 'Welcome drinks, mocktails'],
+            ['Avocado Sev Puri', 'Creamy, tangy, chaat-like', 'Papdi', 'Cocktail evenings, fusion menus']
+          ]
+        }
+      },
+      {
+        heading: 'Get All Three Recipes',
+        paragraphs: [
+          'The ingredients, garnish and full method for all three canapés are in one printable set, with Aarti’s note on keeping each one crisp.',
+          '<a href="#guide-popup" class="cta-button cta-button--primary" data-cursor="hover">Download the Canapé Recipes&nbsp;→</a>',
+          'Hosting Diwali for fifty or more and would rather enjoy the evening than run the kitchen? We cater Diwali parties across Delhi NCR.',
+          '<a href="/lp/diwali-2026" class="cta-button cta-button--secondary" data-cursor="hover">Plan Your Diwali Party&nbsp;→</a>'
+        ]
+      },
+      {
+        heading: 'Beyond the Canapés',
+        paragraphs: [
+          'Canapés open the evening. The rest of a Diwali table, the grazing spread, the welcome drinks and the way it is all styled, is planned around them.'
+        ],
+        links: [
+          { path: '/blog/indian-diwali-grazing-table', label: 'How we build a Diwali grazing table' },
+          { path: '/blog/diwali-grazing-table-colour-palettes', label: 'Warm or cool: choosing your Diwali palette' },
+          { path: '/blog/welcome-drinks-for-guests', label: 'Three welcome drinks to serve alongside' }
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What are good Indian fusion canapés for Diwali?', a: 'Achari mushroom crostini, desi salsa vol-au-vents and avocado sev puri. Each puts Indian flavour, pickle spices, chaat masala or chutneys, on a crisp base that holds in one bite, which suits a Diwali party where guests eat standing with a drink in hand.' },
+      { q: 'How do you stop canapés going soggy?', a: 'Keep the fillings dry and assemble late. Cook mushroom fillings until no liquid remains, drain salsa before it meets pastry, and add crunchy toppings such as sev at the very last moment. Assemble close to service rather than an hour ahead.' },
+      { q: 'What does achari mean?', a: 'Achari means pickle-style. It comes from the whole spices used in Indian pickles, typically fennel, mustard, nigella, fenugreek and coriander seeds, tempered in mustard oil. In a canapé it brings a tangy, aromatic kick.' },
+      { q: 'Can you use ready-made bases for canapés?', a: 'Yes. All three of these start from ready-made bases: crostini, mini vol-au-vent shells and plain papdis. The effort goes into the filling and the timing, which is what decides whether the canapé is still crisp when it reaches the guest.' },
+      { q: 'Does Virtuoso cater Diwali parties in Delhi NCR?', a: 'Yes. Virtuoso Catering House caters Diwali parties of 50 guests or more across Delhi NCR, for offices and homes, from ₹3,500 per guest, with a written plan for the evening within 24 hours of one call.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
+    }
+  }
+  ,{
+    slug: 'diwali-grazing-table-colour-palettes',
+    url: '/blog/diwali-grazing-table-colour-palettes',
+    title: 'Two Colour Palettes for a Diwali Grazing Table',
+    excerpt: 'Two colour palettes for a Diwali grazing table: warm, with gold, marigolds and red roses, or cool, with silver, lotus and pastels, and how to choose.',
+    date: '2026-10-27',
+    image: '/images/blog/diwali-grazing-palettes/virtuoso-catering-house-warm-toned-diwali-grazing-table.jpg',
+    relatedLink: { path: '/blog/indian-diwali-grazing-table', label: 'Palette chosen? See how we build a Diwali grazing table, layer by layer' },
+    ctaTitle: 'Want the Table<br>Styled for You?',
+    downloadOffer: {
+      eyebrow: 'The Palette Cards',
+      title: 'Both Palettes,<br>Ready to Print',
+      copy: 'Both palette cards with a checklist for each, from linen and serveware to flowers, light, fruit and cheese, plus the styling notes that keep a table generous rather than crowded.',
+      action: 'Send Me the Palette Cards',
+      asset: 'diwali-grazing-palettes',
+      privacy: 'We send the occasional seasonal menu and hosting note. Usually no more than twice a year.',
+      dismiss: 'I’ll keep reading'
+    },
+    lead: [
+      'A colour palette decides how a Diwali grazing table feels before anyone tastes it. A warm palette, with red and orange linen, gold serveware, marigolds and red roses, reads as rich and festive. A cool palette, with pastel linen, silver, lotus and soft florals, reads as soft and understated.',
+      'Both are Diwali. The choice comes down to the room, the light and how you want the evening to feel.',
+      'Below is what goes into each palette and how to choose between them. The palette cards, with a checklist for each, are in the download.'
+    ],
+    sections: [
+      {
+        heading: 'Why Start With a Palette',
+        paragraphs: [
+          'Without a palette, every element on the table competes. The linen, the platters, the flowers and the food each pull in a different direction.',
+          'Choose the palette first and each later decision follows from it: which linen, which metal, which flowers, and even which fruit and cheese to set out.',
+          'One flower belongs in both. Rajnigandha sits as comfortably beside gold as beside silver, and brings its fragrance to the table either way.'
+        ],
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-grazing-palettes/virtuoso-catering-house-diwali-grazing-table-palettes.jpg', caption: 'The same grazing table in two palettes: cool on the left, warm on the right.' }
+      },
+      {
+        heading: 'The Warm-Toned Palette',
+        headingNote: 'Rich. Festive. Vibrant and bold.',
+        paragraphs: [
+          'This is Diwali at its most opulent: deep colour, polished gold and candlelight.'
+        ],
+        list: [
+          'Rich red and orange table linens and runners',
+          'Golden platters and serveware',
+          'Rajnigandha, marigolds, red roses and a scatter of rose petals',
+          'Brass and gold candles and lanterns, for a warm glow',
+          'Festive fruits: pomegranate, oranges and grapes',
+          'Cheese and charcuterie in warm tones: aged cheeses, dried fruits and nuts'
+        ],
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-grazing-palettes/virtuoso-catering-house-warm-toned-diwali-grazing-table.jpg', caption: 'A warm-toned Diwali grazing table with red and orange linen, brass, marigolds and red roses.' }
+      },
+      {
+        heading: 'The Cool-Toned Palette',
+        headingNote: 'Soft. Elegant. Understated luxury.',
+        paragraphs: [
+          'This is Diwali at its calmest: pale colour, silver and a soft glow that lets the food and flowers speak quietly.'
+        ],
+        list: [
+          'Pastel table linens and runners',
+          'Silver platters and serveware',
+          'Rajnigandha, lotus flowers, and pastel roses, hydrangea and gypsophila',
+          'Clear and mercury-glass candles and lanterns, for a soft glow',
+          'Fresh fruits in neutral tones: green grapes, figs and pears',
+          'Cheese and charcuterie in neutral tones: brie, goat cheese, nuts and crudités'
+        ],
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-grazing-palettes/virtuoso-catering-house-cool-toned-diwali-grazing-table.jpg', caption: 'A cool-toned Diwali grazing table with pastel linen, silver, lotus and soft florals.' }
+      },
+      {
+        heading: 'Warm or Cool, Side by Side',
+        paragraphs: [
+          'The warm palette is festive opulence: rich, vibrant and unmistakably celebratory. The cool palette is understated luxury: soft, elegant and calm.'
+        ],
+        table: {
+          head: ['', 'Warm-toned', 'Cool-toned'],
+          rows: [
+            ['Mood', 'Rich, festive, bold', 'Soft, elegant, understated'],
+            ['Linen', 'Red and orange', 'Pastel'],
+            ['Metal', 'Gold and brass', 'Silver and glass'],
+            ['Flowers', 'Rajnigandha, marigolds, red roses', 'Rajnigandha, lotus, pastel florals'],
+            ['Light', 'Warm glow', 'Soft glow'],
+            ['Fruit', 'Pomegranate, oranges, grapes', 'Green grapes, figs, pears'],
+            ['Cheese', 'Aged cheeses, dried fruits, nuts', 'Brie, goat cheese, nuts, crudités']
+          ]
+        },
+        imageFirst: true,
+        image: { src: '/images/blog/diwali-grazing-palettes/virtuoso-catering-house-warm-and-cool-palette-boards.jpg', caption: 'The two palette boards: cool-toned and warm-toned.' }
+      },
+      {
+        heading: 'How to Choose',
+        paragraphs: [
+          'Start with the room. Warm wood, brass fittings and candlelight lean toward the warm palette. Daylight, white walls and a garden setting suit the cool one.',
+          'Then think about the evening. A loud, celebratory family night carries the warm palette well. A quieter, more elegant dinner suits the cool one.',
+          'And then go with your own taste. Neither palette is more Diwali than the other.'
+        ]
+      },
+      {
+        heading: 'Styling Notes for Either Palette',
+        paragraphs: [],
+        list: [
+          'Keep to one metal: gold and brass for warm, silver and clear glass for cool, so the serveware reads as one set.',
+          'Let the linen set the colour, then repeat it once or twice in the flowers and the food.',
+          'Group the flowers in a few generous clusters rather than single stems spread across the table.',
+          'Light at different heights. Lanterns, tall candles and low votives together give the table depth.',
+          'Leave room around each platter. A table with space in it looks more generous than one filled edge to edge.'
+        ]
+      },
+      {
+        heading: 'Get the Palette Cards',
+        paragraphs: [
+          'Both palette cards, a checklist for each and the full styling notes are in one printable set.',
+          '<a href="#guide-popup" class="cta-button cta-button--primary" data-cursor="hover">Download the Palette Cards&nbsp;→</a>',
+          'Hosting Diwali for fifty or more? We build and style the grazing table as part of our Diwali party catering across Delhi NCR.',
+          '<a href="/lp/diwali-2026" class="cta-button cta-button--secondary" data-cursor="hover">Plan Your Diwali Party&nbsp;→</a>'
+        ]
+      },
+      {
+        heading: 'Beyond the Palette',
+        paragraphs: [
+          'The palette sets the stage. What goes on the table is the other half.'
+        ],
+        links: [
+          { path: '/blog/indian-diwali-grazing-table', label: 'How we build a Diwali grazing table' },
+          { path: '/blog/diwali-fusion-canapes', label: 'Three Diwali fusion canapés' },
+          { path: '/blog/dips-for-a-grazing-table', label: 'Five dips for the grazing table' }
+        ]
+      }
+    ],
+    faq: [
+      { q: 'What colours suit a Diwali grazing table?', a: 'Two palettes work well. A warm palette uses red and orange linen, gold serveware, marigolds and red roses for a rich, festive table. A cool palette uses pastel linen, silver, lotus and soft florals for a calm, understated one. Rajnigandha suits both.' },
+      { q: 'Which flowers suit a Diwali grazing table?', a: 'Rajnigandha works with either palette. For a warm table, add marigolds, red roses and rose petals. For a cool table, add lotus flowers and pastel roses, hydrangea and gypsophila, grouped in a few generous clusters.' },
+      { q: 'Should Diwali serveware be gold or silver?', a: 'Choose by palette and keep to one metal. Gold and brass suit a warm palette of red and orange linen; silver and clear glass suit a cool palette of pastels. Keeping to one metal makes the serveware read as a single, considered set.' },
+      { q: 'How do you stop a grazing table looking crowded?', a: 'Leave space around each platter, group flowers in a few generous clusters rather than spreading single stems, and vary the height of candles and serveware. A table with room in it reads as more generous, not less.' },
+      { q: 'Does Virtuoso style grazing tables for Diwali parties?', a: 'Yes. Virtuoso Catering House builds and styles grazing tables as part of Diwali party catering across Delhi NCR, for offices and homes with 50 guests or more, with food displays, serveware and F&B styling included.' }
+    ],
+    author: {
+      name: 'Aarti Sharma',
+      linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
+      bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
+    }
+  }
 ];
 
 // Standalone editorial page (not part of the Journal listing), built to rank

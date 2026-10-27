@@ -1,0 +1,443 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Four pasta sauces — Virtuoso Catering House</title>
+<!--
+  Source for /public/downloads/virtuoso-catering-house-four-pasta-sauces.pdf,
+  the download offered on /blog/four-pasta-sauces.
+
+  Same visual system as tools/guides/five-dips/five-dips-recipes.html, with a
+  few additions at the end of the stylesheet. Recipe text is Aarti Sharma's,
+  kept as written apart from British spelling. Photographs are the blog post's
+  own files, referenced relatively, so render this file from its own
+  directory with headless Chromium, as the other guides are.
+-->
+<style>
+  /* Zero page margin, padding on each page instead: the margin box paints
+     white whatever the background, which framed the parchment in white. */
+  @page { size: A4; margin: 0; }
+
+  @font-face { font-family:'Cormorant Garamond'; src:url('../../../public/fonts/cormorant-300.woff2') format('woff2'); font-weight:300; font-display:block; }
+  @font-face { font-family:'Work Sans'; src:url('../../../public/fonts/worksans-300-400-500-600.woff2') format('woff2'); font-weight:300 600; font-display:block; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body {
+    background:#FAF6EE;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { color:#17100B; font-family:'Work Sans',sans-serif; font-weight:300; font-size:9pt; line-height:1.55; }
+
+  .page {
+    position:relative;
+    width:210mm; height:297mm;
+    padding:15mm 15mm 0;
+    overflow:hidden;
+    page-break-after:always; break-after:page;
+  }
+  .page:last-child { page-break-after:auto; break-after:auto; }
+
+  header { display:flex; justify-content:space-between; align-items:flex-end;
+           border-bottom:1.4pt solid #101F10; padding-bottom:8px; margin-bottom:16px; }
+  .wordmark { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:17pt; letter-spacing:.09em; color:#101F10; line-height:1; }
+  .descriptor { font-size:6pt; letter-spacing:.44em; text-transform:uppercase; color:#6B6257; margin-top:4px; }
+  .count { font-size:6.8pt; letter-spacing:.24em; text-transform:uppercase; color:#6B6257; }
+
+  .eyebrow { font-size:6.8pt; letter-spacing:.24em; text-transform:uppercase; color:#6B6257; }
+  .rule { width:44px; height:.8pt; background:#AA6926; margin:8px 0 10px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:26pt; line-height:1.08; color:#101F10; letter-spacing:-.005em; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:14pt; color:#101F10; margin-bottom:6px; }
+  .stand { margin-top:8px; max-width:150mm; color:#3A322A; font-size:9.5pt; }
+  .lab { font-size:6.6pt; letter-spacing:.22em; text-transform:uppercase; color:#935A11; font-weight:500; }
+
+  footer { position:absolute; left:15mm; right:15mm; bottom:10mm;
+           padding-top:8px; border-top:.5pt solid #8A8175; font-size:7.4pt; color:#6B6257;
+           display:flex; justify-content:space-between; gap:14px; }
+
+  /* Cover */
+  .strip { display:grid; grid-template-columns:repeat(5, 1fr); gap:4mm; margin:16px 0 6px; }
+  .strip figure img { width:100%; aspect-ratio:1145/1374; object-fit:cover; display:block; }
+  .strip figcaption { font-family:'Cormorant Garamond',serif; font-size:10pt; line-height:1.15; color:#101F10; margin-top:5px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:14px; border-top:1.6pt solid #101F10; }
+  th.h { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#6B6257; font-weight:500;
+         text-align:left; padding:7px 10px 7px 0; border-bottom:.5pt solid #8A8175; }
+  td, th.n { border-bottom:.4pt solid #C9C2B6; padding:8px 10px 8px 0; vertical-align:top; text-align:left; }
+  th.n { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:12pt; color:#101F10; line-height:1.2; }
+  td { color:#3A322A; }
+
+  .cover-note { margin-top:16px; padding-top:12px; border-top:.4pt solid #C9C2B6; }
+  .cover-note p { color:#3A322A; margin-bottom:4px; max-width:160mm; }
+  .composed { margin-top:14px; }
+  .composed .name { font-family:'Cormorant Garamond',serif; font-size:15pt; color:#101F10; line-height:1.2; margin-top:4px; }
+  .composed .role { color:#6B6257; font-size:8pt; }
+
+  /* Recipe pages */
+  .profile { margin-top:7px; color:#3A322A; font-size:9.5pt; }
+  .top { display:grid; grid-template-columns:64mm 1fr; gap:8mm; margin-top:14px; }
+  .photo { width:64mm; height:76.8mm; object-fit:cover; display:block; }
+  dl.meta { display:grid; grid-template-columns:22mm 1fr; row-gap:4px; column-gap:4mm;
+            padding-bottom:10px; margin-bottom:10px; border-bottom:.4pt solid #C9C2B6; }
+  dl.meta dt { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#6B6257; font-weight:500; padding-top:2px; }
+  dl.meta dd { color:#3A322A; }
+  ul.ing { list-style:none; }
+  ul.ing li { padding:1.6px 0; border-bottom:.3pt solid #E2DCD1; color:#17100B; }
+  ul.ing li:last-child { border-bottom:0; }
+
+  .method { margin-top:11px; padding-top:10px; border-top:1.2pt solid #101F10; }
+  ol.steps { list-style:none; counter-reset:step; column-count:2; column-gap:9mm; }
+  ol.steps li { counter-increment:step; break-inside:avoid; margin-bottom:8px; padding-left:8mm; position:relative; color:#3A322A; }
+  ol.steps li::before { content:counter(step); position:absolute; left:0; top:-1px;
+                        font-family:'Cormorant Garamond',serif; font-size:13pt; color:#AA6926; line-height:1; }
+  ol.steps strong { display:block; font-weight:500; color:#101F10; margin-bottom:1px; }
+
+  .finish { display:grid; grid-template-columns:1fr 1.5fr; gap:9mm; margin-top:10px; padding-top:11px; border-top:.4pt solid #C9C2B6; }
+  .finish p { color:#3A322A; margin-top:4px; }
+  .chef { background:#F1EADC; padding:10px 12px; border-left:1.4pt solid #AA6926; }
+
+  /* Added for the pasta, canapé and palette guides. */
+  .strip.n4 { grid-template-columns:repeat(4, 1fr); }
+  .strip.n3 { grid-template-columns:repeat(3, 1fr); }
+  .strip.n3 figure img, .strip.n4 figure img { aspect-ratio:4/5; }
+  ul.ing.two { column-count:2; column-gap:6mm; }
+  ul.ing.two li { break-inside:avoid; }
+  .sub { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#935A11; font-weight:500; margin:7px 0 2px; }
+  .wide { width:100%; height:auto; display:block; margin-top:14px; }
+  .board { width:100%; height:150mm; object-fit:contain; display:block; margin-top:12px; background:#F1EADC; }
+  ul.check { list-style:none; margin-top:6px; }
+  ul.check li { display:grid; grid-template-columns:5mm 44mm 1fr; gap:3mm; padding:5px 0; border-bottom:.3pt solid #E2DCD1; color:#3A322A; }
+  ul.check li::before { content:''; width:3.2mm; height:3.2mm; border:.6pt solid #AA6926; margin-top:1px; }
+  ul.check b { font-weight:500; color:#101F10; }
+  ol.tips { list-style:none; counter-reset:tip; margin-top:8px; }
+  ol.tips li { counter-increment:tip; position:relative; padding:0 0 9px 9mm; margin-bottom:9px; border-bottom:.3pt solid #E2DCD1; color:#3A322A; }
+  ol.tips li::before { content:counter(tip); position:absolute; left:0; top:-2px; font-family:'Cormorant Garamond',serif; font-size:15pt; color:#AA6926; }
+  ol.tips strong { display:block; font-weight:500; color:#101F10; margin-bottom:1px; }
+
+  /* Recipe pages here carry more than the dips did, so they run tighter:
+     a smaller photo, ingredients always in two columns, and body text set
+     from --fs so the fit script below can step it down if a page would
+     otherwise run into the footer. */
+  .page.recipe { font-size:var(--fs, 8.6pt); padding-top:13mm; }
+  .page.recipe header { margin-bottom:12px; }
+  .page.recipe h1 { font-size:22pt; }
+  .page.recipe .top { grid-template-columns:52mm 1fr; gap:7mm; margin-top:11px; }
+  .page.recipe .photo { width:52mm; height:62.4mm; }
+  .page.recipe .profile, .page.recipe ul.ing li, .page.recipe ol.steps li, .page.recipe .finish p, .page.recipe dl.meta dd { font-size:var(--fs, 8.6pt); }
+  .page.recipe ol.steps li { margin-bottom:6px; line-height:1.45; }
+  .page.recipe .method { margin-top:9px; padding-top:8px; }
+  .page.recipe .finish { margin-top:6px; padding-top:9px; }
+  .page.recipe dl.meta { padding-bottom:8px; margin-bottom:8px; }
+  .wide { width:auto; max-width:100%; height:80mm; object-fit:contain; margin:14px auto 0; }
+</style></head><body>
+
+<!-- COVER -->
+<section class="page">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Four recipes</span>
+  </header>
+
+  <span class="eyebrow">The Journal · Pasta</span>
+  <div class="rule"></div>
+  <h1>Four pasta sauces</h1>
+  <p class="stand">Four sauces, each at a different point on the plate: one fresh and green, one earthy, one sweet and tangy, one with heat. Every one of them finishes the same way, tossed with the pasta in the pan.</p>
+
+  <div class="strip n4">
+    <figure><img src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-pistachio-pesto-burrata-pasta.jpg" alt=""><figcaption>Pistachio Pesto &amp; Burrata</figcaption></figure>
+    <figure><img src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-truffle-mushroom-parmesan-pasta.jpg" alt=""><figcaption>Truffle Mushroom Parmesan</figcaption></figure>
+    <figure><img src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-caramelised-onion-goat-cheese-pasta.jpg" alt=""><figcaption>Caramelised Onion &amp; Goat Cheese</figcaption></figure>
+    <figure><img src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-spicy-tomato-vodka-pasta.jpg" alt=""><figcaption>Spicy Tomato Vodka</figcaption></figure>
+  </div>
+
+  <table>
+    <thead><tr><th class="h">Sauce</th><th class="h">Profile</th><th class="h">Look</th><th class="h">Best with</th></tr></thead>
+    <tbody>
+      <tr><th class="n">Pistachio Pesto &amp; Burrata</th><td>Creamy, nutty, fresh, subtly citrusy</td><td>Vibrant green pesto with creamy white burrata</td><td>Spaghetti, linguine, toasted sourdough, crisp white wine</td></tr>
+      <tr><th class="n">Truffle Mushroom Parmesan</th><td>Rich, earthy, creamy, deeply savoury</td><td>Golden-brown mushrooms over silky Parmesan-coated pasta</td><td>Fettuccine, tagliatelle, garlic bread, grilled sourdough</td></tr>
+      <tr><th class="n">Caramelised Onion &amp; Goat Cheese</th><td>Sweet, tangy, creamy, deeply savoury</td><td>Golden caramelised onions with a creamy, pale sauce</td><td>Rigatoni, orecchiette, toasted walnuts, fresh herbs</td></tr>
+      <tr><th class="n">Spicy Tomato Vodka</th><td>Rich, creamy, spicy, tangy and savoury</td><td>Vibrant red-orange glossy sauce with fresh green basil</td><td>Rigatoni, garlic bread, Parmesan, fresh basil</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cover-note">
+    <h2>Before you begin</h2>
+    <p>Salt the water generously and cook the pasta only to al dente. It keeps cooking for the minute it spends in the sauce.</p>
+    <p>Reserve about a quarter cup of the cooking water before you drain. Every sauce here uses it at the end, a little at a time, to turn glossy and cling to the pasta.</p>
+  </div>
+
+  <div class="composed">
+    <span class="lab">Composed by</span>
+    <div class="name">Aarti Sharma</div>
+    <div class="role">Co-founder, Virtuoso Catering House</div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Private dinners and events across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 1. PISTACHIO PESTO &AMP; BURRATA -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 1 of 4</span>
+  </header>
+  <span class="eyebrow">Pasta sauces</span>
+  <div class="rule"></div>
+  <h1>Pistachio Pesto &amp; Burrata</h1>
+  <p class="profile">Creamy, nutty, fresh, subtly citrusy.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-pistachio-pesto-burrata-pasta.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Vibrant green pesto with creamy white burrata</dd>
+        <dt>Texture</dt><dd>Silky pasta with a slightly textured pesto and soft, creamy burrata</dd>
+        <dt>Best with</dt><dd>Spaghetti, linguine, toasted sourdough, crisp white wine</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>200 g spaghetti or linguine</li>
+        <li>80 g unsalted pistachios</li>
+        <li>1 cup fresh basil leaves</li>
+        <li>1 garlic clove</li>
+        <li>40 g Parmesan</li>
+        <li>80 ml extra-virgin olive oil</li>
+        <li>1 tbsp lemon juice</li>
+        <li>½ tsp lemon zest</li>
+        <li>Salt</li>
+        <li>Black pepper</li>
+        <li>125 g burrata</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Cook the pasta</strong>Bring a large pot of generously salted water to a boil. Cook the spaghetti or linguine until al dente according to the package instructions. Reserve approximately ¼ cup of pasta water before draining.</li>
+      <li><strong>Prepare the pistachio pesto</strong>Add the pistachios, basil, garlic, Parmesan, lemon juice and lemon zest to a food processor. Pulse until combined but still slightly textured. Slowly add the olive oil and blend until the pesto becomes creamy and emulsified. Season with salt and freshly cracked black pepper.</li>
+      <li><strong>Toss the pasta</strong>Transfer the cooked pasta to a pan and add the pistachio pesto. Toss gently over low heat, adding a little reserved pasta water at a time until the pesto coats the pasta evenly and becomes glossy.</li>
+      <li><strong>Plate and add the burrata</strong>Transfer the pasta to a serving plate and place the burrata in the centre. Gently tear open the burrata just before serving so the creamy centre spreads over the pasta.</li>
+      <li><strong>Garnish</strong>Finish with crushed pistachios, Parmesan shavings, fresh basil, freshly cracked black pepper and a light drizzle of extra-virgin olive oil. Add a little lemon zest for a final touch of freshness.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Crushed pistachios, Parmesan shavings, fresh basil leaves, freshly cracked black pepper, extra-virgin olive oil and lemon zest.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>Do not over-blend the pistachios. A slightly textured pesto gives the dish more depth and creates a beautiful contrast with the silky pasta and creamy burrata.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Private dinners and events across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 2. TRUFFLE MUSHROOM PARMESAN -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 2 of 4</span>
+  </header>
+  <span class="eyebrow">Pasta sauces</span>
+  <div class="rule"></div>
+  <h1>Truffle Mushroom Parmesan</h1>
+  <p class="profile">Rich, earthy, creamy, deeply savoury.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-truffle-mushroom-parmesan-pasta.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Golden-brown mushrooms over silky Parmesan-coated pasta</dd>
+        <dt>Texture</dt><dd>Velvety, creamy and slightly meaty from the mushrooms</dd>
+        <dt>Best with</dt><dd>Fettuccine, tagliatelle, garlic bread, grilled sourdough</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>200 g fettuccine or tagliatelle</li>
+        <li>250 g mushrooms</li>
+        <li>2 tbsp butter</li>
+        <li>1 tbsp olive oil</li>
+        <li>3 garlic cloves</li>
+        <li>½ tsp fresh thyme</li>
+        <li>100 ml cream</li>
+        <li>50 g Parmesan</li>
+        <li>1–2 tsp truffle oil</li>
+        <li>Salt</li>
+        <li>Black pepper</li>
+        <li>¼ cup pasta water</li>
+        <li>Fresh parsley or microgreens</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Cook the pasta</strong>Bring a large pot of generously salted water to a boil. Cook the fettuccine or tagliatelle until al dente. Reserve ¼ cup of pasta water before draining.</li>
+      <li><strong>Sauté the mushrooms</strong>Clean and slice the mushrooms evenly. Heat the olive oil and 1 tbsp butter in a wide pan over medium-high heat. Add the mushrooms and sauté until deeply golden and their moisture has cooked away.</li>
+      <li><strong>Build the sauce</strong>Add the finely chopped garlic and fresh thyme. Sauté for 30–45 seconds until fragrant. Lower the heat and add the remaining 1 tbsp butter and the cream. Allow the mixture to simmer gently for 1–2 minutes.</li>
+      <li><strong>Add the Parmesan</strong>Add the finely grated Parmesan and stir until completely melted into the cream. Gradually add the reserved pasta water until the sauce becomes smooth, silky and glossy.</li>
+      <li><strong>Toss the pasta</strong>Add the cooked pasta directly into the pan. Toss thoroughly so the sauce coats every strand of pasta. Season with salt and freshly cracked black pepper.</li>
+      <li><strong>Finish with truffle</strong>Turn off the heat and add 1–2 tsp truffle oil, depending on your preferred intensity. Toss gently once more.</li>
+      <li><strong>Garnish and serve</strong>Finish with Parmesan shavings, fresh parsley or microgreens, a little fresh thyme and freshly cracked black pepper.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Parmesan shavings, fresh parsley or microgreens, fresh thyme, freshly cracked black pepper and a few drops of truffle oil.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>Add the truffle oil only after removing the pan from the heat. This preserves its delicate aroma and prevents the truffle flavour from becoming overpowering.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Private dinners and events across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 3. CARAMELISED ONION &AMP; GOAT CHEESE -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 3 of 4</span>
+  </header>
+  <span class="eyebrow">Pasta sauces</span>
+  <div class="rule"></div>
+  <h1>Caramelised Onion &amp; Goat Cheese</h1>
+  <p class="profile">Sweet, tangy, creamy, deeply savoury.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-caramelised-onion-goat-cheese-pasta.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Golden caramelised onions with a creamy, pale sauce</dd>
+        <dt>Texture</dt><dd>Silky and creamy with a delicate crunch from toasted walnuts</dd>
+        <dt>Best with</dt><dd>Rigatoni, orecchiette, toasted walnuts, fresh herbs</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>200 g rigatoni or orecchiette</li>
+        <li>2 yellow onions</li>
+        <li>2 tbsp butter</li>
+        <li>1 tbsp olive oil</li>
+        <li>1 tsp brown sugar</li>
+        <li>1 tsp balsamic vinegar</li>
+        <li>100 g soft goat cheese</li>
+        <li>60 ml cream</li>
+        <li>30 g Parmesan</li>
+        <li>½ tsp fresh thyme</li>
+        <li>Salt</li>
+        <li>Black pepper</li>
+        <li>¼ cup pasta water</li>
+        <li>Walnuts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Cook the pasta</strong>Bring a large pot of generously salted water to a boil. Cook the rigatoni or orecchiette until al dente. Reserve ¼ cup of pasta water before draining.</li>
+      <li><strong>Caramelise the onions</strong>Thinly slice the onions. Heat the butter and olive oil in a wide pan over low-medium heat. Add the onions and a pinch of salt. Cook slowly for approximately 20–25 minutes, stirring occasionally, until the onions become soft, deeply golden and caramelised.</li>
+      <li><strong>Balance the onions</strong>Add the brown sugar and balsamic vinegar. Stir well and cook for another 1–2 minutes. The balsamic adds acidity while the sugar enhances the natural sweetness of the caramelised onions.</li>
+      <li><strong>Create the creamy sauce</strong>Add the cream and soft goat cheese to the pan. Stir gently until the goat cheese melts and creates a smooth, creamy sauce. Add the Parmesan and fresh thyme.</li>
+      <li><strong>Toss the pasta</strong>Add the cooked pasta to the sauce and toss thoroughly. Gradually add the reserved pasta water until the sauce becomes silky and coats the pasta evenly. Season with salt and freshly cracked black pepper.</li>
+      <li><strong>Toast the walnuts</strong>Toast the walnuts in a dry pan over medium heat for a few minutes until fragrant. Roughly chop them before serving.</li>
+      <li><strong>Garnish and serve</strong>Plate the pasta and finish with toasted walnuts, crumbled goat cheese, fresh thyme, Parmesan shavings and freshly cracked black pepper.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Toasted walnuts, crumbled goat cheese, fresh thyme, Parmesan shavings and freshly cracked black pepper.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>The onions are the heart of this dish. Cook them slowly and patiently. Deep caramelisation creates the rich sweetness that balances the tanginess of the goat cheese.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Private dinners and events across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 4. SPICY TOMATO VODKA -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 4 of 4</span>
+  </header>
+  <span class="eyebrow">Pasta sauces</span>
+  <div class="rule"></div>
+  <h1>Spicy Tomato Vodka</h1>
+  <p class="profile">Rich, creamy, spicy, tangy and savoury.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/four-pasta-sauces/virtuoso-catering-house-spicy-tomato-vodka-pasta.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Vibrant red-orange glossy sauce with fresh green basil</dd>
+        <dt>Texture</dt><dd>Silky, creamy and perfectly coating</dd>
+        <dt>Best with</dt><dd>Rigatoni, garlic bread, Parmesan, fresh basil</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>200 g rigatoni</li>
+        <li>2 tbsp extra-virgin olive oil</li>
+        <li>3 garlic cloves</li>
+        <li>1 shallot</li>
+        <li>1–2 tsp chilli flakes</li>
+        <li>250 g tomato passata</li>
+        <li>50 ml vodka</li>
+        <li>100 ml cream</li>
+        <li>40 g Parmesan</li>
+        <li>1 tsp butter</li>
+        <li>Salt</li>
+        <li>Black pepper</li>
+        <li>1 cup fresh basil leaves</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Cook the pasta</strong>Bring a large pot of generously salted water to a boil. Cook the rigatoni until al dente. Reserve approximately ¼ cup of pasta water before draining.</li>
+      <li><strong>Build the flavour base</strong>Heat the olive oil in a wide pan over medium heat. Finely chop the shallot and garlic. Sauté the shallot until soft and translucent, then add the garlic and chilli flakes and cook for 30–45 seconds until fragrant. Be careful not to brown the garlic.</li>
+      <li><strong>Add the tomato</strong>Pour in the tomato passata and simmer for 5–7 minutes, stirring occasionally, until the sauce has reduced slightly and developed a deeper flavour.</li>
+      <li><strong>Add the vodka</strong>Pour in the vodka and simmer for another 2–3 minutes. This lets the alcohol cook off while the vodka enhances the flavour and texture of the tomato sauce.</li>
+      <li><strong>Make it creamy</strong>Reduce the heat and add the cream. Stir until the sauce becomes smooth and creamy. Add the Parmesan and butter and stir until completely incorporated.</li>
+      <li><strong>Toss the pasta</strong>Add the cooked rigatoni directly into the sauce. Toss vigorously over low heat, adding a little reserved pasta water as needed. The sauce should cling to the ridges of the rigatoni rather than pool at the bottom of the plate. Season with salt and freshly cracked black pepper.</li>
+      <li><strong>Finish with basil</strong>Tear the fresh basil leaves and fold some through the pasta. Plate immediately and finish with fresh basil, Parmesan shavings, chilli flakes and a drizzle of extra-virgin olive oil.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Fresh basil leaves, Parmesan shavings, chilli flakes, freshly cracked black pepper and extra-virgin olive oil.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>The final toss is crucial. Let the rigatoni finish in the sauce so the pasta absorbs the flavour, and the starch from the pasta water creates that signature glossy, restaurant-style finish.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Private dinners and events across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<script>
+/* Safety net for print: if any page's content would reach its footer, step
+   the page's text size down until it clears. Runs before headless Chromium
+   prints, which waits on --virtual-time-budget. */
+document.querySelectorAll('.page').forEach(function (pg) {
+  var foot = pg.querySelector('footer'); if (!foot) return;
+  var fs = 8.6, guard = 0;
+  function overlaps() {
+    var limit = foot.getBoundingClientRect().top - 6, worst = 0;
+    pg.querySelectorAll('section.page > *:not(footer)').forEach(function (el) {
+      worst = Math.max(worst, el.getBoundingClientRect().bottom);
+    });
+    return worst > limit;
+  }
+  while (overlaps() && fs > 7.2 && guard++ < 20) { fs -= 0.2; pg.style.setProperty('--fs', fs.toFixed(1) + 'pt'); }
+  if (overlaps()) pg.setAttribute('data-overflow', 'yes');
+});
+</script>
+</body></html>

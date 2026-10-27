@@ -25,6 +25,18 @@ const ASSETS = {
   'five-dips-recipes': {
     url: '/downloads/virtuoso-catering-house-five-dips-recipes.pdf',
     label: 'Five Dip Recipes'
+  },
+  'four-pasta-sauces': {
+    url: '/downloads/virtuoso-catering-house-four-pasta-sauces.pdf',
+    label: 'Four Pasta Sauces'
+  },
+  'diwali-fusion-canapes': {
+    url: '/downloads/virtuoso-catering-house-diwali-fusion-canapes.pdf',
+    label: 'Diwali Fusion Canapés'
+  },
+  'diwali-grazing-palettes': {
+    url: '/downloads/virtuoso-catering-house-diwali-grazing-palettes.pdf',
+    label: 'Diwali Grazing Table Palettes'
   }
 };
 

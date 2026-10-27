@@ -1,0 +1,409 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Three Diwali fusion canapés — Virtuoso Catering House</title>
+<!--
+  Source for /public/downloads/virtuoso-catering-house-diwali-fusion-canapes.pdf,
+  the download offered on /blog/diwali-fusion-canapes.
+
+  Same visual system as the other guides in tools/guides. Long ingredient
+  lists run in two columns (ul.ing.two) so each recipe holds to one A4 page.
+  Recipe text is Aarti Sharma's, kept as written apart from British spelling.
+  Render from this directory with headless Chromium.
+-->
+<style>
+  /* Zero page margin, padding on each page instead: the margin box paints
+     white whatever the background, which framed the parchment in white. */
+  @page { size: A4; margin: 0; }
+
+  @font-face { font-family:'Cormorant Garamond'; src:url('../../../public/fonts/cormorant-300.woff2') format('woff2'); font-weight:300; font-display:block; }
+  @font-face { font-family:'Work Sans'; src:url('../../../public/fonts/worksans-300-400-500-600.woff2') format('woff2'); font-weight:300 600; font-display:block; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body {
+    background:#FAF6EE;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { color:#17100B; font-family:'Work Sans',sans-serif; font-weight:300; font-size:9pt; line-height:1.55; }
+
+  .page {
+    position:relative;
+    width:210mm; height:297mm;
+    padding:15mm 15mm 0;
+    overflow:hidden;
+    page-break-after:always; break-after:page;
+  }
+  .page:last-child { page-break-after:auto; break-after:auto; }
+
+  header { display:flex; justify-content:space-between; align-items:flex-end;
+           border-bottom:1.4pt solid #101F10; padding-bottom:8px; margin-bottom:16px; }
+  .wordmark { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:17pt; letter-spacing:.09em; color:#101F10; line-height:1; }
+  .descriptor { font-size:6pt; letter-spacing:.44em; text-transform:uppercase; color:#6B6257; margin-top:4px; }
+  .count { font-size:6.8pt; letter-spacing:.24em; text-transform:uppercase; color:#6B6257; }
+
+  .eyebrow { font-size:6.8pt; letter-spacing:.24em; text-transform:uppercase; color:#6B6257; }
+  .rule { width:44px; height:.8pt; background:#AA6926; margin:8px 0 10px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:26pt; line-height:1.08; color:#101F10; letter-spacing:-.005em; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:14pt; color:#101F10; margin-bottom:6px; }
+  .stand { margin-top:8px; max-width:150mm; color:#3A322A; font-size:9.5pt; }
+  .lab { font-size:6.6pt; letter-spacing:.22em; text-transform:uppercase; color:#935A11; font-weight:500; }
+
+  footer { position:absolute; left:15mm; right:15mm; bottom:10mm;
+           padding-top:8px; border-top:.5pt solid #8A8175; font-size:7.4pt; color:#6B6257;
+           display:flex; justify-content:space-between; gap:14px; }
+
+  /* Cover */
+  .strip { display:grid; grid-template-columns:repeat(5, 1fr); gap:4mm; margin:16px 0 6px; }
+  .strip figure img { width:100%; aspect-ratio:1145/1374; object-fit:cover; display:block; }
+  .strip figcaption { font-family:'Cormorant Garamond',serif; font-size:10pt; line-height:1.15; color:#101F10; margin-top:5px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:14px; border-top:1.6pt solid #101F10; }
+  th.h { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#6B6257; font-weight:500;
+         text-align:left; padding:7px 10px 7px 0; border-bottom:.5pt solid #8A8175; }
+  td, th.n { border-bottom:.4pt solid #C9C2B6; padding:8px 10px 8px 0; vertical-align:top; text-align:left; }
+  th.n { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:12pt; color:#101F10; line-height:1.2; }
+  td { color:#3A322A; }
+
+  .cover-note { margin-top:16px; padding-top:12px; border-top:.4pt solid #C9C2B6; }
+  .cover-note p { color:#3A322A; margin-bottom:4px; max-width:160mm; }
+  .composed { margin-top:14px; }
+  .composed .name { font-family:'Cormorant Garamond',serif; font-size:15pt; color:#101F10; line-height:1.2; margin-top:4px; }
+  .composed .role { color:#6B6257; font-size:8pt; }
+
+  /* Recipe pages */
+  .profile { margin-top:7px; color:#3A322A; font-size:9.5pt; }
+  .top { display:grid; grid-template-columns:64mm 1fr; gap:8mm; margin-top:14px; }
+  .photo { width:64mm; height:76.8mm; object-fit:cover; display:block; }
+  dl.meta { display:grid; grid-template-columns:22mm 1fr; row-gap:4px; column-gap:4mm;
+            padding-bottom:10px; margin-bottom:10px; border-bottom:.4pt solid #C9C2B6; }
+  dl.meta dt { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#6B6257; font-weight:500; padding-top:2px; }
+  dl.meta dd { color:#3A322A; }
+  ul.ing { list-style:none; }
+  ul.ing li { padding:1.6px 0; border-bottom:.3pt solid #E2DCD1; color:#17100B; }
+  ul.ing li:last-child { border-bottom:0; }
+
+  .method { margin-top:11px; padding-top:10px; border-top:1.2pt solid #101F10; }
+  ol.steps { list-style:none; counter-reset:step; column-count:2; column-gap:9mm; }
+  ol.steps li { counter-increment:step; break-inside:avoid; margin-bottom:8px; padding-left:8mm; position:relative; color:#3A322A; }
+  ol.steps li::before { content:counter(step); position:absolute; left:0; top:-1px;
+                        font-family:'Cormorant Garamond',serif; font-size:13pt; color:#AA6926; line-height:1; }
+  ol.steps strong { display:block; font-weight:500; color:#101F10; margin-bottom:1px; }
+
+  .finish { display:grid; grid-template-columns:1fr 1.5fr; gap:9mm; margin-top:10px; padding-top:11px; border-top:.4pt solid #C9C2B6; }
+  .finish p { color:#3A322A; margin-top:4px; }
+  .chef { background:#F1EADC; padding:10px 12px; border-left:1.4pt solid #AA6926; }
+
+  /* Added for the pasta, canapé and palette guides. */
+  .strip.n4 { grid-template-columns:repeat(4, 1fr); }
+  .strip.n3 { grid-template-columns:repeat(3, 1fr); }
+  .strip.n3 figure img, .strip.n4 figure img { aspect-ratio:4/5; }
+  ul.ing.two { column-count:2; column-gap:6mm; }
+  ul.ing.two li { break-inside:avoid; }
+  .sub { font-size:6.6pt; letter-spacing:.2em; text-transform:uppercase; color:#935A11; font-weight:500; margin:7px 0 2px; }
+  .wide { width:100%; height:auto; display:block; margin-top:14px; }
+  .board { width:100%; height:150mm; object-fit:contain; display:block; margin-top:12px; background:#F1EADC; }
+  ul.check { list-style:none; margin-top:6px; }
+  ul.check li { display:grid; grid-template-columns:5mm 44mm 1fr; gap:3mm; padding:5px 0; border-bottom:.3pt solid #E2DCD1; color:#3A322A; }
+  ul.check li::before { content:''; width:3.2mm; height:3.2mm; border:.6pt solid #AA6926; margin-top:1px; }
+  ul.check b { font-weight:500; color:#101F10; }
+  ol.tips { list-style:none; counter-reset:tip; margin-top:8px; }
+  ol.tips li { counter-increment:tip; position:relative; padding:0 0 9px 9mm; margin-bottom:9px; border-bottom:.3pt solid #E2DCD1; color:#3A322A; }
+  ol.tips li::before { content:counter(tip); position:absolute; left:0; top:-2px; font-family:'Cormorant Garamond',serif; font-size:15pt; color:#AA6926; }
+  ol.tips strong { display:block; font-weight:500; color:#101F10; margin-bottom:1px; }
+
+  /* Recipe pages here carry more than the dips did, so they run tighter:
+     a smaller photo, ingredients always in two columns, and body text set
+     from --fs so the fit script below can step it down if a page would
+     otherwise run into the footer. */
+  .page.recipe { font-size:var(--fs, 8.6pt); padding-top:13mm; }
+  .page.recipe header { margin-bottom:12px; }
+  .page.recipe h1 { font-size:22pt; }
+  .page.recipe .top { grid-template-columns:52mm 1fr; gap:7mm; margin-top:11px; }
+  .page.recipe .photo { width:52mm; height:62.4mm; }
+  .page.recipe .profile, .page.recipe ul.ing li, .page.recipe ol.steps li, .page.recipe .finish p, .page.recipe dl.meta dd { font-size:var(--fs, 8.6pt); }
+  .page.recipe ol.steps li { margin-bottom:6px; line-height:1.45; }
+  .page.recipe .method { margin-top:9px; padding-top:8px; }
+  .page.recipe .finish { margin-top:6px; padding-top:9px; }
+  .page.recipe dl.meta { padding-bottom:8px; margin-bottom:8px; }
+  .wide { width:auto; max-width:100%; height:80mm; object-fit:contain; margin:14px auto 0; }
+</style></head><body>
+
+<!-- COVER -->
+<section class="page">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Three recipes</span>
+  </header>
+
+  <span class="eyebrow">The Journal · Canapés</span>
+  <div class="rule"></div>
+  <h1>Three Diwali fusion canapés</h1>
+  <p class="stand">Three canapés that set Indian flavour on a crisp base: a crostini, a pastry case and a papdi. Each starts from a ready-made base, so the care goes into the filling and into keeping it crisp until it reaches the guest.</p>
+
+  <div class="strip n3">
+    <figure><img src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-achari-mushroom-crostini.jpg" alt=""><figcaption>Achari Mushroom Crostini</figcaption></figure>
+    <figure><img src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-desi-salsa-vol-au-vents.jpg" alt=""><figcaption>Desi Salsa Vol-au-vents</figcaption></figure>
+    <figure><img src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-avocado-sev-puri.jpg" alt=""><figcaption>Avocado Sev Puri</figcaption></figure>
+  </div>
+
+  <table>
+    <thead><tr><th class="h">Canapé</th><th class="h">Profile</th><th class="h">Best with</th></tr></thead>
+    <tbody>
+      <tr><th class="n">Achari Mushroom Crostini</th><td>Tangy, spicy, savoury, aromatic</td><td>Cocktail parties, canapé platters, mocktails, sparkling wine</td></tr>
+      <tr><th class="n">Desi Salsa Vol-au-vents</th><td>Fresh, tangy, zesty, mildly spicy, herbaceous</td><td>Cocktail parties, welcome drinks, mocktails, sparkling beverages</td></tr>
+      <tr><th class="n">Avocado Sev Puri</th><td>Creamy, tangy, zesty, mildly spicy, chaat-inspired</td><td>Luxury cocktail events, Indian fusion menus, welcome drinks, refreshing mocktails</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cover-note">
+    <h2>Before you begin</h2>
+    <p>Keep every filling dry. Moisture is what softens a crostini, a pastry case or a papdi, so drain the salsa and cook the mushrooms until no liquid remains.</p>
+    <p>Assemble close to service and garnish last. The sev, pomegranate and coriander are what make the tray look festive, and they look their best added at the final moment.</p>
+  </div>
+
+  <div class="composed">
+    <span class="lab">Composed by</span>
+    <div class="name">Aarti Sharma</div>
+    <div class="role">Co-founder, Virtuoso Catering House</div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Diwali parties and cocktail evenings across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 1. ACHARI MUSHROOM CROSTINI -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 1 of 3</span>
+  </header>
+  <span class="eyebrow">Diwali canapés</span>
+  <div class="rule"></div>
+  <h1>Achari Mushroom Crostini</h1>
+  <p class="profile">Tangy, spicy, savoury, aromatic.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-achari-mushroom-crostini.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Golden toasted crostini topped with achari mushrooms and fresh herbs</dd>
+        <dt>Texture</dt><dd>Crisp bread with juicy, tender mushrooms and a lightly creamy finish</dd>
+        <dt>Best with</dt><dd>Cocktail parties, canapé platters, mocktails, sparkling wine</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>12 ready-made crostini bases</li>
+        <li>250 g button mushrooms, finely chopped</li>
+        <li>1 tbsp oil</li>
+        <li>1 tbsp butter</li>
+        <li>1 small onion, finely chopped</li>
+        <li>1 tbsp ginger-garlic paste</li>
+        <li>1 green chilli, finely chopped</li>
+        <li>1 tsp mustard oil</li>
+        <li>½ tsp fennel seeds</li>
+        <li>½ tsp mustard seeds</li>
+        <li>½ tsp nigella seeds (kalonji)</li>
+        <li>½ tsp crushed coriander seeds</li>
+        <li>¼ tsp fenugreek seeds</li>
+        <li>½ tsp Kashmiri red chilli powder</li>
+        <li>¼ tsp turmeric powder</li>
+        <li>½ tsp amchur powder</li>
+        <li>1 tbsp hung curd</li>
+        <li>1 tbsp fresh coriander, chopped</li>
+        <li>1 tbsp lemon juice</li>
+        <li>Salt</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Prepare the achari spice base</strong>Heat the mustard oil in a pan. Add the fennel, mustard, nigella, coriander and fenugreek seeds, and allow them to crackle gently.</li>
+      <li><strong>Sauté the aromatics</strong>Add the onion and cook until translucent. Add the ginger-garlic paste and green chilli, and sauté until fragrant.</li>
+      <li><strong>Cook the mushrooms</strong>Add the chopped mushrooms and cook over medium-high heat until their moisture evaporates and they begin to brown.</li>
+      <li><strong>Season the filling</strong>Add the Kashmiri chilli powder, turmeric, amchur and salt. Mix well and cook for another 2–3 minutes.</li>
+      <li><strong>Finish the mixture</strong>Lower the heat and stir in the hung curd. Cook briefly until the mixture is cohesive and not watery. Finish with lemon juice and fresh coriander.</li>
+      <li><strong>Assemble</strong>Spoon the mushroom filling onto the ready-made crostini bases.</li>
+      <li><strong>Garnish</strong>Finish with fresh coriander, microgreens and finely chopped green chilli. Serve immediately.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Fresh coriander leaves, microgreens and finely chopped green chilli.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>Keep the mushroom filling dry and concentrated so the ready-made crostini stays crisp.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Diwali parties and cocktail evenings across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 2. DESI SALSA VOL-AU-VENTS -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 2 of 3</span>
+  </header>
+  <span class="eyebrow">Diwali canapés</span>
+  <div class="rule"></div>
+  <h1>Desi Salsa Vol-au-vents</h1>
+  <p class="profile">Fresh, tangy, zesty, mildly spicy, herbaceous.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-desi-salsa-vol-au-vents.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Golden, flaky vol-au-vent shells filled with a colourful Indian-style salsa, vibrant vegetables and fresh garnishes</dd>
+        <dt>Texture</dt><dd>Crisp, buttery pastry against crunchy vegetables and a juicy, refreshing filling</dd>
+        <dt>Best with</dt><dd>Cocktail parties, welcome drinks, mocktails, sparkling beverages</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>12 ready-made mini vol-au-vent shells</li>
+        <li>100 g tomatoes, deseeded and finely diced</li>
+        <li>50 g cucumber, finely diced</li>
+        <li>40 g red onion, finely chopped</li>
+        <li>30 g red bell pepper, finely diced</li>
+        <li>30 g yellow bell pepper, finely diced</li>
+        <li>1 green chilli, finely chopped</li>
+        <li>2 tbsp fresh coriander, chopped</li>
+        <li>1 tbsp lemon juice</li>
+        <li>½ tsp roasted cumin powder</li>
+        <li>½ tsp chaat masala</li>
+        <li>¼ tsp Kashmiri red chilli powder</li>
+        <li>1 tsp olive oil</li>
+        <li>Salt</li>
+        <li>1 tbsp pomegranate seeds</li>
+      </ul>
+      <div class="sub">Optional creamy layer</div>
+      <ul class="ing">
+        <li>60 g hung curd</li>
+        <li>1 tbsp mint chutney</li>
+        <li>A pinch of roasted cumin powder</li>
+        <li>Salt</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Prepare the desi salsa</strong>Combine the deseeded tomatoes, cucumber, red onion, bell peppers and green chilli in a bowl.</li>
+      <li><strong>Season</strong>Add the coriander, lemon juice, roasted cumin powder, chaat masala, Kashmiri chilli powder, olive oil and salt. Mix gently.</li>
+      <li><strong>Prepare the optional creamy layer</strong>Whisk the hung curd with the mint chutney, roasted cumin powder and salt until smooth.</li>
+      <li><strong>Drain the salsa</strong>Allow it to rest briefly, then drain any excess liquid so the pastry shells do not turn soggy.</li>
+      <li><strong>Assemble</strong>If using the creamy layer, pipe a small amount into each ready-made vol-au-vent shell. Spoon the salsa on top without overfilling.</li>
+      <li><strong>Garnish</strong>Finish with pomegranate seeds, fresh coriander, microgreens and a light dusting of chaat masala.</li>
+      <li><strong>Serve</strong>Assemble just before service to keep the flaky texture of the shells.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Pomegranate seeds, fresh coriander leaves, microgreens and a light dusting of chaat masala.</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>Keep the diced vegetables uniform and the salsa well drained for a neat, colourful canapé. The creamy mint layer is optional.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Diwali parties and cocktail evenings across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<!-- 3. AVOCADO SEV PURI -->
+<section class="page recipe">
+  <header>
+    <div><div class="wordmark">virtuoso</div><div class="descriptor">Catering House</div></div>
+    <span class="count">Recipe 3 of 3</span>
+  </header>
+  <span class="eyebrow">Diwali canapés</span>
+  <div class="rule"></div>
+  <h1>Avocado Sev Puri</h1>
+  <p class="profile">Creamy, tangy, zesty, mildly spicy, chaat-inspired.</p>
+
+  <div class="top">
+    <img class="photo" src="../../../public/images/blog/diwali-fusion-canapes/virtuoso-catering-house-avocado-sev-puri.jpg" alt="">
+    <div>
+      <dl class="meta">
+        <dt>Look</dt><dd>Crisp papdis topped with vibrant green avocado, colourful chutneys, golden sev and jewel-like pomegranate seeds</dd>
+        <dt>Texture</dt><dd>Crunchy papdi and sev balanced with smooth avocado, juicy chutneys and bursts of pomegranate</dd>
+        <dt>Best with</dt><dd>Luxury cocktail events, Indian fusion menus, welcome drinks, refreshing mocktails</dd>
+      </dl>
+      <h2>Ingredients</h2>
+      <ul class="ing two">
+        <li>12–15 ready-made plain papdis</li>
+        <li>2 ripe avocados</li>
+        <li>1 small tomato, deseeded and finely chopped</li>
+        <li>2 tbsp red onion, finely chopped</li>
+        <li>1 green chilli, finely chopped</li>
+        <li>2 tbsp fresh coriander, chopped</li>
+        <li>1 tbsp lemon juice</li>
+        <li>½ tsp roasted cumin powder</li>
+        <li>½ tsp chaat masala</li>
+        <li>Salt</li>
+        <li>50 g fine nylon sev</li>
+        <li>2 tbsp pomegranate seeds</li>
+      </ul>
+      <div class="sub">Sweet tamarind chutney</div>
+      <ul class="ing">
+        <li>3 tbsp tamarind chutney</li>
+        <li>½ tsp roasted cumin powder</li>
+        <li>A pinch of black salt</li>
+      </ul>
+      <div class="sub">Mint-coriander chutney</div>
+      <ul class="ing">
+        <li>3 tbsp mint-coriander chutney</li>
+        <li>1 tsp lemon juice</li>
+        <li>1–2 tsp water, if required</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h2>Method</h2>
+    <ol class="steps">
+      <li><strong>Prepare the avocado</strong>Scoop the avocado into a bowl and mash with a fork until creamy but slightly textured. Add the lemon juice immediately to prevent browning.</li>
+      <li><strong>Season the mixture</strong>Add the tomato, red onion, green chilli, coriander, roasted cumin powder, chaat masala and salt. Mix gently.</li>
+      <li><strong>Prepare the chutneys</strong>Mix the tamarind chutney with the roasted cumin powder and black salt. Loosen the mint-coriander chutney with lemon juice and a little water, if required.</li>
+      <li><strong>Arrange the papdis</strong>Place the ready-made plain papdis on a serving platter in a single layer.</li>
+      <li><strong>Fill</strong>Add a small spoonful of the avocado mixture to each papdi.</li>
+      <li><strong>Dress</strong>Drizzle a little tamarind chutney and mint-coriander chutney over the avocado.</li>
+      <li><strong>Garnish</strong>Top with fine nylon sev, pomegranate seeds, red onion, fresh coriander and a light sprinkle of chaat masala.</li>
+      <li><strong>Serve immediately</strong>Assemble just before serving so the papdis and sev keep their crunch.</li>
+    </ol>
+  </div>
+
+  <div class="finish">
+    <div><span class="lab">Garnish</span><p>Fine nylon sev, pomegranate seeds, fresh coriander leaves, finely chopped red onion, a light sprinkle of chaat masala and microgreens (optional).</p></div>
+    <div class="chef"><span class="lab">Chef’s note</span><p>Use firm, crisp papdis and keep the avocado mixture thick rather than runny. Add the sev at the last moment so it does not absorb moisture.</p></div>
+  </div>
+
+  <footer>
+    <span>virtuosocatering.com · Diwali parties and cocktail evenings across Delhi NCR</span>
+    <span>virtuosocatering@gmail.com · +91 87009 15463</span>
+  </footer>
+</section>
+
+<script>
+/* Safety net for print: if any page's content would reach its footer, step
+   the page's text size down until it clears. Runs before headless Chromium
+   prints, which waits on --virtual-time-budget. */
+document.querySelectorAll('.page').forEach(function (pg) {
+  var foot = pg.querySelector('footer'); if (!foot) return;
+  var fs = 8.6, guard = 0;
+  function overlaps() {
+    var limit = foot.getBoundingClientRect().top - 6, worst = 0;
+    pg.querySelectorAll('section.page > *:not(footer)').forEach(function (el) {
+      worst = Math.max(worst, el.getBoundingClientRect().bottom);
+    });
+    return worst > limit;
+  }
+  while (overlaps() && fs > 7.2 && guard++ < 20) { fs -= 0.2; pg.style.setProperty('--fs', fs.toFixed(1) + 'pt'); }
+  if (overlaps()) pg.setAttribute('data-overflow', 'yes');
+});
+</script>
+</body></html>
