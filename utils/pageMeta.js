@@ -573,6 +573,17 @@ const pages = {
     post: content.blogPosts.find((p) => p.slug === 'diwali-grazing-table-colour-palettes'),
     breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Diwali Grazing Table Palettes', path: '/blog/diwali-grazing-table-colour-palettes' }]
   },
+  blogAraliasGurugram: {
+    path: '/blog/catering-at-the-aralias-gurugram',
+    view: 'blog-post',
+    activePage: 'blog',
+    bodyClass: 'page-blog-post',
+    title: 'Catering at The Aralias, Gurugram: A 70-Guest Diwali Party',
+    description: content.blogPosts.find((p) => p.slug === 'catering-at-the-aralias-gurugram').excerpt,
+    ogImage: content.blogPosts.find((p) => p.slug === 'catering-at-the-aralias-gurugram').image,
+    post: content.blogPosts.find((p) => p.slug === 'catering-at-the-aralias-gurugram'),
+    breadcrumbs: [{ name: 'Home', path: '/' }, { name: 'Journal', path: '/blog' }, { name: 'Catering at The Aralias', path: '/blog/catering-at-the-aralias-gurugram' }]
+  },
   blogDiwaliGrazing: {
     path: '/blog/indian-diwali-grazing-table',
     view: 'blog-post',

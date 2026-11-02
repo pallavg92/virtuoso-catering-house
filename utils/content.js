@@ -2329,6 +2329,134 @@ const blogPosts = [
       linkedin: 'https://www.linkedin.com/in/aarti-sharma-05308867/',
       bio: 'Aarti Sharma is the Co-Founder of Virtuoso Catering House. She leads culinary direction and menu design, and personally runs every tasting at the company’s experience centre in Sector 61, Noida.'
     }
+  },
+  {
+    slug: 'catering-at-the-aralias-gurugram',
+    url: '/blog/catering-at-the-aralias-gurugram',
+    title: 'Catering at The Aralias, Gurugram: A 70-Guest Diwali Party',
+    excerpt: 'Virtuoso Catering House catered a 70-guest Diwali party inside an apartment at The Aralias, Gurugram. No queue at the bar, and food through the whole night.',
+    date: '2026-11-02',
+    image: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-balcony-setup-diwali.jpg',
+    ctaTitle: 'Hosting at The Aralias?<br>Tell Us Your Date.',
+    lead: [
+      'Virtuoso Catering House catered a 70-guest Diwali party inside an apartment at The Aralias, Gurugram, on 1 November 2026. The hosts feared a queue at the bar, card players going without drinks and too little food. Our 40-member team served from 9 pm to 2:30 am. No queue formed, and the food lasted the whole night.',
+      'If you live at The Aralias or nearby on Golf Course Road and are planning a party at home, these are the questions worth asking any caterer. Here is how each one played out on the night.'
+    ],
+    sections: [
+      {
+        heading: 'Who Has Catered a Party at The Aralias?',
+        paragraphs: [
+          'We have. Our hosts were a couple in their early 40s who invited 70 guests to their own apartment at The Aralias for Diwali. We are keeping their names private. Their wish was clear: a full house, everyone fed and looked after, and nobody left waiting for a drink.',
+          'Virtuoso Catering House works from its kitchen in Sector 61, Noida, and caters private parties, weddings and brand events across Gurugram, Delhi and the rest of NCR.'
+        ]
+      },
+      {
+        heading: 'What Is Hard About Hosting 70 Guests in an Apartment?',
+        paragraphs: [
+          'A home, however well planned, is not a banquet hall. With 70 guests the apartment was going to be crowded, and before we planned a single dish the hosts told us what worried them.'
+        ],
+        list: [
+          'Guests settled at the card tables would not get up for a drink.',
+          'The bar, brought in from outside, was only 6 feet long, so a long queue looked likely.',
+          'There might not be enough food, and more of it had to come from less space.'
+        ],
+        outro: 'It is your home and these are your guests, so a long queue or an empty counter feels like your failure even when it is not. That is a lot to carry on your own Diwali.'
+      },
+      {
+        heading: 'How Do Drinks Reach Guests at the Card Tables?',
+        paragraphs: [
+          'We took the service to them. Four dedicated bar butlers worked the entertainment area and the gym, which the hosts had opened up for the evening, so card players were looked after where they sat and nobody had a reason to stand at the bar. No queue formed.',
+          'We have served 150 guests on their feet at the <a href="/blog/tesla-centre-gurugram-launch-catering" class="link-underline">Tesla Centre Gurugram opening</a>, and the same idea carries into a home. When the service moves through the room, a queue has nothing to form around.'
+        ]
+      },
+      {
+        heading: 'How Do You Serve That Much Food From So Little Space?',
+        paragraphs: [
+          'We spread the evening across the apartment so that no single corner had to carry it all. Service ran in four parts.'
+        ],
+        steps: [
+          'A grazing table inside the home, set once and looked after through the night.',
+          'Passed canapés, finished in the hosts\' own kitchen and carried to guests.',
+          'Live counters on the balcony: thin crust pizzette, The Dumpling House, and a separate pre-plated ricotta ravioli counter.',
+          'Mains of three dishes with biryani, accompaniments and Malabari parotta.'
+        ],
+        image: {
+          src: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-grazing-table-diwali.jpg',
+          caption: 'The grazing table inside the apartment at The Aralias, set once and kept full through the night.'
+        },
+        images: [
+          { src: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-dumpling-house-counter.jpg', caption: 'The Dumpling House, one of the live counters on the balcony.' },
+          { src: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-balcony-live-counters-night.jpg', caption: 'The live counters on the balcony at The Aralias after dark.' }
+        ]
+      },
+      {
+        heading: 'What Was on the Menu?',
+        paragraphs: [
+          'The full menu was vegetarian. This is what we served at The Aralias, built around the space we had.'
+        ],
+        table: {
+          head: ['Course', 'Dishes'],
+          rows: [
+            ['Grazing table', 'Dhokla Fusion Chaat with Sev & Anaar, Paprika Corn Crostini with Chilli Jam Relish, Kala Chana Kachumber Verrines, Schezwan Sev Puri Spread, Coriander, Mint & Curry Leaf Yogurt Dip, Beetroot & Roasted Garlic Hummus, Spinach & Beetroot Chips, Jalapeño Corn Chips, Mini Kachori, Masala Peanuts, Pista & Mini Gulab Jamun Cupcakes'],
+            ['Passed canapés', 'Beet & Truffle Kebab, Dal Pakwan, Rajma Galouti Cornetto, Spinach & Corn Phyllo Cigars, Basil Pesto Paneer Tikka, Gardenia Tacos'],
+            ['Thin crust pizzette', 'Margherita Classica, Mediterranean Garden, Roasted Pepper & Whipped Feta'],
+            ['The Dumpling House', 'Cream Cheese Truffle Mushroom, Thai Curry Dim Sum, Corn & Cheese'],
+            ['Pre-plated counter', 'Ricotta Ravioli with Pistachio Pesto and Parmesan Foam'],
+            ['Mains', 'Clove Smoked Dal Makhani with live tempering, Sriracha Paneer Makhani, Baby Potato Changezi, Hyderabadi Subz Dum Biryani, Malabari Parotta'],
+            ['Salads', 'Roasted Beetroot & Goat Cheese Salad, Watermelon & Feta Chaat'],
+            ['Desserts', 'Rabri Rasmalai, Fig, Honey & Mascarpone Tart, Shahi Gulkand Paan']
+          ]
+        },
+        images: [
+          { src: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-spinach-corn-phyllo-cigars.jpg', caption: 'Spinach and corn phyllo cigars with cranberry chutney, plated for passing.' },
+          { src: '/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-rajma-galouti-cornetto.jpg', caption: 'Rajma galouti cornetto in a rice paper cone with truffle cream cheese.' }
+        ]
+      },
+      {
+        heading: 'Can You Use a Tandoor at The Aralias?',
+        paragraphs: [
+          'No. The society does not allow a tandoor because of the fire hazard, so we planned the menu without one and served Malabari parotta instead of tandoor breads. Rules can change, so check the current position with your estate office before you fix a menu.'
+        ]
+      },
+      {
+        heading: 'How Long Does Catering Setup Take at The Aralias?',
+        paragraphs: [
+          'Plan on most of a day. Everything had to go up the back lift, which is not large, so it took trip after trip, and getting the counters and the complete setup into the apartment took four hours. We went in at 3:30 pm, served from 9 pm to 2:30 am and came out at 3:30 am, a 12-hour job from start to finish.',
+          'Permissions for the team took patience too, and we worked through them with the hosts one gentle check-in at a time.'
+        ]
+      },
+      {
+        heading: 'How Many Staff Does a 70-Guest House Party Need?',
+        paragraphs: [
+          'We sent 40 people for 70 guests: butlers, bar butlers, bartenders, cleaners, setup crew, clearing staff, managers and chefs. That may sound like a lot until you count what the evening held: guests served across two rooms, live counters on a balcony, canapés from the kitchen, a grazing table to look after, and 12 hours of setting up, serving and packing down. The right number depends on your menu and your format.'
+        ]
+      },
+      {
+        heading: 'What Happens to Your Kitchen?',
+        paragraphs: [
+          'A stain on a kitchen slab outlasts any party. We used the hosts\' kitchen for the passed canapés, so before we began we covered the whole floor and slab with chart paper. When we left, the kitchen was spotless.'
+        ]
+      },
+      {
+        heading: 'How Did the Evening End?',
+        paragraphs: [
+          'At The Aralias, Virtuoso Catering House served 70 guests for five and a half hours from a balcony, a kitchen and a grazing table, with four bar butlers looking after the card tables. No queue formed at the bar, the food lasted the whole night, and the hosts got to enjoy their own party. In their words:'
+        ],
+        pullQuote: '"Thanks for a great service, we really enjoyed it."'
+      }
+    ],
+    faq: [
+      { q: 'Which caterers have catered at The Aralias in Gurugram?', a: 'Virtuoso Catering House catered a 70-guest Diwali party inside an apartment at The Aralias, Gurugram, on 1 November 2026, with a 40-member team and a fully vegetarian menu.' },
+      { q: 'Is there a caterer near The Aralias for a house party?', a: 'Virtuoso Catering House is based in Sector 61, Noida, and caters private parties at homes across Gurugram, including The Aralias on Golf Course Road. It catered a 70-guest Diwali party there in November 2026.' },
+      { q: 'Is a tandoor allowed at The Aralias?', a: 'Not at this party. The society did not allow a tandoor because of the fire hazard, so Virtuoso Catering House served Malabari parotta at its November 2026 Diwali party. Check the current rule with your estate office.' },
+      { q: 'Which lift do caterers use at The Aralias?', a: 'Virtuoso Catering House used the back lift for its November 2026 Diwali party at The Aralias. The lift is not large and took many trips, and getting the counters and setup in took four hours.' },
+      { q: 'Can a caterer run live counters at an apartment in The Aralias?', a: 'Yes. For a 70-guest Diwali party at The Aralias, Virtuoso Catering House ran live pizzette and dumpling counters and a pre-plated ravioli counter on the balcony, with passed canapés from the apartment kitchen.' }
+    ],
+    author: {
+      name: 'Pallav Goel',
+      linkedin: 'https://www.linkedin.com/in/pallavg16',
+      bio: 'Pallav Goel is the Co-Founder of Virtuoso Catering House. He leads the overall growth, strategy, and business direction of Virtuoso, setting the standards for which clients the company works with and how the brand positions itself in the luxury events market.'
+    }
   }
 ];
 

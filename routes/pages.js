@@ -76,6 +76,7 @@ router.get('/blog/dips-for-a-grazing-table', (req, res) => render(res, pages.blo
 router.get('/blog/four-pasta-sauces', (req, res) => render(res, pages.blogFourPastaSauces));
 router.get('/blog/diwali-fusion-canapes', (req, res) => render(res, pages.blogDiwaliFusionCanapes));
 router.get('/blog/diwali-grazing-table-colour-palettes', (req, res) => render(res, pages.blogDiwaliGrazingPalettes));
+router.get('/blog/catering-at-the-aralias-gurugram', (req, res) => render(res, pages.blogAraliasGurugram));
 router.get('/blog/five-cheeses-for-a-cheese-board', (req, res) => render(res, pages.blogCheeseBoard));
 router.get('/blog/best-wedding-caterers-hospitality-before-food', (req, res) => render(res, pages.blogHospitalityBeforeFood));
 router.get('/blog/the-quiet-craft-behind-an-unforgettable-wedding', (req, res) => render(res, pages.blogQuietCraft));
