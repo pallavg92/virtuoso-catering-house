@@ -289,6 +289,28 @@ const pages = {
     description: 'For first-birthday celebrations of 50 guests or more in Delhi NCR, Virtuoso brings menu, live experiences, presentation and service together as one personalised F&B experience.',
     breadcrumbs: []
   },
+  // Grazing table paid lander, built on the first-birthday page. Self-contained
+  // (own head, analytics stub, noindex), so it is kept out of the sitemap.
+  lpGrazingTable: {
+    path: '/lp/grazing-table',
+    view: 'lander-grazing-table',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'Grazing tables in Delhi NCR — Virtuoso Catering House',
+    description: 'Hand-composed grazing tables for hosts who notice detail: fromagerie, seasonal fruit, mezze and chef-led bites, styled to your palette. From ₹1,50,000 for 50 guests or more, Delhi NCR.',
+    breadcrumbs: []
+  },
+  lpGrazingTableThanks: {
+    path: '/lp/grazing-table/thank-you',
+    view: 'lander-grazing-table-thanks',
+    activePage: '',
+    bodyClass: '',
+    excludeFromSitemap: true,
+    title: 'Thank you — Virtuoso Catering House',
+    description: 'Your grazing table enquiry is with our F&B curator.',
+    breadcrumbs: []
+  },
   lpFirstBirthdayThanks: {
     path: '/lp/first-birthday/thank-you',
     view: 'lander-first-birthday-thanks',

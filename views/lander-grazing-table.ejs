@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><%= title %></title>
+<meta name="description" content="<%= description %>" />
+<meta name="robots" content="noindex" />
+<link rel="preload" href="/fonts/cormorant-300.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/cormorant-italic-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/worksans-300-400-500-600.woff2" as="font" type="font/woff2" crossorigin />
+
+<style>
+/* ============================================================
+   VIRTUŌSO — GRAZING TABLE LANDER
+   The first-birthday lander, rebuilt for grazing tables. Same order:
+   hero → the work → names → threshold + form → case study →
+   contrast → how it works → what goes on the table → FAQ → closing.
+   Native POST form, no form JS; the Lead fires on the thank-you page.
+   ============================================================ */
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/cormorant-300.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-italic-400.woff2') format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/worksans-300-400-500-600.woff2') format('woff2')}
+
+:root{
+  /* colour as meaning — one job each */
+  --ink:#17100B;          /* type */
+  --ink-2:#3D342D;        /* body */
+  --ink-3:#5B5048;        /* secondary */
+  --ink-4:#8A7A6A;        /* decorative only — fails 4.5:1 for text; use --ink-3 for any label or caption */
+  --page:#FAF6EE;         /* parchment — the page */
+  --card:#FEFCF7;         /* linen — cards, alternate bands */
+  --band:#F3EDE0;         /* vellum — the form band */
+  --forest:#101F10;       /* the outcome / Virtuōso column, threshold, closing */
+  --old:#3D342D;          /* the old way column */
+  --old-ink:#D9D2C4;
+  --old-muted:#A89C8C;
+  --sage-wash:#E4E8DC;    /* the outcome highlight + testimonial ground. never the button */
+  --cta:#C9873A;          /* the action. nothing else is this colour */
+  --cta-hover:#E8C98A;
+  --cta-deep:#935A11;
+  --gold-text:#E8C98A;    /* labels on forest */
+  --error:#8B4A2F;
+  --hair:rgba(23,16,11,.1);
+  --hair-2:rgba(23,16,11,.12);
+  --field:rgba(23,16,11,.18);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Work Sans',Arial,Helvetica,sans-serif;
+  --pad:clamp(20px,5vw,48px);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--ink);text-decoration:none;transition:background 150ms var(--ease),color 150ms var(--ease)}
+a:hover{color:var(--cta-deep)}
+:focus-visible{outline:2px solid var(--cta-deep);outline-offset:2px}
+::selection{background:var(--sage-wash)}
+input[type=checkbox]{accent-color:var(--cta-deep)}
+strong{font-weight:500}
+
+.wrap{max-width:1160px;margin:0 auto;width:100%;padding-left:var(--pad);padding-right:var(--pad)}
+.band{padding-top:clamp(48px,7vw,104px);padding-bottom:clamp(48px,7vw,104px)}
+.band--card{background:var(--card);border-top:1px solid var(--hair)}
+.stack{display:flex;flex-direction:column}
+
+/* type */
+.eyebrow{font-size:12px;line-height:1.3;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--cta-deep);margin:0}
+.h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,2.2rem + 2.4vw,72px);line-height:1.04;letter-spacing:-.01em;margin:0;max-width:20ch;text-wrap:pretty}
+.h1 em{font-style:italic;font-weight:400;color:var(--gold-text)}
+.h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,1.6rem + 1.6vw,48px);line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:pretty}
+.h3{font-size:18px;line-height:1.3;font-weight:500;margin:0}
+.lede{font-size:clamp(17px,1rem + .35vw,20px);line-height:1.5;margin:0;max-width:52ch;text-wrap:pretty}
+.p{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0;max-width:60ch;text-wrap:pretty}
+.p--s{font-size:15px}
+.fine{font-size:14px;line-height:1.6;color:var(--ink-3);margin:0}
+.fine--xs{font-size:12px;color:var(--ink-3)}
+mark.hl{background:var(--sage-wash);color:var(--forest);font-weight:500;padding:2px 8px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* the action */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:17px 34px;border-radius:6px;border:0;background:var(--cta);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:background 150ms var(--ease),color 150ms var(--ease)}
+.btn:hover{background:var(--cta-hover);color:var(--ink)}
+.btn--form{width:100%}
+.btn--form:hover{background:var(--cta-deep);color:var(--card)}
+.btn__arrow{font-size:20px;line-height:1}
+
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:300;font-size:20px;line-height:1.1;letter-spacing:.09em;text-transform:uppercase;display:block}
+.wordmark__sub{font-size:10px;line-height:1.3;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:2px}
+.tel{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:500;letter-spacing:.06em}
+
+/* hero */
+.hero{position:relative;isolation:isolate;background-color:var(--forest);background-image:url('/images/virtuoso-catering-house-fromagerie-platter-ferrari-track-day-2026-1.webp');background-size:cover;background-position:50% 62%}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(100deg,rgba(11,20,11,.96) 0%,rgba(11,20,11,.9) 40%,rgba(11,20,11,.62) 70%,rgba(11,20,11,.36) 100%)}
+.hero__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;padding-top:clamp(28px,6vw,80px);padding-bottom:clamp(24px,5vw,64px)}
+@media (max-width:759px){.hero .lede{font-size:16px !important;line-height:1.45}.hero__inner .stack{gap:8px}.hero__proof{font-size:13px}}
+.hero .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--gold-text)}
+.hero .h1{color:var(--card)}
+.hero .lede{color:#EFE8D8}
+.hero .btn{box-shadow:0 10px 30px -10px rgba(0,0,0,.55)}
+.hero__proof{font-size:14px;line-height:1.5;color:#EFE8D8;margin:0;max-width:44ch}
+.hero__proof strong{color:var(--card)}
+.hero__proof span{color:#C9C2B4}
+.hero__small{display:none}
+
+/* names */
+.names{background:var(--card);border-bottom:1px solid var(--hair)}
+.names__row{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-top:22px;padding-bottom:22px}
+.names p{font-size:13px;line-height:1.6;margin:0;color:var(--ink-2)}
+.names .k{font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--ink-3);margin-right:10px}
+
+/* images */
+.frame{overflow:hidden;border-radius:4px}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame--32{aspect-ratio:3/2}
+.frame--11{aspect-ratio:1/1}
+.frame--45{aspect-ratio:4/5}
+.work figcaption .tag{display:block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+.hero__credit{position:relative;z-index:1;font-size:11px;line-height:1.4;color:rgba(239,232,216,.72);margin:0;padding-bottom:14px}
+.work{display:grid;grid-template-columns:1fr;gap:clamp(12px,2vw,24px)}
+.work figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.work figcaption{font-size:15px;line-height:1.5;color:var(--ink-2)}
+.work figcaption strong{color:var(--ink)}
+
+/* threshold + form */
+.enquiry{background:var(--band);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.enquiry__grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start;padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(40px,6vw,88px)}
+.threshold{background:var(--forest);color:var(--card);border-radius:6px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:12px}
+.threshold .eyebrow{color:var(--gold-text)}
+.threshold__price{font-family:var(--serif);font-weight:400;font-size:clamp(24px,1.2rem + 1vw,32px);line-height:1.2;margin:0;text-wrap:pretty}
+.threshold__price span{color:var(--gold-text);white-space:nowrap}
+.threshold .p{color:#D9D2C4;font-size:15px}
+.form{background:var(--card);border:1px solid var(--hair);border-radius:8px;box-shadow:0 1px 2px rgba(23,16,11,.06),0 14px 40px -20px rgba(23,16,11,.25);padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:18px}
+.row{display:grid;grid-template-columns:1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;line-height:1.3;font-weight:500;color:var(--ink-2)}
+.field label .opt{font-weight:300;color:var(--ink-3)}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:12px 14px;font-family:var(--sans);font-size:16px;line-height:1.5;font-weight:300;color:var(--ink);background:var(--page);border:1px solid var(--field);border-radius:6px;appearance:none;transition:border-color 150ms var(--ease)}
+.field textarea{min-height:88px;line-height:1.6;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cta-deep);outline:2px solid var(--cta-deep);outline-offset:2px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--band);border-radius:6px;cursor:pointer}
+.check input{width:22px;height:22px;margin:1px 0 0;flex:none;cursor:pointer}
+.check span{font-size:15px;line-height:1.5}
+.lander-field__error{font-size:13px;line-height:1.5;color:var(--error)}
+.lander-field__error:not(:empty)::before{content:"! ";font-weight:600}
+.field:has(.lander-field__error:not(:empty)) input,.field:has(.lander-field__error:not(:empty)) select,.field:has(.lander-field__error:not(:empty)) textarea{border-color:var(--error);border-width:2px}
+.form__foot{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+#lander-status{font-size:15px;line-height:1.5;color:var(--ink-2);margin:0}
+#lander-status:empty{display:none}
+
+/* case study */
+.case{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.brief{margin:0;padding:0 0 0 22px;border-left:3px solid var(--cta);display:flex;flex-direction:column;gap:10px}
+.brief p{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(24px,1.2rem + 1vw,32px);line-height:1.25;margin:0;text-wrap:pretty}
+.brief footer{font-size:13px;line-height:1.5;color:var(--ink-3)}
+.spec{margin:0;display:grid;grid-template-columns:repeat(3,auto);gap:8px 32px;justify-content:start}
+.spec>div{display:flex;flex-direction:column;gap:2px}
+.spec dt{font-size:11px;line-height:1.3;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.spec dd{font-size:16px;line-height:1.4;margin:0}
+.quote{margin:0;background:var(--sage-wash);border-radius:8px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:12px}
+.quote p{font-size:clamp(17px,1rem + .35vw,20px);line-height:1.55;margin:0;color:var(--forest);text-wrap:pretty}
+.quote footer{font-size:14px;line-height:1.5;color:var(--ink-2);font-weight:500}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.5vw,16px)}
+.gallery .frame--wide{grid-column:1 / -1}
+
+/* contrast */
+.vs{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px)}
+.vs__col{border-radius:8px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:18px}
+.vs__col--old{background:var(--old);color:var(--old-ink)}
+.vs__col--old .eyebrow{color:var(--old-muted)}
+.vs__col--new{background:var(--forest);color:var(--card);box-shadow:0 20px 50px -24px rgba(16,31,16,.6)}
+.vs__col--new .eyebrow{color:var(--gold-text)}
+.vs ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.45}
+.vs li{display:flex;gap:12px}
+.vs li span{flex:none}
+.vs__col--old li span{color:var(--old-muted)}
+.vs__col--new li span{color:var(--gold-text)}
+
+/* how it works */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,32px)}
+.steps li{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:2px solid var(--cta)}
+.steps .n{font-family:var(--serif);font-size:34px;line-height:1;font-weight:300;color:var(--cta-deep)}
+
+/* includes */
+.incl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:0 32px}
+.incl--1col{grid-template-columns:1fr !important}
+.work .btn{margin-top:4px}
+/* what it covers: Virtuoso green, bold gold, one unbroken list (as on the
+   Diwali plan page). No image breaks it: the list is the point. */
+.cover{background:var(--forest);color:var(--card)}
+.cover__inner{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
+.cover__eyebrow{margin:0}
+.cover__eyebrow mark{background:var(--gold-text);color:var(--forest);font-weight:600;letter-spacing:.16em;padding:5px 12px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cover__h{font-family:var(--serif);font-weight:600;font-size:clamp(52px,16vw,132px);line-height:.92;letter-spacing:-.01em;color:var(--gold-text);margin:4px 0 0}
+.cover__lead{font-family:var(--sans);font-weight:600;font-size:clamp(20px,1.05rem + 1vw,30px);line-height:1.25;color:var(--gold-text);margin:0;max-width:32ch}
+.cover__p{font-size:16px;line-height:1.6;color:#D9D2C4;margin:0;max-width:62ch}
+.cover__group{border-top:1px solid rgba(232,201,138,.32);padding-top:clamp(18px,2.4vw,26px);margin-top:clamp(6px,1vw,12px)}
+.cover__group h3{font-family:var(--sans);font-weight:600;font-size:clamp(22px,1.1rem + .9vw,30px);line-height:1.15;color:var(--gold-text);margin:0 0 16px}
+.cover ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px 40px}
+.cover li{display:flex;gap:12px;font-size:16.5px;line-height:1.45;color:#EFE8D8}
+.cover li span{color:var(--gold-text);flex:none;font-weight:600}
+.cover__sub{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin:22px 0 12px}
+.cover .btn{align-self:flex-start;margin-top:clamp(6px,1vw,12px)}
+@media (min-width:760px){.cover ul{grid-template-columns:1fr 1fr}}
+/* Nine photographs read as a gallery, not a scroll: two across on a phone,
+   the first one wide. */
+@media (max-width:759px){
+  .work{grid-template-columns:1fr 1fr;gap:16px 12px}
+  .work figure:first-child{grid-column:1 / -1}
+  .work figcaption{font-size:13px;line-height:1.45}
+  .work figcaption .tag{font-size:10px;letter-spacing:.08em}
+}
+.incl li{padding:14px 0;border-bottom:1px solid var(--hair-2);font-size:16px;line-height:1.5}
+.incl li span{color:var(--ink-3)}
+
+/* faq */
+.faq{margin:0;display:flex;flex-direction:column}
+.faq>div{padding:20px 0;border-top:1px solid var(--hair-2);display:flex;flex-direction:column;gap:8px}
+.faq>div:last-child{border-bottom:1px solid var(--hair-2)}
+.faq dt{font-size:18px;line-height:1.35;font-weight:500;margin:0}
+.faq dd{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0}
+
+/* closing + footer */
+.close{background:var(--forest);color:var(--card)}
+.close__inner{display:flex;flex-direction:column;gap:22px;align-items:flex-start;padding-top:clamp(56px,8vw,120px);padding-bottom:clamp(56px,8vw,120px)}
+.close .h2{color:var(--card);font-size:clamp(34px,1.8rem + 2vw,56px);line-height:1.06;max-width:20ch}
+.close .p{color:#D9D2C4;font-size:17px;line-height:1.55;max-width:52ch}
+.close .fine{color:var(--old-muted)}
+.foot{border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;padding-top:24px;padding-bottom:40px}
+.foot a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:var(--ink-2)}
+.foot a.u{text-decoration:underline;text-underline-offset:3px}
+
+/* two-column grid — the split point */
+.split{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start}
+
+@media (min-width:760px){
+  .work{grid-template-columns:repeat(3,1fr)}
+  .enquiry__grid,.case,.vs,.split{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:1fr 1fr}
+  .row--3{grid-template-columns:1fr 1fr 1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .incl{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1040px){
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .steps--3{grid-template-columns:repeat(3,1fr)}
+  .enquiry__grid{grid-template-columns:5fr 7fr}
+  .split{grid-template-columns:5fr 7fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms !important}}
+</style>
+<script>
+(function () {
+  // Meta stub. Queues calls exactly as the official snippet does.
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[]}(window, document,'script');
+
+  // GA4 stub. dataLayer preserves ordering until gtag.js arrives.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+
+  // Only report from the live domain. Without this guard, local dev and
+  // staging traffic lands in the same dataset as real visitors and skews
+  // both the audience pool and the conversion counts.
+  var live = /(^|\.)virtuosocatering\.com$/.test(location.hostname);
+  if (live) {
+    fbq('init', '1747975173071768');
+    fbq('track', 'PageView');
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-7D4B5HCKXQ');
+
+  var loaded = false;
+  function loadVendors() {
+    if (loaded || !live) return;
+    loaded = true;
+    ['https://connect.facebook.net/en_US/fbevents.js',
+     'https://www.googletagmanager.com/gtag/js?id=G-7D4B5HCKXQ'].forEach(function (src) {
+      var t = document.createElement('script');
+      t.async = true; t.src = src;
+      document.head.appendChild(t);
+    });
+  }
+
+  // Whichever happens first.
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (evt) {
+    window.addEventListener(evt, loadVendors, { once: true, passive: true });
+  });
+  if (document.readyState === 'complete') setTimeout(loadVendors, 2000);
+  else window.addEventListener('load', function () { setTimeout(loadVendors, 2000); });
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1747975173071768&ev=PageView&noscript=1"
+/></noscript>
+</head>
+
+<body>
+<%
+  // Every photograph is from a real, previous Virtuōso event.
+  const work = [
+    { src: '/images/virtuoso-catering-house-grazing-table-bath-body-works-2026.jpg', alt: 'An all-gold grazing table with a truffle tower, macarons and canapés', cap: 'The all-gold grazing table for Bath &amp; Body Works, Promenade Mall, 2026.' },
+    { src: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-2.jpg', alt: 'A round board of cheeses, fruit, olives and crackers surrounded by small bites and candles', cap: 'Fromagerie, fruit and olives around a round board, Delhi NCR.' },
+    { src: '/images/virtuoso-catering-house-fromagerie-platter-ferrari-track-day-2026-2.jpg', alt: 'A candlelit fromagerie table in a dark room', cap: 'Candlelit fromagerie at La Esperienza Ferrari, Buddh International Circuit, 2026.' },
+    { src: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-5.jpg', alt: 'A gloved hand placing caprese skewers into a wooden stand', cap: 'Caprese skewers set into place by hand, Delhi NCR.' },
+    { src: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-1.jpg', alt: 'Seasonal fruit, chocolate and coconut cups on a grazing table', cap: 'Fruit, chocolate and coconut cups on one table, Delhi NCR.' },
+    { src: '/images/virtuoso-catering-house-red-velvet-grazing-table.webp', alt: 'A grazing table dressed in red velvet with red florals and candles', cap: 'One palette, carried through: a red velvet grazing table.' },
+    { src: '/images/blog/cheese-board/virtuoso-catering-house-grazing-table-delhi-ncr-4.jpg', alt: 'Dragon fruit, olives, soft cheese and crackers on a grazing table', cap: 'Dragon fruit, olives and soft cheese on one table, Delhi NCR.' },
+    { src: '/images/lamborghini-temerario-grazing-table.jpg', alt: 'A grazing table beneath the Lamborghini crest', cap: 'The grazing table at the Lamborghini Temerario launch, Delhi.' },
+    { src: ('/images/blog/the-aralias-gurugram/virtuoso-catering-house-aralias-grazing-table-diwali.jpg'), alt: 'An Indian grazing table with chaat in brass bowls, marigolds and candles', cap: 'An Indian grazing table for a Diwali party, DLF The Aralias, Gurugram, 2026.' }
+  ];
+  const v = typeof values !== 'undefined' ? values : {};
+  const e = typeof errors !== 'undefined' ? errors : {};
+  const sel = (val) => (v.guestCount === val ? ' selected' : '');
+%>
+
+<!-- 01 TOP BAR -->
+<header class="wrap topbar">
+  <!-- Not a link: on a paid-traffic page the logo is a side door. Phone stays tappable. -->
+  <div>
+    <span class="wordmark">Virtu&#332;so</span>
+    <span class="wordmark__sub">Catering House</span>
+  </div>
+  <a class="tel" href="tel:+918700915463">+91 87009 15463</a>
+</header>
+
+<main>
+<!-- 02 HERO -->
+<section class="hero">
+  <div class="wrap hero__inner">
+    <p class="eyebrow">Grazing tables &middot; Delhi NCR &middot; 50 guests or more</p>
+    <h1 class="h1">The kind of table that makes the room stop.</h1>
+    <div class="stack" style="gap:12px;max-width:54ch">
+      <p class="lede">Hand-composed grazing for hosts who notice detail &mdash; fromagerie, seasonal fruit, mezze and chef-led bites, styled to your palette and the vibe of your party.</p>
+    </div>
+    <div class="stack" style="gap:14px;align-items:flex-start;margin-top:6px">
+      <a class="btn" href="#lander-form">Plan my grazing table <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      <p class="hero__proof"><strong>From &#8377;1,50,000, for 50 guests or more.</strong> <span>The team trusted by Ferrari APAC, Lamborghini, Tesla India and Bath &amp; Body Works.</span></p>
+    </div>
+  </div>
+  <p class="wrap hero__credit">Previous Virtu&#333;so event: candlelit fromagerie at La Esperienza Ferrari, Buddh International Circuit, 2026.</p>
+</section>
+
+<!-- 03 THE WORK -->
+<section class="wrap stack" style="gap:28px;padding-top:clamp(40px,6vw,80px);padding-bottom:clamp(32px,5vw,64px)">
+  <h2 class="h2" style="max-width:24ch">This is what a Grazing Table by Virtu&#333;so looks like.</h2>
+  <div class="work">
+    <% work.forEach(function (w, i) { %>
+    <figure>
+      <div class="frame frame--45"><img loading="<%= i < 3 ? 'eager' : 'lazy' %>" decoding="async" src="<%= w.src %>" alt="<%= w.alt %>" /></div>
+      <figcaption><span class="tag">Previous Virtu&#333;so event</span><%- w.cap %></figcaption>
+    </figure>
+    <% }); %>
+  </div>
+  <a class="btn" href="#lander-form" style="align-self:flex-start">Plan my grazing table <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+</section>
+
+<!-- 04 NAMES -->
+<section class="names" style="border-top:1px solid var(--hair)">
+  <div class="wrap names__row">
+    <p><span class="k">Catering for</span>Ferrari APAC &middot; Lamborghini &middot; Tesla India &middot; BMW &middot; Bath &amp; Body Works</p>
+    <p><span class="k">As seen in</span>Times of India &middot; Economic Times &middot; India Today &middot; News18 &middot; ANI</p>
+    <p><span class="k">Founded by</span>Aarti Sharma and Pallav Goel &middot; FSSAI Licensed</p>
+  </div>
+</section>
+
+<!-- 05 WHAT IT COVERS: one continuous block, no pictures breaking it -->
+<%# As the offer was written: three macro areas, with planning and execution
+    sitting inside Hospitality, the same shape as the Diwali plan page. -%>
+<section class="cover">
+  <div class="wrap cover__inner">
+    <p class="eyebrow cover__eyebrow"><mark>What &#8377;1,50,000 covers</mark></p>
+    <h2 class="cover__h">The whole table.</h2>
+    <p class="cover__lead">The menu, the chefs, the styling, the butlers and the teardown.</p>
+    <p class="cover__p">Every grazing table includes all of it, for 50 guests or more across Delhi NCR.</p>
+
+    <div class="cover__group">
+      <h3>Culinary</h3>
+      <ul>
+        <li><span>&#10003;</span>Bespoke grazing menu creation</li>
+        <li><span>&#10003;</span>Complete execution of the finalised menu</li>
+        <li><span>&#10003;</span>Chefs on site</li>
+        <li><span>&#10003;</span>Production in our base kitchen under controlled, hygienic conditions</li>
+        <li><span>&#10003;</span>Certified pure paneer used across all applicable preparations</li>
+        <li><span>&#10003;</span>Quality-controlled ingredient sourcing</li>
+        <li><span>&#10003;</span>Fresh production, on-site finishing</li>
+      </ul>
+    </div>
+
+    <div class="cover__group">
+      <h3>Presentation</h3>
+      <ul>
+        <li><span>&#10003;</span>A 6-foot grazing table</li>
+        <li><span>&#10003;</span>F&amp;B d&eacute;cor elements</li>
+        <li><span>&#10003;</span>Displays and presentation</li>
+        <li><span>&#10003;</span>Styling of the table to the theme of your party</li>
+        <li><span>&#10003;</span>Crockery, cutlery and serviceware</li>
+      </ul>
+    </div>
+
+    <div class="cover__group">
+      <h3>Hospitality</h3>
+      <ul>
+        <li><span>&#10003;</span>Professional butlers at the table</li>
+        <li><span>&#10003;</span>Dedicated event manager</li>
+        <li><span>&#10003;</span>Constant upkeep and maintenance of the table</li>
+        <li><span>&#10003;</span>F&amp;B service planning</li>
+        <li><span>&#10003;</span>Dietary requirement management</li>
+      </ul>
+      <p class="cover__sub">Planning and execution</p>
+      <ul>
+        <li><span>&#10003;</span>Pre-event site recce</li>
+        <li><span>&#10003;</span>Back-of-house planning</li>
+        <li><span>&#10003;</span>Kitchen infrastructure and equipment</li>
+        <li><span>&#10003;</span>Complete setup</li>
+        <li><span>&#10003;</span>Event-day execution</li>
+        <li><span>&#10003;</span>Pack-up and teardown</li>
+      </ul>
+    </div>
+
+    <a class="btn" href="#lander-form">Plan my grazing table <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- 05b THRESHOLD + FORM -->
+<section class="enquiry" id="enquiry">
+  <div class="wrap enquiry__grid">
+    <div class="stack" style="gap:22px">
+      <h2 class="h2">Tell us about the party.</h2>
+      <div class="threshold">
+        <p class="eyebrow">Before you write to us</p>
+        <p class="threshold__price">Virtu&#333;so grazing tables begin at <span>&#8377;1,50,000</span>, for 50 guests or more.</p>
+        <p class="p">A 6-foot table, composed for one party and styled to its theme, with chefs on site, butlers at the table and constant upkeep through the evening. Delhi NCR.</p>
+      </div>
+      <p class="p" style="max-width:44ch">Share the essentials, and <strong>one person from Virtu&#333;so calls you once</strong> to understand the party, the space and the look you want. No chasing. No repeated sales calls.</p>
+    </div>
+
+    <form class="form" id="lander-form" method="post" action="/lp/grazing-table">
+      <div class="row">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" value="<%= v.name || '' %>" />
+          <span class="lander-field__error" data-error-for="name"><%= e.name || '' %></span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Mobile / WhatsApp</label>
+          <input id="f-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" value="<%= v.phone || '' %>" />
+          <span class="lander-field__error" data-error-for="phone"><%= e.phone || '' %></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required inputmode="email" autocomplete="email" value="<%= v.email || '' %>" />
+        <span class="lander-field__error" data-error-for="email"><%= e.email || '' %></span>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="f-date">Date <span class="opt">(if known)</span></label>
+          <input id="f-date" name="eventDate" type="date" value="<%= v.eventDate || '' %>" />
+          <span class="lander-field__error" data-error-for="eventDate"><%= e.eventDate || '' %></span>
+        </div>
+        <div class="field">
+          <label for="f-guests">Guests</label>
+          <select id="f-guests" name="guestCount" required>
+            <option value=""<%= sel('') %>>Select</option>
+            <% ['50–75', '76–100', '101–150', '151–200', '201–300', 'More than 300', 'Not finalised yet'].forEach(function (o) { %>
+            <option value="<%= o %>"<%= sel(o) %>><%= o %></option>
+            <% }); %>
+          </select>
+          <span class="lander-field__error" data-error-for="guestCount"><%= e.guestCount || '' %></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-location">Where is the party?</label>
+        <input id="f-location" name="eventLocation" type="text" autocomplete="address-level2" placeholder="Noida, Gurugram, South Delhi&hellip;" value="<%= v.eventLocation || '' %>" />
+      </div>
+      <div class="field">
+        <label for="f-vision">What are you imagining? <span class="opt">(optional)</span></label>
+        <textarea id="f-vision" name="eventVision" rows="3" placeholder="The occasion, your palette, the vibe of the party, anything you already have in mind."><%= v.eventVision || '' %></textarea>
+      </div>
+
+      <!-- THE QUALIFIER, required. The server rejects a submission without budgetConfirmed=yes. -->
+      <label class="check" for="f-threshold">
+        <input id="f-threshold" name="budgetConfirmed" type="checkbox" required value="yes"<%= v.budgetConfirmed === 'yes' ? ' checked' : '' %> />
+        <span>Our grazing table is planned at <strong>&#8377;1,50,000 or above</strong>, for 50 guests or more.</span>
+      </label>
+      <span class="lander-field__error" data-error-for="budgetConfirmed" style="margin-top:-12px"><%= e.budgetConfirmed || '' %></span>
+
+      <input type="hidden" name="eventType" value="Grazing Table" />
+      <input type="hidden" name="pageVariant" value="grazing-v1" />
+
+      <div class="form__foot">
+        <button class="btn btn--form" id="lander-submit" type="submit">Plan my grazing table <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+        <p id="lander-status" role="status" aria-live="polite"><%= typeof status !== 'undefined' ? status : '' %></p>
+        <p class="fine fine--xs" style="text-align:center">By submitting, you agree that Virtuoso Catering House may contact you about your party. Your details are not shared.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 06 CASE STUDY -->
+<section class="wrap band stack" style="gap:clamp(28px,4vw,48px)">
+  <div class="stack" style="gap:14px">
+    <p class="eyebrow">A real grazing table, in the client&rsquo;s words</p>
+    <h2 class="h2" style="max-width:22ch">One all-gold grazing table for Bath &amp; Body Works.</h2>
+  </div>
+  <div class="case">
+    <div class="stack" style="gap:28px">
+      <blockquote class="brief">
+        <p style="font-size:clamp(22px,1.1rem + 1vw,30px)">&ldquo;Everything was perfect, we just handed over the brief to Virtuoso and they created the perfect menu and delivered it seamlessly with flawless execution.&rdquo;</p>
+        <footer>Gauri, Bath &amp; Body Works</footer>
+      </blockquote>
+      <dl class="spec">
+        <div><dt>Event</dt><dd>Touch of Gold launch</dd></div>
+        <div><dt>Venue</dt><dd>Promenade Mall</dd></div>
+        <div><dt>Date</dt><dd>9 February 2026</dd></div>
+      </dl>
+      <div class="quote">
+        <p>One table instead of several stations, so it read in a single photograph. A gold truffle tower at its centre, branded macarons around it, and a tight edit of one-bite canap&eacute;s so guests could mingle without balancing a plate.</p>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="frame frame--32 frame--wide"><img loading="lazy" decoding="async" src="/images/virtuoso-catering-house-aarti-sharma-truffle-tower-bath-body-works-2026.jpg" alt="Aarti Sharma beside the gold truffle tower ahead of the Bath and Body Works launch" style="object-position:50% 30%" /></div>
+      <div class="frame frame--11"><img loading="lazy" decoding="async" src="/images/virtuoso-catering-house-gold-truffle-tower-bath-body-works-2026.jpg" alt="The gold truffle tower at the centre of the grazing table" /></div>
+      <div class="frame frame--11"><img loading="lazy" decoding="async" src="/images/virtuoso-catering-house-branded-macarons-bath-body-works-2026.jpg" alt="Macarons stamped with the Bath and Body Works logo" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONTRAST -->
+<section class="band band--card" style="border-bottom:1px solid var(--hair)">
+  <div class="wrap stack" style="gap:clamp(28px,4vw,44px)">
+    <h2 class="h2" style="max-width:24ch">A spread of food, or a table people stop for.</h2>
+    <div class="vs">
+      <div class="vs__col vs__col--old">
+        <p class="eyebrow">The usual grazing spread</p>
+        <ul>
+          <li><span>&times;</span>Cheese cubes and crackers laid out in rows</li>
+          <li><span>&times;</span>Fruit that is there because fruit has to be there</li>
+          <li><span>&times;</span>The same layout, whatever the room or the party</li>
+          <li><span>&times;</span>Colours that happen by accident</li>
+          <li><span>&times;</span>A table guests walk past on the way to dinner</li>
+        </ul>
+      </div>
+      <div class="vs__col vs__col--new">
+        <p class="eyebrow">A Virtu&#333;so grazing table</p>
+        <ul>
+          <li><span>&#10003;</span>Hand-composed, piece by piece, for your table and your room</li>
+          <li><span>&#10003;</span>Fromagerie, seasonal fruit and mezze chosen to work together</li>
+          <li><span>&#10003;</span>Chef-led bites, finished and set into place by hand</li>
+          <li><span>&#10003;</span>Styled to your palette and the vibe of your party</li>
+          <li><span>&#10003;</span>Butlers at the table, and constant upkeep through the evening</li>
+          <li><span>&#10003;</span>A table guests stop at before they have tasted a thing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 HOW IT WORKS -->
+<section class="wrap band stack" style="gap:clamp(28px,4vw,44px)">
+  <div class="stack" style="gap:14px">
+    <p class="eyebrow">How it works</p>
+    <h2 class="h2" style="max-width:22ch">One call, and a written plan for your table within 24 hours.</h2>
+  </div>
+  <ol class="steps steps--3">
+    <li><span class="n">01</span><h3 class="h3">Tell us about the party</h3><p class="p p--s">The date, the guest count, the space and the look you have in mind.</p></li>
+    <li><span class="n">02</span><h3 class="h3">Speak to the person who will compose your table</h3><p class="p p--s">We talk about the occasion, your palette, what your guests love to eat and how the evening flows.</p></li>
+    <li><span class="n">03</span><h3 class="h3">Receive your written plan</h3><p class="p p--s">Within 24 hours: what goes on the table, how it is styled, and the cost for your guest count.</p></li>
+  </ol>
+</section>
+
+<!-- 09 WHAT GOES ON THE TABLE -->
+<section class="band band--card">
+  <div class="wrap split">
+    <div class="stack" style="gap:14px">
+      <h2 class="h2" style="max-width:16ch">Composed, not assembled.</h2>
+      <p class="p" style="max-width:40ch">Every element is chosen for your table, then placed by hand. Your written plan lists exactly what goes on yours.</p>
+    </div>
+    <ul class="incl incl--1col">
+      <li><strong>Fromagerie.</strong> <span>Cheeses chosen for contrast in texture and flavour, with the accompaniments that suit them.</span></li>
+      <li><strong>Seasonal fruit.</strong> <span>Whatever is at its best that month, cut and placed for colour as much as taste.</span></li>
+      <li><strong>Mezze and dips.</strong> <span>Dips, spreads and small plates guests build their own bites from.</span></li>
+      <li><strong>Crackers and breads.</strong> <span>The carriers, chosen to suit what they carry.</span></li>
+      <li><strong>Chef-led bites.</strong> <span>Small bites finished and set into place by hand.</span></li>
+      <li><strong>Something sweet.</strong> <span>Macarons, truffles and small desserts that close the table.</span></li>
+      <li><strong>Styling.</strong> <span>Your palette and the theme of your party, carried through the d&eacute;cor, displays and serviceware on a 6-foot table.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 FAQ -->
+<section class="wrap band split">
+  <h2 class="h2" style="max-width:14ch">Questions hosts ask.</h2>
+  <dl class="faq">
+    <div><dt>What does a grazing table cost?</dt><dd>Virtu&#333;so grazing tables begin at &#8377;1,50,000, for 50 guests or more. That covers the menu, chefs on site, a 6-foot styled table, crockery and serviceware, butlers at the table, an event manager, setup and teardown. The exact cost for your guest count is set out in your written plan.</dd></div>
+    <div><dt>Is the table looked after during the party?</dt><dd>Yes. Professional butlers stay at the table, and it is kept up and maintained through the evening, so it looks as good at the end as it did when guests arrived.</dd></div>
+    <div><dt>What is on a Virtu&#333;so grazing table?</dt><dd>Fromagerie, seasonal fruit, mezze and chef-led bites, composed for your party and styled to your palette. The written plan lists exactly what goes on yours.</dd></div>
+    <div><dt>Can it match our colours or theme?</dt><dd>Yes. Every table is styled to the theme of your party, with F&amp;B d&eacute;cor elements, displays and serviceware chosen to match. Tell us the colours on the call and they go into your written plan.</dd></div>
+    <div><dt>Where do you set up grazing tables?</dt><dd>Across Delhi NCR, including Delhi, Noida, Greater Noida and Gurugram, at homes, offices, farmhouses and venues.</dd></div>
+    <div><dt>What occasions is it for?</dt><dd>Weddings and pre-wedding functions, brand launches, private dinners and house parties, for 50 guests or more.</dd></div>
+    <div><dt>Do you do grazing tables for fewer than 50 guests?</dt><dd>Our grazing tables are designed for 50 guests or more. For a smaller party, speak to us and we will tell you whether the format suits it.</dd></div>
+  </dl>
+</section>
+
+<!-- 11 CLOSING -->
+<section class="close">
+  <div class="wrap close__inner">
+    <h2 class="h2">Begin with the look you want for the table.</h2>
+    <p class="p">One call with the person who will compose your table, and a written plan within 24 hours. From &#8377;1,50,000, for 50 guests or more, across Delhi NCR.</p>
+    <a class="btn" href="#lander-form" style="margin-top:6px">Plan my grazing table <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+</main>
+
+<!-- 12 FOOTER -->
+<footer class="wrap foot">
+  <span class="wordmark" style="font-size:18px">Virtu&#332;so</span>
+  <span class="fine">Sector 61, Noida</span>
+  <a href="tel:+918700915463">+91 87009 15463</a>
+  <span class="fine">virtuosocatering@gmail.com</span>
+  <a class="u" href="/privacy-policy">Privacy policy</a>
+</footer>
+
+</body>
+</html>

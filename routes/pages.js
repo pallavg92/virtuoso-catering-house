@@ -315,6 +315,78 @@ router.get('/lp/first-birthday/thank-you', (req, res) => render(res, {
   eventId: typeof req.query.eid === 'string' ? req.query.eid : ''
 }));
 
+// Grazing table paid lander. Built on the first-birthday page and handled the
+// same way: native POST, re-render with errors, 303 to the thank-you page
+// where the browser Lead fires with the event id sent here. It also writes the
+// lead sheet, as the Diwali and Living Table forms do, and carries the
+// starting price as the conversion value.
+router.get('/lp/grazing-table', (req, res) => render(res, pages.lpGrazingTable));
+
+router.post('/lp/grazing-table', async (req, res) => {
+  const errors = validateInquiry(req.body);
+  if (req.body.budgetConfirmed !== 'yes') {
+    errors.budgetConfirmed = 'Please confirm the starting price to continue.';
+  }
+
+  const rerender = (status, statusText, errs) => res.status(status).render(pages.lpGrazingTable.view, {
+    ...content,
+    ...pages.lpGrazingTable,
+    canonicalUrl: siteUrl + pages.lpGrazingTable.path,
+    siteUrl,
+    business,
+    errors: errs,
+    values: req.body,
+    status: statusText
+  });
+
+  if (Object.keys(errors).length > 0) {
+    return rerender(400, 'Please check the highlighted fields.', errors);
+  }
+
+  const fields = extractInquiryFields(req.body);
+
+  try {
+    await sendInquiry(fields);
+  } catch (err) {
+    console.error('Grazing table lander: failed to send inquiry email', err);
+    return rerender(500, 'Something went wrong sending your enquiry. Please call us on +91 87009 15463.', {});
+  }
+
+  try {
+    await sendEnquiryAcknowledgement(fields);
+  } catch (ackErr) {
+    console.error('Grazing table lander: acknowledgement failed', ackErr.message);
+  }
+
+  logLeadToSheet({
+    name: fields.name,
+    phone: fields.phone,
+    email: fields.email,
+    event_date: fields.eventDate,
+    guests: fields.guestCount,
+    utm_content: '',
+    utm_source: '',
+    counted: true
+  });
+
+  const eventId = newEventId();
+  await sendMetaEvent({
+    eventName: 'Lead',
+    eventId,
+    req,
+    userData: { email: fields.email, phone: fields.phone, city: fields.eventLocation },
+    customData: { content_name: 'Grazing Table', value: 150000, currency: 'INR' },
+    sourceUrl: siteUrl + '/lp/grazing-table'
+  });
+
+  return res.redirect(303, '/lp/grazing-table/thank-you?eid=' + encodeURIComponent(eventId));
+});
+
+router.get('/lp/grazing-table/thank-you', (req, res) => render(res, {
+  ...pages.lpGrazingTableThanks,
+  eventId: typeof req.query.eid === 'string' ? req.query.eid : ''
+}));
+
 router.get('/best-caterers-in-noida-virtuoso-catering-house', (req, res) => render(res, pages.bestCaterersNoida));
 router.get('/best-caterers-in-delhi', (req, res) => render(res, pages.bestCaterersDelhi));
 router.get('/how-to-hire-wedding-caterers-in-delhi-for-a-luxury-wedding', (req, res) => render(res, pages.hireWeddingCaterersDelhi));
