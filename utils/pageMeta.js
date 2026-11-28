@@ -48,7 +48,7 @@ const business = {
     'https://www.youtube.com/@VirtuosoCatering',
     'https://pin.it/3EwnJeOiZ',
     'https://www.linkedin.com/company/virtuoso-caterings',
-    'https://maps.app.goo.gl/VztH6YKQfN13Yogu7',
+    'https://maps.google.com/?cid=16065742692477363821',
     'https://www.wedmegood.com/profile/virtuoso-catering-house-25664531',
     'https://www.weddingwire.in/caterers/virtuoso-catering-house--e491792',
     'https://www.justdial.com/Noida/Prodigy-Catering-Noida-Sector-46/011PXX11-XX11-170913165601-F9N2_BZDET',
